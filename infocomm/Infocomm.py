@@ -38,14 +38,18 @@ print(f"FWORDS: {FWORDS:04X}")  # AKA Abbreviations
 print(f"PLENTH: {PLENTH:04X}")
 print(f"PCHKSUM: {PCHKSUM:04X}")
 
-objectTable = ObjectTable(start_location=OBJECT, memory=fileContent)
-property_table = PropertyTable(memory=fileContent)
-property_entry = property_table.find(0x0BCB)
-property_entry.describe()
 abbreviationTable = AbbreviationTable(start_location=FWORDS, memory=fileContent)
 for i in range(0, 96):
     print("|"+abbreviationTable.toString(i)+"|")
 
+objectTable = ObjectTable(start_location=OBJECT, memory=fileContent, abbreviations=abbreviationTable)
+property_table = PropertyTable(memory=fileContent)
+property_entry = property_table.find(0x0BCB)
+property_entry.describe()
 
+for i in range(1, 250+1):
+    obj = objectTable.find(i)
+    print(f"{i:3} \"{obj.description()}\"")
+    obj.dump_properties()
 
 
