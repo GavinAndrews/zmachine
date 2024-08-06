@@ -1,3 +1,4 @@
+from Processor import Processor
 from infocomm.AbbreviationTable import AbbreviationTable
 from infocomm.ObjectTable import ObjectTable
 from infocomm.PropertyTable import PropertyTable
@@ -47,9 +48,10 @@ property_table = PropertyTable(memory=fileContent)
 property_entry = property_table.find(0x0BCB)
 property_entry.describe()
 
-for i in range(1, 250+1):
-    obj = objectTable.find(i)
-    print(f"{i:3} \"{obj.description()}\"")
-    obj.dump_properties()
+# for i in range(1, 250+1):
+#     obj = objectTable.find(i)
+#     print(f"{i:3} \"{obj.description()}\"")
+#     obj.dump_properties()
 
-
+processor = Processor(memory=fileContent, start=START)
+processor.next_instruction()
