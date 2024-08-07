@@ -1,7 +1,7 @@
-from collections import deque
 from enum import IntEnum
 
 from Instructions import Instructions, OpcodeType
+from Stack import Stack
 
 
 class OpcodeForm(IntEnum):
@@ -9,8 +9,6 @@ class OpcodeForm(IntEnum):
     SHORT = 0b10
     LONG_0 = 0b00
     LONG_1 = 0b01
-
-
 
 
 class OperandCount(IntEnum):
@@ -31,67 +29,79 @@ class Processor:
     def __init__(self, memory, start):
         self.memory = memory
         self.pc = start
-        self.frames = deque()
         self.args = []
-        self.instructions = Instructions()
+        self.stack = Stack()
+        self.instructions = Instructions(self, self.stack)
 
     def next_instruction(self):
         opcode = self.get_byte_and_advance()
         opcode_form = OpcodeForm(opcode >> 6)
 
-        self.args = []
+        args = []
 
         print(f"OPCODE: {opcode:02X} {opcode_form:02b}")
         match opcode_form:
             case opcode_form.LONG_0, opcode_form.LONG_1:  # opcode < 0x80
                 operand_count = OperandCount.z_2OP
                 operand_type1 = OperandType.SMALL_CONSTANT if opcode & 0x40 == 0 else OperandType.VARIABLE
-                self.load_operand(operand_type1)
+                self.load_operand(operand_type1, args)
                 operand_type2 = OperandType.SMALL_CONSTANT if opcode & 0x20 == 0 else OperandType.VARIABLE
-                self.load_operand(operand_type2)
-                op_number = opcode & 0x1F
-                self.instructions.execute(OpcodeType.VAR, op_number)
+                self.load_operand(operand_type2, args)
+                op_number = opcode & 0xb11111
+                self.instructions.execute(OpcodeType.z_2OP, op_number, args)
 
             case opcode_form.SHORT:
                 operand_type1 = OperandType((opcode >> 4) & 0x03)
-                op_number = opcode & 0x0F
+                op_number = opcode & 0xb1111
                 if operand_type1 == OperandType.OMITTED:
                     # 0 OP
-                    self.instructions.execute(OpcodeType.OP0, op_number)
+                    self.instructions.execute(OpcodeType.z_0OP, op_number, args)
                 else:
                     # 1 OP
-                    self.load_operand(operand_type1)
-                    self.instructions.execute(OpcodeType.OP1, op_number)
+                    self.load_operand(operand_type1, args)
+                    self.instructions.execute(OpcodeType.z_1OP, op_number, args)
 
             case opcode_form.VARIABLE:
                 operand_count = OperandCount.z_2OP if opcode & 0b00100000 == 0 else OperandCount.z_VAR
                 print(f"Form: {opcode_form.name}, OperandCount: {operand_count.name}")
-                opcode_number = opcode & 0xb11111
+                op_number = opcode & 0xb11111
 
                 var_operand_types = self.get_byte_and_advance()
-                self.load_operands(var_operand_types)
+                self.load_operands(var_operand_types, args)
+                self.instructions.execute(OpcodeType.z_VAR, op_number, args)
 
-            case _:
-                pass
-
-        print(f"OPCODE NUMBER: {opcode_number:02X}")
-
-    def load_operand(self, operand_type):
+    def load_operand(self, operand_type, args):
         match operand_type:
+            case OperandType.LARGE:
+                value = self.get_word_and_advance()
             case OperandType.SMALL_CONSTANT:
                 value = int(self.get_byte_and_advance())
             case OperandType.VARIABLE:
                 # Three types... 0 top of stack, <16 locals, else globals
                 raise RuntimeError("Unimplemented")
-                pass
-        self.args.append(value)
+        args.append(value)
 
-    def load_operands(self, var_operand_types):
-        pass
+    def load_operands(self, var_operand_types, args):
+        for i in range(6, -1, -2):
+            operand_type = var_operand_types >> i & 0b11
+            if operand_type == OperandType.OMITTED:
+                break
+            self.load_operand(operand_type, args)
 
     def get_byte_and_advance(self):
         v = self.memory[self.pc]
         self.pc += 1
         return v
+
+    def get_word_and_advance(self):
+        v = int.from_bytes(self.memory[self.pc:self.pc + 2], 'big')
+        self.pc += 2
+        return v
+
+    def get_pc(self):
+        return self.pc
+
+    def set_pc(self, new_address):
+        self.pc = new_address
 
     # https://zspec.jaredreisinger.com/

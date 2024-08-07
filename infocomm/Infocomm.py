@@ -55,3 +55,4 @@ property_entry.describe()
 
 processor = Processor(memory=fileContent, start=START)
 processor.next_instruction()
+processor.next_instruction()
