@@ -29,7 +29,7 @@ class Instructions:
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
-                              self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
+                              self.instruction_add, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
 
@@ -49,6 +49,7 @@ class Instructions:
         self.all_functions[op_type][op_number](args)
 
     def unimplemented(self, args):
+        self.stack.dump()
         raise RuntimeError("Unimplemented function")
 
     def illegal(self, args):
@@ -65,7 +66,7 @@ class Instructions:
             self.do_call(args[0], args[1:], 0)
 
     def do_call(self, address, args, call_type):
-        print(f"Call to {address:04X}, args: {args}")
+        print(f"Call to {address*2:04X}, args: {args}")
         pc = self.processor.get_pc()
         self.stack.push_word(pc >> 9)
         self.stack.push_word(pc & 0x1ff)
@@ -96,3 +97,6 @@ class Instructions:
 
     def instruction_storeb(self, args):
         raise RuntimeError("Unimplemented storeb")
+
+    def instruction_add(self, args):
+        self.processor.store(args[0]+args[1])

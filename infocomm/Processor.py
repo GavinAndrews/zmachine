@@ -26,9 +26,10 @@ class OperandType(IntEnum):
 
 
 class Processor:
-    def __init__(self, memory, start):
+    def __init__(self, memory, start, globals):
         self.memory = memory
         self.pc = start
+        self.globals = globals
         self.args = []
         self.stack = Stack()
         self.instructions = Instructions(self, self.stack)
@@ -41,18 +42,18 @@ class Processor:
 
         print(f"OPCODE: {opcode:02X} {opcode_form:02b}")
         match opcode_form:
-            case opcode_form.LONG_0, opcode_form.LONG_1:  # opcode < 0x80
+            case opcode_form.LONG_0 | opcode_form.LONG_1:  # opcode < 0x80
                 operand_count = OperandCount.z_2OP
                 operand_type1 = OperandType.SMALL_CONSTANT if opcode & 0x40 == 0 else OperandType.VARIABLE
                 self.load_operand(operand_type1, args)
                 operand_type2 = OperandType.SMALL_CONSTANT if opcode & 0x20 == 0 else OperandType.VARIABLE
                 self.load_operand(operand_type2, args)
-                op_number = opcode & 0xb11111
+                op_number = opcode & 0b11111
                 self.instructions.execute(OpcodeType.z_2OP, op_number, args)
 
             case opcode_form.SHORT:
                 operand_type1 = OperandType((opcode >> 4) & 0x03)
-                op_number = opcode & 0xb1111
+                op_number = opcode & 0b1111
                 if operand_type1 == OperandType.OMITTED:
                     # 0 OP
                     self.instructions.execute(OpcodeType.z_0OP, op_number, args)
@@ -64,7 +65,7 @@ class Processor:
             case opcode_form.VARIABLE:
                 operand_count = OperandCount.z_2OP if opcode & 0b00100000 == 0 else OperandCount.z_VAR
                 print(f"Form: {opcode_form.name}, OperandCount: {operand_count.name}")
-                op_number = opcode & 0xb11111
+                op_number = opcode & 0b11111
 
                 var_operand_types = self.get_byte_and_advance()
                 self.load_operands(var_operand_types, args)
@@ -77,8 +78,15 @@ class Processor:
             case OperandType.SMALL_CONSTANT:
                 value = int(self.get_byte_and_advance())
             case OperandType.VARIABLE:
+                variable = int(self.get_byte_and_advance())
                 # Three types... 0 top of stack, <16 locals, else globals
-                raise RuntimeError("Unimplemented")
+                if variable == 0:
+                    value = self.stack.pop_word()
+                elif variable < 16:
+                    value = self.stack.read_local(variable)
+                else:
+                    value = self.globals.read_global(variable-16)
+
         args.append(value)
 
     def load_operands(self, var_operand_types, args):
@@ -103,5 +111,15 @@ class Processor:
 
     def set_pc(self, new_address):
         self.pc = new_address
+
+    def store(self, value):
+        variable = int(self.get_byte_and_advance())
+        # Three types... 0 top of stack, <16 locals, else globals
+        if variable == 0:
+            self.stack.push_word(value)
+        elif variable < 16:
+            self.stack.write_local(variable, value)
+        else:
+            self.globals.write_global(variable-16, value)
 
     # https://zspec.jaredreisinger.com/
