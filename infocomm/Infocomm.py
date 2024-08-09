@@ -32,8 +32,5 @@ property_entry.describe()
 #     obj.dump_properties()
 
 processor = Processor(memory=memory, start=header.START, globals=globals)
-processor.next_instruction()
-processor.next_instruction()
-processor.next_instruction()
-processor.next_instruction()
-processor.next_instruction()
+for i in range(0, 64):
+    processor.next_instruction()

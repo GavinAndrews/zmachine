@@ -13,7 +13,7 @@ class Stack:
         self.sp -= 1
         self.stack[self.sp] = value
 
-    def pop_word(self, value):
+    def pop_word(self):
         value = self.stack[self.sp]
         self.sp += 1
         return value
@@ -21,9 +21,16 @@ class Stack:
     def push_fp(self):
         self.push_word(self.fp-1)
 
-    def new_frame(self):
+    def pop_fp(self):
+        self.fp = self.pop_word()+1
+
+    def mark_frame(self):
         self.fp = self.sp
         self.frame_count += 1
+
+    def unmark_frame(self):
+        self.sp = self.fp
+        self.frame_count -= 1
 
     def fixup_frame(self, local_var_count):
         self.stack[self.fp] |= local_var_count << 8

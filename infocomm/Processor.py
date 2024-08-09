@@ -2,6 +2,7 @@ from enum import IntEnum
 
 from Instructions import Instructions, OpcodeType
 from Stack import Stack
+from Utils import Utils
 
 
 class OpcodeForm(IntEnum):
@@ -85,7 +86,7 @@ class Processor:
                 elif variable < 16:
                     value = self.stack.read_local(variable)
                 else:
-                    value = self.globals.read_global(variable-16)
+                    value = self.globals.read_global(variable - 16)
 
         args.append(value)
 
@@ -120,6 +121,72 @@ class Processor:
         elif variable < 16:
             self.stack.write_local(variable, value)
         else:
-            self.globals.write_global(variable-16, value)
+            self.globals.write_global(variable - 16, value)
+
+    def branch(self, condition):
+        specifier = self.get_byte_and_advance()
+        offset_1 = specifier & 0b111111
+
+        if not condition:
+            specifier ^= 0x80
+
+        # bit 6 specifies short or long
+        if specifier & 0x40 == 0x00:
+            # Consider as a signed 16-bit value so if we are -ve, i.e. top bit set
+            # make them all set as we expand from 14 bits into 16 bits
+            if offset_1 & 0b100000 != 0:
+                offset_1 |= 0b11000000
+            offset_2 = self.get_byte_and_advance()
+            offset = offset_1 << 8 | offset_2
+            # Convert to signed
+            offset = Utils.from_unsigned_word_to_signed_int(offset)
+            pass
+        else:
+            offset = offset_1
+
+        if specifier & 0x80:
+            if offset > 1:
+                pc = self.get_pc()
+                pc += offset - 2
+                self.set_pc(pc)
+            else:
+                # Special Case 0 False, 1 True
+                self.ret(offset)
+
+    def storew(self, address, value):
+        Utils.mwrite_word(self.memory, address, value)
+
+    def call(self, address, args, call_type):
+        # print(f"Call to {address*2:04X}, args: {args}")
+        pc = self.get_pc()
+        self.stack.push_word(pc >> 9)
+        self.stack.push_word(pc & 0x1ff)
+        self.stack.push_fp()
+        self.stack.push_word(len(args) | (call_type << 12))
+        self.stack.mark_frame()
+
+        address *= 2  # V3 Address
+        self.set_pc(address)
+
+        local_var_count = self.get_byte_and_advance()
+        self.stack.fixup_frame(local_var_count)
+
+        for i in range(0, local_var_count):
+            v = self.get_word_and_advance()
+            if i < len(args):
+                v = args[i]
+            self.stack.push_word(v)
+
+    def ret(self, value):
+        self.stack.unmark_frame()
+        ct = self.stack.pop_word() >> 12
+        self.stack.pop_fp()
+        pc = self.stack.pop_word()
+        pc |= self.stack.pop_word() << 9
+        self.set_pc(pc)
+        if ct == 0:
+            self.store(value)
+        else:
+            self.stack.push_word(value)
 
     # https://zspec.jaredreisinger.com/
