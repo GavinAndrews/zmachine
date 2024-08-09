@@ -1,4 +1,7 @@
+import sys
 from enum import IntEnum
+
+from Utils import Utils
 
 
 class OpcodeType(IntEnum):
@@ -45,11 +48,17 @@ class Instructions:
 
         self.all_functions = [self.op0_functions, self.op1_functions, self.op2_functions, self.var_functions]
 
-    def execute(self, op_type, op_number, args):
-        self.all_functions[op_type][op_number](args)
+    def execute(self, op_type, op_number, args, current_pc, opcode):
+        try:
+            print(f"EXECUTE: {current_pc:04X} {opcode:02X} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
+            self.all_functions[op_type][op_number](args)
+        except RuntimeError as  re:
+            print(f"{re} : {current_pc:04X} {opcode:02X} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
+            self.stack.dump()
+            sys.exit(101)
+
 
     def unimplemented(self, args):
-        self.stack.dump()
         raise RuntimeError("Unimplemented function")
 
     def illegal(self, args):
@@ -66,7 +75,7 @@ class Instructions:
             self.do_call(args[0], args[1:], 0)
 
     def do_call(self, address, args, call_type):
-        print(f"Call to {address*2:04X}, args: {args}")
+        # print(f"Call to {address*2:04X}, args: {args}")
         pc = self.processor.get_pc()
         self.stack.push_word(pc >> 9)
         self.stack.push_word(pc & 0x1ff)
@@ -86,7 +95,6 @@ class Instructions:
                 v = args[i]
             self.stack.push_word(v)
 
-        self.stack.dump()
 
 
     def store(self, param):
@@ -99,4 +107,8 @@ class Instructions:
         raise RuntimeError("Unimplemented storeb")
 
     def instruction_add(self, args):
-        self.processor.store(args[0]+args[1])
+        # Arithmetic is Signed, Args and Stack etc are considered unsigned
+        a0 = Utils.from_unsigned_word_to_signed_int(args[0])
+        a1 = Utils.from_unsigned_word_to_signed_int(args[1])
+        result = a0 + a1
+        self.processor.store(Utils.from_signed_int_to_unsigned_word(result))

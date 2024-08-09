@@ -35,12 +35,12 @@ class Processor:
         self.instructions = Instructions(self, self.stack)
 
     def next_instruction(self):
+        current_pc = self.pc
         opcode = self.get_byte_and_advance()
         opcode_form = OpcodeForm(opcode >> 6)
 
         args = []
 
-        print(f"OPCODE: {opcode:02X} {opcode_form:02b}")
         match opcode_form:
             case opcode_form.LONG_0 | opcode_form.LONG_1:  # opcode < 0x80
                 operand_count = OperandCount.z_2OP
@@ -49,27 +49,27 @@ class Processor:
                 operand_type2 = OperandType.SMALL_CONSTANT if opcode & 0x20 == 0 else OperandType.VARIABLE
                 self.load_operand(operand_type2, args)
                 op_number = opcode & 0b11111
-                self.instructions.execute(OpcodeType.z_2OP, op_number, args)
+                self.instructions.execute(OpcodeType.z_2OP, op_number, args, current_pc, opcode)
 
             case opcode_form.SHORT:
                 operand_type1 = OperandType((opcode >> 4) & 0x03)
                 op_number = opcode & 0b1111
                 if operand_type1 == OperandType.OMITTED:
                     # 0 OP
-                    self.instructions.execute(OpcodeType.z_0OP, op_number, args)
+                    self.instructions.execute(OpcodeType.z_0OP, op_number, args, current_pc, opcode)
                 else:
                     # 1 OP
                     self.load_operand(operand_type1, args)
-                    self.instructions.execute(OpcodeType.z_1OP, op_number, args)
+                    self.instructions.execute(OpcodeType.z_1OP, op_number, args, current_pc, opcode)
 
             case opcode_form.VARIABLE:
                 operand_count = OperandCount.z_2OP if opcode & 0b00100000 == 0 else OperandCount.z_VAR
-                print(f"Form: {opcode_form.name}, OperandCount: {operand_count.name}")
+                # print(f"Form: {opcode_form.name}, OperandCount: {operand_count.name}")
                 op_number = opcode & 0b11111
 
                 var_operand_types = self.get_byte_and_advance()
                 self.load_operands(var_operand_types, args)
-                self.instructions.execute(OpcodeType.z_VAR, op_number, args)
+                self.instructions.execute(OpcodeType.z_VAR, op_number, args, current_pc, opcode)
 
     def load_operand(self, operand_type, args):
         match operand_type:

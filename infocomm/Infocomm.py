@@ -18,8 +18,8 @@ globals = Globals(memory, header.GLOBALS)
 
 
 abbreviationTable = AbbreviationTable(start_location=header.FWORDS, memory=memory)
-for i in range(0, 96):
-    print("|"+abbreviationTable.toString(i)+"|")
+# for i in range(0, 96):
+#     print("|"+abbreviationTable.toString(i)+"|")
 
 objectTable = ObjectTable(start_location=header.OBJECT, memory=memory, abbreviations=abbreviationTable)
 property_table = PropertyTable(memory=memory)
