@@ -50,8 +50,9 @@ class Instructions:
 
     def execute(self, op_type, op_number, args, current_pc, opcode):
         try:
-            print(f"EXECUTE: {current_pc:04X} {opcode:02X} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
-            self.all_functions[op_type][op_number](args)
+            implementation = self.all_functions[op_type][op_number]
+            print(f"EXECUTE: {current_pc:04X} {opcode:02X} {implementation.__name__[12:]:12} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
+            implementation(args)
         except RuntimeError as re:
             print(f"{re} : {current_pc:04X} {opcode:02X} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
             self.stack.dump()
