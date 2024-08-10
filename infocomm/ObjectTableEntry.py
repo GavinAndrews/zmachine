@@ -17,3 +17,9 @@ class ObjectTableEntry(object):
     def get_property_table_entry(self, property_number):
         ptable = PropertyTable(self.memory, self.properties_address(), self.abbreviations)
         return ptable.find(property_number)
+
+    def test_attr(self, attribute_number):
+        attr_address = self.start_location+(attribute_number >> 3)
+        attrs = self.memory[attr_address]
+        result = attrs & (0b1000000 >> (attribute_number & 0b111))
+        return result

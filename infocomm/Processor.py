@@ -1,5 +1,6 @@
 from enum import IntEnum
 
+import ZStrings
 from Instructions import Instructions, OpcodeType
 from Stack import Stack
 from Utils import Utils
@@ -27,11 +28,12 @@ class OperandType(IntEnum):
 
 
 class Processor:
-    def __init__(self, memory, start, global_variables, object_table):
+    def __init__(self, memory, start, global_variables, object_table, abbreviation_table):
         self.memory = memory
         self.pc = start
         self.globals = global_variables
         self.object_table = object_table
+        self.abbreviation_table = abbreviation_table
         self.args = []
         self.stack = Stack()
         self.instructions = Instructions(self, self.stack)
@@ -191,3 +193,12 @@ class Processor:
             self.stack.push_word(value)
 
     # https://zspec.jaredreisinger.com/
+
+    def print_embedded(self):
+        embedded_string_address = self.get_pc()
+        # Advance past string
+        while True:
+            value = self.get_word_and_advance()
+            if value & 0x8000:
+                break
+        print(ZStrings.toZString(embedded_string_address, self.memory, self.abbreviation_table))

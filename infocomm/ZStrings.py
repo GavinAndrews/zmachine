@@ -1,6 +1,6 @@
 alphabet_A0 = "abcdefghijklmnopqrstuvwxyz"
 alphabet_A1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-alphabet_A2 = " ^0123456789.,!?_#'\"/\\-:()"
+alphabet_A2 = " \n0123456789.,!?_#'\"/\\-:()"
 
 current_alphabet = alphabet_A0
 next_is_abbreviation = False

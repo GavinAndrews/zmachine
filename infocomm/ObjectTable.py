@@ -34,10 +34,10 @@ class ObjectTable:
 
         return n
 
-    def find(self, n):
+    def get_object_table_entry(self, n):
         return ObjectTableEntry(self.object_start_location + (n - 1) * self.object_entry_size, self.memory,
                                 self.object_entry_size, self.abbreviations)
 
     def get_property_table_entry(self, object_number, property_number):
-        object_table_entry = self.find(object_number)
+        object_table_entry = self.get_object_table_entry(object_number)
         return object_table_entry.get_property_table_entry(property_number)

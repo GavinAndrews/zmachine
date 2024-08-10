@@ -17,9 +17,9 @@ class Instructions:
         self.processor = processor
         self.stack = stack
 
-        self.op0_functions = [self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
+        self.op0_functions = [self.unimplemented, self.unimplemented, self.instruction_print, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
-                              self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
+                              self.unimplemented, self.unimplemented, self.unimplemented, self.instruction_new_line,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
 
         self.op1_functions = [self.instruction_jz, self.unimplemented, self.unimplemented, self.unimplemented,
@@ -133,5 +133,20 @@ class Instructions:
         property_table_entry = self.processor.object_table.get_property_table_entry(object_number, property_number)
         property_table_entry.put_value(property_value)
 
-    def instruction_test_attr(self):
-        raise RuntimeError("Unimplemented test_attr")
+    # test_attr object attribute?(label)
+    def instruction_test_attr(self, args):
+        object_number = args[0]
+        attribute_number = args[1]
+
+        object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
+        result = object_table_entry.test_attr(attribute_number)
+        self.processor.branch(result)
+
+    def instruction_other(self, args):
+        raise RuntimeError("Unimplemented " + __name__)
+
+    def instruction_print(self, args):
+        self.processor.print_embedded()
+
+    def instruction_new_line(self, args):
+        print("")
