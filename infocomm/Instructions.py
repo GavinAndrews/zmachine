@@ -29,8 +29,8 @@ class Instructions:
 
         self.op2_functions = [self.illegal, self.instruction_je, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
-                              self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
-                              self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
+                              self.unimplemented, self.unimplemented, self.instruction_test_attr, self.unimplemented,
+                              self.unimplemented, self.instruction_store, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.instruction_add, self.instruction_sub, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
@@ -51,7 +51,8 @@ class Instructions:
     def execute(self, op_type, op_number, args, current_pc, opcode):
         try:
             implementation = self.all_functions[op_type][op_number]
-            print(f"EXECUTE: {current_pc:04X} {opcode:02X} {implementation.__name__[12:]:12} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
+            print(
+                f"EXECUTE: {current_pc:04X} {opcode:02X} {implementation.__name__.replace("instruction_", ""):12} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
             implementation(args)
         except RuntimeError as re:
             print(f"{re} : {current_pc:04X} {opcode:02X} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
@@ -81,6 +82,17 @@ class Instructions:
     # args[0] address of table, [1] index in table, [2] value
     def instruction_storew(self, args):
         self.processor.storew(args[0] + 2 * args[1], args[2])
+
+    def instruction_store(self, args):
+        variable = args[0]
+        value = args[1]
+        # Three types... 0 top of stack, <16 locals, else globals
+        if variable == 0:
+            self.stack.push_word(value)
+        elif variable < 16:
+            self.stack.write_local(variable, value)
+        else:
+            self.processor.globals.write_global(variable - 16, value)
 
     def instruction_storeb(self, args):
         raise RuntimeError("Unimplemented storeb")
@@ -115,4 +127,11 @@ class Instructions:
         self.processor.ret(args[0])
 
     def instruction_put_prop(self, args):
-        raise RuntimeError("Unimplemented put_prop")
+        object_number = args[0]
+        property_number = args[1]
+        property_value = args[2]
+        property_table_entry = self.processor.object_table.get_property_table_entry(object_number, property_number)
+        property_table_entry.put_value(property_value)
+
+    def instruction_test_attr(self):
+        raise RuntimeError("Unimplemented test_attr")

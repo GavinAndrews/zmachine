@@ -14,7 +14,7 @@ with open(fileName, mode='rb') as file:  # b is important -> binary
 
 header = Header(memory)
 
-globals = Globals(memory, header.GLOBALS)
+global_variables = Globals(memory, header.GLOBALS)
 
 
 abbreviationTable = AbbreviationTable(start_location=header.FWORDS, memory=memory)
@@ -22,15 +22,12 @@ abbreviationTable = AbbreviationTable(start_location=header.FWORDS, memory=memor
 #     print("|"+abbreviationTable.toString(i)+"|")
 
 objectTable = ObjectTable(start_location=header.OBJECT, memory=memory, abbreviations=abbreviationTable)
-property_table = PropertyTable(memory=memory)
-property_entry = property_table.find(0x0BCB)
-property_entry.describe()
 
 # for i in range(1, 250+1):
 #     obj = objectTable.find(i)
 #     print(f"{i:3} \"{obj.description()}\"")
 #     obj.dump_properties()
 
-processor = Processor(memory=memory, start=header.START, globals=globals)
-for i in range(0, 64):
+processor = Processor(memory=memory, start=header.START, global_variables=global_variables, object_table=objectTable)
+for i in range(0, 128):
     processor.next_instruction()

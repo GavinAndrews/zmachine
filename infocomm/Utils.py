@@ -6,7 +6,11 @@ class Utils:
     @staticmethod
     def mwrite_word(memory, offset, value):
         memory[offset] = (value >> 8) & 0xFF
-        memory[offset+1] = value & 0xFF
+        memory[offset + 1] = value & 0xFF
+
+    @staticmethod
+    def mwrite_byte(memory, offset, value):
+        memory[offset] = value & 0xFF
 
     @staticmethod
     def from_unsigned_word_to_signed_int(i):
