@@ -4,6 +4,10 @@ class Utils:
         return int.from_bytes(memory[offset:offset + 2], 'big', signed=False)
 
     @staticmethod
+    def mread_byte(memory, offset):
+        return int(memory[offset])
+
+    @staticmethod
     def mwrite_word(memory, offset, value):
         memory[offset] = (value >> 8) & 0xFF
         memory[offset + 1] = value & 0xFF

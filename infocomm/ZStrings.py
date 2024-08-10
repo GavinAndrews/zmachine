@@ -7,6 +7,15 @@ next_is_abbreviation = False
 abbreviation_offset = None
 
 
+def singleZChar(value):
+    if value < 6:
+        return ""
+    elif value < 6+32:
+        return alphabet_A0[value-6]
+    else:
+        return chr(value)
+
+
 def fromZChar(value, abbreviation_table):
     global current_alphabet
     global next_is_abbreviation

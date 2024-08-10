@@ -41,6 +41,10 @@ class Processor:
     def next_instruction(self):
         current_pc = self.pc
         opcode = self.get_byte_and_advance()
+
+        if opcode == 0xc9:
+            print("BREAK")
+
         opcode_form = OpcodeForm(opcode >> 6)
 
         args = []
@@ -67,13 +71,12 @@ class Processor:
                     self.instructions.execute(OpcodeType.z_1OP, op_number, args, current_pc, opcode)
 
             case opcode_form.VARIABLE:
-                operand_count = OperandCount.z_2OP if opcode & 0b00100000 == 0 else OperandCount.z_VAR
-                # print(f"Form: {opcode_form.name}, OperandCount: {operand_count.name}")
+                opcode_type = OpcodeType.z_2OP if opcode & 0b00100000 == 0 else OpcodeType.z_VAR
                 op_number = opcode & 0b11111
 
                 var_operand_types = self.get_byte_and_advance()
                 self.load_operands(var_operand_types, args)
-                self.instructions.execute(OpcodeType.z_VAR, op_number, args, current_pc, opcode)
+                self.instructions.execute(opcode_type, op_number, args, current_pc, opcode)
 
     def load_operand(self, operand_type, args):
         match operand_type:
@@ -156,6 +159,15 @@ class Processor:
                 # Special Case 0 False, 1 True
                 self.ret(offset)
 
+    def loadb(self, address):
+        return Utils.mread_byte(self.memory, address)
+
+    def loadw(self, address):
+        return Utils.mread_word(self.memory, address)
+
+    def storeb(self, address, value):
+        Utils.mwrite_byte(self.memory, address, value)
+
     def storew(self, address, value):
         Utils.mwrite_word(self.memory, address, value)
 
@@ -202,3 +214,26 @@ class Processor:
             if value & 0x8000:
                 break
         print(ZStrings.toZString(embedded_string_address, self.memory, self.abbreviation_table))
+
+    def adjust_variable(self, variable, delta):
+        # Three types... 0 top of stack, <16 locals, else globals
+        if variable == 0:
+            value = self.stack.pop_word()
+        elif variable < 16:
+            value = self.stack.read_local(variable)
+        else:
+            value = self.globals.read_global(variable - 16)
+
+        value = Utils.from_unsigned_word_to_signed_int(value)
+        result = value + delta
+        value = Utils.from_signed_int_to_unsigned_word(result)
+
+        # Three types... 0 top of stack, <16 locals, else globals
+        if variable == 0:
+            self.stack.push_word(value)
+        elif variable < 16:
+            self.stack.write_local(variable, value)
+        else:
+            self.globals.write_global(variable - 16, value)
+
+        return result

@@ -28,18 +28,18 @@ class Instructions:
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
 
         self.op2_functions = [self.illegal, self.instruction_je, self.unimplemented, self.unimplemented,
-                              self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
-                              self.unimplemented, self.unimplemented, self.instruction_test_attr, self.unimplemented,
-                              self.unimplemented, self.instruction_store, self.unimplemented, self.unimplemented,
-                              self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
+                              self.instruction_dec_chk, self.instruction_inc_chk, self.unimplemented, self.unimplemented,
+                              self.instruction_or, self.instruction_and, self.instruction_test_attr, self.unimplemented,
+                              self.unimplemented, self.instruction_store, self.unimplemented, self.instruction_loadw,
+                              self.instruction_loadb, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.instruction_add, self.instruction_sub, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
 
         self.var_functions = [self.instruction_call, self.instruction_storew, self.instruction_storeb,
                               self.instruction_put_prop,
-                              self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
-                              self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
+                              self.unimplemented, self.unimplemented, self.instruction_print_num, self.unimplemented,
+                              self.unimplemented, self.instruction_v9, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
@@ -150,3 +150,35 @@ class Instructions:
 
     def instruction_new_line(self, args):
         print("")
+
+    def instruction_loadb(self, args):
+        value = self.processor.loadb(args[0] + args[1])
+        self.processor.store(value)
+
+    def instruction_loadw(self, args):
+        value = self.processor.loadw(args[0] + 2 * args[1])
+        self.processor.store(value)
+
+    def instruction_or(self, args):
+        self.processor.store(args[0] | args[1])
+
+    def instruction_and(self, args):
+        self.processor.store(args[0] & args[1])
+
+
+    def instruction_v9(self, args):
+        raise RuntimeError("Unimplemented " + __name__)
+
+    def instruction_print_num(self, args):
+        value = Utils.from_unsigned_word_to_signed_int(args[0])
+        print(value, end="")
+
+    def instruction_dec_chk(self, args):
+        result = self.processor.adjust_variable(args[0], -1)
+        compare = Utils.from_unsigned_word_to_signed_int(args[1])
+        self.processor.branch(result < compare)
+
+    def instruction_inc_chk(self, args):
+        result = self.processor.adjust_variable(args[0], 1)
+        compare = Utils.from_unsigned_word_to_signed_int(args[1])
+        self.processor.branch(result > compare)
