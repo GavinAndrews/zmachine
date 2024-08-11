@@ -9,6 +9,15 @@ class ObjectTableEntry(object):
         self.abbreviations = abbreviations
         self.n = n
 
+    def get_parent_object_number(self):
+        return int(self.memory[self.start_location + 4])
+
+    def get_next_sibling_object_number(self):
+        return int(self.memory[self.start_location + 5])
+
+    def get_child_object_number(self):
+        return int(self.memory[self.start_location + 6])
+
     def properties_address(self):
         # Last two bytes of Object Table Entry is pointer to properties
         return int.from_bytes(self.memory[self.start_location + self.entry_size - 2
@@ -27,4 +36,4 @@ class ObjectTableEntry(object):
 
     def describe(self):
         ptable = PropertyTable(self.memory, self.properties_address(), self.abbreviations)
-        print(f"[{self.n}] {ptable.description()}")
+        return f"[{self.n}] {ptable.description()}"

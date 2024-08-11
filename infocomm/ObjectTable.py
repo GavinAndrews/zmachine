@@ -45,7 +45,11 @@ class ObjectTable:
     def insert_object(self, moving_object, destination_object):
         moving_object_table_entry = self.get_object_table_entry(moving_object)
         destination_object_table_entry = self.get_object_table_entry(destination_object)
-        destination_object_table_entry.describe()
+        object_number = destination_object
+        while object_number != 0:
+            ote = self.get_object_table_entry(object_number)
+            print(ote.describe())
+            object_number = ote.get_next_sibling_object_number()
         # unlink moving_object
         # insert into destination at head
         pass
