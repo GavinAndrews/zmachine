@@ -2,12 +2,13 @@ from PropertyTable import PropertyTable
 
 
 class ObjectTableEntry(object):
-    def __init__(self, start_location, memory, entry_size, abbreviations, n):
+    def __init__(self, start_location, memory, entry_size, abbreviations, n, object_table):
         self.start_location = start_location
         self.memory = memory
         self.entry_size = entry_size
         self.abbreviations = abbreviations
         self.n = n
+        self.object_table = object_table
 
     def get_parent_object_number(self):
         return int(self.memory[self.start_location + 4])
@@ -17,6 +18,20 @@ class ObjectTableEntry(object):
 
     def get_child_object_number(self):
         return int(self.memory[self.start_location + 6])
+
+    def get_prior_sibling_object_number(self):
+        parent_object_number = self.get_parent_object_number()
+        if parent_object_number == 0:
+            return 0
+        parent = self.object_table.get_object_table_entry(parent_object_number)
+        prior_sibling_object_number = 0
+        sibling_object_number = parent.get_child_object_number()
+        while sibling_object_number != self.n:
+            prior_sibling_object_number = sibling_object_number
+            sibling = self.object_table.get_object_table_entry(sibling_object_number)
+            sibling_object_number = sibling.get_next_sibling_object_number()
+        return prior_sibling_object_number
+
 
     def properties_address(self):
         # Last two bytes of Object Table Entry is pointer to properties
