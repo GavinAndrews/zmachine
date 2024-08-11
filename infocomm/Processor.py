@@ -42,9 +42,6 @@ class Processor:
         current_pc = self.pc
         opcode = self.get_byte_and_advance()
 
-        if opcode == 0xc9:
-            print("BREAK")
-
         opcode_form = OpcodeForm(opcode >> 6)
 
         args = []
@@ -159,6 +156,9 @@ class Processor:
                 # Special Case 0 False, 1 True
                 self.ret(offset)
 
+    def jump(self, delta):
+        self.set_pc(self.pc + delta)
+
     def loadb(self, address):
         return Utils.mread_byte(self.memory, address)
 
@@ -213,7 +213,7 @@ class Processor:
             value = self.get_word_and_advance()
             if value & 0x8000:
                 break
-        print(ZStrings.toZString(embedded_string_address, self.memory, self.abbreviation_table))
+        print(ZStrings.toZString(embedded_string_address, self.memory, self.abbreviation_table), end="")
 
     def adjust_variable(self, variable, delta):
         # Three types... 0 top of stack, <16 locals, else globals

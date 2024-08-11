@@ -1,6 +1,7 @@
 import sys
 from enum import IntEnum
 
+import ZStrings
 from Utils import Utils
 
 
@@ -16,8 +17,9 @@ class Instructions:
 
         self.processor = processor
         self.stack = stack
+        self.quiet = False
 
-        self.op0_functions = [self.unimplemented, self.unimplemented, self.instruction_print, self.unimplemented,
+        self.op0_functions = [self.instruction_rtrue, self.instruction_rfalse, self.instruction_print, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.instruction_new_line,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
@@ -25,12 +27,13 @@ class Instructions:
         self.op1_functions = [self.instruction_jz, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.instruction_ret,
-                              self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
+                              self.instruction_jump, self.unimplemented, self.unimplemented, self.unimplemented]
 
         self.op2_functions = [self.illegal, self.instruction_je, self.unimplemented, self.unimplemented,
-                              self.instruction_dec_chk, self.instruction_inc_chk, self.unimplemented, self.unimplemented,
+                              self.instruction_dec_chk, self.instruction_inc_chk, self.unimplemented,
+                              self.unimplemented,
                               self.instruction_or, self.instruction_and, self.instruction_test_attr, self.unimplemented,
-                              self.unimplemented, self.instruction_store, self.unimplemented, self.instruction_loadw,
+                              self.unimplemented, self.instruction_store, self.instruction_insert_obj, self.instruction_loadw,
                               self.instruction_loadb, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.instruction_add, self.instruction_sub, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
@@ -38,7 +41,7 @@ class Instructions:
 
         self.var_functions = [self.instruction_call, self.instruction_storew, self.instruction_storeb,
                               self.instruction_put_prop,
-                              self.unimplemented, self.unimplemented, self.instruction_print_num, self.unimplemented,
+                              self.unimplemented, self.instruction_print_char, self.instruction_print_num, self.unimplemented,
                               self.unimplemented, self.instruction_v9, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
@@ -51,8 +54,9 @@ class Instructions:
     def execute(self, op_type, op_number, args, current_pc, opcode):
         try:
             implementation = self.all_functions[op_type][op_number]
-            print(
-                f"EXECUTE: {current_pc:04X} {opcode:02X} {implementation.__name__.replace("instruction_", ""):12} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
+            if not self.quiet:
+                print(
+                    f"EXECUTE: {current_pc:04X} {opcode:02X} {implementation.__name__.replace("instruction_", ""):12} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
             implementation(args)
         except RuntimeError as re:
             print(f"{re} : {current_pc:04X} {opcode:02X} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
@@ -165,13 +169,12 @@ class Instructions:
     def instruction_and(self, args):
         self.processor.store(args[0] & args[1])
 
-
-    def instruction_v9(self, args):
-        raise RuntimeError("Unimplemented " + __name__)
-
     def instruction_print_num(self, args):
         value = Utils.from_unsigned_word_to_signed_int(args[0])
         print(value, end="")
+
+    def instruction_print_char(self, args):
+        print(ZStrings.singleZSCIIChar(args[0]), end="")
 
     def instruction_dec_chk(self, args):
         result = self.processor.adjust_variable(args[0], -1)
@@ -182,3 +185,25 @@ class Instructions:
         result = self.processor.adjust_variable(args[0], 1)
         compare = Utils.from_unsigned_word_to_signed_int(args[1])
         self.processor.branch(result > compare)
+
+    def instruction_jump(self, args):
+        delta = Utils.from_unsigned_word_to_signed_int(args[0])-2
+        self.processor.jump(delta)
+
+    def instruction_rtrue(self, args):
+        self.processor.ret(1)
+
+    def instruction_rfalse(self, args):
+        self.processor.ret(0)
+
+    def instruction_v9(self, args):
+        raise RuntimeError("Unimplemented " + __name__)
+
+    # z_insert_obj, make an object the first child of another object.
+    #
+    # args[0] : object to be moved
+    # args[1] : destination object
+    def instruction_insert_obj(self, args):
+        moving_object = args[0]
+        destination_object = args[1]
+        self.processor.object_table.insert_object(moving_object, destination_object)
