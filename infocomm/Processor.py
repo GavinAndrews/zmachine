@@ -237,3 +237,13 @@ class Processor:
             self.globals.write_global(variable - 16, value)
 
         return result
+
+    def pull(self, destination):
+        value = self.stack.pop_word()
+        if destination == 0:
+            self.stack.push_word(value)
+        elif destination < 16:
+            self.stack.write_local(destination, value)
+        else:
+            self.globals.write_global(destination - 16, value)
+

@@ -32,8 +32,8 @@ class Instructions:
         self.op2_functions = [self.illegal, self.instruction_je, self.unimplemented, self.unimplemented,
                               self.instruction_dec_chk, self.instruction_inc_chk, self.unimplemented,
                               self.unimplemented,
-                              self.instruction_or, self.instruction_and, self.instruction_test_attr, self.unimplemented,
-                              self.unimplemented, self.instruction_store, self.instruction_insert_obj, self.instruction_loadw,
+                              self.instruction_or, self.instruction_and, self.instruction_test_attr, self.instruction_set_attr,
+                              self.instruction_clear_attr, self.instruction_store, self.instruction_insert_obj, self.instruction_loadw,
                               self.instruction_loadb, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.instruction_add, self.instruction_sub, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
@@ -42,7 +42,7 @@ class Instructions:
         self.var_functions = [self.instruction_call, self.instruction_storew, self.instruction_storeb,
                               self.instruction_put_prop,
                               self.unimplemented, self.instruction_print_char, self.instruction_print_num, self.unimplemented,
-                              self.unimplemented, self.instruction_v9, self.unimplemented, self.unimplemented,
+                              self.instruction_push, self.instruction_pull, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
@@ -141,10 +141,22 @@ class Instructions:
     def instruction_test_attr(self, args):
         object_number = args[0]
         attribute_number = args[1]
-
         object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
         result = object_table_entry.test_attr(attribute_number)
         self.processor.branch(result)
+
+
+    def instruction_set_attr(self, args):
+        object_number = args[0]
+        attribute_number = args[1]
+        object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
+        object_table_entry.set_attr(attribute_number)
+
+    def instruction_clear_attr(self, args):
+        object_number = args[0]
+        attribute_number = args[1]
+        object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
+        object_table_entry.clear_attr(attribute_number)
 
     def instruction_other(self, args):
         raise RuntimeError("Unimplemented " + __name__)
@@ -207,3 +219,10 @@ class Instructions:
         moving_object = args[0]
         destination_object = args[1]
         self.processor.object_table.insert_object(moving_object, destination_object)
+
+
+    def instruction_push(self, args):
+        self.stack.push_word(args[0])
+
+    def instruction_pull(self, args):
+        self.processor.pull(args[0])

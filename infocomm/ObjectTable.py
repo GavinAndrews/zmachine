@@ -48,13 +48,25 @@ class ObjectTable:
     def insert_object(self, moving_object, destination_object):
         moving_object_table_entry = self.get_object_table_entry(moving_object)
         destination_object_table_entry = self.get_object_table_entry(destination_object)
-        print("-"*10+" Moving Object "+"-"*10)
-        self.show_object_tree(moving_object_table_entry)
-        print("-"*10+" Destination Object "+"-"*10)
-        self.show_object_tree(destination_object_table_entry)
+
+        # print("-"*40+ " BEFORE "+"-"*40)
+        # self.show_object_tree(moving_object_table_entry)
+        # self.show_object_tree(destination_object_table_entry)
+
         # unlink moving_object
+        moving_object_table_entry.unlink()
+
+
         # insert into destination at head
-        pass
+        previous_child = destination_object_table_entry.get_child_object_number()
+        destination_object_table_entry.set_child_object_number(moving_object_table_entry.n)
+        moving_object_table_entry.set_parent_object_number(destination_object_table_entry.n)
+        moving_object_table_entry.set_next_sibling_object_number(previous_child)
+
+        # print("-"*40+ " AFTER "+"-"*40)
+        # self.show_object_tree(moving_object_table_entry)
+        # self.show_object_tree(destination_object_table_entry)
+
 
     def show_object_tree(self, destination_object_table_entry):
         print(f"{destination_object_table_entry.describe()}", end=" : ")
@@ -70,7 +82,7 @@ class ObjectTable:
                 print(ote.describe(), end=" | ")
                 object_number = ote.get_next_sibling_object_number()
             print()
-        print("Elder Sibling Chain: ", end="")
+        print("Older Sibling Chain: ", end="")
         object_number = destination_object_table_entry.get_next_sibling_object_number()
         while object_number != 0:
             ote = self.get_object_table_entry(object_number)
@@ -78,7 +90,7 @@ class ObjectTable:
             object_number = ote.get_next_sibling_object_number()
         print()
         younger_entry = self.get_object_table_entry(destination_object_table_entry.get_prior_sibling_object_number())
-        elder_entry = self.get_object_table_entry(destination_object_table_entry.get_next_sibling_object_number())
-        print(f"Younger: {younger_entry.describe() if younger_entry is not None else 'NONE'}")
-        print(f"Elder: {elder_entry.describe() if elder_entry is not None else 'NONE'}")
+        older_entry = self.get_object_table_entry(destination_object_table_entry.get_next_sibling_object_number())
+        print(f"Near Sibs: Younger: {younger_entry.describe() if younger_entry is not None else 'NONE'}", end=", ")
+        print(f"Older: {older_entry.describe() if older_entry is not None else 'NONE'}")
 

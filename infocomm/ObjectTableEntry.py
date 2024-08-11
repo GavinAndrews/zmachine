@@ -13,11 +13,20 @@ class ObjectTableEntry(object):
     def get_parent_object_number(self):
         return int(self.memory[self.start_location + 4])
 
+    def set_parent_object_number(self, value):
+        self.memory[self.start_location + 4] = value & 0xFF
+
     def get_next_sibling_object_number(self):
         return int(self.memory[self.start_location + 5])
 
+    def set_next_sibling_object_number(self, value):
+        self.memory[self.start_location + 5] = value & 0xFF
+
     def get_child_object_number(self):
         return int(self.memory[self.start_location + 6])
+
+    def set_child_object_number(self, value):
+        self.memory[self.start_location + 6] = value & 0xFF
 
     def get_prior_sibling_object_number(self):
         parent_object_number = self.get_parent_object_number()
@@ -44,11 +53,47 @@ class ObjectTableEntry(object):
         return ptable.find(property_number)
 
     def test_attr(self, attribute_number):
-        attr_address = self.start_location+(attribute_number >> 3)
+        attr_address = self.start_location + (attribute_number >> 3)
         attrs = self.memory[attr_address]
         result = attrs & (0b1000000 >> (attribute_number & 0b111))
         return result
 
+    def set_attr(self, attribute_number):
+        attr_address = self.start_location + (attribute_number >> 3)
+        attrs = self.memory[attr_address]
+        attrs = attrs | (0b1000000 >> (attribute_number & 0b111))
+        self.memory[attr_address] = attrs
+
+    def clear_attr(self, attribute_number):
+        attr_address = self.start_location + (attribute_number >> 3)
+        attrs = self.memory[attr_address]
+        attrs = attrs & (~(0b1000000 >> (attribute_number & 0b111)) & 0xFF)
+        self.memory[attr_address] = attrs
+
     def describe(self):
         ptable = PropertyTable(self.memory, self.properties_address(), self.abbreviations)
         return f"[{self.n}] {ptable.description()}"
+
+    def unlink(self):
+        # If we have no parent... then we are not linked it so nothing to do...
+        parent_object_number = self.get_parent_object_number()
+        parent = self.object_table.get_object_table_entry(parent_object_number)
+        if parent_object_number == 0:
+            return
+        # We have a few things to do...
+        # Unlink ourselves from parent child chain... first find if we have a younger sibling...
+        prior_sibbling_object_number = self.get_prior_sibling_object_number()
+        next_sibling_object_number = self.get_next_sibling_object_number()
+
+        if prior_sibbling_object_number != 0:
+            prior_sibbling = self.object_table.get_object_table_entry(prior_sibbling_object_number)
+            prior_sibbling.set_next_sibling_object_number(self.get_next_sibling_object_number())
+        else:
+            if next_sibling_object_number != 0:
+                parent.set_child_object_number(next_sibling_object_number)
+
+        self.set_parent_object_number(0)
+        self.set_next_sibling_object_number(0)
+
+
+

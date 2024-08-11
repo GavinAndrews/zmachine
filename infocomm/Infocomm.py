@@ -29,5 +29,5 @@ objectTable = ObjectTable(start_location=header.OBJECT, memory=memory, abbreviat
 #     obj.dump_properties()
 
 processor = Processor(memory=memory, start=header.START, global_variables=global_variables, object_table=objectTable, abbreviation_table=abbreviationTable)
-for i in range(0, 128):
+for i in range(0, 256):
     processor.next_instruction()
