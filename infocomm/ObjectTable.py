@@ -1,3 +1,4 @@
+from Utils import Utils
 from infocomm.ObjectTableEntry import ObjectTableEntry
 
 
@@ -5,6 +6,7 @@ class ObjectTable:
     object_entry_size = 9
 
     def __init__(self, start_location, memory, abbreviations):
+        self.property_defaults_start_location = start_location
         self.object_start_location = start_location + 31 * 2
         self.memory = memory
         self.abbreviations = abbreviations
@@ -94,3 +96,6 @@ class ObjectTable:
         print(f"Near Sibs: Younger: {younger_entry.describe() if younger_entry is not None else 'NONE'}", end=", ")
         print(f"Older: {older_entry.describe() if older_entry is not None else 'NONE'}")
 
+
+    def get_property_default(self, property_number):
+        return Utils.mread_word(self.memory+self.property_defaults_start_location+2*(property_number-1))

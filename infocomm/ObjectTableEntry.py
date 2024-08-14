@@ -41,7 +41,6 @@ class ObjectTableEntry(object):
             sibling_object_number = sibling.get_next_sibling_object_number()
         return prior_sibling_object_number
 
-
     def properties_address(self):
         # Last two bytes of Object Table Entry is pointer to properties
         return int.from_bytes(self.memory[self.start_location + self.entry_size - 2
@@ -51,6 +50,14 @@ class ObjectTableEntry(object):
     def get_property_table_entry(self, property_number):
         ptable = PropertyTable(self.memory, self.properties_address(), self.abbreviations)
         return ptable.find(property_number)
+
+    def get_property_table_entry_value(self, property_number):
+        ptable = PropertyTable(self.memory, self.properties_address(), self.abbreviations)
+        property_entry = ptable.find(property_number)
+        if property_entry is None:
+            return self.object_table.get_property_default(property_number)
+        else:
+            return property_entry.get_value()
 
     def test_attr(self, attribute_number):
         attr_address = self.start_location + (attribute_number >> 3)
@@ -70,9 +77,12 @@ class ObjectTableEntry(object):
         attrs = attrs & (~(0b1000000 >> (attribute_number & 0b111)) & 0xFF)
         self.memory[attr_address] = attrs
 
-    def describe(self):
+    def get_description(self):
         ptable = PropertyTable(self.memory, self.properties_address(), self.abbreviations)
-        return f"[{self.n}] {ptable.description()}"
+        return ptable.description()
+
+    def describe(self):
+        return f"[{self.n}] {self.get_description()}"
 
     def unlink(self):
         # If we have no parent... then we are not linked it so nothing to do...
@@ -94,6 +104,3 @@ class ObjectTableEntry(object):
 
         self.set_parent_object_number(0)
         self.set_next_sibling_object_number(0)
-
-
-

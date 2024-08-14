@@ -19,3 +19,12 @@ class PropertyTableEntry:
             Utils.mwrite_byte(self.memory, value_address, value)
         else:
             Utils.mwrite_word(self.memory, value_address, value)
+
+    def get_value(self):
+        n, l = self.decode_n_and_l(self.memory[self.address])
+        value_address = self.address+1
+        if l == 1:
+            value = Utils.mread_byte(self.memory, value_address)
+        else:
+            value = Utils.mread_word(self.memory, value_address)
+        return value

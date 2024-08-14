@@ -19,29 +19,33 @@ class Instructions:
         self.stack = stack
         self.quiet = False
 
-        self.op0_functions = [self.instruction_rtrue, self.instruction_rfalse, self.instruction_print, self.unimplemented,
+        self.op0_functions = [self.instruction_rtrue, self.instruction_rfalse, self.instruction_print,
+                              self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.instruction_new_line,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
 
-        self.op1_functions = [self.instruction_jz, self.unimplemented, self.unimplemented, self.unimplemented,
+        self.op1_functions = [self.instruction_jz, self.instruction_get_sibling, self.instruction_get_child, self.instruction_get_parent,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
-                              self.unimplemented, self.unimplemented, self.unimplemented, self.instruction_ret,
+                              self.unimplemented, self.unimplemented, self.instruction_print_obj, self.instruction_ret,
                               self.instruction_jump, self.unimplemented, self.unimplemented, self.unimplemented]
 
         self.op2_functions = [self.illegal, self.instruction_je, self.unimplemented, self.unimplemented,
-                              self.instruction_dec_chk, self.instruction_inc_chk, self.unimplemented,
+                              self.instruction_dec_chk, self.instruction_inc_chk, self.instruction_jin,
                               self.unimplemented,
-                              self.instruction_or, self.instruction_and, self.instruction_test_attr, self.instruction_set_attr,
-                              self.instruction_clear_attr, self.instruction_store, self.instruction_insert_obj, self.instruction_loadw,
-                              self.instruction_loadb, self.unimplemented, self.unimplemented, self.unimplemented,
+                              self.instruction_or, self.instruction_and, self.instruction_test_attr,
+                              self.instruction_set_attr,
+                              self.instruction_clear_attr, self.instruction_store, self.instruction_insert_obj,
+                              self.instruction_loadw,
+                              self.instruction_loadb, self.instruction_get_prop, self.unimplemented, self.unimplemented,
                               self.instruction_add, self.instruction_sub, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
 
         self.var_functions = [self.instruction_call, self.instruction_storew, self.instruction_storeb,
                               self.instruction_put_prop,
-                              self.unimplemented, self.instruction_print_char, self.instruction_print_num, self.unimplemented,
+                              self.unimplemented, self.instruction_print_char, self.instruction_print_num,
+                              self.unimplemented,
                               self.instruction_push, self.instruction_pull, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
@@ -75,12 +79,9 @@ class Instructions:
     def instruction_call(self, args):
         if args[0] == 0x0000:
             # When the address 0 is called as a routine, nothing happens and the return value is false.
-            self.store(0)
+            self.processor.store(0)
         else:
             self.processor.call(args[0], args[1:], 0)
-
-    def store(self, param):
-        raise RuntimeError("Unimplemented call")
 
     # storew
     # args[0] address of table, [1] index in table, [2] value
@@ -145,7 +146,6 @@ class Instructions:
         result = object_table_entry.test_attr(attribute_number)
         self.processor.branch(result)
 
-
     def instruction_set_attr(self, args):
         object_number = args[0]
         attribute_number = args[1]
@@ -199,7 +199,7 @@ class Instructions:
         self.processor.branch(result > compare)
 
     def instruction_jump(self, args):
-        delta = Utils.from_unsigned_word_to_signed_int(args[0])-2
+        delta = Utils.from_unsigned_word_to_signed_int(args[0]) - 2
         self.processor.jump(delta)
 
     def instruction_rtrue(self, args):
@@ -207,9 +207,6 @@ class Instructions:
 
     def instruction_rfalse(self, args):
         self.processor.ret(0)
-
-    def instruction_v9(self, args):
-        raise RuntimeError("Unimplemented " + __name__)
 
     # z_insert_obj, make an object the first child of another object.
     #
@@ -220,9 +217,69 @@ class Instructions:
         destination_object = args[1]
         self.processor.object_table.insert_object(moving_object, destination_object)
 
-
     def instruction_push(self, args):
         self.stack.push_word(args[0])
 
     def instruction_pull(self, args):
         self.processor.pull(args[0])
+
+    # jin obj1 obj2?(label)
+    # Jump if object a is a direct child of b, i.e., if parent of a is b.
+    def instruction_jin(self, args):
+        child = args[0]
+        parent = args[1]
+
+        if child == 0:
+            self.processor.branch(parent == 0)
+        else:
+            child_table_entry = self.processor.object_table.get_object_table_entry(child)
+            self.processor.branch(child_table_entry.get_parent_object_number() == parent)
+
+    # print_obj object
+    # Print short name of object (the Z-encoded string in the object header, not a property).
+    # If the object number is invalid, the interpreter should halt with a suitable error message.
+    def instruction_print_obj(self, args):
+        object_number = args[0]
+        object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
+        print(object_table_entry.get_description(), end="")
+
+    # get_parent object → (result)
+    # Get parent object (note that this has no “branch if exists” clause).
+    def instruction_get_parent(self, args):
+        object_number = args[0]
+        object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
+        parent = object_table_entry.get_parent_object_number()
+        self.processor.store(parent)
+
+    # get_child object → (result)?(label)
+    # Get first object contained in given object, branching if this exists, i.e. is not nothing (i.e., is not 0).
+    def instruction_get_child(self, args):
+        object_number = args[0]
+        if object_number == 0:
+            first_child = 0
+        else:
+            object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
+            first_child = object_table_entry.get_child_object_number()
+        self.processor.store(first_child)
+        self.processor.branch(first_child != 0)
+
+    def instruction_v9(self, args):
+        raise RuntimeError("Unimplemented " + __name__)
+
+    # get_prop object property → (result)
+    # Read property from object (resulting in the default value if it had no such declared property).
+    # If the property has length 1, the value is only that byte.
+    # If it has length 2, the first two bytes of the property are taken as a word value.
+    # It is illegal for the opcode to be used if the property has length greater than 2, and the result is unspecified.
+    def instruction_get_prop(self, args):
+        object_number = args[0]
+        if object_number == 0:
+            self.processor.store(0)
+        else:
+            property_number = args[1]
+            object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
+            value = object_table_entry.get_property_table_entry_value(property_number)
+            self.processor.store(value)
+
+    def instruction_get_sibling(self, args):
+        raise RuntimeError("Unimplemented " + __name__)
