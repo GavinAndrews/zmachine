@@ -28,11 +28,11 @@ class Instructions:
 
         self.op1_functions = [self.instruction_jz, self.instruction_get_sibling, self.instruction_get_child,
                               self.instruction_get_parent,
-                              self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
+                              self.unimplemented, self.instruction_inc, self.instruction_dec, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.instruction_print_obj, self.instruction_ret,
                               self.instruction_jump, self.unimplemented, self.unimplemented, self.unimplemented]
 
-        self.op2_functions = [self.illegal, self.instruction_je, self.unimplemented, self.unimplemented,
+        self.op2_functions = [self.illegal, self.instruction_je, self.instruction_jl, self.instruction_jg,
                               self.instruction_dec_chk, self.instruction_inc_chk, self.instruction_jin,
                               self.unimplemented,
                               self.instruction_or, self.instruction_and, self.instruction_test_attr,
@@ -130,6 +130,18 @@ class Instructions:
     def instruction_jz(self, args):
         self.processor.branch(args[0] == 0)
 
+    def instruction_jl(self, args):
+        # Arithmetic is Signed, Args and Stack etc are considered unsigned
+        a0 = Utils.from_unsigned_word_to_signed_int(args[0])
+        a1 = Utils.from_unsigned_word_to_signed_int(args[1])
+        self.processor.branch(a0 < a1)
+
+    def instruction_jg(self, args):
+        # Arithmetic is Signed, Args and Stack etc are considered unsigned
+        a0 = Utils.from_unsigned_word_to_signed_int(args[0])
+        a1 = Utils.from_unsigned_word_to_signed_int(args[1])
+        self.processor.branch(a0 > a1)
+
     def instruction_ret(self, args):
         self.processor.ret(args[0])
 
@@ -190,10 +202,16 @@ class Instructions:
     def instruction_print_char(self, args):
         print(ZStrings.singleZSCIIChar(args[0]), end="")
 
+    def instruction_dec(self, args):
+        self.processor.adjust_variable(args[0], -1)
+
     def instruction_dec_chk(self, args):
         result = self.processor.adjust_variable(args[0], -1)
         compare = Utils.from_unsigned_word_to_signed_int(args[1])
         self.processor.branch(result < compare)
+
+    def instruction_inc(self, args):
+        self.processor.adjust_variable(args[0], 1)
 
     def instruction_inc_chk(self, args):
         result = self.processor.adjust_variable(args[0], 1)
@@ -298,6 +316,5 @@ class Instructions:
     # ret_popped
     # Pops top of stack and returns that. (This is equivalent to ret sp, but is one byte cheaper.)
     def instruction_ret_popped(self, args):
-        self.stack.dump()
         value = self.stack.pop_word()
         self.processor.ret(value)
