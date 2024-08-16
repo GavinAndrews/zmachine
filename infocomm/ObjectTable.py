@@ -98,4 +98,4 @@ class ObjectTable:
 
 
     def get_property_default(self, property_number):
-        return Utils.mread_word(self.memory+self.property_defaults_start_location+2*(property_number-1))
+        return Utils.mread_word(self.memory, self.property_defaults_start_location+2*(property_number-1))

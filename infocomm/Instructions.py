@@ -22,10 +22,12 @@ class Instructions:
         self.op0_functions = [self.instruction_rtrue, self.instruction_rfalse, self.instruction_print,
                               self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
-                              self.unimplemented, self.unimplemented, self.unimplemented, self.instruction_new_line,
+                              self.instruction_ret_popped, self.unimplemented, self.unimplemented,
+                              self.instruction_new_line,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
 
-        self.op1_functions = [self.instruction_jz, self.instruction_get_sibling, self.instruction_get_child, self.instruction_get_parent,
+        self.op1_functions = [self.instruction_jz, self.instruction_get_sibling, self.instruction_get_child,
+                              self.instruction_get_parent,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.instruction_print_obj, self.instruction_ret,
                               self.instruction_jump, self.unimplemented, self.unimplemented, self.unimplemented]
@@ -120,7 +122,7 @@ class Instructions:
         # Jump if a is equal to any of the subsequent operands. (Thus @je a never jumps and @je a b jumps if a = b.)
         match = False
         for i in range(1, len(args)):
-            if args[0] == args[i - 1]:
+            if args[0] == args[i]:
                 match = True
                 break
         self.processor.branch(match)
@@ -281,5 +283,21 @@ class Instructions:
             value = object_table_entry.get_property_table_entry_value(property_number)
             self.processor.store(value)
 
+    # get_sibling object → (result)?(label)
+    # Get next object in tree, branching if this exists, i.e. is not 0.
     def instruction_get_sibling(self, args):
-        raise RuntimeError("Unimplemented " + __name__)
+        object_number = args[0]
+        if object_number == 0:
+            next_sibling = 0
+        else:
+            object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
+            next_sibling = object_table_entry.get_next_sibling_object_number()
+        self.processor.store(next_sibling)
+        self.processor.branch(next_sibling != 0)
+
+    # ret_popped
+    # Pops top of stack and returns that. (This is equivalent to ret sp, but is one byte cheaper.)
+    def instruction_ret_popped(self, args):
+        self.stack.dump()
+        value = self.stack.pop_word()
+        self.processor.ret(value)

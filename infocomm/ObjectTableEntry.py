@@ -62,19 +62,19 @@ class ObjectTableEntry(object):
     def test_attr(self, attribute_number):
         attr_address = self.start_location + (attribute_number >> 3)
         attrs = self.memory[attr_address]
-        result = attrs & (0b1000000 >> (attribute_number & 0b111))
+        result = attrs & (0b10000000 >> (attribute_number & 0b111))
         return result
 
     def set_attr(self, attribute_number):
         attr_address = self.start_location + (attribute_number >> 3)
         attrs = self.memory[attr_address]
-        attrs = attrs | (0b1000000 >> (attribute_number & 0b111))
+        attrs = attrs | (0b10000000 >> (attribute_number & 0b111))
         self.memory[attr_address] = attrs
 
     def clear_attr(self, attribute_number):
         attr_address = self.start_location + (attribute_number >> 3)
         attrs = self.memory[attr_address]
-        attrs = attrs & (~(0b1000000 >> (attribute_number & 0b111)) & 0xFF)
+        attrs = attrs & (~(0b10000000 >> (attribute_number & 0b111)) & 0xFF)
         self.memory[attr_address] = attrs
 
     def get_description(self):

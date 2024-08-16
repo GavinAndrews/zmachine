@@ -40,6 +40,10 @@ class Processor:
 
     def next_instruction(self):
         current_pc = self.pc
+
+        if current_pc == 0x8cee:
+            print("BREAK")
+
         opcode = self.get_byte_and_advance()
 
         opcode_form = OpcodeForm(opcode >> 6)
