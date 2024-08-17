@@ -17,7 +17,7 @@ class Instructions:
 
         self.processor = processor
         self.stack = stack
-        self.quiet = False
+        self.quiet = True
 
         self.op0_functions = [self.instruction_rtrue, self.instruction_rfalse, self.instruction_print,
                               self.unimplemented,
