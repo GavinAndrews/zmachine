@@ -28,12 +28,13 @@ class OperandType(IntEnum):
 
 
 class Processor:
-    def __init__(self, memory, start, global_variables, object_table, abbreviation_table):
+    def __init__(self, memory, start, global_variables, object_table, abbreviation_table, dictionary):
         self.memory = memory
         self.pc = start
         self.globals = global_variables
         self.object_table = object_table
         self.abbreviation_table = abbreviation_table
+        self.dictionary = dictionary
         self.args = []
         self.stack = Stack()
         self.instructions = Instructions(self, self.stack)

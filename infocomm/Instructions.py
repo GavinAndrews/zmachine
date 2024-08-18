@@ -17,7 +17,7 @@ class Instructions:
 
         self.processor = processor
         self.stack = stack
-        self.quiet = True
+        self.quiet = False
 
         self.op0_functions = [self.instruction_rtrue, self.instruction_rfalse, self.instruction_print,
                               self.unimplemented,
@@ -46,7 +46,7 @@ class Instructions:
 
         self.var_functions = [self.instruction_call, self.instruction_storew, self.instruction_storeb,
                               self.instruction_put_prop,
-                              self.unimplemented, self.instruction_print_char, self.instruction_print_num,
+                              self.instruction_read, self.instruction_print_char, self.instruction_print_num,
                               self.unimplemented,
                               self.instruction_push, self.instruction_pull, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
@@ -318,3 +318,34 @@ class Instructions:
     def instruction_ret_popped(self, args):
         value = self.stack.pop_word()
         self.processor.ret(value)
+
+    def instruction_read(self, args):
+        text_addr = args[0]
+        parse_addr = args[1]
+
+        in_string = "open      mailbox"
+
+        max_chars = Utils.mread_byte(self.processor.memory, text_addr)
+        print(max_chars, end="")
+
+        seperators = self.processor.dictionary.get_seperators()
+        in_string = in_string.lower()
+
+        words = []
+        start = None
+        current = ""
+        for index, c in enumerate(in_string):
+            if c != ' ':
+                if start is None:
+                    start = index
+                current += c
+            else:
+                if len(current) > 0:
+                    words.append((start, current))
+                start = None
+                current = ""
+        if len(current) > 0:
+            words.append((start, current))
+
+        print(words)
+        pass

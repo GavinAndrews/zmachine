@@ -32,6 +32,12 @@ class DictionaryTable:
         self.dictionary_start = start_location
         print(f"{self.dictionary_start:04X}                            Dict Start")
 
+    def get_seperators(self):
+        return [chr(s) for s in self.separators]
+
+    def get_word_count(self):
+        return self.word_count
+
     def find(self, n):
         return DictionaryTableEntry(self.dictionary_start + (n - 1) * self.entry_length, self.memory,
                                     self.entry_length, self.abbreviations)

@@ -1,6 +1,6 @@
 alphabet_A0 = "abcdefghijklmnopqrstuvwxyz"
 alphabet_A1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-alphabet_A2 = " \n0123456789.,!?_#'\"/\\-:()"
+alphabet_A2 = " ^0123456789.,!?_#'\"/\\-:()"
 
 class ZStringContext:
     def __init__(self):
