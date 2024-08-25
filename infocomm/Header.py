@@ -15,6 +15,8 @@ class Header:
         self.PLENTH = int.from_bytes(memory[26:28], 'big')
         self.PCHKSUM = int.from_bytes(memory[28:30], 'big')
 
+
+    def dump(self):
         print(self.ZVERSION_version, self.ZVERSION_mode)
         print(self.ZORKID)
         print(self.ENDLOD)
