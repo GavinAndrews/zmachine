@@ -1,8 +1,8 @@
 import bisect
 from collections import UserList
 
-from Utils import Utils
 from infocomm.DictionaryTableEntry import DictionaryTableEntry
+from infocomm.Utils import Utils
 
 
 class DictionaryTable:
