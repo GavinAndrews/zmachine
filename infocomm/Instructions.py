@@ -13,11 +13,12 @@ class OpcodeType(IntEnum):
 
 
 class Instructions:
-    def __init__(self, processor, stack):
+    def __init__(self, processor, stack, dictionary):
 
         self.processor = processor
         self.stack = stack
         self.quiet = False
+        self.dictionary = dictionary
 
         self.op0_functions = [self.instruction_rtrue, self.instruction_rfalse, self.instruction_print,
                               self.unimplemented,
@@ -34,14 +35,14 @@ class Instructions:
 
         self.op2_functions = [self.illegal, self.instruction_je, self.instruction_jl, self.instruction_jg,
                               self.instruction_dec_chk, self.instruction_inc_chk, self.instruction_jin,
-                              self.unimplemented,
+                              self.instruction_test,
                               self.instruction_or, self.instruction_and, self.instruction_test_attr,
                               self.instruction_set_attr,
                               self.instruction_clear_attr, self.instruction_store, self.instruction_insert_obj,
                               self.instruction_loadw,
                               self.instruction_loadb, self.instruction_get_prop, self.unimplemented, self.unimplemented,
-                              self.instruction_add, self.instruction_sub, self.unimplemented, self.unimplemented,
-                              self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
+                              self.instruction_add, self.instruction_sub, self.instruction_mul, self.instruction_div,
+                              self.instruction_mod, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
 
         self.var_functions = [self.instruction_call, self.instruction_storew, self.instruction_storeb,
@@ -102,7 +103,10 @@ class Instructions:
             self.processor.globals.write_global(variable - 16, value)
 
     def instruction_storeb(self, args):
-        raise RuntimeError("Unimplemented storeb")
+        table_address = args[0]
+        offset = args[1]
+        value = args[2]
+        Utils.mwrite_byte(self.processor.memory, table_address + offset, value)
 
     def instruction_add(self, args):
         # Arithmetic is Signed, Args and Stack etc are considered unsigned
@@ -116,6 +120,27 @@ class Instructions:
         a0 = Utils.from_unsigned_word_to_signed_int(args[0])
         a1 = Utils.from_unsigned_word_to_signed_int(args[1])
         result = a0 - a1
+        self.processor.store(Utils.from_signed_int_to_unsigned_word(result))
+
+    def instruction_mul(self, args):
+        # Arithmetic is Signed, Args and Stack etc are considered unsigned
+        a0 = Utils.from_unsigned_word_to_signed_int(args[0])
+        a1 = Utils.from_unsigned_word_to_signed_int(args[1])
+        result = a0 * a1
+        self.processor.store(Utils.from_signed_int_to_unsigned_word(result))
+
+    def instruction_div(self, args):
+        # Arithmetic is Signed, Args and Stack etc are considered unsigned
+        a0 = Utils.from_unsigned_word_to_signed_int(args[0])
+        a1 = Utils.from_unsigned_word_to_signed_int(args[1])
+        result = a0 / a1
+        self.processor.store(Utils.from_signed_int_to_unsigned_word(result))
+
+    def instruction_mod(self, args):
+        # Arithmetic is Signed, Args and Stack etc are considered unsigned
+        a0 = Utils.from_unsigned_word_to_signed_int(args[0])
+        a1 = Utils.from_unsigned_word_to_signed_int(args[1])
+        result = a0 % a1
         self.processor.store(Utils.from_signed_int_to_unsigned_word(result))
 
     def instruction_je(self, args):
@@ -323,29 +348,77 @@ class Instructions:
         text_addr = args[0]
         parse_addr = args[1]
 
-        in_string = "open      mailbox"
-
         max_chars = Utils.mread_byte(self.processor.memory, text_addr)
-        print(max_chars, end="")
+        text_addr += 1
 
-        seperators = self.processor.dictionary.get_seperators()
+        print(f"max_chars={max_chars}")
+
+        separators = set(self.dictionary.get_seperators())
+        space_in_separators = ' ' in separators
+        if not space_in_separators:
+            separators.add(" ")
+
+        in_string = "open mailbox"
         in_string = in_string.lower()
 
-        words = []
-        start = None
-        current = ""
         for index, c in enumerate(in_string):
-            if c != ' ':
-                if start is None:
-                    start = index
-                current += c
-            else:
-                if len(current) > 0:
-                    words.append((start, current))
-                start = None
-                current = ""
-        if len(current) > 0:
-            words.append((start, current))
+            Utils.mwrite_byte(self.processor.memory, text_addr + index, ord(c) & 0xFF)
 
-        print(words)
-        pass
+        # Null terminator
+        Utils.mwrite_byte(self.processor.memory, text_addr + len(in_string), 0)
+
+        words = []
+        start = 0
+        current_word = ""
+        for i, c in enumerate(in_string):
+            if c in separators:
+                if len(current_word) > 0:
+                    words.append((start, current_word))
+                    current_word = ""
+                if c != ' ' or space_in_separators:
+                    words.append((i, c))
+                start = i + 1
+            else:
+                current_word = current_word + c
+
+        # Last Word
+        if len(current_word) > 0:
+            words.append((start, current_word))
+
+        max_tokens = Utils.mread_byte(self.processor.memory, parse_addr)
+        parse_addr += 1
+
+        print(f"max_tokens={max_tokens}")
+
+        # Token Count
+        Utils.mwrite_byte(self.processor.memory, parse_addr, len(words))
+        parse_addr += 1
+
+        # TODO Max Tokens Exceeded?
+
+        # Now Tokenize words...
+        for start, word in words:
+
+            encoded_zstring = ZStrings.convertToEncodedWords(word)
+
+            result = self.dictionary.find_phrase(encoded_zstring)
+
+            if result is not None:
+                dictionary_table_entry = self.dictionary.find(result)
+                dict_addr = dictionary_table_entry.get_start_address()
+                Utils.mwrite_word(self.processor.memory, parse_addr, dict_addr)
+            else:
+                Utils.mwrite_word(self.processor.memory, parse_addr, 0)
+
+            parse_addr += 2
+
+            Utils.mwrite_byte(self.processor.memory, parse_addr, len(word))
+            parse_addr += 1
+
+            Utils.mwrite_byte(self.processor.memory, parse_addr, start + 1)
+            parse_addr += 1
+
+    def instruction_test(self, args):
+        bitmap = args[0]
+        flags = args[1]
+        self.processor.branch(bitmap & flags == flags)

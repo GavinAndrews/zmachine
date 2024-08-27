@@ -37,7 +37,7 @@ class Processor:
         self.dictionary = dictionary
         self.args = []
         self.stack = Stack()
-        self.instructions = Instructions(self, self.stack)
+        self.instructions = Instructions(self, self.stack, self.dictionary)
 
     def next_instruction(self):
         current_pc = self.pc
