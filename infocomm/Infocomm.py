@@ -23,9 +23,9 @@ abbreviationTable = AbbreviationTable(start_location=header.FWORDS, memory=memor
 
 dictionary_table = DictionaryTable(header.VOCAB, memory, abbreviationTable)
 
-for i in range(1, dictionary_table.get_word_count() + 1):
-    dictionary_table_entry = dictionary_table.find(i)
-    dictionary_table_entry.dump()
+# for i in range(1, dictionary_table.get_word_count() + 1):
+#     dictionary_table_entry = dictionary_table.find(i)
+#     dictionary_table_entry.dump()
 
 objectTable = ObjectTable(start_location=header.OBJECT, memory=memory, abbreviations=abbreviationTable)
 
@@ -36,5 +36,5 @@ objectTable = ObjectTable(start_location=header.OBJECT, memory=memory, abbreviat
 
 processor = Processor(memory=memory, start=header.START, global_variables=global_variables, object_table=objectTable,
                       abbreviation_table=abbreviationTable, dictionary=dictionary_table)
-for i in range(0, 1024):
+while True:
     processor.next_instruction()
