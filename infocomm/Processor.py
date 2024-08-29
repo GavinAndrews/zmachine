@@ -42,7 +42,7 @@ class Processor:
     def next_instruction(self):
         current_pc = self.pc
 
-        if self.pc == 0x5907:
+        if self.pc == 0x6AB4:
             print("")
 
         opcode = self.get_byte_and_advance()
@@ -148,18 +148,17 @@ class Processor:
             offset = offset_1 << 8 | offset_2
             # Convert to signed
             offset = Utils.from_unsigned_word_to_signed_int(offset)
-            pass
         else:
             offset = offset_1
 
         if specifier & 0x80:
-            if offset > 1:
+            if offset == 0 or offset == 1:
+                # Special Case 0 False, 1 True
+                self.ret(offset)
+            else:
                 pc = self.get_pc()
                 pc += offset - 2
                 self.set_pc(pc)
-            else:
-                # Special Case 0 False, 1 True
-                self.ret(offset)
 
     def jump(self, delta):
         self.set_pc(self.pc + delta)

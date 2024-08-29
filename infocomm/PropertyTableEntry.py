@@ -28,3 +28,6 @@ class PropertyTableEntry:
         else:
             value = Utils.mread_word(self.memory, value_address)
         return value
+
+    def get_address(self):
+        return self.address

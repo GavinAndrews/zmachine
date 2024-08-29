@@ -59,6 +59,14 @@ class ObjectTableEntry(object):
         else:
             return property_entry.get_value()
 
+    def get_property_table_entry_address(self, property_number):
+        ptable = PropertyTable(self.memory, self.properties_address(), self.abbreviations)
+        property_entry = ptable.find(property_number)
+        if property_entry is None:
+            return 0
+        else:
+            return property_entry.get_address()
+
     def test_attr(self, attribute_number):
         attr_address = self.start_location + (attribute_number >> 3)
         attrs = self.memory[attr_address]

@@ -40,7 +40,7 @@ class Instructions:
                               self.instruction_set_attr,
                               self.instruction_clear_attr, self.instruction_store, self.instruction_insert_obj,
                               self.instruction_loadw,
-                              self.instruction_loadb, self.instruction_get_prop, self.unimplemented, self.unimplemented,
+                              self.instruction_loadb, self.instruction_get_prop, self.instruction_get_prop_addr, self.unimplemented,
                               self.instruction_add, self.instruction_sub, self.instruction_mul, self.instruction_div,
                               self.instruction_mod, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
@@ -63,7 +63,7 @@ class Instructions:
             implementation = self.all_functions[op_type][op_number]
             if not self.quiet:
                 print(
-                    f"EXECUTE: {current_pc:04X} {opcode:02X} {implementation.__name__.replace("instruction_", ""):12} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
+                    f"EXECUTE: {current_pc:04X} {opcode:02X} {implementation.__name__.replace('instruction_', ''):12} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
             implementation(args)
         except RuntimeError as re:
             print(f"{re} : {current_pc:04X} {opcode:02X} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
@@ -422,3 +422,15 @@ class Instructions:
         bitmap = args[0]
         flags = args[1]
         self.processor.branch(bitmap & flags == flags)
+
+    def instruction_get_prop_addr(self, args):
+        object_number = args[0]
+        if object_number == 0:
+            self.processor.store(0)
+        else:
+            mask = 0x1f
+            property_number = args[1] & mask
+            object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
+            addr = object_table_entry.get_property_table_entry_address(property_number)
+            # +1 to skip size byte in property table entry
+            self.processor.store(addr+1)
