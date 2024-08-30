@@ -8873,7 +8873,7 @@ Routine: 0x06D1C               Called from routine(s) at 0x06950, 0x06A52
 06D30 A4 03 00                 GET_PROP_LEN L02 -> -(SP)
 06D33 57 00 02 00              DIV (SP)+ 0x02 -> -(SP)
 06D37 55 00 01 00              SUB (SP)+ 0x01 -> -(SP)
-06D3B E0 2A 36 11 6A 03 00 00  CALL 0x6C22 (G5A,L02,(SP)+) -> -(SP)
+06D3B E0 2A 36 11 6A 03 00 00  CALL - (G5A,L02,(SP)+) -> -(SP)
 06D43 A0 00 C0                 JZ (SP)+ [TRUE] RFALSE
 06D46 A0 69 DB                 JZ G59 [TRUE] 0x6D62
 06D49 52 01 10 03              GET_PROP_ADDR L00 PROPERTY16 -> L2

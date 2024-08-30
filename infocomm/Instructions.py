@@ -17,7 +17,7 @@ class Instructions:
 
         self.processor = processor
         self.stack = stack
-        self.quiet = True
+        self.quiet = False
         self.dictionary = dictionary
 
         self.op0_functions = [self.instruction_rtrue, self.instruction_rfalse, self.instruction_print,
@@ -133,7 +133,7 @@ class Instructions:
         # Arithmetic is Signed, Args and Stack etc are considered unsigned
         a0 = Utils.from_unsigned_word_to_signed_int(args[0])
         a1 = Utils.from_unsigned_word_to_signed_int(args[1])
-        result = a0 // a1
+        result = int(a0 / a1)
         self.processor.store(Utils.from_signed_int_to_unsigned_word(result))
 
     def instruction_mod(self, args):
@@ -453,6 +453,6 @@ class Instructions:
             addr -= 1
 
             # V1-3 only, TODO Add later version support
-            property_length = Utils.mread_byte(self.processor.memory, addr) >> 5 + 1
+            property_length = (Utils.mread_byte(self.processor.memory, addr) >> 5) + 1
 
             self.processor.store(property_length)

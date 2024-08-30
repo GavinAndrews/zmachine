@@ -42,7 +42,7 @@ class Processor:
     def next_instruction(self):
         current_pc = self.pc
 
-        if self.pc == 0x6D33:
+        if self.pc == 0x6d30:
             print("")
 
         opcode = self.get_byte_and_advance()
