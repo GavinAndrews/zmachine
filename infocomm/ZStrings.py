@@ -66,6 +66,10 @@ def fromZChar(value, abbreviation_table, context):
         context.building_ZSCII = True
         context.partial_ZSCII = None
         return ""
+    elif value == 7 and context.current_alphabet == alphabet_A2:
+        zscii = "\n"
+        context.current_alphabet = alphabet_A0
+        return zscii
     else:
         zscii = context.current_alphabet[value]
         context.current_alphabet = alphabet_A0

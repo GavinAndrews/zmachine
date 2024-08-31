@@ -63,7 +63,7 @@ class ObjectTableEntry(object):
         ptable = PropertyTable(self.memory, self.properties_address(), self.abbreviations)
         property_entry = ptable.find(property_number)
         if property_entry is None:
-            return 0
+            return None
         else:
             return property_entry.get_address()
 
@@ -109,6 +109,8 @@ class ObjectTableEntry(object):
         else:
             if next_sibling_object_number != 0:
                 parent.set_child_object_number(next_sibling_object_number)
+            else:
+                parent.set_child_object_number(0)
 
         self.set_parent_object_number(0)
         self.set_next_sibling_object_number(0)

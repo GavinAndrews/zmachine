@@ -3,6 +3,7 @@ from enum import IntEnum
 
 import ZStrings
 from Utils import Utils
+from infocomm.TraceFile import TraceFile
 
 
 class OpcodeType(IntEnum):
@@ -17,13 +18,15 @@ class Instructions:
 
         self.processor = processor
         self.stack = stack
-        self.quiet = False
+        self.quiet = True
         self.dictionary = dictionary
 
+        self.trace_file = TraceFile("H:\\linux_trace.txt")
+
         self.op0_functions = [self.instruction_rtrue, self.instruction_rfalse, self.instruction_print,
-                              self.unimplemented,
+                              self.instruction_print_ret,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
-                              self.instruction_ret_popped, self.unimplemented, self.unimplemented,
+                              self.instruction_ret_popped, self.unimplemented, self.instruction_quit,
                               self.instruction_new_line,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
 
@@ -31,7 +34,7 @@ class Instructions:
                               self.instruction_get_parent,
                               self.instruction_get_prop_len, self.instruction_inc, self.instruction_dec, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.instruction_print_obj, self.instruction_ret,
-                              self.instruction_jump, self.unimplemented, self.unimplemented, self.unimplemented]
+                              self.instruction_jump, self.instruction_print_paddr, self.unimplemented, self.unimplemented]
 
         self.op2_functions = [self.illegal, self.instruction_je, self.instruction_jl, self.instruction_jg,
                               self.instruction_dec_chk, self.instruction_inc_chk, self.instruction_jin,
@@ -64,6 +67,12 @@ class Instructions:
             if not self.quiet:
                 print(
                     f"EXECUTE: {current_pc:04X} {opcode:02X} {implementation.__name__.replace('instruction_', ''):12} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
+
+            trace_address = self.trace_file.read().strip()
+            current_pc = f"{current_pc:04X}"
+            if trace_address != current_pc:
+                print(f"BAD {trace_address} {current_pc}")
+                exit()
             implementation(args)
         except RuntimeError as re:
             print(f"{re} : {current_pc:04X} {opcode:02X} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
@@ -196,9 +205,6 @@ class Instructions:
         attribute_number = args[1]
         object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
         object_table_entry.clear_attr(attribute_number)
-
-    def instruction_print(self, args):
-        self.processor.print_embedded()
 
     def instruction_new_line(self, args):
         print("")
@@ -348,14 +354,14 @@ class Instructions:
         max_chars = Utils.mread_byte(self.processor.memory, text_addr)
         text_addr += 1
 
-        print(f"max_chars={max_chars}")
+        #print(f"max_chars={max_chars}")
 
         separators = set(self.dictionary.get_seperators())
         space_in_separators = ' ' in separators
         if not space_in_separators:
             separators.add(" ")
 
-        in_string = "open mailbox"
+        in_string = input() # "open mailbox"
         in_string = in_string.lower()
 
         for index, c in enumerate(in_string):
@@ -385,7 +391,7 @@ class Instructions:
         max_tokens = Utils.mread_byte(self.processor.memory, parse_addr)
         parse_addr += 1
 
-        print(f"max_tokens={max_tokens}")
+        #print(f"max_tokens={max_tokens}")
 
         # Token Count
         Utils.mwrite_byte(self.processor.memory, parse_addr, len(words))
@@ -430,7 +436,10 @@ class Instructions:
             object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
             addr = object_table_entry.get_property_table_entry_address(property_number)
             # +1 to skip size byte in property table entry
-            self.processor.store(addr+1)
+            if addr is not None:
+                self.processor.store(addr+1)
+            else:
+                self.processor.store(0)
 
     def instruction_other(self, args):
         raise RuntimeError("Unimplemented " + __name__)
@@ -456,3 +465,21 @@ class Instructions:
             property_length = (Utils.mread_byte(self.processor.memory, addr) >> 5) + 1
 
             self.processor.store(property_length)
+
+    def instruction_print(self, args):
+        self.processor.print_embedded()
+
+    # print_ret
+    # 0OP:179 3 print_ret <literal-string>
+    # Print the quoted (literal) Z-encoded string, then print a new-line and then return true (i.e., 1).
+    def instruction_print_ret(self, args):
+        self.processor.print_embedded()
+        print("")  # New Line
+        self.processor.ret(1)
+
+
+    def instruction_print_paddr(self, args):
+        self.processor.print_paddr(args[0])
+
+    def instruction_quit(self, args):
+        sys.exit(0)

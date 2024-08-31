@@ -42,8 +42,8 @@ class Processor:
     def next_instruction(self):
         current_pc = self.pc
 
-        if self.pc == 0x6d30:
-            print("")
+        if self.pc == 0x6990:
+            print("BREAK")
 
         opcode = self.get_byte_and_advance()
 
@@ -210,14 +210,23 @@ class Processor:
 
     # https://zspec.jaredreisinger.com/
 
+    def print_paddr(self, paddr):
+        # V1-3 Packed Address
+        zstring_address = paddr << 1
+        print(ZStrings.toZString(zstring_address, self.memory, self.abbreviation_table), end="")
+
     def print_embedded(self):
         embedded_string_address = self.get_pc()
+        self.decode_embedded_text(embedded_string_address)
+
+    def decode_embedded_text(self, embedded_string_address):
         # Advance past string
         while True:
             value = self.get_word_and_advance()
             if value & 0x8000:
                 break
         print(ZStrings.toZString(embedded_string_address, self.memory, self.abbreviation_table), end="")
+
 
     def adjust_variable(self, variable, delta):
         # Three types... 0 top of stack, <16 locals, else globals
