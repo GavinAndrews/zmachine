@@ -19,9 +19,11 @@ class Instructions:
         self.processor = processor
         self.stack = stack
         self.quiet = True
+        self.check_trace = False
         self.dictionary = dictionary
 
-        self.trace_file = TraceFile("H:\\linux_trace.txt")
+        if self.check_trace:
+            self.trace_file = TraceFile("H:\\linux_trace.txt")
 
         self.op0_functions = [self.instruction_rtrue, self.instruction_rfalse, self.instruction_print,
                               self.instruction_print_ret,
@@ -32,9 +34,11 @@ class Instructions:
 
         self.op1_functions = [self.instruction_jz, self.instruction_get_sibling, self.instruction_get_child,
                               self.instruction_get_parent,
-                              self.instruction_get_prop_len, self.instruction_inc, self.instruction_dec, self.unimplemented,
+                              self.instruction_get_prop_len, self.instruction_inc, self.instruction_dec,
+                              self.unimplemented,
                               self.unimplemented, self.unimplemented, self.instruction_print_obj, self.instruction_ret,
-                              self.instruction_jump, self.instruction_print_paddr, self.unimplemented, self.unimplemented]
+                              self.instruction_jump, self.instruction_print_paddr, self.instruction_load,
+                              self.unimplemented]
 
         self.op2_functions = [self.illegal, self.instruction_je, self.instruction_jl, self.instruction_jg,
                               self.instruction_dec_chk, self.instruction_inc_chk, self.instruction_jin,
@@ -43,7 +47,8 @@ class Instructions:
                               self.instruction_set_attr,
                               self.instruction_clear_attr, self.instruction_store, self.instruction_insert_obj,
                               self.instruction_loadw,
-                              self.instruction_loadb, self.instruction_get_prop, self.instruction_get_prop_addr, self.unimplemented,
+                              self.instruction_loadb, self.instruction_get_prop, self.instruction_get_prop_addr,
+                              self.unimplemented,
                               self.instruction_add, self.instruction_sub, self.instruction_mul, self.instruction_div,
                               self.instruction_mod, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
@@ -68,11 +73,13 @@ class Instructions:
                 print(
                     f"EXECUTE: {current_pc:04X} {opcode:02X} {implementation.__name__.replace('instruction_', ''):12} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
 
-            trace_address = self.trace_file.read().strip()
-            current_pc = f"{current_pc:04X}"
-            if trace_address != current_pc:
-                print(f"BAD {trace_address} {current_pc}")
-                exit()
+            if self.check_trace:
+                trace_address = self.trace_file.read().strip()
+                current_pc_as_hex = f"{current_pc:04X}"
+                if trace_address != current_pc_as_hex:
+                    print(f"BAD {trace_address} {current_pc_as_hex}")
+                    exit()
+
             implementation(args)
         except RuntimeError as re:
             print(f"{re} : {current_pc:04X} {opcode:02X} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
@@ -263,6 +270,7 @@ class Instructions:
     def instruction_insert_obj(self, args):
         moving_object = args[0]
         destination_object = args[1]
+        print(f"Move Object {moving_object} to {destination_object}")
         self.processor.object_table.insert_object(moving_object, destination_object)
 
     def instruction_push(self, args):
@@ -354,14 +362,14 @@ class Instructions:
         max_chars = Utils.mread_byte(self.processor.memory, text_addr)
         text_addr += 1
 
-        #print(f"max_chars={max_chars}")
+        # print(f"max_chars={max_chars}")
 
         separators = set(self.dictionary.get_seperators())
         space_in_separators = ' ' in separators
         if not space_in_separators:
             separators.add(" ")
 
-        in_string = input() # "open mailbox"
+        in_string = input()  # "open mailbox"
         in_string = in_string.lower()
 
         for index, c in enumerate(in_string):
@@ -391,7 +399,7 @@ class Instructions:
         max_tokens = Utils.mread_byte(self.processor.memory, parse_addr)
         parse_addr += 1
 
-        #print(f"max_tokens={max_tokens}")
+        # print(f"max_tokens={max_tokens}")
 
         # Token Count
         Utils.mwrite_byte(self.processor.memory, parse_addr, len(words))
@@ -437,7 +445,7 @@ class Instructions:
             addr = object_table_entry.get_property_table_entry_address(property_number)
             # +1 to skip size byte in property table entry
             if addr is not None:
-                self.processor.store(addr+1)
+                self.processor.store(addr + 1)
             else:
                 self.processor.store(0)
 
@@ -477,9 +485,18 @@ class Instructions:
         print("")  # New Line
         self.processor.ret(1)
 
-
     def instruction_print_paddr(self, args):
         self.processor.print_paddr(args[0])
 
     def instruction_quit(self, args):
         sys.exit(0)
+
+    def instruction_load(self, args):
+        variable = args[0]
+        if variable == 0:
+            value = self.stack.peek_word()
+        elif variable < 16:
+            value = self.stack.read_local(variable)
+        else:
+            value = self.processor.globals.read_global(variable - 16)
+        self.processor.store(value)

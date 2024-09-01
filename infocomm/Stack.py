@@ -18,6 +18,10 @@ class Stack:
         self.sp += 1
         return value
 
+    def peek_word(self):
+        value = self.stack[self.sp]
+        return value
+
     def push_fp(self):
         self.push_word(self.fp-1)
 
