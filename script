@@ -1,0 +1,21 @@
+open mailbox
+take leaflet
+read leaflet
+ne
+se
+open window
+enter
+w
+take lantern
+take sword
+e
+turn lantern on
+u
+take rope
+take knife
+d
+take bottle
+w
+move rug
+open trap
+d

@@ -14,13 +14,14 @@ class OpcodeType(IntEnum):
 
 
 class Instructions:
-    def __init__(self, processor, stack, dictionary):
+    def __init__(self, processor, stack, dictionary, scripting):
 
         self.processor = processor
         self.stack = stack
         self.quiet = True
         self.check_trace = False
         self.dictionary = dictionary
+        self.scripting = scripting
 
         if self.check_trace:
             self.trace_file = TraceFile("H:\\linux_trace.txt")
@@ -48,7 +49,7 @@ class Instructions:
                               self.instruction_clear_attr, self.instruction_store, self.instruction_insert_obj,
                               self.instruction_loadw,
                               self.instruction_loadb, self.instruction_get_prop, self.instruction_get_prop_addr,
-                              self.unimplemented,
+                              self.instruction_get_next_prop,
                               self.instruction_add, self.instruction_sub, self.instruction_mul, self.instruction_div,
                               self.instruction_mod, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
@@ -56,7 +57,7 @@ class Instructions:
         self.var_functions = [self.instruction_call, self.instruction_storew, self.instruction_storeb,
                               self.instruction_put_prop,
                               self.instruction_read, self.instruction_print_char, self.instruction_print_num,
-                              self.unimplemented,
+                              self.instruction_random,
                               self.instruction_push, self.instruction_pull, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
@@ -369,7 +370,11 @@ class Instructions:
         if not space_in_separators:
             separators.add(" ")
 
-        in_string = input()  # "open mailbox"
+        script_line = self.scripting.get_line()
+        if script_line is not None:
+            in_string = script_line
+        else:
+            in_string = input()  # "open mailbox"
         in_string = in_string.lower()
 
         for index, c in enumerate(in_string):
@@ -500,3 +505,9 @@ class Instructions:
         else:
             value = self.processor.globals.read_global(variable - 16)
         self.processor.store(value)
+
+    def instruction_random(self, args):
+        raise RuntimeError("Unimplemented " + __name__)
+
+    def instruction_get_next_prop(self, args):
+        raise RuntimeError("Unimplemented " + __name__)

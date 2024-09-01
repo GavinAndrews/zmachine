@@ -6,6 +6,7 @@ from Header import Header
 from Processor import Processor
 from infocomm.AbbreviationTable import AbbreviationTable
 from infocomm.ObjectTable import ObjectTable
+from infocomm.Scripting import Scripting
 
 fileName = "../data/ZORK1.DAT"
 
@@ -34,7 +35,9 @@ objectTable = ObjectTable(start_location=header.OBJECT, memory=memory, abbreviat
 #     print(f"{i:3} \"{obj.description()}\"")
 #     obj.dump_properties()
 
+scripting = Scripting()
+
 processor = Processor(memory=memory, start=header.START, global_variables=global_variables, object_table=objectTable,
-                      abbreviation_table=abbreviationTable, dictionary=dictionary_table)
+                      abbreviation_table=abbreviationTable, dictionary=dictionary_table, scripting = scripting)
 while True:
     processor.next_instruction()
