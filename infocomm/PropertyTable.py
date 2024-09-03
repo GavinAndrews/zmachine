@@ -41,7 +41,7 @@ class PropertyTable:
             space = " " * (32 - 3 * l)
             print(f"{space}{n:3}/{l}  (PROP#{n})")
 
-    def find(self, property_number):
+    def find(self, property_number, search_next=False):
 
         # Skip Description
         paddr = self.start_location
@@ -49,21 +49,30 @@ class PropertyTable:
         paddr += 2 * dlen + 1
 
         found = False
+        at_end_of_list = False
+
         while True:
             prop = self.memory[paddr]
 
-            # End of List
-            if prop == 0:
-                break
-
             n, l = PropertyTableEntry.decode_n_and_l(prop)
 
-            if n == property_number:
+            if n == property_number or (search_next and property_number == 0):
                 found = True
+                at_end_of_list = n == 0
+                break
+
+            if n < property_number:  # End of list or a property with a lower number
                 break
 
             # Advance to next one
             paddr += 1
             paddr += l
+
+        if search_next and property_number != 0 and found:
+            paddr += 1
+            paddr += l
+            prop = self.memory[paddr]
+            if prop == 0:
+                return None
 
         return PropertyTableEntry(paddr, self.memory) if found else None

@@ -47,9 +47,9 @@ class ObjectTableEntry(object):
                                           : self.start_location + self.entry_size - 2 + 2],
                               'big')
 
-    def get_property_table_entry(self, property_number):
+    def get_property_table_entry(self, property_number, search_next=False):
         ptable = PropertyTable(self.memory, self.properties_address(), self.abbreviations)
-        return ptable.find(property_number)
+        return ptable.find(property_number, search_next)
 
     def get_property_table_entry_value(self, property_number):
         ptable = PropertyTable(self.memory, self.properties_address(), self.abbreviations)

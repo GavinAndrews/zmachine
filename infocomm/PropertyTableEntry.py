@@ -31,3 +31,6 @@ class PropertyTableEntry:
 
     def get_address(self):
         return self.address
+
+    def get_property_number(self):
+        return self.memory[self.address] & 0x1F

@@ -22,6 +22,7 @@ class Instructions:
         self.check_trace = False
         self.dictionary = dictionary
         self.scripting = scripting
+        self.random = 0x1234
 
         if self.check_trace:
             self.trace_file = TraceFile("H:\\linux_trace.txt")
@@ -37,7 +38,7 @@ class Instructions:
                               self.instruction_get_parent,
                               self.instruction_get_prop_len, self.instruction_inc, self.instruction_dec,
                               self.unimplemented,
-                              self.unimplemented, self.unimplemented, self.instruction_print_obj, self.instruction_ret,
+                              self.unimplemented, self.instruction_remove_object, self.instruction_print_obj, self.instruction_ret,
                               self.instruction_jump, self.instruction_print_paddr, self.instruction_load,
                               self.unimplemented]
 
@@ -507,7 +508,32 @@ class Instructions:
         self.processor.store(value)
 
     def instruction_random(self, args):
-        raise RuntimeError("Unimplemented " + __name__)
+        range = args[0]
+        self.random = (self.random * 0x343FD + 0x269EC3) & 0x7FFFFFFF
+        n = (self.random >> 16) & 0x7FFF
+        result = n % range + 1
+        self.processor.store(result)
 
+    # get_next_prop
+    # 2OP:19 13
+    # get_next_prop object property → (result)
+    #
+    # Gives the number of the next property provided by the quoted object. This may be zero, indicating the end of
+    # the property list; if called with zero, it gives the first property number present. It is illegal to try to find
+    # the next property of a property which does not exist, and an interpreter should halt with an error message
+    # (if it can efficiently check this condition).
     def instruction_get_next_prop(self, args):
+        object_number = args[0]
+        if object_number == 0:
+            self.processor.store(0)
+        else:
+            property_number = args[1]
+            object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
+            value = object_table_entry.get_property_table_entry(property_number, search_next=True)
+            if value is None:
+                self.processor.store(0)
+            else:
+                self.processor.store(value.get_property_number())
+
+    def instruction_remove_object(self, args):
         raise RuntimeError("Unimplemented " + __name__)
