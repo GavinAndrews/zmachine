@@ -192,7 +192,7 @@ class Instructions:
         object_number = args[0]
         property_number = args[1]
         property_value = args[2]
-        property_table_entry = self.processor.object_table.get_property_table_entry(object_number, property_number)
+        property_table_entry = self.processor.object_table.get_object_table_entry(object_number).get_property_table().get_property_table_entry_for_property_number(property_number)
         property_table_entry.put_value(property_value)
 
     # test_attr object attribute?(label)
@@ -299,7 +299,7 @@ class Instructions:
     def instruction_print_obj(self, args):
         object_number = args[0]
         object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
-        print(object_table_entry.get_description(), end="")
+        print(object_table_entry.get_property_table().get_description(), end="")
 
     # get_parent object → (result)
     # Get parent object (note that this has no “branch if exists” clause).
@@ -336,7 +336,11 @@ class Instructions:
         else:
             property_number = args[1]
             object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
-            value = object_table_entry.get_property_table_entry_value(property_number)
+            property = object_table_entry.get_property_table().get_property_table_entry_for_property_number(property_number)
+            if property is None:
+                value = self.processor.object_table.get_property_default(property_number)
+            else:
+                value = property.get_value()
             self.processor.store(value)
 
     # get_sibling object → (result)?(label)
@@ -448,7 +452,7 @@ class Instructions:
             mask = 0x1f
             property_number = args[1] & mask
             object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
-            addr = object_table_entry.get_property_table_entry_address(property_number)
+            addr = object_table_entry.get_property_table().get_property_table_entry_address(property_number)
             # +1 to skip size byte in property table entry
             if addr is not None:
                 self.processor.store(addr + 1)
@@ -529,7 +533,7 @@ class Instructions:
         else:
             property_number = args[1]
             object_table_entry = self.processor.object_table.get_object_table_entry(object_number)
-            value = object_table_entry.get_property_table_entry(property_number, search_next=True)
+            value = object_table_entry.get_property_table().get_property_table_entry_after_property_number(property_number)
             if value is None:
                 self.processor.store(0)
             else:

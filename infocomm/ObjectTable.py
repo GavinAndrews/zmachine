@@ -45,7 +45,7 @@ class ObjectTable:
 
     def get_property_table_entry(self, object_number, property_number):
         object_table_entry = self.get_object_table_entry(object_number)
-        return object_table_entry.get_property_table_entry(property_number)
+        return object_table_entry.get_property_table_entry_for_property_number(property_number)
 
     def insert_object(self, moving_object, destination_object):
         moving_object_table_entry = self.get_object_table_entry(moving_object)
