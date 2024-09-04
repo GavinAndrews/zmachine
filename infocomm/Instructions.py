@@ -272,7 +272,10 @@ class Instructions:
     def instruction_insert_obj(self, args):
         moving_object = args[0]
         destination_object = args[1]
-        print(f"Move Object {moving_object} to {destination_object}")
+        print(f"Move Object [{moving_object}]"
+              f"{self.processor.object_table.get_object_table_entry(moving_object).get_property_table().get_description()} "
+              f"to [{destination_object}]"
+              f"{self.processor.object_table.get_object_table_entry(destination_object).get_property_table().get_description()}")
         self.processor.object_table.insert_object(moving_object, destination_object)
 
     def instruction_push(self, args):
@@ -540,4 +543,7 @@ class Instructions:
                 self.processor.store(value.get_property_number())
 
     def instruction_remove_object(self, args):
-        raise RuntimeError("Unimplemented " + __name__)
+        moving_object = args[0]
+        print(f"Remove Object [{moving_object}]"
+              f"{self.processor.object_table.get_object_table_entry(moving_object).get_property_table().get_description()} ")
+        self.processor.object_table.remove_object(moving_object)

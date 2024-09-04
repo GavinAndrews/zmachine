@@ -58,7 +58,6 @@ class ObjectTable:
         # unlink moving_object
         moving_object_table_entry.unlink()
 
-
         # insert into destination at head
         previous_child = destination_object_table_entry.get_child_object_number()
         destination_object_table_entry.set_child_object_number(moving_object_table_entry.n)
@@ -69,9 +68,14 @@ class ObjectTable:
         # self.show_object_tree(moving_object_table_entry)
         # self.show_object_tree(destination_object_table_entry)
 
+    def remove_object(self, moving_object):
+        moving_object_table_entry = self.get_object_table_entry(moving_object)
+
+        # unlink moving_object
+        moving_object_table_entry.unlink()
 
     def show_object_tree(self, destination_object_table_entry):
-        print(f"{destination_object_table_entry.describe()}", end=" : ")
+        print(f"{destination_object_table_entry.get_property_table().description()}", end=" : ")
         parent_object_number = destination_object_table_entry.get_parent_object_number()
         print(f"parent_object_number={parent_object_number}", end=", ")
         print(f"child={destination_object_table_entry.get_child_object_number()}", end=", ")
@@ -81,21 +85,22 @@ class ObjectTable:
             object_number = self.get_object_table_entry(parent_object_number).get_child_object_number()
             while object_number != 0 and object_number != destination_object_table_entry.n:
                 ote = self.get_object_table_entry(object_number)
-                print(ote.describe(), end=" | ")
+                print(ote.get_property_table().description(), end=" | ")
                 object_number = ote.get_next_sibling_object_number()
             print()
         print("Older Sibling Chain: ", end="")
         object_number = destination_object_table_entry.get_next_sibling_object_number()
         while object_number != 0:
             ote = self.get_object_table_entry(object_number)
-            print(ote.describe(), end=" | ")
+            print(ote.get_property_table().description(), end=" | ")
             object_number = ote.get_next_sibling_object_number()
         print()
         younger_entry = self.get_object_table_entry(destination_object_table_entry.get_prior_sibling_object_number())
         older_entry = self.get_object_table_entry(destination_object_table_entry.get_next_sibling_object_number())
-        print(f"Near Sibs: Younger: {younger_entry.describe() if younger_entry is not None else 'NONE'}", end=", ")
-        print(f"Older: {older_entry.describe() if older_entry is not None else 'NONE'}")
-
+        print(
+            f"Near Sibs: Younger: {younger_entry.get_property_table().description() if younger_entry is not None else 'NONE'}",
+            end=", ")
+        print(f"Older: {older_entry.get_property_table().description() if older_entry is not None else 'NONE'}")
 
     def get_property_default(self, property_number):
-        return Utils.mread_word(self.memory, self.property_defaults_start_location+2*(property_number-1))
+        return Utils.mread_word(self.memory, self.property_defaults_start_location + 2 * (property_number - 1))
