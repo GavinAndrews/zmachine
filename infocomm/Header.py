@@ -1,5 +1,8 @@
+from numpy import array
+
+
 class Header:
-    def __init__(self, memory):
+    def __init__(self, memory: array) -> None:
         self.ZVERSION_version = int.from_bytes(memory[0:1], 'little')
         self.ZVERSION_mode = memory[1]
         self.ZORKID = int.from_bytes(memory[2:4], 'big')
@@ -16,7 +19,7 @@ class Header:
         self.PCHKSUM = int.from_bytes(memory[28:30], 'big')
 
 
-    def dump(self):
+    def dump(self) -> None:
         print(self.ZVERSION_version, self.ZVERSION_mode)
         print(self.ZORKID)
         print(self.ENDLOD)

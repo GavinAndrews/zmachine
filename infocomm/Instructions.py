@@ -3,6 +3,7 @@ from enum import IntEnum
 
 import ZStrings
 from Utils import Utils
+import Processor
 from infocomm.TraceFile import TraceFile
 
 
@@ -14,7 +15,7 @@ class OpcodeType(IntEnum):
 
 
 class Instructions:
-    def __init__(self, processor, stack, dictionary, scripting):
+    def __init__(self, processor: Processor, stack, dictionary, scripting):
 
         self.processor = processor
         self.stack = stack
@@ -272,10 +273,10 @@ class Instructions:
     def instruction_insert_obj(self, args):
         moving_object = args[0]
         destination_object = args[1]
-        print(f"Move Object [{moving_object}]"
-              f"{self.processor.object_table.get_object_table_entry(moving_object).get_property_table().get_description()} "
-              f"to [{destination_object}]"
-              f"{self.processor.object_table.get_object_table_entry(destination_object).get_property_table().get_description()}")
+        # print(f"Move Object [{moving_object}]"
+        #       f"{self.processor.object_table.get_object_table_entry(moving_object).get_property_table().get_description()} "
+        #       f"to [{destination_object}]"
+        #       f"{self.processor.object_table.get_object_table_entry(destination_object).get_property_table().get_description()}")
         self.processor.object_table.insert_object(moving_object, destination_object)
 
     def instruction_push(self, args):
@@ -378,7 +379,7 @@ class Instructions:
         if not space_in_separators:
             separators.add(" ")
 
-        script_line = self.scripting.get_line()
+        script_line = self.scripting.get_line() if self.scripting is not None else None
         if script_line is not None:
             in_string = script_line
         else:
@@ -544,6 +545,6 @@ class Instructions:
 
     def instruction_remove_object(self, args):
         moving_object = args[0]
-        print(f"Remove Object [{moving_object}]"
-              f"{self.processor.object_table.get_object_table_entry(moving_object).get_property_table().get_description()} ")
+        # print(f"Remove Object [{moving_object}]"
+        #       f"{self.processor.object_table.get_object_table_entry(moving_object).get_property_table().get_description()} ")
         self.processor.object_table.remove_object(moving_object)

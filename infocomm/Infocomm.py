@@ -3,16 +3,15 @@ from array import array
 from DictionaryTable import DictionaryTable
 from Globals import Globals
 from Header import Header
-from Processor import Processor
 from infocomm.AbbreviationTable import AbbreviationTable
 from infocomm.ObjectTable import ObjectTable
-from infocomm.Scripting import Scripting
+from infocomm.Processor import Processor
 
 fileName = "../data/ZORK1.DAT"
 
 with open(fileName, mode='rb') as file:  # b is important -> binary
     file_bytes = file.read()
-    memory = array('B', file_bytes)
+    memory : array = array('B', file_bytes)
 
 header = Header(memory)
 
@@ -28,14 +27,14 @@ dictionary_table = DictionaryTable(header.VOCAB, memory, abbreviationTable)
 #     dictionary_table_entry = dictionary_table.find(i)
 #     dictionary_table_entry.dump()
 
-objectTable = ObjectTable(start_location=header.OBJECT, memory=memory, abbreviations=abbreviationTable)
+objectTable : ObjectTable = ObjectTable(start_location=header.OBJECT, memory=memory, abbreviations=abbreviationTable)
 
 # for i in range(1, 250+1):
 #     obj = objectTable.find(i)
 #     print(f"{i:3} \"{obj.description()}\"")
 #     obj.dump_properties()
 
-scripting = Scripting()
+scripting = None # Scripting()
 
 processor = Processor(memory=memory, start=header.START, global_variables=global_variables, object_table=objectTable,
                       abbreviation_table=abbreviationTable, dictionary=dictionary_table, scripting = scripting)

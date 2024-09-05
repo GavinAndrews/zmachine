@@ -1,11 +1,14 @@
+from array import array
+from typing import Optional
+
+import ObjectTableEntry
 from Utils import Utils
-from infocomm.ObjectTableEntry import ObjectTableEntry
 
 
 class ObjectTable:
     object_entry_size = 9
 
-    def __init__(self, start_location, memory, abbreviations):
+    def __init__(self, start_location: int, memory: array, abbreviations: int):
         self.property_defaults_start_location = start_location
         self.object_start_location = start_location + 31 * 2
         self.memory = memory
@@ -36,12 +39,13 @@ class ObjectTable:
 
         return n
 
-    def get_object_table_entry(self, n):
+    def get_object_table_entry(self, n) -> Optional[ObjectTableEntry]:
         if n == 0:
             return None
         else:
-            return ObjectTableEntry(self.object_start_location + (n - 1) * self.object_entry_size, self.memory,
-                                    self.object_entry_size, self.abbreviations, n, self)
+            return ObjectTableEntry.ObjectTableEntry(self.object_start_location + (n - 1) * self.object_entry_size,
+                                                     self.memory,
+                                                     self.object_entry_size, self.abbreviations, n, self)
 
     def get_property_table_entry(self, object_number, property_number):
         object_table_entry = self.get_object_table_entry(object_number)

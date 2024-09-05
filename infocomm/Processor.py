@@ -1,9 +1,11 @@
 from enum import IntEnum
 
 import ZStrings
-from Instructions import Instructions, OpcodeType
+import Instructions
+
 from Stack import Stack
 from Utils import Utils
+import ObjectTable
 
 
 class OpcodeForm(IntEnum):
@@ -28,7 +30,7 @@ class OperandType(IntEnum):
 
 
 class Processor:
-    def __init__(self, memory, start, global_variables, object_table, abbreviation_table, dictionary, scripting):
+    def __init__(self, memory, start, global_variables, object_table: ObjectTable, abbreviation_table, dictionary, scripting):
         self.memory = memory
         self.pc = start
         self.globals = global_variables
@@ -38,13 +40,14 @@ class Processor:
         self.scripting = scripting
         self.args = []
         self.stack = Stack()
-        self.instructions = Instructions(self, self.stack, self.dictionary, self.scripting)
+        self.instructions = Instructions.Instructions(self, self.stack, self.dictionary, self.scripting)
 
     def next_instruction(self):
         current_pc = self.pc
 
         if self.pc == 0x6990:
-            print("BREAK")
+            #print("BREAK")
+            pass
 
         opcode = self.get_byte_and_advance()
 
@@ -60,21 +63,21 @@ class Processor:
                 operand_type2 = OperandType.SMALL_CONSTANT if opcode & 0x20 == 0 else OperandType.VARIABLE
                 self.load_operand(operand_type2, args)
                 op_number = opcode & 0b11111
-                self.instructions.execute(OpcodeType.z_2OP, op_number, args, current_pc, opcode)
+                self.instructions.execute(Instructions.OpcodeType.z_2OP, op_number, args, current_pc, opcode)
 
             case opcode_form.SHORT:
                 operand_type1 = OperandType((opcode >> 4) & 0x03)
                 op_number = opcode & 0b1111
                 if operand_type1 == OperandType.OMITTED:
                     # 0 OP
-                    self.instructions.execute(OpcodeType.z_0OP, op_number, args, current_pc, opcode)
+                    self.instructions.execute(Instructions.OpcodeType.z_0OP, op_number, args, current_pc, opcode)
                 else:
                     # 1 OP
                     self.load_operand(operand_type1, args)
-                    self.instructions.execute(OpcodeType.z_1OP, op_number, args, current_pc, opcode)
+                    self.instructions.execute(Instructions.OpcodeType.z_1OP, op_number, args, current_pc, opcode)
 
             case opcode_form.VARIABLE:
-                opcode_type = OpcodeType.z_2OP if opcode & 0b00100000 == 0 else OpcodeType.z_VAR
+                opcode_type = Instructions.OpcodeType.z_2OP if opcode & 0b00100000 == 0 else Instructions.OpcodeType.z_VAR
                 op_number = opcode & 0b11111
 
                 var_operand_types = self.get_byte_and_advance()
