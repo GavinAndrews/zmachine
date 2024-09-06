@@ -383,6 +383,8 @@ class Instructions:
         if script_line is not None:
             in_string = script_line
         else:
+            # Dump Location
+            print(f"[{self.processor.object_table.get_object_table_entry(4).get_parent_object_number()}] ", end="")
             in_string = input()  # "open mailbox"
         in_string = in_string.lower()
 
