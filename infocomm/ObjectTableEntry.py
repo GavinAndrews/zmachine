@@ -1,12 +1,15 @@
 from array import array
 
 from PropertyTable import PropertyTable
-import ObjectTable
 
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from ObjectTable import ObjectTable
 
 class ObjectTableEntry:
     def __init__(self, start_location: int, memory: array, entry_size: int, abbreviations: int, n: int,
-                 object_table: ObjectTable) -> None:
+                 object_table: 'ObjectTable') -> None:
         self.start_location = start_location
         self.memory = memory
         self.entry_size = entry_size

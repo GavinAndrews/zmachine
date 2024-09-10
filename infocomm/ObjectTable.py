@@ -1,7 +1,10 @@
 from array import array
-from typing import Optional
 
-import ObjectTableEntry
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from ObjectTableEntry import ObjectTableEntry
+
 from Utils import Utils
 
 
@@ -39,11 +42,12 @@ class ObjectTable:
 
         return n
 
-    def get_object_table_entry(self, n) -> Optional[ObjectTableEntry]:
+    def get_object_table_entry(self, n) -> 'ObjectTableEntry':
         if n == 0:
             return None
         else:
-            return ObjectTableEntry.ObjectTableEntry(self.object_start_location + (n - 1) * self.object_entry_size,
+            from ObjectTableEntry import ObjectTableEntry
+            return ObjectTableEntry(self.object_start_location + (n - 1) * self.object_entry_size,
                                                      self.memory,
                                                      self.object_entry_size, self.abbreviations, n, self)
 
