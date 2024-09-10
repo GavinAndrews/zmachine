@@ -4,7 +4,7 @@ from PropertyTable import PropertyTable
 import ObjectTable
 
 
-class ObjectTableEntry(object):
+class ObjectTableEntry:
     def __init__(self, start_location: int, memory: array, entry_size: int, abbreviations: int, n: int,
                  object_table: ObjectTable) -> None:
         self.start_location = start_location
