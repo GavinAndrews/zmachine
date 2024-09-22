@@ -37,6 +37,6 @@ objectTable : ObjectTable = ObjectTable(start_location=header.OBJECT, memory=mem
 scripting = None # Scripting()
 
 processor = Processor(memory=memory, start=header.START, global_variables=global_variables, object_table=objectTable,
-                      abbreviation_table=abbreviationTable, dictionary=dictionary_table, scripting = scripting)
+                      abbreviation_table=abbreviationTable, dictionary=dictionary_table, scripting = scripting, filename=fileName)
 while True:
     processor.next_instruction()

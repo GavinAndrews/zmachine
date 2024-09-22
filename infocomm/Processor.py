@@ -30,7 +30,7 @@ class OperandType(IntEnum):
 
 
 class Processor:
-    def __init__(self, memory, start, global_variables, object_table: ObjectTable, abbreviation_table, dictionary, scripting):
+    def __init__(self, memory, start, global_variables, object_table: ObjectTable, abbreviation_table, dictionary, scripting, filename):
         self.memory = memory
         self.pc = start
         self.globals = global_variables
@@ -38,6 +38,7 @@ class Processor:
         self.abbreviation_table = abbreviation_table
         self.dictionary = dictionary
         self.scripting = scripting
+        self.filename = filename
         self.args = []
         self.stack = Stack()
         self.instructions = Instructions.Instructions(self, self.stack, self.dictionary, self.scripting)
@@ -263,4 +264,11 @@ class Processor:
             self.stack.write_local(destination, value)
         else:
             self.globals.write_global(destination - 16, value)
+
+
+    def restore(self, game_data, new_stack):
+        self.memory = game_data
+        self.stack = new_stack
+        self.branch(True)
+
 

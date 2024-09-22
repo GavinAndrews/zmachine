@@ -4,6 +4,7 @@ from enum import IntEnum
 import ZStrings
 from Utils import Utils
 import Processor
+from infocomm.Quetzal import Quetzal
 from infocomm.TraceFile import TraceFile
 
 
@@ -30,7 +31,7 @@ class Instructions:
 
         self.op0_functions = [self.instruction_rtrue, self.instruction_rfalse, self.instruction_print,
                               self.instruction_print_ret,
-                              self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented,
+                              self.unimplemented, self.unimplemented, self.instruction_restore, self.unimplemented,
                               self.instruction_ret_popped, self.unimplemented, self.instruction_quit,
                               self.instruction_new_line,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
@@ -550,3 +551,16 @@ class Instructions:
         # print(f"Remove Object [{moving_object}]"
         #       f"{self.processor.object_table.get_object_table_entry(moving_object).get_property_table().get_description()} ")
         self.processor.object_table.remove_object(moving_object)
+
+
+    def instruction_restore(self, args):
+        print(f"Restore from file:  ", end="")
+        in_string = input()  # "z1.s1"
+        q = Quetzal(self.processor.filename)
+        q.read_quetzal_save(in_string)
+        q.process_file()
+        self.processor.restore(q.game_data, q.new_stack)
+
+
+
+
