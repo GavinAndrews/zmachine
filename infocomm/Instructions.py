@@ -16,10 +16,9 @@ class OpcodeType(IntEnum):
 
 
 class Instructions:
-    def __init__(self, processor: Processor, stack, dictionary, scripting):
+    def __init__(self, processor: Processor, dictionary, scripting):
 
         self.processor = processor
-        self.stack = stack
         self.quiet = True
         self.check_trace = False
         self.dictionary = dictionary
@@ -87,7 +86,7 @@ class Instructions:
             implementation(args)
         except RuntimeError as re:
             print(f"{re} : {current_pc:04X} {opcode:02X} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
-            self.stack.dump()
+            self.processor.stack.dump()
             sys.exit(101)
 
     def unimplemented(self, args):
@@ -116,9 +115,9 @@ class Instructions:
         value = args[1]
         # Three types... 0 top of stack, <16 locals, else globals
         if variable == 0:
-            self.stack.push_word(value)
+            self.processor.stack.push_word(value)
         elif variable < 16:
-            self.stack.write_local(variable, value)
+            self.processor.stack.write_local(variable, value)
         else:
             self.processor.globals.write_global(variable - 16, value)
 
@@ -281,7 +280,7 @@ class Instructions:
         self.processor.object_table.insert_object(moving_object, destination_object)
 
     def instruction_push(self, args):
-        self.stack.push_word(args[0])
+        self.processor.stack.push_word(args[0])
 
     def instruction_pull(self, args):
         self.processor.pull(args[0])
@@ -363,7 +362,7 @@ class Instructions:
     # ret_popped
     # Pops top of stack and returns that. (This is equivalent to ret sp, but is one byte cheaper.)
     def instruction_ret_popped(self, args):
-        value = self.stack.pop_word()
+        value = self.processor.stack.pop_word()
         self.processor.ret(value)
 
     def instruction_read(self, args):
@@ -511,9 +510,9 @@ class Instructions:
     def instruction_load(self, args):
         variable = args[0]
         if variable == 0:
-            value = self.stack.peek_word()
+            value = self.processor.stack.peek_word()
         elif variable < 16:
-            value = self.stack.read_local(variable)
+            value = self.processor.stack.read_local(variable)
         else:
             value = self.processor.globals.read_global(variable - 16)
         self.processor.store(value)
@@ -559,6 +558,7 @@ class Instructions:
         q = Quetzal(self.processor.filename)
         q.read_quetzal_save(in_string)
         q.process_file()
+
         self.processor.restore(q.game_data, q.new_stack)
 
 

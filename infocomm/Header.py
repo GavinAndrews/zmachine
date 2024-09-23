@@ -1,4 +1,4 @@
-from numpy import array
+from array import array
 
 
 class Header:

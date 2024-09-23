@@ -41,7 +41,7 @@ class Processor:
         self.filename = filename
         self.args = []
         self.stack = Stack()
-        self.instructions = Instructions.Instructions(self, self.stack, self.dictionary, self.scripting)
+        self.instructions = Instructions.Instructions(self, self.dictionary, self.scripting)
 
     def next_instruction(self):
         current_pc = self.pc
@@ -267,8 +267,13 @@ class Processor:
 
 
     def restore(self, game_data, new_stack):
-        self.memory = game_data
+
+        # Copy Modified Data back over Memory
+        for i, b in enumerate(q.game_data):
+            self.memory[i] = b
+
         self.stack = new_stack
+
         self.branch(True)
 
 
