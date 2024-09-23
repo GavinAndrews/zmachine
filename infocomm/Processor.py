@@ -269,7 +269,7 @@ class Processor:
     def restore(self, game_data, new_stack):
 
         # Copy Modified Data back over Memory
-        for i, b in enumerate(q.game_data):
+        for i, b in enumerate(game_data):
             self.memory[i] = b
 
         self.stack = new_stack
