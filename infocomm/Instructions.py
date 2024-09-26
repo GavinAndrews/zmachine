@@ -30,7 +30,7 @@ class Instructions:
 
         self.op0_functions = [self.instruction_rtrue, self.instruction_rfalse, self.instruction_print,
                               self.instruction_print_ret,
-                              self.unimplemented, self.unimplemented, self.instruction_restore, self.unimplemented,
+                              self.unimplemented, self.instruction_save, self.instruction_restore, self.unimplemented,
                               self.instruction_ret_popped, self.unimplemented, self.instruction_quit,
                               self.instruction_new_line,
                               self.unimplemented, self.unimplemented, self.unimplemented, self.unimplemented]
@@ -560,6 +560,13 @@ class Instructions:
         q.process_file()
 
         self.processor.restore(q.game_data, q.new_stack)
+
+    def instruction_save(self, args):
+        print(f"Restore from file:  ", end="")
+        in_string = "z1.s0" # input()  # "z1.s1"
+        q = Quetzal(self.processor.filename)
+        q.write_quetzal_save(self.processor.memory, self.processor.stack, self.processor.get_pc(), in_string)
+        raise RuntimeError("Unimplemented " + __name__)
 
 
 

@@ -168,6 +168,33 @@ class Quetzal:
         self.process_cmem()
         self.process_stks()
 
+    def write_quetzal_save(self, memory, stack, pc, fname):
+        # with open(fname, 'wb') as file:
+        #     file.write(self.save_data)
+
+        ifhd = self.build_ifhd(pc)
+        print(ifhd)
+
+        pass
+
+
+    def build_ifhd(self, pc):
+        ifhd = bytearray()
+        header = Header(self.game_data)
+        serial = header.SERIAL
+        release = header.ZORKID
+        checksum = header.PCHKSUM
+
+        ifhd.extend(bytearray(release.to_bytes(2, 'big')))
+        ifhd.extend(serial)
+        ifhd.extend(bytearray(checksum.to_bytes(2, 'big')))
+        ifhd.extend(bytearray(pc.to_bytes(3, 'big')))
+        ifhd.append(0)
+
+        for b in ifhd:
+            print(f"{b:02X}", end=' ')
+        pass
+
 
 if __name__ == '__main__':
     q = Quetzal('../data/ZORK1.DAT')
