@@ -168,11 +168,14 @@ class Quetzal:
         self.process_cmem()
         self.process_stks()
 
-    def write_quetzal_save(self, memory, stack, pc, fname):
+    def write_quetzal_save(self, memory, purbot, stack, pc, fname):
         # with open(fname, 'wb') as file:
         #     file.write(self.save_data)
 
         ifhd = self.build_ifhd(pc)
+        cmem = self.build_cmem(memory, purbot)
+        stks = self.build_stks(stack)
+
         print(ifhd)
 
         pass
@@ -191,10 +194,94 @@ class Quetzal:
         ifhd.extend(bytearray(pc.to_bytes(3, 'big')))
         ifhd.append(0)
 
+        print("IFHD: ", end="")
         for b in ifhd:
             print(f"{b:02X}", end=' ')
+        print("")
         pass
 
+
+    def build_cmem(self, memory, purbot):
+
+        cmem = bytearray()
+
+        zero_run = 0
+
+        for i in range(0, purbot):
+            local = memory[i]
+            gfile = self.game_data[i]
+            delta = local ^ gfile
+            if delta == 0:
+                zero_run += 1
+            else:
+                if zero_run > 0:
+                    while zero_run >= 256:
+                        cmem.append(0)
+                        cmem.append(255)
+                        zero_run -= 256
+                    if zero_run > 0:
+                        cmem.append(0)
+                        cmem.append(zero_run - 1)
+                    zero_run = 0
+                cmem.append(local)
+        if zero_run > 0:
+            # Ignore trailing runs
+            pass
+
+        # Chunk to even length
+        if len(cmem) % 2 == 1:
+            cmem.append(0)
+
+        print("CMem: ", end="")
+        for b in cmem:
+            print(f"{b:02X}", end=' ')
+        print("")
+
+        pass
+
+    def build_stks(self, stack):
+
+        # Build Frame indices: These are indices to the word BEFORE the frame
+        frames = list()
+        frames.append(stack.sp)
+        i = stack.fp+4
+        while i < stack.stack_size+4:
+            frames.append(i)
+            next_fp = stack.stack[i - 3]   # Look back 3 words to FP
+            i = next_fp + 4 + 1  # Advance over Arg Count and Flags, FP and PC LO, PC HI WORDS and then 1 more
+
+        stks = bytearray()
+
+        # Versions other than V6 have a dummy frame to hold the eval stack
+        # that exists at the bottom of the stack prior to the first frame
+
+        for _ in range(0, 6):
+            stks.append(0)
+
+        nstk = stack.stack_size - frames[-1]
+
+        stks.append(nstk >> 8)
+        stks.append(nstk & 0xFF)
+
+        for i in range(stack.stack_size-1, stack.stack_size-nstk-1, -1):
+            stks.append(stack.stack[i] >> 8)
+            stks.append(stack.stack[i] & 0xFF)
+
+
+
+        for frame in reversed(frames[:-1]):
+            pc = stack.stack[frame - 1] << 9 | stack.stack[frame - 2]
+            stks.extend(pc.to_bytes(4, byteorder='big'))
+
+
+
+        print("STKS: ", end="")
+        for b in stks:
+            print(f"{b:02X}", end=' ')
+        print("")
+
+        stack.dump()
+        pass
 
 if __name__ == '__main__':
     q = Quetzal('../data/ZORK1.DAT')

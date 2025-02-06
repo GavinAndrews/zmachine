@@ -4,6 +4,7 @@ import itertools
 
 class Stack:
     def __init__(self):
+        self.stack_size = 1024
         self.stack = array.array("L", itertools.repeat(0, 1024))
         self.sp = 1024
         self.fp = 1024

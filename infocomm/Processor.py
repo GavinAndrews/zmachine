@@ -30,7 +30,7 @@ class OperandType(IntEnum):
 
 
 class Processor:
-    def __init__(self, memory, start, global_variables, object_table: ObjectTable, abbreviation_table, dictionary, scripting, filename):
+    def __init__(self, memory, start, global_variables, object_table: ObjectTable, abbreviation_table, dictionary, scripting, filename, purbot):
         self.memory = memory
         self.pc = start
         self.globals = global_variables
@@ -39,6 +39,7 @@ class Processor:
         self.dictionary = dictionary
         self.scripting = scripting
         self.filename = filename
+        self.purbot = purbot
         self.args = []
         self.stack = Stack()
         self.instructions = Instructions.Instructions(self, self.dictionary, self.scripting)
