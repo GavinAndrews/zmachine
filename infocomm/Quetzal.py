@@ -169,14 +169,56 @@ class Quetzal:
         self.process_stks()
 
     def write_quetzal_save(self, memory, purbot, stack, pc, fname):
-        # with open(fname, 'wb') as file:
-        #     file.write(self.save_data)
 
-        ifhd = self.build_ifhd(pc)
-        cmem = self.build_cmem(memory, purbot)
-        stks = self.build_stks(stack)
+        self.ifhd_data = self.build_ifhd(pc)
+        self.cmem_data = self.build_cmem(memory, purbot)
+        self.umem_data = None
+        self.stks_data = self.build_stks(stack)
 
-        print(ifhd)
+        form_size = 12  # FORM and IFZS and sizes
+        if self.ifhd_data is not None:
+            form_size = form_size + len(self.ifhd_data) + 8
+        if self.cmem_data is not None:
+            form_size = form_size + len(self.cmem_data) + 8
+        if self.umem_data is not None:
+            form_size = form_size + len(self.umem_data) + 8
+        if self.stks_data is not None:
+            form_size = form_size + len(self.stks_data) + 8
+
+        self.save_data = bytearray()
+        self.save_data.extend(b'FORM')
+        self.save_data.extend(form_size.to_bytes(4, 'big'))
+        self.save_data.extend(b'IFZS') # IFZS for Z-machine Save
+
+        if self.ifhd_data is not None:
+            self.save_data.extend(b'IFhd')
+            self.save_data.extend(len(self.ifhd_data).to_bytes(4, 'big'))
+            self.save_data.extend(self.ifhd_data)
+
+        if self.cmem_data is not None:
+            self.save_data.extend(b'CMem')
+            self.save_data.extend(len(self.cmem_data).to_bytes(4, 'big'))
+            self.save_data.extend(self.cmem_data)
+
+        if self.umem_data is not None:
+            self.save_data.extend(b'UMem')
+            self.save_data.extend(len(self.umem_data).to_bytes(4, 'big'))
+            self.save_data.extend(self.umem_data)
+
+        if self.stks_data is not None:
+            self.save_data.extend(b'Stks')
+            self.save_data.extend(len(self.stks_data).to_bytes(4, 'big'))
+            self.save_data.extend(self.stks_data)
+
+        # Pad to even length
+        if len(self.save_data) % 2 == 1:
+            self.save_data.append(0)
+
+        with open(fname, 'wb') as file:
+            file.write(self.save_data)
+            file.close()
+
+        print(self.ifhd_data)
 
         pass
 
@@ -198,7 +240,7 @@ class Quetzal:
         for b in ifhd:
             print(f"{b:02X}", end=' ')
         print("")
-        pass
+        return ifhd
 
 
     def build_cmem(self, memory, purbot):
@@ -237,7 +279,8 @@ class Quetzal:
             print(f"{b:02X}", end=' ')
         print("")
 
-        pass
+        return cmem
+
 
     def build_stks(self, stack):
 
@@ -281,7 +324,7 @@ class Quetzal:
         print("")
 
         stack.dump()
-        pass
+        return stks
 
 if __name__ == '__main__':
     q = Quetzal('../data/ZORK1.DAT')
