@@ -194,21 +194,29 @@ class Quetzal:
             self.save_data.extend(b'IFhd')
             self.save_data.extend(len(self.ifhd_data).to_bytes(4, 'big'))
             self.save_data.extend(self.ifhd_data)
+            if len(self.ifhd_data) % 2 == 1:
+                self.save_data.append(0)
 
         if self.cmem_data is not None:
             self.save_data.extend(b'CMem')
             self.save_data.extend(len(self.cmem_data).to_bytes(4, 'big'))
             self.save_data.extend(self.cmem_data)
+            if len(self.cmem_data) % 2 == 1:
+                self.save_data.append(0)
 
         if self.umem_data is not None:
             self.save_data.extend(b'UMem')
             self.save_data.extend(len(self.umem_data).to_bytes(4, 'big'))
             self.save_data.extend(self.umem_data)
+            if len(self.umem_data) % 2 == 1:
+                self.save_data.append(0)
 
         if self.stks_data is not None:
             self.save_data.extend(b'Stks')
             self.save_data.extend(len(self.stks_data).to_bytes(4, 'big'))
             self.save_data.extend(self.stks_data)
+            if len(self.stks_data) % 2 == 1:
+                self.save_data.append(0)
 
         # Pad to even length
         if len(self.save_data) % 2 == 1:
@@ -234,7 +242,6 @@ class Quetzal:
         ifhd.extend(serial)
         ifhd.extend(bytearray(checksum.to_bytes(2, 'big')))
         ifhd.extend(bytearray(pc.to_bytes(3, 'big')))
-        ifhd.append(0)
 
         print("IFHD: ", end="")
         for b in ifhd:

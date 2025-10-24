@@ -20,13 +20,13 @@ class Instructions:
 
         self.processor = processor
         self.quiet = True
-        self.check_trace = False
+        self.check_trace = True
         self.dictionary = dictionary
         self.scripting = scripting
         self.random = 0x1234
 
         if self.check_trace:
-            self.trace_file = TraceFile("H:\\linux_trace.txt")
+            self.trace_file = TraceFile("H:\\linux_trace_script2.txt")
 
         self.op0_functions = [self.instruction_rtrue, self.instruction_rfalse, self.instruction_print,
                               self.instruction_print_ret,
@@ -82,6 +82,8 @@ class Instructions:
                 if trace_address != current_pc_as_hex:
                     print(f"BAD {trace_address} {current_pc_as_hex}")
                     exit()
+                else:
+                    print(f"GOOD {trace_address} {current_pc_as_hex}")
 
             implementation(args)
         except RuntimeError as re:

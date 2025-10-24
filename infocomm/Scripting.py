@@ -1,6 +1,6 @@
 class Scripting:
-    def __init__(self):
-        filename = "../script"
+    def __init__(self, filename = "../script"):
+
         with open(filename) as file:
             self.lines = [line.rstrip() for line in file]
         self.current = 0
