@@ -342,18 +342,24 @@ class Quetzal:
             local_stack_count = frames[frame_index] - frames[frame_index - 1] - var_count - 4
 
             print(f"{call_type} {var_count} {arg_count} {local_stack_count}")
+            is_procedure = False
             if call_type == 0:
-                var = memory[pc]
-                pc = (pc + 1) << 8 | var_count
+                variable_for_result = memory[pc]
+                pc = pc + 1  # Not sure why?
             else:
                 # Procedures?
                 raise NotImplementedError("Not implemented yet")
-            if arg_count != 0:
-                arg_count = (1 << arg_count) - 1  # Convert to Bitmap
 
-            stks.extend(pc.to_bytes(4, byteorder='big'))
-            stks.append(var)
-            stks.append(arg_count)
+            # Clever bit twiddle to turn on the number of bits specified by arg_count
+            # e.g 1 gives 1, 2 gives 11, 3 gives 111 etc.
+            arg_present_bitfield = 0
+            if arg_count != 0:
+                arg_present_bitfield = (1 << arg_count) - 1  # Convert to Bitmap
+
+            stks.extend(pc.to_bytes(3, byteorder='big'))       # return PC
+            stks.append(var_count | (0x10 if is_procedure else 0))   # flags    000pvvvv
+            stks.append(variable_for_result)                         # variable number to store result
+            stks.append(arg_present_bitfield)                        # 0gfedcba        arguments supplied
             stks.extend(local_stack_count.to_bytes(2, byteorder='big'))
 
             for variable_index in range(var_count+local_stack_count):
