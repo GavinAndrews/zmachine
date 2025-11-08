@@ -13,6 +13,12 @@ fileName = "../data/ZORK1.DAT"
 with open(fileName, mode='rb') as file:  # b is important -> binary
     file_bytes = file.read()
     memory : array = array('B', file_bytes)
+    # Bodge Config
+    memory[1] |= 0x20
+    # Bodge Interpreter Standard - Z Machine 1.1
+    memory[50] = 0x01
+    memory[51] = 0x01
+
 
 header = Header(memory)
 
@@ -35,8 +41,8 @@ objectTable : ObjectTable = ObjectTable(start_location=header.OBJECT, memory=mem
 #     print(f"{i:3} \"{obj.description()}\"")
 #     obj.dump_properties()
 
-# scripting = Scripting("../script2")
-scripting = None
+scripting = Scripting("../script2")
+#scripting = None
 
 processor = Processor(memory=memory, start=header.START, global_variables=global_variables, object_table=objectTable,
                       abbreviation_table=abbreviationTable, dictionary=dictionary_table, scripting = scripting, filename=fileName, purbot = header.PURBOT)

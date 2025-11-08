@@ -1,5 +1,6 @@
 import array
 import itertools
+import rich
 
 
 class Stack:
@@ -49,13 +50,25 @@ class Stack:
         self.stack[self.fp-local_number] = value
 
     def dump(self):
+
+        # Build Frame indices: These are indices to the word BEFORE the frame
+        frames = list()
+        frames.append(self.sp)
+        i = self.fp + 4
+        while i < self.stack_size + 4:
+            frames.append(i)
+            next_fp = self.stack[i - 3]  # Look back 3 words to FP
+            i = next_fp + 4 + 1  # Advance over Arg Count and Flags, FP and PC LO, PC HI WORDS and then 1 more
+
         print("-"*20+" STACK "+"-"*20)
         for i, w in enumerate(self.stack):
             if i >= self.sp:
-                print(f"{i:4} : {w:04X}", end="")
+                print(f"{i:04X} : {w:04X}", end="")
                 if self.sp == i:
-                    print(" <<<<<<<<<< SP", end="")
+                    rich.print("[bold red] <<<<<<<<<< SP[/bold red]", end="")
                 if self.fp == i:
                     print(" <<<<<<<<<< FP", end="")
+                if i in frames :
+                    rich.print("[bold blue]  <<<<<<<<<< FRAME[/bold blue]", end="")
                 print()
         print("-"*20+"-------"+"-"*20)

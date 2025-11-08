@@ -173,7 +173,7 @@ class Quetzal:
         self.ifhd_data = self.build_ifhd(pc)
         self.cmem_data = self.build_cmem(memory, purbot)
         self.umem_data = None
-        self.stks_data = self.build_stks(stack)
+        self.stks_data = self.build_stks(memory, stack)
 
         form_size = 12  # FORM and IFZS and sizes
         if self.ifhd_data is not None:
@@ -256,6 +256,16 @@ class Quetzal:
 
         zero_run = 0
 
+        # print("CMEM DELTA START")
+        # for i in range(0, purbot):
+        #     local = memory[i]
+        #     gfile = self.game_data[i]
+        #     delta = local ^ gfile
+        #     if delta != 0:
+        #         print(f"{i:04X}={delta:02X}")
+        # print("CMEM DELTA END")
+
+
         for i in range(0, purbot):
             local = memory[i]
             gfile = self.game_data[i]
@@ -272,7 +282,8 @@ class Quetzal:
                         cmem.append(0)
                         cmem.append(zero_run - 1)
                     zero_run = 0
-                cmem.append(local)
+                # a non-zero byte in the output represents the byte itself - BUT the XORed version!
+                cmem.append(delta)
         if zero_run > 0:
             # Ignore trailing runs
             pass
@@ -289,7 +300,7 @@ class Quetzal:
         return cmem
 
 
-    def build_stks(self, stack):
+    def build_stks(self, memory, stack):
 
         # Build Frame indices: These are indices to the word BEFORE the frame
         frames = list()
@@ -319,11 +330,34 @@ class Quetzal:
 
 
 
-        for frame in reversed(frames[:-1]):
-            pc = stack.stack[frame - 1] << 9 | stack.stack[frame - 2]
+        for frame_index in range(len(frames)-1, 0, -1):
+            current_frame = frames[frame_index]
+            pc = stack.stack[current_frame - 1] << 9 | stack.stack[current_frame - 2]
+            details = stack.stack[current_frame - 4]
+            call_type = (details & 0xF000) >> 12
+            var_count = (details & 0x0F00) >> 8
+            arg_count = details & 0x00FF
+
+            # Calculate Local Stack by measuring gap between frames - normal overhead (pc_lo, pc_hi, fp, flags) and vars
+            local_stack_count = frames[frame_index] - frames[frame_index - 1] - var_count - 4
+
+            print(f"{call_type} {var_count} {arg_count} {local_stack_count}")
+            if call_type == 0:
+                var = memory[pc]
+                pc = (pc + 1) << 8 | var_count
+            else:
+                # Procedures?
+                raise NotImplementedError("Not implemented yet")
+            if arg_count != 0:
+                arg_count = (1 << arg_count) - 1  # Convert to Bitmap
+
             stks.extend(pc.to_bytes(4, byteorder='big'))
+            stks.append(var)
+            stks.append(arg_count)
+            stks.extend(local_stack_count.to_bytes(2, byteorder='big'))
 
-
+            for variable_index in range(var_count+local_stack_count):
+                stks.extend(stack.stack[current_frame-5-variable_index].to_bytes(2, byteorder='big'))
 
         print("STKS: ", end="")
         for b in stks:
