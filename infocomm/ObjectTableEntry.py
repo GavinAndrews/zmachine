@@ -61,7 +61,7 @@ class ObjectTableEntry:
         attr_address = self.start_location + (attribute_number >> 3)
         attrs = self.memory[attr_address]
         result = attrs & (0b10000000 >> (attribute_number & 0b111))
-        print(f"DEBUG: test_attr {self.get_property_table().description()} {attribute_number}")
+        # print(f"DEBUG: test_attr {self.get_property_table().description()} {attribute_number}")
         return result
 
     def set_attr(self, attribute_number: int) -> None:
@@ -69,14 +69,14 @@ class ObjectTableEntry:
         attrs = self.memory[attr_address]
         attrs = attrs | (0b10000000 >> (attribute_number & 0b111))
         self.memory[attr_address] = attrs
-        print(f"DEBUG: set_attr {self.get_property_table().description()} {attribute_number}")
+        # print(f"DEBUG: set_attr {self.get_property_table().description()} {attribute_number}")
 
     def clear_attr(self, attribute_number: int) -> None:
         attr_address = self.start_location + (attribute_number >> 3)
         attrs = self.memory[attr_address]
         attrs = attrs & (~(0b10000000 >> (attribute_number & 0b111)) & 0xFF)
         self.memory[attr_address] = attrs
-        print(f"DEBUG: clear_attr {self.get_property_table().description()} {attribute_number}")
+        # print(f"DEBUG: clear_attr {self.get_property_table().description()} {attribute_number}")
 
     def describe(self) -> str:
         return f"[{self.n}] {self.get_description()}"

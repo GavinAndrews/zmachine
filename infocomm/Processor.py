@@ -1,4 +1,5 @@
 from enum import IntEnum
+from mimetypes import guess_all_extensions
 
 import ZStrings
 import Instructions
@@ -30,7 +31,7 @@ class OperandType(IntEnum):
 
 
 class Processor:
-    def __init__(self, memory, start, global_variables, object_table: ObjectTable, abbreviation_table, dictionary, scripting, filename, purbot):
+    def __init__(self, memory, start, global_variables, object_table: ObjectTable, abbreviation_table, dictionary, scripting, filename, purbot, game_version):
         self.memory = memory
         self.pc = start
         self.globals = global_variables
@@ -43,6 +44,7 @@ class Processor:
         self.args = []
         self.stack = Stack()
         self.instructions = Instructions.Instructions(self, self.dictionary, self.scripting)
+        self.game_version = game_version
 
     def next_instruction(self):
         current_pc = self.pc
@@ -184,7 +186,7 @@ class Processor:
     def call(self, address, args, call_type):
         # print(f"Call to {address*2:04X}, args: {args}")
         pc = self.get_pc()
-        print(f"CALL {pc:04X} : {pc>>9:04X} {pc&0x1ff:04X}")
+        # print(f"CALL {pc:04X} : {pc>>9:04X} {pc&0x1ff:04X}")
         self.stack.push_word(pc >> 9)
         self.stack.push_word(pc & 0x1ff)
         self.stack.push_fp()

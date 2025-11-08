@@ -45,6 +45,7 @@ scripting = Scripting("../script2")
 #scripting = None
 
 processor = Processor(memory=memory, start=header.START, global_variables=global_variables, object_table=objectTable,
-                      abbreviation_table=abbreviationTable, dictionary=dictionary_table, scripting = scripting, filename=fileName, purbot = header.PURBOT)
+                      abbreviation_table=abbreviationTable, dictionary=dictionary_table, scripting = scripting, filename=fileName, purbot = header.PURBOT,
+                      game_version=header.ZVERSION_version)
 while True:
     processor.next_instruction()

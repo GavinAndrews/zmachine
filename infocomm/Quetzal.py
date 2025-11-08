@@ -370,7 +370,7 @@ class Quetzal:
             print(f"{b:02X}", end=' ')
         print("")
 
-        stack.dump()
+        # stack.dump()
         return stks
 
 if __name__ == '__main__':

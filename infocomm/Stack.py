@@ -62,13 +62,37 @@ class Stack:
 
         print("-"*20+" STACK "+"-"*20)
         for i, w in enumerate(self.stack):
+
             if i >= self.sp:
+                next_fp = min((x for x in frames[1:] if x > i), default=None)
                 print(f"{i:04X} : {w:04X}", end="")
+
+                if next_fp is not None:
+                    var_number = next_fp - i - 4
+                    details = self.stack[next_fp-4]
+                    var_count = (details & 0x0F00) >> 8
+                    if 1 <= var_number <= var_count:
+                        rich.print(f"[bold Green]  VAR_{var_number}", end="")
+
+                if i+4 in frames[1:] :
+                    details = self.stack[i]
+                    call_type = (details & 0xF000) >> 12
+                    var_count = (details & 0x0F00) >> 8
+                    arg_count = details & 0x00FF
+                    rich.print(f"[bold Green]  Call_Type {call_type:01X}, VarCount: {var_count:02X}, ArgCount: {arg_count:02X}", end="")
+                if i+3 in frames[1:] :
+                    rich.print(f"[bold Green]  FP -> {self.stack[i]:04X}", end="")
+                if i+2 in frames[1:] :
+                    rich.print(f"[bold Yellow]  PC LO, PC={(self.stack[i+1]<<9) | self.stack[i]:06X}", end="")
+                if i+1 in frames[1:] :
+                    rich.print("[bold Yellow]  PC HI", end="")
                 if self.sp == i:
                     rich.print("[bold red] <<<<<<<<<< SP[/bold red]", end="")
                 if self.fp == i:
                     print(" <<<<<<<<<< FP", end="")
-                if i in frames :
+                if i in frames:
                     rich.print("[bold blue]  <<<<<<<<<< FRAME[/bold blue]", end="")
                 print()
+
+        print("Note: PC points at the byte determining return value when the return is processed")
         print("-"*20+"-------"+"-"*20)
