@@ -175,15 +175,28 @@ class Quetzal:
         self.umem_data = None
         self.stks_data = self.build_stks(memory, stack)
 
-        form_size = 12  # FORM and IFZS and sizes
+# 	ifzslen = 3 * 8 + 4 + 14 + cmemlen + stkslen;
+        # 	if (cmemlen & 1)
+        # 		++ifzslen;
+
+
+        form_size = 4  # IFZS and constituent
         if self.ifhd_data is not None:
             form_size = form_size + len(self.ifhd_data) + 8
+            if len(self.ifhd_data) % 2 == 1:
+                form_size = form_size + 1
         if self.cmem_data is not None:
             form_size = form_size + len(self.cmem_data) + 8
+            if len(self.cmem_data) % 2 == 1:
+                form_size = form_size + 1
         if self.umem_data is not None:
             form_size = form_size + len(self.umem_data) + 8
+            if len(self.umem_data) % 2 == 1:
+                form_size = form_size + 1
         if self.stks_data is not None:
             form_size = form_size + len(self.stks_data) + 8
+            if len(self.stks_data) % 2 == 1:
+                form_size = form_size + 1
 
         self.save_data = bytearray()
         self.save_data.extend(b'FORM')
@@ -287,10 +300,6 @@ class Quetzal:
         if zero_run > 0:
             # Ignore trailing runs
             pass
-
-        # Chunk to even length
-        if len(cmem) % 2 == 1:
-            cmem.append(0)
 
         print("CMem: ", end="")
         for b in cmem:
