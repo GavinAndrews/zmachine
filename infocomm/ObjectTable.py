@@ -9,30 +9,58 @@ from Utils import Utils
 
 
 class ObjectTable:
-    object_entry_size = 9
+    def __init__(self, start_location, memory, abbreviations, game_version):
+        self.game_version = game_version
+        if game_version <= 3:
+            self.object_entry_size = 9
+            self.property_defaults_count = 31
+        else:
+            self.object_entry_size = 14
+            self.property_defaults_count = 63
 
-    def __init__(self, start_location: int, memory: array, abbreviations: int):
         self.property_defaults_start_location = start_location
-        self.object_start_location = start_location + 31 * 2
+        self.object_start_location = start_location + self.property_defaults_count * 2
+
         self.memory = memory
         self.abbreviations = abbreviations
 
         self.object_count = self.determine_extent()
-        print(f"{self.object_count}")
 
-    # Object Table ends when we reach an address that has been referred to as a property table
-    # so loop through them all and find the lowest property address and quit before we reach it!
     def determine_extent(self):
-
         start = self.object_start_location
         done = False
         lowest_prop_address = None
         n = 0
 
         while not done:
-            prop_address = int.from_bytes(self.memory[start + ObjectTable.object_entry_size - 2:
-                                                      start + ObjectTable.object_entry_size - 2 + 2],
-                                          'big')
+            prop_address = Utils.mread_word(
+                self.memory,
+                start + self.object_entry_size - 2
+            )
+
+            if lowest_prop_address is None or prop_address < lowest_prop_address:
+                lowest_prop_address = prop_address
+
+            start += self.object_entry_size
+            n += 1
+
+            if start >= lowest_prop_address:
+                done = True
+
+        return n
+
+
+    def ZZZdetermine_extent(self):
+        start = self.object_start_location
+        done = False
+        lowest_prop_address = None
+        n = 0
+
+        while not done:
+            prop_address = int.from_bytes(
+                self.memory[start + self.object_entry_size - 2:
+                            start + self.object_entry_size - 2 + 2],
+                'big')
             if lowest_prop_address is None or prop_address < lowest_prop_address:
                 lowest_prop_address = prop_address
             start += self.object_entry_size
@@ -47,9 +75,14 @@ class ObjectTable:
             return None
         else:
             from ObjectTableEntry import ObjectTableEntry
-            return ObjectTableEntry(self.object_start_location + (n - 1) * self.object_entry_size,
-                                                     self.memory,
-                                                     self.object_entry_size, self.abbreviations, n, self)
+            return ObjectTableEntry(
+                self.object_start_location + (n - 1) * self.object_entry_size,
+                self.memory,
+                self.object_entry_size,
+                self.abbreviations,
+                n,
+                self,
+                self.game_version)
 
     def get_property_table_entry(self, object_number, property_number):
         object_table_entry = self.get_object_table_entry(object_number)
@@ -59,27 +92,15 @@ class ObjectTable:
         moving_object_table_entry = self.get_object_table_entry(moving_object)
         destination_object_table_entry = self.get_object_table_entry(destination_object)
 
-        # print("-"*40+ " BEFORE "+"-"*40)
-        # self.show_object_tree(moving_object_table_entry)
-        # self.show_object_tree(destination_object_table_entry)
-
-        # unlink moving_object
         moving_object_table_entry.unlink()
 
-        # insert into destination at head
         previous_child = destination_object_table_entry.get_child_object_number()
         destination_object_table_entry.set_child_object_number(moving_object_table_entry.n)
         moving_object_table_entry.set_parent_object_number(destination_object_table_entry.n)
         moving_object_table_entry.set_next_sibling_object_number(previous_child)
 
-        # print("-"*40+ " AFTER "+"-"*40)
-        # self.show_object_tree(moving_object_table_entry)
-        # self.show_object_tree(destination_object_table_entry)
-
     def remove_object(self, moving_object):
         moving_object_table_entry = self.get_object_table_entry(moving_object)
-
-        # unlink moving_object
         moving_object_table_entry.unlink()
 
     def show_object_tree(self, destination_object_table_entry):
@@ -103,12 +124,18 @@ class ObjectTable:
             print(ote.get_property_table().description(), end=" | ")
             object_number = ote.get_next_sibling_object_number()
         print()
-        younger_entry = self.get_object_table_entry(destination_object_table_entry.get_prior_sibling_object_number())
-        older_entry = self.get_object_table_entry(destination_object_table_entry.get_next_sibling_object_number())
+        younger_entry = self.get_object_table_entry(
+            destination_object_table_entry.get_prior_sibling_object_number())
+        older_entry = self.get_object_table_entry(
+            destination_object_table_entry.get_next_sibling_object_number())
         print(
-            f"Near Sibs: Younger: {younger_entry.get_property_table().description() if younger_entry is not None else 'NONE'}",
+            f"Near Sibs: Younger: "
+            f"{younger_entry.get_property_table().description() if younger_entry is not None else 'NONE'}",
             end=", ")
-        print(f"Older: {older_entry.get_property_table().description() if older_entry is not None else 'NONE'}")
+        print(
+            f"Older: {older_entry.get_property_table().description() if older_entry is not None else 'NONE'}")
 
     def get_property_default(self, property_number):
-        return Utils.mread_word(self.memory, self.property_defaults_start_location + 2 * (property_number - 1))
+        return Utils.mread_word(
+            self.memory,
+            self.property_defaults_start_location + 2 * (property_number - 1))

@@ -17,140 +17,151 @@ class Quetzal:
         self.umem_data = None
         self.stks_data = None
 
-        with open(game_file, mode='rb') as file:  # b is important -> binary
+        self.restore_pc = None   # Set by process_ifhd(), consumed by processor.restore()
+
+        with open(game_file, mode='rb') as file:
             file_bytes = file.read()
             self.game_data = array('B', file_bytes)
 
-    def read_quetzal_save(self, file_path: str) -> bytearray:
+    def read_quetzal_save(self, file_path: str) -> None:
         with open(file_path, 'rb') as file:
             self.save_data = bytearray(file.read())
 
+    # ---------------------------------------------------------------------- #
+    # Load path                                                                #
+    # ---------------------------------------------------------------------- #
+
     def process_ifhd(self):
-
         release_number = int.from_bytes(self.ifhd_data[0:2], byteorder='big', signed=False)
-        print(f"Release Number: {release_number:04X}")
+        serial_number  = self.ifhd_data[2:8]
+        checksum       = int.from_bytes(self.ifhd_data[8:10], byteorder='big', signed=False)
 
-        serial_number = self.ifhd_data[2:8]
-        print(f"Serial: {serial_number.decode('utf-8')}")
+        # PC is 3 bytes at offset 10 (IFhd chunk is 13 bytes, padded to 14)
+        pc = int.from_bytes(self.ifhd_data[10:13], byteorder='big', signed=False)
 
-        checksum = int.from_bytes(self.ifhd_data[8:10], byteorder='big', signed=False)
-        print(f"Checksum: {checksum:04X}")
-
-        # Ignore pad byte at end (only parse 3 bytes)
-        pc = int.from_bytes(self.ifhd_data[10:14-1], byteorder='big', signed=False)
-        print(f"PC: {pc:04X}")
+        # BUG FIX 1: store the restore PC so Processor.restore() can use it
+        self.restore_pc = pc
 
         header = Header(self.game_data)
 
-        matching_serial = header.SERIAL == serial_number
-        matching_release = header.ZORKID == release_number
-        matching_checksum = header.PCHKSUM == checksum
+        matching_serial   = header.SERIAL   == serial_number
+        matching_release  = header.ZORKID   == release_number
+        matching_checksum = header.PCHKSUM  == checksum
 
         good = matching_serial and matching_release and matching_checksum
-        print(good)
+        if not good:
+            raise RuntimeError(
+                f"Save file does not match game file "
+                f"(serial={'OK' if matching_serial else 'BAD'}, "
+                f"release={'OK' if matching_release else 'BAD'}, "
+                f"checksum={'OK' if matching_checksum else 'BAD'})")
 
     def process_cmem(self):
+        """Decode run-length-encoded XOR delta and apply to game_data."""
 
-        # Generate Sequence of Bytes
         sequence = bytearray()
-        data = self.cmem_data
+        data = self.cmem_data        # already exact chunk_length bytes (no pad byte)
         while len(data) > 0:
-            occurrences = 1
             byte = data[0]
             if byte == 0:
-                occurrences = int.from_bytes(data[1:2], byteorder='big', signed=False)+1
+                # BUG FIX: run of zeroes: count = data[1] + 1
+                occurrences = data[1] + 1
                 data = data[2:]
             else:
+                occurrences = 1
                 data = data[1:]
+            sequence.extend([byte] * occurrences)
 
-            for i in range(0, occurrences):
-                sequence.append(byte)
-
-        print(f"{len(sequence):04X}")
-
-        # XOR the sequence with the game data
-        for i in range(0, len(sequence)):
+        # XOR the sequence with the original game data to recover saved memory
+        for i in range(len(sequence)):
             self.game_data[i] ^= sequence[i]
 
     def process_stks(self):
+        """Reconstruct the call stack from the Stks chunk."""
 
         self.new_stack = Stack()
 
-        # If not V6 the first frame is a dummy frame i.e. only eval stack
+        # For versions other than V6, the first Quetzal frame is a dummy frame
+        # that holds only the bottom-of-stack eval words (not a real call frame).
         dummy_frame = True
 
         data = self.stks_data
         while len(data) > 0:
-            pc = int.from_bytes(data[0:3], byteorder='big', signed=False)
-            print(f"PC: {pc:06X} = {pc>>9:04X} {pc&0x1FF:04X}")
-
-            flags = int.from_bytes(data[3:4], byteorder='big', signed=False)
-            call_type = (flags >>4) & 0x01
-            print(f"flags: {flags:02X}")
-
-            result_variable_number = int.from_bytes(data[4:5], byteorder='big', signed=False)
-            print(f"result_variable_number: {result_variable_number:02X}")
-
-            arg_count = int.from_bytes(data[5:6], byteorder='big', signed=False)
-            print(f"arg_count: {arg_count:02X}")
-
+            # Each frame header is 8 bytes
+            frame_pc        = int.from_bytes(data[0:3], byteorder='big', signed=False)
+            flags           = data[3]
+            result_variable = data[4]
+            arg_supplied    = data[5]
             eval_word_count = int.from_bytes(data[6:8], byteorder='big', signed=False)
-            print(f"eval_word_count: {eval_word_count:02X}")
-
             data = data[8:]
 
             local_word_count = flags & 0x0F
+            is_procedure     = bool(flags & 0x10)
 
-            if not dummy_frame:
-                adjusted_pc = pc - 1
+            # Read local variable values
+            locals_data = []
+            for _ in range(local_word_count):
+                word = int.from_bytes(data[0:2], byteorder='big', signed=False)
+                locals_data.append(word)
+                data = data[2:]
+
+            # Read eval stack words for this frame
+            eval_data = []
+            for _ in range(eval_word_count):
+                word = int.from_bytes(data[0:2], byteorder='big', signed=False)
+                eval_data.append(word)
+                data = data[2:]
+
+            if dummy_frame:
+                # The dummy frame's eval words sit at the very bottom of the stack
+                for word in eval_data:
+                    self.new_stack.push_word(word)
+            else:
+                # BUG FIX 2: adjusted_pc goes back one byte so that ret() can
+                # call store() which re-reads the result variable byte from memory.
+                # Quetzal stores the return PC PAST the result variable byte,
+                # so we subtract 1 to point back at it.
+                adjusted_pc = frame_pc - 1
+
                 self.new_stack.push_word(adjusted_pc >> 9)
-                self.new_stack.push_word(adjusted_pc & 0x1ff)
+                self.new_stack.push_word(adjusted_pc & 0x1FF)
                 self.new_stack.push_fp()
+
+                call_type = 1 if is_procedure else 0
+                # Reconstruct arg_count from supplied-args bitfield
+                arg_count = bin(arg_supplied).count('1')
                 self.new_stack.push_word(arg_count | (call_type << 12))
                 self.new_stack.mark_frame()
                 self.new_stack.fixup_frame(local_word_count)
 
-            for i in range(0, local_word_count):
-                word = int.from_bytes(data[0:2], byteorder='big', signed=False)
-                print(f"local value: {word:04X}")
-
-                if not dummy_frame:
+                # Push locals (first local = local 1, pushed last so read_local(1) works)
+                for word in locals_data:
                     self.new_stack.push_word(word)
 
-                data = data[2:]
-
-            for i in range(0, eval_word_count):
-                word = int.from_bytes(data[0:2], byteorder='big', signed=False)
-                print(f"Eval value: {word:04X}")
-
-                if dummy_frame:
+                # BUG FIX 3: push eval stack for non-dummy frames too
+                for word in eval_data:
                     self.new_stack.push_word(word)
-
-                data = data[2:]
 
             dummy_frame = False
 
-        self.new_stack.dump()
-
-
     def process_file(self):
-        header = print(self.save_data[0:4].decode('utf-8'))
-        print(header)
+        # BUG FIX 4: print() returns None — don't assign its result
+        print(self.save_data[0:4].decode('utf-8'))
+
         form_length = int.from_bytes(self.save_data[4:8], byteorder='big', signed=False)
-        print(f"Form Length: {form_length:04X}")
         self.form_data = self.save_data[8:8 + form_length]
 
-        inner_header = print(self.form_data[0:4].decode('utf-8'))
+        print(self.form_data[0:4].decode('utf-8'))
         self.inner_data = self.form_data[4:]
 
         remaining_data = self.inner_data
         while len(remaining_data) > 0:
-            chunk_type = remaining_data[0:4].decode('utf-8')
-            print(f"Found Chunk: {chunk_type}")
+            chunk_type   = remaining_data[0:4].decode('utf-8')
             chunk_length = int.from_bytes(remaining_data[4:8], byteorder='big', signed=False)
-            print(f"Chunk Length: {chunk_length:04X}")
+            # BUG FIX 5: slice exactly chunk_length bytes so no pad byte leaks into chunk data.
+            # Use padded_chunk_length only to advance the outer pointer.
             padded_chunk_length = (chunk_length + 1) & ~1
-            chunk_data = remaining_data[8:8 + padded_chunk_length]
+            chunk_data = remaining_data[8:8 + chunk_length]
 
             if chunk_type == 'IFhd':
                 self.ifhd_data = chunk_data
@@ -161,12 +172,15 @@ class Quetzal:
             elif chunk_type == 'Stks':
                 self.stks_data = chunk_data
 
-
             remaining_data = remaining_data[8 + padded_chunk_length:]
 
         self.process_ifhd()
         self.process_cmem()
         self.process_stks()
+
+    # ---------------------------------------------------------------------- #
+    # Save path                                                                #
+    # ---------------------------------------------------------------------- #
 
     def write_quetzal_save(self, memory, purbot, stack, pc, fname):
 
@@ -175,216 +189,146 @@ class Quetzal:
         self.umem_data = None
         self.stks_data = self.build_stks(memory, stack)
 
-# 	ifzslen = 3 * 8 + 4 + 14 + cmemlen + stkslen;
-        # 	if (cmemlen & 1)
-        # 		++ifzslen;
-
-
-        form_size = 4  # IFZS and constituent
+        chunks = []
         if self.ifhd_data is not None:
-            form_size = form_size + len(self.ifhd_data) + 8
-            if len(self.ifhd_data) % 2 == 1:
-                form_size = form_size + 1
+            chunks.append((b'IFhd', self.ifhd_data))
         if self.cmem_data is not None:
-            form_size = form_size + len(self.cmem_data) + 8
-            if len(self.cmem_data) % 2 == 1:
-                form_size = form_size + 1
+            chunks.append((b'CMem', self.cmem_data))
         if self.umem_data is not None:
-            form_size = form_size + len(self.umem_data) + 8
-            if len(self.umem_data) % 2 == 1:
-                form_size = form_size + 1
+            chunks.append((b'UMem', self.umem_data))
         if self.stks_data is not None:
-            form_size = form_size + len(self.stks_data) + 8
-            if len(self.stks_data) % 2 == 1:
-                form_size = form_size + 1
+            chunks.append((b'Stks', self.stks_data))
+
+        # Calculate FORM body size: 4 bytes for 'IFZS' + each chunk's header + data (+ pad)
+        form_size = 4
+        for _, data in chunks:
+            form_size += 8 + len(data)
+            if len(data) % 2 == 1:
+                form_size += 1
 
         self.save_data = bytearray()
         self.save_data.extend(b'FORM')
         self.save_data.extend(form_size.to_bytes(4, 'big'))
-        self.save_data.extend(b'IFZS') # IFZS for Z-machine Save
+        self.save_data.extend(b'IFZS')
 
-        if self.ifhd_data is not None:
-            self.save_data.extend(b'IFhd')
-            self.save_data.extend(len(self.ifhd_data).to_bytes(4, 'big'))
-            self.save_data.extend(self.ifhd_data)
-            if len(self.ifhd_data) % 2 == 1:
+        for tag, data in chunks:
+            self.save_data.extend(tag)
+            self.save_data.extend(len(data).to_bytes(4, 'big'))
+            self.save_data.extend(data)
+            if len(data) % 2 == 1:
                 self.save_data.append(0)
-
-        if self.cmem_data is not None:
-            self.save_data.extend(b'CMem')
-            self.save_data.extend(len(self.cmem_data).to_bytes(4, 'big'))
-            self.save_data.extend(self.cmem_data)
-            if len(self.cmem_data) % 2 == 1:
-                self.save_data.append(0)
-
-        if self.umem_data is not None:
-            self.save_data.extend(b'UMem')
-            self.save_data.extend(len(self.umem_data).to_bytes(4, 'big'))
-            self.save_data.extend(self.umem_data)
-            if len(self.umem_data) % 2 == 1:
-                self.save_data.append(0)
-
-        if self.stks_data is not None:
-            self.save_data.extend(b'Stks')
-            self.save_data.extend(len(self.stks_data).to_bytes(4, 'big'))
-            self.save_data.extend(self.stks_data)
-            if len(self.stks_data) % 2 == 1:
-                self.save_data.append(0)
-
-        # Pad to even length
-        if len(self.save_data) % 2 == 1:
-            self.save_data.append(0)
 
         with open(fname, 'wb') as file:
             file.write(self.save_data)
-            file.close()
-
-        print(self.ifhd_data)
-
-        pass
-
 
     def build_ifhd(self, pc):
-        ifhd = bytearray()
+        """Build the IFhd identification chunk (13 bytes)."""
         header = Header(self.game_data)
-        serial = header.SERIAL
-        release = header.ZORKID
-        checksum = header.PCHKSUM
-
-        ifhd.extend(bytearray(release.to_bytes(2, 'big')))
-        ifhd.extend(serial)
-        ifhd.extend(bytearray(checksum.to_bytes(2, 'big')))
-        ifhd.extend(bytearray(pc.to_bytes(3, 'big')))
-
-        print("IFHD: ", end="")
-        for b in ifhd:
-            print(f"{b:02X}", end=' ')
-        print("")
+        ifhd = bytearray()
+        ifhd.extend(header.ZORKID.to_bytes(2, 'big'))
+        ifhd.extend(header.SERIAL)
+        ifhd.extend(header.PCHKSUM.to_bytes(2, 'big'))
+        ifhd.extend(pc.to_bytes(3, 'big'))
         return ifhd
 
-
     def build_cmem(self, memory, purbot):
-
+        """Build run-length-encoded XOR delta of dynamic memory."""
         cmem = bytearray()
-
         zero_run = 0
 
-        # print("CMEM DELTA START")
-        # for i in range(0, purbot):
-        #     local = memory[i]
-        #     gfile = self.game_data[i]
-        #     delta = local ^ gfile
-        #     if delta != 0:
-        #         print(f"{i:04X}={delta:02X}")
-        # print("CMEM DELTA END")
-
-
-        for i in range(0, purbot):
-            local = memory[i]
-            gfile = self.game_data[i]
-            delta = local ^ gfile
+        for i in range(purbot):
+            delta = memory[i] ^ self.game_data[i]
             if delta == 0:
                 zero_run += 1
             else:
+                # Flush any pending zero run
+                while zero_run >= 256:
+                    cmem.append(0)
+                    cmem.append(255)
+                    zero_run -= 256
                 if zero_run > 0:
-                    while zero_run >= 256:
-                        cmem.append(0)
-                        cmem.append(255)
-                        zero_run -= 256
-                    if zero_run > 0:
-                        cmem.append(0)
-                        cmem.append(zero_run - 1)
+                    cmem.append(0)
+                    cmem.append(zero_run - 1)
                     zero_run = 0
-                # a non-zero byte in the output represents the byte itself - BUT the XORed version!
                 cmem.append(delta)
-        if zero_run > 0:
-            # Ignore trailing runs
-            pass
 
-        print("CMem: ", end="")
-        for b in cmem:
-            print(f"{b:02X}", end=' ')
-        print("")
-
+        # Trailing zero runs are omitted (spec allows this)
         return cmem
 
-
     def build_stks(self, memory, stack):
+        """Serialise the call stack to Quetzal Stks format."""
 
-        # Build Frame indices: These are indices to the word BEFORE the frame
-        frames = list()
-        frames.append(stack.sp)
-        i = stack.fp+4
-        while i < stack.stack_size+4:
+        # Walk the stack to find frame boundaries.
+        # frames[i] is the index of the word BEFORE frame i's header.
+        frames = [stack.sp]
+        i = stack.fp + 4
+        while i < stack.stack_size + 4:
             frames.append(i)
-            next_fp = stack.stack[i - 3]   # Look back 3 words to FP
-            i = next_fp + 4 + 1  # Advance over Arg Count and Flags, FP and PC LO, PC HI WORDS and then 1 more
+            next_fp = stack.stack[i - 3]   # saved FP word
+            i = next_fp + 4 + 1
 
         stks = bytearray()
 
-        # Versions other than V6 have a dummy frame to hold the eval stack
-        # that exists at the bottom of the stack prior to the first frame
-
-        for _ in range(0, 6):
-            stks.append(0)
+        # ------------------------------------------------------------------ #
+        # Dummy frame: bottom-of-stack eval words only (6 zero header bytes) #
+        # ------------------------------------------------------------------ #
+        stks.extend(b'\x00' * 6)   # pc(3) + flags(1) + result_var(1) + arg_supply(1)
 
         nstk = stack.stack_size - frames[-1]
+        stks.extend(nstk.to_bytes(2, 'big'))
 
-        stks.append(nstk >> 8)
-        stks.append(nstk & 0xFF)
+        for idx in range(stack.stack_size - 1, stack.stack_size - nstk - 1, -1):
+            stks.extend(stack.stack[idx].to_bytes(2, 'big'))
 
-        for i in range(stack.stack_size-1, stack.stack_size-nstk-1, -1):
-            stks.append(stack.stack[i] >> 8)
-            stks.append(stack.stack[i] & 0xFF)
-
-
-
-        for frame_index in range(len(frames)-1, 0, -1):
+        # ------------------------------------------------------------------ #
+        # Real call frames, innermost first                                   #
+        # ------------------------------------------------------------------ #
+        for frame_index in range(len(frames) - 1, 0, -1):
             current_frame = frames[frame_index]
-            pc = stack.stack[current_frame - 1] << 9 | stack.stack[current_frame - 2]
-            details = stack.stack[current_frame - 4]
-            call_type = (details & 0xF000) >> 12
-            var_count = (details & 0x0F00) >> 8
-            arg_count = details & 0x00FF
 
-            # Calculate Local Stack by measuring gap between frames - normal overhead (pc_lo, pc_hi, fp, flags) and vars
-            local_stack_count = frames[frame_index] - frames[frame_index - 1] - var_count - 4
+            # Reconstruct what was pushed at call time
+            raw_pc     = stack.stack[current_frame - 1] << 9 | stack.stack[current_frame - 2]
+            details    = stack.stack[current_frame - 4]
+            call_type  = (details & 0xF000) >> 12
+            var_count  = (details & 0x0F00) >> 8
+            arg_count  = details & 0x00FF
 
-            print(f"{call_type} {var_count} {arg_count} {local_stack_count}")
-            is_procedure = False
-            if call_type == 0:
-                variable_for_result = memory[pc]
-                pc = pc + 1  # Not sure why?
+            # Eval stack = words between this frame and the previous one,
+            # minus the 4-word call overhead and the local variables
+            local_stack_count = (frames[frame_index] - frames[frame_index - 1]
+                                 - var_count - 4)
+
+            is_procedure = (call_type != 0)
+
+            if is_procedure:
+                # BUG FIX: procedures have no result variable
+                variable_for_result = 0
+                quetzal_pc = raw_pc   # raw_pc already points past the call
             else:
-                # Procedures?
-                raise NotImplementedError("Not implemented yet")
+                # raw_pc points at the result variable byte; read it and advance
+                variable_for_result = memory[raw_pc]
+                quetzal_pc = raw_pc + 1  # Quetzal stores PC past the result byte
 
-            # Clever bit twiddle to turn on the number of bits specified by arg_count
-            # e.g 1 gives 1, 2 gives 11, 3 gives 111 etc.
-            arg_present_bitfield = 0
-            if arg_count != 0:
-                arg_present_bitfield = (1 << arg_count) - 1  # Convert to Bitmap
+            # arg_present bitfield: bit n set if arg n+1 was supplied
+            arg_present_bitfield = (1 << arg_count) - 1 if arg_count > 0 else 0
 
-            stks.extend(pc.to_bytes(3, byteorder='big'))       # return PC
-            stks.append(var_count | (0x10 if is_procedure else 0))   # flags    000pvvvv
-            stks.append(variable_for_result)                         # variable number to store result
-            stks.append(arg_present_bitfield)                        # 0gfedcba        arguments supplied
-            stks.extend(local_stack_count.to_bytes(2, byteorder='big'))
+            flags = var_count | (0x10 if is_procedure else 0x00)
 
-            for variable_index in range(var_count+local_stack_count):
-                stks.extend(stack.stack[current_frame-5-variable_index].to_bytes(2, byteorder='big'))
+            stks.extend(quetzal_pc.to_bytes(3, 'big'))
+            stks.append(flags)
+            stks.append(variable_for_result)
+            stks.append(arg_present_bitfield)
+            stks.extend(local_stack_count.to_bytes(2, 'big'))
 
-        print("STKS: ", end="")
-        for b in stks:
-            print(f"{b:02X}", end=' ')
-        print("")
+            # Locals then eval stack (both stored innermost-first)
+            for vi in range(var_count + local_stack_count):
+                stks.extend(stack.stack[current_frame - 5 - vi].to_bytes(2, 'big'))
 
-        # stack.dump()
         return stks
+
 
 if __name__ == '__main__':
     q = Quetzal('../data/ZORK1.DAT')
-    print("Hello, World!")
     file_path = '../saves/z1.s1'
     q.read_quetzal_save(file_path)
     q.process_file()

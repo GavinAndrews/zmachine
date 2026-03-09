@@ -1,5 +1,4 @@
 from enum import IntEnum
-from mimetypes import guess_all_extensions
 
 import ZStrings
 import Instructions
@@ -31,10 +30,17 @@ class OperandType(IntEnum):
 
 
 class Processor:
-    def __init__(self, memory, start, global_variables, object_table: ObjectTable, abbreviation_table, dictionary, scripting, filename, purbot, game_version):
+    def __init__(self, memory, start, object_table: ObjectTable,
+                 abbreviation_table, dictionary, scripting, filename, purbot,
+                 game_version, global_variables=None):  # Add this parameter with default None
         self.memory = memory
         self.pc = start
-        self.globals = global_variables
+        # If global_variables is provided, use it; otherwise create new one
+        if global_variables is not None:
+            self.globals = global_variables
+        else:
+            from Globals import Globals
+            self.globals = Globals(memory, game_version)
         self.object_table = object_table
         self.abbreviation_table = abbreviation_table
         self.dictionary = dictionary
@@ -50,10 +56,14 @@ class Processor:
         current_pc = self.pc
 
         if self.pc == 0x6990:
-            #print("BREAK")
             pass
 
         opcode = self.get_byte_and_advance()
+
+        # V4+ adds the EXTENDED opcode form (0xBE)
+        if opcode == 0xBE and self.game_version >= 4:
+            self._execute_extended()
+            return
 
         opcode_form = OpcodeForm(opcode >> 6)
 
@@ -61,12 +71,14 @@ class Processor:
 
         match opcode_form:
             case opcode_form.LONG_0 | opcode_form.LONG_1:  # opcode < 0x80
-                operand_count = OperandCount.z_2OP
+                # All versions: bit 6 = operand 1 type, bit 5 = operand 2 type
+                # 0 = small constant, 1 = variable
                 operand_type1 = OperandType.SMALL_CONSTANT if opcode & 0x40 == 0 else OperandType.VARIABLE
                 self.load_operand(operand_type1, args)
                 operand_type2 = OperandType.SMALL_CONSTANT if opcode & 0x20 == 0 else OperandType.VARIABLE
                 self.load_operand(operand_type2, args)
                 op_number = opcode & 0b11111
+
                 self.instructions.execute(Instructions.OpcodeType.z_2OP, op_number, args, current_pc, opcode)
 
             case opcode_form.SHORT:
@@ -81,12 +93,30 @@ class Processor:
                     self.instructions.execute(Instructions.OpcodeType.z_1OP, op_number, args, current_pc, opcode)
 
             case opcode_form.VARIABLE:
-                opcode_type = Instructions.OpcodeType.z_2OP if opcode & 0b00100000 == 0 else Instructions.OpcodeType.z_VAR
-                op_number = opcode & 0b11111
+                # V4+: opcodes 0xEC (call_vs2) and 0xFA (call_vn2) take two operand type bytes
+                if self.game_version >= 4 and opcode in (0xEC, 0xFA):
+                    opcode_type = Instructions.OpcodeType.z_VAR
+                    op_number = opcode & 0b11111
+                    var_operand_types_1 = self.get_byte_and_advance()
+                    var_operand_types_2 = self.get_byte_and_advance()
+                    self.load_operands(var_operand_types_1, args)
+                    self.load_operands(var_operand_types_2, args)
+                    self.instructions.execute(opcode_type, op_number, args, current_pc, opcode)
+                else:
+                    opcode_type = Instructions.OpcodeType.z_2OP if opcode & 0b00100000 == 0 else Instructions.OpcodeType.z_VAR
+                    op_number = opcode & 0b11111
+                    var_operand_types = self.get_byte_and_advance()
+                    self.load_operands(var_operand_types, args)
+                    self.instructions.execute(opcode_type, op_number, args, current_pc, opcode)
 
-                var_operand_types = self.get_byte_and_advance()
-                self.load_operands(var_operand_types, args)
-                self.instructions.execute(opcode_type, op_number, args, current_pc, opcode)
+    def _execute_extended(self):
+        """Handle V4+ extended opcodes (opcode byte 0xBE)."""
+        current_pc = self.pc - 1  # point back at the 0xBE
+        ext_opcode = self.get_byte_and_advance()
+        args = []
+        var_operand_types = self.get_byte_and_advance()
+        self.load_operands(var_operand_types, args)
+        self.instructions.execute(Instructions.OpcodeType.z_EXT, ext_opcode, args, current_pc, 0xBE)
 
     def load_operand(self, operand_type, args):
         match operand_type:
@@ -96,7 +126,6 @@ class Processor:
                 value = int(self.get_byte_and_advance())
             case OperandType.VARIABLE:
                 variable = int(self.get_byte_and_advance())
-                # Three types... 0 top of stack, <16 locals, else globals
                 if variable == 0:
                     value = self.stack.pop_word()
                 elif variable < 16:
@@ -131,7 +160,6 @@ class Processor:
 
     def store(self, value):
         variable = int(self.get_byte_and_advance())
-        # Three types... 0 top of stack, <16 locals, else globals
         if variable == 0:
             self.stack.push_word(value)
         elif variable < 16:
@@ -146,22 +174,17 @@ class Processor:
         if not condition:
             specifier ^= 0x80
 
-        # bit 6 specifies short or long
         if specifier & 0x40 == 0x00:
-            # Consider as a signed 16-bit value so if we are -ve, i.e. top bit set
-            # make them all set as we expand from 14 bits into 16 bits
             if offset_1 & 0b100000 != 0:
                 offset_1 |= 0b11000000
             offset_2 = self.get_byte_and_advance()
             offset = offset_1 << 8 | offset_2
-            # Convert to signed
             offset = Utils.from_unsigned_word_to_signed_int(offset)
         else:
             offset = offset_1
 
         if specifier & 0x80:
             if offset == 0 or offset == 1:
-                # Special Case 0 False, 1 True
                 self.ret(offset)
             else:
                 pc = self.get_pc()
@@ -183,24 +206,36 @@ class Processor:
     def storew(self, address, value):
         Utils.mwrite_word(self.memory, address, value)
 
+    def packed_address(self, paddr):
+        """Convert a packed address to a byte address based on game version."""
+        if self.game_version <= 3:
+            return paddr * 2
+        elif self.game_version <= 7:
+            return paddr * 4
+        else:  # V8
+            return paddr * 8
+
     def call(self, address, args, call_type):
-        # print(f"Call to {address*2:04X}, args: {args}")
         pc = self.get_pc()
-        # print(f"CALL {pc:04X} : {pc>>9:04X} {pc&0x1ff:04X}")
         self.stack.push_word(pc >> 9)
         self.stack.push_word(pc & 0x1ff)
         self.stack.push_fp()
         self.stack.push_word(len(args) | (call_type << 12))
         self.stack.mark_frame()
 
-        address *= 2  # V3 Address
+        address = self.packed_address(address)  # was address *= 2 (V3 only)
         self.set_pc(address)
 
         local_var_count = self.get_byte_and_advance()
         self.stack.fixup_frame(local_var_count)
 
         for i in range(0, local_var_count):
-            v = self.get_word_and_advance()
+            if self.game_version <= 3:
+                # V1-3: local variable defaults are stored in the call frame
+                v = self.get_word_and_advance()
+            else:
+                # V4+: no default values in the call frame, locals start as 0
+                v = 0
             if i < len(args):
                 v = args[i]
             self.stack.push_word(v)
@@ -217,11 +252,38 @@ class Processor:
         else:
             self.stack.push_word(value)
 
-    # https://zspec.jaredreisinger.com/
+    def call_and_run(self, packed_address, args):
+        """
+        Synchronously call a Z-machine routine and return True if it returns non-zero.
+
+        Used by timed-input interrupt callbacks (read / read_char with time+routine
+        args).  The routine is called with call_type=1 so that ret() pushes the
+        return value onto the eval stack rather than trying to consume a store-
+        variable byte from the PC (which would corrupt the instruction stream).
+        We run next_instruction() in a tight loop until the frame returns, then
+        pop the result, restore PC, and hand back a bool.
+        """
+        saved_pc  = self.pc
+        saved_fp  = self.stack.fp   # frame pointer before the call
+
+        # call_type=1: ret() will push the return value instead of calling store()
+        self.call(packed_address, args, 1)
+
+        # Run until our new frame (and anything it calls) has returned.
+        # ret() restores fp via pop_fp(), so when fp is back to saved_fp we are done.
+        while self.stack.fp != saved_fp:
+            self.next_instruction()
+
+        # ret() with call_type=1 pushed the return value onto the eval stack.
+        result = self.stack.pop_word()
+
+        # ret() already restored PC to saved_pc; this is just defensive.
+        self.set_pc(saved_pc)
+
+        return result != 0
 
     def print_paddr(self, paddr):
-        # V1-3 Packed Address
-        zstring_address = paddr << 1
+        zstring_address = self.packed_address(paddr)  # was paddr << 1 (V3 only)
         print(ZStrings.toZString(zstring_address, self.memory, self.abbreviation_table), end="")
 
     def print_embedded(self):
@@ -229,16 +291,13 @@ class Processor:
         self.decode_embedded_text(embedded_string_address)
 
     def decode_embedded_text(self, embedded_string_address):
-        # Advance past string
         while True:
             value = self.get_word_and_advance()
             if value & 0x8000:
                 break
         print(ZStrings.toZString(embedded_string_address, self.memory, self.abbreviation_table), end="")
 
-
     def adjust_variable(self, variable, delta):
-        # Three types... 0 top of stack, <16 locals, else globals
         if variable == 0:
             value = self.stack.pop_word()
         elif variable < 16:
@@ -250,7 +309,6 @@ class Processor:
         result = value + delta
         value = Utils.from_signed_int_to_unsigned_word(result)
 
-        # Three types... 0 top of stack, <16 locals, else globals
         if variable == 0:
             self.stack.push_word(value)
         elif variable < 16:
@@ -269,15 +327,32 @@ class Processor:
         else:
             self.globals.write_global(destination - 16, value)
 
-
-    def restore(self, game_data, new_stack):
-
-        # Copy Modified Data back over Memory
+    def restore(self, game_data, new_stack, new_pc):
+        """Restore game state from a save file."""
         for i, b in enumerate(game_data):
             self.memory[i] = b
 
         self.stack = new_stack
+        self.set_pc(new_pc)
 
-        self.branch(True)
+        if self.game_version <= 3:
+            # V3: save/restore are branch instructions
+            self.branch(True)
+        else:
+            # V4+: save/restore are store instructions
+            # 2 = successfully restored (0 = failed, 1 = saved OK, 2 = restored OK)
+            self.store(2)
 
+    def save_failed(self):
+        """Called when a save attempt fails."""
+        if self.game_version <= 3:
+            self.branch(False)
+        else:
+            self.store(0)
 
+    def save_succeeded(self):
+        """Called after a successful save (from the saving side)."""
+        if self.game_version <= 3:
+            self.branch(True)
+        else:
+            self.store(1)

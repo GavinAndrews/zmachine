@@ -6,10 +6,11 @@ from infocomm.Utils import Utils
 
 
 class DictionaryTable:
-    def __init__(self, start_location, memory, abbreviations):
+    def __init__(self, start_location, memory, abbreviations, game_version=3):
         self.header_start = start_location
         self.memory = memory
         self.abbreviations = abbreviations
+        self.game_version = game_version
 
         self.num_separators = memory[start_location]
         start_location += 1
@@ -26,19 +27,21 @@ class DictionaryTable:
 
         self.dictionary_start = start_location
 
-        self.dictionary_entry_key_words = 2   # V1-3... Later 3
+        # V1-3: 2 key words (4 bytes), V4+: 3 key words (6 bytes)
+        self.dictionary_entry_key_words = 2 if game_version <= 3 else 3
 
-        self.dictionary_keys = DictionaryKeys(self.memory, self.dictionary_start, self.word_count, self.entry_length, self.dictionary_entry_key_words)
+        self.dictionary_keys = DictionaryKeys(self.memory, self.dictionary_start, self.word_count,
+                                              self.entry_length, self.dictionary_entry_key_words)
 
     def dump(self):
-        print(f"{self.start_location:04X} {self.num_separators:02X}")
-        print(f"{self.start_location:04X}", end="")
+        print(f"{self.header_start:04X} {self.num_separators:02X}")
+        print(f"{self.header_start:04X}", end="")
         for b in self.separators:
             print(f" {b:02X}", end="")
         print()
-        print(f"{self.start_location:04X} {self.entry_length:02X}                     {self.entry_length:3} entry size")
+        print(f"{self.header_start:04X} {self.entry_length:02X}                     {self.entry_length:3} entry size")
         print(
-            f"{self.start_location:04X} {self.memory[self.start_location]:02X} {self.memory[self.start_location + 1]:02X}                {self.word_count:5} word count")
+            f"{self.header_start:04X} {self.memory[self.header_start]:02X} {self.memory[self.header_start + 1]:02X}                {self.word_count:5} word count")
         print(f"{self.dictionary_start:04X}                            Dict Start")
 
     def get_seperators(self):
@@ -52,11 +55,12 @@ class DictionaryTable:
                                     self.entry_length, self.abbreviations)
 
     def find_phrase(self, words):
-        lower = 1
-        higher = self.word_count
         i = bisect.bisect_left(self.dictionary_keys, words)
-        if self.dictionary_keys[i] == DictionaryKey(words):
-            return i
+        if i < len(self.dictionary_keys) and self.dictionary_keys[i] == DictionaryKey(words):
+            # Convert index to memory address
+            # i is 0-based, so entry number is i
+            address = self.dictionary_start + (i) * self.entry_length
+            return address
         else:
             return None
 
@@ -78,7 +82,7 @@ class DictionaryKeys:
         self.dictionary_entry_key_words = dictionary_entry_key_words
 
     def __getitem__(self, index):
-        memory_address = self.dictionary_start + (index - 1) * self.entry_length
+        memory_address = self.dictionary_start + (index) * self.entry_length
         words = []
         for _ in range(self.dictionary_entry_key_words):
             word = Utils.mread_word(self.memory, memory_address)
