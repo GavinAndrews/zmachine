@@ -230,11 +230,11 @@ class Processor:
         self.stack.fixup_frame(local_var_count)
 
         for i in range(0, local_var_count):
-            if self.game_version <= 3:
-                # V1-3: local variable defaults are stored in the call frame
+            if self.game_version <= 4:
+                # V1-4: local variable defaults are stored in the routine header
                 v = self.get_word_and_advance()
             else:
-                # V4+: no default values in the call frame, locals start as 0
+                # V5+: no stored default values; locals start as 0
                 v = 0
             if i < len(args):
                 v = args[i]
@@ -249,8 +249,9 @@ class Processor:
         self.set_pc(pc)
         if ct == 0:
             self.store(value)
-        else:
+        elif ct == 1:
             self.stack.push_word(value)
+        # ct == 2: void call (call_vn / call_vn2) — discard return value
 
     def call_and_run(self, packed_address, args):
         """

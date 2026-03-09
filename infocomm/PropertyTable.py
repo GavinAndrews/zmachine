@@ -1,7 +1,7 @@
 from typing import Optional
 
 from ZStrings import toZString
-from infocomm.PropertyTableEntry import PropertyTableEntry
+from PropertyTableEntry import PropertyTableEntry
 from array import array
 
 

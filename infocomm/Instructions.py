@@ -5,8 +5,8 @@ from enum import IntEnum
 import ZStrings
 from Utils import Utils
 import Processor
-from infocomm.Quetzal import Quetzal
-from infocomm.TraceFile import TraceFile
+from Quetzal import Quetzal
+from TraceFile import TraceFile
 
 
 class OpcodeType(IntEnum):
@@ -23,16 +23,18 @@ class Instructions:
         self.processor = processor
         self.quiet = True
         self.check_trace = False
+        self.trace_count = 0
         self.dictionary = dictionary
         self.scripting = scripting
         self.random = 0x1234
+        self.status_enabled = True
 
         # Output stream 3 support: stack of (table_address, current_length) tuples
         # When non-empty, print output goes to memory instead of the screen
         self.stream3_stack = []
 
         if self.check_trace:
-            self.trace_file = TraceFile("H:\\linux_trace_script2.txt")
+            self.trace_file = TraceFile("C:\\Users\\Gavin\\Documents\\Projects\\software\\infocom\\linux_trace_trinity_1.txt")
 
         self.op0_functions = [
             self.instruction_rtrue,         # 0
@@ -169,18 +171,21 @@ class Instructions:
     def execute(self, op_type, op_number, args, current_pc, opcode):
         try:
             implementation = self.all_functions[op_type][op_number]
-            if not self.quiet:
+            if not self.quiet or self.trace_count > 0:
                 print(
                     f"EXECUTE: {current_pc:04X} {opcode:02X} {implementation.__name__.replace('instruction_', ''):12} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
+                if self.trace_count > 0:
+                    self.trace_count -= 1
 
             if self.check_trace:
-                trace_address = self.trace_file.read().strip()
+                trace_address = self.trace_file.read().strip().split()[0]
                 current_pc_as_hex = f"{current_pc:04X}"
                 if trace_address != current_pc_as_hex:
                     print(f"BAD {trace_address} {current_pc_as_hex}")
                     exit()
                 else:
-                    print(f"GOOD {trace_address} {current_pc_as_hex}")
+                    #print(f"GOOD {trace_address} {current_pc_as_hex}")
+                    pass
 
             implementation(args)
         except RuntimeError as re:
@@ -249,11 +254,11 @@ class Instructions:
 
     def instruction_call_vn(self, args):
         if args[0] != 0:
-            self.processor.call(args[0], args[1:], 1)
+            self.processor.call(args[0], args[1:], 2)  # 2 = void: discard return value
 
     def instruction_call_vn2(self, args):
         if args[0] != 0:
-            self.processor.call(args[0], args[1:], 1)
+            self.processor.call(args[0], args[1:], 2)  # 2 = void: discard return value
 
     ################################################################################################
     # Memory Instructions                                                                          #
@@ -650,14 +655,18 @@ class Instructions:
             Utils.mwrite_byte(self.processor.memory, text_addr + 1, len(in_string))
 
         # Parse if parse buffer provided
+        print(f"[READ] version={self.processor.game_version} text_addr={text_addr:#x} parse_addr={parse_addr} in_string={in_string!r}", flush=True)
         if parse_addr is not None and parse_addr != 0:
             Utils.mwrite_byte(self.processor.memory, parse_addr + 1, 0)
             if in_string.strip():
                 self._tokenise(in_string, parse_addr, separators)
 
-        # Store terminating character (13 for Enter)
-        if self.processor.game_version >= 4:
-            self.processor.store(13)
+        # Dump text buf and parse buf after tokenise
+        if parse_addr is not None and parse_addr != 0:
+            print(f"[READ] text_buf@{text_addr:#x}: {[f'{self.processor.memory[text_addr+j]:02x}' for j in range(12)]}", flush=True)
+            print(f"[READ] parse_buf@{parse_addr:#x}: {[f'{self.processor.memory[parse_addr+j]:02x}' for j in range(10)]}", flush=True)
+
+        self.trace_count = 0  # no trace after read
 
 
     def instruction_read_char(self, args):
@@ -667,6 +676,7 @@ class Instructions:
         """
         time_tenths  = args[1] if len(args) > 1 else 0
         time_routine = args[2] if len(args) > 2 else 0
+        print(f"[READ_CHAR] args={[f'{a:#06x}' for a in args]} time_tenths={time_tenths} time_routine={time_routine:#06x}", flush=True)
 
         script_line = self.scripting.get_line() if self.scripting is not None else None
         if script_line is not None:
@@ -716,7 +726,7 @@ class Instructions:
     # ---------------------------------------------------------------------- #
 
     def _location_prompt(self):
-        """Print [Room Name] before input prompt. Safe - never crashes."""
+        """Print [Room Name] before input prompt."""
         try:
             player_number = self.processor.globals.read_global(0)
             player_obj = self.processor.object_table.get_object_table_entry(player_number)
@@ -724,10 +734,26 @@ class Instructions:
                 loc = player_obj.get_parent_object_number()
                 loc_entry = self.processor.object_table.get_object_table_entry(loc)
                 if loc_entry is not None:
-                    print(f"[{loc_entry.get_property_table().get_description()}] ",
+                    print(f"\n[{loc_entry.get_property_table().get_description()}]> ",
                           end="", flush=True)
+                    return
         except Exception:
             pass
+        print("\n> ", end="", flush=True)
+
+
+    def instruction_show_status(self, args):
+        """Show status line (V1-3: always shown, V4: toggles on/off, V5+: no-op)"""
+        if self.processor.game_version <= 3:
+            # Already showing, nothing to do
+            pass
+        elif self.processor.game_version == 4:
+            # Toggle status display
+            self.status_enabled = not self.status_enabled
+            if self.status_enabled:
+                self._print_status_line()
+        # V5+ ignore
+
 
     def _get_input_line(self, time_tenths, time_routine):
         """
@@ -740,6 +766,10 @@ class Instructions:
         script_line = self.scripting.get_line() if self.scripting is not None else None
         if script_line is not None:
             return script_line
+
+        # Add status line for V1-3 before prompt
+        if self.processor.game_version <= 3:
+            self._print_status_line()
 
         self._location_prompt()
 
@@ -819,6 +849,10 @@ class Instructions:
 
     def _read_single_char_plain(self):
         """Read one character without timing (used by read_char when no timer)."""
+        if not sys.stdin.isatty():
+            # Piped / scripted input: read one byte from stdin directly
+            ch = sys.stdin.read(1)
+            return ch if ch else '\r'
         if sys.platform == 'win32':
             import msvcrt
             return msvcrt.getwche()
@@ -897,25 +931,25 @@ class Instructions:
 
         token_data_start = parse_addr + 2
         key_words = self.dictionary.dictionary_entry_key_words
+        # Position in parse buffer counts from start of text_buf:
+        # V1-3: text starts at byte 1, so offset = 1
+        # V4+:  text starts at byte 2 (byte 1 is the length count), so offset = 2
+        text_offset = 2 if self.processor.game_version >= 4 else 1
 
         for i, (word, start_pos) in enumerate(words):
             token_addr = token_data_start + (i * 4)
 
-            encoded_zstring = ZStrings.convertToEncodedWords(word)
-            encoded_zstring = [w & 0x7FFF for w in encoded_zstring]
-
-            while len(encoded_zstring) < key_words:
-                encoded_zstring.append(0x14A5)
-            encoded_zstring = encoded_zstring[:key_words]
-            encoded_zstring[-1] |= 0x8000
+            encoded_zstring = ZStrings.convertToEncodedWords(word, key_words)
 
             dict_addr = self.dictionary.find_phrase(encoded_zstring)
             if dict_addr is None:
                 dict_addr = 0
 
+            print(f"[TOKENISE] word={word!r} pos={start_pos} offset={text_offset} dict_addr={dict_addr:#06x} token_addr={token_addr:#x}", flush=True)
             Utils.mwrite_word(self.processor.memory, token_addr, dict_addr)
             Utils.mwrite_byte(self.processor.memory, token_addr + 2, len(word))
-            Utils.mwrite_byte(self.processor.memory, token_addr + 3, start_pos + 1)
+            Utils.mwrite_byte(self.processor.memory, token_addr + 3, start_pos + text_offset)
+            print(f"[TOKENISE] bytes at parse_addr={parse_addr:#x}: {[f'{self.processor.memory[parse_addr+j]:02x}' for j in range(10)]}", flush=True)
 
     def instruction_random(self, args):
         range_val = Utils.from_unsigned_word_to_signed_int(args[0])
@@ -1082,4 +1116,38 @@ class Instructions:
     def instruction_restart(self, args):
         print("\n[RESTART not implemented - exiting]")
         sys.exit(0)
+
+    # Add these methods to the Instructions class:
+
+    def _print_status_line(self):
+        """Print the current score and room name like a status line."""
+        if not self.status_enabled:
+            return
+
+        try:
+            # Get player object number (usually global 0)
+            player_number = self.processor.globals.read_global(0)
+
+            # Get score (usually global 1 in V1-3)
+            score = self.processor.globals.read_global(1)
+
+            # Get moves (often global 2)
+            moves = self.processor.globals.read_global(2)
+
+            # Get current room
+            player_obj = self.processor.object_table.get_object_table_entry(player_number)
+            if player_obj is not None:
+                room_number = player_obj.get_parent_object_number()
+                room_entry = self.processor.object_table.get_object_table_entry(room_number)
+                if room_entry is not None:
+                    room_name = room_entry.get_property_table().get_description()
+
+                    # Format and print status line
+                    status = f"Score: {score}  Moves: {moves}  Room: {room_name}"
+                    print("\n" + "=" * len(status))
+                    print(status)
+                    print("=" * len(status))
+        except Exception:
+            pass
+
 

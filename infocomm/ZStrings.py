@@ -101,9 +101,9 @@ def toZString(address, memory, abbreviation_table, count=None, context=None):
     return result
 
 
-def convertToEncodedWords(s):
+def convertToEncodedWords(s, key_words=2):
     index = 0
-    words_to_encode = 2
+    words_to_encode = key_words
     five_bits_to_encode = words_to_encode * 3
     five_bits = []
 

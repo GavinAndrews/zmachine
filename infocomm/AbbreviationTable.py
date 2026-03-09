@@ -1,4 +1,4 @@
-from infocomm.ZStrings import toZString
+from ZStrings import toZString
 
 
 class AbbreviationTable:

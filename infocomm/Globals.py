@@ -1,4 +1,4 @@
-from infocomm.Utils import Utils
+from Utils import Utils
 
 
 class Globals:

@@ -12,11 +12,19 @@ class Utils:
 
     @staticmethod
     def mwrite_word(memory: array, offset: int, value: int) -> None:
+        if offset in (0x851C, 0x851D):
+            import traceback
+            print(f"[WATCH-MEM] mwrite_word {offset:#06x} = {value:#06x}", flush=True)
+            traceback.print_stack(limit=4)
         memory[offset] = (value >> 8) & 0xFF
         memory[offset + 1] = value & 0xFF
 
     @staticmethod
     def mwrite_byte(memory: array, offset: int, value: int) -> None:
+        if offset in (0x851C, 0x851D):
+            import traceback
+            print(f"[WATCH-MEM] mwrite_byte {offset:#06x} = {value:#04x}", flush=True)
+            traceback.print_stack(limit=4)
         memory[offset] = value & 0xFF
 
     @staticmethod

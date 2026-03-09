@@ -1,7 +1,7 @@
 from array import array
 
-from infocomm.Header import Header
-from infocomm.Stack import Stack
+from Header import Header
+from Stack import Stack
 
 
 class Quetzal:

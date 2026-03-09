@@ -20,13 +20,12 @@ class ParsingTests(unittest.TestCase):
 
         self.header = Header(self.memory)
 
-        global_variables = Globals(self.memory, self.header.GLOBALS)
+        game_version = self.header.ZVERSION_version
 
         self.abbreviationTable = AbbreviationTable(start_location=self.header.FWORDS, memory=self.memory)
-        # for i in range(0, 96):
-        #     print("|"+abbreviationTable.toString(i)+"|")
 
-        self.dictionary_table = DictionaryTable(self.header.VOCAB, self.memory, self.abbreviationTable)
+        self.dictionary_table = DictionaryTable(self.header.VOCAB, self.memory, self.abbreviationTable,
+                                                game_version=game_version)
 
     def test_parsing(self):
         """Parse String"""
