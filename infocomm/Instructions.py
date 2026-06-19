@@ -32,6 +32,7 @@ class Instructions:
         # Output stream 3: stack of (table_address, current_length) tuples
         # When non-empty, print output goes to memory instead of the screen
         self.stream3_stack = []
+        self._undo_state = None
         self.show_location = False
         self.location_global = None   # None = auto-detect; set via #loc G N
         self._player_obj_num = None   # cached once confirmed (parent has a name)
@@ -1135,10 +1136,34 @@ class Instructions:
         self.processor.store(1)
 
     def instruction_save_undo(self, args):
-        self.processor.store(0xFFFF)
+        import array as _array
+        stack = self.processor.stack
+        self._undo_state = {
+            'pc':          self.processor.pc,   # points at result-variable byte
+            'memory':      _array.array('B', self.processor.memory),
+            'stack_data':  _array.array('L', stack.stack),
+            'sp':          stack.sp,
+            'fp':          stack.fp,
+            'frame_count': stack.frame_count,
+        }
+        self.processor.store(1)   # 1 = saved OK
 
     def instruction_restore_undo(self, args):
-        self.processor.store(0)
+        if self._undo_state is None:
+            self.processor.store(0)   # 0 = no state available
+            return
+        s = self._undo_state
+        mem = self.processor.memory
+        for i, b in enumerate(s['memory']):
+            mem[i] = b
+        stack = self.processor.stack
+        for i, w in enumerate(s['stack_data']):
+            stack.stack[i] = w
+        stack.sp          = s['sp']
+        stack.fp          = s['fp']
+        stack.frame_count = s['frame_count']
+        self.processor.set_pc(s['pc'])
+        self.processor.store(2)   # 2 = successfully restored
 
     ################################################################################################
     # Misc                                                                                         #
