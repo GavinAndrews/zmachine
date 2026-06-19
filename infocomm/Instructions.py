@@ -32,7 +32,8 @@ class Instructions:
         # Output stream 3: stack of (table_address, current_length) tuples
         # When non-empty, print output goes to memory instead of the screen
         self.stream3_stack = []
-        self._undo_state = None
+        self._undo_stack = []
+        self._undo_max_depth = 10
         self.show_location = False
         self.location_global = None   # None = auto-detect; set via #loc G N
         self._player_obj_num = None   # cached once confirmed (parent has a name)
@@ -1138,21 +1139,23 @@ class Instructions:
     def instruction_save_undo(self, args):
         import array as _array
         stack = self.processor.stack
-        self._undo_state = {
-            'pc':          self.processor.pc,   # points at result-variable byte
+        self._undo_stack.append({
+            'pc':          self.processor.pc,
             'memory':      _array.array('B', self.processor.memory),
             'stack_data':  _array.array('L', stack.stack),
             'sp':          stack.sp,
             'fp':          stack.fp,
             'frame_count': stack.frame_count,
-        }
-        self.processor.store(1)   # 1 = saved OK
+        })
+        if len(self._undo_stack) > self._undo_max_depth:
+            self._undo_stack.pop(0)   # discard oldest
+        self.processor.store(1)
 
     def instruction_restore_undo(self, args):
-        if self._undo_state is None:
-            self.processor.store(0)   # 0 = no state available
+        if not self._undo_stack:
+            self.processor.store(0)
             return
-        s = self._undo_state
+        s = self._undo_stack.pop()
         mem = self.processor.memory
         for i, b in enumerate(s['memory']):
             mem[i] = b
@@ -1163,7 +1166,7 @@ class Instructions:
         stack.fp          = s['fp']
         stack.frame_count = s['frame_count']
         self.processor.set_pc(s['pc'])
-        self.processor.store(2)   # 2 = successfully restored
+        self.processor.store(2)
 
     ################################################################################################
     # Misc                                                                                         #
