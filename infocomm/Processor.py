@@ -32,10 +32,9 @@ class OperandType(IntEnum):
 class Processor:
     def __init__(self, memory, start, object_table: ObjectTable,
                  abbreviation_table, dictionary, scripting, filename, purbot,
-                 game_version, global_variables=None):  # Add this parameter with default None
+                 game_version, global_variables=None, screen=None):
         self.memory = memory
         self.pc = start
-        # If global_variables is provided, use it; otherwise create new one
         if global_variables is not None:
             self.globals = global_variables
         else:
@@ -49,7 +48,8 @@ class Processor:
         self.purbot = purbot
         self.args = []
         self.stack = Stack()
-        self.instructions = Instructions.Instructions(self, self.dictionary, self.scripting)
+        self.screen = screen
+        self.instructions = Instructions.Instructions(self, self.dictionary, self.scripting, screen)
         self.game_version = game_version
 
     def next_instruction(self):
@@ -284,8 +284,8 @@ class Processor:
         return result != 0
 
     def print_paddr(self, paddr):
-        zstring_address = self.packed_address(paddr)  # was paddr << 1 (V3 only)
-        print(ZStrings.toZString(zstring_address, self.memory, self.abbreviation_table), end="")
+        zstring_address = self.packed_address(paddr)
+        self.screen.print_str(ZStrings.toZString(zstring_address, self.memory, self.abbreviation_table))
 
     def print_embedded(self):
         embedded_string_address = self.get_pc()
@@ -296,7 +296,7 @@ class Processor:
             value = self.get_word_and_advance()
             if value & 0x8000:
                 break
-        print(ZStrings.toZString(embedded_string_address, self.memory, self.abbreviation_table), end="")
+        self.screen.print_str(ZStrings.toZString(embedded_string_address, self.memory, self.abbreviation_table))
 
     def adjust_variable(self, variable, delta):
         if variable == 0:

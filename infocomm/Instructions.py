@@ -18,7 +18,7 @@ class OpcodeType(IntEnum):
 
 
 class Instructions:
-    def __init__(self, processor: Processor, dictionary, scripting):
+    def __init__(self, processor: Processor, dictionary, scripting, screen=None):
 
         self.processor = processor
         self.quiet = True
@@ -27,11 +27,15 @@ class Instructions:
         self.dictionary = dictionary
         self.scripting = scripting
         self.random = 0x1234
-        self.status_enabled = True
+        self.screen = screen
 
-        # Output stream 3 support: stack of (table_address, current_length) tuples
+        # Output stream 3: stack of (table_address, current_length) tuples
         # When non-empty, print output goes to memory instead of the screen
         self.stream3_stack = []
+        self.show_location = False
+        self.location_global = None   # None = auto-detect; set via #loc G N
+        self._player_obj_num = None   # cached once confirmed (parent has a name)
+        self._player_candidates = None  # cached list of all player-named objects
 
         if self.check_trace:
             self.trace_file = TraceFile("C:\\Users\\Gavin\\Documents\\Projects\\software\\infocom\\linux_trace_trinity_1.txt")
@@ -102,7 +106,7 @@ class Instructions:
             self.instruction_mod,               # 24
             self.instruction_call_2s,           # 25 call_2s (V4+)
             self.unimplemented,                 # 26 call_2n (V5+)
-            self.unimplemented,                 # 27 set_colour (V5+)
+            self.instruction_set_colour,        # 27 set_colour (V5+)
             self.unimplemented,                 # 28 throw (V5+)
             self.unimplemented,                 # 29
             self.unimplemented,                 # 30
@@ -172,8 +176,9 @@ class Instructions:
         try:
             implementation = self.all_functions[op_type][op_number]
             if not self.quiet or self.trace_count > 0:
-                print(
-                    f"EXECUTE: {current_pc:04X} {opcode:02X} {implementation.__name__.replace('instruction_', ''):12} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
+                import sys as _sys
+                _sys.stderr.write(
+                    f"EXECUTE: {current_pc:04X} {opcode:02X} {implementation.__name__.replace('instruction_', ''):12} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}\n")
                 if self.trace_count > 0:
                     self.trace_count -= 1
 
@@ -189,7 +194,8 @@ class Instructions:
 
             implementation(args)
         except RuntimeError as re:
-            print(f"{re} : {current_pc:04X} {opcode:02X} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}")
+            import sys as _sys
+            _sys.stderr.write(f"{re} : {current_pc:04X} {opcode:02X} {op_type.name:5} {op_number:3} {[f'{x:04X}' for x in args]}\n")
             self.processor.stack.dump()
             sys.exit(101)
 
@@ -200,7 +206,7 @@ class Instructions:
         raise RuntimeError("Illegal function")
 
     # ---------------------------------------------------------------------- #
-    # Output helpers - route through stream 3 if active                       #
+    # Output helpers - route through stream 3 if active, else Screen          #
     # ---------------------------------------------------------------------- #
 
     def _print_str(self, s):
@@ -212,7 +218,7 @@ class Instructions:
             Utils.mwrite_word(self.processor.memory, table_addr, length)
             self.stream3_stack[-1] = (table_addr, length)
         else:
-            print(s, end="")
+            self.screen.print_str(s)
 
     def _print_char(self, ch):
         if self.stream3_stack:
@@ -222,7 +228,7 @@ class Instructions:
             Utils.mwrite_word(self.processor.memory, table_addr, length)
             self.stream3_stack[-1] = (table_addr, length)
         else:
-            print(ch, end="")
+            self.screen.print_char(ch)
 
     ################################################################################################
     # Call Instructions                                                                            #
@@ -569,155 +575,58 @@ class Instructions:
     # I/O Instructions                                                                             #
     ################################################################################################
 
-    def Zinstruction_read(self, args):
-        """
-        sread (V3) / aread (V4+)
-        V3: args = [text_buf, parse_buf]
-        V4: args = [text_buf, parse_buf, time (opt), routine (opt)]
-             text_buf byte 0 = max chars
-             text_buf byte 1 = existing chars count (V4, usually 0)
-             text starts at byte 2 (V4) or byte 1 (V3)
-        """
+    def instruction_read(self, args):
+        """sread (V3) / aread (V4+)"""
         text_addr    = args[0]
         parse_addr   = args[1] if len(args) > 1 else None
         time_tenths  = args[2] if len(args) > 2 else 0
         time_routine = args[3] if len(args) > 3 else 0
 
-        if self.processor.game_version >= 4:
-            text_start = text_addr + 2
-        else:
-            text_start = text_addr + 1
-
-        separators = set(self.dictionary.get_seperators())
-        if ' ' not in separators:
-            separators.add(" ")
-
-        in_string = self._get_input_line(time_tenths, time_routine)
-        in_string = in_string.lower()
-
-        for index, c in enumerate(in_string):
-            Utils.mwrite_byte(self.processor.memory, text_start + index, ord(c) & 0xFF)
-        Utils.mwrite_byte(self.processor.memory, text_start + len(in_string), 0)
-
-        if self.processor.game_version >= 4:
-            Utils.mwrite_byte(self.processor.memory, text_addr + 1, len(in_string))
-
-        if parse_addr is not None:
-            self._tokenise(in_string, parse_addr, separators)
-
-        if self.processor.game_version >= 4:
-            self.processor.store(13)   # terminating character = Enter
-
-    def instruction_read(self, args):
-        """
-        sread (V3) / aread (V4+)
-        V3: args = [text_buf, parse_buf]
-        V4: args = [text_buf, parse_buf, time (opt), routine (opt)]
-             text_buf byte 0 = max chars
-             text_buf byte 1 = existing chars count (V4, usually 0)
-             text starts at byte 2 (V4) or byte 1 (V3)
-        """
-        text_addr = args[0]
-        parse_addr = args[1] if len(args) > 1 else None
-        time_tenths = args[2] if len(args) > 2 else 0
-        time_routine = args[3] if len(args) > 3 else 0
-
-        # Get max characters from text buffer
         max_chars = Utils.mread_byte(self.processor.memory, text_addr)
         if self.processor.game_version >= 4:
             text_start = text_addr + 2
-            # Clear existing text length byte
             Utils.mwrite_byte(self.processor.memory, text_addr + 1, 0)
         else:
             text_start = text_addr + 1
 
-        # Get separators from dictionary
         separators = set(self.dictionary.get_seperators())
         if ' ' not in separators:
             separators.add(" ")
 
-        # Get input
-        in_string = self._get_input_line(time_tenths, time_routine)
-        in_string = in_string.lower()
+        while True:
+            in_string = self._get_input_line(max_chars, time_tenths, time_routine)
+            in_string = in_string.lower()
+            if self._handle_meta_command(in_string):
+                continue   # meta-command handled; ask for another line
+            break
 
-        # Truncate to max_chars-1 (leave room for null terminator)
         if len(in_string) > max_chars - 1:
             in_string = in_string[:max_chars - 1]
 
-        # Write to text buffer
         for index, c in enumerate(in_string):
             Utils.mwrite_byte(self.processor.memory, text_start + index, ord(c) & 0xFF)
-        # Null terminator
         Utils.mwrite_byte(self.processor.memory, text_start + len(in_string), 0)
 
-        # Update input length for V4+
         if self.processor.game_version >= 4:
             Utils.mwrite_byte(self.processor.memory, text_addr + 1, len(in_string))
 
-        # Parse if parse buffer provided
-        print(f"[READ] version={self.processor.game_version} text_addr={text_addr:#x} parse_addr={parse_addr} in_string={in_string!r}", flush=True)
         if parse_addr is not None and parse_addr != 0:
             Utils.mwrite_byte(self.processor.memory, parse_addr + 1, 0)
             if in_string.strip():
                 self._tokenise(in_string, parse_addr, separators)
 
-        # Dump text buf and parse buf after tokenise
-        if parse_addr is not None and parse_addr != 0:
-            print(f"[READ] text_buf@{text_addr:#x}: {[f'{self.processor.memory[text_addr+j]:02x}' for j in range(12)]}", flush=True)
-            print(f"[READ] parse_buf@{parse_addr:#x}: {[f'{self.processor.memory[parse_addr+j]:02x}' for j in range(10)]}", flush=True)
+        if self.processor.game_version >= 5:
+            self.processor.store(13)   # V5+ aread stores terminating character; V4 sread does not
 
-        self.trace_count = 0  # no trace after read
+        self.trace_count = 0
 
 
     def instruction_read_char(self, args):
-        """
-        read_char 1 [time routine] -> (result)
-        args[0] = 1 (keyboard), args[1] = time_tenths (opt), args[2] = routine (opt)
-        """
-        time_tenths  = args[1] if len(args) > 1 else 0
-        time_routine = args[2] if len(args) > 2 else 0
-        print(f"[READ_CHAR] args={[f'{a:#06x}' for a in args]} time_tenths={time_tenths} time_routine={time_routine:#06x}", flush=True)
-
-        script_line = self.scripting.get_line() if self.scripting is not None else None
-        if script_line is not None:
-            ch = script_line[0] if script_line else '\r'
-            zscii = 13 if ch in ('\r', '\n') else ord(ch)
-            self.processor.store(zscii)
-            return
-
-        # Print a prompt so the user knows to press a key
-        if time_tenths == 0 or time_routine == 0:
-            # Untimed: plain single character read
-            print("[Press any key to continue...]", end=' ', flush=True)
-            ch = self._read_single_char_plain()
-            print()  # New line after key press
-        else:
-            ch = self._read_single_char_timed(time_tenths, time_routine)
-
-        zscii = 13 if ch in ('\r', '\n', '') else ord(ch)
-        self.processor.store(zscii)
-
-    def ZZZinstruction_read_char(self, args):
-        """
-        read_char 1 [time routine] -> (result)
-        args[0] = 1 (keyboard), args[1] = time_tenths (opt), args[2] = routine (opt)
-        """
+        """read_char 1 [time routine] -> (result)"""
         time_tenths  = args[1] if len(args) > 1 else 0
         time_routine = args[2] if len(args) > 2 else 0
 
-        script_line = self.scripting.get_line() if self.scripting is not None else None
-        if script_line is not None:
-            ch = script_line[0] if script_line else '\r'
-            zscii = 13 if ch in ('\r', '\n') else ord(ch)
-            self.processor.store(zscii)
-            return
-
-        if time_tenths == 0 or time_routine == 0:
-            # Untimed: plain single character read
-            ch = self._read_single_char_plain()
-        else:
-            ch = self._read_single_char_timed(time_tenths, time_routine)
-
+        ch = self._read_single_char(time_tenths, time_routine)
         zscii = 13 if ch in ('\r', '\n', '') else ord(ch)
         self.processor.store(zscii)
 
@@ -725,181 +634,293 @@ class Instructions:
     # Input helpers                                                            #
     # ---------------------------------------------------------------------- #
 
-    def _location_prompt(self):
-        """Print [Room Name] before input prompt."""
+    def _handle_meta_command(self, line):
+        """Handle interpreter-level commands (work regardless of game vocabulary).
+        Returns True if the line was a meta-command (caller should loop for new input)."""
+        cmd = line.strip().split()
+        if not cmd:
+            return False
+        verb = cmd[0]
+        if verb in ('script', 'transcript'):
+            if self.screen.stream2_active:
+                self.screen.print_str("[Transcript is already active.]\n")
+            else:
+                self.screen.print_str("Transcript file name (blank = transcript.txt): ")
+                self.screen.refresh()
+                name = self.screen.read_line(128).strip()
+                self.screen.open_transcript(name if name else None)
+                self.screen.print_str("[Transcript started.]\n")
+            return True
+        if verb in ('unscript', 'notranscript', 'noscript'):
+            if not self.screen.stream2_active:
+                self.screen.print_str("[No transcript is active.]\n")
+            else:
+                self.screen.close_transcript()
+                self.screen.print_str("[Transcript ended.]\n")
+            return True
+        if verb == '#loc':
+            if len(cmd) == 3 and cmd[1].upper() == 'G':
+                try:
+                    self.location_global = int(cmd[2])
+                    self.show_location = True
+                    self.screen.print_str(f"[Location display on, using global {self.location_global}]\n")
+                except ValueError:
+                    self.screen.print_str("[Usage: #loc  or  #loc G <number>]\n")
+            else:
+                self.show_location = not self.show_location
+                self.location_global = None  # reset to auto-detect
+                state = "on" if self.show_location else "off"
+                self.screen.print_str(f"[Location display {state}]\n")
+            return True
+        if verb == '#globals':
+            count = int(cmd[1]) if len(cmd) > 1 else 20
+            self._dump_globals(count)
+            return True
+        if verb == '#help':
+            self.screen.print_str(
+                "[Interpreter commands:\n"
+                "  script / transcript    Start transcript (prompts for filename)\n"
+                "  unscript / noscript    Stop transcript\n"
+                "  #loc                   Toggle location display before each prompt\n"
+                "  #loc G <n>             Pin location to global variable n\n"
+                "  #commands <file>        Read commands from file (plain list or transcript)\n"
+                "  #seed <n>              Seed RNG (any positive integer; 0 = time-based)\n"
+                "  #obj <n>               Dump runtime state of object n\n"
+                "  #globals [count]       Show first <count> globals (default 20)\n"
+                "  #help                  Show this list\n"
+                "]\n"
+            )
+            return True
+        if verb == '#commands':
+            if len(cmd) < 2:
+                self.screen.print_str("[Usage: #commands <filename>]\n")
+            else:
+                filename = ' '.join(cmd[1:])
+                try:
+                    from Scripting import Scripting
+                    self.scripting = Scripting(filename)
+                    self.screen.print_str(f"[Reading commands from {filename}]\n")
+                except FileNotFoundError:
+                    self.screen.print_str(f"[File not found: {filename}]\n")
+                except Exception as e:
+                    self.screen.print_str(f"[Error loading {filename}: {e}]\n")
+            return True
+        if verb == '#seed':
+            if len(cmd) > 1:
+                try:
+                    seed = int(cmd[1])
+                    if seed == 0:
+                        self.random = int(time_mod.time()) & 0x7FFFFFFF
+                        self.screen.print_str(f"[RNG seeded from clock]\n")
+                    else:
+                        self.random = seed & 0x7FFFFFFF
+                        self.screen.print_str(f"[RNG seeded with {seed}]\n")
+                except ValueError:
+                    self.screen.print_str("[Usage: #seed <number>]\n")
+            else:
+                self.screen.print_str("[Usage: #seed <number>]\n")
+            return True
+        if verb == '#obj':
+            if len(cmd) > 1:
+                try:
+                    self._dump_object(int(cmd[1]))
+                except ValueError:
+                    self.screen.print_str("[Usage: #obj <number>]\n")
+            else:
+                self.screen.print_str("[Usage: #obj <number>]\n")
+            return True
+        return False
+
+    def _current_location_str(self):
+        """Return 'Obj#N: Room Name' for the player's current room, or None on error.
+
+        V1-V3: global 0 IS the room (Z-Machine spec section 8.2).
+        V4+: scan globals 0-30 for the first value that refers to a valid,
+             named object (description length >= 4).  The user can override
+             with '#loc G N' once they know which global holds the room.
+        """
         try:
-            player_number = self.processor.globals.read_global(0)
-            player_obj = self.processor.object_table.get_object_table_entry(player_number)
-            if player_obj is not None:
-                loc = player_obj.get_parent_object_number()
-                loc_entry = self.processor.object_table.get_object_table_entry(loc)
-                if loc_entry is not None:
-                    print(f"\n[{loc_entry.get_property_table().get_description()}]> ",
-                          end="", flush=True)
-                    return
+            obj_count = self.processor.object_table.object_count
+            if self.processor.game_version <= 3 or self.location_global is not None:
+                g = self.location_global if self.location_global is not None else 0
+                val = self.processor.globals.read_global(g)
+                return self._obj_location_str(val, obj_count)
+
+            # V4+: find the player object (named "yourself", "you", etc.) and
+            # return its parent as the current room.  Cache the player object
+            # number so we only scan once per session.
+            player_num = self._find_player_object(obj_count)
+            if player_num:
+                player = self.processor.object_table.get_object_table_entry(player_num)
+                room_num = player.get_parent_object_number() if player else 0
+                if room_num:
+                    room = self.processor.object_table.get_object_table_entry(room_num)
+                    if room:
+                        name = room.get_property_table().get_description().strip()
+                        if name:
+                            return f"Obj#{room_num}: {name}"
+            return None
         except Exception:
-            pass
-        print("\n> ", end="", flush=True)
+            return None
 
+    # Common short names Infocom games give the player object.
+    _PLAYER_NAMES = frozenset({
+        'yourself', 'you', 'self', 'me', 'adventurer', 'hero', 'cretin',
+        'player', 'i',
+    })
 
-    def instruction_show_status(self, args):
-        """Show status line (V1-3: always shown, V4: toggles on/off, V5+: no-op)"""
-        if self.processor.game_version <= 3:
-            # Already showing, nothing to do
-            pass
-        elif self.processor.game_version == 4:
-            # Toggle status display
-            self.status_enabled = not self.status_enabled
-            if self.status_enabled:
-                self._print_status_line()
-        # V5+ ignore
+    def _find_player_object(self, obj_count):
+        """Return the player object number whose parent is a named room.
 
-
-    def _get_input_line(self, time_tenths, time_routine):
+        Scans the object table once to collect all player-named candidates,
+        then each call picks whichever one currently has a named parent.
+        Only caches permanently once a confirmed live player is found.
         """
-        Read a full line of input.
-        If time_tenths and time_routine are non-zero, call the Z-machine
-        routine every time_tenths/10 seconds; abort input if it returns true.
-        Cross-platform: works on Windows and Linux/macOS.
-        """
-        # Script mode - no timing needed
+        if self._player_obj_num is not None:
+            return self._player_obj_num
+
+        # Build candidate list once
+        if self._player_candidates is None:
+            self._player_candidates = []
+            for n in range(1, obj_count + 1):
+                try:
+                    obj = self.processor.object_table.get_object_table_entry(n)
+                    if obj is None:
+                        continue
+                    desc = obj.get_property_table().get_description().strip().lower()
+                    if desc in self._PLAYER_NAMES:
+                        self._player_candidates.append(n)
+                except Exception:
+                    continue
+
+        # Pick the candidate whose parent currently has a description
+        for n in self._player_candidates:
+            try:
+                obj = self.processor.object_table.get_object_table_entry(n)
+                parent_num = obj.get_parent_object_number() if obj else 0
+                if parent_num:
+                    p = self.processor.object_table.get_object_table_entry(parent_num)
+                    if p and p.get_property_table().get_description().strip():
+                        self._player_obj_num = n   # confirmed — cache it
+                        return n
+            except Exception:
+                continue
+
+        # Not yet confirmed — return first candidate without caching
+        return self._player_candidates[0] if self._player_candidates else None
+
+    def _obj_location_str(self, obj_num, obj_count):
+        """Return 'Obj#N: name' if obj_num is a valid named object, else None."""
+        if not (1 <= obj_num <= obj_count):
+            return None
+        obj = self.processor.object_table.get_object_table_entry(obj_num)
+        if obj is None:
+            return None
+        name = obj.get_property_table().get_description().strip()
+        if len(name) >= 4:
+            return f"Obj#{obj_num}: {name}"
+        return None
+
+    def _dump_object(self, obj_num):
+        """Dump runtime state of a single object."""
+        obj_count = self.processor.object_table.object_count
+        if not (1 <= obj_num <= obj_count):
+            self.screen.print_str(f"[Object {obj_num} out of range (1-{obj_count})]\n")
+            return
+        obj = self.processor.object_table.get_object_table_entry(obj_num)
+        if obj is None:
+            self.screen.print_str(f"[Object {obj_num} not found]\n")
+            return
+        try:
+            desc    = obj.get_property_table().get_description().strip()
+            parent  = obj.get_parent_object_number()
+            sibling = obj.get_next_sibling_object_number()
+            child   = obj.get_child_object_number()
+        except Exception as e:
+            self.screen.print_str(f"[Error reading object {obj_num}: {e}]\n")
+            return
+
+        def name(n):
+            if n == 0:
+                return "none"
+            try:
+                o = self.processor.object_table.get_object_table_entry(n)
+                d = o.get_property_table().get_description().strip() if o else ""
+                return f"#{n} \"{d}\"" if d else f"#{n}"
+            except Exception:
+                return f"#{n}"
+
+        self.screen.print_str(f"[Obj#{obj_num}: \"{desc}\"]\n")
+        self.screen.print_str(f"  Parent:  {name(parent)}\n")
+        self.screen.print_str(f"  Sibling: {name(sibling)}\n")
+
+        # Walk child chain
+        children = []
+        c = child
+        seen = set()
+        while c and c not in seen:
+            seen.add(c)
+            children.append(name(c))
+            try:
+                co = self.processor.object_table.get_object_table_entry(c)
+                c = co.get_next_sibling_object_number() if co else 0
+            except Exception:
+                break
+        if children:
+            self.screen.print_str(f"  Children ({len(children)}):\n")
+            for ch in children:
+                self.screen.print_str(f"    {ch}\n")
+        else:
+            self.screen.print_str(f"  Children: none\n")
+        self.screen.refresh()
+
+    def _dump_globals(self, count):
+        """Print first N globals; flag those pointing to named objects."""
+        obj_count = self.processor.object_table.object_count
+        self.screen.print_str(f"[Globals 0-{count - 1}:]\n")
+        for g in range(count):
+            try:
+                val = self.processor.globals.read_global(g)
+                note = ""
+                if 1 <= val <= obj_count:
+                    obj = self.processor.object_table.get_object_table_entry(val)
+                    if obj:
+                        desc = obj.get_property_table().get_description().strip()
+                        if desc:
+                            parent_num = obj.get_parent_object_number()
+                            parent_named = False
+                            if parent_num:
+                                p = self.processor.object_table.get_object_table_entry(parent_num)
+                                if p and p.get_property_table().get_description().strip():
+                                    parent_named = True
+                            tag = "room?" if not parent_named else "item?"
+                            note = f'  [{tag}] "{desc}"'
+                self.screen.print_str(f"  G{g:02d} = {val:5d} (0x{val:04X}){note}\n")
+            except Exception:
+                self.screen.print_str(f"  G{g:02d} = ?\n")
+        self.screen.refresh()
+
+    def _get_input_line(self, max_chars, time_tenths, time_routine):
         script_line = self.scripting.get_line() if self.scripting is not None else None
         if script_line is not None:
             return script_line
 
-        # Add status line for V1-3 before prompt
-        if self.processor.game_version <= 3:
-            self._print_status_line()
+        if self.show_location:
+            loc = self._current_location_str()
+            if loc:
+                self.screen.print_location_prompt(f'[{loc}]')
 
-        self._location_prompt()
+        cb = (lambda: self.processor.call_and_run(time_routine, [])) if (time_tenths and time_routine) else None
+        return self.screen.read_line(max_chars, time_tenths, cb)
 
-        # No timed input - fast path
-        if time_tenths == 0 or time_routine == 0:
-            return input()
-
-        # Timed input
-        interval = time_tenths / 10.0
-        last_tick = time_mod.time()
-        line = []
-
-        if sys.platform == 'win32':
-            import msvcrt
-
-            def _kbhit():
-                return msvcrt.kbhit()
-
-            def _getch():
-                return msvcrt.getwche()
-
-            while True:
-                if _kbhit():
-                    ch = _getch()
-                    if ch in ('\r', '\n'):
-                        print()
-                        return ''.join(line)
-                    elif ch in ('\x08',):        # backspace
-                        if line:
-                            line.pop()
-                            print('\b \b', end='', flush=True)
-                    elif ch == '\x03':           # Ctrl-C
-                        raise KeyboardInterrupt
-                    elif ch >= ' ':
-                        line.append(ch)
-                else:
-                    now = time_mod.time()
-                    if now - last_tick >= interval:
-                        last_tick = now
-                        if self.processor.call_and_run(time_routine, []):
-                            print()
-                            return ''.join(line)
-                    time_mod.sleep(0.02)
-
-        else:
-            # Linux / macOS — use tty raw mode + select
-            import tty, termios, select
-            fd = sys.stdin.fileno()
-            old_settings = termios.tcgetattr(fd)
-            tty.setraw(fd)
-            try:
-                while True:
-                    ready = select.select([sys.stdin], [], [], 0.02)[0]
-                    if ready:
-                        ch = sys.stdin.read(1)
-                        if ch in ('\r', '\n'):
-                            print()
-                            return ''.join(line)
-                        elif ch in ('\x08', '\x7f'):   # backspace or DEL
-                            if line:
-                                line.pop()
-                                print('\b \b', end='', flush=True)
-                        elif ch == '\x03':             # Ctrl-C
-                            raise KeyboardInterrupt
-                        elif ch >= ' ':
-                            print(ch, end='', flush=True)
-                            line.append(ch)
-                    else:
-                        now = time_mod.time()
-                        if now - last_tick >= interval:
-                            last_tick = now
-                            if self.processor.call_and_run(time_routine, []):
-                                print()
-                                return ''.join(line)
-            finally:
-                termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
-
-    def _read_single_char_plain(self):
-        """Read one character without timing (used by read_char when no timer)."""
-        if not sys.stdin.isatty():
-            # Piped / scripted input: read one byte from stdin directly
-            ch = sys.stdin.read(1)
-            return ch if ch else '\r'
-        if sys.platform == 'win32':
-            import msvcrt
-            return msvcrt.getwche()
-        else:
-            import tty, termios
-            fd = sys.stdin.fileno()
-            old_settings = termios.tcgetattr(fd)
-            tty.setraw(fd)
-            try:
-                ch = sys.stdin.read(1)
-            finally:
-                termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+    def _read_single_char(self, time_tenths, time_routine):
+        script_line = self.scripting.get_line() if self.scripting is not None else None
+        if script_line is not None:
+            ch = script_line[0] if script_line else '\r'
             return ch
 
-    def _read_single_char_timed(self, time_tenths, time_routine):
-        """Read one character with timed callback support."""
-        interval = time_tenths / 10.0
-        last_tick = time_mod.time()
-
-        if sys.platform == 'win32':
-            import msvcrt
-            while True:
-                if msvcrt.kbhit():
-                    return msvcrt.getwche()
-                now = time_mod.time()
-                if now - last_tick >= interval:
-                    last_tick = now
-                    if self.processor.call_and_run(time_routine, []):
-                        return '\r'   # abort - return Enter as terminator
-                time_mod.sleep(0.02)
-        else:
-            import tty, termios, select
-            fd = sys.stdin.fileno()
-            old_settings = termios.tcgetattr(fd)
-            tty.setraw(fd)
-            try:
-                while True:
-                    ready = select.select([sys.stdin], [], [], 0.02)[0]
-                    if ready:
-                        return sys.stdin.read(1)
-                    now = time_mod.time()
-                    if now - last_tick >= interval:
-                        last_tick = now
-                        if self.processor.call_and_run(time_routine, []):
-                            return '\r'
-            finally:
-                termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+        cb = (lambda: self.processor.call_and_run(time_routine, [])) if (time_tenths and time_routine) else None
+        return self.screen.read_char(time_tenths, cb)
 
     def _tokenise(self, in_string, parse_addr, separators):
         """Parse in_string into words and write to the parse buffer according to Z-machine spec."""
@@ -945,11 +966,9 @@ class Instructions:
             if dict_addr is None:
                 dict_addr = 0
 
-            print(f"[TOKENISE] word={word!r} pos={start_pos} offset={text_offset} dict_addr={dict_addr:#06x} token_addr={token_addr:#x}", flush=True)
             Utils.mwrite_word(self.processor.memory, token_addr, dict_addr)
             Utils.mwrite_byte(self.processor.memory, token_addr + 2, len(word))
             Utils.mwrite_byte(self.processor.memory, token_addr + 3, start_pos + text_offset)
-            print(f"[TOKENISE] bytes at parse_addr={parse_addr:#x}: {[f'{self.processor.memory[parse_addr+j]:02x}' for j in range(10)]}", flush=True)
 
     def instruction_random(self, args):
         range_val = Utils.from_unsigned_word_to_signed_int(args[0])
@@ -999,8 +1018,9 @@ class Instructions:
     ################################################################################################
 
     def instruction_save(self, args):
-        print(f"Save to file: ", end="")
-        in_string = input().strip()
+        self.screen.print_str("Save to file: ")
+        self.screen.refresh()
+        in_string = self.screen.read_line(128).strip()
         if not in_string:
             in_string = "save.qzl"
         q = Quetzal(self.processor.filename)
@@ -1009,8 +1029,9 @@ class Instructions:
         self.processor.save_succeeded()
 
     def instruction_restore(self, args):
-        print(f"Restore from file: ", end="")
-        in_string = input().strip()
+        self.screen.print_str("Restore from file: ")
+        self.screen.refresh()
+        in_string = self.screen.read_line(128).strip()
         if not in_string:
             in_string = "save.qzl"
         q = Quetzal(self.processor.filename)
@@ -1023,37 +1044,45 @@ class Instructions:
     ################################################################################################
 
     def instruction_split_window(self, args):
-        pass
+        self.screen.split_window(args[0])
 
     def instruction_set_window(self, args):
-        pass
+        self.screen.set_window(args[0])
 
     def instruction_erase_window(self, args):
-        if args[0] == 0:
-            print("\n" * 3, end="")
+        win = Utils.from_unsigned_word_to_signed_int(args[0])
+        self.screen.erase_window(win)
 
     def instruction_erase_line(self, args):
-        pass
+        self.screen.erase_line()
 
     def instruction_set_cursor(self, args):
-        pass
+        row = args[0]
+        col = args[1] if len(args) > 1 else 1
+        self.screen.set_cursor(row, col)
 
     def instruction_get_cursor(self, args):
+        row, col = self.screen.get_cursor()
         array_addr = args[0]
-        Utils.mwrite_word(self.processor.memory, array_addr,     1)
-        Utils.mwrite_word(self.processor.memory, array_addr + 2, 1)
+        Utils.mwrite_word(self.processor.memory, array_addr,     row)
+        Utils.mwrite_word(self.processor.memory, array_addr + 2, col)
 
     def instruction_set_text_style(self, args):
-        pass
+        self.screen.set_text_style(args[0])
+
+    def instruction_set_colour(self, args):
+        fg = args[0] if len(args) > 0 else 1
+        bg = args[1] if len(args) > 1 else 1
+        self.screen.set_colour(fg, bg)
 
     def instruction_buffer_mode(self, args):
-        pass
+        pass  # buffering is handled transparently by Screen
 
     def instruction_show_status(self, args):
-        pass
+        pass  # V4+ game manages its own upper window; V1-3 status is not needed here
 
     def instruction_sound_effect(self, args):
-        pass  # no-op in a text-only interpreter
+        pass  # no-op: sound data requires a Blorb resource file
 
     def instruction_nop(self, args):
         pass
@@ -1064,7 +1093,12 @@ class Instructions:
 
     def instruction_output_stream(self, args):
         stream = Utils.from_unsigned_word_to_signed_int(args[0])
-        if stream == 3:
+        if stream == 2:
+            if not self.screen.stream2_active:
+                self.screen.open_transcript()   # game activated stream 2 directly
+        elif stream == -2:
+            self.screen.close_transcript()
+        elif stream == 3:
             table_addr = args[1] if len(args) > 1 else 0
             self.stream3_stack.append((table_addr, 0))
             Utils.mwrite_word(self.processor.memory, table_addr, 0)
@@ -1114,40 +1148,7 @@ class Instructions:
         sys.exit(0)
 
     def instruction_restart(self, args):
-        print("\n[RESTART not implemented - exiting]")
+        self.screen.print_str("\n[RESTART not implemented - exiting]\n")
         sys.exit(0)
-
-    # Add these methods to the Instructions class:
-
-    def _print_status_line(self):
-        """Print the current score and room name like a status line."""
-        if not self.status_enabled:
-            return
-
-        try:
-            # Get player object number (usually global 0)
-            player_number = self.processor.globals.read_global(0)
-
-            # Get score (usually global 1 in V1-3)
-            score = self.processor.globals.read_global(1)
-
-            # Get moves (often global 2)
-            moves = self.processor.globals.read_global(2)
-
-            # Get current room
-            player_obj = self.processor.object_table.get_object_table_entry(player_number)
-            if player_obj is not None:
-                room_number = player_obj.get_parent_object_number()
-                room_entry = self.processor.object_table.get_object_table_entry(room_number)
-                if room_entry is not None:
-                    room_name = room_entry.get_property_table().get_description()
-
-                    # Format and print status line
-                    status = f"Score: {score}  Moves: {moves}  Room: {room_name}"
-                    print("\n" + "=" * len(status))
-                    print(status)
-                    print("=" * len(status))
-        except Exception:
-            pass
 
 

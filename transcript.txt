@@ -1,0 +1,2244 @@
+C:\Users\Gavin\AppData\Local\Python\pythoncore-3.14-64\python.exe C:\Users\Gavin\Documents\Projects\software\infocom\infocomm\Infocomm.py
+
+Copyright (C)1986 Infocom, Inc. All rights reserved.
+
+[Press any key to begin.]
+[Press any key to continue...]
+
+Sharp words between the superpowers. Tanks in East Berlin. And now, reports the BBC, rumors of a satellite blackout. It’s enough to spoil your continental breakfast.
+
+But the world will have to wait. This is the last day of your $599 London Getaway Package, and you’re determined to soak up as much of that authentic English ambience as you can. So you’ve left the tour bus behind, ditched the camera and escaped to Hyde Park for a contemplative stroll through the Kensington Gardens.
+
+Palace Gate
+
+A tide of perambulators surges north along the crowded Broad Walk. Shaded glades stretch away to the northeast, and a hint of color marks the western edge of the Flower Walk.
+
+>
+[236: Palace Gate]> i
+You’re not holding anything, but you’re wearing a wristwatch. You also have a credit card and a seven-sided coin in your pocket.
+
+>
+[236: Palace Gate]> examine watch
+Your wristwatch says it’s 3:30:00 pm.
+
+>
+[236: Palace Gate]> save
+Save to file: a
+
+[SAVE completed.]
+
+>
+[236: Palace Gate]> restore
+Restore from file: a
+FORM
+IFZS
+
+[RESTORE completed.]
+
+Palace Gate
+
+A tide of perambulators surges north along the crowded Broad Walk. Shaded glades stretch away to the northeast, and a hint of color marks the western edge of the Flower Walk.
+
+>
+[236: Palace Gate]> score
+[Your score is 0 points out of 100, in 1 move. This gives you the rank of TOURIST.]
+
+>
+[236: Palace Gate]> examine watch
+Your wristwatch says it’s 3:30:15 pm.
+
+>
+[236: Palace Gate]> ne
+The east wind makes it difficult to walk straight.
+
+The Wabe
+
+This grassy clearing is only twenty feet across, and perfectly circular. Paths wander off in many directions through the surrounding thicket.
+
+A shaft of golden sunlight falls across a handsome antique sundial, erected at the exact center of the clearing.
+
+>
+[79: The Wabe]> examine sundial
+The perimeter of the sundial is inscribed with seven curious symbols and a compass rose, with the legend "TEMPUS EDAX RERUM" emblazoned across the bottom. A triangular gnomon casts a fingerlike shadow that is creeping slowly towards the first symbol.
+
+["And ’the wabe’ is the grass-plot round
+  a sun-dial, I suppose?" said Alice,
+  surprised at her own ingenuity.
+
+ "Of course it is. It’s called ’wabe,’
+  you know, because it goes a long way
+  before it, and a long way behind it --"
+
+                         -- Lewis Carroll]
+
+
+>
+["And ’the wabe’ is the grass-plot round    a sun-dial, I suppose?" said Alice,       surprised at her own ingenuity.                                                    "Of course it is. It’s called ’wabe,’      you know, because it goes a long way      before it, and a long way behind it --"                                                                    -- Lewis Carroll]>
+[What?]
+
+>
+["And ’the wabe’ is the grass-plot round    a sun-dial, I suppose?" said Alice,       surprised at her own ingenuity.                                                    "Of course it is. It’s called ’wabe,’      you know, because it goes a long way      before it, and a long way behind it --"                                                                    -- Lewis Carroll]> turn sundial
+The sundial is firmly set into the ground. It cannot be moved.
+
+>
+["And ’the wabe’ is the grass-plot round    a sun-dial, I suppose?" said Alice,       surprised at her own ingenuity.                                                    "Of course it is. It’s called ’wabe,’      you know, because it goes a long way      before it, and a long way behind it --"                                                                    -- Lewis Carroll]> turn gnomon
+You can feel the gnomon getting more and more wobbly as you turn it. A final twist, and it falls with a clatter onto the face of the sundial.
+
+>
+["And ’the wabe’ is the grass-plot round    a sun-dial, I suppose?" said Alice,       surprised at her own ingenuity.                                                    "Of course it is. It’s called ’wabe,’      you know, because it goes a long way      before it, and a long way behind it --"                                                                    -- Lewis Carroll]> take gnomon
+You take the gnomon off the sundial.
+
+[Your score just went up by 5 points. The total is now 5 out of 100.]
+
+[NOTE: You can turn score notification on or off at any time with the NOTIFY command.]
+
+>
+["And ’the wabe’ is the grass-plot round    a sun-dial, I suppose?" said Alice,       surprised at her own ingenuity.                                                    "Of course it is. It’s called ’wabe,’      you know, because it goes a long way      before it, and a long way behind it --"                                                                    -- Lewis Carroll]> n
+Round Pond
+
+Ducks and swans bob on the sparkling surface of the Round Pond. They share the water with an impressive fleet of toy boats, directed by the excited shouts of children.
+
+Crowded paths radiate from the Pond in many directions.
+
+>
+[144: Round Pond]> w
+Broad Walk
+
+A brooding statue of Queen Victoria faces east, where the waters of the Round Pond sparkle in the afternoon sun. Your eyes follow the crowded Broad Walk north and south until its borders are lost amid the bustle of perambulators. Small paths curve northeast and southeast, between the trees.
+
+A cloud of pigeons fills the air! They circle overhead and congregate around a nearby bench, where an aged woman is selling bags of crumbs.
+
+"Feed the birds! Thirty p!" Her voice quavers with heartbreak.
+
+>
+[354: Broad Walk]> i
+You’re holding a gnomon. You’re wearing a wristwatch, and you have a credit card and a seven-sided coin in your pocket.
+
+>
+[354: Broad Walk]> buy bag with seven-sided coin
+[taking the seven-sided coin out of your pocket first]
+
+"Bless yer," coos the bird woman, taking your money with a practiced snatch. "Twenty p’s the change." She holds out a bag of crumbs and a small coin for you.
+
+[Your score just went up by 1 point. The total is now 6 out of 100.]
+
+"Take yer bag and change, guv’ner!"
+
+>
+[354: Broad Walk]> take bag and change
+The bag of crumbs: Taken.
+The small coin: Taken.
+
+>
+[354: Broad Walk]> look
+Broad Walk
+
+A brooding statue of Queen Victoria faces east, where the waters of the Round Pond sparkle in the afternoon sun. Your eyes follow the crowded Broad Walk north and south until its borders are lost amid the bustle of perambulators. Small paths curve northeast and southeast, between the trees.
+
+An aged woman is selling crumbs nearby.
+
+"Thirty p! Thirty p a bag!"
+
+>
+[354: Broad Walk]> talk to woman
+The bird woman doesn’t respond.
+
+>
+[354: Broad Walk]> se
+"Feed the hungry birds!"
+
+The Wabe
+
+A shaft of golden sunlight falls across a handsome antique sundial, erected at the exact center of the clearing. You see a threaded hole on the dial’s face.
+
+>
+[79: The Wabe]> nw
+Broad Walk
+
+An aged woman is selling crumbs nearby.
+
+>
+[354: Broad Walk]> examine gnomon
+It’s a triangular piece of metal, about a quarter-inch thick and four inches long. A long bolt is welded to the bottom.
+
+"Thirty p for the starving birds!" cries the bird woman.
+
+>
+[354: Broad Walk]> ne
+"Thirty p!" hollers the bird woman.
+
+Inverness Terrace
+
+Crowded walkways lead east and west along an iron fence. Narrow paths wander south into the Gardens.
+
+A young boy sits nearby, listening to a pair of headphones and idly blowing soap bubbles. There’s a dish full of soapy water by his side.
+
+The boy dips the bubble wand in the dish and swishes it around.
+
+>
+[530: Inverness Terrace]> n
+The iron fence blocks your path.
+
+>
+[530: Inverness Terrace]> nw
+The iron fence blocks your path.
+
+>
+[530: Inverness Terrace]> ne
+The iron fence blocks your path.
+
+>
+[530: Inverness Terrace]> e
+Lancaster Gate
+
+A crooked old tree shades the perambulators as they roll south down the Lancaster Walk. Shady paths lead west along an iron fence, and southwest between the trees.
+
+There’s an old woman under the tree, struggling to open an umbrella. The stiff east wind isn’t making it easy for her.
+
+>
+[179: Lancaster Gate]> help woman
+You begin to approach the old woman, but stop in your tracks.
+
+Her face is wrong.
+
+You look a little closer and shudder to yourself. The entire left side of her head is scarred with deep red lesions, twisting her oriental features into a hideous mask. She must have been in an accident or something.
+
+A strong gust of wind snatches the umbrella out of the old woman’s hands and sweeps it into the branches of the tree.
+
+The woman circles the tree a few times, gazing helplessly upward. That umbrella obviously means a lot to her, for a wistful tear is running down her cheek. But nobody except you seems to notice her loss.
+
+After a few moments, the old woman dries her eyes, gives the tree a vicious little kick and shuffles away down the Lancaster Walk.
+
+>
+[179: Lancaster Gate]> climb tree
+You can’t find any good footholds.
+
+>
+[179: Lancaster Gate]> get umbrella
+The umbrella is high out of reach.
+
+>
+[179: Lancaster Gate]> look
+Lancaster Gate
+
+A crooked old tree shades the perambulators as they roll south down the Lancaster Walk. Shady paths lead west along an iron fence, and southwest between the trees.
+
+An umbrella is wedged in the branches overhead.
+
+>
+[179: Lancaster Gate]> e
+A surge of offended nannies blocks your path.
+
+>
+[179: Lancaster Gate]> w
+Inverness Terrace
+
+A young boy sits nearby, listening to a pair of headphones and idly blowing soap bubbles. There’s a dish full of soapy water by his side.
+
+The boy dips the bubble wand in the dish and swishes it around.
+
+>
+[530: Inverness Terrace]> w
+Black Lion Gate
+
+Nannies and tourists hurry through the Lancaster Gate to join the perambulators rolling south down the Broad Walk. Less crowded paths wind east along an iron fence, and southeast between the trees.
+
+A careless nanny has left her perambulator unattended.
+
+>
+[355: Black Lion Gate]> w
+The iron fence blocks your path.
+
+>
+[355: Black Lion Gate]> take pram
+You can’t lift the clumsy perambulator.
+
+>
+[355: Black Lion Gate]> push pram e
+Inverness Terrace
+
+A young boy sits nearby, listening to a pair of headphones and idly blowing soap bubbles. There’s a dish full of soapy water by his side.
+
+The perambulator rolls to a stop.
+
+The boy dips the bubble wand in the dish and swishes it around.
+
+>
+[530: Inverness Terrace]> look
+Inverness Terrace
+
+Crowded walkways lead east and west along an iron fence. Narrow paths wander south into the Gardens.
+
+A young boy sits nearby, listening to a pair of headphones and idly blowing soap bubbles. There’s a dish full of soapy water by his side.
+
+There’s a perambulator here.
+
+The boy pulls the bubble wand out of the dish, puts it to his lips and blows a big soap bubble.
+
+>
+[530: Inverness Terrace]> push pram e
+Lancaster Gate
+
+An umbrella is wedged in the branches overhead.
+
+The perambulator rolls to a stop.
+
+>
+[179: Lancaster Gate]> stand on pram
+You’d have to open the perambulator to do that.
+
+>
+[179: Lancaster Gate]> open pram
+You open the perambulator.
+
+>
+[179: Lancaster Gate]> stand on pram
+You clamber into the perambulator and slowly rise to your feet, knees wobbling.
+
+CRASH! The pram skitters away and deposits you on the ground, much to the amusement of passersby.
+
+With as much dignity as possible, you rise to your feet and discipline the pram with an angry kick.
+
+>
+[179: Lancaster Gate]> enter pram
+With great difficulty, and much to the amusement of passersby, you jam yourself into the unfortunate perambulator.
+
+>
+[Lancaster Gate, in the perambulator]> take umbrella
+That’d be easier to do if you got out of the pram first.
+
+>
+[Lancaster Gate, in the perambulator]> exit pram
+Gratefully, you clamber out of the cramped perambulator.
+
+>
+[179: Lancaster Gate]> examine umbrella
+The closed umbrella dangles in the tree overhead, high out of reach. Its handle is carved in the shape of a parrot’s head.
+
+>
+[179: Lancaster Gate]> look
+Lancaster Gate
+
+A crooked old tree shades the perambulators as they roll south down the Lancaster Walk. Shady paths lead west along an iron fence, and southwest between the trees.
+
+An umbrella is wedged in the branches overhead.
+
+There’s a perambulator here.
+
+>
+[179: Lancaster Gate]> look
+Lancaster Gate
+
+A crooked old tree shades the perambulators as they roll south down the Lancaster Walk. Shady paths lead west along an iron fence, and southwest between the trees.
+
+An umbrella is wedged in the branches overhead.
+
+There’s a perambulator here.
+
+>
+[179: Lancaster Gate]> e
+A surge of gawking tourists blocks your path.
+
+>
+[179: Lancaster Gate]> s
+Lancaster Walk
+
+An impressive sculpture of a horse and rider dominates this bustling intersection. The Walk continues north and south; lesser paths curve off in many directions.
+
+A broad field of grass, meticulously manicured, extends to the east. Beyond it you can see the Long Water glittering between the trees.
+
+A printed notice is stuck into the grass.
+
+>
+[371: Lancaster Walk]> read notice
+The words DO NOT WALK ON THE GRASS are sternly printed on the notice.
+
+>
+[371: Lancaster Walk]> s
+Flower Walk
+
+Gaily colored flower beds line the walks bending north and west, filling the air with a gentle fragrance. A little path leads northwest, between the trees.
+
+You can see a soccer ball half-hidden among the blossoms.
+
+The spires of the Albert Memorial are all too visible to the south. Passing tourists hoot with laughter at the dreadful sight; nannies hide their faces and roll quickly away.
+
+>
+[53: Flower Walk]> take ball
+You take the soccer ball off the flower beds.
+
+[Your score just went up by 1 point. The total is now 7 out of 100.]
+
+>
+[53: Flower Walk]> s
+You’re already as close as anyone wants to get to the Albert Memorial.
+
+>
+[53: Flower Walk]> e
+A surge of babbling tourists blocks your path.
+
+>
+[53: Flower Walk]> w
+Palace Gate
+
+>
+[236: Palace Gate]> e
+Flower Walk
+
+>
+[53: Flower Walk]> n
+Lancaster Walk
+
+There’s a notice here.
+
+>
+[371: Lancaster Walk]> n
+Lancaster Gate
+
+An umbrella is wedged in the branches overhead.
+
+There’s a perambulator here.
+
+>
+[179: Lancaster Gate]> w
+Inverness Terrace
+
+A young boy sits nearby, listening to a pair of headphones and idly blowing soap bubbles. There’s a dish full of soapy water by his side.
+
+The boy dips the bubble wand in the dish and swishes it around.
+
+>
+[530: Inverness Terrace]> give ball to boy
+The boy is too preoccupied with his music to notice your offer.
+
+The boy pulls the bubble wand out of the dish, puts it to his lips and blows a big soap bubble.
+
+>
+[530: Inverness Terrace]> remove headphones
+"Aow!"
+
+The startled boy leaps backward at your approach, splashing water all over the place. "Stupid git!" he cries (in an intriguing Cockney accent). Then he retrieves the empty dish, pockets the wand and disappears between the prams, glaring at you over his shoulder.
+
+His last bubble floats away over the treetops.
+
+>
+[530: Inverness Terrace]> look
+Inverness Terrace
+
+Crowded walkways lead east and west along an iron fence. Narrow paths wander south into the Gardens.
+
+>
+[530: Inverness Terrace]> s
+Round Pond
+
+One of the toy boats on the Round Pond catches your eye. The east wind blows it closer, and you realize that the white sails are actually wings. It’s a folded paper bird, floating just within reach.
+
+>
+[144: Round Pond]> take bird
+You lean over the edge of the Round Pond, and pluck the paper bird out of the water.
+
+[Your score just went up by 3 points. The total is now 10 out of 100.]
+
+>
+[144: Round Pond]> examine bird
+The paper bird is skillfully folded from a piece of paper. Something is written between the folds.
+
+>
+[144: Round Pond]> read bird
+You’d have to unfold the paper bird to do that.
+
+>
+[144: Round Pond]> unfold bird
+You gently unfold the paper bird to its full size.
+
+>
+[144: Round Pond]> read bird
+The words "Long Water, Four O’Clock" are scrawled on the piece of paper.
+
+>
+[144: Round Pond]> examine watch
+Your wristwatch says it’s 3:43:00 pm.
+
+>
+[144: Round Pond]> s
+The Wabe
+
+A shaft of golden sunlight falls across a handsome antique sundial, erected at the exact center of the clearing. You see a threaded hole on the dial’s face.
+
+>
+[79: The Wabe]> screw gnomon into sundial
+You screw the gnomon into the hole on the sundial.
+
+>
+[79: The Wabe]> turn gnomon
+You can feel the gnomon getting more and more wobbly as you turn it. A final twist, and it falls with a clatter onto the face of the sundial.
+
+>
+[79: The Wabe]> take gnomon
+You take the gnomon off the sundial.
+
+>
+[79: The Wabe]> sw
+Palace Gate
+
+>
+[236: Palace Gate]> n
+Broad Walk
+
+An aged woman is selling crumbs nearby.
+
+>
+[354: Broad Walk]> n
+"Feed the birds!" calls the bird woman.
+
+Black Lion Gate
+
+>
+[355: Black Lion Gate]> e
+Inverness Terrace
+
+>
+[530: Inverness Terrace]> look
+Inverness Terrace
+
+Crowded walkways lead east and west along an iron fence. Narrow paths wander south into the Gardens.
+
+>
+[530: Inverness Terrace]> e
+Lancaster Gate
+
+An umbrella is wedged in the branches overhead.
+
+There’s a perambulator here.
+
+>
+[179: Lancaster Gate]> look
+Lancaster Gate
+
+A crooked old tree shades the perambulators as they roll south down the Lancaster Walk. Shady paths lead west along an iron fence, and southwest between the trees.
+
+An umbrella is wedged in the branches overhead.
+
+There’s a perambulator here.
+
+>
+[179: Lancaster Gate]> throw ball at umbrella
+The soccer ball lodges itself in the tree beside the umbrella.
+
+The umbrella teeters uncertainly for a moment, then tumbles out of the tree and lands at your feet.
+
+>
+[179: Lancaster Gate]> take umbrella
+As you pick up the umbrella and smooth the wrinkles, you notice a touristy slogan printed around the outside: "All prams lead to the Kensington Gardens."
+
+[Your score just went up by 5 points. The total is now 15 out of 100.]
+
+>
+[179: Lancaster Gate]> read bird
+The words "Long Water, Four O’Clock" are scrawled on the piece of paper.
+
+>
+[179: Lancaster Gate]> e
+A surge of haughty nannies blocks your path.
+
+>
+[179: Lancaster Gate]> look
+Lancaster Gate
+
+A crooked old tree shades the perambulators as they roll south down the Lancaster Walk. Shady paths lead west along an iron fence, and southwest between the trees.
+
+A soccer ball is wedged in the branches overhead.
+
+There’s a perambulator here.
+
+>
+[179: Lancaster Gate]> s
+Lancaster Walk
+
+There’s a notice here.
+
+>
+[371: Lancaster Walk]> s
+Flower Walk
+
+>
+[53: Flower Walk]> s
+You’re already as close as anyone wants to get to the Albert Memorial.
+
+>
+[53: Flower Walk]> look
+Flower Walk
+
+Gaily colored flower beds line the walks bending north and west, filling the air with a gentle fragrance. A little path leads northwest, between the trees.
+
+The spires of the Albert Memorial are all too visible to the south. Passing tourists hoot with laughter at the dreadful sight; nannies hide their faces and roll quickly away.
+
+>
+[53: Flower Walk]> nw
+The Wabe
+
+A shaft of golden sunlight falls across a handsome antique sundial, erected at the exact center of the clearing. You see a threaded hole on the dial’s face.
+
+>
+[79: The Wabe]> n
+Round Pond
+
+>
+[144: Round Pond]> look
+Round Pond
+
+Ducks and swans bob on the sparkling surface of the Round Pond. They share the water with an impressive fleet of toy boats, directed by the excited shouts of children.
+
+Crowded paths radiate from the Pond in many directions.
+
+>
+[144: Round Pond]> se
+A surge of fat tourists blocks your path.
+
+>
+[144: Round Pond]> sw
+A surge of starched nannies blocks your path.
+
+>
+[144: Round Pond]> ne
+Lancaster Gate
+
+A soccer ball is wedged in the branches overhead.
+
+There’s a perambulator here.
+
+>
+[179: Lancaster Gate]> sw
+Round Pond
+
+>
+[144: Round Pond]> sw
+A surge of gawking tourists blocks your path.
+
+>
+[144: Round Pond]> w
+Broad Walk
+
+An aged woman is selling crumbs nearby.
+
+>
+[354: Broad Walk]> look
+Broad Walk
+
+A brooding statue of Queen Victoria faces east, where the waters of the Round Pond sparkle in the afternoon sun. Your eyes follow the crowded Broad Walk north and south until its borders are lost amid the bustle of perambulators. Small paths curve northeast and southeast, between the trees.
+
+An aged woman is selling crumbs nearby.
+
+>
+[354: Broad Walk]> w
+The statue of Queen Victoria blocks your path.
+
+>
+[354: Broad Walk]> s
+"Thirty p! Thirty p a bag!" yells the bird woman.
+
+Palace Gate
+
+>
+[236: Palace Gate]> s
+A surge of offended nannies blocks your path.
+
+>
+[236: Palace Gate]> sw
+The iron fence blocks your path.
+
+>
+[236: Palace Gate]> nw
+The iron fence blocks your path.
+
+>
+[236: Palace Gate]> e
+Flower Walk
+
+>
+[53: Flower Walk]> e
+A surge of haughty nannies blocks your path.
+
+>
+[53: Flower Walk]> n
+Lancaster Walk
+
+There’s a notice here.
+
+>
+[371: Lancaster Walk]> n
+Lancaster Gate
+
+A soccer ball is wedged in the branches overhead.
+
+There’s a perambulator here.
+
+>
+[179: Lancaster Gate]> enter pram
+With great difficulty, and much to the amusement of passersby, you jam yourself into the unfortunate perambulator.
+
+>
+[Lancaster Gate, in the perambulator]> open umbrella
+The east wind fills the umbrella the moment you open it. You and your perambulator are blown helplessly westward past Inverness Terrace to the Black Lion Gate, where you collide with a crowd of babbling tourists and tumble out of the perambulator.
+
+Painfully, you regain your footing and snap the umbrella shut.
+
+Black Lion Gate
+
+Nannies and tourists hurry through the Lancaster Gate to join the perambulators rolling south down the Broad Walk. Less crowded paths wind east along an iron fence, and southeast between the trees.
+
+There’s a perambulator here.
+
+>
+[355: Black Lion Gate]> push pram s
+Broad Walk
+
+An aged woman is selling crumbs nearby.
+
+The perambulator rolls to a stop.
+
+>
+[354: Broad Walk]> look
+Broad Walk
+
+A brooding statue of Queen Victoria faces east, where the waters of the Round Pond sparkle in the afternoon sun. Your eyes follow the crowded Broad Walk north and south until its borders are lost amid the bustle of perambulators. Small paths curve northeast and southeast, between the trees.
+
+An aged woman is selling crumbs nearby.
+
+There’s a perambulator here.
+
+"Feed the hungry birds!"
+
+>
+[354: Broad Walk]> save
+Save to file: a
+
+[SAVE completed.]
+
+>
+[354: Broad Walk]> feed birds
+[with the bag of crumbs]
+
+You take a handful of crumbs out of the bag. They fall between your fingers and tumble across the ground.
+
+As the wild birds gobble down the crumbs, a glint of red catches your eye. Frowning, you stoop down for a closer look... and gasp with astonishment!
+
+The ruby at your feet is bigger than a walnut, with finely cut facets that sparkle with crimson fire. It must have been in the bag of crumbs.
+
+>
+[354: Broad Walk]> take ruby
+As you reach down to touch the ruby, a very large bird races out from behind a tree. It snatches away the ruby with its beak, zigzags through a group of tourists and disappears to the east. If you didn’t know better, you’d swear that bird was a roadrunner.
+
+"It’s time!" shrieks the bird woman.
+
+The east wind softens to a whisper and dies away.
+
+Blowing leaves settle to the ground, and the trees are still. Then a fresh gust blows in from the west.
+
+>
+[354: Broad Walk]> examine watch
+Your wristwatch says it’s 3:51:45 pm.
+
+"Thirty p for the starving birds!"
+
+>
+[354: Broad Walk]> push pram s
+"Thirty p!"
+
+Palace Gate
+
+The perambulator rolls to a stop.
+
+>
+[236: Palace Gate]> look
+Palace Gate
+
+A tide of perambulators surges north along the crowded Broad Walk. Shaded glades stretch away to the northeast, and a hint of color marks the western edge of the Flower Walk.
+
+There’s a perambulator here.
+
+>
+[236: Palace Gate]> enter pram
+With great difficulty, and much to the amusement of passersby, you jam yourself into the unfortunate perambulator.
+
+>
+[Palace Gate, in the perambulator]> open umbrella
+The west wind fills the umbrella the moment you open it. You and your perambulator are blown helplessly eastward to the Flower Walk, where you careen into the flower beds and tumble out of the perambulator.
+
+Painfully, you regain your footing and snap the umbrella shut.
+
+Flower Walk
+
+Gaily colored flower beds line the walks bending north and west, filling the air with a gentle fragrance. A little path leads northwest, between the trees.
+
+The spires of the Albert Memorial are all too visible to the south. Passing tourists hoot with laughter at the dreadful sight; nannies hide their faces and roll quickly away.
+
+There’s a perambulator here.
+
+>
+[53: Flower Walk]> enter pram
+With great difficulty, and much to the amusement of passersby, you jam yourself into the unfortunate perambulator.
+
+>
+[Flower Walk, in the perambulator]> open umbrella
+The west wind fills the umbrella the moment you open it. You and your perambulator are blown helplessly eastward until you careen into the flower beds and tumble out of the perambulator.
+
+Painfully, you regain your footing and snap the umbrella shut.
+
+Flower Walk
+
+Gaily colored flower beds line the walks bending north and west, filling the air with a gentle fragrance. A little path leads northwest, between the trees.
+
+The spires of the Albert Memorial are all too visible to the south. Passing tourists hoot with laughter at the dreadful sight; nannies hide their faces and roll quickly away.
+
+There’s a perambulator here.
+
+>
+[53: Flower Walk]> push pram n
+Lancaster Walk
+
+There’s a notice here.
+
+The perambulator rolls to a stop.
+
+>
+[371: Lancaster Walk]> enter pram
+With great difficulty, and much to the amusement of passersby, you jam yourself into the unfortunate perambulator.
+
+>
+[Lancaster Walk, in the perambulator]> open umbrella
+The west wind fills the umbrella the moment you open it. You and your perambulator are blown helplessly eastward onto the grass.
+
+You zoom down a long slope, barely missing several trees and boulders. Peering over the top of the perambulator, you see the Long Water coming closer and closer. Unable to stop, and too stupid to let go of the umbrella, you bravely close your eyes and pinch your nose shut.
+
+CRASH!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Long Water
+
+You’re on a shady path that winds along the western shore of the Long Water. Looking south, you can see the graceful arch of a bridge, and beyond it the cool expanse of the river Serpentine.
+
+A charming statue stands nearby.
+
+You see a bag of crumbs, a small coin, a piece of paper, a gnomon and a broken perambulator here.
+
+Painfully, you regain your footing and snap the umbrella shut.
+
+>
+[97: Long Water]>
+[What?]
+
+>
+[97: Long Water]> take all
+The bag of crumbs: Taken.
+The small coin: Taken.
+The piece of paper: Taken.
+The gnomon: Taken.
+The broken perambulator: The broken perambulator topples over on its side again. It’s quite useless.
+
+The west wind is still. Everything is very quiet.
+
+>
+[97: Long Water]> examine watch
+Your wristwatch says it’s 3:59:45 pm.
+
+(That’s odd. The "seconds" display has stopped working.)
+
+A gleam overhead catches your eye.
+
+Oh, dear. A missile is hanging motionless in the sky.
+
+>
+[97: Long Water]> look
+Long Water
+
+You’re on a shady path that winds along the western shore of the Long Water. Looking south, you can see the graceful arch of a bridge, and beyond it the cool expanse of the river Serpentine.
+
+A charming statue stands nearby.
+
+There’s a broken perambulator here.
+
+The missile isn’t completely motionless. It’s falling very, very slowly towards the Long Water.
+
+Your eyes follow the missile’s trajectory downward, where you notice another peculiar phenomenon. It looks like a white door, suspended just above the surface of the water.
+
+>
+[97: Long Water]> enter door
+You couldn’t do that from where you’re standing.
+
+A flock of ravens glides into view! They circle over the Long Water and disappear through the open white door.
+
+The missile continues its slow descent.
+
+>
+[97: Long Water]> e
+You wade into the cool, dark water.
+
+Wading
+
+You’re standing knee-deep in the Long Water, not far from the western shore. Looking east, you can see a white door hovering just above the surface.
+
+Swans and ducks paddle through the open white door, vanishing without a trace.
+
+The missile is only a few dozen yards above the door.
+
+>
+[438: Wading]> e
+As you wade to the threshold a familiar roadrunner flutters past. The ruby in its beak gleams enticingly as it slips through the white door.
+
+All color abruptly drains from the landscape. Trees, sky and sun flatten into a spherical shell, with you at the very center. A hissing in your ears becomes a rumble, then a roar as the walls of the shell collapse inward, faster and faster.
+
+"This way, please."
+
+You turn, but see no one.
+
+"This way," the voice urges. "Be quick."
+
+The space around you articulates. "No!" your mind shudders. "That’s not a direction!"
+
+"It’s a perfectly legitimate direction," retorts the voice with cold amusement. "Now come along."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Press any key to continue...]
+
+You step out of the white door.
+
+Meadow
+
+You’ve discovered a golden meadow, bordered on every side by a dense forest. The air is filled with dragonflies, and the wood echoes with the cry of mourning doves.
+
+The door you just stepped from opens into a toadstool of impossible size. Its broad crown towers over your head like a fleshy umbrella.
+
+A triangular shadow inches across the ground. Its sharp point is sweeping across the toadstool.
+
+The shadow creeps away from the toadstool, and the door in the stem swings shut with a faint creak. You stare in wonder as the door shimmers and fades from view.
+
+>
+[576: Meadow]> save
+Save to file: b
+
+[SAVE completed.]
+
+>
+[576: Meadow]> look
+Meadow
+
+You’ve discovered a golden meadow, bordered on every side by a dense forest. The air is filled with dragonflies, and the wood echoes with the cry of mourning doves.
+
+A giant toadstool is growing nearby.
+
+A triangular shadow moves slowly across the ground. Its sharp point is sweeping northward, away from the toadstool.
+
+A glare lights up the sky! You look up just in time to see a meteor streak overhead.
+
+>
+[576: Meadow]> w
+The dense forest is hopelessly impenetrable. But an obscure path winds north, to the summit of a gentle hill.
+
+>
+[576: Meadow]> e
+The dense forest is hopelessly impenetrable.
+
+>
+[576: Meadow]> n
+You ascend the gentle hill.
+
+Summit
+
+The hill you’ve climbed lies at the southwest edge of a vast wilderness. Towering forests are broken by long tracts of wasteland, rugged plateaus and marshes shrouded in perpetual mist. A brooding sun fills the distant valleys with a sad, dusty light the color of antique brass.
+
+A giant triangle, thousands of feet high, rises above the eastern treetops. Its vertex casts a long shadow across the wood.
+
+As your eyes sweep the landscape, you notice more of the giant toadstools. There must be hundreds of them. Some sprout in clusters, others grow in solitude among the trees. Their numbers increase dramatically as your gaze moves westward, until the forest is choked with pale domes.
+
+The meteor disappears below the horizon.
+
+You feel the ground shudder, and hear a roar like thunder. Then everything is quiet.
+
+>
+[323: Summit]> look
+Summit
+
+The hill you’ve climbed lies at the southwest edge of a vast wilderness. Towering forests are broken by long tracts of wasteland, rugged plateaus and marshes shrouded in perpetual mist. A brooding sun fills the distant valleys with a sad, dusty light the color of antique brass.
+
+A giant triangle, thousands of feet high, rises above the eastern treetops. Its vertex casts a long shadow across the wood.
+
+As your eyes sweep the landscape, you notice more of the giant toadstools. There must be hundreds of them. Some sprout in clusters, others grow in solitude among the trees. Their numbers increase dramatically as your gaze moves westward, until the forest is choked with pale domes.
+
+>
+[323: Summit]> score
+[Your score is 15 points out of 100, in 102 moves. This gives you the rank of EXPLORER.]
+
+>
+[323: Summit]> n
+You’d tumble down the hill if you went that way.
+
+>
+[323: Summit]> e
+Forest Clearing
+
+It must have taken centuries to cultivate the magnificent hedge rising before you. The tightly woven arborvitaes stretch eastward through the forest like a green wall, thirty feet high.
+
+A barren hilltop is visible to the west. Many footpaths wander off between the trees.
+
+A dark shadow inches northward across the ground.
+
+>
+[426: Forest Clearing]> e
+Trellises
+
+A fortresslike wall of arborvitaes stretches east and west through the forest. The only breach is an identical pair of arched trellises.
+
+A mountain stream trickles between the trees. Paths wander from its banks in many directions.
+
+>
+[317: Trellises]> e
+The River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+Footpaths wander north, west and northwest. Turning south, you see a magnificent hedge growing in an unbroken wall to the river’s edge.
+
+As you peer across the river you notice a lone vessel gliding out of the fog.
+
+>
+[439: The River]> hello sailor
+A voice in your ear remarks, "Fool."
+
+>
+[439: The River]> e
+The misty waters block your path.
+
+>
+[439: The River]> n
+The Bend
+
+An exhausted stream trickles into a river that bends to the south and east. The opposite shore is veiled behind a thick mist.
+
+Paths meander off in many directions from the river’s edge.
+
+>
+[557: The Bend]> n
+Under Cliff
+
+Smooth walls of rock vault straight up and then lean inward, forming a natural roof that partially hides the sky. Trails lead out from under the cliff in many directions.
+
+A swarm of bees has staked out this formation for itself by building an enormous hive under the arch. The faint buzzing sound from the hive is magnified by the cliff’s acoustics into a loud, frightening drone.
+
+>
+[400: Under Cliff]> n
+The cliff blocks your path.
+
+>
+[400: Under Cliff]> e
+Crater’s Edge
+
+The forest around you is bent and splintered, as if a mighty fist had smashed through the branches. Sooty fumes hang in the air; the earth is dark with ashes and rubble.
+
+The eastern path ends at the lip of a deep crater, forty or fifty feet across.
+
+>
+[441: Crater’s Edge]> e
+You climb down into the crater.
+
+Crater
+
+A dark cloud of smoke fills the air with an acrid, smoldering stench. Blackened rubble covers the sides and bottom of the crater.
+
+A glowing lump of metal lies half-buried at your feet.
+
+You can feel the gnomon pulling towards the lump of metal.
+
+>
+[145: Crater]> take metal
+You recklessly burn your fingers on the hot metal. Ouch!
+
+>
+[145: Crater]> i
+You’re holding a gnomon, a piece of paper, a small coin, a bag of crumbs and an umbrella. You’re wearing a wristwatch, and you have a credit card in your pocket.
+
+>
+[145: Crater]> take metal
+You recklessly burn your fingers on the hot metal. Ouch!
+
+>
+[145: Crater]> e
+The only way up is to the west.
+
+>
+[145: Crater]> n
+The only way up is to the west.
+
+>
+[145: Crater]> s
+The only way up is to the west.
+
+>
+[145: Crater]> w
+You scramble out of the crater.
+
+Crater’s Edge
+
+>
+[441: Crater’s Edge]> e
+You climb down into the crater.
+
+Crater
+
+A glowing lump of metal lies half-buried at your feet.
+
+You can feel the gnomon pulling towards the lump of metal.
+
+>
+[145: Crater]> w
+You scramble out of the crater.
+
+Crater’s Edge
+
+>
+[441: Crater’s Edge]> w
+Under Cliff
+
+>
+[400: Under Cliff]> e
+Crater’s Edge
+
+>
+[441: Crater’s Edge]> w
+Under Cliff
+
+>
+[400: Under Cliff]> n
+The cliff blocks your path.
+
+>
+[400: Under Cliff]> ne
+The cliff blocks your path.
+
+>
+[400: Under Cliff]> nw
+The cliff blocks your path.
+
+>
+[400: Under Cliff]> se
+Moor
+
+Tall, solemn cattails line the banks of a great river that flows eastward across the silent moor. A dense fog on the water obscures your view of the opposite shore.
+
+A pair of giant toadstools is growing among the cattails. The larger one has a closed white door set into the stem.
+
+>
+[471: Moor]> open door
+The white door won’t budge.
+
+>
+[471: Moor]> knock on door
+There’s no answer.
+
+>
+[471: Moor]> examine door
+The closed white door is of stately residential design.
+
+>
+[471: Moor]> look
+Moor
+
+Tall, solemn cattails line the banks of a great river that flows eastward across the silent moor. A dense fog on the water obscures your view of the opposite shore.
+
+A pair of giant toadstools is growing among the cattails. The larger one has a closed white door set into the stem.
+
+>
+[471: Moor]> w
+The Bend
+
+>
+[557: The Bend]> w
+Bottom of Stairs
+
+The triangular structure before you must be thousands of feet high. It divides the sky like a razor, casting a stern, precise shadow over the surrounding landscape.
+
+A narrow stairway climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every direction.
+
+>
+[575: Bottom of Stairs]> n
+With a fearful gulp, you ascend the narrow stairway.
+
+Halfway Up
+
+The breeze feels noticeably cooler here, about halfway to the vertex. The landscape below is gray in the shadow of the triangle.
+
+>
+[Halfway Up]> look
+Halfway Up
+
+The breeze feels noticeably cooler here, about halfway to the vertex. The landscape below is gray in the shadow of the triangle.
+
+>
+[Halfway Up]> u
+The air grows colder as you continue your ascent.
+
+Vertex
+
+The temperature on this tiny platform is well below freezing. But it isn’t just the cold that makes your teeth chatter when you look down that narrow stairway, thousands of feet high.
+
+Far below, the shadow of the structure stretches across the landscape. From this great altitude it looks like a dark finger, accusing a point on the west horizon.
+
+At the center of the platform stands a handsome antique sundial. You see a threaded hole on the dial’s face. The circumference is enclosed in a wide brass ring.
+
+>
+[316: Vertex]> screw gnomon in
+[What do you want to screw the gnomon on?]
+
+>
+[316: Vertex]> screw gnomon in sundial
+You twist and push the gnomon into the hole on the sundial, but it doesn’t seem to fit very well. A quick glance shows the reason why. The thread on the bolt doesn’t match the thread in the dial’s hole.
+
+>
+[316: Vertex]> look
+Vertex
+
+The temperature on this tiny platform is well below freezing. But it isn’t just the cold that makes your teeth chatter when you look down that narrow stairway, thousands of feet high.
+
+Far below, the shadow of the structure stretches across the landscape. From this great altitude it looks like a dark finger, accusing a point on the west horizon.
+
+At the center of the platform stands a handsome antique sundial. You see a threaded hole on the dial’s face. The circumference is enclosed in a wide brass ring.
+
+>
+[316: Vertex]> examine dial
+The perimeter of the sundial is inscribed with seven curious symbols and a compass rose, with the legend "TEMPUS EDAX RERUM" emblazoned across the bottom. A threaded hole is set into the center of the dial.
+
+[Il y a une horloge
+ qui ne sonne pas.
+
+  -- Arthur Rimbaud]
+
+
+>
+[Il y a une horloge  qui ne sonne pas.                        -- Arthur Rimbaud]>
+[What?]
+
+>
+[Il y a une horloge  qui ne sonne pas.                        -- Arthur Rimbaud]> look
+Vertex
+
+The temperature on this tiny platform is well below freezing. But it isn’t just the cold that makes your teeth chatter when you look down that narrow stairway, thousands of feet high.
+
+Far below, the shadow of the structure stretches across the landscape. From this great altitude it looks like a dark finger, accusing a point on the west horizon.
+
+At the center of the platform stands a handsome antique sundial. You see a threaded hole on the dial’s face. The circumference is enclosed in a wide brass ring.
+
+>
+[Il y a une horloge  qui ne sonne pas.                        -- Arthur Rimbaud]> n
+You’d have a long way to fall if you went that way.
+
+>
+[Il y a une horloge  qui ne sonne pas.                        -- Arthur Rimbaud]> s
+Fighting back fear, you descend the stairway.
+
+Halfway Down
+
+>
+[Halfway Down]> n
+The air grows colder as you continue your ascent.
+
+Vertex
+
+At the center of the platform stands a handsome antique sundial. You see a threaded hole on the dial’s face. The circumference is enclosed in a wide brass ring.
+
+>
+[316: Vertex]> s
+Fighting back fear, you descend the stairway.
+
+Halfway Down
+
+>
+[Halfway Down]> s
+The air grows warmer as you continue your descent.
+
+Bottom of Stairs
+
+>
+[575: Bottom of Stairs]> look
+Bottom of Stairs
+
+The triangular structure before you must be thousands of feet high. It divides the sky like a razor, casting a stern, precise shadow over the surrounding landscape.
+
+A narrow stairway climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every direction.
+
+>
+[575: Bottom of Stairs]> w
+South Bog
+
+The ground is damp and squishy underfoot, especially along the stream that wanders west and southeast between the black trees.
+
+A dark shadow creeps northeastward across the ground.
+
+A splintered log lies rotting in the mist at your feet. Its edges flicker with the eerie phosphorescence of decay.
+
+The edge of the shadow disappears northeastward.
+
+>
+[319: South Bog]> take log
+The log crumbles into a heap of damp corruption when you try to move it. Only a big splinter of wood remains.
+
+>
+[319: South Bog]> take splinter
+You take the splinter.
+
+[Your score just went up by 1 point. The total is now 16 out of 100.]
+
+>
+[319: South Bog]> look
+South Bog
+
+The ground is damp and squishy underfoot, especially along the stream that wanders west and southeast between the black trees.
+
+>
+[319: South Bog]> w
+Waterfall
+
+A curtain of water tumbles off the western cliffs into a deep, rocky pool. From there, a mountain stream wanders off into the forest. Footpaths follow the stream east, past a giant toadstool. The white door in its stem is closed.
+
+A flight of stone steps has been hewn into the face of the north cliff.
+
+>
+[472: Waterfall]> open door with splinter
+The white door won’t budge.
+
+>
+[472: Waterfall]> look
+Waterfall
+
+A curtain of water tumbles off the western cliffs into a deep, rocky pool. From there, a mountain stream wanders off into the forest. Footpaths follow the stream east, past a giant toadstool. The white door in its stem is closed.
+
+A flight of stone steps has been hewn into the face of the north cliff.
+
+>
+[472: Waterfall]> u
+You carefully ascend the stone steps.
+
+Cemetery
+
+Gloomy statues lie toppled among the tombstones, their broken limbs and heads scattered like the carnage of a ghastly battle.
+
+A granite crypt lies across the ground. Beyond it rises the mound of an ancient barrow. A black tunnel leads north, into the barrow.
+
+Sudden drops fall away on every side but south, where a flight of stone steps descends the cliff.
+
+A triangular shadow moves slowly across the ground.
+
+>
+[414: Cemetery]> n
+Barrow
+
+The splinter’s ghostly flicker does little to dispel the gloom of this subterranean passage. Craggy walls bend away to the north and south.
+
+A small hole is visible in the wall.
+
+A clatter breaks the silence! You turn, and watch helplessly as a spiked door crashes down across the south exit.
+
+Something just moved.
+
+You peer uneasily beyond the pool of light around the splinter. Nothing. Then, as your eyes adjust, you descry a vaguely human outline crouched against the tunnel wall.
+
+"Barrow wight," mutters a voice in your ear.
+
+>
+[353: Barrow]> n
+The barrow wight covers its eye with its claws and bellows something awful as you pass.
+
+Ossuary
+
+Naked slopes veer upward on every side, forming a natural hollow that is filled to a depth of several inches with human bones. The only exit is a dark opening to the south.
+
+A giant toadstool is flourishing in the rich fertilizer. The white door in its stem is closed.
+
+A triangular shadow inches across the ground. Its sharp point is sweeping northeastward, towards the toadstool.
+
+>
+[522: Ossuary]> open door
+The white door won’t budge.
+
+>
+[522: Ossuary]> knock on door
+There’s no answer.
+
+>
+[522: Ossuary]> n
+The slopes around you are too steep to climb; the bones suggest that you’re not the first to discover this.
+
+>
+[522: Ossuary]> look
+Ossuary
+
+Naked slopes veer upward on every side, forming a natural hollow that is filled to a depth of several inches with human bones. The only exit is a dark opening to the south.
+
+A giant toadstool is flourishing in the rich fertilizer. The white door in its stem is closed.
+
+A triangular shadow creeps across the ground. Its sharp point is sweeping northeastward, towards the toadstool.
+
+>
+[522: Ossuary]> ne
+The slopes around you are too steep to climb.
+
+>
+[522: Ossuary]> nw
+The slopes around you are too steep to climb.
+
+>
+[522: Ossuary]> s
+Barrow
+
+A barrow wight is slavering noisily in the darkness close at hand.
+
+A small hole is visible in the wall.
+
+The barrow wight studies you with its red eye.
+
+>
+[353: Barrow]> give ruby to wight
+You’re not holding that.
+
+>
+[353: Barrow]> i
+You’re holding a splinter (providing light), a gnomon, a piece of paper, a small coin, a bag of crumbs and an umbrella. You’re wearing a wristwatch, and you have a credit card in your pocket.
+
+>
+[353: Barrow]> save
+Save to file: c
+
+[SAVE completed.]
+
+>
+[353: Barrow]> give crumbs to wight
+You take a handful of crumbs out of the bag. They fall between your fingers and tumble across the ground, where they scatter all over the place.
+
+The barrow wight licks a stream of drool off its chin.
+
+>
+[353: Barrow]> s
+The spiked door blocks your path.
+
+>
+[353: Barrow]> give gnomon to wight
+The barrow wight clutches the gnomon in its claws, glares at it briefly and flings it off into the darkness with a snarl.
+
+>
+[353: Barrow]> give all to wight
+[You can’t refer to more than one object at a time with "give."]
+
+>
+[353: Barrow]> give watch to wight
+[taking off the wristwatch first]
+
+The barrow wight clutches the wristwatch in its claws, glares at it briefly and flings it off into the darkness with a snarl.
+
+>
+[353: Barrow]> i
+You’re holding a splinter (providing light), a piece of paper, a small coin, a bag of crumbs and an umbrella. You also have a credit card in your pocket.
+
+>
+[353: Barrow]> give coin to wight
+The barrow wight clutches the small coin in its claws, glares at it briefly and flings it off into the darkness with a snarl.
+
+>
+[353: Barrow]> give umbrella to wight
+The barrow wight clutches the umbrella in its claws, glares at it briefly and flings it off into the darkness with a snarl.
+
+>
+[353: Barrow]> i
+You’re holding a splinter (providing light), a piece of paper and a bag of crumbs. You also have a credit card in your pocket.
+
+>
+[353: Barrow]> give bag to wight
+The barrow wight clutches the bag of crumbs in its claws, glares at it briefly and flings it off into the darkness with a snarl.
+
+>
+[353: Barrow]> give credit card to wight
+[taking the credit card out of your pocket first]
+
+The barrow wight clutches the credit card in its claws, glares at it briefly and flings it off into the darkness with a snarl.
+
+>
+[353: Barrow]> look
+Barrow
+
+The splinter’s ghostly flicker does little to dispel the gloom of this subterranean passage. Craggy walls bend away to the north and south.
+
+A barrow wight is lurking in the darkness close at hand.
+
+A small hole is visible in the wall.
+
+The barrow wight’s breathing echoes in the tunnel.
+
+>
+[353: Barrow]> examine hole
+The hole is quite small.
+
+The barrow wight sharpens its claws on a rock.
+
+>
+[353: Barrow]> look through hole
+It occurs to you that there might be another barrow wight beyond that wall, waiting to jab a hot spike into your eye. You decide not to risk it.
+
+The barrow wight is watching you with interest.
+
+>
+[353: Barrow]> poke umbrella in hole
+[Please try to express that another way.]
+
+>
+[353: Barrow]> put umbrella in hole
+You’re not holding that.
+
+>
+[353: Barrow]> take all
+[To what are you referring?]
+
+The barrow wight rubs its eye, then turns to squint at you.
+
+>
+[353: Barrow]> i
+You’re holding a splinter (providing light) and a piece of paper. Your pocket is empty.
+
+>
+[353: Barrow]> look
+Barrow
+
+The splinter’s ghostly flicker does little to dispel the gloom of this subterranean passage. Craggy walls bend away to the north and south.
+
+A barrow wight is skulking about in the darkness close at hand.
+
+A small hole is visible in the wall.
+
+>
+[353: Barrow]> s
+The spiked door blocks your path.
+
+>
+[353: Barrow]> n
+The barrow wight slinks out of your way.
+Ossuary
+
+You see a credit card, a bag of crumbs, an umbrella, a small coin, a wristwatch and a gnomon here.
+
+>
+[522: Ossuary]>
+[What?]
+
+>
+[522: Ossuary]> take all
+The bones: As you sift dispiritedly through the bones, a skeleton key, still clutched in a long-dead hand, catches your eye.
+The credit card: Taken.
+The bag of crumbs: Taken.
+The umbrella: Taken.
+The small coin: Taken.
+The wristwatch: Taken.
+The gnomon: Taken.
+
+>
+[522: Ossuary]> take key
+You’re holding too much already.
+
+>
+[522: Ossuary]> i
+You’re holding a gnomon, a wristwatch, a small coin, an umbrella, a bag of crumbs, a credit card, a splinter (providing light) and a piece of paper. Your pocket is empty.
+
+>
+[522: Ossuary]> drop crumbs
+You take a handful of crumbs out of the bag. They fall between your fingers and tumble across the ground, where the breeze blows them all away.
+
+>
+[522: Ossuary]> take ke
+[The word "ke" isn’t in the vocabulary that you can use.]
+
+>
+[522: Ossuary]> take key
+You’re holding too much already.
+
+>
+[522: Ossuary]> drop umbrella
+You put down the umbrella.
+
+>
+[522: Ossuary]> take key
+You gently pry the skeleton key out from between the fingers.
+
+[Your score just went up by 1 point. The total is now 17 out of 100.]
+
+>
+[522: Ossuary]> s
+Barrow
+
+A barrow wight is lurking in the darkness close at hand.
+
+A small hole is visible in the wall.
+
+>
+[353: Barrow]> put key in hole
+The skeleton key slides into the hole with a satisfying click.
+
+>
+[353: Barrow]> turn key
+You slowly twist the key in the hole.
+
+The ground under your feet is moving! You leap out of the way, and watch as a hidden slope opens up beneath the keyhole.
+
+[Your score just went up by 1 point. The total is now 18 out of 100.]
+
+The barrow wight stomps its feet and howls with rage.
+
+>
+[353: Barrow]> look
+Barrow
+
+The splinter’s ghostly flicker does little to dispel the gloom of this subterranean passage. Craggy walls bend away to the north and south; chill vapors rise from a slope that descends into darkness.
+
+A barrow wight is skulking about in the darkness close at hand.
+
+A skeleton key is sticking out of the wall.
+
+The barrow wight growls in its throat.
+
+>
+[353: Barrow]> d
+You slide down into gloom that grows colder and colder...
+
+Ice Cavern
+
+You’re in a vast underground cavern, cold enough to see your breath. Icicles on the ceiling glitter in the light shining in through an opening in the east wall. Beyond it, a curtain of water fills the cavern with its splashing roar.
+
+With a rusty creak, the slope behind you retracts into the ceiling. A clatter and THUMP fill the cavern with a sinister echo. Then everything is quiet.
+
+>
+[449: Ice Cavern]> look
+Ice Cavern
+
+You’re in a vast underground cavern, cold enough to see your breath. Icicles on the ceiling glitter in the light shining in through an opening in the east wall. Beyond it, a curtain of water fills the cavern with its splashing roar.
+
+>
+[449: Ice Cavern]> e
+You edge your way around the waterfall.
+
+Waterfall
+
+>
+[472: Waterfall]> e
+South Bog
+
+>
+[319: South Bog]> w
+Waterfall
+
+>
+[472: Waterfall]> u
+You carefully ascend the stone steps.
+
+Cemetery
+
+>
+[414: Cemetery]> n
+Barrow
+
+The splinter’s ghostly flicker does little to dispel the gloom of this subterranean passage. Craggy walls bend away to the north and south.
+
+A barrow wight is slavering noisily in the darkness close at hand.
+
+A skeleton key is sticking out of the wall.
+
+A clatter breaks the silence! You turn, and watch helplessly as a spiked door crashes down across the south exit.
+
+>
+[353: Barrow]> d
+You don’t see any exit that way.
+
+>
+[353: Barrow]> turn key
+You slowly twist the key in the hole.
+
+The ground under your feet is moving! You leap out of the way, and watch as a hidden slope opens up beneath the keyhole.
+
+The barrow wight stomps its feet and howls with rage.
+
+>
+[353: Barrow]> d
+You slide down into gloom that grows colder and colder...
+
+Ice Cavern
+
+With a rusty creak, the slope behind you retracts into the ceiling. A clatter and THUMP fill the cavern with a sinister echo. Then everything is quiet.
+
+>
+[449: Ice Cavern]> e
+You edge your way around the waterfall.
+
+Waterfall
+
+>
+[472: Waterfall]> n
+You carefully ascend the stone steps.
+
+Cemetery
+
+>
+[414: Cemetery]> n
+Barrow
+
+The splinter’s ghostly flicker does little to dispel the gloom of this subterranean passage. Craggy walls bend away to the north and south.
+
+A barrow wight is slavering noisily in the darkness close at hand.
+
+A skeleton key is sticking out of the wall.
+
+A clatter breaks the silence! You turn, and watch helplessly as a spiked door crashes down across the south exit.
+
+>
+[353: Barrow]> turn key
+You slowly twist the key in the hole.
+
+The ground under your feet is moving! You leap out of the way, and watch as a hidden slope opens up beneath the keyhole.
+
+The barrow wight stomps its feet and howls with rage.
+
+>
+[353: Barrow]> d
+You slide down into gloom that grows colder and colder...
+
+Ice Cavern
+
+With a rusty creak, the slope behind you retracts into the ceiling. A clatter and THUMP fill the cavern with a sinister echo. Then everything is quiet.
+
+>
+[449: Ice Cavern]> look
+Ice Cavern
+
+You’re in a vast underground cavern, cold enough to see your breath. Icicles on the ceiling glitter in the light shining in through an opening in the east wall. Beyond it, a curtain of water fills the cavern with its splashing roar.
+
+>
+[449: Ice Cavern]> e
+You edge your way around the waterfall.
+
+Waterfall
+
+>
+[472: Waterfall]> e
+South Bog
+
+>
+[319: South Bog]> n
+North Bog
+
+A thick, suffocating miasma lingers among the trees; the black earth is squishy with corruption. You can hear dripping liquids and other moist sounds close by.
+
+Paths wander off in many directions. High rock walls curve away to the north and southwest.
+
+A big Venus flytrap is growing nearby. Its crimson jaws are wide open, exposing a cavity that gleams with sweet-smelling ichor.
+
+A soap bubble appears high overhead. It hovers for a moment before it bursts with a flabby pop.
+
+>
+[42: North Bog]> n
+Promontory
+
+This crag of rock juts out over the surrounding chasm, ending at an abrupt drop several hundred feet deep. Rugged trails wind south and southeast.
+
+A rather large boy sits nearby, listening to a pair of headphones and idly blowing soap bubbles. There’s a dish full of soapy water by his side.
+
+The boy dips the bubble wand in the dish and swishes it around.
+
+>
+[370: Promontory]> n
+You’d plummet to your death if you went that way.
+
+>
+[370: Promontory]> look
+Promontory
+
+This crag of rock juts out over the surrounding chasm, ending at an abrupt drop several hundred feet deep. Rugged trails wind south and southeast.
+
+A rather large boy sits nearby, listening to a pair of headphones and idly blowing soap bubbles. There’s a dish full of soapy water by his side.
+
+The boy pulls the bubble wand out of the dish, puts it to his lips and blows a big soap bubble.
+
+>
+[370: Promontory]> take headphones
+The headphones are high out of reach.
+
+The boy snaps his fingers to the headphone music as the soap bubble bursts with a flabby pop.
+
+[Atoms or systems into ruin hurled,
+ And now a bubble burst, and now a world.
+
+                        -- Alexander Pope]
+
+
+>
+[Atoms or systems into ruin hurled,        And now a bubble burst, and now a world.                                                                   -- Alexander Pope]>
+[What?]
+
+>
+[Atoms or systems into ruin hurled,        And now a bubble burst, and now a world.                                                                   -- Alexander Pope]>
+[What?]
+
+>
+[Atoms or systems into ruin hurled,        And now a bubble burst, and now a world.                                                                   -- Alexander Pope]> look
+Promontory
+
+This crag of rock juts out over the surrounding chasm, ending at an abrupt drop several hundred feet deep. Rugged trails wind south and southeast.
+
+A rather large boy sits nearby, listening to a pair of headphones and idly blowing soap bubbles. There’s a dish full of soapy water by his side.
+
+The boy dips the bubble wand in the dish and swishes it around.
+
+>
+[Atoms or systems into ruin hurled,        And now a bubble burst, and now a world.                                                                   -- Alexander Pope]> s
+North Bog
+
+A big Venus flytrap is growing nearby. Its crimson jaws are wide open, exposing a cavity that gleams with sweet-smelling ichor.
+
+>
+[42: North Bog]> examine flytrap
+The flytrap’s open jaws are fully three feet across. The inside is coated with a glistening ichor that resembles morning dew.
+
+A soap bubble appears high overhead. It hovers for a moment before it bursts with a flabby pop.
+
+>
+[42: North Bog]> i
+You’re holding a gnomon, a wristwatch, a small coin, a bag of crumbs, a credit card, a splinter (providing light) and a piece of paper. Your pocket is empty.
+
+>
+[42: North Bog]> look inside flytrap
+The inside of the flytrap is coated with a glistening ichor that resembles morning dew.
+
+>
+[42: North Bog]> save
+Save to file: d
+
+[SAVE completed.]
+
+>
+[42: North Bog]> put head in flytrap
+You’re not holding your head.
+
+>
+[42: North Bog]> put hand in flytrap
+It’s empty.
+
+>
+[42: North Bog]> look
+North Bog
+
+A thick, suffocating miasma lingers among the trees; the black earth is squishy with corruption. You can hear dripping liquids and other moist sounds close by.
+
+Paths wander off in many directions. High rock walls curve away to the north and southwest.
+
+A big Venus flytrap is growing nearby. Its crimson jaws are wide open, exposing a cavity that gleams with sweet-smelling ichor.
+
+>
+[42: North Bog]> w
+The cliff blocks your path.
+
+>
+[42: North Bog]> s
+South Bog
+
+>
+[319: South Bog]> w
+Waterfall
+
+>
+[472: Waterfall]> n
+You carefully ascend the stone steps.
+
+Cemetery
+
+>
+[414: Cemetery]> n
+Barrow
+
+The splinter’s ghostly flicker does little to dispel the gloom of this subterranean passage. Craggy walls bend away to the north and south.
+
+A barrow wight is skulking about in the darkness close at hand.
+
+A skeleton key is sticking out of the wall.
+
+A clatter breaks the silence! You turn, and watch helplessly as a spiked door crashes down across the south exit.
+
+The barrow wight studies you with its red eye.
+
+>
+[353: Barrow]> turn key
+You slowly twist the key in the hole.
+
+The ground under your feet is moving! You leap out of the way, and watch as a hidden slope opens up beneath the keyhole.
+
+The barrow wight stomps its feet and howls with rage.
+
+>
+[353: Barrow]> d
+You slide down into gloom that grows colder and colder...
+
+Ice Cavern
+
+With a rusty creak, the slope behind you retracts into the ceiling. A clatter and THUMP fill the cavern with a sinister echo. Then all is still.
+
+>
+[449: Ice Cavern]> nw
+There’s no exit that way.
+
+>
+[449: Ice Cavern]> u
+The slope you saw here before is gone now.
+
+>
+[449: Ice Cavern]> n
+There’s no exit that way.
+
+>
+[449: Ice Cavern]> ne
+There’s no exit that way.
+
+>
+[449: Ice Cavern]> look
+Ice Cavern
+
+You’re in a vast underground cavern, cold enough to see your breath. Icicles on the ceiling glitter in the light shining in through an opening in the east wall. Beyond it, a curtain of water fills the cavern with its splashing roar.
+
+>
+[449: Ice Cavern]> e
+You edge your way around the waterfall.
+
+Waterfall
+
+>
+[472: Waterfall]> s
+Sheer cliff walls block your path.
+
+>
+[472: Waterfall]> w
+You edge around the curtain of water.
+
+Ice Cavern
+
+>
+[449: Ice Cavern]> w
+There’s no exit that way.
+
+>
+[449: Ice Cavern]> w
+There’s no exit that way.
+
+>
+[449: Ice Cavern]> n
+There’s no exit that way.
+
+>
+[449: Ice Cavern]> s
+There’s no exit that way.
+
+>
+[449: Ice Cavern]> d
+There’s no exit that way.
+
+>
+[449: Ice Cavern]> e
+You edge your way around the waterfall.
+
+Waterfall
+
+>
+[472: Waterfall]> n
+You carefully ascend the stone steps.
+
+Cemetery
+
+>
+[414: Cemetery]> n
+Barrow
+
+The splinter’s ghostly flicker does little to dispel the gloom of this subterranean passage. Craggy walls bend away to the north and south.
+
+A barrow wight is lurking in the darkness close at hand.
+
+A skeleton key is sticking out of the wall.
+
+A clatter breaks the silence! You turn, and watch helplessly as a spiked door crashes down across the south exit.
+
+>
+[353: Barrow]> take key
+You take the skeleton key out of the hole.
+
+>
+[353: Barrow]> s
+The spiked door blocks your path.
+
+>
+[353: Barrow]> d
+You don’t see any exit that way.
+
+>
+[353: Barrow]> n
+The barrow wight stumbles out of your way.
+Ossuary
+
+There’s an umbrella here.
+
+>
+[522: Ossuary]> n
+The slopes around you are too steep to climb.
+
+>
+[522: Ossuary]> s
+Barrow
+
+A barrow wight is skulking about in the darkness close at hand.
+
+A small hole is visible in the wall.
+
+The barrow wight licks a stream of drool off its chin.
+
+>
+[353: Barrow]> put key in hole
+The skeleton key slides into the hole with a satisfying click.
+
+>
+[353: Barrow]> turn key
+You slowly twist the key in the hole.
+
+The ground under your feet is moving! You leap out of the way, and watch as a hidden slope opens up beneath the keyhole.
+
+The barrow wight stomps its feet and howls with rage.
+
+>
+[353: Barrow]> d
+You slide down into gloom that grows colder and colder...
+
+Ice Cavern
+
+With a rusty creak, the slope behind you retracts into the ceiling. A clatter and THUMP fill the cavern with a sinister echo. Then all is still.
+
+>
+[449: Ice Cavern]> d
+There’s no exit that way.
+
+>
+[449: Ice Cavern]> d
+There’s no exit that way.
+
+>
+[449: Ice Cavern]> s
+There’s no exit that way.
+
+>
+[449: Ice Cavern]> w
+There’s no exit that way.
+
+>
+[449: Ice Cavern]> e
+You edge your way around the waterfall.
+
+Waterfall
+
+>
+[472: Waterfall]> e
+South Bog
+
+>
+[319: South Bog]> e
+Bottom of Stairs
+
+>
+[575: Bottom of Stairs]> e
+The Bend
+
+A dark shadow moves slowly southeastward across the ground.
+
+>
+[557: The Bend]> e
+Moor
+
+The edge of a shadow inches into view.
+
+>
+[471: Moor]> s
+The misty waters block your path.
+
+>
+[471: Moor]> s
+The misty waters block your path.
+
+>
+[471: Moor]> e
+Tall cattails block your path.
+
+>
+[471: Moor]> e
+Tall cattails block your path.
+
+>
+[471: Moor]> e
+Tall cattails block your path.
+
+>
+[471: Moor]> w
+The Bend
+
+A dark shadow creeps southward across the ground.
+
+>
+[557: The Bend]> s
+The River
+
+>
+[439: The River]> s
+The hedge blocks your path.
+
+>
+[439: The River]> s
+The hedge blocks your path.
+
+>
+[439: The River]> s
+The hedge blocks your path.
+
+>
+[439: The River]> w
+Trellises
+
+>
+[317: Trellises]> s
+The hedge blocks your path.
+
+>
+[317: Trellises]> w
+Forest Clearing
+
+>
+[426: Forest Clearing]> s
+The hedge blocks your path.
+
+>
+[426: Forest Clearing]> w
+You ascend the gentle hill.
+
+Summit
+
+>
+[323: Summit]> s
+Meadow
+
+>
+[576: Meadow]> s
+The dense forest is hopelessly impenetrable. But an obscure path winds north, to the summit of a gentle hill.
+
+>
+[576: Meadow]> e
+The dense forest is hopelessly impenetrable.
+
+>
+[576: Meadow]> w
+The dense forest is hopelessly impenetrable.
+
+>
+[576: Meadow]> se
+The dense forest is hopelessly impenetrable.
+
+>
+[576: Meadow]> sw
+The dense forest is hopelessly impenetrable.
+
+>
+[576: Meadow]> u
+You ascend the gentle hill.
+
+Summit
+
+>
+[323: Summit]> w
+You’d tumble down the hill if you went that way.
+
+>
+[323: Summit]> n
+You’d tumble down the hill if you went that way.
+
+>
+[323: Summit]> se
+You’d tumble down the hill if you went that way.
+
+>
+[323: Summit]> sw
+You’d tumble down the hill if you went that way.
+
+>
+[323: Summit]> ne
+South Bog
+
+>
+[319: South Bog]> sw
+You ascend the gentle hill.
+
+Summit
+
+>
+[323: Summit]> save
+Save to file: tuesday
+
+[SAVE completed.]
+
+>
+[323: Summit]> score
+[Your score is 18 points out of 100, in 231 moves. This gives you the rank of EXPLORER.]
+
+>
+[323: Summit]> quit
+[Your score is 18 points out of 100, in 231 moves. This gives you the rank of EXPLORER.]
+
+Are you sure you want to leave the story now?
+
+[Please type YES or NO.] >
+[323: Summit]> yes
+
+
+Process finished with exit code 0
+
+
