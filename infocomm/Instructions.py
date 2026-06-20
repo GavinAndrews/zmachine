@@ -2,6 +2,11 @@ import sys
 import time as time_mod
 from enum import IntEnum
 
+
+class _UndoPerformed(Exception):
+    """Raised by the undo meta-command to unwind Python's call stack cleanly."""
+    pass
+
 import ZStrings
 from Utils import Utils
 import Processor
@@ -34,6 +39,9 @@ class Instructions:
         self.stream3_stack = []
         self._undo_stack = []
         self._undo_max_depth = 10
+        self._interp_undo_stack = []   # interpreter-level saves (works for all versions)
+        self._skip_next_interp_save = False
+        self._current_opcode_pc = 0
         self.show_location = False
         self.location_global = None   # None = auto-detect; set via #loc G N
         self._player_obj_num = None   # cached once confirmed (parent has a name)
@@ -175,6 +183,7 @@ class Instructions:
         ]
 
     def execute(self, op_type, op_number, args, current_pc, opcode):
+        self._current_opcode_pc = current_pc
         try:
             implementation = self.all_functions[op_type][op_number]
             if not self.quiet or self.trace_count > 0:
@@ -577,8 +586,27 @@ class Instructions:
     # I/O Instructions                                                                             #
     ################################################################################################
 
+    def _save_interp_undo(self):
+        """Save interpreter-level undo snapshot before each read instruction."""
+        if self._skip_next_interp_save:
+            self._skip_next_interp_save = False
+            return
+        import array as _array
+        stack = self.processor.stack
+        self._interp_undo_stack.append({
+            'pc':          self._current_opcode_pc,
+            'memory':      _array.array('B', self.processor.memory),
+            'stack_data':  _array.array('L', stack.stack),
+            'sp':          stack.sp,
+            'fp':          stack.fp,
+            'frame_count': stack.frame_count,
+        })
+        if len(self._interp_undo_stack) > self._undo_max_depth:
+            self._interp_undo_stack.pop(0)
+
     def instruction_read(self, args):
         """sread (V3) / aread (V4+)"""
+        self._save_interp_undo()
         text_addr    = args[0]
         parse_addr   = args[1] if len(args) > 1 else None
         time_tenths  = args[2] if len(args) > 2 else 0
@@ -643,6 +671,23 @@ class Instructions:
         if not cmd:
             return False
         verb = cmd[0]
+        if verb == 'undo' and len(cmd) == 1:
+            if not self._interp_undo_stack:
+                self.screen.print_str("[Nothing to undo.]\n")
+                return True
+            s = self._interp_undo_stack.pop()
+            mem = self.processor.memory
+            for i, b in enumerate(s['memory']):
+                mem[i] = b
+            stack = self.processor.stack
+            for i, w in enumerate(s['stack_data']):
+                stack.stack[i] = w
+            stack.sp          = s['sp']
+            stack.fp          = s['fp']
+            stack.frame_count = s['frame_count']
+            self.processor.set_pc(s['pc'])
+            self._skip_next_interp_save = True
+            raise _UndoPerformed()
         if verb in ('script', 'transcript'):
             if self.screen.stream2_active:
                 self.screen.print_str("[Transcript is already active.]\n")
@@ -681,6 +726,7 @@ class Instructions:
         if verb == '#help':
             self.screen.print_str(
                 "[Interpreter commands:\n"
+                "  undo                   Undo last move (interpreter-level, works in all versions)\n"
                 "  script / transcript    Start transcript (prompts for filename)\n"
                 "  unscript / noscript    Stop transcript\n"
                 "  #loc                   Toggle location display before each prompt\n"

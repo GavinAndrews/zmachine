@@ -46,6 +46,8 @@ class Screen:
         self.current_win = 0       # 0 = lower, 1 = upper
         self.upper_row = 1         # cursor row within upper window (1-based)
         self.upper_col = 1         # cursor col within upper window (1-based)
+        self.lower_row = 1         # tracked lower-window cursor row
+        self.lower_col = 1         # tracked lower-window cursor col
         self.style = 0
         self.fg = -1               # -1 = default
         self.bg = -1
@@ -100,7 +102,11 @@ class Screen:
             top = height + 1
             bot = self.total_rows
             _write(f'\x1b[{top};{bot}r')
-            self._erase_region(1, 1, height, self.total_cols)
+            # Position cursor at start of lower window and record it.
+            # Do NOT erase the upper window here — V4+ games erase explicitly.
+            self.lower_row = top
+            self.lower_col = 1
+            _write(f'\x1b[{top};1H')
         _flush()
 
     def set_window(self, win):
@@ -110,10 +116,13 @@ class Screen:
         if not self.ansi:
             return
         if win == 1:
-            _write('\x1b[s')                                    # save lower-window cursor
-            _write(f'\x1b[{self.upper_row};{self.upper_col}H') # go to upper-window cursor
+            # Save lower-window cursor, go to upper-window cursor
+            self.lower_row = max(self.lower_row, self.upper_rows + 1)
+            _write(f'\x1b[{self.upper_row};{self.upper_col}H')
         else:
-            _write('\x1b[u')                                    # restore lower-window cursor
+            # Restore lower-window cursor explicitly (don't rely on \x1b[u)
+            row = max(self.lower_row, self.upper_rows + 1)
+            _write(f'\x1b[{row};{self.lower_col}H')
         _flush()
 
     def erase_window(self, win):
@@ -181,12 +190,24 @@ class Screen:
     def print_char(self, ch):
         _write(ch)
         if self.current_win == 1:
-            # Track cursor movement in upper window
             if ch == '\n':
                 self.upper_row += 1
                 self.upper_col = 1
             else:
                 self.upper_col += 1
+        else:
+            if ch == '\n':
+                if self.lower_row < self.total_rows:
+                    self.lower_row += 1
+                self.lower_col = 1
+            elif ch == '\r':
+                self.lower_col = 1
+            else:
+                self.lower_col += 1
+                if self.lower_col > self.total_cols:
+                    self.lower_col = 1
+                    if self.lower_row < self.total_rows:
+                        self.lower_row += 1
         if self.stream2_active and self.transcript_file:
             self.transcript_file.write(ch)
 

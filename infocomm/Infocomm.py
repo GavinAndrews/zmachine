@@ -8,6 +8,7 @@ from AbbreviationTable import AbbreviationTable
 from ObjectTable import ObjectTable
 from Processor import Processor
 from Scripting import Scripting
+from Instructions import _UndoPerformed
 from Screen import Screen
 
 parser = argparse.ArgumentParser(description="Z-Machine interpreter")
@@ -82,6 +83,8 @@ try:
     while True:
         try:
             processor.next_instruction()
+        except _UndoPerformed:
+            pass   # state already restored; re-execute from saved PC
         except KeyboardInterrupt:
             screen.reset()
             print("\n[Interrupted]")
