@@ -701,6 +701,10 @@ class Instructions:
             self.processor.set_pc(s['pc'])
             if not self.undo_random_continue:
                 self.random = s['random']
+            # Clear only the status bar (upper window) — it still shows the
+            # location we just undid.  The lower window is untouched.
+            # The game redraws the status bar correctly on the next turn.
+            self.screen.erase_window(1)
             # Print feedback so the user can see the undo happened and knows
             # the game is ready for a new command.  The game's own '>' prompt
             # was before the read opcode we restored to, so it won't re-appear.
