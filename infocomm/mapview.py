@@ -152,16 +152,36 @@ HTML = """\
 <div id="net"></div>
 
 <script>
-const NODES_DATA = {nodes};
-const EDGES_DATA = {edges};
-
 const STORAGE_KEY = 'map_positions';
+
+// ── load saved positions BEFORE creating anything ────────────────────────
+// Injecting coordinates into the raw node data prevents the physics engine
+// from ever seeing "unpositioned" nodes, so it cannot override the saved layout.
+var savedPos = null;
+try {{
+  var _raw = localStorage.getItem(STORAGE_KEY);
+  if (_raw) savedPos = JSON.parse(_raw);
+}} catch(e) {{}}
+
+var NODES_DATA = {nodes};
+var EDGES_DATA = {edges};
+
+if (savedPos) {{
+  NODES_DATA.forEach(function(n) {{
+    var p = savedPos[n.id];
+    if (p) {{ n.x = p.x; n.y = p.y; }}
+  }});
+}}
+
+// Physics starts disabled when we have saved positions so they are never
+// overridden by the stabilisation loop.
+var physOn = (savedPos === null);
 
 var nodes   = new vis.DataSet(NODES_DATA);
 var edges   = new vis.DataSet(EDGES_DATA);
 var network = new vis.Network(
   document.getElementById('net'),
-  {{ nodes, edges }},
+  {{ nodes: nodes, edges: edges }},
   {{
     nodes: {{
       shape: 'box', margin: 8,
@@ -176,7 +196,7 @@ var network = new vis.Network(
       smooth: {{ type:'curvedCW', roundness: 0.1 }},
     }},
     physics: {{
-      enabled: true,
+      enabled: physOn,
       barnesHut: {{ gravitationalConstant:-8000, springLength:160, springConstant:0.04 }},
       stabilization: {{ iterations: 300 }},
     }},
@@ -185,74 +205,51 @@ var network = new vis.Network(
   }}
 );
 
-// ── position persistence ─────────────────────────────────────────────────
+// Fit view once on first draw (works for both fresh and restored layouts)
+network.once('afterDrawing', function() {{ network.fit({{ animation: false }}); }});
 
-var physOn           = true;
-var restoredFromSave = false;
+// When no saved positions: disable physics after the initial layout settles
+if (!savedPos) {{
+  network.once('stabilizationIterationsDone', function() {{ setPhysics(false); }});
+}}
 
-// Restore saved positions from localStorage on load
-try {{
-  const saved = localStorage.getItem(STORAGE_KEY);
-  if (saved) {{
-    const pos     = JSON.parse(saved);
-    const known   = new Set(nodes.getIds());
-    const updates = Object.entries(pos)
-      .filter(([id]) => known.has(id))
-      .map(([id, {{x, y}}]) => ({{id, x, y}}));
-    if (updates.length > 0) {{
-      nodes.update(updates);
-      restoredFromSave = true;
-      // Disable physics after vis.js processes the updates
-      setTimeout(() => {{
-        setPhysics(false);
-        network.fit({{ animation: false }});
-      }}, 150);
-    }}
+// ── auto-save ────────────────────────────────────────────────────────────
+network.on('dragEnd', function(params) {{
+  // Only save when a node was actually moved (not a view pan)
+  if (params.nodes && params.nodes.length > 0) {{
+    try {{ localStorage.setItem(STORAGE_KEY, JSON.stringify(network.getPositions())); }}
+    catch(e) {{}}
   }}
-}} catch(e) {{}}
-
-// If no saved positions, disable physics once the auto-layout settles
-network.once('stabilizationIterationsDone', () => {{
-  if (!restoredFromSave) setPhysics(false);
-}});
-
-// Auto-save to localStorage whenever the user finishes dragging a node
-network.on('dragEnd', function() {{
-  try {{
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(network.getPositions()));
-  }} catch(e) {{}}
 }});
 
 // ── controls ─────────────────────────────────────────────────────────────
-
 function setPhysics(on) {{
   physOn = on;
   network.setOptions({{ physics: {{ enabled: on }} }});
-  const btn = document.getElementById('phys-btn');
+  var btn = document.getElementById('phys-btn');
   btn.textContent = on ? 'Physics ON' : 'Physics OFF';
   btn.classList.toggle('on', on);
 }}
 function togglePhysics() {{ setPhysics(!physOn); }}
-function fitAll() {{ network.fit({{ animation: true }}); }}
+function fitAll()        {{ network.fit({{ animation: true }}); }}
 
 function saveJSON() {{
-  const pos  = network.getPositions();
-  const blob = new Blob([JSON.stringify(pos, null, 2)], {{type:'application/json'}});
-  const a    = document.createElement('a');
-  a.href     = URL.createObjectURL(blob);
+  var pos  = network.getPositions();
+  var blob = new Blob([JSON.stringify(pos, null, 2)], {{type:'application/json'}});
+  var a    = document.createElement('a');
+  a.href   = URL.createObjectURL(blob);
   a.download = 'map_positions.json';
   a.click();
 }}
 
 function loadJSON(evt) {{
-  const file = evt.target.files[0];
+  var file = evt.target.files[0];
   if (!file) return;
-  file.text().then(txt => {{
-    const pos = JSON.parse(txt);
-    nodes.update(Object.entries(pos).map(([id, {{x, y}}]) => ({{id, x, y}})));
+  file.text().then(function(txt) {{
+    var pos = JSON.parse(txt);
+    nodes.update(Object.entries(pos).map(function([id, p]) {{ return {{id:id, x:p.x, y:p.y}}; }}));
     setPhysics(false);
     network.fit({{ animation: true }});
-    // Persist loaded positions so they survive a refresh too
     try {{ localStorage.setItem(STORAGE_KEY, JSON.stringify(pos)); }} catch(e) {{}}
   }});
   evt.target.value = '';
@@ -260,10 +257,17 @@ function loadJSON(evt) {{
 
 function clearStorage() {{
   try {{ localStorage.removeItem(STORAGE_KEY); }} catch(e) {{}}
-  restoredFromSave = false;
+  savedPos = null;
   setPhysics(true);
   network.stabilize();
 }}
+
+// Sync button label with initial state
+(function() {{
+  var btn = document.getElementById('phys-btn');
+  btn.textContent = physOn ? 'Physics ON' : 'Physics OFF';
+  btn.classList.toggle('on', physOn);
+}})();
 </script>
 </body>
 </html>
