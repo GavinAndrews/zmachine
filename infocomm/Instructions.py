@@ -680,10 +680,15 @@ class Instructions:
             return False
         verb = cmd[0]
         if verb == 'undo' and len(cmd) == 1:
-            if not self._interp_undo_stack:
+            # _save_interp_undo() fires at the START of instruction_read, so the
+            # most-recent snapshot is the *current* state (saved moments ago before
+            # the user typed anything).  We must discard it and restore the one
+            # before it, which represents the state at the previous turn.
+            if len(self._interp_undo_stack) < 2:
                 self.screen.print_str("[Nothing to undo.]\n")
                 return True
-            s = self._interp_undo_stack.pop()
+            self._interp_undo_stack.pop()        # discard current-state snapshot
+            s = self._interp_undo_stack.pop()    # restore previous-state snapshot
             mem = self.processor.memory
             for i, b in enumerate(s['memory']):
                 mem[i] = b
@@ -696,7 +701,8 @@ class Instructions:
             self.processor.set_pc(s['pc'])
             if not self.undo_random_continue:
                 self.random = s['random']
-            self._skip_next_interp_save = True
+            # Do NOT set _skip_next_interp_save: after restoring, instruction_read
+            # will re-save the restored state as a new snapshot, which is correct.
             raise _UndoPerformed()
         if verb in ('script', 'transcript'):
             if self.screen.stream2_active:
