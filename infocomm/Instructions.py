@@ -7,6 +7,10 @@ class _UndoPerformed(Exception):
     """Raised by the undo meta-command to unwind Python's call stack cleanly."""
     pass
 
+class _RestartRequested(Exception):
+    """Raised by the restart opcode to unwind back to the main run loop."""
+    pass
+
 import ZStrings
 from Utils import Utils
 import Processor
@@ -1227,7 +1231,6 @@ class Instructions:
         sys.exit(0)
 
     def instruction_restart(self, args):
-        self.screen.print_str("\n[RESTART not implemented - exiting]\n")
-        sys.exit(0)
+        raise _RestartRequested()
 
 

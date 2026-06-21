@@ -6,7 +6,7 @@ from PySide6.QtCore import QTimer
 
 from Machine import build_machine
 from Scripting import Scripting
-from Instructions import _UndoPerformed
+from Instructions import _UndoPerformed, _RestartRequested
 from Screen import ZMachineScreen
 
 parser = argparse.ArgumentParser(description="Z-Machine interpreter")
@@ -50,13 +50,21 @@ running = True
 
 
 def run_step():
-    global running
+    global running, processor
     if not running:
         return
     try:
         processor.next_instruction()
     except _UndoPerformed:
         pass
+    except _RestartRequested:
+        # Reload the game from disk and start fresh inside the same window.
+        screen.terminal.erase_window(-1)
+        processor = build_machine(game_arg, screen, scripting=None, seed=args.seed)
+        if args.debug:
+            screen.object_window.processor  = processor
+            screen.globals_window.processor = processor
+            screen.stack_window.processor   = processor
     except KeyboardInterrupt:
         screen.reset()
         print("\n[Interrupted]")
