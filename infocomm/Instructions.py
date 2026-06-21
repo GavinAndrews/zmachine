@@ -788,6 +788,8 @@ class Instructions:
                 "  #map off               Stop map logging\n"
                 "  #see <note>            Add a note to the current location (shown in map)\n"
                 "  #see                   Show notes for the current location\n"
+                "  #remap                 Regenerate map.html from map.txt\n"
+                "  #remap <file>          Regenerate from a specific map file\n"
                 "  #seed <n>              Seed RNG (any positive integer; 0 = time-based)\n"
                 "  #obj <n>               Dump runtime state of object n\n"
                 "  #globals [count]       Show first <count> globals (default 20)\n"
@@ -865,6 +867,31 @@ class Instructions:
                 else:
                     self.screen.print_str(
                         f"[Note saved in memory. Start #map to also persist to file.]\n")
+            return True
+        if verb == '#remap':
+            if self.map_file:
+                map_path = self.map_file.name
+            elif len(cmd) >= 2:
+                map_path = ' '.join(cmd[1:])
+            else:
+                map_path = 'map.txt'
+            import os
+            html_path = os.path.splitext(map_path)[0] + '.html'
+            try:
+                import mapview
+                transitions, nodes, notes = mapview.parse_map(map_path)
+                html = mapview.build_html(transitions, nodes, notes)
+                with open(html_path, 'w', encoding='utf-8') as f:
+                    f.write(html)
+                n_notes = sum(len(v) for v in notes.values())
+                self.screen.print_str(
+                    f"[Map written to {html_path}: "
+                    f"{len(transitions)} transitions, {len(nodes)} locations, "
+                    f"{n_notes} notes]\n")
+            except FileNotFoundError:
+                self.screen.print_str(f"[Map file not found: {map_path}]\n")
+            except Exception as e:
+                self.screen.print_str(f"[Error regenerating map: {e}]\n")
             return True
         if verb == '#seed':
             if len(cmd) > 1:
