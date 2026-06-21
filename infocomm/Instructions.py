@@ -701,6 +701,10 @@ class Instructions:
             self.processor.set_pc(s['pc'])
             if not self.undo_random_continue:
                 self.random = s['random']
+            # Print feedback so the user can see the undo happened and knows
+            # the game is ready for a new command.  The game's own '>' prompt
+            # was before the read opcode we restored to, so it won't re-appear.
+            self.screen.print_str('\n[Undone.]\n\n> ')
             # Do NOT set _skip_next_interp_save: after restoring, instruction_read
             # will re-save the restored state as a new snapshot, which is correct.
             raise _UndoPerformed()
