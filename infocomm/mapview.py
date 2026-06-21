@@ -145,15 +145,17 @@ HTML = """\
     <button onclick="document.getElementById('file-load').click()">Load positions</button>
     <input id="file-load" type="file" accept=".json" onchange="loadJSON(event)">
   </label>
-  <span>Scroll = zoom &nbsp;·&nbsp; Right-drag = pan &nbsp;·&nbsp;
-        Drag nodes to compass positions &nbsp;·&nbsp;
-        Hover green node = notes</span>
+  <button onclick="clearStorage()" title="Forget saved positions and re-run layout">Clear saved</button>
+  <span>Positions auto-saved on drag &nbsp;·&nbsp; Scroll=zoom &nbsp;·&nbsp;
+        Right-drag=pan &nbsp;·&nbsp; Hover green node=notes</span>
 </div>
 <div id="net"></div>
 
 <script>
 const NODES_DATA = {nodes};
 const EDGES_DATA = {edges};
+
+const STORAGE_KEY = 'map_positions';
 
 var nodes   = new vis.DataSet(NODES_DATA);
 var edges   = new vis.DataSet(EDGES_DATA);
@@ -183,11 +185,46 @@ var network = new vis.Network(
   }}
 );
 
+// ── position persistence ─────────────────────────────────────────────────
+
+var physOn           = true;
+var restoredFromSave = false;
+
+// Restore saved positions from localStorage on load
+try {{
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {{
+    const pos     = JSON.parse(saved);
+    const known   = new Set(nodes.getIds());
+    const updates = Object.entries(pos)
+      .filter(([id]) => known.has(id))
+      .map(([id, {{x, y}}]) => ({{id, x, y}}));
+    if (updates.length > 0) {{
+      nodes.update(updates);
+      restoredFromSave = true;
+      // Disable physics after vis.js processes the updates
+      setTimeout(() => {{
+        setPhysics(false);
+        network.fit({{ animation: false }});
+      }}, 150);
+    }}
+  }}
+}} catch(e) {{}}
+
+// If no saved positions, disable physics once the auto-layout settles
 network.once('stabilizationIterationsDone', () => {{
-  setPhysics(false);
+  if (!restoredFromSave) setPhysics(false);
 }});
 
-var physOn = true;
+// Auto-save to localStorage whenever the user finishes dragging a node
+network.on('dragEnd', function() {{
+  try {{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(network.getPositions()));
+  }} catch(e) {{}}
+}});
+
+// ── controls ─────────────────────────────────────────────────────────────
+
 function setPhysics(on) {{
   physOn = on;
   network.setOptions({{ physics: {{ enabled: on }} }});
@@ -215,8 +252,17 @@ function loadJSON(evt) {{
     nodes.update(Object.entries(pos).map(([id, {{x, y}}]) => ({{id, x, y}})));
     setPhysics(false);
     network.fit({{ animation: true }});
+    // Persist loaded positions so they survive a refresh too
+    try {{ localStorage.setItem(STORAGE_KEY, JSON.stringify(pos)); }} catch(e) {{}}
   }});
   evt.target.value = '';
+}}
+
+function clearStorage() {{
+  try {{ localStorage.removeItem(STORAGE_KEY); }} catch(e) {{}}
+  restoredFromSave = false;
+  setPhysics(true);
+  network.stabilize();
 }}
 </script>
 </body>
