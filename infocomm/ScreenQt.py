@@ -11,7 +11,7 @@ from PySide6.QtWidgets import (
     QVBoxLayout, QHBoxLayout, QTextEdit, QPlainTextEdit, QListWidget,
     QTableWidget, QTableWidgetItem, QTreeWidget, QTreeWidgetItem,
     QPushButton, QFileDialog, QLabel, QLineEdit, QTextBrowser,
-    QAbstractItemView,
+    QAbstractItemView, QCheckBox,
 )
 from PySide6.QtCore  import Qt, QTimer, QThread, QObject, QEvent
 from PySide6.QtGui   import QFont, QFontMetrics, QPainter, QColor
@@ -353,6 +353,9 @@ class ObjectWindow(QWidget):
         expand_btn.clicked.connect(lambda: self._tree.expandAll())
         collapse_btn = QPushButton("Collapse all")
         collapse_btn.clicked.connect(lambda: self._tree.collapseAll())
+        self._flatten_cb = QCheckBox("Flatten")
+        self._flatten_cb.setChecked(False)
+        self._flatten_cb.stateChanged.connect(lambda _: self.refresh())
         self._goto_edit = QLineEdit()
         self._goto_edit.setPlaceholderText("Go to object #")
         self._goto_edit.setFixedWidth(120)
@@ -362,6 +365,7 @@ class ObjectWindow(QWidget):
         bar.addWidget(refresh_btn)
         bar.addWidget(expand_btn)
         bar.addWidget(collapse_btn)
+        bar.addWidget(self._flatten_cb)
         bar.addStretch()
         bar.addWidget(QLabel("Object #:"))
         bar.addWidget(self._goto_edit)
@@ -413,30 +417,35 @@ class ObjectWindow(QWidget):
             except Exception:
                 continue
 
-        # Insert into tree following the child→sibling chains so order matches
-        # the Z-machine object tree exactly.
-        visited = set()
+        if self._flatten_cb.isChecked():
+            # Flat mode: all objects as top-level items, sorted by number
+            for i in sorted(raw):
+                self._tree.addTopLevelItem(raw[i][1])
+        else:
+            # Hierarchical mode: follow child→sibling chains so order matches
+            # the Z-machine object tree exactly.
+            visited = set()
 
-        def add_subtree(parent_item, obj_num):
-            if obj_num == 0 or obj_num in visited or obj_num not in raw:
-                return
-            visited.add(obj_num)
-            obj, item = raw[obj_num]
-            if parent_item is None:
-                self._tree.addTopLevelItem(item)
-            else:
-                parent_item.addChild(item)
-            add_subtree(item,        obj.get_child_object_number())
-            add_subtree(parent_item, obj.get_next_sibling_object_number())
+            def add_subtree(parent_item, obj_num):
+                if obj_num == 0 or obj_num in visited or obj_num not in raw:
+                    return
+                visited.add(obj_num)
+                obj, item = raw[obj_num]
+                if parent_item is None:
+                    self._tree.addTopLevelItem(item)
+                else:
+                    parent_item.addChild(item)
+                add_subtree(item,        obj.get_child_object_number())
+                add_subtree(parent_item, obj.get_next_sibling_object_number())
 
-        for i, (obj, _) in raw.items():
-            if obj.get_parent_object_number() == 0 and i not in visited:
-                add_subtree(None, i)
+            for i, (obj, _) in raw.items():
+                if obj.get_parent_object_number() == 0 and i not in visited:
+                    add_subtree(None, i)
 
-        # Any orphaned objects (corrupt tree) go to top level
-        for i, (_, item) in raw.items():
-            if i not in visited:
-                self._tree.addTopLevelItem(item)
+            # Any orphaned objects (corrupt tree) go to top level
+            for i, (_, item) in raw.items():
+                if i not in visited:
+                    self._tree.addTopLevelItem(item)
 
     def _attr_str(self, obj):
         max_attr = 48 if obj.game_version >= 4 else 32
