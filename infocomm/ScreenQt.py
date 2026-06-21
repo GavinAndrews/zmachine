@@ -426,7 +426,7 @@ class ObjectWindow(QWidget):
             # the Z-machine object tree exactly.
             visited = set()
 
-            def add_subtree(parent_item, obj_num):
+            def add_subtree(parent_item, obj_num, depth=0):
                 if obj_num == 0 or obj_num in visited or obj_num not in raw:
                     return
                 visited.add(obj_num)
@@ -435,8 +435,12 @@ class ObjectWindow(QWidget):
                     self._tree.addTopLevelItem(item)
                 else:
                     parent_item.addChild(item)
-                add_subtree(item,        obj.get_child_object_number())
-                add_subtree(parent_item, obj.get_next_sibling_object_number())
+                    # Prefix child names with id and depth indent so the
+                    # object number is always visible regardless of nesting.
+                    orig = item.text(1)
+                    item.setText(1, ' ' * depth + f'{obj_num}: {orig}')
+                add_subtree(item,        obj.get_child_object_number(),       depth + 1)
+                add_subtree(parent_item, obj.get_next_sibling_object_number(), depth)
 
             for i, (obj, _) in raw.items():
                 if obj.get_parent_object_number() == 0 and i not in visited:
