@@ -1233,10 +1233,14 @@ class Instructions:
         in_string = self.screen.read_line(128).strip()
         if not in_string:
             in_string = "save.qzl"
-        q = Quetzal(self.processor.filename)
-        q.write_quetzal_save(self.processor.memory, self.processor.purbot,
-                             self.processor.stack, self.processor.get_pc(), in_string)
-        self.processor.save_succeeded()
+        try:
+            q = Quetzal(self.processor.filename)
+            q.write_quetzal_save(self.processor.memory, self.processor.purbot,
+                                 self.processor.stack, self.processor.get_pc(), in_string)
+            self.processor.save_succeeded()
+        except Exception as e:
+            self.screen.print_str(f"\n[Save failed: {e}]\n")
+            self.processor.save_failed()
 
     def instruction_restore(self, args):
         self.screen.print_str("Restore from file: ")
@@ -1244,10 +1248,17 @@ class Instructions:
         in_string = self.screen.read_line(128).strip()
         if not in_string:
             in_string = "save.qzl"
-        q = Quetzal(self.processor.filename)
-        q.read_quetzal_save(in_string)
-        q.process_file()
-        self.processor.restore(q.game_data, q.new_stack, q.restore_pc)
+        try:
+            q = Quetzal(self.processor.filename)
+            q.read_quetzal_save(in_string)
+            q.process_file()
+            self.processor.restore(q.game_data, q.new_stack, q.restore_pc)
+        except FileNotFoundError:
+            self.screen.print_str(f"\n[File not found: {in_string}]\n")
+            self.processor.save_failed()
+        except Exception as e:
+            self.screen.print_str(f"\n[Restore failed: {e}]\n")
+            self.processor.save_failed()
 
     ################################################################################################
     # Display / Window Instructions                                                                #
