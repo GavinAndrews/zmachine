@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Game Map</title>
+<script src="https://unpkg.com/vis-network@9/standalone/umd/vis-network.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body  { background: #111827; color: #e5e7eb; font: 13px/1.4 sans-serif; }
+  #net  { position: absolute; inset: 40px 0 0 0; }
+  #bar  { position: fixed; top: 0; left: 0; right: 0; height: 40px;
+           background: #1f2937; border-bottom: 1px solid #374151;
+           display: flex; align-items: center; gap: 6px; padding: 0 10px; }
+  #bar span  { color: #9ca3af; font-size: 11px; margin-left: auto; }
+  button { background: #374151; color: #e5e7eb; border: 1px solid #4b5563;
+            padding: 3px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+  button:hover  { background: #4b5563; }
+  button.active { background: #065f46; border-color: #059669; }
+  #file-load { display: none; }
+</style>
+</head>
+<body>
+<div id="bar">
+  <button onclick="fitAll()">Fit</button>
+  <button id="phys-btn" class="active" onclick="togglePhysics()">Physics ON</button>
+  <button onclick="saveJSON()">Save positions</button>
+  <label><button onclick="document.getElementById('file-load').click()">Load positions</button>
+    <input id="file-load" type="file" accept=".json" onchange="loadJSON(event)"></label>
+  <span>Drag nodes to map compass directions &nbsp;·&nbsp; Scroll = zoom &nbsp;·&nbsp; Right-drag = pan</span>
+</div>
+<div id="net"></div>
+
+<script>
+const NODES_DATA = [{"id": "n236", "label": "#236: Palace Gate"}, {"id": "n354", "label": "#354: Broad Walk"}, {"id": "n355", "label": "#355: Black Lion Gate"}, {"id": "n531", "label": "#531: Inverness Terrace"}, {"id": "n179", "label": "#179: Lancaster Gate"}, {"id": "n371", "label": "#371: Lancaster Walk"}, {"id": "n250", "label": "#250: Flower Walk"}, {"id": "n79", "label": "#79: The Wabe"}, {"id": "n144", "label": "#144: Round Pond"}];
+const EDGES_DATA = [{"from": "n144", "to": "n79", "label": "S"}, {"from": "n179", "to": "n371", "label": "S"}, {"from": "n236", "to": "n354", "label": "N"}, {"from": "n236", "to": "n79", "label": "NE"}, {"from": "n250", "to": "n236", "label": "W"}, {"from": "n354", "to": "n355", "label": "N"}, {"from": "n354", "to": "n79", "label": "SE"}, {"from": "n355", "to": "n531", "label": "E"}, {"from": "n371", "to": "n144", "label": "W"}, {"from": "n371", "to": "n250", "label": "S"}, {"from": "n531", "to": "n179", "label": "E"}, {"from": "n79", "to": "n236", "label": "SW"}, {"from": "n79", "to": "n354", "label": "NW"}, {"from": "n79", "to": "n371", "label": "NE"}];
+
+var nodes    = new vis.DataSet(NODES_DATA);
+var edges    = new vis.DataSet(EDGES_DATA);
+var network  = new vis.Network(
+  document.getElementById('net'),
+  { nodes, edges },
+  {
+    nodes: {
+      shape: 'box', margin: 8,
+      color: { background:'#1e3a5f', border:'#2563eb',
+                highlight:{ background:'#1d4ed8', border:'#60a5fa' } },
+      font:  { color:'#e5e7eb', size:13, face:'monospace' },
+    },
+    edges: {
+      arrows: 'to',
+      color:  { color:'#4b5563', highlight:'#9ca3af' },
+      font:   { color:'#9ca3af', size:11, align:'middle', background:'#111827' },
+      smooth: { type:'curvedCW', roundness: 0.1 },
+    },
+    physics: {
+      enabled: true,
+      barnesHut: { gravitationalConstant:-8000, springLength:160, springConstant:0.04 },
+      stabilization: { iterations: 300 },
+    },
+    interaction: { dragNodes:true, zoomView:true, dragView:true,
+                    multiselect:true, tooltipDelay:200 },
+  }
+);
+
+network.once('stabilizationIterationsDone', () => {
+  network.setOptions({ physics: { enabled: false } });
+  document.getElementById('phys-btn').textContent = 'Physics OFF';
+  document.getElementById('phys-btn').classList.remove('active');
+});
+
+var physOn = true;
+function togglePhysics() {
+  physOn = !physOn;
+  network.setOptions({ physics: { enabled: physOn } });
+  const btn = document.getElementById('phys-btn');
+  btn.textContent = physOn ? 'Physics ON' : 'Physics OFF';
+  btn.classList.toggle('active', physOn);
+}
+
+function fitAll() { network.fit({ animation: true }); }
+
+function saveJSON() {
+  const pos = network.getPositions();
+  const blob = new Blob([JSON.stringify(pos, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'map_positions.json';
+  a.click();
+}
+
+function loadJSON(evt) {
+  const file = evt.target.files[0];
+  if (!file) return;
+  file.text().then(txt => {
+    const pos = JSON.parse(txt);
+    const updates = Object.entries(pos).map(([id, {x, y}]) => ({id, x, y}));
+    nodes.update(updates);
+    network.setOptions({ physics: { enabled: false } });
+    physOn = false;
+    const btn = document.getElementById('phys-btn');
+    btn.textContent = 'Physics OFF';
+    btn.classList.remove('active');
+    network.fit({ animation: true });
+  });
+  evt.target.value = '';
+}
+</script>
+</body>
+</html>

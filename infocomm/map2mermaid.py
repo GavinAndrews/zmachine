@@ -134,60 +134,120 @@ def build_mermaid(transitions, nodes):
 
 
 # ---------------------------------------------------------------------------
-# HTML output (interactive pan/zoom via svg-pan-zoom)
+# Interactive HTML output using vis.js Network
+# ---------------------------------------------------------------------------
+# Nodes can be dragged to compass-correct positions.
+# Positions are saved to / loaded from a companion JSON file so the layout
+# survives between browser sessions without relying on localStorage.
 # ---------------------------------------------------------------------------
 
-HTML_TEMPLATE = """\
+VIS_HTML = """\
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <title>Game Map</title>
+<script src="https://unpkg.com/vis-network@9/standalone/umd/vis-network.min.js"></script>
 <style>
-  body  {{ margin: 0; background: #1a1a2e; color: #eee; font-family: sans-serif; }}
-  #controls {{ position: fixed; top: 8px; left: 8px; z-index: 10;
-               display: flex; gap: 6px; }}
-  button  {{ background: #16213e; color: #eee; border: 1px solid #0f3460;
-             padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 13px; }}
-  button:hover {{ background: #0f3460; }}
-  #hint   {{ position: fixed; bottom: 8px; left: 8px; font-size: 11px; opacity: .5; }}
-  #graph  {{ width: 100vw; height: 100vh; }}
-  /* Mermaid node and edge tweaks */
-  .node rect, .node circle, .node ellipse, .node polygon
-              {{ fill: #16213e !important; stroke: #0f3460 !important; }}
-  .edgeLabel  {{ background: #1a1a2e !important; color: #aaa !important; }}
-  .edgePath   {{ stroke: #0f3460 !important; }}
-  text        {{ fill: #ddd !important; }}
+  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+  body  {{ background: #111827; color: #e5e7eb; font: 13px/1.4 sans-serif; }}
+  #net  {{ position: absolute; inset: 40px 0 0 0; }}
+  #bar  {{ position: fixed; top: 0; left: 0; right: 0; height: 40px;
+           background: #1f2937; border-bottom: 1px solid #374151;
+           display: flex; align-items: center; gap: 6px; padding: 0 10px; }}
+  #bar span  {{ color: #9ca3af; font-size: 11px; margin-left: auto; }}
+  button {{ background: #374151; color: #e5e7eb; border: 1px solid #4b5563;
+            padding: 3px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; }}
+  button:hover  {{ background: #4b5563; }}
+  button.active {{ background: #065f46; border-color: #059669; }}
+  #file-load {{ display: none; }}
 </style>
 </head>
 <body>
-<div id="controls">
-  <button onclick="pz.zoomIn()">+</button>
-  <button onclick="pz.zoomOut()">−</button>
-  <button onclick="pz.resetZoom(); pz.resetPan()">Reset</button>
+<div id="bar">
+  <button onclick="fitAll()">Fit</button>
+  <button id="phys-btn" class="active" onclick="togglePhysics()">Physics ON</button>
+  <button onclick="saveJSON()">Save positions</button>
+  <label><button onclick="document.getElementById('file-load').click()">Load positions</button>
+    <input id="file-load" type="file" accept=".json" onchange="loadJSON(event)"></label>
+  <span>Drag nodes to map compass directions &nbsp;·&nbsp; Scroll = zoom &nbsp;·&nbsp; Right-drag = pan</span>
 </div>
-<div id="graph" class="mermaid">
-{diagram}
-</div>
-<div id="hint">Scroll to zoom &nbsp;·&nbsp; Drag to pan</div>
+<div id="net"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
 <script>
-mermaid.initialize({{ startOnLoad: false, theme: 'dark',
-                      flowchart: {{ rankDir: 'LR', useMaxWidth: false }} }});
+const NODES_DATA = {nodes};
+const EDGES_DATA = {edges};
 
-mermaid.run({{ nodes: [document.getElementById('graph')] }}).then(() => {{
-  const svg = document.querySelector('#graph svg');
-  if (svg) {{
-    svg.style.width  = '100%';
-    svg.style.height = '100%';
-    window.pz = svgPanZoom(svg, {{
-      zoomEnabled: true, controlIconsEnabled: false,
-      fit: true, center: true, minZoom: 0.1, maxZoom: 20,
-    }});
+var nodes    = new vis.DataSet(NODES_DATA);
+var edges    = new vis.DataSet(EDGES_DATA);
+var network  = new vis.Network(
+  document.getElementById('net'),
+  {{ nodes, edges }},
+  {{
+    nodes: {{
+      shape: 'box', margin: 8,
+      color: {{ background:'#1e3a5f', border:'#2563eb',
+                highlight:{{ background:'#1d4ed8', border:'#60a5fa' }} }},
+      font:  {{ color:'#e5e7eb', size:13, face:'monospace' }},
+    }},
+    edges: {{
+      arrows: 'to',
+      color:  {{ color:'#4b5563', highlight:'#9ca3af' }},
+      font:   {{ color:'#9ca3af', size:11, align:'middle', background:'#111827' }},
+      smooth: {{ type:'curvedCW', roundness: 0.1 }},
+    }},
+    physics: {{
+      enabled: true,
+      barnesHut: {{ gravitationalConstant:-8000, springLength:160, springConstant:0.04 }},
+      stabilization: {{ iterations: 300 }},
+    }},
+    interaction: {{ dragNodes:true, zoomView:true, dragView:true,
+                    multiselect:true, tooltipDelay:200 }},
   }}
+);
+
+network.once('stabilizationIterationsDone', () => {{
+  network.setOptions({{ physics: {{ enabled: false }} }});
+  document.getElementById('phys-btn').textContent = 'Physics OFF';
+  document.getElementById('phys-btn').classList.remove('active');
 }});
+
+var physOn = true;
+function togglePhysics() {{
+  physOn = !physOn;
+  network.setOptions({{ physics: {{ enabled: physOn }} }});
+  const btn = document.getElementById('phys-btn');
+  btn.textContent = physOn ? 'Physics ON' : 'Physics OFF';
+  btn.classList.toggle('active', physOn);
+}}
+
+function fitAll() {{ network.fit({{ animation: true }}); }}
+
+function saveJSON() {{
+  const pos = network.getPositions();
+  const blob = new Blob([JSON.stringify(pos, null, 2)], {{type:'application/json'}});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'map_positions.json';
+  a.click();
+}}
+
+function loadJSON(evt) {{
+  const file = evt.target.files[0];
+  if (!file) return;
+  file.text().then(txt => {{
+    const pos = JSON.parse(txt);
+    const updates = Object.entries(pos).map(([id, {{x, y}}]) => ({{id, x, y}}));
+    nodes.update(updates);
+    network.setOptions({{ physics: {{ enabled: false }} }});
+    physOn = false;
+    const btn = document.getElementById('phys-btn');
+    btn.textContent = 'Physics OFF';
+    btn.classList.remove('active');
+    network.fit({{ animation: true }});
+  }});
+  evt.target.value = '';
+}}
 </script>
 </body>
 </html>
@@ -195,8 +255,21 @@ mermaid.run({{ nodes: [document.getElementById('graph')] }}).then(() => {{
 
 
 def build_html(transitions, nodes):
-    diagram = build_mermaid(transitions, nodes)
-    return HTML_TEMPLATE.format(diagram=diagram)
+    import json
+
+    vis_nodes = [
+        {'id': nid, 'label': label}
+        for nid, label in nodes.items()
+    ]
+    vis_edges = [
+        {'from': node_id(frm), 'to': node_id(to),
+         'label': mermaid_edge_label(cmd)}
+        for frm, to, cmd in transitions
+    ]
+    return VIS_HTML.format(
+        nodes=json.dumps(vis_nodes, ensure_ascii=False),
+        edges=json.dumps(vis_edges, ensure_ascii=False),
+    )
 
 
 # ---------------------------------------------------------------------------
