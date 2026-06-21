@@ -750,6 +750,8 @@ class ZMachineScreen(ScreenBase):
     def print_str(self, s: str):
         if self.terminal:
             self.terminal.print_str(s)
+            if self.terminal._sg._current_win == 0:
+                self._check_more()
         if self.stream2_active and self.transcript_file:
             self.transcript_file.write(s)
         if self.debug_window and self.debug_window.isVisible():
@@ -758,6 +760,46 @@ class ZMachineScreen(ScreenBase):
             if self.processor and hasattr(self.processor, 'instructions'):
                 pc = f"@{self.processor.instructions._current_opcode_pc:05X} "
             self.debug_window.append(f"{pc}[W{win}] {repr(s)}", color='yellow')
+
+    def _check_more(self):
+        """Show a [More] prompt when the lower window has scrolled a full page."""
+        if not self.terminal:
+            return
+        sg        = self.terminal._sg
+        threshold = max(1, ROWS - sg._upper_rows - 2)
+        if sg.scroll_count < threshold:
+            return
+
+        sg.reset_scroll_count()
+
+        # Write the prompt in reverse video at the current lower-window position
+        saved_style       = sg._current_style
+        saved_win         = sg._current_win
+        sg._current_win   = 0
+        sg._current_style = STYLE_REVERSE
+        self.terminal.print_str('[More]')
+        sg._current_style = saved_style
+        self.terminal.update()
+
+        # Block for a single keypress (reuses the existing read_char mechanism)
+        self._char_result = None
+        self._waiting     = True
+        self.terminal.start_char_input()
+        while self._waiting and self._running:
+            QApplication.processEvents()
+            QThread.msleep(10)
+
+        # Erase the [More] prompt — overwrite with spaces, cursor back to col 0
+        more_len = len('[More]')
+        r = sg._lo_row
+        c = sg._lo_col
+        for i in range(more_len):
+            ci = c - more_len + i
+            if 0 <= ci < COLS:
+                sg._grid[r][ci].reset()
+        sg._lo_col = max(0, c - more_len)
+        sg._current_win = saved_win
+        self.terminal.update()
 
     def split_window(self, height: int):
         if self.terminal:
@@ -800,6 +842,8 @@ class ZMachineScreen(ScreenBase):
     # ------------------------------------------------------------------
 
     def read_line(self, max_chars, time_tenths=0, time_routine_cb=None):
+        if self.terminal:
+            self.terminal._sg.reset_scroll_count()
         self._line_result = None
         self._waiting     = True
         if self.terminal:
@@ -820,6 +864,8 @@ class ZMachineScreen(ScreenBase):
         return self._line_result if self._line_result is not None else ""
 
     def read_char(self, time_tenths=0, time_routine_cb=None):
+        if self.terminal:
+            self.terminal._sg.reset_scroll_count()
         self._char_result = None
         self._waiting     = True
         if self.terminal:

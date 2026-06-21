@@ -42,6 +42,7 @@ class ScreenGrid:
         self._up_col = 0
         self._lo_row = 0
         self._lo_col = 0
+        self.scroll_count  = 0   # lower-window scrolls since last input reset
 
     # ------------------------------------------------------------------
     # Internal helpers
@@ -59,6 +60,10 @@ class ScreenGrid:
                 self._grid[r][c].copy_from(self._grid[r + 1][c])
         for c in range(COLS):
             self._grid[ROWS - 1][c].reset()
+        self.scroll_count += 1
+
+    def reset_scroll_count(self):
+        self.scroll_count = 0
 
     def _put(self, r, c, ch, style):
         if 0 <= r < ROWS and 0 <= c < COLS:
