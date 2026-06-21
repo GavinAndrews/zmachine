@@ -52,6 +52,7 @@ class Instructions:
         self.map_file = None          # open file for transition logging, or None
         self._map_prev_loc = None     # location string at start of last turn
         self._map_prev_cmd = None     # command typed last turn
+        self._map_notes = {}          # loc -> [note, ...] kept in memory
         self._current_opcode_pc = 0
         self.show_location = False
         self.location_global = None   # None = auto-detect; set via #loc G N
@@ -785,6 +786,8 @@ class Instructions:
                 "  #commands <file>        Read commands from file (plain list or transcript)\n"
                 "  #map <file>            Log location transitions to file (from / to / command)\n"
                 "  #map off               Stop map logging\n"
+                "  #see <note>            Add a note to the current location (shown in map)\n"
+                "  #see                   Show notes for the current location\n"
                 "  #seed <n>              Seed RNG (any positive integer; 0 = time-based)\n"
                 "  #obj <n>               Dump runtime state of object n\n"
                 "  #globals [count]       Show first <count> globals (default 20)\n"
@@ -821,12 +824,47 @@ class Instructions:
                 try:
                     if self.map_file:
                         self.map_file.close()
+                    # Reload any notes already in the file into memory
+                    self._map_notes = {}
+                    try:
+                        with open(filename, encoding='utf-8') as rf:
+                            for line in rf:
+                                parts = line.rstrip('\n').split('\t')
+                                if len(parts) == 3 and parts[0] == 'NOTE':
+                                    self._map_notes.setdefault(parts[1], []).append(parts[2])
+                    except FileNotFoundError:
+                        pass
                     self.map_file = open(filename, 'a', encoding='utf-8')
                     self._map_prev_loc = self._map_location()
                     self._map_prev_cmd = None
                     self.screen.print_str(f"[Map logging to {filename}]\n")
                 except Exception as e:
                     self.screen.print_str(f"[Error opening map file: {e}]\n")
+            return True
+        if verb == '#see':
+            loc = self._map_location()
+            if not loc:
+                self.screen.print_str("[Cannot determine current location]\n")
+                return True
+            if len(cmd) < 2:
+                # Show notes for current location in-game
+                notes = self._map_notes.get(loc, [])
+                if notes:
+                    self.screen.print_str(f"[Notes for {loc}:]\n")
+                    for n in notes:
+                        self.screen.print_str(f"  - {n}\n")
+                else:
+                    self.screen.print_str(f"[No notes for {loc}]\n")
+            else:
+                note = ' '.join(cmd[1:])
+                self._map_notes.setdefault(loc, []).append(note)
+                if self.map_file:
+                    self.map_file.write(f'NOTE\t{loc}\t{note}\n')
+                    self.map_file.flush()
+                    self.screen.print_str(f"[Note added for {loc}]\n")
+                else:
+                    self.screen.print_str(
+                        f"[Note saved in memory. Start #map to also persist to file.]\n")
             return True
         if verb == '#seed':
             if len(cmd) > 1:
