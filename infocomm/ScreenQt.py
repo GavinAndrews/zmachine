@@ -679,6 +679,21 @@ class ZMachineScreen(ScreenBase):
 
         self.terminal.setFocus()
 
+        # When the main window is closed (X button), call app.quit() so that
+        # all child/debug windows also close and aboutToQuit fires.
+        # Without this, other open windows keep Qt alive and _on_quit never fires.
+        class _MainClose(QObject):
+            def __init__(self, app):
+                super().__init__()
+                self._app = app
+            def eventFilter(self, obj, event):
+                if event.type() == QEvent.Type.Close:
+                    self._app.quit()
+                return False  # let the event proceed normally
+
+        self._main_close_filter = _MainClose(self.app)
+        self.main_window.installEventFilter(self._main_close_filter)
+
         # Ensure the process exits cleanly when the window is closed, even if
         # the interpreter is blocked in a read_line / read_char spin loop.
         self.app.aboutToQuit.connect(self._on_quit)
