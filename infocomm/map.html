@@ -22,27 +22,51 @@
 <body>
 <div id="bar">
   <button onclick="fitAll()">Fit</button>
-  <button id="phys-btn" class="on" onclick="togglePhysics()">Physics ON</button>
+  <button onclick="autoLayout()">Auto layout</button>
   <button onclick="saveJSON()">Save positions</button>
   <label>
     <button onclick="document.getElementById('file-load').click()">Load positions</button>
     <input id="file-load" type="file" accept=".json" onchange="loadJSON(event)">
   </label>
-  <span>Scroll = zoom &nbsp;·&nbsp; Right-drag = pan &nbsp;·&nbsp;
-        Drag nodes to compass positions &nbsp;·&nbsp;
-        Hover green node = notes</span>
+  <button onclick="clearStorage()" title="Forget saved positions and re-run layout">Clear saved</button>
+  <span id="status" style="margin-left:auto; color:#6ee7b7;">—</span>
 </div>
 <div id="net"></div>
 
 <script>
-const NODES_DATA = [{"id": "n236", "label": "#236: Palace Gate"}, {"id": "n354", "label": "#354: Broad Walk"}, {"id": "n355", "label": "#355: Black Lion Gate"}, {"id": "n531", "label": "#531: Inverness Terrace"}, {"id": "n179", "label": "#179: Lancaster Gate"}, {"id": "n371", "label": "#371: Lancaster Walk"}, {"id": "n250", "label": "#250: Flower Walk"}, {"id": "n79", "label": "#79: The Wabe"}, {"id": "n144", "label": "#144: Round Pond"}];
-const EDGES_DATA = [{"from": "n144", "to": "n79", "label": "S"}, {"from": "n179", "to": "n371", "label": "S"}, {"from": "n236", "to": "n354", "label": "N"}, {"from": "n236", "to": "n79", "label": "NE"}, {"from": "n250", "to": "n236", "label": "W"}, {"from": "n354", "to": "n355", "label": "N"}, {"from": "n354", "to": "n79", "label": "SE"}, {"from": "n355", "to": "n531", "label": "E"}, {"from": "n371", "to": "n144", "label": "W"}, {"from": "n371", "to": "n250", "label": "S"}, {"from": "n531", "to": "n179", "label": "E"}, {"from": "n79", "to": "n236", "label": "SW"}, {"from": "n79", "to": "n354", "label": "NW"}, {"from": "n79", "to": "n371", "label": "NE"}];
+var STORAGE_KEY = 'map_positions';
+
+function setStatus(msg) {
+  var el = document.getElementById('status');
+  if (el) el.textContent = msg;
+}
+
+// ── restore saved positions BEFORE creating the DataSet ──────────────────
+// Coordinates are injected directly into NODES_DATA so vis.js never sees
+// unpositioned nodes — nothing can override the restored layout.
+var NODES_DATA = [{"id": "n236", "label": "#236: Palace Gate"}, {"id": "n354", "label": "#354: Broad Walk", "title": "• bag of crumbs\n• small coin\n• feed birds", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n355", "label": "#355: Black Lion Gate", "title": "• pram", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n531", "label": "#531: Inverness Terrace"}, {"id": "n179", "label": "#179: Lancaster Gate", "title": "• umbrella (use ball)", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n371", "label": "#371: Lancaster Walk"}, {"id": "n250", "label": "#250: Flower Walk", "title": "• ball", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n79", "label": "#79: The Wabe", "title": "• sundial\n• gnomon", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n144", "label": "#144: Round Pond", "title": "• paper bird", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n121", "label": "#121: Long Water"}, {"id": "n438", "label": "#438: Wading"}, {"id": "n576", "label": "#576: Meadow", "title": "• door#1", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n323", "label": "#323: Summit"}, {"id": "n426", "label": "#426: Forest Clearing"}, {"id": "n319", "label": "#319: South Bog", "title": "• splintered log", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n472", "label": "#472: Waterfall", "title": "• door#2", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n414", "label": "#414: Cemetery", "title": "• crypt", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n353", "label": "#353: Barrow"}, {"id": "n317", "label": "#317: Trellises"}, {"id": "n565", "label": "#565: The River"}, {"id": "n557", "label": "#557: The Bend"}, {"id": "n400", "label": "#400: Under Cliff", "title": "• bees", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n441", "label": "#441: Crater’s Edge"}, {"id": "n145", "label": "#145: Crater", "title": "• lump", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n575", "label": "#575: Bottom of Stairs"}, {"id": "n80", "label": "#80: Halfway"}, {"id": "n316", "label": "#316: Vertex", "title": "• sundial", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n471", "label": "#471: Moor", "title": "• door#6", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n580", "label": "#580: Arborvitaes"}, {"id": "n418", "label": "#418: Arborvitaes"}, {"id": "n462", "label": "#462: Arboretum", "title": "• klein/nielk", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n4", "label": "#4: North Arbor"}, {"id": "n408", "label": "#408: Top of Arbor", "title": "• axe", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n430", "label": "#430: South Arbor"}, {"id": "n522", "label": "#522: Ossuary", "title": "• door#3\n• skeleton key", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n449", "label": "#449: Ice Cavern", "title": "• icicle", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n42", "label": "#42: North Bog", "title": "• venus-flytrap", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n306", "label": "#306: Chasm’s Brink", "title": "• tree", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n213", "label": "#213: Bluff"}, {"id": "n327", "label": "#327: Cottage", "title": "• cauldron\n• birdcage", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n417", "label": "#417: Herb Garden", "title": "• garlic (in refuse pile)\n• door#5", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n370", "label": "#370: Promontory", "title": "• bubble dish", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n76", "label": "#76: Mesa", "title": "• door#4", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n394", "label": "#394: Scaffold"}, {"id": "n344", "label": "#344: Bottom of Scaffold", "title": "• box (toggle switch and red button)", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n476", "label": "#476: South Beach"}, {"id": "n215", "label": "#215: East Beach"}, {"id": "n231", "label": "#231: West Beach", "title": "• coconut\n• ask dolphin to get coconut", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n224", "label": "#224: North Beach"}, {"id": "n199", "label": "#199: Platform"}, {"id": "n488", "label": "#488: Under Platform"}, {"id": "n254", "label": "#254: Tundra"}, {"id": "n43", "label": "#43: Cliff Edge", "title": "• examine fissure\n• take lemming\n• put lemming in cage", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n56", "label": "#56: Tundra"}, {"id": "n188", "label": "#188: Tundra"}, {"id": "n380", "label": "#380: Tundra"}, {"id": "n585", "label": "#585: Tundra"}, {"id": "n509", "label": "#509: Tundra"}, {"id": "n320", "label": "#320: Tundra"}, {"id": "n119", "label": "#119: Tundra"}];
+var EDGES_DATA = [{"from": "n119", "to": "n254", "label": "N"}, {"from": "n119", "to": "n488", "label": "W"}, {"from": "n119", "to": "n509", "label": "S"}, {"from": "n121", "to": "n438", "label": "E"}, {"from": "n144", "to": "n354", "label": "W"}, {"from": "n144", "to": "n371", "label": "E"}, {"from": "n144", "to": "n531", "label": "N"}, {"from": "n144", "to": "n79", "label": "S"}, {"from": "n145", "to": "n441", "label": "U"}, {"from": "n179", "to": "n371", "label": "S"}, {"from": "n179", "to": "n371", "label": "push pram s"}, {"from": "n179", "to": "n531", "label": "W"}, {"from": "n188", "to": "n380", "label": "N"}, {"from": "n188", "to": "n488", "label": "E"}, {"from": "n188", "to": "n56", "label": "S"}, {"from": "n199", "to": "n488", "label": "D"}, {"from": "n213", "to": "n306", "label": "SW"}, {"from": "n213", "to": "n327", "label": "E"}, {"from": "n213", "to": "n441", "label": "SE"}, {"from": "n215", "to": "n224", "label": "NW"}, {"from": "n215", "to": "n476", "label": "SW"}, {"from": "n224", "to": "n215", "label": "SE"}, {"from": "n224", "to": "n231", "label": "SW"}, {"from": "n231", "to": "n224", "label": "NE"}, {"from": "n231", "to": "n476", "label": "SE"}, {"from": "n236", "to": "n250", "label": "E"}, {"from": "n236", "to": "n354", "label": "N"}, {"from": "n236", "to": "n79", "label": "NE"}, {"from": "n250", "to": "n236", "label": "W"}, {"from": "n250", "to": "n371", "label": "N"}, {"from": "n250", "to": "n79", "label": "NW"}, {"from": "n254", "to": "n119", "label": "S"}, {"from": "n254", "to": "n320", "label": "W"}, {"from": "n254", "to": "n43", "label": "NE"}, {"from": "n254", "to": "n488", "label": "SW"}, {"from": "n306", "to": "n213", "label": "NE"}, {"from": "n306", "to": "n319", "label": "SW"}, {"from": "n306", "to": "n400", "label": "E"}, {"from": "n306", "to": "n42", "label": "W"}, {"from": "n306", "to": "n76", "label": "N"}, {"from": "n316", "to": "n80", "label": "D"}, {"from": "n317", "to": "n319", "label": "NW"}, {"from": "n317", "to": "n418", "label": "SE"}, {"from": "n317", "to": "n426", "label": "W"}, {"from": "n317", "to": "n565", "label": "E"}, {"from": "n317", "to": "n575", "label": "N"}, {"from": "n317", "to": "n580", "label": "SW"}, {"from": "n319", "to": "n317", "label": "SE"}, {"from": "n319", "to": "n426", "label": "S"}, {"from": "n319", "to": "n42", "label": "N"}, {"from": "n319", "to": "n472", "label": "W"}, {"from": "n319", "to": "n575", "label": "E"}, {"from": "n320", "to": "n254", "label": "E"}, {"from": "n320", "to": "n380", "label": "W"}, {"from": "n320", "to": "n488", "label": "S"}, {"from": "n323", "to": "n426", "label": "E"}, {"from": "n323", "to": "n576", "label": "S"}, {"from": "n327", "to": "n213", "label": "W"}, {"from": "n327", "to": "n417", "label": "E"}, {"from": "n344", "to": "n394", "label": "N"}, {"from": "n344", "to": "n394", "label": "U"}, {"from": "n344", "to": "n476", "label": "S"}, {"from": "n353", "to": "n449", "label": "D"}, {"from": "n353", "to": "n522", "label": "N"}, {"from": "n354", "to": "n144", "label": "E"}, {"from": "n354", "to": "n236", "label": "S"}, {"from": "n354", "to": "n355", "label": "N"}, {"from": "n354", "to": "n79", "label": "SE"}, {"from": "n355", "to": "n354", "label": "S"}, {"from": "n355", "to": "n531", "label": "E"}, {"from": "n355", "to": "n531", "label": "push pram e"}, {"from": "n370", "to": "n42", "label": "S"}, {"from": "n371", "to": "n121", "label": "open umbrella"}, {"from": "n371", "to": "n144", "label": "W"}, {"from": "n371", "to": "n179", "label": "N"}, {"from": "n371", "to": "n250", "label": "S"}, {"from": "n380", "to": "n188", "label": "S"}, {"from": "n380", "to": "n320", "label": "E"}, {"from": "n380", "to": "n488", "label": "SE"}, {"from": "n394", "to": "n344", "label": "D"}, {"from": "n394", "to": "n344", "label": "S"}, {"from": "n394", "to": "n76", "label": "enter door"}, {"from": "n400", "to": "n306", "label": "W"}, {"from": "n400", "to": "n441", "label": "E"}, {"from": "n400", "to": "n557", "label": "S"}, {"from": "n400", "to": "n575", "label": "SW"}, {"from": "n408", "to": "n430", "label": "S"}, {"from": "n408", "to": "n4", "label": "N"}, {"from": "n414", "to": "n353", "label": "N"}, {"from": "n414", "to": "n472", "label": "D"}, {"from": "n417", "to": "n199", "label": "enter white door"}, {"from": "n417", "to": "n327", "label": "W"}, {"from": "n418", "to": "n317", "label": "NW"}, {"from": "n418", "to": "n462", "label": "W"}, {"from": "n426", "to": "n317", "label": "E"}, {"from": "n426", "to": "n319", "label": "N"}, {"from": "n426", "to": "n323", "label": "W"}, {"from": "n42", "to": "n306", "label": "E"}, {"from": "n42", "to": "n319", "label": "S"}, {"from": "n42", "to": "n370", "label": "N"}, {"from": "n42", "to": "n575", "label": "SE"}, {"from": "n430", "to": "n408", "label": "U"}, {"from": "n430", "to": "n462", "label": "D"}, {"from": "n438", "to": "n576", "label": "E"}, {"from": "n43", "to": "n254", "label": "SW"}, {"from": "n441", "to": "n145", "label": "D"}, {"from": "n441", "to": "n213", "label": "NW"}, {"from": "n441", "to": "n400", "label": "W"}, {"from": "n449", "to": "n472", "label": "E"}, {"from": "n462", "to": "n418", "label": "E"}, {"from": "n462", "to": "n430", "label": "S"}, {"from": "n462", "to": "n4", "label": "N"}, {"from": "n462", "to": "n580", "label": "W"}, {"from": "n471", "to": "n557", "label": "W"}, {"from": "n472", "to": "n319", "label": "E"}, {"from": "n472", "to": "n414", "label": "N"}, {"from": "n472", "to": "n414", "label": "U"}, {"from": "n476", "to": "n215", "label": "NE"}, {"from": "n476", "to": "n231", "label": "NW"}, {"from": "n476", "to": "n344", "label": "N"}, {"from": "n488", "to": "n119", "label": "E"}, {"from": "n488", "to": "n188", "label": "W"}, {"from": "n488", "to": "n199", "label": "U"}, {"from": "n488", "to": "n254", "label": "NE"}, {"from": "n488", "to": "n320", "label": "N"}, {"from": "n488", "to": "n380", "label": "NW"}, {"from": "n488", "to": "n509", "label": "SE"}, {"from": "n488", "to": "n56", "label": "SW"}, {"from": "n4", "to": "n408", "label": "U"}, {"from": "n4", "to": "n462", "label": "D"}, {"from": "n509", "to": "n119", "label": "N"}, {"from": "n509", "to": "n488", "label": "NW"}, {"from": "n509", "to": "n585", "label": "W"}, {"from": "n522", "to": "n353", "label": "S"}, {"from": "n531", "to": "n144", "label": "S"}, {"from": "n531", "to": "n179", "label": "E"}, {"from": "n531", "to": "n179", "label": "push pram e"}, {"from": "n531", "to": "n355", "label": "W"}, {"from": "n557", "to": "n400", "label": "N"}, {"from": "n557", "to": "n471", "label": "E"}, {"from": "n557", "to": "n565", "label": "S"}, {"from": "n557", "to": "n575", "label": "W"}, {"from": "n565", "to": "n317", "label": "W"}, {"from": "n565", "to": "n557", "label": "N"}, {"from": "n56", "to": "n188", "label": "N"}, {"from": "n56", "to": "n488", "label": "NE"}, {"from": "n56", "to": "n585", "label": "E"}, {"from": "n575", "to": "n319", "label": "W"}, {"from": "n575", "to": "n400", "label": "NE"}, {"from": "n575", "to": "n42", "label": "NW"}, {"from": "n575", "to": "n557", "label": "E"}, {"from": "n575", "to": "n80", "label": "N"}, {"from": "n575", "to": "n80", "label": "U"}, {"from": "n576", "to": "n323", "label": "N"}, {"from": "n580", "to": "n317", "label": "NE"}, {"from": "n580", "to": "n462", "label": "E"}, {"from": "n585", "to": "n488", "label": "N"}, {"from": "n585", "to": "n509", "label": "E"}, {"from": "n585", "to": "n56", "label": "W"}, {"from": "n76", "to": "n306", "label": "S"}, {"from": "n76", "to": "n394", "label": "IN"}, {"from": "n79", "to": "n144", "label": "N"}, {"from": "n79", "to": "n236", "label": "SW"}, {"from": "n79", "to": "n250", "label": "SE"}, {"from": "n79", "to": "n354", "label": "NW"}, {"from": "n79", "to": "n371", "label": "NE"}, {"from": "n80", "to": "n316", "label": "U"}, {"from": "n80", "to": "n575", "label": "D"}, {"from": "n80", "to": "n575", "label": "S"}];
+
+var savedPos = null;
+try {
+  var _raw = localStorage.getItem(STORAGE_KEY);
+  if (_raw) savedPos = JSON.parse(_raw);
+} catch(e) { setStatus('localStorage unavailable: ' + e); }
+
+var loadedCount = 0;
+if (savedPos) {
+  NODES_DATA = NODES_DATA.map(function(n) {
+    var p = savedPos[n.id];
+    if (p) { loadedCount++; return Object.assign({}, n, {x: p.x, y: p.y}); }
+    return n;
+  });
+}
 
 var nodes   = new vis.DataSet(NODES_DATA);
 var edges   = new vis.DataSet(EDGES_DATA);
 var network = new vis.Network(
   document.getElementById('net'),
-  { nodes, edges },
+  { nodes: nodes, edges: edges },
   {
     nodes: {
       shape: 'box', margin: 8,
@@ -56,50 +80,88 @@ var network = new vis.Network(
       font:   { color:'#9ca3af', size:11, align:'middle', background:'#111827' },
       smooth: { type:'curvedCW', roundness: 0.1 },
     },
-    physics: {
-      enabled: true,
-      barnesHut: { gravitationalConstant:-8000, springLength:160, springConstant:0.04 },
-      stabilization: { iterations: 300 },
-    },
+    physics: { enabled: false },
     interaction: { dragNodes:true, zoomView:true, dragView:true,
                     multiselect:true, tooltipDelay:150 },
   }
 );
 
-network.once('stabilizationIterationsDone', () => {
-  setPhysics(false);
+if (loadedCount > 0) {
+  setStatus('Loaded ' + loadedCount + ' saved positions');
+  network.once('afterDrawing', function() { network.fit({ animation: false }); });
+} else {
+  setStatus('No saved positions — drag nodes to arrange, then they auto-save');
+  // Spread nodes with a one-shot layout so they are not all at origin
+  network.setOptions({ physics: {
+    enabled: true,
+    barnesHut: { gravitationalConstant:-8000, springLength:160, springConstant:0.04 },
+    stabilization: { iterations: 300 }
+  } });
+  network.once('stabilizationIterationsDone', function() {
+    network.setOptions({ physics: { enabled: false } });
+    network.fit({ animation: false });
+    saveToStorage();
+    setStatus('Auto-laid out. Drag nodes to correct positions — they auto-save.');
+  });
+}
+
+// ── auto-save on every drag (no filter — always save) ────────────────────
+network.on('dragEnd', function() {
+  saveToStorage();
 });
 
-var physOn = true;
-function setPhysics(on) {
-  physOn = on;
-  network.setOptions({ physics: { enabled: on } });
-  const btn = document.getElementById('phys-btn');
-  btn.textContent = on ? 'Physics ON' : 'Physics OFF';
-  btn.classList.toggle('on', on);
+function saveToStorage() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(network.getPositions()));
+    setStatus('Saved (' + Object.keys(network.getPositions()).length + ' nodes)');
+  } catch(e) {
+    setStatus('Save failed: ' + e);
+  }
 }
-function togglePhysics() { setPhysics(!physOn); }
+
+// ── controls ─────────────────────────────────────────────────────────────
 function fitAll() { network.fit({ animation: true }); }
 
+function autoLayout() {
+  setStatus('Running layout…');
+  network.setOptions({ physics: { enabled: true,
+    barnesHut: { gravitationalConstant:-8000, springLength:160, springConstant:0.04 },
+    stabilization: { iterations: 300 } } });
+  network.once('stabilizationIterationsDone', function() {
+    network.setOptions({ physics: { enabled: false } });
+    network.fit({ animation: true });
+    saveToStorage();
+  });
+}
+
 function saveJSON() {
-  const pos  = network.getPositions();
-  const blob = new Blob([JSON.stringify(pos, null, 2)], {type:'application/json'});
-  const a    = document.createElement('a');
-  a.href     = URL.createObjectURL(blob);
+  var pos  = network.getPositions();
+  var blob = new Blob([JSON.stringify(pos, null, 2)], {type:'application/json'});
+  var a    = document.createElement('a');
+  a.href   = URL.createObjectURL(blob);
   a.download = 'map_positions.json';
   a.click();
 }
 
 function loadJSON(evt) {
-  const file = evt.target.files[0];
+  var file = evt.target.files[0];
   if (!file) return;
-  file.text().then(txt => {
-    const pos = JSON.parse(txt);
-    nodes.update(Object.entries(pos).map(([id, {x, y}]) => ({id, x, y})));
-    setPhysics(false);
+  file.text().then(function(txt) {
+    var pos = JSON.parse(txt);
+    nodes.update(Object.entries(pos).map(function([id, p]) {
+      return {id:id, x:p.x, y:p.y};
+    }));
     network.fit({ animation: true });
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(pos)); } catch(e) {}
+    setStatus('Loaded ' + Object.keys(pos).length + ' positions from file');
   });
   evt.target.value = '';
+}
+
+function clearStorage() {
+  try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+  setStatus('Cleared. Running new layout…');
+  autoLayout();
 }
 </script>
 </body>
