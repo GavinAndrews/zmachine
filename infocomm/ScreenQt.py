@@ -351,7 +351,7 @@ class ZMachineScreen(ScreenBase):
         fm.addAction("Save Game",     self.save_game)
         fm.addAction("Restore Game",  self.restore_game)
         fm.addSeparator()
-        fm.addAction("Exit", self.main_window.close)
+        fm.addAction("Exit", self.app.quit)
         vm = menubar.addMenu("View")
         vm.addAction("Debug Log", self.toggle_debug)
         vm.addAction("Objects",   self.toggle_objects)
@@ -385,6 +385,17 @@ class ZMachineScreen(ScreenBase):
             self.stack_window.show()
 
         self.terminal.setFocus()
+
+        # Ensure the process exits cleanly when the window is closed, even if
+        # the interpreter is blocked in a read_line / read_char spin loop.
+        self.app.aboutToQuit.connect(self._on_quit)
+
+    def _on_quit(self):
+        self._running = False
+        self._waiting = False
+        if self.terminal:
+            self.terminal._input_mode = False
+            self.terminal._char_mode  = False
 
     def reset(self):
         if self.transcript_file:
@@ -475,9 +486,11 @@ class ZMachineScreen(ScreenBase):
                     if self.terminal:
                         self.terminal._input_mode = False
             QTimer.singleShot(time_tenths * 100, _t)
-        while self._waiting:
+        while self._waiting and self._running:
             QApplication.processEvents()
             QThread.msleep(10)
+        if not self._running:
+            raise SystemExit(0)
         return self._line_result if self._line_result is not None else ""
 
     def read_char(self, time_tenths=0, time_routine_cb=None):
@@ -493,9 +506,11 @@ class ZMachineScreen(ScreenBase):
                     if self.terminal:
                         self.terminal._char_mode = False
             QTimer.singleShot(time_tenths * 100, _t)
-        while self._waiting:
+        while self._waiting and self._running:
             QApplication.processEvents()
             QThread.msleep(10)
+        if not self._running:
+            raise SystemExit(0)
         return self._char_result if self._char_result is not None else '\r'
 
     # ------------------------------------------------------------------
