@@ -484,7 +484,7 @@ class ObjectWindow(QWidget):
                      .get_description().strip() or '?'
         except Exception:
             desc = '?'
-        return f'<a href="obj:/{n}">#{n} &ldquo;{desc}&rdquo;</a>'
+        return f'<a href="obj:/{n}">{n}: {desc}</a>'
 
     def _show_detail(self, obj_num):
         if not self.processor or not obj_num:
