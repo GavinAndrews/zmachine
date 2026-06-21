@@ -13,7 +13,7 @@ from PySide6.QtWidgets import (
     QPushButton, QFileDialog, QLabel, QLineEdit, QTextBrowser,
     QAbstractItemView,
 )
-from PySide6.QtCore  import Qt, QTimer, QThread
+from PySide6.QtCore  import Qt, QTimer, QThread, QObject, QEvent
 from PySide6.QtGui   import QFont, QFontMetrics, QPainter, QColor
 
 from ScreenBase import ScreenBase
