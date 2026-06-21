@@ -48,6 +48,7 @@ class Instructions:
         self._interp_undo_stack = []   # interpreter-level saves (works for all versions)
         self._skip_next_interp_save = False
         self.undo_random_continue = False  # if True, RNG is NOT reset on undo
+        self.trace_callback = None   # callable(pc, name, args) or None
         self._current_opcode_pc = 0
         self.show_location = False
         self.location_global = None   # None = auto-detect; set via #loc G N
@@ -193,6 +194,12 @@ class Instructions:
         self._current_opcode_pc = current_pc
         try:
             implementation = self.all_functions[op_type][op_number]
+            if self.trace_callback is not None:
+                try:
+                    name = implementation.__name__.replace('instruction_', '').upper()
+                    self.trace_callback(current_pc, name, args)
+                except Exception:
+                    pass
             if not self.quiet or self.trace_count > 0:
                 import sys as _sys
                 _sys.stderr.write(

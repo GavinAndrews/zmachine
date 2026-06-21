@@ -8,9 +8,9 @@ lives in ScreenGrid; this file only handles Qt input/output and the event loop.
 import sys
 from PySide6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QScrollArea,
-    QVBoxLayout, QHBoxLayout, QTextEdit, QListWidget,
+    QVBoxLayout, QHBoxLayout, QTextEdit, QPlainTextEdit, QListWidget,
     QTableWidget, QTableWidgetItem, QTreeWidget, QTreeWidgetItem,
-    QPushButton, QFileDialog, QLabel,
+    QPushButton, QFileDialog, QLabel, QLineEdit,
 )
 from PySide6.QtCore  import Qt, QTimer, QThread
 from PySide6.QtGui   import QFont, QFontMetrics, QPainter, QColor
@@ -203,6 +203,102 @@ class TerminalWidget(QWidget):
 # Debug / inspector windows
 # ---------------------------------------------------------------------------
 
+class TraceWindow(QWidget):
+    """Scrollable instruction trace log, capped at 1000 lines, with optional file export."""
+
+    MAX_LINES = 1000
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setWindowTitle("Instruction Trace")
+        self.setGeometry(750, 100, 650, 500)
+        self._log_file = None
+
+        layout = QVBoxLayout(self)
+
+        # Toolbar
+        toolbar = QHBoxLayout()
+        clear_btn = QPushButton("Clear")
+        clear_btn.clicked.connect(self._text.clear if hasattr(self, '_text') else lambda: None)
+        self._pause_btn = QPushButton("Pause")
+        self._pause_btn.setCheckable(True)
+        file_lbl = QLabel("Log file:")
+        self._file_edit = QLineEdit("trace.log")
+        self._file_edit.setFixedWidth(160)
+        self._log_btn = QPushButton("Start logging")
+        self._log_btn.setCheckable(True)
+        self._log_btn.clicked.connect(self._toggle_log)
+        toolbar.addWidget(clear_btn)
+        toolbar.addWidget(self._pause_btn)
+        toolbar.addStretch()
+        toolbar.addWidget(file_lbl)
+        toolbar.addWidget(self._file_edit)
+        toolbar.addWidget(self._log_btn)
+        layout.addLayout(toolbar)
+
+        # Trace pane
+        self._text = QPlainTextEdit()
+        self._text.setFont(QFont("Courier New", 9))
+        self._text.setReadOnly(True)
+        self._text.setMaximumBlockCount(self.MAX_LINES)
+        self._text.setStyleSheet(
+            "QPlainTextEdit { background: #0a0a0a; color: #b0b0b0; border: none; }")
+        layout.addWidget(self._text)
+
+        # Fix the clear button now that _text exists
+        clear_btn.clicked.disconnect()
+        clear_btn.clicked.connect(self._text.clear)
+
+    def add(self, pc, name, args):
+        """Called for every instruction.  Fast-path exits when nothing is active."""
+        if self._pause_btn.isChecked():
+            return
+        if not self.isVisible() and self._log_file is None:
+            return
+
+        arg_str = ' '.join(f'${a:04X}' for a in args) if args else ''
+        line = f'@{pc:05X}  {name:<16}{arg_str}'
+
+        if self.isVisible():
+            sb = self._text.verticalScrollBar()
+            at_bottom = sb.value() >= sb.maximum() - 4
+            self._text.appendPlainText(line)
+            if at_bottom:
+                sb.setValue(sb.maximum())
+
+        if self._log_file is not None:
+            try:
+                self._log_file.write(line + '\n')
+                self._log_file.flush()
+            except Exception:
+                self._close_log()
+
+    def _toggle_log(self, checked):
+        if checked:
+            path = self._file_edit.text().strip() or 'trace.log'
+            try:
+                self._log_file = open(path, 'a', encoding='utf-8')
+                self._log_btn.setText('Stop logging')
+                self._file_edit.setEnabled(False)
+            except OSError as e:
+                self._log_btn.setChecked(False)
+                self._log_btn.setText(f'Error: {e}')
+        else:
+            self._close_log()
+
+    def _close_log(self):
+        if self._log_file:
+            self._log_file.close()
+            self._log_file = None
+        self._log_btn.setChecked(False)
+        self._log_btn.setText('Start logging')
+        self._file_edit.setEnabled(True)
+
+    def closeEvent(self, event):
+        self._close_log()
+        event.accept()
+
+
 class DebugWindow(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -335,6 +431,7 @@ class ZMachineScreen(ScreenBase):
         self.object_window  = None
         self.globals_window = None
         self.stack_window   = None
+        self.trace_window   = None
         self._running       = False
         self._line_result   = None
         self._char_result   = None
@@ -353,10 +450,11 @@ class ZMachineScreen(ScreenBase):
         fm.addSeparator()
         fm.addAction("Exit", self.app.quit)
         vm = menubar.addMenu("View")
-        vm.addAction("Debug Log", self.toggle_debug)
-        vm.addAction("Objects",   self.toggle_objects)
-        vm.addAction("Globals",   self.toggle_globals)
-        vm.addAction("Stack",     self.toggle_stack)
+        vm.addAction("Debug Log",        self.toggle_debug)
+        vm.addAction("Instruction Trace",self.toggle_trace)
+        vm.addAction("Objects",          self.toggle_objects)
+        vm.addAction("Globals",          self.toggle_globals)
+        vm.addAction("Stack",            self.toggle_stack)
 
         self.terminal = TerminalWidget()
         self.terminal.on_line_entered = self._cb_line
@@ -374,6 +472,7 @@ class ZMachineScreen(ScreenBase):
         self.main_window.show()
 
         self.debug_window   = DebugWindow()
+        self.trace_window   = TraceWindow()
         self.object_window  = ObjectWindow(self.processor)
         self.globals_window = GlobalsWindow(self.processor)
         self.stack_window   = StackWindow(self.processor)
@@ -416,6 +515,11 @@ class ZMachineScreen(ScreenBase):
             self.object_window.processor  = self.processor
             self.globals_window.processor = self.processor
             self.stack_window.processor   = self.processor
+        self._bind_trace()
+
+    def _bind_trace(self):
+        if self.processor and self.trace_window:
+            self.processor.instructions.trace_callback = self.trace_window.add
 
     # ------------------------------------------------------------------
     # Output
@@ -601,6 +705,10 @@ class ZMachineScreen(ScreenBase):
     def toggle_debug(self):
         if self.debug_window.isVisible(): self.debug_window.hide()
         else: self.debug_window.show()
+
+    def toggle_trace(self):
+        if self.trace_window.isVisible(): self.trace_window.hide()
+        else: self.trace_window.show()
 
     def toggle_objects(self):
         if self.object_window.isVisible(): self.object_window.hide()
