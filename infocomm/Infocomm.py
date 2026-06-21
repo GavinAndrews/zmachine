@@ -18,6 +18,8 @@ parser.add_argument("--seed", type=int, metavar="N",
                     help="seed the random number generator for deterministic replay")
 parser.add_argument("--debug", action="store_true",
                     help="show debug windows (object state, globals, stack)")
+parser.add_argument("--undo-random-continue", action="store_true",
+                    help="don't reset the RNG on undo (allows re-rolling random outcomes)")
 args = parser.parse_args()
 
 game_arg = args.game
@@ -40,6 +42,7 @@ if args.debug:
 scripting = Scripting(args.commands) if args.commands else None
 
 processor = build_machine(game_arg, screen, scripting=scripting, seed=args.seed)
+processor.instructions.undo_random_continue = args.undo_random_continue
 
 if args.debug:
     screen.object_window.processor  = processor
@@ -61,6 +64,7 @@ def run_step():
         # Reload the game from disk and start fresh inside the same window.
         screen.terminal.erase_window(-1)
         processor = build_machine(game_arg, screen, scripting=None, seed=args.seed)
+        processor.instructions.undo_random_continue = args.undo_random_continue
         if args.debug:
             screen.object_window.processor  = processor
             screen.globals_window.processor = processor

@@ -47,6 +47,7 @@ class Instructions:
         self._undo_max_depth = 10
         self._interp_undo_stack = []   # interpreter-level saves (works for all versions)
         self._skip_next_interp_save = False
+        self.undo_random_continue = False  # if True, RNG is NOT reset on undo
         self._current_opcode_pc = 0
         self.show_location = False
         self.location_global = None   # None = auto-detect; set via #loc G N
@@ -603,6 +604,7 @@ class Instructions:
             'pc':          self._current_opcode_pc,
             'memory':      _array.array('B', self.processor.memory),
             'stack_data':  _array.array('L', stack.stack),
+            'random':      self.random,
             'sp':          stack.sp,
             'fp':          stack.fp,
             'frame_count': stack.frame_count,
@@ -692,6 +694,8 @@ class Instructions:
             stack.fp          = s['fp']
             stack.frame_count = s['frame_count']
             self.processor.set_pc(s['pc'])
+            if not self.undo_random_continue:
+                self.random = s['random']
             self._skip_next_interp_save = True
             raise _UndoPerformed()
         if verb in ('script', 'transcript'):
