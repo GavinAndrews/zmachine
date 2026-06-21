@@ -34,6 +34,8 @@ class Instructions:
         self.random = 0x1234
         self.screen = screen
 
+        # Output stream 1 (screen): can be disabled by output_stream -1
+        self.stream1_active = True
         # Output stream 3: stack of (table_address, current_length) tuples
         # When non-empty, print output goes to memory instead of the screen
         self.stream3_stack = []
@@ -228,7 +230,7 @@ class Instructions:
                 length += 1
             Utils.mwrite_word(self.processor.memory, table_addr, length)
             self.stream3_stack[-1] = (table_addr, length)
-        else:
+        elif self.stream1_active:
             self.screen.print_str(s)
 
     def _print_char(self, ch):
@@ -238,7 +240,7 @@ class Instructions:
             length += 1
             Utils.mwrite_word(self.processor.memory, table_addr, length)
             self.stream3_stack[-1] = (table_addr, length)
-        else:
+        elif self.stream1_active:
             self.screen.print_char(ch)
 
     ################################################################################################
@@ -1141,9 +1143,12 @@ class Instructions:
 
     def instruction_output_stream(self, args):
         stream = Utils.from_unsigned_word_to_signed_int(args[0])
-        if stream == 2:
-            if not self.screen.stream2_active:
-                self.screen.open_transcript()   # game activated stream 2 directly
+        if stream == 1:
+            self.stream1_active = True
+        elif stream == -1:
+            self.stream1_active = False
+        elif stream == 2:
+            pass  # transcript enable: handled by meta-command #transcript
         elif stream == -2:
             self.screen.close_transcript()
         elif stream == 3:

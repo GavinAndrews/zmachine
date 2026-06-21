@@ -1,0 +1,65 @@
+"""Shared Z-machine construction: usable from both the Qt GUI and the headless runner."""
+from array import array
+
+from Header import Header
+from AbbreviationTable import AbbreviationTable
+from DictionaryTable import DictionaryTable
+from ObjectTable import ObjectTable
+from Processor import Processor
+
+
+def build_machine(game_path, screen, scripting=None, seed=None):
+    """Load game_path, patch interpreter header bytes, wire up all subsystems.
+
+    Returns the ready-to-run Processor.  screen.processor is also set.
+    The caller is responsible for driving the main loop.
+    """
+    with open(game_path, 'rb') as fh:
+        memory = array('B', fh.read())
+
+    # Standard revision number (1.1) at 0x32-0x33
+    memory[0x32] = 0x01
+    memory[0x33] = 0x01
+
+    # Screen dimensions the game can query
+    memory[0x20] = 25   # height in lines
+    memory[0x21] = 80   # width in chars
+
+    # Interpreter capability flags — these bytes are zeroed in the .dat file
+    # and must be filled in by the interpreter before the game starts running.
+    game_version = memory[0]   # byte 0 is the version number directly
+    if game_version >= 4:
+        # Flags 1 (0x01): bold (2), italic (3), fixed-space (4), timed input (7)
+        memory[0x01] |= 0x04 | 0x08 | 0x10 | 0x80
+        memory[0x1C] = 6          # interpreter number: IBM PC
+        memory[0x1D] = ord('F')  # interpreter version letter
+    elif game_version <= 3:
+        # Flags 1 (0x01): screen-splitting available (5)
+        memory[0x01] |= 0x20
+
+    header = Header(memory)
+    game_version = header.ZVERSION_version
+
+    abbrevs    = AbbreviationTable(start_location=header.FWORDS, memory=memory)
+    dictionary = DictionaryTable(header.VOCAB, memory, abbrevs, game_version=game_version)
+    obj_table  = ObjectTable(start_location=header.OBJECT, memory=memory,
+                             abbreviations=abbrevs, game_version=game_version)
+
+    processor = Processor(
+        memory=memory,
+        start=header.START,
+        object_table=obj_table,
+        abbreviation_table=abbrevs,
+        dictionary=dictionary,
+        scripting=scripting,
+        filename=game_path,
+        purbot=header.PURBOT,
+        game_version=game_version,
+        screen=screen,
+    )
+
+    if seed is not None:
+        processor.instructions.random = seed & 0x7FFFFFFF
+
+    screen.processor = processor
+    return processor
