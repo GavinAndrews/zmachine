@@ -139,15 +139,15 @@ HTML = """\
 <body>
 <div id="bar">
   <button onclick="fitAll()">Fit</button>
-  <button id="phys-btn" class="on" onclick="togglePhysics()">Physics ON</button>
+  <button onclick="autoLayout()">Auto layout</button>
   <button onclick="saveJSON()">Save positions</button>
   <label>
     <button onclick="document.getElementById('file-load').click()">Load positions</button>
     <input id="file-load" type="file" accept=".json" onchange="loadJSON(event)">
   </label>
   <button onclick="clearStorage()" title="Forget saved positions and re-run layout">Clear saved</button>
-  <span>Positions auto-saved on drag &nbsp;·&nbsp; Scroll=zoom &nbsp;·&nbsp;
-        Right-drag=pan &nbsp;·&nbsp; Hover green node=notes</span>
+  <span>Drag nodes to position &nbsp;·&nbsp; Positions auto-saved &nbsp;·&nbsp;
+        Scroll=zoom &nbsp;·&nbsp; Right-drag=pan &nbsp;·&nbsp; Hover green=notes</span>
 </div>
 <div id="net"></div>
 
@@ -173,9 +173,7 @@ if (savedPos) {{
   }});
 }}
 
-// Physics starts disabled when we have saved positions so they are never
-// overridden by the stabilisation loop.
-var physOn = (savedPos === null);
+// Physics is never used — layout is always manual.
 
 var nodes   = new vis.DataSet(NODES_DATA);
 var edges   = new vis.DataSet(EDGES_DATA);
@@ -195,11 +193,7 @@ var network = new vis.Network(
       font:   {{ color:'#9ca3af', size:11, align:'middle', background:'#111827' }},
       smooth: {{ type:'curvedCW', roundness: 0.1 }},
     }},
-    physics: {{
-      enabled: physOn,
-      barnesHut: {{ gravitationalConstant:-8000, springLength:160, springConstant:0.04 }},
-      stabilization: {{ iterations: 300 }},
-    }},
+    physics: {{ enabled: false }},
     interaction: {{ dragNodes:true, zoomView:true, dragView:true,
                     multiselect:true, tooltipDelay:150 }},
   }}
@@ -207,11 +201,6 @@ var network = new vis.Network(
 
 // Fit view once on first draw (works for both fresh and restored layouts)
 network.once('afterDrawing', function() {{ network.fit({{ animation: false }}); }});
-
-// When no saved positions: disable physics after the initial layout settles
-if (!savedPos) {{
-  network.once('stabilizationIterationsDone', function() {{ setPhysics(false); }});
-}}
 
 // ── auto-save ────────────────────────────────────────────────────────────
 network.on('dragEnd', function(params) {{
@@ -223,15 +212,19 @@ network.on('dragEnd', function(params) {{
 }});
 
 // ── controls ─────────────────────────────────────────────────────────────
-function setPhysics(on) {{
-  physOn = on;
-  network.setOptions({{ physics: {{ enabled: on }} }});
-  var btn = document.getElementById('phys-btn');
-  btn.textContent = on ? 'Physics ON' : 'Physics OFF';
-  btn.classList.toggle('on', on);
+function fitAll() {{ network.fit({{ animation: true }}); }}
+
+// Run a one-shot force-directed layout for new rooms that have no saved position
+function autoLayout() {{
+  network.setOptions({{ physics: {{ enabled: true,
+    barnesHut: {{ gravitationalConstant:-8000, springLength:160, springConstant:0.04 }},
+    stabilization: {{ iterations: 300 }} }} }});
+  network.once('stabilizationIterationsDone', function() {{
+    network.setOptions({{ physics: {{ enabled: false }} }});
+    network.fit({{ animation: true }});
+    try {{ localStorage.setItem(STORAGE_KEY, JSON.stringify(network.getPositions())); }} catch(e) {{}}
+  }});
 }}
-function togglePhysics() {{ setPhysics(!physOn); }}
-function fitAll()        {{ network.fit({{ animation: true }}); }}
 
 function saveJSON() {{
   var pos  = network.getPositions();
@@ -258,16 +251,8 @@ function loadJSON(evt) {{
 function clearStorage() {{
   try {{ localStorage.removeItem(STORAGE_KEY); }} catch(e) {{}}
   savedPos = null;
-  setPhysics(true);
-  network.stabilize();
+  autoLayout();
 }}
-
-// Sync button label with initial state
-(function() {{
-  var btn = document.getElementById('phys-btn');
-  btn.textContent = physOn ? 'Physics ON' : 'Physics OFF';
-  btn.classList.toggle('on', physOn);
-}})();
 </script>
 </body>
 </html>
