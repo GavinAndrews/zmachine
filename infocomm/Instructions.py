@@ -49,6 +49,9 @@ class Instructions:
         self._skip_next_interp_save = False
         self.undo_random_continue = False  # if True, RNG is NOT reset on undo
         self.trace_callback = None   # callable(pc, name, args) or None
+        self.map_file = None          # open file for transition logging, or None
+        self._map_prev_loc = None     # location string at start of last turn
+        self._map_prev_cmd = None     # command typed last turn
         self._current_opcode_pc = 0
         self.show_location = False
         self.location_global = None   # None = auto-detect; set via #loc G N
@@ -622,6 +625,20 @@ class Instructions:
     def instruction_read(self, args):
         """sread (V3) / aread (V4+)"""
         self._save_interp_undo()
+
+        # Map: check whether the previous command caused a location transition.
+        if self.map_file and self._map_prev_cmd is not None:
+            new_loc = self._map_location()
+            if new_loc and self._map_prev_loc and new_loc != self._map_prev_loc:
+                try:
+                    self.map_file.write(
+                        f'{self._map_prev_loc}\t{new_loc}\t{self._map_prev_cmd}\n')
+                    self.map_file.flush()
+                except Exception:
+                    pass
+        if self.map_file:
+            self._map_prev_loc = self._map_location()
+
         text_addr    = args[0]
         parse_addr   = args[1] if len(args) > 1 else None
         time_tenths  = args[2] if len(args) > 2 else 0
@@ -644,6 +661,9 @@ class Instructions:
             if self._handle_meta_command(in_string):
                 continue   # meta-command handled; ask for another line
             break
+
+        if self.map_file:
+            self._map_prev_cmd = in_string  # stored; transition checked next turn
 
         if len(in_string) > max_chars - 1:
             in_string = in_string[:max_chars - 1]
@@ -763,6 +783,8 @@ class Instructions:
                 "  #loc                   Toggle location display before each prompt\n"
                 "  #loc G <n>             Pin location to global variable n\n"
                 "  #commands <file>        Read commands from file (plain list or transcript)\n"
+                "  #map <file>            Log location transitions to file (from / to / command)\n"
+                "  #map off               Stop map logging\n"
                 "  #seed <n>              Seed RNG (any positive integer; 0 = time-based)\n"
                 "  #obj <n>               Dump runtime state of object n\n"
                 "  #globals [count]       Show first <count> globals (default 20)\n"
@@ -783,6 +805,28 @@ class Instructions:
                     self.screen.print_str(f"[File not found: {filename}]\n")
                 except Exception as e:
                     self.screen.print_str(f"[Error loading {filename}: {e}]\n")
+            return True
+        if verb == '#map':
+            if len(cmd) >= 2 and cmd[1].lower() != 'off':
+                filename = ' '.join(cmd[1:])
+                try:
+                    if self.map_file:
+                        self.map_file.close()
+                    self.map_file = open(filename, 'a', encoding='utf-8')
+                    self._map_prev_loc = self._map_location()
+                    self._map_prev_cmd = None
+                    self.screen.print_str(f"[Map logging to {filename}]\n")
+                except Exception as e:
+                    self.screen.print_str(f"[Error opening map file: {e}]\n")
+            else:
+                if self.map_file:
+                    self.map_file.close()
+                    self.map_file = None
+                    self._map_prev_loc = None
+                    self._map_prev_cmd = None
+                    self.screen.print_str("[Map logging stopped]\n")
+                else:
+                    self.screen.print_str("[Usage: #map <filename>   or   #map off]\n")
             return True
         if verb == '#seed':
             if len(cmd) > 1:
@@ -809,6 +853,28 @@ class Instructions:
                 self.screen.print_str("[Usage: #obj <number>]\n")
             return True
         return False
+
+    def _map_location(self):
+        """Return '#N: Room Name' for the current room (object ID included to
+        disambiguate maze rooms that share a description)."""
+        try:
+            obj_count = self.processor.object_table.object_count
+            if self.processor.game_version <= 3 or self.location_global is not None:
+                g   = self.location_global if self.location_global is not None else 0
+                num = self.processor.globals.read_global(g)
+            else:
+                num = 0
+                player_num = self._find_player_object(obj_count)
+                if player_num:
+                    player = self.processor.object_table.get_object_table_entry(player_num)
+                    num = player.get_parent_object_number() if player else 0
+            if not num:
+                return None
+            obj  = self.processor.object_table.get_object_table_entry(num)
+            name = obj.get_property_table().get_description().strip() if obj else ''
+            return f'#{num}: {name}' if name else f'#{num}'
+        except Exception:
+            return None
 
     def _current_location_str(self):
         """Return 'Obj#N: Room Name' for the player's current room, or None on error.
