@@ -7,10 +7,11 @@ lives in ScreenGrid; this file only handles Qt input/output and the event loop.
 
 import sys
 from PySide6.QtWidgets import (
-    QApplication, QMainWindow, QWidget, QScrollArea,
+    QApplication, QMainWindow, QWidget, QScrollArea, QSplitter,
     QVBoxLayout, QHBoxLayout, QTextEdit, QPlainTextEdit, QListWidget,
     QTableWidget, QTableWidgetItem, QTreeWidget, QTreeWidgetItem,
-    QPushButton, QFileDialog, QLabel, QLineEdit,
+    QPushButton, QFileDialog, QLabel, QLineEdit, QTextBrowser,
+    QAbstractItemView,
 )
 from PySide6.QtCore  import Qt, QTimer, QThread
 from PySide6.QtGui   import QFont, QFontMetrics, QPainter, QColor
@@ -332,39 +333,232 @@ class DebugWindow(QWidget):
 
 
 class ObjectWindow(QWidget):
+    """Object tree browser with property inspector and clickable navigation."""
+
     def __init__(self, processor=None, parent=None):
         super().__init__(parent)
         self.processor = processor
         self.setWindowTitle("Object State")
-        self.setGeometry(100, 100, 500, 400)
+        self.setGeometry(100, 100, 1000, 600)
+        self._items = {}   # obj_num → QTreeWidgetItem
+
         layout = QVBoxLayout(self)
-        btn = QPushButton("Refresh"); btn.clicked.connect(self.refresh)
-        layout.addWidget(btn)
-        self.tree = QTreeWidget()
-        self.tree.setHeaderLabels(["Object", "Parent", "Child", "Sibling"])
-        layout.addWidget(self.tree)
+        layout.setContentsMargins(4, 4, 4, 4)
+
+        # ── toolbar ──────────────────────────────────────────────────────
+        bar = QHBoxLayout()
+        refresh_btn = QPushButton("Refresh")
+        refresh_btn.clicked.connect(self.refresh)
+        expand_btn  = QPushButton("Expand all")
+        expand_btn.clicked.connect(lambda: self._tree.expandAll())
+        collapse_btn = QPushButton("Collapse all")
+        collapse_btn.clicked.connect(lambda: self._tree.collapseAll())
+        self._goto_edit = QLineEdit()
+        self._goto_edit.setPlaceholderText("Go to object #")
+        self._goto_edit.setFixedWidth(120)
+        self._goto_edit.returnPressed.connect(self._goto_obj)
+        goto_btn = QPushButton("Go")
+        goto_btn.clicked.connect(self._goto_obj)
+        bar.addWidget(refresh_btn)
+        bar.addWidget(expand_btn)
+        bar.addWidget(collapse_btn)
+        bar.addStretch()
+        bar.addWidget(QLabel("Object #:"))
+        bar.addWidget(self._goto_edit)
+        bar.addWidget(goto_btn)
+        layout.addLayout(bar)
+
+        # ── splitter: tree (left) + detail (right) ───────────────────────
+        splitter = QSplitter(Qt.Orientation.Horizontal)
+
+        self._tree = QTreeWidget()
+        self._tree.setHeaderLabels(["#", "Name", "Attributes set"])
+        self._tree.setColumnWidth(0, 45)
+        self._tree.setColumnWidth(1, 220)
+        self._tree.setFont(QFont("Courier New", 9))
+        self._tree.itemSelectionChanged.connect(self._on_select)
+        splitter.addWidget(self._tree)
+
+        self._detail = QTextBrowser()
+        self._detail.setFont(QFont("Courier New", 9))
+        self._detail.setOpenLinks(False)
+        self._detail.anchorClicked.connect(self._on_link)
+        splitter.addWidget(self._detail)
+
+        splitter.setSizes([420, 580])
+        layout.addWidget(splitter)
+
+    # ── tree building ─────────────────────────────────────────────────────
 
     def refresh(self):
-        self.tree.clear()
+        self._tree.clear()
+        self._items.clear()
         if not self.processor:
             return
-        for i in range(1, self.processor.object_table.object_count + 1):
+
+        ot  = self.processor.object_table
+        mem = self.processor.memory
+
+        # Build all item nodes
+        raw = {}  # obj_num → (ObjectTableEntry, QTreeWidgetItem)
+        for i in range(1, ot.object_count + 1):
             try:
-                obj = self.processor.object_table.get_object_table_entry(i)
-                if obj is None:
-                    continue
-                try:
-                    name = obj.get_property_table().get_description().strip()
-                except Exception:
-                    name = f"Obj#{i}"
-                self.tree.addTopLevelItem(QTreeWidgetItem([
-                    name,
-                    str(obj.get_parent_object_number()),
-                    str(obj.get_child_object_number()),
-                    str(obj.get_next_sibling_object_number()),
-                ]))
+                obj  = ot.get_object_table_entry(i)
+                name = obj.get_property_table().get_description().strip() or f"(#{i})"
+                attrs = self._attr_str(obj)
+                item = QTreeWidgetItem([str(i), name, attrs])
+                item.setData(0, Qt.ItemDataRole.UserRole, i)
+                raw[i] = (obj, item)
+                self._items[i] = item
             except Exception:
                 continue
+
+        # Insert into tree following the child→sibling chains so order matches
+        # the Z-machine object tree exactly.
+        visited = set()
+
+        def add_subtree(parent_item, obj_num):
+            if obj_num == 0 or obj_num in visited or obj_num not in raw:
+                return
+            visited.add(obj_num)
+            obj, item = raw[obj_num]
+            if parent_item is None:
+                self._tree.addTopLevelItem(item)
+            else:
+                parent_item.addChild(item)
+            add_subtree(item,        obj.get_child_object_number())
+            add_subtree(parent_item, obj.get_next_sibling_object_number())
+
+        for i, (obj, _) in raw.items():
+            if obj.get_parent_object_number() == 0 and i not in visited:
+                add_subtree(None, i)
+
+        # Any orphaned objects (corrupt tree) go to top level
+        for i, (_, item) in raw.items():
+            if i not in visited:
+                self._tree.addTopLevelItem(item)
+
+    def _attr_str(self, obj):
+        max_attr = 48 if obj.game_version >= 4 else 32
+        return ', '.join(
+            str(a) for a in range(max_attr) if obj.test_attr(a)
+        )
+
+    # ── selection / navigation ────────────────────────────────────────────
+
+    def _on_select(self):
+        sel = self._tree.selectedItems()
+        if sel:
+            self._show_detail(sel[0].data(0, Qt.ItemDataRole.UserRole))
+
+    def _goto_obj(self):
+        try:
+            n = int(self._goto_edit.text().strip())
+        except ValueError:
+            return
+        item = self._items.get(n)
+        if item:
+            self._tree.setCurrentItem(item)
+            self._tree.scrollToItem(
+                item, QAbstractItemView.ScrollHint.PositionAtCenter)
+
+    def _on_link(self, url):
+        if url.scheme() == 'obj':
+            try:
+                n = int(url.path().lstrip('/'))
+                item = self._items.get(n)
+                if item:
+                    self._tree.setCurrentItem(item)
+                    self._tree.scrollToItem(
+                        item, QAbstractItemView.ScrollHint.PositionAtCenter)
+            except (ValueError, AttributeError):
+                pass
+
+    # ── detail panel ─────────────────────────────────────────────────────
+
+    def _obj_link(self, n, ot):
+        if n == 0:
+            return '<i>none</i>'
+        try:
+            desc = ot.get_object_table_entry(n).get_property_table() \
+                     .get_description().strip() or '?'
+        except Exception:
+            desc = '?'
+        return f'<a href="obj:/{n}">#{n} &ldquo;{desc}&rdquo;</a>'
+
+    def _show_detail(self, obj_num):
+        if not self.processor or not obj_num:
+            return
+        ot  = self.processor.object_table
+        mem = self.processor.memory
+        try:
+            obj  = ot.get_object_table_entry(obj_num)
+            pt   = obj.get_property_table()
+            name = pt.get_description().strip() or '(no name)'
+
+            parent_n  = obj.get_parent_object_number()
+            child_n   = obj.get_child_object_number()
+            sibling_n = obj.get_next_sibling_object_number()
+
+            # Collect all children for display
+            children = []
+            c = child_n
+            while c:
+                children.append(c)
+                try:
+                    c = ot.get_object_table_entry(c).get_next_sibling_object_number()
+                except Exception:
+                    break
+
+            h = [f'<b>Object #{obj_num}</b> &mdash; &ldquo;{name}&rdquo;',
+                 '<hr>',
+                 f'<b>Parent:</b>  {self._obj_link(parent_n, ot)}<br>',
+                 f'<b>Sibling:</b> {self._obj_link(sibling_n, ot)}<br>',
+                 f'<b>Child:</b>   {self._obj_link(child_n, ot)}']
+
+            if len(children) > 1:
+                h.append('<br><b>All children:</b><br>')
+                for c in children:
+                    h.append(f'&nbsp;&nbsp;{self._obj_link(c, ot)}<br>')
+
+            # Attributes
+            max_attr = 48 if obj.game_version >= 4 else 32
+            set_attrs = [a for a in range(max_attr) if obj.test_attr(a)]
+            h.append('<hr><b>Attributes set:</b> ')
+            h.append(', '.join(str(a) for a in set_attrs) if set_attrs else '<i>none</i>')
+
+            # Properties
+            h.append('<hr><b>Properties:</b><br>')
+            h.append('<table cellspacing="0" cellpadding="2">'
+                     '<tr><th align="left">#</th><th align="left">Len</th>'
+                     '<th align="left">Bytes</th><th align="left">Value</th></tr>')
+
+            prop = pt.find_first_property()
+            if prop is None:
+                h.append('</table><i>none</i>')
+            else:
+                while prop is not None:
+                    n  = prop.get_property_number()
+                    ln = prop.get_length()
+                    da = prop.get_data_address()
+                    raw_bytes = [mem[da + k] for k in range(ln)]
+                    hex_str   = ' '.join(f'${b:02X}' for b in raw_bytes)
+                    if ln == 1:
+                        val_str = f'{raw_bytes[0]} / ${raw_bytes[0]:02X}'
+                    elif ln == 2:
+                        v = (raw_bytes[0] << 8) | raw_bytes[1]
+                        val_str = f'{v} / ${v:04X}'
+                    else:
+                        val_str = ''
+                    h.append(f'<tr><td>{n}</td><td>{ln}</td>'
+                             f'<td><code>{hex_str}</code></td>'
+                             f'<td>{val_str}</td></tr>')
+                    prop = pt.find_next_property(prop)
+                h.append('</table>')
+
+            self._detail.setHtml(''.join(h))
+        except Exception as e:
+            self._detail.setPlainText(f'Error reading object #{obj_num}: {e}')
 
 
 class GlobalsWindow(QWidget):
