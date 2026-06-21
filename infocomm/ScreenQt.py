@@ -373,7 +373,7 @@ class ObjectWindow(QWidget):
 
         self._tree = QTreeWidget()
         self._tree.setHeaderLabels(["#", "Name", "Attributes set"])
-        self._tree.setColumnWidth(0, 45)
+        self._tree.setColumnWidth(0, 60)
         self._tree.setColumnWidth(1, 220)
         self._tree.setFont(QFont("Courier New", 9))
         self._tree.itemSelectionChanged.connect(self._on_select)
