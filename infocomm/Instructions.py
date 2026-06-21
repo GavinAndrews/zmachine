@@ -807,8 +807,17 @@ class Instructions:
                     self.screen.print_str(f"[Error loading {filename}: {e}]\n")
             return True
         if verb == '#map':
-            if len(cmd) >= 2 and cmd[1].lower() != 'off':
-                filename = ' '.join(cmd[1:])
+            if len(cmd) >= 2 and cmd[1].lower() == 'off':
+                if self.map_file:
+                    self.map_file.close()
+                    self.map_file = None
+                    self._map_prev_loc = None
+                    self._map_prev_cmd = None
+                    self.screen.print_str("[Map logging stopped]\n")
+                else:
+                    self.screen.print_str("[Map logging was not active]\n")
+            else:
+                filename = ' '.join(cmd[1:]) if len(cmd) >= 2 else 'map.txt'
                 try:
                     if self.map_file:
                         self.map_file.close()
@@ -818,15 +827,6 @@ class Instructions:
                     self.screen.print_str(f"[Map logging to {filename}]\n")
                 except Exception as e:
                     self.screen.print_str(f"[Error opening map file: {e}]\n")
-            else:
-                if self.map_file:
-                    self.map_file.close()
-                    self.map_file = None
-                    self._map_prev_loc = None
-                    self._map_prev_cmd = None
-                    self.screen.print_str("[Map logging stopped]\n")
-                else:
-                    self.screen.print_str("[Usage: #map <filename>   or   #map off]\n")
             return True
         if verb == '#seed':
             if len(cmd) > 1:
