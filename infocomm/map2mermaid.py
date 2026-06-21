@@ -8,8 +8,9 @@ The input file is tab-separated (written by the #map meta-command):
 Usage:
     python map2mermaid.py                        # reads map.txt, prints to stdout
     python map2mermaid.py mymap.txt              # reads mymap.txt
-    python map2mermaid.py -o map.md              # writes to map.md
-    python map2mermaid.py mymap.txt -o out.md
+    python map2mermaid.py -o map.md              # writes Mermaid markdown
+    python map2mermaid.py -o map.html            # writes interactive HTML (pan/zoom)
+    python map2mermaid.py mymap.txt -o out.html
 """
 
 import re
@@ -133,6 +134,72 @@ def build_mermaid(transitions, nodes):
 
 
 # ---------------------------------------------------------------------------
+# HTML output (interactive pan/zoom via svg-pan-zoom)
+# ---------------------------------------------------------------------------
+
+HTML_TEMPLATE = """\
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Game Map</title>
+<style>
+  body  {{ margin: 0; background: #1a1a2e; color: #eee; font-family: sans-serif; }}
+  #controls {{ position: fixed; top: 8px; left: 8px; z-index: 10;
+               display: flex; gap: 6px; }}
+  button  {{ background: #16213e; color: #eee; border: 1px solid #0f3460;
+             padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 13px; }}
+  button:hover {{ background: #0f3460; }}
+  #hint   {{ position: fixed; bottom: 8px; left: 8px; font-size: 11px; opacity: .5; }}
+  #graph  {{ width: 100vw; height: 100vh; }}
+  /* Mermaid node and edge tweaks */
+  .node rect, .node circle, .node ellipse, .node polygon
+              {{ fill: #16213e !important; stroke: #0f3460 !important; }}
+  .edgeLabel  {{ background: #1a1a2e !important; color: #aaa !important; }}
+  .edgePath   {{ stroke: #0f3460 !important; }}
+  text        {{ fill: #ddd !important; }}
+</style>
+</head>
+<body>
+<div id="controls">
+  <button onclick="pz.zoomIn()">+</button>
+  <button onclick="pz.zoomOut()">−</button>
+  <button onclick="pz.resetZoom(); pz.resetPan()">Reset</button>
+</div>
+<div id="graph" class="mermaid">
+{diagram}
+</div>
+<div id="hint">Scroll to zoom &nbsp;·&nbsp; Drag to pan</div>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+<script>
+mermaid.initialize({{ startOnLoad: false, theme: 'dark',
+                      flowchart: {{ rankDir: 'LR', useMaxWidth: false }} }});
+
+mermaid.run({{ nodes: [document.getElementById('graph')] }}).then(() => {{
+  const svg = document.querySelector('#graph svg');
+  if (svg) {{
+    svg.style.width  = '100%';
+    svg.style.height = '100%';
+    window.pz = svgPanZoom(svg, {{
+      zoomEnabled: true, controlIconsEnabled: false,
+      fit: true, center: true, minZoom: 0.1, maxZoom: 20,
+    }});
+  }}
+}});
+</script>
+</body>
+</html>
+"""
+
+
+def build_html(transitions, nodes):
+    diagram = build_mermaid(transitions, nodes)
+    return HTML_TEMPLATE.format(diagram=diagram)
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -142,7 +209,8 @@ def main():
     parser.add_argument('input', nargs='?', default='map.txt',
                         help='transition log file (default: map.txt)')
     parser.add_argument('-o', '--output', metavar='FILE', default=None,
-                        help='write Mermaid markdown to FILE instead of stdout')
+                        help='output file: .md for Mermaid markdown, '
+                             '.html for interactive browser view (default: stdout)')
     args = parser.parse_args()
 
     transitions, nodes = parse_map(args.input)
@@ -154,14 +222,19 @@ def main():
     print(f'{len(transitions)} unique transitions, {len(nodes)} locations.',
           file=sys.stderr)
 
-    mermaid = build_mermaid(transitions, nodes)
-    output  = f'```mermaid\n{mermaid}\n```\n'
+    out_path = Path(args.output) if args.output else None
 
-    if args.output:
-        Path(args.output).write_text(output, encoding='utf-8')
-        print(f'Written to {args.output}', file=sys.stderr)
+    if out_path and out_path.suffix.lower() == '.html':
+        out_path.write_text(build_html(transitions, nodes), encoding='utf-8')
+        print(f'Written to {out_path}', file=sys.stderr)
     else:
-        print(output)
+        mermaid = build_mermaid(transitions, nodes)
+        content = f'```mermaid\n{mermaid}\n```\n'
+        if out_path:
+            out_path.write_text(content, encoding='utf-8')
+            print(f'Written to {out_path}', file=sys.stderr)
+        else:
+            print(content)
 
 
 if __name__ == '__main__':
