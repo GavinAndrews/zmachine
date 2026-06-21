@@ -146,34 +146,38 @@ HTML = """\
     <input id="file-load" type="file" accept=".json" onchange="loadJSON(event)">
   </label>
   <button onclick="clearStorage()" title="Forget saved positions and re-run layout">Clear saved</button>
-  <span>Drag nodes to position &nbsp;·&nbsp; Positions auto-saved &nbsp;·&nbsp;
-        Scroll=zoom &nbsp;·&nbsp; Right-drag=pan &nbsp;·&nbsp; Hover green=notes</span>
+  <span id="status" style="margin-left:auto; color:#6ee7b7;">—</span>
 </div>
 <div id="net"></div>
 
 <script>
-const STORAGE_KEY = 'map_positions';
+var STORAGE_KEY = 'map_positions';
 
-// ── load saved positions BEFORE creating anything ────────────────────────
-// Injecting coordinates into the raw node data prevents the physics engine
-// from ever seeing "unpositioned" nodes, so it cannot override the saved layout.
+function setStatus(msg) {{
+  var el = document.getElementById('status');
+  if (el) el.textContent = msg;
+}}
+
+// ── restore saved positions BEFORE creating the DataSet ──────────────────
+// Coordinates are injected directly into NODES_DATA so vis.js never sees
+// unpositioned nodes — nothing can override the restored layout.
+var NODES_DATA = {nodes};
+var EDGES_DATA = {edges};
+
 var savedPos = null;
 try {{
   var _raw = localStorage.getItem(STORAGE_KEY);
   if (_raw) savedPos = JSON.parse(_raw);
-}} catch(e) {{}}
+}} catch(e) {{ setStatus('localStorage unavailable: ' + e); }}
 
-var NODES_DATA = {nodes};
-var EDGES_DATA = {edges};
-
+var loadedCount = 0;
 if (savedPos) {{
-  NODES_DATA.forEach(function(n) {{
+  NODES_DATA = NODES_DATA.map(function(n) {{
     var p = savedPos[n.id];
-    if (p) {{ n.x = p.x; n.y = p.y; }}
+    if (p) {{ loadedCount++; return Object.assign({{}}, n, {{x: p.x, y: p.y}}); }}
+    return n;
   }});
 }}
-
-// Physics is never used — layout is always manual.
 
 var nodes   = new vis.DataSet(NODES_DATA);
 var edges   = new vis.DataSet(EDGES_DATA);
@@ -199,30 +203,51 @@ var network = new vis.Network(
   }}
 );
 
-// Fit view once on first draw (works for both fresh and restored layouts)
-network.once('afterDrawing', function() {{ network.fit({{ animation: false }}); }});
+if (loadedCount > 0) {{
+  setStatus('Loaded ' + loadedCount + ' saved positions');
+  network.once('afterDrawing', function() {{ network.fit({{ animation: false }}); }});
+}} else {{
+  setStatus('No saved positions — drag nodes to arrange, then they auto-save');
+  // Spread nodes with a one-shot layout so they are not all at origin
+  network.setOptions({{ physics: {{
+    enabled: true,
+    barnesHut: {{ gravitationalConstant:-8000, springLength:160, springConstant:0.04 }},
+    stabilization: {{ iterations: 300 }}
+  }} }});
+  network.once('stabilizationIterationsDone', function() {{
+    network.setOptions({{ physics: {{ enabled: false }} }});
+    network.fit({{ animation: false }});
+    saveToStorage();
+    setStatus('Auto-laid out. Drag nodes to correct positions — they auto-save.');
+  }});
+}}
 
-// ── auto-save ────────────────────────────────────────────────────────────
-network.on('dragEnd', function(params) {{
-  // Only save when a node was actually moved (not a view pan)
-  if (params.nodes && params.nodes.length > 0) {{
-    try {{ localStorage.setItem(STORAGE_KEY, JSON.stringify(network.getPositions())); }}
-    catch(e) {{}}
-  }}
+// ── auto-save on every drag (no filter — always save) ────────────────────
+network.on('dragEnd', function() {{
+  saveToStorage();
 }});
+
+function saveToStorage() {{
+  try {{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(network.getPositions()));
+    setStatus('Saved (' + Object.keys(network.getPositions()).length + ' nodes)');
+  }} catch(e) {{
+    setStatus('Save failed: ' + e);
+  }}
+}}
 
 // ── controls ─────────────────────────────────────────────────────────────
 function fitAll() {{ network.fit({{ animation: true }}); }}
 
-// Run a one-shot force-directed layout for new rooms that have no saved position
 function autoLayout() {{
+  setStatus('Running layout…');
   network.setOptions({{ physics: {{ enabled: true,
     barnesHut: {{ gravitationalConstant:-8000, springLength:160, springConstant:0.04 }},
     stabilization: {{ iterations: 300 }} }} }});
   network.once('stabilizationIterationsDone', function() {{
     network.setOptions({{ physics: {{ enabled: false }} }});
     network.fit({{ animation: true }});
-    try {{ localStorage.setItem(STORAGE_KEY, JSON.stringify(network.getPositions())); }} catch(e) {{}}
+    saveToStorage();
   }});
 }}
 
@@ -240,17 +265,19 @@ function loadJSON(evt) {{
   if (!file) return;
   file.text().then(function(txt) {{
     var pos = JSON.parse(txt);
-    nodes.update(Object.entries(pos).map(function([id, p]) {{ return {{id:id, x:p.x, y:p.y}}; }}));
-    setPhysics(false);
+    nodes.update(Object.entries(pos).map(function([id, p]) {{
+      return {{id:id, x:p.x, y:p.y}};
+    }}));
     network.fit({{ animation: true }});
     try {{ localStorage.setItem(STORAGE_KEY, JSON.stringify(pos)); }} catch(e) {{}}
+    setStatus('Loaded ' + Object.keys(pos).length + ' positions from file');
   }});
   evt.target.value = '';
 }}
 
 function clearStorage() {{
   try {{ localStorage.removeItem(STORAGE_KEY); }} catch(e) {{}}
-  savedPos = null;
+  setStatus('Cleared. Running new layout…');
   autoLayout();
 }}
 </script>
