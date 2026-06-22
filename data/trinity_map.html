@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Game Map</title>
+<script src="https://unpkg.com/vis-network@9/standalone/umd/vis-network.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111827; color: #e5e7eb; font: 13px/1.4 sans-serif; }
+  #net { position: absolute; inset: 40px 0 0 0; }
+  #bar { position: fixed; top: 0; left: 0; right: 0; height: 40px;
+          background: #1f2937; border-bottom: 1px solid #374151;
+          display: flex; align-items: center; gap: 6px; padding: 0 10px; }
+  #bar span { color: #9ca3af; font-size: 11px; margin-left: auto; }
+  button { background: #374151; color: #e5e7eb; border: 1px solid #4b5563;
+            padding: 3px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+  button:hover { background: #4b5563; }
+  button.on { background: #065f46; border-color: #059669; }
+  #file-load { display: none; }
+</style>
+</head>
+<body>
+<div id="bar">
+  <button onclick="fitAll()">Fit</button>
+  <button onclick="autoLayout()">Auto layout</button>
+  <button onclick="saveJSON()">Save positions</button>
+  <label>
+    <button onclick="document.getElementById('file-load').click()">Load positions</button>
+    <input id="file-load" type="file" accept=".json" onchange="loadJSON(event)">
+  </label>
+  <button onclick="clearStorage()" title="Forget saved positions and re-run layout">Clear saved</button>
+  <span id="status" style="margin-left:auto; color:#6ee7b7;">—</span>
+</div>
+<div id="net"></div>
+
+<script>
+var STORAGE_KEY = 'map_positions';
+
+function setStatus(msg) {
+  var el = document.getElementById('status');
+  if (el) el.textContent = msg;
+}
+
+// ── restore saved positions BEFORE creating the DataSet ──────────────────
+// Coordinates are injected directly into NODES_DATA so vis.js never sees
+// unpositioned nodes — nothing can override the restored layout.
+var NODES_DATA = [{"id": "n1", "label": "#1: Northwest Room"}, {"id": "n12", "label": "#12: Sp{are }Room"}, {"id": "n442", "label": "#442: Assembly Room"}, {"id": "n21", "label": "#21: Kitchen"}, {"id": "n5", "label": "#5: Islet"}, {"id": "n501", "label": "#501: S{and }Bar"}, {"id": "n6", "label": "#6: Front Deck"}, {"id": "n460", "label": "#460: Southeast Room"}, {"id": "n175", "label": "#175: Bathroom"}, {"id": "n214", "label": "#214: Bedroom"}, {"id": "n297", "label": "#297: Back Yard"}, {"id": "n240", "label": "#240: Hallway"}, {"id": "n30", "label": "#30: Under{ground}"}, {"id": "n87", "label": "#87: Under{ground}"}, {"id": "n37", "label": "#37: Southwest Yard"}, {"id": "n477", "label": "#477: Southeast Yard"}, {"id": "n515", "label": "#515: Southwest {of }Ranch"}, {"id": "n42", "label": "#42: North Bog"}, {"id": "n370", "label": "#370: Promontory"}, {"id": "n306", "label": "#306: Chasm's Brink"}, {"id": "n575", "label": "#575: Bottom {of }Stairs"}, {"id": "n319", "label": "#319: South Bog"}, {"id": "n472", "label": "#472: Waterfall"}, {"id": "n56", "label": "#56: Tundra"}, {"id": "n188", "label": "#188: Tundra"}, {"id": "n488", "label": "#488: Under Platform"}, {"id": "n585", "label": "#585: Tundra"}, {"id": "n131", "label": "#131: Under{ground}"}, {"id": "n88", "label": "#88: {that}"}, {"id": "n109", "label": "#109: Paved Road"}, {"id": "n465", "label": "#465: Desert"}, {"id": "n210", "label": "#210: Northwest {of }Tower"}, {"id": "n480", "label": "#480: Desert"}, {"id": "n534", "label": "#534: Paved Road"}, {"id": "n119", "label": "#119: Tundra"}, {"id": "n254", "label": "#254: Tundra"}, {"id": "n509", "label": "#509: Tundra"}, {"id": "n320", "label": "#320: Tundra"}, {"id": "n120", "label": "#120: Paved Road"}, {"id": "n497", "label": "#497: Desert"}, {"id": "n219", "label": "#219: Southwest {of }Tower"}, {"id": "n510", "label": "#510: Desert"}, {"id": "n544", "label": "#544: Crossroads"}, {"id": "n122", "label": "#122: Northwest {of }Ranch"}, {"id": "n225", "label": "#225: Foothills"}, {"id": "n558", "label": "#558: Northeast {of }Ranch"}, {"id": "n239", "label": "#239: Desert"}, {"id": "n456", "label": "#456: Shallow Crater"}, {"id": "n132", "label": "#132: Desert"}, {"id": "n174", "label": "#174: Outside Blockhouse"}, {"id": "n139", "label": "#139: Northeast Yard"}, {"id": "n144", "label": "#144: Round Pond"}, {"id": "n531", "label": "#531: Inverness Terrace"}, {"id": "n179", "label": "#179: Lancaster Gate"}, {"id": "n371", "label": "#371: Lancaster Walk"}, {"id": "n79", "label": "#79: {The }Wabe"}, {"id": "n354", "label": "#354: Broad Walk"}, {"id": "n355", "label": "#355: Black Li{on }Gate"}, {"id": "n146", "label": "#146: Base {of }Tower"}, {"id": "n296", "label": "#296: North {of }Tower"}, {"id": "n381", "label": "#381: Northeast {of }Tower"}, {"id": "n290", "label": "#290: East {of }Tower"}, {"id": "n466", "label": "#466: South {of }Tower"}, {"id": "n311", "label": "#311: West {of }Tower"}, {"id": "n158", "label": "#158: Tower Platform"}, {"id": "n507", "label": "#507: Shack"}, {"id": "n159", "label": "#159: Desert"}, {"id": "n529", "label": "#529: Desert"}, {"id": "n180", "label": "#180: Foothills"}, {"id": "n380", "label": "#380: Tundra"}, {"id": "n213", "label": "#213: Bluff"}, {"id": "n327", "label": "#327: Cottage"}, {"id": "n441", "label": "#441: Crater's Edge"}, {"id": "n222", "label": "#222: Foothills"}, {"id": "n577", "label": "#577: Desert"}, {"id": "n226", "label": "#226: Paved Road"}, {"id": "n382", "label": "#382: Paved Road"}, {"id": "n437", "label": "#437: Behind {the }Shed"}, {"id": "n293", "label": "#293: Paved Road"}, {"id": "n236", "label": "#236: Palace Gate"}, {"id": "n250", "label": "#250: Flower Walk"}, {"id": "n292", "label": "#292: North {of }Reservoir"}, {"id": "n300", "label": "#300: Under {the }Windmill"}, {"id": "n573", "label": "#573: Front Yard"}, {"id": "n559", "label": "#559: South {of }Reservoir"}, {"id": "n400", "label": "#400: Under Cliff"}, {"id": "n557", "label": "#557: {The }Bend"}, {"id": "n317", "label": "#317: Trellises"}, {"id": "n565", "label": "#565: {The }River"}, {"id": "n418", "label": "#418: Arborvitaes"}, {"id": "n580", "label": "#580: Arborvitaes"}, {"id": "n426", "label": "#426: Forest Clearing"}, {"id": "n323", "label": "#323: Summit"}, {"id": "n576", "label": "#576: Meadow"}, {"id": "n417", "label": "#417: Herb Garden"}, {"id": "n344", "label": "#344: Bottom {of }Scaffold"}, {"id": "n476", "label": "#476: South Beach"}, {"id": "n352", "label": "#352: Closet"}, {"id": "n372", "label": "#372: Southeast {of }Ranch"}, {"id": "n471", "label": "#471: Moor"}, {"id": "n408", "label": "#408: Top {of }Arbor"}, {"id": "n4", "label": "#4: North Arbor"}, {"id": "n430", "label": "#430: South Arbor"}, {"id": "n414", "label": "#414: Cemetery"}, {"id": "n353", "label": "#353: Barrow"}, {"id": "n462", "label": "#462: Arboretum"}];
+var EDGES_DATA = [{"from": "n109", "to": "n210", "label": "SE"}, {"from": "n109", "to": "n465", "label": "E"}, {"from": "n109", "to": "n465", "label": "N"}, {"from": "n109", "to": "n465", "label": "NE"}, {"from": "n109", "to": "n480", "label": "S"}, {"from": "n109", "to": "n480", "label": "SW"}, {"from": "n109", "to": "n480", "label": "W"}, {"from": "n109", "to": "n534", "label": "NW"}, {"from": "n119", "to": "n254", "label": "N"}, {"from": "n119", "to": "n320", "label": "NW"}, {"from": "n119", "to": "n488", "label": "W"}, {"from": "n119", "to": "n509", "label": "S"}, {"from": "n119", "to": "n585", "label": "SW"}, {"from": "n120", "to": "n219", "label": "NE"}, {"from": "n120", "to": "n497", "label": "N"}, {"from": "n120", "to": "n497", "label": "NW"}, {"from": "n120", "to": "n497", "label": "W"}, {"from": "n120", "to": "n510", "label": "E"}, {"from": "n120", "to": "n510", "label": "S"}, {"from": "n120", "to": "n510", "label": "SE"}, {"from": "n120", "to": "n544", "label": "SW"}, {"from": "n122", "to": "n225", "label": "N"}, {"from": "n122", "to": "n225", "label": "NE"}, {"from": "n122", "to": "n239", "label": "SW"}, {"from": "n122", "to": "n239", "label": "W"}, {"from": "n122", "to": "n297", "label": "IN"}, {"from": "n122", "to": "n297", "label": "SE"}, {"from": "n122", "to": "n456", "label": "NW"}, {"from": "n122", "to": "n515", "label": "S"}, {"from": "n122", "to": "n558", "label": "E"}, {"from": "n12", "to": "n175", "label": "N"}, {"from": "n12", "to": "n1", "label": "S"}, {"from": "n12", "to": "n214", "label": "E"}, {"from": "n12", "to": "n297", "label": "W"}, {"from": "n131", "to": "n87", "label": "W"}, {"from": "n132", "to": "n174", "label": "NW"}, {"from": "n139", "to": "n214", "label": "IN"}, {"from": "n139", "to": "n214", "label": "W"}, {"from": "n144", "to": "n179", "label": "NE"}, {"from": "n144", "to": "n354", "label": "W"}, {"from": "n144", "to": "n355", "label": "NW"}, {"from": "n144", "to": "n371", "label": "E"}, {"from": "n144", "to": "n531", "label": "N"}, {"from": "n144", "to": "n79", "label": "S"}, {"from": "n146", "to": "n210", "label": "NW"}, {"from": "n146", "to": "n219", "label": "SW"}, {"from": "n146", "to": "n290", "label": "E"}, {"from": "n146", "to": "n296", "label": "N"}, {"from": "n146", "to": "n311", "label": "W"}, {"from": "n146", "to": "n381", "label": "NE"}, {"from": "n146", "to": "n456", "label": "SE"}, {"from": "n146", "to": "n466", "label": "S"}, {"from": "n158", "to": "n507", "label": "E"}, {"from": "n158", "to": "n507", "label": "IN"}, {"from": "n159", "to": "n480", "label": "SE"}, {"from": "n174", "to": "n132", "label": "E"}, {"from": "n174", "to": "n132", "label": "SE"}, {"from": "n174", "to": "n497", "label": "N"}, {"from": "n174", "to": "n529", "label": "S"}, {"from": "n174", "to": "n529", "label": "W"}, {"from": "n174", "to": "n544", "label": "NE"}, {"from": "n175", "to": "n12", "label": "IN"}, {"from": "n175", "to": "n12", "label": "OUT"}, {"from": "n175", "to": "n12", "label": "S"}, {"from": "n180", "to": "n465", "label": "W"}, {"from": "n188", "to": "n320", "label": "NE"}, {"from": "n188", "to": "n380", "label": "N"}, {"from": "n188", "to": "n488", "label": "E"}, {"from": "n188", "to": "n56", "label": "S"}, {"from": "n188", "to": "n585", "label": "SE"}, {"from": "n1", "to": "n12", "label": "N"}, {"from": "n1", "to": "n21", "label": "S"}, {"from": "n1", "to": "n442", "label": "E"}, {"from": "n210", "to": "n109", "label": "NW"}, {"from": "n210", "to": "n146", "label": "SE"}, {"from": "n210", "to": "n296", "label": "E"}, {"from": "n210", "to": "n311", "label": "S"}, {"from": "n210", "to": "n465", "label": "N"}, {"from": "n210", "to": "n465", "label": "NE"}, {"from": "n210", "to": "n480", "label": "SW"}, {"from": "n210", "to": "n480", "label": "W"}, {"from": "n213", "to": "n306", "label": "SW"}, {"from": "n213", "to": "n327", "label": "E"}, {"from": "n213", "to": "n327", "label": "IN"}, {"from": "n213", "to": "n441", "label": "SE"}, {"from": "n214", "to": "n12", "label": "IN"}, {"from": "n214", "to": "n12", "label": "W"}, {"from": "n214", "to": "n139", "label": "E"}, {"from": "n219", "to": "n120", "label": "SW"}, {"from": "n219", "to": "n146", "label": "NE"}, {"from": "n219", "to": "n311", "label": "N"}, {"from": "n219", "to": "n466", "label": "E"}, {"from": "n219", "to": "n480", "label": "NW"}, {"from": "n219", "to": "n497", "label": "W"}, {"from": "n219", "to": "n510", "label": "S"}, {"from": "n219", "to": "n510", "label": "SE"}, {"from": "n21", "to": "n1", "label": "N"}, {"from": "n21", "to": "n240", "label": "W"}, {"from": "n21", "to": "n460", "label": "E"}, {"from": "n222", "to": "n577", "label": "S"}, {"from": "n222", "to": "n577", "label": "SW"}, {"from": "n225", "to": "n180", "label": "N"}, {"from": "n226", "to": "n132", "label": "SW"}, {"from": "n226", "to": "n132", "label": "W"}, {"from": "n226", "to": "n239", "label": "NE"}, {"from": "n226", "to": "n293", "label": "NW"}, {"from": "n226", "to": "n382", "label": "N"}, {"from": "n226", "to": "n437", "label": "S"}, {"from": "n226", "to": "n577", "label": "E"}, {"from": "n226", "to": "n577", "label": "SE"}, {"from": "n236", "to": "n250", "label": "E"}, {"from": "n236", "to": "n354", "label": "N"}, {"from": "n236", "to": "n79", "label": "NE"}, {"from": "n239", "to": "n382", "label": "W"}, {"from": "n239", "to": "n577", "label": "S"}, {"from": "n240", "to": "n21", "label": "E"}, {"from": "n240", "to": "n297", "label": "N"}, {"from": "n240", "to": "n37", "label": "S"}, {"from": "n250", "to": "n236", "label": "W"}, {"from": "n250", "to": "n371", "label": "N"}, {"from": "n250", "to": "n79", "label": "NW"}, {"from": "n254", "to": "n119", "label": "S"}, {"from": "n254", "to": "n320", "label": "W"}, {"from": "n254", "to": "n488", "label": "SW"}, {"from": "n290", "to": "n146", "label": "W"}, {"from": "n290", "to": "n225", "label": "E"}, {"from": "n290", "to": "n225", "label": "NE"}, {"from": "n290", "to": "n225", "label": "SE"}, {"from": "n290", "to": "n296", "label": "NW"}, {"from": "n290", "to": "n381", "label": "N"}, {"from": "n290", "to": "n456", "label": "S"}, {"from": "n290", "to": "n466", "label": "SW"}, {"from": "n292", "to": "n225", "label": "E"}, {"from": "n292", "to": "n225", "label": "N"}, {"from": "n292", "to": "n225", "label": "NE"}, {"from": "n292", "to": "n225", "label": "NW"}, {"from": "n292", "to": "n300", "label": "SE"}, {"from": "n292", "to": "n558", "label": "W"}, {"from": "n292", "to": "n573", "label": "SW"}, {"from": "n293", "to": "n132", "label": "S"}, {"from": "n293", "to": "n132", "label": "SW"}, {"from": "n293", "to": "n132", "label": "W"}, {"from": "n293", "to": "n226", "label": "SE"}, {"from": "n293", "to": "n510", "label": "E"}, {"from": "n293", "to": "n510", "label": "N"}, {"from": "n293", "to": "n510", "label": "NE"}, {"from": "n293", "to": "n544", "label": "NW"}, {"from": "n296", "to": "n146", "label": "S"}, {"from": "n296", "to": "n180", "label": "NE"}, {"from": "n296", "to": "n210", "label": "W"}, {"from": "n296", "to": "n290", "label": "SE"}, {"from": "n296", "to": "n311", "label": "SW"}, {"from": "n296", "to": "n381", "label": "E"}, {"from": "n296", "to": "n465", "label": "N"}, {"from": "n296", "to": "n465", "label": "NW"}, {"from": "n297", "to": "n122", "label": "NW"}, {"from": "n297", "to": "n122", "label": "OUT"}, {"from": "n297", "to": "n12", "label": "E"}, {"from": "n300", "to": "n222", "label": "S"}, {"from": "n300", "to": "n222", "label": "SE"}, {"from": "n300", "to": "n225", "label": "E"}, {"from": "n300", "to": "n225", "label": "N"}, {"from": "n300", "to": "n225", "label": "NE"}, {"from": "n300", "to": "n292", "label": "NW"}, {"from": "n300", "to": "n559", "label": "SW"}, {"from": "n306", "to": "n213", "label": "NE"}, {"from": "n306", "to": "n319", "label": "SW"}, {"from": "n306", "to": "n370", "label": "NW"}, {"from": "n306", "to": "n400", "label": "E"}, {"from": "n306", "to": "n42", "label": "W"}, {"from": "n306", "to": "n557", "label": "SE"}, {"from": "n30", "to": "n87", "label": "E"}, {"from": "n30", "to": "n87", "label": "OUT"}, {"from": "n311", "to": "n146", "label": "E"}, {"from": "n311", "to": "n210", "label": "N"}, {"from": "n311", "to": "n219", "label": "S"}, {"from": "n311", "to": "n296", "label": "NE"}, {"from": "n311", "to": "n466", "label": "SE"}, {"from": "n311", "to": "n480", "label": "NW"}, {"from": "n311", "to": "n480", "label": "W"}, {"from": "n311", "to": "n497", "label": "SW"}, {"from": "n317", "to": "n319", "label": "NW"}, {"from": "n317", "to": "n418", "label": "SE"}, {"from": "n317", "to": "n426", "label": "W"}, {"from": "n317", "to": "n557", "label": "NE"}, {"from": "n317", "to": "n565", "label": "E"}, {"from": "n317", "to": "n575", "label": "N"}, {"from": "n317", "to": "n580", "label": "SW"}, {"from": "n319", "to": "n306", "label": "NE"}, {"from": "n319", "to": "n317", "label": "SE"}, {"from": "n319", "to": "n426", "label": "S"}, {"from": "n319", "to": "n42", "label": "N"}, {"from": "n319", "to": "n472", "label": "W"}, {"from": "n319", "to": "n575", "label": "E"}, {"from": "n320", "to": "n119", "label": "SE"}, {"from": "n320", "to": "n188", "label": "SW"}, {"from": "n320", "to": "n254", "label": "E"}, {"from": "n320", "to": "n380", "label": "W"}, {"from": "n320", "to": "n488", "label": "S"}, {"from": "n323", "to": "n319", "label": "NE"}, {"from": "n323", "to": "n426", "label": "E"}, {"from": "n323", "to": "n576", "label": "S"}, {"from": "n327", "to": "n213", "label": "W"}, {"from": "n327", "to": "n417", "label": "E"}, {"from": "n344", "to": "n476", "label": "OUT"}, {"from": "n344", "to": "n476", "label": "S"}, {"from": "n352", "to": "n442", "label": "OUT"}, {"from": "n352", "to": "n442", "label": "S"}, {"from": "n354", "to": "n144", "label": "E"}, {"from": "n354", "to": "n236", "label": "S"}, {"from": "n354", "to": "n355", "label": "N"}, {"from": "n354", "to": "n531", "label": "NE"}, {"from": "n354", "to": "n79", "label": "SE"}, {"from": "n355", "to": "n144", "label": "SE"}, {"from": "n355", "to": "n354", "label": "S"}, {"from": "n355", "to": "n531", "label": "E"}, {"from": "n370", "to": "n306", "label": "SE"}, {"from": "n370", "to": "n42", "label": "S"}, {"from": "n371", "to": "n144", "label": "W"}, {"from": "n371", "to": "n179", "label": "N"}, {"from": "n371", "to": "n250", "label": "S"}, {"from": "n371", "to": "n531", "label": "NW"}, {"from": "n371", "to": "n79", "label": "SW"}, {"from": "n372", "to": "n222", "label": "S"}, {"from": "n372", "to": "n222", "label": "SE"}, {"from": "n372", "to": "n239", "label": "SW"}, {"from": "n372", "to": "n477", "label": "IN"}, {"from": "n372", "to": "n477", "label": "NW"}, {"from": "n372", "to": "n515", "label": "W"}, {"from": "n372", "to": "n559", "label": "E"}, {"from": "n372", "to": "n573", "label": "N"}, {"from": "n37", "to": "n477", "label": "E"}, {"from": "n37", "to": "n515", "label": "OUT"}, {"from": "n37", "to": "n515", "label": "SW"}, {"from": "n380", "to": "n188", "label": "S"}, {"from": "n380", "to": "n320", "label": "E"}, {"from": "n380", "to": "n488", "label": "SE"}, {"from": "n381", "to": "n146", "label": "SW"}, {"from": "n381", "to": "n180", "label": "N"}, {"from": "n381", "to": "n180", "label": "NE"}, {"from": "n381", "to": "n225", "label": "E"}, {"from": "n381", "to": "n225", "label": "SE"}, {"from": "n381", "to": "n290", "label": "S"}, {"from": "n381", "to": "n296", "label": "W"}, {"from": "n381", "to": "n465", "label": "NW"}, {"from": "n382", "to": "n226", "label": "S"}, {"from": "n382", "to": "n239", "label": "E"}, {"from": "n382", "to": "n239", "label": "NE"}, {"from": "n382", "to": "n239", "label": "SE"}, {"from": "n382", "to": "n466", "label": "N"}, {"from": "n382", "to": "n510", "label": "NW"}, {"from": "n382", "to": "n510", "label": "SW"}, {"from": "n382", "to": "n510", "label": "W"}, {"from": "n400", "to": "n306", "label": "W"}, {"from": "n400", "to": "n441", "label": "E"}, {"from": "n400", "to": "n471", "label": "SE"}, {"from": "n400", "to": "n557", "label": "S"}, {"from": "n400", "to": "n575", "label": "SW"}, {"from": "n408", "to": "n430", "label": "S"}, {"from": "n408", "to": "n4", "label": "N"}, {"from": "n414", "to": "n353", "label": "IN"}, {"from": "n414", "to": "n353", "label": "N"}, {"from": "n417", "to": "n327", "label": "W"}, {"from": "n418", "to": "n317", "label": "NW"}, {"from": "n418", "to": "n462", "label": "W"}, {"from": "n426", "to": "n317", "label": "E"}, {"from": "n426", "to": "n319", "label": "N"}, {"from": "n426", "to": "n472", "label": "NW"}, {"from": "n426", "to": "n575", "label": "NE"}, {"from": "n42", "to": "n306", "label": "E"}, {"from": "n42", "to": "n319", "label": "S"}, {"from": "n42", "to": "n370", "label": "N"}, {"from": "n42", "to": "n472", "label": "SW"}, {"from": "n42", "to": "n575", "label": "SE"}, {"from": "n437", "to": "n132", "label": "NW"}, {"from": "n437", "to": "n132", "label": "SW"}, {"from": "n437", "to": "n132", "label": "W"}, {"from": "n437", "to": "n226", "label": "N"}, {"from": "n437", "to": "n577", "label": "SE"}, {"from": "n441", "to": "n213", "label": "NW"}, {"from": "n441", "to": "n400", "label": "W"}, {"from": "n441", "to": "n471", "label": "S"}, {"from": "n441", "to": "n557", "label": "SW"}, {"from": "n442", "to": "n1", "label": "W"}, {"from": "n442", "to": "n352", "label": "N"}, {"from": "n442", "to": "n460", "label": "S"}, {"from": "n442", "to": "n6", "label": "E"}, {"from": "n456", "to": "n122", "label": "SE"}, {"from": "n456", "to": "n146", "label": "NW"}, {"from": "n456", "to": "n225", "label": "E"}, {"from": "n456", "to": "n225", "label": "NE"}, {"from": "n456", "to": "n239", "label": "S"}, {"from": "n456", "to": "n239", "label": "SW"}, {"from": "n456", "to": "n290", "label": "N"}, {"from": "n456", "to": "n466", "label": "W"}, {"from": "n460", "to": "n21", "label": "W"}, {"from": "n460", "to": "n442", "label": "N"}, {"from": "n460", "to": "n6", "label": "E"}, {"from": "n462", "to": "n418", "label": "E"}, {"from": "n462", "to": "n580", "label": "W"}, {"from": "n465", "to": "n180", "label": "E"}, {"from": "n466", "to": "n146", "label": "N"}, {"from": "n466", "to": "n219", "label": "W"}, {"from": "n466", "to": "n239", "label": "SE"}, {"from": "n466", "to": "n290", "label": "NE"}, {"from": "n466", "to": "n311", "label": "NW"}, {"from": "n466", "to": "n382", "label": "S"}, {"from": "n466", "to": "n456", "label": "E"}, {"from": "n466", "to": "n510", "label": "SW"}, {"from": "n471", "to": "n400", "label": "NW"}, {"from": "n471", "to": "n441", "label": "N"}, {"from": "n471", "to": "n557", "label": "W"}, {"from": "n472", "to": "n319", "label": "E"}, {"from": "n472", "to": "n426", "label": "SE"}, {"from": "n472", "to": "n42", "label": "NE"}, {"from": "n476", "to": "n344", "label": "IN"}, {"from": "n476", "to": "n344", "label": "N"}, {"from": "n477", "to": "n372", "label": "OUT"}, {"from": "n477", "to": "n372", "label": "SE"}, {"from": "n477", "to": "n37", "label": "W"}, {"from": "n480", "to": "n497", "label": "S"}, {"from": "n488", "to": "n119", "label": "E"}, {"from": "n488", "to": "n188", "label": "W"}, {"from": "n488", "to": "n254", "label": "NE"}, {"from": "n488", "to": "n320", "label": "N"}, {"from": "n488", "to": "n380", "label": "NW"}, {"from": "n488", "to": "n509", "label": "SE"}, {"from": "n488", "to": "n56", "label": "SW"}, {"from": "n488", "to": "n585", "label": "S"}, {"from": "n497", "to": "n311", "label": "NE"}, {"from": "n497", "to": "n480", "label": "N"}, {"from": "n501", "to": "n5", "label": "S"}, {"from": "n507", "to": "n158", "label": "W"}, {"from": "n509", "to": "n119", "label": "N"}, {"from": "n509", "to": "n488", "label": "NW"}, {"from": "n509", "to": "n585", "label": "W"}, {"from": "n510", "to": "n293", "label": "S"}, {"from": "n510", "to": "n293", "label": "SW"}, {"from": "n510", "to": "n382", "label": "E"}, {"from": "n510", "to": "n382", "label": "SE"}, {"from": "n515", "to": "n122", "label": "N"}, {"from": "n515", "to": "n222", "label": "SE"}, {"from": "n515", "to": "n239", "label": "NW"}, {"from": "n515", "to": "n239", "label": "S"}, {"from": "n515", "to": "n239", "label": "SW"}, {"from": "n515", "to": "n239", "label": "W"}, {"from": "n515", "to": "n372", "label": "E"}, {"from": "n515", "to": "n37", "label": "IN"}, {"from": "n515", "to": "n37", "label": "NE"}, {"from": "n531", "to": "n144", "label": "S"}, {"from": "n531", "to": "n179", "label": "E"}, {"from": "n531", "to": "n354", "label": "SW"}, {"from": "n531", "to": "n355", "label": "W"}, {"from": "n531", "to": "n371", "label": "SE"}, {"from": "n534", "to": "n109", "label": "SE"}, {"from": "n534", "to": "n159", "label": "N"}, {"from": "n534", "to": "n159", "label": "W"}, {"from": "n534", "to": "n465", "label": "E"}, {"from": "n534", "to": "n465", "label": "NE"}, {"from": "n534", "to": "n480", "label": "S"}, {"from": "n534", "to": "n480", "label": "SW"}, {"from": "n544", "to": "n120", "label": "NE"}, {"from": "n544", "to": "n132", "label": "S"}, {"from": "n544", "to": "n174", "label": "SW"}, {"from": "n544", "to": "n293", "label": "SE"}, {"from": "n544", "to": "n497", "label": "N"}, {"from": "n544", "to": "n497", "label": "NW"}, {"from": "n544", "to": "n497", "label": "W"}, {"from": "n544", "to": "n510", "label": "E"}, {"from": "n557", "to": "n306", "label": "NW"}, {"from": "n557", "to": "n317", "label": "SW"}, {"from": "n557", "to": "n400", "label": "N"}, {"from": "n557", "to": "n441", "label": "NE"}, {"from": "n557", "to": "n471", "label": "E"}, {"from": "n557", "to": "n565", "label": "S"}, {"from": "n557", "to": "n575", "label": "W"}, {"from": "n558", "to": "n122", "label": "W"}, {"from": "n558", "to": "n225", "label": "N"}, {"from": "n558", "to": "n225", "label": "NE"}, {"from": "n558", "to": "n225", "label": "NW"}, {"from": "n558", "to": "n292", "label": "E"}, {"from": "n558", "to": "n573", "label": "S"}, {"from": "n559", "to": "n222", "label": "E"}, {"from": "n559", "to": "n222", "label": "S"}, {"from": "n559", "to": "n222", "label": "SE"}, {"from": "n559", "to": "n222", "label": "SW"}, {"from": "n559", "to": "n300", "label": "NE"}, {"from": "n559", "to": "n372", "label": "W"}, {"from": "n559", "to": "n573", "label": "NW"}, {"from": "n565", "to": "n317", "label": "W"}, {"from": "n565", "to": "n557", "label": "N"}, {"from": "n565", "to": "n575", "label": "NW"}, {"from": "n56", "to": "n188", "label": "N"}, {"from": "n56", "to": "n488", "label": "NE"}, {"from": "n56", "to": "n585", "label": "E"}, {"from": "n573", "to": "n292", "label": "NE"}, {"from": "n573", "to": "n372", "label": "S"}, {"from": "n573", "to": "n558", "label": "N"}, {"from": "n573", "to": "n559", "label": "SE"}, {"from": "n575", "to": "n317", "label": "S"}, {"from": "n575", "to": "n319", "label": "W"}, {"from": "n575", "to": "n400", "label": "NE"}, {"from": "n575", "to": "n426", "label": "SW"}, {"from": "n575", "to": "n42", "label": "NW"}, {"from": "n575", "to": "n557", "label": "E"}, {"from": "n575", "to": "n565", "label": "SE"}, {"from": "n577", "to": "n222", "label": "E"}, {"from": "n577", "to": "n222", "label": "NE"}, {"from": "n577", "to": "n239", "label": "N"}, {"from": "n580", "to": "n317", "label": "NE"}, {"from": "n580", "to": "n462", "label": "E"}, {"from": "n585", "to": "n119", "label": "NE"}, {"from": "n585", "to": "n188", "label": "NW"}, {"from": "n585", "to": "n488", "label": "N"}, {"from": "n585", "to": "n509", "label": "E"}, {"from": "n585", "to": "n56", "label": "W"}, {"from": "n5", "to": "n501", "label": "N"}, {"from": "n6", "to": "n442", "label": "NW"}, {"from": "n6", "to": "n460", "label": "SW"}, {"from": "n87", "to": "n131", "label": "E"}, {"from": "n87", "to": "n30", "label": "W"}, {"from": "n88", "to": "n88", "label": "IN"}];
+
+var savedPos = null;
+try {
+  var _raw = localStorage.getItem(STORAGE_KEY);
+  if (_raw) savedPos = JSON.parse(_raw);
+} catch(e) { setStatus('localStorage unavailable: ' + e); }
+
+var loadedCount = 0;
+if (savedPos) {
+  NODES_DATA = NODES_DATA.map(function(n) {
+    var p = savedPos[n.id];
+    if (p) { loadedCount++; return Object.assign({}, n, {x: p.x, y: p.y}); }
+    return n;
+  });
+}
+
+var nodes   = new vis.DataSet(NODES_DATA);
+var edges   = new vis.DataSet(EDGES_DATA);
+var network = new vis.Network(
+  document.getElementById('net'),
+  { nodes: nodes, edges: edges },
+  {
+    nodes: {
+      shape: 'box', margin: 8,
+      color: { background:'#1e3a5f', border:'#2563eb',
+                highlight:{ background:'#1d4ed8', border:'#60a5fa' } },
+      font:  { color:'#e5e7eb', size:13, face:'monospace' },
+    },
+    edges: {
+      arrows: 'to',
+      color:  { color:'#4b5563', highlight:'#9ca3af' },
+      font:   { color:'#9ca3af', size:11, align:'middle', background:'#111827' },
+      smooth: { type:'curvedCW', roundness: 0.1 },
+    },
+    physics: { enabled: false },
+    interaction: { dragNodes:true, zoomView:true, dragView:true,
+                    multiselect:true, tooltipDelay:150 },
+  }
+);
+
+if (loadedCount > 0) {
+  setStatus('Loaded ' + loadedCount + ' saved positions');
+  network.once('afterDrawing', function() { network.fit({ animation: false }); });
+} else {
+  setStatus('No saved positions — drag nodes to arrange, then they auto-save');
+  // Spread nodes with a one-shot layout so they are not all at origin
+  network.setOptions({ physics: {
+    enabled: true,
+    barnesHut: { gravitationalConstant:-8000, springLength:160, springConstant:0.04 },
+    stabilization: { iterations: 300 }
+  } });
+  network.once('stabilizationIterationsDone', function() {
+    network.setOptions({ physics: { enabled: false } });
+    network.fit({ animation: false });
+    saveToStorage();
+    setStatus('Auto-laid out. Drag nodes to correct positions — they auto-save.');
+  });
+}
+
+// ── auto-save on every drag (no filter — always save) ────────────────────
+network.on('dragEnd', function() {
+  saveToStorage();
+});
+
+function saveToStorage() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(network.getPositions()));
+    setStatus('Saved (' + Object.keys(network.getPositions()).length + ' nodes)');
+  } catch(e) {
+    setStatus('Save failed: ' + e);
+  }
+}
+
+// ── controls ─────────────────────────────────────────────────────────────
+function fitAll() { network.fit({ animation: true }); }
+
+function autoLayout() {
+  setStatus('Running layout…');
+  network.setOptions({ physics: { enabled: true,
+    barnesHut: { gravitationalConstant:-8000, springLength:160, springConstant:0.04 },
+    stabilization: { iterations: 300 } } });
+  network.once('stabilizationIterationsDone', function() {
+    network.setOptions({ physics: { enabled: false } });
+    network.fit({ animation: true });
+    saveToStorage();
+  });
+}
+
+function saveJSON() {
+  var pos  = network.getPositions();
+  var blob = new Blob([JSON.stringify(pos, null, 2)], {type:'application/json'});
+  var a    = document.createElement('a');
+  a.href   = URL.createObjectURL(blob);
+  a.download = 'map_positions.json';
+  a.click();
+}
+
+function loadJSON(evt) {
+  var file = evt.target.files[0];
+  if (!file) return;
+  file.text().then(function(txt) {
+    var pos = JSON.parse(txt);
+    nodes.update(Object.entries(pos).map(function([id, p]) {
+      return {id:id, x:p.x, y:p.y};
+    }));
+    network.fit({ animation: true });
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(pos)); } catch(e) {}
+    setStatus('Loaded ' + Object.keys(pos).length + ' positions from file');
+  });
+  evt.target.value = '';
+}
+
+function clearStorage() {
+  try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+  setStatus('Cleared. Running new layout…');
+  autoLayout();
+}
+</script>
+</body>
+</html>
