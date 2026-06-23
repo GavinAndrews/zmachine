@@ -1,36 +1,36 @@
-#1: Northwest Room	#12: Sp{are }Room	N
+#1: Northwest Room	#12: Spare Room	N
 #1: Northwest Room	#442: Assembly Room	E
 #1: Northwest Room	#21: Kitchen	S
-#5: Islet	#501: S{and }Bar	N
+#5: Islet	#501: Sand Bar	N
 #6: Front Deck	#460: Southeast Room	SW
 #6: Front Deck	#442: Assembly Room	NW
-#12: Sp{are }Room	#175: Bathroom	N
-#12: Sp{are }Room	#214: Bedroom	E
-#12: Sp{are }Room	#1: Northwest Room	S
-#12: Sp{are }Room	#297: Back Yard	W
+#12: Spare Room	#175: Bathroom	N
+#12: Spare Room	#214: Bedroom	E
+#12: Spare Room	#1: Northwest Room	S
+#12: Spare Room	#297: Back Yard	W
 #21: Kitchen	#1: Northwest Room	N
 #21: Kitchen	#460: Southeast Room	E
 #21: Kitchen	#240: Hallway	W
-#30: Under{ground}	#87: Under{ground}	E
-#30: Under{ground}	#87: Under{ground}	OUT
+#30: Underground	#87: Underground	E
+#30: Underground	#87: Underground	OUT
 #37: Southwest Yard	#477: Southeast Yard	E
-#37: Southwest Yard	#515: Southwest {of }Ranch	SW
-#37: Southwest Yard	#515: Southwest {of }Ranch	OUT
+#37: Southwest Yard	#515: Southwest of Ranch	SW
+#37: Southwest Yard	#515: Southwest of Ranch	OUT
 #42: North Bog	#370: Promontory	N
 #42: North Bog	#306: Chasm's Brink	E
-#42: North Bog	#575: Bottom {of }Stairs	SE
+#42: North Bog	#575: Bottom of Stairs	SE
 #42: North Bog	#319: South Bog	S
 #42: North Bog	#472: Waterfall	SW
 #56: Tundra	#188: Tundra	N
 #56: Tundra	#488: Under Platform	NE
 #56: Tundra	#585: Tundra	E
-#87: Under{ground}	#131: Under{ground}	E
-#87: Under{ground}	#30: Under{ground}	W
-#88: {that}	#88: {that}	IN
+#87: Underground	#131: Underground	E
+#87: Underground	#30: Underground	W
+#88: that	#88: that	IN
 #109: Paved Road	#465: Desert	N
 #109: Paved Road	#465: Desert	NE
 #109: Paved Road	#465: Desert	E
-#109: Paved Road	#210: Northwest {of }Tower	SE
+#109: Paved Road	#210: Northwest of Tower	SE
 #109: Paved Road	#480: Desert	S
 #109: Paved Road	#480: Desert	SW
 #109: Paved Road	#480: Desert	W
@@ -41,40 +41,40 @@
 #119: Tundra	#488: Under Platform	W
 #119: Tundra	#320: Tundra	NW
 #120: Paved Road	#497: Desert	N
-#120: Paved Road	#219: Southwest {of }Tower	NE
+#120: Paved Road	#219: Southwest of Tower	NE
 #120: Paved Road	#510: Desert	E
 #120: Paved Road	#510: Desert	SE
 #120: Paved Road	#510: Desert	S
 #120: Paved Road	#544: Crossroads	SW
 #120: Paved Road	#497: Desert	W
 #120: Paved Road	#497: Desert	NW
-#122: Northwest {of }Ranch	#225: Foothills	N
-#122: Northwest {of }Ranch	#225: Foothills	NE
-#122: Northwest {of }Ranch	#558: Northeast {of }Ranch	E
-#122: Northwest {of }Ranch	#297: Back Yard	SE
-#122: Northwest {of }Ranch	#515: Southwest {of }Ranch	S
-#122: Northwest {of }Ranch	#239: Desert	SW
-#122: Northwest {of }Ranch	#239: Desert	W
-#122: Northwest {of }Ranch	#456: Shallow Crater	NW
-#122: Northwest {of }Ranch	#297: Back Yard	IN
-#131: Under{ground}	#87: Under{ground}	W
+#122: Northwest of Ranch	#225: Foothills	N
+#122: Northwest of Ranch	#225: Foothills	NE
+#122: Northwest of Ranch	#558: Northeast of Ranch	E
+#122: Northwest of Ranch	#297: Back Yard	SE
+#122: Northwest of Ranch	#515: Southwest of Ranch	S
+#122: Northwest of Ranch	#239: Desert	SW
+#122: Northwest of Ranch	#239: Desert	W
+#122: Northwest of Ranch	#456: Shallow Crater	NW
+#122: Northwest of Ranch	#297: Back Yard	IN
+#131: Underground	#87: Underground	W
 #132: Desert	#174: Outside Blockhouse	NW
 #139: Northeast Yard	#214: Bedroom	W
 #139: Northeast Yard	#214: Bedroom	IN
 #144: Round Pond	#531: Inverness Terrace	N
 #144: Round Pond	#179: Lancaster Gate	NE
 #144: Round Pond	#371: Lancaster Walk	E
-#144: Round Pond	#79: {The }Wabe	S
+#144: Round Pond	#79: The Wabe	S
 #144: Round Pond	#354: Broad Walk	W
-#144: Round Pond	#355: Black Li{on }Gate	NW
-#146: Base {of }Tower	#296: North {of }Tower	N
-#146: Base {of }Tower	#381: Northeast {of }Tower	NE
-#146: Base {of }Tower	#290: East {of }Tower	E
-#146: Base {of }Tower	#456: Shallow Crater	SE
-#146: Base {of }Tower	#466: South {of }Tower	S
-#146: Base {of }Tower	#219: Southwest {of }Tower	SW
-#146: Base {of }Tower	#311: West {of }Tower	W
-#146: Base {of }Tower	#210: Northwest {of }Tower	NW
+#144: Round Pond	#355: Black Lion Gate	NW
+#146: Base of Tower	#296: North of Tower	N
+#146: Base of Tower	#381: Northeast of Tower	NE
+#146: Base of Tower	#290: East of Tower	E
+#146: Base of Tower	#456: Shallow Crater	SE
+#146: Base of Tower	#466: South of Tower	S
+#146: Base of Tower	#219: Southwest of Tower	SW
+#146: Base of Tower	#311: West of Tower	W
+#146: Base of Tower	#210: Northwest of Tower	NW
 #158: Tower Platform	#507: Shack	E
 #158: Tower Platform	#507: Shack	IN
 #159: Desert	#480: Desert	SE
@@ -84,38 +84,38 @@
 #174: Outside Blockhouse	#132: Desert	SE
 #174: Outside Blockhouse	#529: Desert	S
 #174: Outside Blockhouse	#529: Desert	W
-#175: Bathroom	#12: Sp{are }Room	S
-#175: Bathroom	#12: Sp{are }Room	IN
-#175: Bathroom	#12: Sp{are }Room	OUT
+#175: Bathroom	#12: Spare Room	S
+#175: Bathroom	#12: Spare Room	IN
+#175: Bathroom	#12: Spare Room	OUT
 #180: Foothills	#465: Desert	W
 #188: Tundra	#380: Tundra	N
 #188: Tundra	#320: Tundra	NE
 #188: Tundra	#488: Under Platform	E
 #188: Tundra	#585: Tundra	SE
 #188: Tundra	#56: Tundra	S
-#210: Northwest {of }Tower	#465: Desert	N
-#210: Northwest {of }Tower	#465: Desert	NE
-#210: Northwest {of }Tower	#296: North {of }Tower	E
-#210: Northwest {of }Tower	#146: Base {of }Tower	SE
-#210: Northwest {of }Tower	#311: West {of }Tower	S
-#210: Northwest {of }Tower	#480: Desert	SW
-#210: Northwest {of }Tower	#480: Desert	W
-#210: Northwest {of }Tower	#109: Paved Road	NW
+#210: Northwest of Tower	#465: Desert	N
+#210: Northwest of Tower	#465: Desert	NE
+#210: Northwest of Tower	#296: North of Tower	E
+#210: Northwest of Tower	#146: Base of Tower	SE
+#210: Northwest of Tower	#311: West of Tower	S
+#210: Northwest of Tower	#480: Desert	SW
+#210: Northwest of Tower	#480: Desert	W
+#210: Northwest of Tower	#109: Paved Road	NW
 #213: Bluff	#327: Cottage	E
 #213: Bluff	#441: Crater's Edge	SE
 #213: Bluff	#306: Chasm's Brink	SW
 #213: Bluff	#327: Cottage	IN
 #214: Bedroom	#139: Northeast Yard	E
-#214: Bedroom	#12: Sp{are }Room	W
-#214: Bedroom	#12: Sp{are }Room	IN
-#219: Southwest {of }Tower	#311: West {of }Tower	N
-#219: Southwest {of }Tower	#146: Base {of }Tower	NE
-#219: Southwest {of }Tower	#466: South {of }Tower	E
-#219: Southwest {of }Tower	#510: Desert	SE
-#219: Southwest {of }Tower	#510: Desert	S
-#219: Southwest {of }Tower	#120: Paved Road	SW
-#219: Southwest {of }Tower	#497: Desert	W
-#219: Southwest {of }Tower	#480: Desert	NW
+#214: Bedroom	#12: Spare Room	W
+#214: Bedroom	#12: Spare Room	IN
+#219: Southwest of Tower	#311: West of Tower	N
+#219: Southwest of Tower	#146: Base of Tower	NE
+#219: Southwest of Tower	#466: South of Tower	E
+#219: Southwest of Tower	#510: Desert	SE
+#219: Southwest of Tower	#510: Desert	S
+#219: Southwest of Tower	#120: Paved Road	SW
+#219: Southwest of Tower	#497: Desert	W
+#219: Southwest of Tower	#480: Desert	NW
 #222: Foothills	#577: Desert	S
 #222: Foothills	#577: Desert	SW
 #225: Foothills	#180: Foothills	N
@@ -123,12 +123,12 @@
 #226: Paved Road	#239: Desert	NE
 #226: Paved Road	#577: Desert	E
 #226: Paved Road	#577: Desert	SE
-#226: Paved Road	#437: Behind {the }Shed	S
+#226: Paved Road	#437: Behind the Shed	S
 #226: Paved Road	#132: Desert	SW
 #226: Paved Road	#132: Desert	W
 #226: Paved Road	#293: Paved Road	NW
 #236: Palace Gate	#354: Broad Walk	N
-#236: Palace Gate	#79: {The }Wabe	NE
+#236: Palace Gate	#79: The Wabe	NE
 #236: Palace Gate	#250: Flower Walk	E
 #239: Desert	#577: Desert	S
 #239: Desert	#382: Paved Road	W
@@ -137,25 +137,25 @@
 #240: Hallway	#37: Southwest Yard	S
 #250: Flower Walk	#371: Lancaster Walk	N
 #250: Flower Walk	#236: Palace Gate	W
-#250: Flower Walk	#79: {The }Wabe	NW
+#250: Flower Walk	#79: The Wabe	NW
 #254: Tundra	#119: Tundra	S
 #254: Tundra	#488: Under Platform	SW
 #254: Tundra	#320: Tundra	W
-#290: East {of }Tower	#381: Northeast {of }Tower	N
-#290: East {of }Tower	#225: Foothills	NE
-#290: East {of }Tower	#225: Foothills	E
-#290: East {of }Tower	#225: Foothills	SE
-#290: East {of }Tower	#456: Shallow Crater	S
-#290: East {of }Tower	#466: South {of }Tower	SW
-#290: East {of }Tower	#146: Base {of }Tower	W
-#290: East {of }Tower	#296: North {of }Tower	NW
-#292: North {of }Reservoir	#225: Foothills	N
-#292: North {of }Reservoir	#225: Foothills	NE
-#292: North {of }Reservoir	#225: Foothills	E
-#292: North {of }Reservoir	#300: Under {the }Windmill	SE
-#292: North {of }Reservoir	#573: Front Yard	SW
-#292: North {of }Reservoir	#558: Northeast {of }Ranch	W
-#292: North {of }Reservoir	#225: Foothills	NW
+#290: East of Tower	#381: Northeast of Tower	N
+#290: East of Tower	#225: Foothills	NE
+#290: East of Tower	#225: Foothills	E
+#290: East of Tower	#225: Foothills	SE
+#290: East of Tower	#456: Shallow Crater	S
+#290: East of Tower	#466: South of Tower	SW
+#290: East of Tower	#146: Base of Tower	W
+#290: East of Tower	#296: North of Tower	NW
+#292: North of Reservoir	#225: Foothills	N
+#292: North of Reservoir	#225: Foothills	NE
+#292: North of Reservoir	#225: Foothills	E
+#292: North of Reservoir	#300: Under the Windmill	SE
+#292: North of Reservoir	#573: Front Yard	SW
+#292: North of Reservoir	#558: Northeast of Ranch	W
+#292: North of Reservoir	#225: Foothills	NW
 #293: Paved Road	#510: Desert	N
 #293: Paved Road	#510: Desert	NE
 #293: Paved Road	#510: Desert	E
@@ -164,48 +164,48 @@
 #293: Paved Road	#132: Desert	SW
 #293: Paved Road	#132: Desert	W
 #293: Paved Road	#544: Crossroads	NW
-#296: North {of }Tower	#465: Desert	N
-#296: North {of }Tower	#180: Foothills	NE
-#296: North {of }Tower	#381: Northeast {of }Tower	E
-#296: North {of }Tower	#290: East {of }Tower	SE
-#296: North {of }Tower	#146: Base {of }Tower	S
-#296: North {of }Tower	#311: West {of }Tower	SW
-#296: North {of }Tower	#210: Northwest {of }Tower	W
-#296: North {of }Tower	#465: Desert	NW
-#297: Back Yard	#12: Sp{are }Room	E
-#297: Back Yard	#122: Northwest {of }Ranch	NW
-#297: Back Yard	#122: Northwest {of }Ranch	OUT
-#300: Under {the }Windmill	#225: Foothills	N
-#300: Under {the }Windmill	#225: Foothills	NE
-#300: Under {the }Windmill	#225: Foothills	E
-#300: Under {the }Windmill	#222: Foothills	SE
-#300: Under {the }Windmill	#222: Foothills	S
-#300: Under {the }Windmill	#559: South {of }Reservoir	SW
-#300: Under {the }Windmill	#292: North {of }Reservoir	NW
+#296: North of Tower	#465: Desert	N
+#296: North of Tower	#180: Foothills	NE
+#296: North of Tower	#381: Northeast of Tower	E
+#296: North of Tower	#290: East of Tower	SE
+#296: North of Tower	#146: Base of Tower	S
+#296: North of Tower	#311: West of Tower	SW
+#296: North of Tower	#210: Northwest of Tower	W
+#296: North of Tower	#465: Desert	NW
+#297: Back Yard	#12: Spare Room	E
+#297: Back Yard	#122: Northwest of Ranch	NW
+#297: Back Yard	#122: Northwest of Ranch	OUT
+#300: Under the Windmill	#225: Foothills	N
+#300: Under the Windmill	#225: Foothills	NE
+#300: Under the Windmill	#225: Foothills	E
+#300: Under the Windmill	#222: Foothills	SE
+#300: Under the Windmill	#222: Foothills	S
+#300: Under the Windmill	#559: South of Reservoir	SW
+#300: Under the Windmill	#292: North of Reservoir	NW
 #306: Chasm's Brink	#213: Bluff	NE
 #306: Chasm's Brink	#400: Under Cliff	E
-#306: Chasm's Brink	#557: {The }Bend	SE
+#306: Chasm's Brink	#557: The Bend	SE
 #306: Chasm's Brink	#319: South Bog	SW
 #306: Chasm's Brink	#42: North Bog	W
 #306: Chasm's Brink	#370: Promontory	NW
-#311: West {of }Tower	#210: Northwest {of }Tower	N
-#311: West {of }Tower	#296: North {of }Tower	NE
-#311: West {of }Tower	#146: Base {of }Tower	E
-#311: West {of }Tower	#466: South {of }Tower	SE
-#311: West {of }Tower	#219: Southwest {of }Tower	S
-#311: West {of }Tower	#497: Desert	SW
-#311: West {of }Tower	#480: Desert	W
-#311: West {of }Tower	#480: Desert	NW
-#317: Trellises	#575: Bottom {of }Stairs	N
-#317: Trellises	#557: {The }Bend	NE
-#317: Trellises	#565: {The }River	E
+#311: West of Tower	#210: Northwest of Tower	N
+#311: West of Tower	#296: North of Tower	NE
+#311: West of Tower	#146: Base of Tower	E
+#311: West of Tower	#466: South of Tower	SE
+#311: West of Tower	#219: Southwest of Tower	S
+#311: West of Tower	#497: Desert	SW
+#311: West of Tower	#480: Desert	W
+#311: West of Tower	#480: Desert	NW
+#317: Trellises	#575: Bottom of Stairs	N
+#317: Trellises	#557: The Bend	NE
+#317: Trellises	#565: The River	E
 #317: Trellises	#418: Arborvitaes	SE
 #317: Trellises	#580: Arborvitaes	SW
 #317: Trellises	#426: Forest Clearing	W
 #317: Trellises	#319: South Bog	NW
 #319: South Bog	#42: North Bog	N
 #319: South Bog	#306: Chasm's Brink	NE
-#319: South Bog	#575: Bottom {of }Stairs	E
+#319: South Bog	#575: Bottom of Stairs	E
 #319: South Bog	#317: Trellises	SE
 #319: South Bog	#426: Forest Clearing	S
 #319: South Bog	#472: Waterfall	W
@@ -219,45 +219,45 @@
 #323: Summit	#576: Meadow	S
 #327: Cottage	#417: Herb Garden	E
 #327: Cottage	#213: Bluff	W
-#344: Bottom {of }Scaffold	#476: South Beach	S
-#344: Bottom {of }Scaffold	#476: South Beach	OUT
+#344: Bottom of Scaffold	#476: South Beach	S
+#344: Bottom of Scaffold	#476: South Beach	OUT
 #352: Closet	#442: Assembly Room	S
 #352: Closet	#442: Assembly Room	OUT
-#354: Broad Walk	#355: Black Li{on }Gate	N
+#354: Broad Walk	#355: Black Lion Gate	N
 #354: Broad Walk	#531: Inverness Terrace	NE
 #354: Broad Walk	#144: Round Pond	E
-#354: Broad Walk	#79: {The }Wabe	SE
+#354: Broad Walk	#79: The Wabe	SE
 #354: Broad Walk	#236: Palace Gate	S
-#355: Black Li{on }Gate	#531: Inverness Terrace	E
-#355: Black Li{on }Gate	#144: Round Pond	SE
-#355: Black Li{on }Gate	#354: Broad Walk	S
+#355: Black Lion Gate	#531: Inverness Terrace	E
+#355: Black Lion Gate	#144: Round Pond	SE
+#355: Black Lion Gate	#354: Broad Walk	S
 #370: Promontory	#306: Chasm's Brink	SE
 #370: Promontory	#42: North Bog	S
 #371: Lancaster Walk	#179: Lancaster Gate	N
 #371: Lancaster Walk	#250: Flower Walk	S
-#371: Lancaster Walk	#79: {The }Wabe	SW
+#371: Lancaster Walk	#79: The Wabe	SW
 #371: Lancaster Walk	#144: Round Pond	W
 #371: Lancaster Walk	#531: Inverness Terrace	NW
-#372: Southeast {of }Ranch	#573: Front Yard	N
-#372: Southeast {of }Ranch	#559: South {of }Reservoir	E
-#372: Southeast {of }Ranch	#222: Foothills	SE
-#372: Southeast {of }Ranch	#222: Foothills	S
-#372: Southeast {of }Ranch	#239: Desert	SW
-#372: Southeast {of }Ranch	#515: Southwest {of }Ranch	W
-#372: Southeast {of }Ranch	#477: Southeast Yard	NW
-#372: Southeast {of }Ranch	#477: Southeast Yard	IN
+#372: Southeast of Ranch	#573: Front Yard	N
+#372: Southeast of Ranch	#559: South of Reservoir	E
+#372: Southeast of Ranch	#222: Foothills	SE
+#372: Southeast of Ranch	#222: Foothills	S
+#372: Southeast of Ranch	#239: Desert	SW
+#372: Southeast of Ranch	#515: Southwest of Ranch	W
+#372: Southeast of Ranch	#477: Southeast Yard	NW
+#372: Southeast of Ranch	#477: Southeast Yard	IN
 #380: Tundra	#320: Tundra	E
 #380: Tundra	#488: Under Platform	SE
 #380: Tundra	#188: Tundra	S
-#381: Northeast {of }Tower	#180: Foothills	N
-#381: Northeast {of }Tower	#180: Foothills	NE
-#381: Northeast {of }Tower	#225: Foothills	E
-#381: Northeast {of }Tower	#225: Foothills	SE
-#381: Northeast {of }Tower	#290: East {of }Tower	S
-#381: Northeast {of }Tower	#146: Base {of }Tower	SW
-#381: Northeast {of }Tower	#296: North {of }Tower	W
-#381: Northeast {of }Tower	#465: Desert	NW
-#382: Paved Road	#466: South {of }Tower	N
+#381: Northeast of Tower	#180: Foothills	N
+#381: Northeast of Tower	#180: Foothills	NE
+#381: Northeast of Tower	#225: Foothills	E
+#381: Northeast of Tower	#225: Foothills	SE
+#381: Northeast of Tower	#290: East of Tower	S
+#381: Northeast of Tower	#146: Base of Tower	SW
+#381: Northeast of Tower	#296: North of Tower	W
+#381: Northeast of Tower	#465: Desert	NW
+#382: Paved Road	#466: South of Tower	N
 #382: Paved Road	#239: Desert	NE
 #382: Paved Road	#239: Desert	E
 #382: Paved Road	#239: Desert	SE
@@ -267,66 +267,66 @@
 #382: Paved Road	#510: Desert	NW
 #400: Under Cliff	#441: Crater's Edge	E
 #400: Under Cliff	#471: Moor	SE
-#400: Under Cliff	#557: {The }Bend	S
-#400: Under Cliff	#575: Bottom {of }Stairs	SW
+#400: Under Cliff	#557: The Bend	S
+#400: Under Cliff	#575: Bottom of Stairs	SW
 #400: Under Cliff	#306: Chasm's Brink	W
-#408: Top {of }Arbor	#4: North Arbor	N
-#408: Top {of }Arbor	#430: South Arbor	S
+#408: Top of Arbor	#4: North Arbor	N
+#408: Top of Arbor	#430: South Arbor	S
 #414: Cemetery	#353: Barrow	N
 #414: Cemetery	#353: Barrow	IN
 #417: Herb Garden	#327: Cottage	W
 #418: Arborvitaes	#462: Arboretum	W
 #418: Arborvitaes	#317: Trellises	NW
 #426: Forest Clearing	#319: South Bog	N
-#426: Forest Clearing	#575: Bottom {of }Stairs	NE
+#426: Forest Clearing	#575: Bottom of Stairs	NE
 #426: Forest Clearing	#317: Trellises	E
 #426: Forest Clearing	#472: Waterfall	NW
-#437: Behind {the }Shed	#226: Paved Road	N
-#437: Behind {the }Shed	#577: Desert	SE
-#437: Behind {the }Shed	#132: Desert	SW
-#437: Behind {the }Shed	#132: Desert	W
-#437: Behind {the }Shed	#132: Desert	NW
+#437: Behind the Shed	#226: Paved Road	N
+#437: Behind the Shed	#577: Desert	SE
+#437: Behind the Shed	#132: Desert	SW
+#437: Behind the Shed	#132: Desert	W
+#437: Behind the Shed	#132: Desert	NW
 #441: Crater's Edge	#471: Moor	S
-#441: Crater's Edge	#557: {The }Bend	SW
+#441: Crater's Edge	#557: The Bend	SW
 #441: Crater's Edge	#400: Under Cliff	W
 #441: Crater's Edge	#213: Bluff	NW
 #442: Assembly Room	#352: Closet	N
 #442: Assembly Room	#6: Front Deck	E
 #442: Assembly Room	#460: Southeast Room	S
 #442: Assembly Room	#1: Northwest Room	W
-#456: Shallow Crater	#290: East {of }Tower	N
+#456: Shallow Crater	#290: East of Tower	N
 #456: Shallow Crater	#225: Foothills	NE
 #456: Shallow Crater	#225: Foothills	E
-#456: Shallow Crater	#122: Northwest {of }Ranch	SE
+#456: Shallow Crater	#122: Northwest of Ranch	SE
 #456: Shallow Crater	#239: Desert	S
 #456: Shallow Crater	#239: Desert	SW
-#456: Shallow Crater	#466: South {of }Tower	W
-#456: Shallow Crater	#146: Base {of }Tower	NW
+#456: Shallow Crater	#466: South of Tower	W
+#456: Shallow Crater	#146: Base of Tower	NW
 #460: Southeast Room	#442: Assembly Room	N
 #460: Southeast Room	#6: Front Deck	E
 #460: Southeast Room	#21: Kitchen	W
 #462: Arboretum	#418: Arborvitaes	E
 #462: Arboretum	#580: Arborvitaes	W
 #465: Desert	#180: Foothills	E
-#466: South {of }Tower	#146: Base {of }Tower	N
-#466: South {of }Tower	#290: East {of }Tower	NE
-#466: South {of }Tower	#456: Shallow Crater	E
-#466: South {of }Tower	#239: Desert	SE
-#466: South {of }Tower	#382: Paved Road	S
-#466: South {of }Tower	#510: Desert	SW
-#466: South {of }Tower	#219: Southwest {of }Tower	W
-#466: South {of }Tower	#311: West {of }Tower	NW
+#466: South of Tower	#146: Base of Tower	N
+#466: South of Tower	#290: East of Tower	NE
+#466: South of Tower	#456: Shallow Crater	E
+#466: South of Tower	#239: Desert	SE
+#466: South of Tower	#382: Paved Road	S
+#466: South of Tower	#510: Desert	SW
+#466: South of Tower	#219: Southwest of Tower	W
+#466: South of Tower	#311: West of Tower	NW
 #471: Moor	#441: Crater's Edge	N
-#471: Moor	#557: {The }Bend	W
+#471: Moor	#557: The Bend	W
 #471: Moor	#400: Under Cliff	NW
 #472: Waterfall	#42: North Bog	NE
 #472: Waterfall	#319: South Bog	E
 #472: Waterfall	#426: Forest Clearing	SE
-#476: South Beach	#344: Bottom {of }Scaffold	N
-#476: South Beach	#344: Bottom {of }Scaffold	IN
-#477: Southeast Yard	#372: Southeast {of }Ranch	SE
+#476: South Beach	#344: Bottom of Scaffold	N
+#476: South Beach	#344: Bottom of Scaffold	IN
+#477: Southeast Yard	#372: Southeast of Ranch	SE
 #477: Southeast Yard	#37: Southwest Yard	W
-#477: Southeast Yard	#372: Southeast {of }Ranch	OUT
+#477: Southeast Yard	#372: Southeast of Ranch	OUT
 #480: Desert	#497: Desert	S
 #488: Under Platform	#320: Tundra	N
 #488: Under Platform	#254: Tundra	NE
@@ -337,8 +337,8 @@
 #488: Under Platform	#188: Tundra	W
 #488: Under Platform	#380: Tundra	NW
 #497: Desert	#480: Desert	N
-#497: Desert	#311: West {of }Tower	NE
-#501: S{and }Bar	#5: Islet	S
+#497: Desert	#311: West of Tower	NE
+#501: Sand Bar	#5: Islet	S
 #507: Shack	#158: Tower Platform	W
 #509: Tundra	#119: Tundra	N
 #509: Tundra	#585: Tundra	W
@@ -347,20 +347,20 @@
 #510: Desert	#382: Paved Road	SE
 #510: Desert	#293: Paved Road	S
 #510: Desert	#293: Paved Road	SW
-#515: Southwest {of }Ranch	#122: Northwest {of }Ranch	N
-#515: Southwest {of }Ranch	#37: Southwest Yard	NE
-#515: Southwest {of }Ranch	#372: Southeast {of }Ranch	E
-#515: Southwest {of }Ranch	#222: Foothills	SE
-#515: Southwest {of }Ranch	#239: Desert	S
-#515: Southwest {of }Ranch	#239: Desert	SW
-#515: Southwest {of }Ranch	#239: Desert	W
-#515: Southwest {of }Ranch	#239: Desert	NW
-#515: Southwest {of }Ranch	#37: Southwest Yard	IN
+#515: Southwest of Ranch	#122: Northwest of Ranch	N
+#515: Southwest of Ranch	#37: Southwest Yard	NE
+#515: Southwest of Ranch	#372: Southeast of Ranch	E
+#515: Southwest of Ranch	#222: Foothills	SE
+#515: Southwest of Ranch	#239: Desert	S
+#515: Southwest of Ranch	#239: Desert	SW
+#515: Southwest of Ranch	#239: Desert	W
+#515: Southwest of Ranch	#239: Desert	NW
+#515: Southwest of Ranch	#37: Southwest Yard	IN
 #531: Inverness Terrace	#179: Lancaster Gate	E
 #531: Inverness Terrace	#371: Lancaster Walk	SE
 #531: Inverness Terrace	#144: Round Pond	S
 #531: Inverness Terrace	#354: Broad Walk	SW
-#531: Inverness Terrace	#355: Black Li{on }Gate	W
+#531: Inverness Terrace	#355: Black Lion Gate	W
 #534: Paved Road	#159: Desert	N
 #534: Paved Road	#465: Desert	NE
 #534: Paved Road	#465: Desert	E
@@ -376,40 +376,40 @@
 #544: Crossroads	#174: Outside Blockhouse	SW
 #544: Crossroads	#497: Desert	W
 #544: Crossroads	#497: Desert	NW
-#557: {The }Bend	#400: Under Cliff	N
-#557: {The }Bend	#441: Crater's Edge	NE
-#557: {The }Bend	#471: Moor	E
-#557: {The }Bend	#565: {The }River	S
-#557: {The }Bend	#317: Trellises	SW
-#557: {The }Bend	#575: Bottom {of }Stairs	W
-#557: {The }Bend	#306: Chasm's Brink	NW
-#558: Northeast {of }Ranch	#225: Foothills	N
-#558: Northeast {of }Ranch	#225: Foothills	NE
-#558: Northeast {of }Ranch	#292: North {of }Reservoir	E
-#558: Northeast {of }Ranch	#573: Front Yard	S
-#558: Northeast {of }Ranch	#122: Northwest {of }Ranch	W
-#558: Northeast {of }Ranch	#225: Foothills	NW
-#559: South {of }Reservoir	#300: Under {the }Windmill	NE
-#559: South {of }Reservoir	#222: Foothills	E
-#559: South {of }Reservoir	#222: Foothills	SE
-#559: South {of }Reservoir	#222: Foothills	S
-#559: South {of }Reservoir	#222: Foothills	SW
-#559: South {of }Reservoir	#372: Southeast {of }Ranch	W
-#559: South {of }Reservoir	#573: Front Yard	NW
-#565: {The }River	#557: {The }Bend	N
-#565: {The }River	#317: Trellises	W
-#565: {The }River	#575: Bottom {of }Stairs	NW
-#573: Front Yard	#558: Northeast {of }Ranch	N
-#573: Front Yard	#292: North {of }Reservoir	NE
-#573: Front Yard	#559: South {of }Reservoir	SE
-#573: Front Yard	#372: Southeast {of }Ranch	S
-#575: Bottom {of }Stairs	#400: Under Cliff	NE
-#575: Bottom {of }Stairs	#557: {The }Bend	E
-#575: Bottom {of }Stairs	#565: {The }River	SE
-#575: Bottom {of }Stairs	#317: Trellises	S
-#575: Bottom {of }Stairs	#426: Forest Clearing	SW
-#575: Bottom {of }Stairs	#319: South Bog	W
-#575: Bottom {of }Stairs	#42: North Bog	NW
+#557: The Bend	#400: Under Cliff	N
+#557: The Bend	#441: Crater's Edge	NE
+#557: The Bend	#471: Moor	E
+#557: The Bend	#565: The River	S
+#557: The Bend	#317: Trellises	SW
+#557: The Bend	#575: Bottom of Stairs	W
+#557: The Bend	#306: Chasm's Brink	NW
+#558: Northeast of Ranch	#225: Foothills	N
+#558: Northeast of Ranch	#225: Foothills	NE
+#558: Northeast of Ranch	#292: North of Reservoir	E
+#558: Northeast of Ranch	#573: Front Yard	S
+#558: Northeast of Ranch	#122: Northwest of Ranch	W
+#558: Northeast of Ranch	#225: Foothills	NW
+#559: South of Reservoir	#300: Under the Windmill	NE
+#559: South of Reservoir	#222: Foothills	E
+#559: South of Reservoir	#222: Foothills	SE
+#559: South of Reservoir	#222: Foothills	S
+#559: South of Reservoir	#222: Foothills	SW
+#559: South of Reservoir	#372: Southeast of Ranch	W
+#559: South of Reservoir	#573: Front Yard	NW
+#565: The River	#557: The Bend	N
+#565: The River	#317: Trellises	W
+#565: The River	#575: Bottom of Stairs	NW
+#573: Front Yard	#558: Northeast of Ranch	N
+#573: Front Yard	#292: North of Reservoir	NE
+#573: Front Yard	#559: South of Reservoir	SE
+#573: Front Yard	#372: Southeast of Ranch	S
+#575: Bottom of Stairs	#400: Under Cliff	NE
+#575: Bottom of Stairs	#557: The Bend	E
+#575: Bottom of Stairs	#565: The River	SE
+#575: Bottom of Stairs	#317: Trellises	S
+#575: Bottom of Stairs	#426: Forest Clearing	SW
+#575: Bottom of Stairs	#319: South Bog	W
+#575: Bottom of Stairs	#42: North Bog	NW
 #577: Desert	#239: Desert	N
 #577: Desert	#222: Foothills	NE
 #577: Desert	#222: Foothills	E

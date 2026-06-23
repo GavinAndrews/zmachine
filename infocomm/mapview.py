@@ -63,7 +63,7 @@ def node_label(loc):
     return loc.strip().replace('"', "'")
 
 def edge_label(cmd):
-    return cmd.replace('"', "'").replace('|', '\\|')
+    return cmd.replace('"', "'")
 
 
 # ---------------------------------------------------------------------------
@@ -152,9 +152,17 @@ HTML = """\
     <input id="file-load" type="file" accept=".json" onchange="loadJSON(event)">
   </label>
   <button onclick="clearStorage()" title="Forget saved positions and re-run layout">Clear saved</button>
+  <label style="display:flex;align-items:center;gap:4px;font-size:12px;">
+    Labels:
+    <select id="label-style" onchange="applyLabelStyle(this.value); saveToStorage();"
+            style="background:#374151;color:#e5e7eb;border:1px solid #4b5563;border-radius:4px;padding:2px 4px;font-size:12px;cursor:pointer;">
+      <option value="labels">Show</option>
+      <option value="none">Hide</option>
+    </select>
+  </label>
   <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:12px;">
     <input type="checkbox" id="show-notes" onchange="toggleNotes(this.checked); saveToStorage();">
-    Show notes
+    Notes
   </label>
   <button onclick="saveJPEG()" title="Download the current view as a JPEG image">Save JPEG</button>
   <button onclick="printPDF()" title="Open image in new tab — use browser Print to save as PDF">Print / PDF</button>
@@ -208,8 +216,9 @@ var network = new vis.Network(
     edges: {{
       arrows: 'to',
       color:  {{ color:'#4b5563', highlight:'#9ca3af' }},
-      font:   {{ color:'#9ca3af', size:11, align:'middle', background:'#111827' }},
-      smooth: {{ type:'curvedCW', roundness: 0.1 }},
+      font:   {{ color:'#e5e7eb', size:12, align:'middle',
+                 background:'#111827', strokeWidth:2, strokeColor:'#111827' }},
+      smooth: {{ type:'curvedCW', roundness: 0.2 }},
     }},
     physics: {{ enabled: false }},
     interaction: {{ dragNodes:true, zoomView:true, dragView:true,
@@ -217,7 +226,12 @@ var network = new vis.Network(
   }}
 );
 
-// ── restore notes checkbox after network is ready ────────────────────────
+// ── restore label style and notes checkbox after network is ready ─────────
+var savedLabelStyle = (savedPos && savedPos._labelStyle) || 'labels';
+var _lsel = document.getElementById('label-style');
+if (_lsel) {{ _lsel.value = savedLabelStyle; }}
+if (savedLabelStyle !== 'labels') {{ applyLabelStyle(savedLabelStyle); }}
+
 if (savedShowNotes) {{
   var cb = document.getElementById('show-notes');
   if (cb) {{ cb.checked = true; toggleNotes(true); }}
@@ -252,6 +266,8 @@ function saveToStorage() {{
     var data = network.getPositions();
     var _cb = document.getElementById('show-notes');
     data._showNotes = !!(_cb && _cb.checked);
+    var _ls = document.getElementById('label-style');
+    data._labelStyle = _ls ? _ls.value : 'labels';
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     setStatus('Saved (' + Object.keys(network.getPositions()).length + ' nodes)');
   }} catch(e) {{
@@ -296,6 +312,13 @@ function loadJSON(evt) {{
     setStatus('Loaded ' + Object.keys(pos).length + ' positions from file');
   }});
   evt.target.value = '';
+}}
+
+function applyLabelStyle(style) {{
+  var show = (style !== 'none');
+  edges.get().forEach(function(e) {{
+    edges.update({{ id: e.id, font: {{ color: show ? '#e5e7eb' : 'rgba(0,0,0,0)' }} }});
+  }});
 }}
 
 function toggleNotes(show) {{
@@ -432,9 +455,22 @@ def build_html(transitions, nodes, notes):
             }
         vis_nodes.append(node)
 
+    # Merge only true parallel edges (same from/to pair) into one label.
+    # Bidirectional pairs (A→B + B→A) are kept as separate directed edges so
+    # each label sits near the correct arrowhead; vis.js dynamic smoothing
+    # curves them to opposite sides so they never overlap.
+    edge_map = {}
+    for frm, to, cmd in transitions:
+        key = (node_id(frm), node_id(to))
+        edge_map.setdefault(key, []).append(edge_label(cmd))
+
+    DIR_ORDER = ['IN', 'N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', 'OUT', 'U', 'D']
+    def sort_dirs(labels):
+        return sorted(labels, key=lambda d: DIR_ORDER.index(d) if d in DIR_ORDER else len(DIR_ORDER))
+
     vis_edges = [
-        {'from': node_id(frm), 'to': node_id(to), 'label': edge_label(cmd)}
-        for frm, to, cmd in transitions
+        {'from': src, 'to': dst, 'label': ','.join(sort_dirs(labels))}
+        for (src, dst), labels in edge_map.items()
     ]
     return HTML.format(
         nodes=json.dumps(vis_nodes, ensure_ascii=False),

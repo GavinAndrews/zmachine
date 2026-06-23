@@ -1,5 +1,5 @@
 from_id	from_name	direction	to_id	to_name	condition
-1	Northwest Room	N	12	Sp{are }Room	
+1	Northwest Room	N	12	Spare Room	
 1	Northwest Room	E	442	Assembly Room	
 1	Northwest Room	S	21	Kitchen	
 1	Northwest Room	IN			routine 0x111D0
@@ -14,7 +14,7 @@ from_id	from_name	direction	to_id	to_name	condition
 4	North Arbor	DOWN			routine 0x248DC
 4	North Arbor	IN			routine 0x24820
 4	North Arbor	OUT			routine 0x248DC
-5	Islet	N	501	S{and }Bar	
+5	Islet	N	501	Sand Bar	
 5	Islet	IN			routine 0x24B78
 6	Front Deck	N			routine 0x286DC
 6	Front Deck	NE			routine 0x17404
@@ -26,21 +26,21 @@ from_id	from_name	direction	to_id	to_name	condition
 6	Front Deck	NW	442	Assembly Room	if #39 (right door) is OPEN
 6	Front Deck	DOWN			routine 0x286C8
 6	Front Deck	IN			routine 0x2865C
-12	Sp{are }Room	N	175	Bathroom	
-12	Sp{are }Room	E	214	Bedroom	
-12	Sp{are }Room	S	1	Northwest Room	
-12	Sp{are }Room	W	297	Back Yard	if #128 (screen door) is OPEN
-12	Sp{are }Room	IN			routine 0x111D0
-12	Sp{are }Room	OUT			routine 0x111DC
+12	Spare Room	N	175	Bathroom	
+12	Spare Room	E	214	Bedroom	
+12	Spare Room	S	1	Northwest Room	
+12	Spare Room	W	297	Back Yard	if #128 (screen door) is OPEN
+12	Spare Room	IN			routine 0x111D0
+12	Spare Room	OUT			routine 0x111DC
 21	Kitchen	N	1	Northwest Room	
 21	Kitchen	E	460	Southeast Room	
 21	Kitchen	W	240	Hallway	if #435 (outer door) is OPEN
 21	Kitchen	IN			routine 0x111D0
 21	Kitchen	OUT			routine 0x111DC
-30	Under{ground}	E	87	Under{ground}	
-30	Under{ground}	W			routine 0x173D0
-30	Under{ground}	IN			routine 0x173D0
-30	Under{ground}	OUT	87	Under{ground}	
+30	Underground	E	87	Underground	
+30	Underground	W			routine 0x173D0
+30	Underground	IN			routine 0x173D0
+30	Underground	OUT	87	Underground	
 36	Shelter	W			routine 0x262CC
 36	Shelter	UP			routine 0x262CC
 36	Shelter	OUT			routine 0x262CC
@@ -48,14 +48,14 @@ from_id	from_name	direction	to_id	to_name	condition
 37	Southwest Yard	E	477	Southeast Yard	
 37	Southwest Yard	SE			routine 0x17404
 37	Southwest Yard	S			routine 0x17404
-37	Southwest Yard	SW	515	Southwest {of }Ranch	if #513 (ir{on }gate) is OPEN
+37	Southwest Yard	SW	515	Southwest of Ranch	if #513 (iron gate) is OPEN
 37	Southwest Yard	W			routine 0x17404
 37	Southwest Yard	NW			routine 0x17404
 37	Southwest Yard	IN			routine 0x283DC
-37	Southwest Yard	OUT	515	Southwest {of }Ranch	if #513 (ir{on }gate) is OPEN
+37	Southwest Yard	OUT	515	Southwest of Ranch	if #513 (iron gate) is OPEN
 42	North Bog	N	370	Promontory	
 42	North Bog	E	306	Chasm's Brink	
-42	North Bog	SE	575	Bottom {of }Stairs	
+42	North Bog	SE	575	Bottom of Stairs	
 42	North Bog	S	319	South Bog	
 42	North Bog	SW	472	Waterfall	
 42	North Bog	W			routine 0x173B8
@@ -83,16 +83,16 @@ from_id	from_name	direction	to_id	to_name	condition
 76	Mesa	NW			routine 0x1153C
 76	Mesa	IN			routine 0x22D28
 76	Mesa	OUT			routine 0x111DC
-79	{The }Wabe	N			routine 0x2252C
-79	{The }Wabe	NE			routine 0x2253C
-79	{The }Wabe	E			routine 0x173A0
-79	{The }Wabe	SE			routine 0x2254C
-79	{The }Wabe	S			routine 0x173A0
-79	{The }Wabe	SW			routine 0x2255C
-79	{The }Wabe	W			routine 0x173A0
-79	{The }Wabe	NW			routine 0x2256C
-79	{The }Wabe	IN			routine 0x111D0
-79	{The }Wabe	OUT			routine 0x22518
+79	The Wabe	N			routine 0x2252C
+79	The Wabe	NE			routine 0x2253C
+79	The Wabe	E			routine 0x173A0
+79	The Wabe	SE			routine 0x2254C
+79	The Wabe	S			routine 0x173A0
+79	The Wabe	SW			routine 0x2255C
+79	The Wabe	W			routine 0x173A0
+79	The Wabe	NW			routine 0x2256C
+79	The Wabe	IN			routine 0x111D0
+79	The Wabe	OUT			routine 0x22518
 80	Halfway	N			routine 0x23E18
 80	Halfway	NE			routine 0x1153C
 80	Halfway	E			routine 0x1153C
@@ -105,15 +105,15 @@ from_id	from_name	direction	to_id	to_name	condition
 80	Halfway	DOWN			routine 0x23E28
 80	Halfway	IN			routine 0x111D0
 80	Halfway	OUT			routine 0x111DC
-87	Under{ground}	E	131	Under{ground}	
-87	Under{ground}	W	30	Under{ground}	
-87	Under{ground}	IN			routine 0x111D0
-87	Under{ground}	OUT			routine 0x111DC
-88	{that}	IN	88	{that}	
+87	Underground	E	131	Underground	
+87	Underground	W	30	Underground	
+87	Underground	IN			routine 0x111D0
+87	Underground	OUT			routine 0x111DC
+88	that	IN	88	that	
 109	Paved Road	N	465	Desert	
 109	Paved Road	NE	465	Desert	
 109	Paved Road	E	465	Desert	
-109	Paved Road	SE	210	Northwest {of }Tower	
+109	Paved Road	SE	210	Northwest of Tower	
 109	Paved Road	S	480	Desert	
 109	Paved Road	SW	480	Desert	
 109	Paved Road	W	480	Desert	
@@ -124,7 +124,7 @@ from_id	from_name	direction	to_id	to_name	condition
 119	Tundra	W	488	Under Platform	
 119	Tundra	NW	320	Tundra	
 120	Paved Road	N	497	Desert	
-120	Paved Road	NE	219	Southwest {of }Tower	
+120	Paved Road	NE	219	Southwest of Tower	
 120	Paved Road	E	510	Desert	
 120	Paved Road	SE	510	Desert	
 120	Paved Road	S	510	Desert	
@@ -141,42 +141,42 @@ from_id	from_name	direction	to_id	to_name	condition
 121	Long Water	NW			routine 0x229B0
 121	Long Water	IN			routine 0x22984
 121	Long Water	OUT			routine 0x111DC
-122	Northwest {of }Ranch	N	225	Foothills	
-122	Northwest {of }Ranch	NE	225	Foothills	
-122	Northwest {of }Ranch	E	558	Northeast {of }Ranch	
-122	Northwest {of }Ranch	SE	297	Back Yard	if #52 (ir{on }gate) is OPEN
-122	Northwest {of }Ranch	S	515	Southwest {of }Ranch	
-122	Northwest {of }Ranch	SW	239	Desert	
-122	Northwest {of }Ranch	W	239	Desert	
-122	Northwest {of }Ranch	NW	456	Shallow Crater	
-122	Northwest {of }Ranch	IN	297	Back Yard	if #52 (ir{on }gate) is OPEN
-124	Earth Orbit{, }{on }a satellite	N			routine 0x24D24
-124	Earth Orbit{, }{on }a satellite	NE			routine 0x24D24
-124	Earth Orbit{, }{on }a satellite	E			routine 0x24D24
-124	Earth Orbit{, }{on }a satellite	SE			routine 0x24D24
-124	Earth Orbit{, }{on }a satellite	S			routine 0x24D24
-124	Earth Orbit{, }{on }a satellite	SW			routine 0x24D24
-124	Earth Orbit{, }{on }a satellite	W			routine 0x24D24
-124	Earth Orbit{, }{on }a satellite	NW			routine 0x24D24
-124	Earth Orbit{, }{on }a satellite	UP			routine 0x24D24
-124	Earth Orbit{, }{on }a satellite	DOWN			routine 0x24D24
-124	Earth Orbit{, }{on }a satellite	IN			routine 0x111D0
-124	Earth Orbit{, }{on }a satellite	OUT			routine 0x111DC
-127	Play{ground}	N			routine 0x261C0
-127	Play{ground}	NE			routine 0x261C0
-127	Play{ground}	E			routine 0x26074
-127	Play{ground}	SE			routine 0x26094
-127	Play{ground}	S			routine 0x26094
-127	Play{ground}	SW			routine 0x173F4
-127	Play{ground}	W			routine 0x26058
-127	Play{ground}	NW			routine 0x173F4
-127	Play{ground}	DOWN			routine 0x26074
-127	Play{ground}	IN			routine 0x26074
-127	Play{ground}	OUT			routine 0x111DC
-131	Under{ground}	E			routine 0x25520
-131	Under{ground}	W	87	Under{ground}	
-131	Under{ground}	IN			routine 0x254C8
-131	Under{ground}	OUT			routine 0x25520
+122	Northwest of Ranch	N	225	Foothills	
+122	Northwest of Ranch	NE	225	Foothills	
+122	Northwest of Ranch	E	558	Northeast of Ranch	
+122	Northwest of Ranch	SE	297	Back Yard	if #52 (iron gate) is OPEN
+122	Northwest of Ranch	S	515	Southwest of Ranch	
+122	Northwest of Ranch	SW	239	Desert	
+122	Northwest of Ranch	W	239	Desert	
+122	Northwest of Ranch	NW	456	Shallow Crater	
+122	Northwest of Ranch	IN	297	Back Yard	if #52 (iron gate) is OPEN
+124	Earth Orbit, on a satellite	N			routine 0x24D24
+124	Earth Orbit, on a satellite	NE			routine 0x24D24
+124	Earth Orbit, on a satellite	E			routine 0x24D24
+124	Earth Orbit, on a satellite	SE			routine 0x24D24
+124	Earth Orbit, on a satellite	S			routine 0x24D24
+124	Earth Orbit, on a satellite	SW			routine 0x24D24
+124	Earth Orbit, on a satellite	W			routine 0x24D24
+124	Earth Orbit, on a satellite	NW			routine 0x24D24
+124	Earth Orbit, on a satellite	UP			routine 0x24D24
+124	Earth Orbit, on a satellite	DOWN			routine 0x24D24
+124	Earth Orbit, on a satellite	IN			routine 0x111D0
+124	Earth Orbit, on a satellite	OUT			routine 0x111DC
+127	Playground	N			routine 0x261C0
+127	Playground	NE			routine 0x261C0
+127	Playground	E			routine 0x26074
+127	Playground	SE			routine 0x26094
+127	Playground	S			routine 0x26094
+127	Playground	SW			routine 0x173F4
+127	Playground	W			routine 0x26058
+127	Playground	NW			routine 0x173F4
+127	Playground	DOWN			routine 0x26074
+127	Playground	IN			routine 0x26074
+127	Playground	OUT			routine 0x111DC
+131	Underground	E			routine 0x25520
+131	Underground	W	87	Underground	
+131	Underground	IN			routine 0x254C8
+131	Underground	OUT			routine 0x25520
 132	Desert	N			routine 0x27BCC
 132	Desert	NE			routine 0x27C1C
 132	Desert	E			routine 0x27C1C
@@ -198,10 +198,10 @@ from_id	from_name	direction	to_id	to_name	condition
 144	Round Pond	NE	179	Lancaster Gate	
 144	Round Pond	E	371	Lancaster Walk	
 144	Round Pond	SE			routine 0x22104
-144	Round Pond	S	79	{The }Wabe	
+144	Round Pond	S	79	The Wabe	
 144	Round Pond	SW			routine 0x22104
 144	Round Pond	W	354	Broad Walk	
-144	Round Pond	NW	355	Black Li{on }Gate	
+144	Round Pond	NW	355	Black Lion Gate	
 144	Round Pond	OUT			routine 0x22278
 145	Crater	N			routine 0x239C4
 145	Crater	NE			routine 0x239C4
@@ -213,16 +213,16 @@ from_id	from_name	direction	to_id	to_name	condition
 145	Crater	NW			routine 0x239C4
 145	Crater	UP			routine 0x23A44
 145	Crater	OUT			routine 0x23A44
-146	Base {of }Tower	N	296	North {of }Tower	
-146	Base {of }Tower	NE	381	Northeast {of }Tower	
-146	Base {of }Tower	E	290	East {of }Tower	
-146	Base {of }Tower	SE	456	Shallow Crater	
-146	Base {of }Tower	S	466	South {of }Tower	
-146	Base {of }Tower	SW	219	Southwest {of }Tower	
-146	Base {of }Tower	W	311	West {of }Tower	
-146	Base {of }Tower	NW	210	Northwest {of }Tower	
-146	Base {of }Tower	UP			routine 0x26868
-146	Base {of }Tower	OUT			routine 0x111DC
+146	Base of Tower	N	296	North of Tower	
+146	Base of Tower	NE	381	Northeast of Tower	
+146	Base of Tower	E	290	East of Tower	
+146	Base of Tower	SE	456	Shallow Crater	
+146	Base of Tower	S	466	South of Tower	
+146	Base of Tower	SW	219	Southwest of Tower	
+146	Base of Tower	W	311	West of Tower	
+146	Base of Tower	NW	210	Northwest of Tower	
+146	Base of Tower	UP			routine 0x26868
+146	Base of Tower	OUT			routine 0x111DC
 158	Tower Platform	N			routine 0x24E90
 158	Tower Platform	NE			routine 0x24E90
 158	Tower Platform	E	507	Shack	
@@ -241,7 +241,7 @@ from_id	from_name	direction	to_id	to_name	condition
 159	Desert	SW			routine 0x273AC
 159	Desert	W			routine 0x273AC
 159	Desert	NW			routine 0x273AC
-166	Th{in }Air{, }{on }{the }giant bird	IN			routine 0x25E60
+166	Thin Air, on the giant bird	IN			routine 0x25E60
 174	Outside Blockhouse	N	497	Desert	
 174	Outside Blockhouse	NE	544	Crossroads	
 174	Outside Blockhouse	E	132	Desert	
@@ -250,9 +250,9 @@ from_id	from_name	direction	to_id	to_name	condition
 174	Outside Blockhouse	SW			routine 0x26EC8
 174	Outside Blockhouse	W	529	Desert	
 174	Outside Blockhouse	NW			routine 0x26EB4
-175	Bathroom	S	12	Sp{are }Room	
-175	Bathroom	IN	12	Sp{are }Room	
-175	Bathroom	OUT	12	Sp{are }Room	
+175	Bathroom	S	12	Spare Room	
+175	Bathroom	IN	12	Spare Room	
+175	Bathroom	OUT	12	Spare Room	
 179	Lancaster Gate	N			routine 0x22104
 179	Lancaster Gate	NE			routine 0x17388
 179	Lancaster Gate	E			routine 0x22104
@@ -290,14 +290,14 @@ from_id	from_name	direction	to_id	to_name	condition
 199	Platform	NW			routine 0x24E90
 199	Platform	DOWN			routine 0x24F3C
 199	Platform	IN			routine 0x24E9C
-210	Northwest {of }Tower	N	465	Desert	
-210	Northwest {of }Tower	NE	465	Desert	
-210	Northwest {of }Tower	E	296	North {of }Tower	
-210	Northwest {of }Tower	SE	146	Base {of }Tower	
-210	Northwest {of }Tower	S	311	West {of }Tower	
-210	Northwest {of }Tower	SW	480	Desert	
-210	Northwest {of }Tower	W	480	Desert	
-210	Northwest {of }Tower	NW	109	Paved Road	
+210	Northwest of Tower	N	465	Desert	
+210	Northwest of Tower	NE	465	Desert	
+210	Northwest of Tower	E	296	North of Tower	
+210	Northwest of Tower	SE	146	Base of Tower	
+210	Northwest of Tower	S	311	West of Tower	
+210	Northwest of Tower	SW	480	Desert	
+210	Northwest of Tower	W	480	Desert	
+210	Northwest of Tower	NW	109	Paved Road	
 213	Bluff	N			routine 0x1153C
 213	Bluff	NE			routine 0x1153C
 213	Bluff	E	327	Cottage	if #19 (front door) is OPEN
@@ -307,8 +307,8 @@ from_id	from_name	direction	to_id	to_name	condition
 213	Bluff	NW			routine 0x1153C
 213	Bluff	IN	327	Cottage	if #19 (front door) is OPEN
 214	Bedroom	E	139	Northeast Yard	if #532 (outside door) is OPEN
-214	Bedroom	W	12	Sp{are }Room	
-214	Bedroom	IN	12	Sp{are }Room	
+214	Bedroom	W	12	Spare Room	
+214	Bedroom	IN	12	Spare Room	
 214	Bedroom	OUT			routine 0x111DC
 215	East Beach	N			routine 0x25A54
 215	East Beach	NE			routine 0x25A90
@@ -318,14 +318,14 @@ from_id	from_name	direction	to_id	to_name	condition
 215	East Beach	SW			routine 0x25A5C
 215	East Beach	W			routine 0x173EC
 215	East Beach	NW			routine 0x25A54
-219	Southwest {of }Tower	N	311	West {of }Tower	
-219	Southwest {of }Tower	NE	146	Base {of }Tower	
-219	Southwest {of }Tower	E	466	South {of }Tower	
-219	Southwest {of }Tower	SE	510	Desert	
-219	Southwest {of }Tower	S	510	Desert	
-219	Southwest {of }Tower	SW	120	Paved Road	
-219	Southwest {of }Tower	W	497	Desert	
-219	Southwest {of }Tower	NW	480	Desert	
+219	Southwest of Tower	N	311	West of Tower	
+219	Southwest of Tower	NE	146	Base of Tower	
+219	Southwest of Tower	E	466	South of Tower	
+219	Southwest of Tower	SE	510	Desert	
+219	Southwest of Tower	S	510	Desert	
+219	Southwest of Tower	SW	120	Paved Road	
+219	Southwest of Tower	W	497	Desert	
+219	Southwest of Tower	NW	480	Desert	
 222	Foothills	N			routine 0x27838
 222	Foothills	NE			routine 0x27868
 222	Foothills	E			routine 0x381CC
@@ -354,7 +354,7 @@ from_id	from_name	direction	to_id	to_name	condition
 226	Paved Road	NE	239	Desert	
 226	Paved Road	E	577	Desert	
 226	Paved Road	SE	577	Desert	
-226	Paved Road	S	437	Behind {the }Shed	
+226	Paved Road	S	437	Behind the Shed	
 226	Paved Road	SW	132	Desert	
 226	Paved Road	W	132	Desert	
 226	Paved Road	NW	293	Paved Road	
@@ -367,7 +367,7 @@ from_id	from_name	direction	to_id	to_name	condition
 231	West Beach	W			routine 0x25C5C
 231	West Beach	NW			routine 0x25C5C
 236	Palace Gate	N	354	Broad Walk	
-236	Palace Gate	NE	79	{The }Wabe	
+236	Palace Gate	NE	79	The Wabe	
 236	Palace Gate	E	250	Flower Walk	
 236	Palace Gate	SE			routine 0x17388
 236	Palace Gate	S			routine 0x22104
@@ -408,28 +408,28 @@ from_id	from_name	direction	to_id	to_name	condition
 250	Flower Walk	N	371	Lancaster Walk	
 250	Flower Walk	E			routine 0x22104
 250	Flower Walk	W	236	Palace Gate	
-250	Flower Walk	NW	79	{The }Wabe	
+250	Flower Walk	NW	79	The Wabe	
 250	Flower Walk	OUT			routine 0x22278
 254	Tundra	NE			routine 0x250CC
 254	Tundra	S	119	Tundra	
 254	Tundra	SW	488	Under Platform	
 254	Tundra	W	320	Tundra	
-290	East {of }Tower	N	381	Northeast {of }Tower	
-290	East {of }Tower	NE	225	Foothills	
-290	East {of }Tower	E	225	Foothills	
-290	East {of }Tower	SE	225	Foothills	
-290	East {of }Tower	S	456	Shallow Crater	
-290	East {of }Tower	SW	466	South {of }Tower	
-290	East {of }Tower	W	146	Base {of }Tower	
-290	East {of }Tower	NW	296	North {of }Tower	
-292	North {of }Reservoir	N	225	Foothills	
-292	North {of }Reservoir	NE	225	Foothills	
-292	North {of }Reservoir	E	225	Foothills	
-292	North {of }Reservoir	SE	300	Under {the }Windmill	
-292	North {of }Reservoir	S			routine 0x17410
-292	North {of }Reservoir	SW	573	Front Yard	
-292	North {of }Reservoir	W	558	Northeast {of }Ranch	
-292	North {of }Reservoir	NW	225	Foothills	
+290	East of Tower	N	381	Northeast of Tower	
+290	East of Tower	NE	225	Foothills	
+290	East of Tower	E	225	Foothills	
+290	East of Tower	SE	225	Foothills	
+290	East of Tower	S	456	Shallow Crater	
+290	East of Tower	SW	466	South of Tower	
+290	East of Tower	W	146	Base of Tower	
+290	East of Tower	NW	296	North of Tower	
+292	North of Reservoir	N	225	Foothills	
+292	North of Reservoir	NE	225	Foothills	
+292	North of Reservoir	E	225	Foothills	
+292	North of Reservoir	SE	300	Under the Windmill	
+292	North of Reservoir	S			routine 0x17410
+292	North of Reservoir	SW	573	Front Yard	
+292	North of Reservoir	W	558	Northeast of Ranch	
+292	North of Reservoir	NW	225	Foothills	
 293	Paved Road	N	510	Desert	
 293	Paved Road	NE	510	Desert	
 293	Paved Road	E	510	Desert	
@@ -438,49 +438,49 @@ from_id	from_name	direction	to_id	to_name	condition
 293	Paved Road	SW	132	Desert	
 293	Paved Road	W	132	Desert	
 293	Paved Road	NW	544	Crossroads	
-296	North {of }Tower	N	465	Desert	
-296	North {of }Tower	NE	180	Foothills	
-296	North {of }Tower	E	381	Northeast {of }Tower	
-296	North {of }Tower	SE	290	East {of }Tower	
-296	North {of }Tower	S	146	Base {of }Tower	
-296	North {of }Tower	SW	311	West {of }Tower	
-296	North {of }Tower	W	210	Northwest {of }Tower	
-296	North {of }Tower	NW	465	Desert	
+296	North of Tower	N	465	Desert	
+296	North of Tower	NE	180	Foothills	
+296	North of Tower	E	381	Northeast of Tower	
+296	North of Tower	SE	290	East of Tower	
+296	North of Tower	S	146	Base of Tower	
+296	North of Tower	SW	311	West of Tower	
+296	North of Tower	W	210	Northwest of Tower	
+296	North of Tower	NW	465	Desert	
 297	Back Yard	N			routine 0x17404
 297	Back Yard	NE			routine 0x17404
-297	Back Yard	E	12	Sp{are }Room	if #128 (screen door) is OPEN
+297	Back Yard	E	12	Spare Room	if #128 (screen door) is OPEN
 297	Back Yard	S			routine 0x283DC
 297	Back Yard	SW			routine 0x17404
 297	Back Yard	W			routine 0x17404
-297	Back Yard	NW	122	Northwest {of }Ranch	if #52 (ir{on }gate) is OPEN
+297	Back Yard	NW	122	Northwest of Ranch	if #52 (iron gate) is OPEN
 297	Back Yard	IN			routine 0x111D0
-297	Back Yard	OUT	122	Northwest {of }Ranch	if #52 (ir{on }gate) is OPEN
-300	Under {the }Windmill	N	225	Foothills	
-300	Under {the }Windmill	NE	225	Foothills	
-300	Under {the }Windmill	E	225	Foothills	
-300	Under {the }Windmill	SE	222	Foothills	
-300	Under {the }Windmill	S	222	Foothills	
-300	Under {the }Windmill	SW	559	South {of }Reservoir	
-300	Under {the }Windmill	W			routine 0x17410
-300	Under {the }Windmill	NW	292	North {of }Reservoir	
-300	Under {the }Windmill	UP			routine 0x288C8
+297	Back Yard	OUT	122	Northwest of Ranch	if #52 (iron gate) is OPEN
+300	Under the Windmill	N	225	Foothills	
+300	Under the Windmill	NE	225	Foothills	
+300	Under the Windmill	E	225	Foothills	
+300	Under the Windmill	SE	222	Foothills	
+300	Under the Windmill	S	222	Foothills	
+300	Under the Windmill	SW	559	South of Reservoir	
+300	Under the Windmill	W			routine 0x17410
+300	Under the Windmill	NW	292	North of Reservoir	
+300	Under the Windmill	UP			routine 0x288C8
 306	Chasm's Brink	N			routine 0x236F0
 306	Chasm's Brink	NE	213	Bluff	
 306	Chasm's Brink	E	400	Under Cliff	
-306	Chasm's Brink	SE	557	{The }Bend	
+306	Chasm's Brink	SE	557	The Bend	
 306	Chasm's Brink	SW	319	South Bog	
 306	Chasm's Brink	W	42	North Bog	
 306	Chasm's Brink	NW	370	Promontory	
 306	Chasm's Brink	UP			routine 0x23810
 306	Chasm's Brink	DOWN			routine 0x23728
-311	West {of }Tower	N	210	Northwest {of }Tower	
-311	West {of }Tower	NE	296	North {of }Tower	
-311	West {of }Tower	E	146	Base {of }Tower	
-311	West {of }Tower	SE	466	South {of }Tower	
-311	West {of }Tower	S	219	Southwest {of }Tower	
-311	West {of }Tower	SW	497	Desert	
-311	West {of }Tower	W	480	Desert	
-311	West {of }Tower	NW	480	Desert	
+311	West of Tower	N	210	Northwest of Tower	
+311	West of Tower	NE	296	North of Tower	
+311	West of Tower	E	146	Base of Tower	
+311	West of Tower	SE	466	South of Tower	
+311	West of Tower	S	219	Southwest of Tower	
+311	West of Tower	SW	497	Desert	
+311	West of Tower	W	480	Desert	
+311	West of Tower	NW	480	Desert	
 316	Vertex	N			routine 0x1153C
 316	Vertex	NE			routine 0x1153C
 316	Vertex	E			routine 0x1153C
@@ -492,9 +492,9 @@ from_id	from_name	direction	to_id	to_name	condition
 316	Vertex	DOWN			routine 0x23F3C
 316	Vertex	IN			routine 0x111D0
 316	Vertex	OUT			routine 0x111DC
-317	Trellises	N	575	Bottom {of }Stairs	
-317	Trellises	NE	557	{The }Bend	
-317	Trellises	E	565	{The }River	
+317	Trellises	N	575	Bottom of Stairs	
+317	Trellises	NE	557	The Bend	
+317	Trellises	E	565	The River	
 317	Trellises	SE	418	Arborvitaes	
 317	Trellises	S			routine 0x173C4
 317	Trellises	SW	580	Arborvitaes	
@@ -504,7 +504,7 @@ from_id	from_name	direction	to_id	to_name	condition
 317	Trellises	OUT			routine 0x111DC
 319	South Bog	N	42	North Bog	
 319	South Bog	NE	306	Chasm's Brink	
-319	South Bog	E	575	Bottom {of }Stairs	
+319	South Bog	E	575	Bottom of Stairs	
 319	South Bog	SE	317	Trellises	
 319	South Bog	S	426	Forest Clearing	
 319	South Bog	SW			routine 0x24630
@@ -519,23 +519,23 @@ from_id	from_name	direction	to_id	to_name	condition
 323	Summit	E	426	Forest Clearing	
 323	Summit	S	576	Meadow	
 323	Summit	DOWN			routine 0x111E8
-327	Cottage	E	417	Herb Garden	if #533 ({back }door) is OPEN
+327	Cottage	E	417	Herb Garden	if #533 (back door) is OPEN
 327	Cottage	W	213	Bluff	if #19 (front door) is OPEN
 327	Cottage	OUT			routine 0x111DC
-336	Edge {of }Reservoir	N			routine 0x28A98
-336	Edge {of }Reservoir	NE			routine 0x28A90
-336	Edge {of }Reservoir	E			routine 0x28A90
-336	Edge {of }Reservoir	SE			routine 0x28A90
-336	Edge {of }Reservoir	S			routine 0x28B00
-336	Edge {of }Reservoir	SW			routine 0x28A90
-336	Edge {of }Reservoir	W			routine 0x28A90
-336	Edge {of }Reservoir	NW			routine 0x28A90
-336	Edge {of }Reservoir	DOWN			routine 0x28B00
-336	Edge {of }Reservoir	IN			routine 0x28A98
-344	Bottom {of }Scaffold	N			routine 0x25960
-344	Bottom {of }Scaffold	S	476	South Beach	if #190 (sliding doors) is OPEN
-344	Bottom {of }Scaffold	UP			routine 0x25960
-344	Bottom {of }Scaffold	OUT	476	South Beach	if #190 (sliding doors) is OPEN
+336	Edge of Reservoir	N			routine 0x28A98
+336	Edge of Reservoir	NE			routine 0x28A90
+336	Edge of Reservoir	E			routine 0x28A90
+336	Edge of Reservoir	SE			routine 0x28A90
+336	Edge of Reservoir	S			routine 0x28B00
+336	Edge of Reservoir	SW			routine 0x28A90
+336	Edge of Reservoir	W			routine 0x28A90
+336	Edge of Reservoir	NW			routine 0x28A90
+336	Edge of Reservoir	DOWN			routine 0x28B00
+336	Edge of Reservoir	IN			routine 0x28A98
+344	Bottom of Scaffold	N			routine 0x25960
+344	Bottom of Scaffold	S	476	South Beach	if #190 (sliding doors) is OPEN
+344	Bottom of Scaffold	UP			routine 0x25960
+344	Bottom of Scaffold	OUT	476	South Beach	if #190 (sliding doors) is OPEN
 345	Icehouse	E			routine 0x28358
 345	Icehouse	UP			routine 0x28358
 345	Icehouse	OUT			routine 0x28358
@@ -546,25 +546,25 @@ from_id	from_name	direction	to_id	to_name	condition
 353	Barrow	DOWN			routine 0x23500
 353	Barrow	IN			routine 0x111D0
 353	Barrow	OUT			routine 0x111DC
-354	Broad Walk	N	355	Black Li{on }Gate	
+354	Broad Walk	N	355	Black Lion Gate	
 354	Broad Walk	NE	531	Inverness Terrace	
 354	Broad Walk	E	144	Round Pond	
-354	Broad Walk	SE	79	{The }Wabe	
+354	Broad Walk	SE	79	The Wabe	
 354	Broad Walk	S	236	Palace Gate	
 354	Broad Walk	SW			routine 0x17388
 354	Broad Walk	W			routine 0x17394
 354	Broad Walk	NW			routine 0x17388
 354	Broad Walk	OUT			routine 0x22278
-355	Black Li{on }Gate	N			routine 0x22104
-355	Black Li{on }Gate	NE			routine 0x17388
-355	Black Li{on }Gate	E	531	Inverness Terrace	
-355	Black Li{on }Gate	SE	144	Round Pond	
-355	Black Li{on }Gate	S	354	Broad Walk	
-355	Black Li{on }Gate	SW			routine 0x17388
-355	Black Li{on }Gate	W			routine 0x17388
-355	Black Li{on }Gate	NW			routine 0x17388
-355	Black Li{on }Gate	IN			routine 0x111D0
-355	Black Li{on }Gate	OUT			routine 0x22104
+355	Black Lion Gate	N			routine 0x22104
+355	Black Lion Gate	NE			routine 0x17388
+355	Black Lion Gate	E	531	Inverness Terrace	
+355	Black Lion Gate	SE	144	Round Pond	
+355	Black Lion Gate	S	354	Broad Walk	
+355	Black Lion Gate	SW			routine 0x17388
+355	Black Lion Gate	W			routine 0x17388
+355	Black Lion Gate	NW			routine 0x17388
+355	Black Lion Gate	IN			routine 0x111D0
+355	Black Lion Gate	OUT			routine 0x22104
 370	Promontory	N			routine 0x1153C
 370	Promontory	NE			routine 0x1153C
 370	Promontory	E			routine 0x1153C
@@ -580,33 +580,33 @@ from_id	from_name	direction	to_id	to_name	condition
 371	Lancaster Walk	E			routine 0x22894
 371	Lancaster Walk	SE			routine 0x22894
 371	Lancaster Walk	S	250	Flower Walk	
-371	Lancaster Walk	SW	79	{The }Wabe	
+371	Lancaster Walk	SW	79	The Wabe	
 371	Lancaster Walk	W	144	Round Pond	
 371	Lancaster Walk	NW	531	Inverness Terrace	
 371	Lancaster Walk	OUT			routine 0x22278
-372	Southeast {of }Ranch	N	573	Front Yard	
-372	Southeast {of }Ranch	NE			routine 0x17410
-372	Southeast {of }Ranch	E	559	South {of }Reservoir	
-372	Southeast {of }Ranch	SE	222	Foothills	
-372	Southeast {of }Ranch	S	222	Foothills	
-372	Southeast {of }Ranch	SW	239	Desert	
-372	Southeast {of }Ranch	W	515	Southwest {of }Ranch	
-372	Southeast {of }Ranch	NW	477	Southeast Yard	if #367 (ir{on }gate) is OPEN
-372	Southeast {of }Ranch	IN	477	Southeast Yard	if #367 (ir{on }gate) is OPEN
+372	Southeast of Ranch	N	573	Front Yard	
+372	Southeast of Ranch	NE			routine 0x17410
+372	Southeast of Ranch	E	559	South of Reservoir	
+372	Southeast of Ranch	SE	222	Foothills	
+372	Southeast of Ranch	S	222	Foothills	
+372	Southeast of Ranch	SW	239	Desert	
+372	Southeast of Ranch	W	515	Southwest of Ranch	
+372	Southeast of Ranch	NW	477	Southeast Yard	if #367 (iron gate) is OPEN
+372	Southeast of Ranch	IN	477	Southeast Yard	if #367 (iron gate) is OPEN
 380	Tundra	E	320	Tundra	
 380	Tundra	SE	488	Under Platform	
 380	Tundra	S	188	Tundra	
 380	Tundra	SW			routine 0x25024
 380	Tundra	W			routine 0x25024
-381	Northeast {of }Tower	N	180	Foothills	
-381	Northeast {of }Tower	NE	180	Foothills	
-381	Northeast {of }Tower	E	225	Foothills	
-381	Northeast {of }Tower	SE	225	Foothills	
-381	Northeast {of }Tower	S	290	East {of }Tower	
-381	Northeast {of }Tower	SW	146	Base {of }Tower	
-381	Northeast {of }Tower	W	296	North {of }Tower	
-381	Northeast {of }Tower	NW	465	Desert	
-382	Paved Road	N	466	South {of }Tower	
+381	Northeast of Tower	N	180	Foothills	
+381	Northeast of Tower	NE	180	Foothills	
+381	Northeast of Tower	E	225	Foothills	
+381	Northeast of Tower	SE	225	Foothills	
+381	Northeast of Tower	S	290	East of Tower	
+381	Northeast of Tower	SW	146	Base of Tower	
+381	Northeast of Tower	W	296	North of Tower	
+381	Northeast of Tower	NW	465	Desert	
+382	Paved Road	N	466	South of Tower	
 382	Paved Road	NE	239	Desert	
 382	Paved Road	E	239	Desert	
 382	Paved Road	SE	239	Desert	
@@ -621,21 +621,21 @@ from_id	from_name	direction	to_id	to_name	condition
 400	Under Cliff	NE			routine 0x173B8
 400	Under Cliff	E	441	Crater's Edge	
 400	Under Cliff	SE	471	Moor	
-400	Under Cliff	S	557	{The }Bend	
-400	Under Cliff	SW	575	Bottom {of }Stairs	
+400	Under Cliff	S	557	The Bend	
+400	Under Cliff	SW	575	Bottom of Stairs	
 400	Under Cliff	W	306	Chasm's Brink	
 400	Under Cliff	NW			routine 0x173B8
-408	Top {of }Arbor	N	4	North Arbor	
-408	Top {of }Arbor	NE			routine 0x24A00
-408	Top {of }Arbor	E			routine 0x24A00
-408	Top {of }Arbor	SE			routine 0x24A00
-408	Top {of }Arbor	S	430	South Arbor	
-408	Top {of }Arbor	SW			routine 0x24A00
-408	Top {of }Arbor	W			routine 0x24A00
-408	Top {of }Arbor	NW			routine 0x24A00
-408	Top {of }Arbor	DOWN			routine 0x111E8
-408	Top {of }Arbor	IN			routine 0x111D0
-408	Top {of }Arbor	OUT			routine 0x111DC
+408	Top of Arbor	N	4	North Arbor	
+408	Top of Arbor	NE			routine 0x24A00
+408	Top of Arbor	E			routine 0x24A00
+408	Top of Arbor	SE			routine 0x24A00
+408	Top of Arbor	S	430	South Arbor	
+408	Top of Arbor	SW			routine 0x24A00
+408	Top of Arbor	W			routine 0x24A00
+408	Top of Arbor	NW			routine 0x24A00
+408	Top of Arbor	DOWN			routine 0x111E8
+408	Top of Arbor	IN			routine 0x111D0
+408	Top of Arbor	OUT			routine 0x111DC
 414	Cemetery	N	353	Barrow	if #445 (spiked door) is OPEN
 414	Cemetery	NE			routine 0x1153C
 414	Cemetery	E			routine 0x1153C
@@ -652,7 +652,7 @@ from_id	from_name	direction	to_id	to_name	condition
 417	Herb Garden	SE			routine 0x173AC
 417	Herb Garden	S			routine 0x173AC
 417	Herb Garden	SW			routine 0x173AC
-417	Herb Garden	W	327	Cottage	if #533 ({back }door) is OPEN
+417	Herb Garden	W	327	Cottage	if #533 (back door) is OPEN
 417	Herb Garden	NW			routine 0x173AC
 417	Herb Garden	IN			routine 0x23014
 418	Arborvitaes	N			routine 0x173C4
@@ -676,7 +676,7 @@ from_id	from_name	direction	to_id	to_name	condition
 425	Earth Orbit	IN			routine 0x111D0
 425	Earth Orbit	OUT			routine 0x111DC
 426	Forest Clearing	N	319	South Bog	
-426	Forest Clearing	NE	575	Bottom {of }Stairs	
+426	Forest Clearing	NE	575	Bottom of Stairs	
 426	Forest Clearing	E	317	Trellises	
 426	Forest Clearing	SE			routine 0x173C4
 426	Forest Clearing	S			routine 0x173C4
@@ -694,14 +694,14 @@ from_id	from_name	direction	to_id	to_name	condition
 430	South Arbor	DOWN			routine 0x248E8
 430	South Arbor	IN			routine 0x24820
 430	South Arbor	OUT			routine 0x248E8
-437	Behind {the }Shed	N	226	Paved Road	
-437	Behind {the }Shed	NE			routine 0x271A0
-437	Behind {the }Shed	E			routine 0x272D0
-437	Behind {the }Shed	SE	577	Desert	
-437	Behind {the }Shed	S			routine 0x271BC
-437	Behind {the }Shed	SW	132	Desert	
-437	Behind {the }Shed	W	132	Desert	
-437	Behind {the }Shed	NW	132	Desert	
+437	Behind the Shed	N	226	Paved Road	
+437	Behind the Shed	NE			routine 0x271A0
+437	Behind the Shed	E			routine 0x272D0
+437	Behind the Shed	SE	577	Desert	
+437	Behind the Shed	S			routine 0x271BC
+437	Behind the Shed	SW	132	Desert	
+437	Behind the Shed	W	132	Desert	
+437	Behind the Shed	NW	132	Desert	
 438	Wading	N			routine 0x22A84
 438	Wading	NE			routine 0x22A84
 438	Wading	E			routine 0x22A70
@@ -714,7 +714,7 @@ from_id	from_name	direction	to_id	to_name	condition
 438	Wading	OUT			routine 0x22A9C
 441	Crater's Edge	E			routine 0x239B0
 441	Crater's Edge	S	471	Moor	
-441	Crater's Edge	SW	557	{The }Bend	
+441	Crater's Edge	SW	557	The Bend	
 441	Crater's Edge	W	400	Under Cliff	
 441	Crater's Edge	NW	213	Bluff	
 441	Crater's Edge	DOWN			routine 0x239B0
@@ -729,14 +729,14 @@ from_id	from_name	direction	to_id	to_name	condition
 449	Ice Cavern	E			routine 0x23C54
 449	Ice Cavern	UP			routine 0x23C6C
 449	Ice Cavern	OUT			routine 0x23C54
-456	Shallow Crater	N	290	East {of }Tower	
+456	Shallow Crater	N	290	East of Tower	
 456	Shallow Crater	NE	225	Foothills	
 456	Shallow Crater	E	225	Foothills	
-456	Shallow Crater	SE	122	Northwest {of }Ranch	
+456	Shallow Crater	SE	122	Northwest of Ranch	
 456	Shallow Crater	S	239	Desert	
 456	Shallow Crater	SW	239	Desert	
-456	Shallow Crater	W	466	South {of }Tower	
-456	Shallow Crater	NW	146	Base {of }Tower	
+456	Shallow Crater	W	466	South of Tower	
+456	Shallow Crater	NW	146	Base of Tower	
 457	Reservoir	N			routine 0x28B14
 457	Reservoir	NE			routine 0x28B14
 457	Reservoir	E			routine 0x28B14
@@ -773,16 +773,16 @@ from_id	from_name	direction	to_id	to_name	condition
 465	Desert	SW			routine 0x27450
 465	Desert	W			routine 0x27480
 465	Desert	NW			routine 0x273AC
-466	South {of }Tower	N	146	Base {of }Tower	
-466	South {of }Tower	NE	290	East {of }Tower	
-466	South {of }Tower	E	456	Shallow Crater	
-466	South {of }Tower	SE	239	Desert	
-466	South {of }Tower	S	382	Paved Road	
-466	South {of }Tower	SW	510	Desert	
-466	South {of }Tower	W	219	Southwest {of }Tower	
-466	South {of }Tower	NW	311	West {of }Tower	
+466	South of Tower	N	146	Base of Tower	
+466	South of Tower	NE	290	East of Tower	
+466	South of Tower	E	456	Shallow Crater	
+466	South of Tower	SE	239	Desert	
+466	South of Tower	S	382	Paved Road	
+466	South of Tower	SW	510	Desert	
+466	South of Tower	W	219	Southwest of Tower	
+466	South of Tower	NW	311	West of Tower	
 471	Moor	N	441	Crater's Edge	
-471	Moor	W	557	{The }Bend	
+471	Moor	W	557	The Bend	
 471	Moor	NW	400	Under Cliff	
 471	Moor	IN			routine 0x24010
 472	Waterfall	N			routine 0x2317C
@@ -792,7 +792,7 @@ from_id	from_name	direction	to_id	to_name	condition
 472	Waterfall	W			routine 0x23B04
 472	Waterfall	UP			routine 0x2317C
 472	Waterfall	IN			routine 0x23B2C
-476	South Beach	N	344	Bottom {of }Scaffold	if #190 (sliding doors) is OPEN
+476	South Beach	N	344	Bottom of Scaffold	if #190 (sliding doors) is OPEN
 476	South Beach	NE			routine 0x25A44
 476	South Beach	E			routine 0x25A44
 476	South Beach	SE			routine 0x25A90
@@ -800,16 +800,16 @@ from_id	from_name	direction	to_id	to_name	condition
 476	South Beach	SW			routine 0x25A90
 476	South Beach	W			routine 0x25A4C
 476	South Beach	NW			routine 0x25A4C
-476	South Beach	IN	344	Bottom {of }Scaffold	if #190 (sliding doors) is OPEN
+476	South Beach	IN	344	Bottom of Scaffold	if #190 (sliding doors) is OPEN
 477	Southeast Yard	N			routine 0x2844C
 477	Southeast Yard	NE			routine 0x17404
 477	Southeast Yard	E			routine 0x17404
-477	Southeast Yard	SE	372	Southeast {of }Ranch	if #367 (ir{on }gate) is OPEN
+477	Southeast Yard	SE	372	Southeast of Ranch	if #367 (iron gate) is OPEN
 477	Southeast Yard	S			routine 0x17404
 477	Southeast Yard	SW			routine 0x17404
 477	Southeast Yard	W	37	Southwest Yard	
 477	Southeast Yard	UP			routine 0x2844C
-477	Southeast Yard	OUT	372	Southeast {of }Ranch	if #367 (ir{on }gate) is OPEN
+477	Southeast Yard	OUT	372	Southeast of Ranch	if #367 (iron gate) is OPEN
 480	Desert	N			routine 0x27564
 480	Desert	NE			routine 0x27594
 480	Desert	E			routine 0x275C4
@@ -829,15 +829,15 @@ from_id	from_name	direction	to_id	to_name	condition
 488	Under Platform	UP			routine 0x24FD0
 493	Jeep	OUT			routine 0x26A2C
 497	Desert	N	480	Desert	
-497	Desert	NE	311	West {of }Tower	
+497	Desert	NE	311	West of Tower	
 497	Desert	E			routine 0x2765C
 497	Desert	SE			routine 0x2768C
 497	Desert	S			routine 0x276B4
 497	Desert	SW			routine 0x273AC
 497	Desert	W			routine 0x273AC
 497	Desert	NW			routine 0x273AC
-501	S{and }Bar	S	5	Islet	
-501	S{and }Bar	IN			routine 0x33FA4
+501	Sand Bar	S	5	Islet	
+501	Sand Bar	IN			routine 0x33FA4
 507	Shack	E			routine 0x26444
 507	Shack	W	158	Tower Platform	
 507	Shack	IN			routine 0x26444
@@ -855,15 +855,15 @@ from_id	from_name	direction	to_id	to_name	condition
 510	Desert	SW	293	Paved Road	
 510	Desert	W			routine 0x27990
 510	Desert	NW			routine 0x27964
-515	Southwest {of }Ranch	N	122	Northwest {of }Ranch	
-515	Southwest {of }Ranch	NE	37	Southwest Yard	if #513 (ir{on }gate) is OPEN
-515	Southwest {of }Ranch	E	372	Southeast {of }Ranch	
-515	Southwest {of }Ranch	SE	222	Foothills	
-515	Southwest {of }Ranch	S	239	Desert	
-515	Southwest {of }Ranch	SW	239	Desert	
-515	Southwest {of }Ranch	W	239	Desert	
-515	Southwest {of }Ranch	NW	239	Desert	
-515	Southwest {of }Ranch	IN	37	Southwest Yard	if #513 (ir{on }gate) is OPEN
+515	Southwest of Ranch	N	122	Northwest of Ranch	
+515	Southwest of Ranch	NE	37	Southwest Yard	if #513 (iron gate) is OPEN
+515	Southwest of Ranch	E	372	Southeast of Ranch	
+515	Southwest of Ranch	SE	222	Foothills	
+515	Southwest of Ranch	S	239	Desert	
+515	Southwest of Ranch	SW	239	Desert	
+515	Southwest of Ranch	W	239	Desert	
+515	Southwest of Ranch	NW	239	Desert	
+515	Southwest of Ranch	IN	37	Southwest Yard	if #513 (iron gate) is OPEN
 522	Ossuary	N			routine 0x22B78
 522	Ossuary	NE			routine 0x22B78
 522	Ossuary	E			routine 0x22B78
@@ -888,7 +888,7 @@ from_id	from_name	direction	to_id	to_name	condition
 531	Inverness Terrace	SE	371	Lancaster Walk	
 531	Inverness Terrace	S	144	Round Pond	
 531	Inverness Terrace	SW	354	Broad Walk	
-531	Inverness Terrace	W	355	Black Li{on }Gate	
+531	Inverness Terrace	W	355	Black Lion Gate	
 531	Inverness Terrace	NW			routine 0x17388
 531	Inverness Terrace	IN			routine 0x111D0
 531	Inverness Terrace	OUT			routine 0x22104
@@ -911,57 +911,57 @@ from_id	from_name	direction	to_id	to_name	condition
 544	Crossroads	SW	174	Outside Blockhouse	
 544	Crossroads	W	497	Desert	
 544	Crossroads	NW	497	Desert	
-557	{The }Bend	N	400	Under Cliff	
-557	{The }Bend	NE	441	Crater's Edge	
-557	{The }Bend	E	471	Moor	
-557	{The }Bend	S	565	{The }River	
-557	{The }Bend	SW	317	Trellises	
-557	{The }Bend	W	575	Bottom {of }Stairs	
-557	{The }Bend	NW	306	Chasm's Brink	
-558	Northeast {of }Ranch	N	225	Foothills	
-558	Northeast {of }Ranch	NE	225	Foothills	
-558	Northeast {of }Ranch	E	292	North {of }Reservoir	
-558	Northeast {of }Ranch	SE			routine 0x17410
-558	Northeast {of }Ranch	S	573	Front Yard	
-558	Northeast {of }Ranch	SW			routine 0x17404
-558	Northeast {of }Ranch	W	122	Northwest {of }Ranch	
-558	Northeast {of }Ranch	NW	225	Foothills	
-558	Northeast {of }Ranch	IN			routine 0x111D0
-559	South {of }Reservoir	N			routine 0x28A34
-559	South {of }Reservoir	NE	300	Under {the }Windmill	
-559	South {of }Reservoir	E	222	Foothills	
-559	South {of }Reservoir	SE	222	Foothills	
-559	South {of }Reservoir	S	222	Foothills	
-559	South {of }Reservoir	SW	222	Foothills	
-559	South {of }Reservoir	W	372	Southeast {of }Ranch	
-559	South {of }Reservoir	NW	573	Front Yard	
-559	South {of }Reservoir	UP			routine 0x28A34
-565	{The }River	N	557	{The }Bend	
-565	{The }River	S			routine 0x173C4
-565	{The }River	SW			routine 0x173C4
-565	{The }River	W	317	Trellises	
-565	{The }River	NW	575	Bottom {of }Stairs	
-565	{The }River	IN			routine 0x33FA4
-565	{The }River	OUT			routine 0x24468
-573	Front Yard	N	558	Northeast {of }Ranch	
-573	Front Yard	NE	292	North {of }Reservoir	
+557	The Bend	N	400	Under Cliff	
+557	The Bend	NE	441	Crater's Edge	
+557	The Bend	E	471	Moor	
+557	The Bend	S	565	The River	
+557	The Bend	SW	317	Trellises	
+557	The Bend	W	575	Bottom of Stairs	
+557	The Bend	NW	306	Chasm's Brink	
+558	Northeast of Ranch	N	225	Foothills	
+558	Northeast of Ranch	NE	225	Foothills	
+558	Northeast of Ranch	E	292	North of Reservoir	
+558	Northeast of Ranch	SE			routine 0x17410
+558	Northeast of Ranch	S	573	Front Yard	
+558	Northeast of Ranch	SW			routine 0x17404
+558	Northeast of Ranch	W	122	Northwest of Ranch	
+558	Northeast of Ranch	NW	225	Foothills	
+558	Northeast of Ranch	IN			routine 0x111D0
+559	South of Reservoir	N			routine 0x28A34
+559	South of Reservoir	NE	300	Under the Windmill	
+559	South of Reservoir	E	222	Foothills	
+559	South of Reservoir	SE	222	Foothills	
+559	South of Reservoir	S	222	Foothills	
+559	South of Reservoir	SW	222	Foothills	
+559	South of Reservoir	W	372	Southeast of Ranch	
+559	South of Reservoir	NW	573	Front Yard	
+559	South of Reservoir	UP			routine 0x28A34
+565	The River	N	557	The Bend	
+565	The River	S			routine 0x173C4
+565	The River	SW			routine 0x173C4
+565	The River	W	317	Trellises	
+565	The River	NW	575	Bottom of Stairs	
+565	The River	IN			routine 0x33FA4
+565	The River	OUT			routine 0x24468
+573	Front Yard	N	558	Northeast of Ranch	
+573	Front Yard	NE	292	North of Reservoir	
 573	Front Yard	E			routine 0x17410
-573	Front Yard	SE	559	South {of }Reservoir	
-573	Front Yard	S	372	Southeast {of }Ranch	
+573	Front Yard	SE	559	South of Reservoir	
+573	Front Yard	S	372	Southeast of Ranch	
 573	Front Yard	SW			routine 0x17404
 573	Front Yard	W			routine 0x287A8
 573	Front Yard	NW			routine 0x17404
 573	Front Yard	UP			routine 0x287A8
 573	Front Yard	IN			routine 0x287A8
-575	Bottom {of }Stairs	N			routine 0x23D84
-575	Bottom {of }Stairs	NE	400	Under Cliff	
-575	Bottom {of }Stairs	E	557	{The }Bend	
-575	Bottom {of }Stairs	SE	565	{The }River	
-575	Bottom {of }Stairs	S	317	Trellises	
-575	Bottom {of }Stairs	SW	426	Forest Clearing	
-575	Bottom {of }Stairs	W	319	South Bog	
-575	Bottom {of }Stairs	NW	42	North Bog	
-575	Bottom {of }Stairs	UP			routine 0x23D84
+575	Bottom of Stairs	N			routine 0x23D84
+575	Bottom of Stairs	NE	400	Under Cliff	
+575	Bottom of Stairs	E	557	The Bend	
+575	Bottom of Stairs	SE	565	The River	
+575	Bottom of Stairs	S	317	Trellises	
+575	Bottom of Stairs	SW	426	Forest Clearing	
+575	Bottom of Stairs	W	319	South Bog	
+575	Bottom of Stairs	NW	42	North Bog	
+575	Bottom of Stairs	UP			routine 0x23D84
 576	Meadow	N			routine 0x24630
 576	Meadow	NE			routine 0x245D8
 576	Meadow	E			routine 0x245D8

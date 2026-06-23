@@ -67,7 +67,9 @@ def parse(path: Path):
 
             m = RE_DESCRIPTION.match(line)
             if m:
-                objects[current_obj]["name"] = m.group(1)
+                # Strip disassembly abbreviation markers: {and } -> and
+                name = re.sub(r'\{([^}]*)\}', r'\1', m.group(1))
+                objects[current_obj]["name"] = name
                 continue
 
             m = RE_PROP.match(line)
