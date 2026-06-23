@@ -17,6 +17,12 @@
   button:hover { background: #4b5563; }
   button.on { background: #065f46; border-color: #059669; }
   #file-load { display: none; }
+  @media print {
+    body, html { background: white; }
+    #bar { display: none; }
+    #net  { position: static; width: 100vw; height: 100vh; }
+    canvas { max-width: 100%; max-height: 100%; }
+  }
 </style>
 </head>
 <body>
@@ -29,6 +35,12 @@
     <input id="file-load" type="file" accept=".json" onchange="loadJSON(event)">
   </label>
   <button onclick="clearStorage()" title="Forget saved positions and re-run layout">Clear saved</button>
+  <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:12px;">
+    <input type="checkbox" id="show-notes" onchange="toggleNotes(this.checked); saveToStorage();">
+    Show notes
+  </label>
+  <button onclick="saveJPEG()" title="Download the current view as a JPEG image">Save JPEG</button>
+  <button onclick="printPDF()" title="Open image in new tab — use browser Print to save as PDF">Print / PDF</button>
   <span id="status" style="margin-left:auto; color:#6ee7b7;">—</span>
 </div>
 <div id="net"></div>
@@ -53,8 +65,10 @@ try {
   if (_raw) savedPos = JSON.parse(_raw);
 } catch(e) { setStatus('localStorage unavailable: ' + e); }
 
-var loadedCount = 0;
+var loadedCount  = 0;
+var savedShowNotes = false;
 if (savedPos) {
+  savedShowNotes = !!savedPos._showNotes;
   NODES_DATA = NODES_DATA.map(function(n) {
     var p = savedPos[n.id];
     if (p) { loadedCount++; return Object.assign({}, n, {x: p.x, y: p.y}); }
@@ -86,6 +100,12 @@ var network = new vis.Network(
   }
 );
 
+// ── restore notes checkbox after network is ready ────────────────────────
+if (savedShowNotes) {
+  var cb = document.getElementById('show-notes');
+  if (cb) { cb.checked = true; toggleNotes(true); }
+}
+
 if (loadedCount > 0) {
   setStatus('Loaded ' + loadedCount + ' saved positions');
   network.once('afterDrawing', function() { network.fit({ animation: false }); });
@@ -112,7 +132,10 @@ network.on('dragEnd', function() {
 
 function saveToStorage() {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(network.getPositions()));
+    var data = network.getPositions();
+    var _cb = document.getElementById('show-notes');
+    data._showNotes = !!(_cb && _cb.checked);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     setStatus('Saved (' + Object.keys(network.getPositions()).length + ' nodes)');
   } catch(e) {
     setStatus('Save failed: ' + e);
@@ -158,10 +181,119 @@ function loadJSON(evt) {
   evt.target.value = '';
 }
 
+function toggleNotes(show) {
+  var updates = nodes.get().map(function(n) {
+    if (!n.notes) return null;
+    return { id: n.id, label: show ? n.label.split('\n')[0] + '\n' + n.notes : n.label.split('\n')[0] };
+  }).filter(Boolean);
+  nodes.update(updates);
+}
+
 function clearStorage() {
   try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
   setStatus('Cleared. Running new layout…');
   autoLayout();
+}
+
+function captureFullMap(callback) {
+  // Temporarily expand the container to hold the entire graph at 1:1 scale,
+  // fit all nodes into it, capture, then restore everything.
+  var PADDING = 60;
+  var netDiv  = document.getElementById('net');
+
+  // Compute bounding box from node positions (getBoundingBox() not in vis API)
+  var positions = network.getPositions();
+  var ids = Object.keys(positions);
+  if (ids.length === 0) { setStatus('No nodes to export.'); return; }
+  var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  ids.forEach(function(id) {
+    var p = positions[id];
+    minX = Math.min(minX, p.x); maxX = Math.max(maxX, p.x);
+    minY = Math.min(minY, p.y); maxY = Math.max(maxY, p.y);
+  });
+  var graphW = (maxX - minX) + PADDING * 2;
+  var graphH = (maxY - minY) + PADDING * 2;
+
+  // Minimum sensible size
+  graphW = Math.max(graphW, 800);
+  graphH = Math.max(graphH, 600);
+
+  // Save current container style and view state
+  var oldStyle   = netDiv.getAttribute('style') || '';
+  var oldPos     = network.getViewPosition();
+  var oldScale   = network.getScale();
+
+  // Expand container
+  netDiv.style.position = 'absolute';
+  netDiv.style.width    = graphW + 'px';
+  netDiv.style.height   = graphH + 'px';
+  netDiv.style.inset    = 'auto';
+
+  // Give vis.js one frame to resize its canvas, then fit + capture
+  requestAnimationFrame(function() {
+    network.redraw();
+    network.fit({ animation: false });
+
+    requestAnimationFrame(function() {
+      var src = network.canvas.frame.canvas;
+      var out = document.createElement('canvas');
+      out.width  = src.width;
+      out.height = src.height;
+      var ctx = out.getContext('2d');
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, out.width, out.height);
+      ctx.drawImage(src, 0, 0);
+
+      // Restore container and view
+      netDiv.setAttribute('style', oldStyle);
+      requestAnimationFrame(function() {
+        network.redraw();
+        network.moveTo({ position: oldPos, scale: oldScale, animation: false });
+        callback(out);
+      });
+    });
+  });
+}
+
+function saveJPEG() {
+  setStatus('Rendering full map…');
+  captureFullMap(function(canvas) {
+    var a = document.createElement('a');
+    a.href     = canvas.toDataURL('image/jpeg', 0.95);
+    a.download = 'map.jpg';
+    a.click();
+    setStatus('JPEG saved.');
+  });
+}
+
+function printPDF() {
+  setStatus('Rendering full map…');
+  captureFullMap(function(canvas) {
+    var dataUrl = canvas.toDataURL('image/jpeg', 0.95);
+    // Inject a print-only image into this page to avoid file:// cross-origin
+    // restrictions that block window.open() + document.write().
+    var img = document.createElement('img');
+    img.id  = 'print-export';
+    img.src = dataUrl;
+    document.body.appendChild(img);
+
+    var style = document.createElement('style');
+    style.id  = 'print-export-style';
+    style.textContent = (
+      '@media print {' +
+      '  @page { size: landscape; margin: 0.5cm; }' +
+      '  body > *:not(#print-export) { display: none !important; }' +
+      '  #print-export { display: block !important; width: 100%; height: auto; }' +
+      '}'
+    );
+    document.head.appendChild(style);
+
+    window.print();
+
+    document.body.removeChild(img);
+    document.head.removeChild(style);
+    setStatus('Print dialog opened.');
+  });
 }
 </script>
 </body>
