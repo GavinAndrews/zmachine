@@ -14,6 +14,7 @@ class ScreenBase(ABC):
         self.processor       = None
         self.stream2_active  = False
         self.transcript_file = None
+        self.auto_more       = False  # suppress [More] pauses during scripted replay
         self.current_fg      = -1
         self.current_bg      = -1
         self._seed           = None   # stored for restart
@@ -78,6 +79,11 @@ class ScreenBase(ABC):
 
     def get_size(self):
         return (25, 80)
+
+    def transcript_write(self, s):
+        """Write directly to the transcript without rendering to screen."""
+        if self.stream2_active and self.transcript_file:
+            self.transcript_file.write(s)
 
     def open_transcript(self, path=None):
         if self.transcript_file:

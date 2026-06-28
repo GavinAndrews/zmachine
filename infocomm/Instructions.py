@@ -2,6 +2,10 @@ import sys
 import time as time_mod
 from enum import IntEnum
 
+_REPLAY_SKIP_VERBS = frozenset({
+    'script', 'transcript', 'unscript', 'noscript', 'notranscript',
+})
+
 
 class _UndoPerformed(Exception):
     """Raised by the undo meta-command to unwind Python's call stack cleanly."""
@@ -659,9 +663,17 @@ class Instructions:
         while True:
             in_string = self._get_input_line(max_chars, time_tenths, time_routine)
             in_string = in_string.lower()
+            if self.scripting is not None:
+                first = in_string.strip().split()[0] if in_string.strip() else ''
+                if first in _REPLAY_SKIP_VERBS:
+                    self.screen.print_str(f"[Replay: skipping '{first}']\n")
+                    continue
             if self._handle_meta_command(in_string):
+                self.screen.transcript_write('\n>' + in_string + '\n')
                 continue   # meta-command handled; ask for another line
             break
+
+        self.screen.transcript_write(in_string + '\n')
 
         if self.map_file:
             self._map_prev_cmd = in_string  # stored; transition checked next turn
@@ -783,7 +795,8 @@ class Instructions:
                 "  unscript / noscript    Stop transcript\n"
                 "  #loc                   Toggle location display before each prompt\n"
                 "  #loc G <n>             Pin location to global variable n\n"
-                "  #commands <file>        Read commands from file (plain list or transcript)\n"
+                "  #commands <file>        Read commands from a plain commands file\n"
+                "  #replay <file>          Replay commands from a transcript file\n"
                 "  #map <file>            Log location transitions to file (from / to / command)\n"
                 "  #map off               Stop map logging\n"
                 "  #see <note>            Add a note to the current location (shown in map)\n"
@@ -797,15 +810,17 @@ class Instructions:
                 "]\n"
             )
             return True
-        if verb == '#commands':
+        if verb in ('#commands', '#replay'):
             if len(cmd) < 2:
-                self.screen.print_str("[Usage: #commands <filename>]\n")
+                self.screen.print_str(f"[Usage: {verb} <filename>]\n")
             else:
                 filename = ' '.join(cmd[1:])
                 try:
                     from Scripting import Scripting
                     self.scripting = Scripting(filename)
-                    self.screen.print_str(f"[Reading commands from {filename}]\n")
+                    self.screen.auto_more = True
+                    label = "Replaying" if verb == '#replay' else "Reading commands from"
+                    self.screen.print_str(f"[{label} {filename}]\n")
                 except FileNotFoundError:
                     self.screen.print_str(f"[File not found: {filename}]\n")
                 except Exception as e:
@@ -1114,6 +1129,9 @@ class Instructions:
         script_line = self.scripting.get_line() if self.scripting is not None else None
         if script_line is not None:
             return script_line
+        if self.scripting is not None:
+            self.scripting = None
+            self.screen.auto_more = False  # restore [More] pauses for interactive play
 
         if self.show_location:
             loc = self._current_location_str()
@@ -1124,10 +1142,8 @@ class Instructions:
         return self.screen.read_line(max_chars, time_tenths, cb)
 
     def _read_single_char(self, time_tenths, time_routine):
-        script_line = self.scripting.get_line() if self.scripting is not None else None
-        if script_line is not None:
-            ch = script_line[0] if script_line else '\r'
-            return ch
+        if self.scripting is not None:
+            return '\r'  # auto-pass read_char pauses during replay
 
         cb = (lambda: self.processor.call_and_run(time_routine, [])) if (time_tenths and time_routine) else None
         return self.screen.read_char(time_tenths, cb)
@@ -1227,12 +1243,29 @@ class Instructions:
     # Save / Restore                                                                               #
     ################################################################################################
 
-    def instruction_save(self, args):
-        self.screen.print_str("Save to file: ")
+    def _read_aux_line(self, prompt):
+        """Read an auxiliary input line (filename prompt etc.), using scripting if active.
+        Always writes the result to the transcript as a >-prefixed line on its own line."""
+        self.screen.print_str(prompt)
         self.screen.refresh()
-        in_string = self.screen.read_line(128).strip()
-        if not in_string:
-            in_string = "save.qzl"
+        if self.scripting is not None:
+            line = self.scripting.get_line()
+            if line is None:
+                line = self.screen.read_line(128).strip()
+            else:
+                self.screen.print_str(line + '\n')
+        else:
+            line = self.screen.read_line(128).strip()
+        if line:
+            self.screen.transcript_write('\n> ' + line + '\n')
+        return line
+
+    def instruction_save(self, args):
+        in_string = self._read_aux_line("Save to file: ") or "save.qzl"
+        if self.scripting is not None:
+            self.screen.print_str("[Replay: skipping save]\n")
+            self.processor.save_succeeded()
+            return
         try:
             q = Quetzal(self.processor.filename)
             q.write_quetzal_save(self.processor.memory, self.processor.purbot,
@@ -1243,11 +1276,7 @@ class Instructions:
             self.processor.save_failed()
 
     def instruction_restore(self, args):
-        self.screen.print_str("Restore from file: ")
-        self.screen.refresh()
-        in_string = self.screen.read_line(128).strip()
-        if not in_string:
-            in_string = "save.qzl"
+        in_string = self._read_aux_line("Restore from file: ") or "save.qzl"
         try:
             q = Quetzal(self.processor.filename)
             q.read_quetzal_save(in_string)

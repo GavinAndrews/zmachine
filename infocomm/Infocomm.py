@@ -56,6 +56,8 @@ screen.init()
 screen._seed = args.seed
 
 scripting = Scripting(args.commands) if args.commands else None
+if scripting is not None:
+    screen.auto_more = True
 processor = build_machine(game_arg, screen, scripting=scripting, seed=args.seed)
 processor.instructions.undo_random_continue = args.undo_random_continue
 

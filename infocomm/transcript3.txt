@@ -1,0 +1,324 @@
+
+[Transcript started: transcript3.txt]
+[Transcript started.]
+transcript
+
+[Obj#575: Bottom of Stairs]
+> i
+You’re holding an axe, a splinter (providing light), a piece of paper, a small coin, a bag of crumbs and an umbrella. You’re wearing a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#575: Bottom of Stairs]
+> drop all
+The axe: Dropped.
+The splinter: Dropped.
+The piece of paper: Dropped.
+The small coin: Dropped.
+The bag of crumbs: Dropped.
+The umbrella: Dropped.
+
+>
+[Obj#575: Bottom of Stairs]
+> take umbrella
+Taken.
+
+>
+[Obj#575: Bottom of Stairs]
+> take splinter
+You take the splinter.
+
+>
+[Obj#575: Bottom of Stairs]
+> w
+South Bog
+                South Bog
+>
+[Obj#319: South Bog]
+> e
+Bottom of Stairs
+
+You see a bag of crumbs, a small coin, a piece of paper and an axe here.
+         Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> w
+South Bog
+                South Bog
+>
+[Obj#319: South Bog]
+> w
+Waterfall
+
+A curtain of water tumbles off the western cliffs into a deep, rocky pool. From there, a mountain stream wanders off into the forest. Footpaths follow the stream east, past a giant toadstool. The white door in its stem is closed.
+
+A flight of stone steps has been hewn into the face of the north cliff.
+         Waterfall
+>
+[Obj#472: Waterfall]
+> u
+You carefully ascend the stone steps.
+
+Cemetery
+
+Gloomy statues lie toppled among the tombstones, their broken limbs and heads scattered like the carnage of a ghastly battle.
+
+A granite crypt lies across the ground. Beyond it rises the mound of an ancient barrow. A black tunnel leads north, into the barrow.
+
+Sudden drops fall away on every side but south, where a flight of stone steps descends the cliff.
+         Cemetery
+>
+[Obj#414: Cemetery]
+> n
+Barrow
+
+The splinter’s ghostly flicker does little to dispel the gloom of this subterranean passage. Craggy walls bend away to the north and south.
+
+A small hole is visible in the wall.
+
+A clatter breaks the silence! You turn, and watch helplessly as a spiked door crashes down across the south exit.
+
+Something just moved.
+
+You peer uneasily beyond the pool of light around the splinter. Nothing. Then, as your eyes adjust, you descry a vaguely human outline crouched against the tunnel wall.
+
+A voice in your ear mutters, "Barrow wight."
+        Barrow
+>
+[Obj#353: Barrow]
+> n
+The barrow wight covers its eye with its claws and bellows something awful as you pass.
+
+Ossuary
+
+Naked slopes veer upward on every side, forming a natural hollow that is filled to a depth of several inches with human bones. The only exit is a dark opening to the south.
+
+A giant toadstool is flourishing in the rich fertilizer. The white door in its stem is closed.
+
+A triangular shadow inches across the ground. Its sharp point is sweeping northeastward, away from the toadstool.
+      Ossuary
+>
+[Obj#522: Ossuary]
+> take bones
+As you sift dispiritedly through the bones, a skeleton key, still clutched in a long-dead hand, catches your eye.
+
+>
+[Obj#522: Ossuary]
+> take skeleton key
+You gently pry the skeleton key out from between the fingers.
+
+[Your score just went up by 1 point. The total is now 23 out of 100.]
+
+>
+[Obj#522: Ossuary]
+> s
+Barrow
+
+A barrow wight is eyeing you from the darkness close at hand.
+
+A small hole is visible in the wall.
+
+The barrow wight studies you with its red eye.
+       Barrow
+>
+[Obj#353: Barrow]
+> put key in hole
+The skeleton key slides into the hole with a satisfying click.
+
+>
+[Obj#353: Barrow]
+> turn key
+You slowly twist the key in the hole.
+
+The ground under your feet is moving! You leap out of the way, and watch as a hidden slope opens up beneath the keyhole.
+
+[Your score just went up by 1 point. The total is now 24 out of 100.]
+
+The barrow wight stomps its feet and howls with rage.
+
+>
+[Obj#353: Barrow]
+> d
+You slide down into gloom that grows colder and colder...
+
+Ice Cavern
+
+You’re in a vast underground cavern, cold enough to see your breath. Icicles on the ceiling glitter in the light shining in through an opening in the east wall. Beyond it, a curtain of water fills the cavern with its splashing roar.
+
+With a rusty creak, the slope behind you retracts into the ceiling. A clatter and thump fill the cavern with a sinister echo. Then everything is quiet.
+      Ice Cavern
+>
+[Obj#449: Ice Cavern]
+> throw umbrella at icile
+[You don’t need to use the word "icile" to complete this story.]
+
+>
+[Obj#449: Ice Cavern]
+> throw umbrella at icicle
+The umbrella strikes the icicles and lands at your feet.
+
+An icicle breaks off the ceiling and falls to the ground.
+
+>
+[Obj#449: Ice Cavern]
+> take all
+The icicle: Taken.
+
+[Your score just went up by 1 point. The total is now 25 out of 100.]
+The umbrella: Taken.
+
+>
+[Obj#449: Ice Cavern]
+> e
+You edge your way around the waterfall.
+
+Waterfall
+          Waterfall
+>
+[Obj#472: Waterfall]
+> e
+South Bog
+         South Bog
+>
+[Obj#319: South Bog]
+> e
+Bottom of Stairs
+
+You see a bag of crumbs, a small coin, a piece of paper and an axe here.
+
+The warm air makes the icicle glisten.
+         Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> u
+With a fearful gulp, you ascend the narrow stairway.
+
+Halfway Up
+
+It’s getting hard to hold the slippery icicle.
+                Halfway Up
+>
+[Obj#80: Halfway]
+> u
+The air grows colder as you continue your ascent.
+
+Vertex
+
+A long metal lever stands vertically out of the platform.
+
+At the center of the platform stands a handsome antique sundial. The circumference is enclosed in a wide brass ring.
+
+The icicle hardens in the thin, frosty air.
+          Vertex
+>
+[Obj#316: Vertex]
+> d
+Fighting back fear, you descend the stairway.
+
+Halfway Down
+      Halfway Down
+>
+[Obj#80: Halfway]
+> d
+The air grows warmer as you continue your descent.
+
+Bottom of Stairs
+
+You see a bag of crumbs, a small coin, a piece of paper and an axe here.
+            Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> e
+The Bend
+
+An exhausted stream trickles into a river that bends to the south and east. The opposite shore is veiled behind a thick mist.
+
+Paths meander off in many directions from the river’s edge.
+
+The warm air makes the icicle glisten.
+                The Bend
+>
+[Obj#557: The Bend]
+> ne
+Crater’s Edge
+
+The forest around you is bent and splintered, as if a mighty fist had smashed through the branches. Sooty fumes hang in the air; the earth is dark with ashes and rubble.
+
+The eastern path ends at the lip of a deep crater, forty or fifty feet across.
+
+It’s getting hard to hold the slippery icicle.
+        Crater’s Edge
+>
+[Obj#441: Crater’s Edge]
+> d
+You climb down into the crater.
+
+Crater
+
+A dark cloud of smoke fills the air with an acrid, smoldering stench. Blackened rubble covers the sides and bottom of the crater.
+
+A glowing lump of metal lies half-buried at your feet.
+
+You can feel the umbrella pulling towards the lump of metal.
+
+The icicle is almost too slippery to hold.
+             Crater
+>
+[Obj#145: Crater]
+> put icicle on lump
+The icicle disappears in a hissing cloud as it touches the hot lump of metal. When the steam clears, the surface of the lump is black and wet.
+
+[Your score just went up by 3 points. The total is now 28 out of 100.]
+
+You can feel the umbrella pulling towards the lump of metal.
+
+>
+[Obj#145: Crater]
+> take lump
+Taken.
+
+[Your score just went up by 1 point. The total is now 29 out of 100.]
+
+>
+[Obj#145: Crater]
+> u
+You scramble out of the crater.
+
+Crater’s Edge
+
+You can feel the umbrella pulling towards the lump of metal.
+      Crater’s Edge
+>
+[Obj#441: Crater’s Edge]
+> sw
+The Bend
+             The Bend
+>
+[Obj#557: The Bend]
+> w
+Bottom of Stairs
+
+You see a bag of crumbs, a small coin, a piece of paper and an axe here.
+
+You can feel the umbrella pulling towards the lump of metal.
+        Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> drop lump
+You drop the lump of metal.
+
+>
+[Obj#575: Bottom of Stairs]
+> drop umbrella
+You put down the umbrella.
+
+>
+[Obj#575: Bottom of Stairs]
+> save
+Save to file: 
+> wt3.sav
+
+[SAVE completed.]
+                                                                                Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> 

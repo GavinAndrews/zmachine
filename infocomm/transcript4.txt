@@ -1,0 +1,1038 @@
+
+[Transcript started: transcript4.txt]
+[Transcript started.]
+transcript
+
+[Obj#575: Bottom of Stairs]
+> u
+With a fearful gulp, you ascend the narrow stairway.
+
+Halfway Up
+                Halfway Up
+>
+[Obj#80: Halfway]
+> u
+The air grows colder as you continue your ascent.
+
+Vertex
+
+A long metal lever stands vertically out of the platform.
+
+At the center of the platform stands a handsome antique sundial. The circumference is enclosed in a wide brass ring.
+          Vertex
+>
+[Obj#316: Vertex]
+> raise lever
+The lever is moved up as far as it can go.
+
+>
+[Obj#316: Vertex]
+> move ring to 3
+You grasp the edges of the brass ring and begin to turn it.
+
+An ominous vibration makes the platform tremble. Then a motion catches your eye.
+
+The sun is moving! It’s arcing across the sky like a time-lapse movie, smooth and terribly silent.
+
+You let go of the ring with a cry. The sun instantly stops, and the strange vibration with it.
+
+After your pulse slows, you grasp the ring again and turn it, ever so carefully, until it clicks into place at the dial’s third symbol.
+
+>
+[Obj#316: Vertex]
+> lower lever
+As you lower the lever you hear a loud, mechanical groan below your feet. The floor lurches and stops vibrating; you feel a momentary dizziness, and a brief gust of wind. Then all is still.
+
+>
+[Obj#316: Vertex]
+> d
+Fighting back fear, you descend the stairway.
+
+Halfway Down
+      Halfway Down
+>
+[Obj#80: Halfway]
+> d
+The air grows warmer as you continue your descent.
+
+Bottom of Stairs
+
+You see an umbrella, a lump of metal, a bag of crumbs, a small coin, a piece of paper and an axe here.
+            Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> i
+You’re holding a splinter (providing light). You’re wearing a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#575: Bottom of Stairs]
+> w
+South Bog
+                South Bog
+>
+[Obj#319: South Bog]
+> w
+Waterfall
+         Waterfall
+>
+[Obj#472: Waterfall]
+> u
+You carefully ascend the stone steps.
+
+Cemetery
+         Cemetery
+>
+[Obj#414: Cemetery]
+> n
+Barrow
+
+The splinter’s ghostly flicker does little to dispel the gloom of this subterranean passage. Craggy walls bend away to the north and south.
+
+A barrow wight is lurking in the darkness close at hand.
+
+A skeleton key is sticking out of the wall.
+
+A clatter breaks the silence! You turn, and watch helplessly as a spiked door crashes down across the south exit.
+        Barrow
+>
+[Obj#353: Barrow]
+> n
+The barrow wight stumbles out of your way.
+Ossuary
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the open door in the toadstool.
+      Ossuary
+>
+[Obj#522: Ossuary]
+> enter door
+You explore the door’s edge with a timid foot.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Underground
+
+You’re in a narrow underground chamber, illuminated by an open door in the east wall. The walls and ceiling are gouged with deep spiral ruts; they look as if they’ve been routed out with heavy machinery.
+
+A large cylinder occupies most of the chamber. The maze of cables and pipes surrounding it trails west, into the depths of a tunnel.
+
+A lantern is lying in the dirt at your feet.
+       Underground
+>
+[Obj#131: Underground]
+> [Map logging to map.txt]
+#map
+
+[Obj#131: Underground]
+> take all
+The lantern: Taken.
+
+[Your score just went up by 1 point. The total is now 30 out of 100.]
+
+>
+[Obj#131: Underground]
+> w
+Underground
+
+The cables and pipes lining the tunnel’s walls look like bloated veins and arteries in the splinter’s flickering glow. Deep tunnels bend off to the east and west.
+
+Some careless technician has left a walkie-talkie lying in the dirt.
+
+As you study the equipment you spot something moving in the corner of your eye. It’s... what do you call them?... yes! A skink.
+
+The skink blinks helplessly in the glow of the splinter, and scrambles away down the west tunnel.
+           Underground
+>
+[Obj#87: Underground]
+> take walkie
+[the walkie-talkie]
+
+You take the walkie-talkie.
+
+[Your score just went up by 1 point. The total is now 31 out of 100.]
+
+>
+[Obj#87: Underground]
+> examine walkie
+[the walkie-talkie]
+
+The walkie-talkie has a rocker switch, a numbered slider, a telescoping antenna (now lowered) and a large orange button.
+
+>
+[Obj#87: Underground]
+> examine numbered slider
+The slider is calibrated with numbers from 20 to 80. Right now it’s set to 42.
+
+>
+[Obj#87: Underground]
+> save
+Save to file: 
+> wt4.sav
+
+[SAVE completed.]
+                                                                                Underground
+>
+[Obj#87: Underground]
+> turn lantern on
+Click. The lantern emits a warm, yellow beam.
+
+>
+[Obj#87: Underground]
+> drop lantern
+You drop the lantern.
+
+>
+[Obj#87: Underground]
+> w
+Underground
+
+The west end of the tunnel is sealed off with a landslide of rocks and dirt. Numerous cables and pipes emerge from the rubble, trailing away to the east.
+
+The splinter’s feeble glow reveals a narrow crevice in the wall of the tunnel.
+
+A skink is squinting at you from the shadows nearby.
+
+With a nimble leap, the skink scrambles into the dark crevice.
+           Underground
+>
+[Obj#30: Underground]
+> put splint in crevice
+[This story doesn’t recognize the word "splint."]
+
+>
+[Obj#30: Underground]
+> put splinter in crevice
+It doesn’t look as if the splinter is going to fit. But you twist it harder against the narrow opening, harder...
+
+Thunk. The soft wood falls to the bottom of the crevice, filling it with pale light.
+
+The skink scrambles out of the lighted crevice, slips between your legs and scurries away into the east tunnel. A moment later it reappears, blinking helplessly from the glow of the lantern.
+
+With no place to hide, the flummoxed skink runs in circles at your feet.
+
+>
+[Obj#30: Underground]
+> take skink
+You take the skink.
+
+[Your score just went up by 3 points. The total is now 34 out of 100.]
+
+The skink squirms violently in your hand.
+
+>
+[Obj#30: Underground]
+> put skink in pocket
+You put the skink in your pocket.
+
+The skink squirms uncomfortably for a moment, then lies still.
+
+>
+[Obj#30: Underground]
+> look
+Underground
+
+The west end of the tunnel is sealed off with a landslide of rocks and dirt. Numerous cables and pipes emerge from the rubble, trailing away to the east.
+
+Feeble light shines from a narrow crevice in the wall of the tunnel.
+
+The skink squirms in your pocket.
+
+>
+[Obj#30: Underground]
+> e
+Underground
+
+There’s a lantern (providing light) here.
+           Underground
+>
+[Obj#87: Underground]
+> take lantern
+You pick up the lantern.
+
+>
+[Obj#87: Underground]
+> e
+Underground
+
+The skink in your pocket scratches restlessly.
+           Underground
+>
+[Obj#131: Underground]
+> e
+You slip through the white door.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ossuary
+
+Naked slopes veer upward on every side, forming a natural hollow that is filled to a depth of several inches with human bones. The only exit is a dark opening to the south.
+
+A giant toadstool is flourishing in the rich fertilizer.
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the toadstool.
+
+The white door fades away into the texture of the toadstool.
+           Ossuary
+>
+[Obj#522: Ossuary]
+> s
+Barrow
+
+A barrow wight is slavering noisily in the darkness close at hand.
+
+A skeleton key is sticking out of the wall.
+
+The barrow wight licks a stream of drool off its chin.
+       Barrow
+>
+[Obj#353: Barrow]
+> turn key
+You slowly twist the key in the hole.
+
+The ground under your feet is moving! You leap out of the way, and watch as a hidden slope opens up beneath the keyhole.
+
+The barrow wight stomps its feet and howls with rage.
+
+>
+[Obj#353: Barrow]
+> d
+You slide down into gloom that grows colder and colder...
+
+Ice Cavern
+
+With a rusty creak, the slope behind you retracts into the ceiling. A clatter and thump fill the cavern with a sinister echo. Then all is still.
+      Ice Cavern
+>
+[Obj#449: Ice Cavern]
+> e
+You edge your way around the waterfall.
+
+Waterfall
+
+You can feel the skink moving in your pocket.
+          Waterfall
+>
+[Obj#472: Waterfall]
+> e
+South Bog
+         South Bog
+>
+[Obj#319: South Bog]
+> e
+Bottom of Stairs
+
+You see an umbrella, a lump of metal, a bag of crumbs, a small coin, a piece of paper and an axe here.
+
+The skink squirms in your pocket.
+
+You can feel the walkie-talkie pulling towards the lump of metal.
+         Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> turn lantern off
+You turn off the lantern’s switch.
+
+>
+[Obj#575: Bottom of Stairs]
+> drop lantern
+Dropped.
+
+You can feel the walkie-talkie pulling towards the lump of metal.
+
+>
+[Obj#575: Bottom of Stairs]
+> drop walkie
+[the walkie-talkie]
+
+Dropped.
+
+>
+[Obj#575: Bottom of Stairs]
+> save
+Save to file: 
+> wt4.sav
+
+[SAVE completed.]
+                                                                                Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> [Map written to map.html: 532 transitions, 130 locations, 52 notes]
+#remap
+
+[Obj#575: Bottom of Stairs]
+> [Map written to map.html: 532 transitions, 130 locations, 55 notes]
+#remap
+
+[Obj#575: Bottom of Stairs]
+> [Transcript is already active.]
+transcript
+
+[Obj#575: Bottom of Stairs]
+> u
+With a fearful gulp, you ascend the narrow stairway.
+
+Halfway Up
+
+The skink in your pocket scratches restlessly.
+                Halfway Up
+>
+[Obj#80: Halfway]
+> u
+The air grows colder as you continue your ascent.
+
+Vertex
+
+A long metal lever stands at a sharp angle to the platform.
+
+At the center of the platform stands a handsome antique sundial. The circumference is enclosed in a wide brass ring.
+          Vertex
+>
+[Obj#316: Vertex]
+> raise lever
+As you raise the lever you hear a loud, mechanical groan below your feet. The floor lurches and begins to vibrate again; you feel a momentary dizziness, and a brief gust of wind. Then all is still.
+
+>
+[Obj#316: Vertex]
+> turn ring to 2
+The sun sweeps across the sky as you rotate the brass ring. It clicks into place at the dial’s second symbol.
+
+You can feel the skink moving in your pocket.
+
+>
+[Obj#316: Vertex]
+> lower lever
+As you lower the lever you hear a loud, mechanical groan below your feet. The floor lurches and stops vibrating; you feel a momentary dizziness, and a brief gust of wind. Then all is still.
+
+>
+[Obj#316: Vertex]
+> d
+Fighting back fear, you descend the stairway.
+
+Halfway Down
+      Halfway Down
+>
+[Obj#80: Halfway]
+> d
+The air grows warmer as you continue your descent.
+
+Bottom of Stairs
+
+You see a walkie-talkie, a lantern, an umbrella, a lump of metal, a bag of crumbs, a small coin, a piece of paper and an axe here.
+            Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> take lump
+You take the lump of metal.
+
+>
+[Obj#575: Bottom of Stairs]
+> take umbrella
+Taken.
+
+You can feel the umbrella pulling towards the lump of metal.
+
+>
+[Obj#575: Bottom of Stairs]
+> nw
+North Bog
+
+A thick, suffocating miasma lingers among the trees; the black earth is squishy with corruption. You can hear dripping liquids and other moist sounds close by.
+
+Paths wander off in many directions. High rock walls curve away to the north and southwest.
+
+A big Venus flytrap is growing nearby. Its crimson jaws are wide open, exposing a cavity that gleams with sweet-smelling ichor.
+                North Bog
+>
+[Obj#42: North Bog]
+> n
+Promontory
+
+This crag of rock juts out over the surrounding chasm, ending at an abrupt drop several hundred feet deep. Rugged trails wind south and southeast.
+
+A rather large boy sits nearby, listening to a pair of headphones and idly blowing soap bubbles. There’s a dish full of soapy water by his side.
+
+The skink squirms in your pocket.
+
+You can feel the umbrella pulling towards the lump of metal.
+
+The boy dips the bubble wand in the dish and swishes it around.
+         Promontory
+>
+[Obj#370: Promontory]
+> enter dish
+You clamber over the edge of the dish, and find yourself up to your knees in white, slippery water.
+
+The boy pulls the bubble wand out of the dish, puts it to his lips and blows a big soap bubble.
+          Promontory, in the dish
+>
+[Obj#370: Promontory]
+> wait
+Time passes.
+
+You can feel the umbrella pulling towards the lump of metal.
+
+The boy snaps his fingers to the headphone music as the soap bubble bursts with a flabby pop.
+                                           Atoms or systems into ruin hurled,        And now a bubble burst, and now a world.                                                                   -- Alexander Pope                                           
+>
+[Obj#370: Promontory]
+> enter dish
+You’re already in the dish.
+
+The skink in your pocket scratches restlessly.
+
+The boy dips the bubble wand in the dish and swishes it around. Trapped in a whirlpool of suds, you cling helplessly to the boy’s wand.
+
+The boy pulls the bubble wand out of the dish, puts it to his lips and blows a big soap bubble. You find yourself slowly drifting to the ground, enveloped in a soapy film of iridescent color.
+                       Promontory, in a soap bubble
+>
+[Obj#370: Promontory]
+> s
+North Bog, in a soap bubble
+
+A big Venus flytrap is growing nearby. Its crimson jaws are wide open, exposing a cavity that gleams with sweet-smelling ichor.
+
+The soapy film around you shimmers with iridescent color.
+
+You can feel the umbrella pulling towards the lump of metal.
+
+A soap bubble appears high overhead. It hovers for a moment before it bursts with a flabby pop.
+                            North Bog, in a soap bubble
+>
+[Obj#42: North Bog]
+> sw
+Waterfall, in a soap bubble
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the open door in the toadstool.
+
+The soapy film around you is sagging a bit.
+                           Waterfall, in a soap bubble
+>
+[Obj#472: Waterfall]
+> enter door
+You squeeze the soapy film through the white door.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Earth Orbit, in a soap bubble
+
+You’re five hundred miles above a sea of ice, hurtling in profound silence over the Arctic atmosphere. Layers of crimson and violet describe the curve of the horizon, blending imperceptibly into a black sky crowded with stars.
+
+The soapy film around you freezes instantly, but remains intact.
+
+The white door drops away behind you.
+
+You watch helplessly as the white door dwindles to a distant speck, vanishing at last between the horns of the rising moon.
+                           Earth Orbit, in a soap bubble
+>
+[Obj#425: Earth Orbit]
+> save
+Save to file: 
+> wt6.sav
+
+[SAVE completed.]
+                                                                                Earth Orbit, in a soap bubble
+>
+[Obj#425: Earth Orbit]
+> wait
+Time passes.
+
+Far ahead, a satellite drifts into view.
+
+>
+[Obj#425: Earth Orbit]
+> use lump
+How do you intend to do that?
+
+The satellite drifts closer.
+
+You feel the lump of metal tug in your arms. It’s pulling you towards the satellite!
+
+You can feel the skink moving in your pocket.
+
+You can feel the umbrella pulling towards the lump of metal.
+
+>
+[Obj#425: Earth Orbit]
+> use lump on satellite
+[Please try to express that another way.]
+
+>
+[Obj#425: Earth Orbit]
+> wait
+Time passes.
+
+The lump of metal twists in your arms as the satellite glides past. You find yourself being yanked out of your old trajectory, into what is obviously a collision course.
+
+Ploop! The soapy film bounces against the satellite. The lump of metal leaps from your grasp and fastens itself to the metal hull, anchoring the film securely.
+
+"Where gnomon has gone before," sniggers a voice in your ear.
+
+The satellite’s maneuvering thrusters fire briefly to compensate for your added momentum.
+                             Earth Orbit, on a satellite
+>
+[Obj#124: Earth Orbit, on a satellite]
+> look
+Earth Orbit, on a satellite
+
+The satellite you’re riding is about twenty feet long, and shaped like a beer can. The soapy film around you is anchored to the satellite’s hull by the lump of metal.
+
+The satellite drifts back in the direction you just came from.
+
+The white door reappears far ahead of you.
+
+The skink squirms in your pocket.
+
+You can feel the umbrella pulling towards the lump of metal.
+
+>
+[Obj#124: Earth Orbit, on a satellite]
+> examine moon
+The moon is a delicate crescent, hovering just above the horizon.
+
+A red flash draws your eyes to the ground below, where the contrail of a missile is climbing into the stratosphere.
+
+The satellite is heading straight for the white door.
+
+>
+[Obj#124: Earth Orbit, on a satellite]
+> kill skink
+You’d have to be holding the skink to do that.
+
+The maneuvering thrusters on the satellite fire, turning the nose until it faces the ascending missile.
+
+The white door is very close now.
+
+You can feel the umbrella pulling towards the lump of metal.
+
+>
+[Obj#124: Earth Orbit, on a satellite]
+> take skink
+You take the skink out of your pocket.
+
+The satellite erupts in a savage glare that lights up the ground below. A beam of violet radiation flashes downward, obliterating the distant missile. Unfortunately, you have little time to admire this triumph of engineering before the satellite’s blast incinerates you.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 34 points out of 100, in 168 moves. This gives you the rank of Explorer.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt5.sav
+
+[File not found: wt5.sav]
+
+[RESTORE failed.]
+                                                                                [Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt6.sav
+
+[RESTORE completed.]
+                                                                                
+Earth Orbit, in a soap bubble
+
+You’re five hundred miles above a sea of ice, hurtling in profound silence over the Arctic atmosphere. Layers of crimson and violet describe the curve of the horizon, blending imperceptibly into a black sky crowded with stars.
+Earth Orbit, in a soap bubble
+>
+[Obj#425: Earth Orbit]
+> take skink
+You take the skink out of your pocket.
+
+Far ahead, a satellite drifts into view.
+
+The skink squirms violently in your hand.
+
+You can feel the umbrella pulling towards the lump of metal.
+
+>
+[Obj#425: Earth Orbit]
+> kill skink
+The tiny lizard writhes in your grasp and claws at your fingers, its pink mouth gasping for breath. You squeeze harder and harder until your fist trembles with the effort.
+
+The skink stops squirming.
+
+[Your score just went up by 3 points. The total is now 37 out of 100.]
+
+The satellite drifts closer.
+
+You feel the lump of metal tug in your arms. It’s pulling you towards the satellite!
+
+>
+[Obj#425: Earth Orbit]
+> wait
+Time passes.
+
+The lump of metal twists in your arms as the satellite glides past. You find yourself being yanked out of your old trajectory, into what is obviously a collision course.
+
+Ploop! The soapy film bounces against the satellite. The lump of metal leaps from your grasp and fastens itself to the metal hull, anchoring the film securely.
+
+"Where gnomon has gone before," sniggers a voice in your ear.
+
+The satellite’s maneuvering thrusters fire briefly to compensate for your added momentum.
+
+You can feel the umbrella pulling towards the lump of metal.
+                             Earth Orbit, on a satellite
+>
+[Obj#124: Earth Orbit, on a satellite]
+> burst bubble with umbrella
+The sharp point of the umbrella strains against the shimmering wall of soap...
+
+Bang! The film disappears in an explosion of colorful ice crystals.
+
+You’re blown violently away from the satellite.
+Earth Orbit
+
+The satellite drifts farther back in the direction you just came from.
+
+The total lack of air pressure is making you uncomfortable.
+                           Earth Orbit
+>
+[Obj#425: Earth Orbit]
+> enter door
+You can’t see the door anymore. It’s too far away.
+
+>
+[Obj#425: Earth Orbit]
+> wait
+Time passes.
+
+A red flash draws your eyes to the ground below, where the contrail of a missile is climbing into the stratosphere.
+
+Hmm. It seems that your blood is beginning to boil.
+
+>
+[Obj#425: Earth Orbit]
+> enter door
+You can’t see the door anymore. It’s too far away.
+
+>
+[Obj#425: Earth Orbit]
+> wait
+Time passes.
+
+The maneuvering thrusters on the distant satellite fire, turning the nose until it faces the ascending missile.
+
+You lose consciousness just as your internal organs begin to rupture.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 37 points out of 100, in 167 moves. This gives you the rank of Explorer.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt6.sav
+
+[RESTORE completed.]
+                                                                                
+Earth Orbit, in a soap bubble
+
+You’re five hundred miles above a sea of ice, hurtling in profound silence over the Arctic atmosphere. Layers of crimson and violet describe the curve of the horizon, blending imperceptibly into a black sky crowded with stars.
+Earth Orbit, in a soap bubble
+>
+[Obj#425: Earth Orbit]
+> examine moon
+The moon is a delicate crescent, hovering just above the horizon.
+
+Far ahead, a satellite drifts into view.
+
+You can feel the skink moving in your pocket.
+
+You can feel the umbrella pulling towards the lump of metal.
+
+>
+[Obj#425: Earth Orbit]
+> take skink
+You take the skink out of your pocket.
+
+The satellite drifts closer.
+
+You feel the lump of metal tug in your arms. It’s pulling you towards the satellite!
+
+The skink squirms violently in your hand.
+
+>
+[Obj#425: Earth Orbit]
+> kill skink
+The tiny lizard writhes in your grasp and claws at your fingers, its pink mouth gasping for breath. You squeeze harder and harder until your fist trembles with the effort.
+
+The skink stops squirming.
+
+[Your score just went up by 3 points. The total is now 37 out of 100.]
+
+The lump of metal twists in your arms as the satellite glides past. You find yourself being yanked out of your old trajectory, into what is obviously a collision course.
+
+Ploop! The soapy film bounces against the satellite. The lump of metal leaps from your grasp and fastens itself to the metal hull, anchoring the film securely.
+
+A voice in your ear sniggers, "Where gnomon has gone before."
+
+The satellite’s maneuvering thrusters fire briefly to compensate for your added momentum.
+                             Earth Orbit, on a satellite
+>
+[Obj#124: Earth Orbit, on a satellite]
+> save
+Save to file: 
+> wt7.sav
+
+[SAVE completed.]
+                                                                                Earth Orbit, on a satellite
+>
+[Obj#124: Earth Orbit, on a satellite]
+> look
+Earth Orbit, on a satellite
+
+The satellite you’re riding is about twenty feet long, and shaped like a beer can. The soapy film around you is anchored to the satellite’s hull by the lump of metal.
+
+The satellite drifts back in the direction you just came from.
+
+The white door reappears far ahead of you.
+
+You can feel the umbrella pulling towards the lump of metal.
+
+>
+[Obj#124: Earth Orbit, on a satellite]
+> wait
+Time passes.
+
+A red flash draws your eyes to the ground below, where the contrail of a missile is climbing into the stratosphere.
+
+The satellite is heading straight for the white door.
+
+>
+[Obj#124: Earth Orbit, on a satellite]
+> burst bubble with umbrella
+The sharp point of the umbrella strains against the shimmering wall of soap...
+
+Bang! The film disappears in an explosion of colorful ice crystals.
+
+You’re blown violently away from the satellite, straight towards the white door.
+
+The maneuvering thrusters on the distant satellite fire, turning the nose until it faces the ascending missile.
+
+The plutonium heart of the satellite erupts in a searing glare as you cross the threshold...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Waterfall
+
+A curtain of water tumbles off the western cliffs into a deep, rocky pool. From there, a mountain stream wanders off into the forest. Footpaths follow the stream east, past a giant toadstool.
+
+A flight of stone steps has been hewn into the face of the north cliff.
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the toadstool.
+
+The white door fades away into the texture of the toadstool.
+                           Waterfall
+>
+[Obj#472: Waterfall]
+> save
+Save to file: 
+> wt8.sav
+
+[SAVE completed.]
+                                                                                Waterfall
+>
+[Obj#472: Waterfall]
+> score
+[Your score is 37 points out of 100, in 168 moves. This gives you the rank of Explorer.]
+
+>
+[Obj#472: Waterfall]
+> i
+You’re holding a dead skink and an umbrella. You’re wearing a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#472: Waterfall]
+> put dead skink in pocket
+You put the dead skink in your pocket.
+
+>
+[Obj#472: Waterfall]
+> e
+South Bog
+
+A dark shadow lies across the ground.
+         South Bog
+>
+[Obj#319: South Bog]
+> e
+Bottom of Stairs
+
+You see a walkie-talkie, a lantern, a bag of crumbs, a small coin, a piece of paper and an axe here.
+         Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> drop umbrella
+Dropped.
+
+>
+[Obj#575: Bottom of Stairs]
+> i
+You’re not holding anything, but you’re wearing a wristwatch. You also have a dead skink and a credit card in your pocket.
+
+>
+[Obj#575: Bottom of Stairs]
+> save
+Save to file: 
+> wt9.sav
+
+[SAVE completed.]
+                                                                                Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> [Map written to map.html: 537 transitions, 132 locations, 55 notes]
+#remap
+
+[Obj#575: Bottom of Stairs]
+> [Map written to map.html: 536 transitions, 132 locations, 55 notes]
+#remap
+
+[Obj#575: Bottom of Stairs]
+> quit
+[Your score is 37 points out of 100, in 172 moves. This gives you the rank of Explorer.]
+
+Are you sure you want to leave the story now?
+
+[Please type YES or NO.] >
+[Obj#575: Bottom of Stairs]
+> yes
+

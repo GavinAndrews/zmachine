@@ -1,0 +1,1714 @@
+Trinity Direction Routine Analysis
+======================================================================
+Analysed 180 unique routines (575 total unresolved exits)
+
+Classifications:
+  CONDITIONAL  71
+  MOVER        45
+  BLOCKER      62
+  COMPLEX      2
+
+
+======================================================================
+CONDITIONAL ROUTINES
+======================================================================
+
+Routine 0x2252C  [CONDITIONAL]
+  Used by:
+    #79 The Wabe / N
+  Destinations: #144 (Round Pond)
+  Conditions:
+    if NOT #395 (gnomon) has ATTRIBUTE3  →jump 0x22535
+  Calls: 0x2257C
+
+Routine 0x2253C  [CONDITIONAL]
+  Used by:
+    #79 The Wabe / NE
+  Destinations: #371 (Lancaster Walk)
+  Conditions:
+    if NOT #395 (gnomon) has ATTRIBUTE3  →jump 0x22546
+  Calls: 0x2257C
+
+Routine 0x2254C  [CONDITIONAL]
+  Used by:
+    #79 The Wabe / SE
+  Destinations: #250 (Flower Walk)
+  Conditions:
+    if NOT #395 (gnomon) has ATTRIBUTE3  →jump 0x22555
+  Calls: 0x2257C
+
+Routine 0x2255C  [CONDITIONAL]
+  Used by:
+    #79 The Wabe / SW
+  Destinations: #236 (Palace Gate)
+  Conditions:
+    if NOT #395 (gnomon) has ATTRIBUTE3  →jump 0x22565
+  Calls: 0x2257C
+
+Routine 0x2256C  [CONDITIONAL]
+  Used by:
+    #79 The Wabe / NW
+  Destinations: #354 (Broad Walk)
+  Conditions:
+    if NOT #395 (gnomon) has ATTRIBUTE3  →jump 0x22576
+  Calls: 0x2257C
+
+Routine 0x22764  [CONDITIONAL]
+  Used by:
+    #179 Lancaster Gate / S
+  Destinations: #371 (Lancaster Walk)
+  Conditions:
+    if (SP)+ is nonzero  →jump RFALSE
+  Calls: 0x22788
+
+Routine 0x22770  [CONDITIONAL]
+  Used by:
+    #179 Lancaster Gate / W
+  Destinations: #531 (Inverness Terrace)
+  Conditions:
+    if (SP)+ is nonzero  →jump RFALSE
+  Calls: 0x22788
+
+Routine 0x2277C  [CONDITIONAL]
+  Used by:
+    #179 Lancaster Gate / SW
+  Destinations: #144 (Round Pond)
+  Conditions:
+    if (SP)+ is nonzero  →jump RFALSE
+  Calls: 0x22788
+
+Routine 0x22BC4  [CONDITIONAL]
+  Used by:
+    #522 Ossuary / IN
+  Destinations: #131 (Underground)
+  Conditions:
+    if NOT #91 (white door) has ATTRIBUTE26  →jump 0x22BCE
+    if NOT #91 (white door) has ATTRIBUTE19  →jump 0x22C0E
+    if (SP)+ is nonzero  →jump RFALSE
+  Calls: 0x2DCCC, 0x23B9C, 0x110C0, 0x17C94, 0x14098
+
+Routine 0x22D28  [CONDITIONAL]
+  Used by:
+    #76 Mesa / IN
+  Destinations: #394 (Scaffold)
+  Conditions:
+    if NOT #524 (white door) has ATTRIBUTE26  →jump 0x22D34
+    if NOT #524 (white door) has ATTRIBUTE19  →jump 0x22D93
+    if (SP)+ is nonzero  →jump RFALSE
+    if GA4 is zero  →jump 0x22D75
+  Calls: 0x2DCCC, 0x23B9C, 0x17C94, 0x17C94, 0x10334, 0x110C0, 0x14098
+
+Routine 0x23014  [CONDITIONAL]
+  Used by:
+    #417 Herb Garden / IN
+  Destinations: #199 (Platform), #327 (Cottage)
+  Conditions:
+    if NOT #356 (white door) has ATTRIBUTE26  →jump 0x2302C
+    if NOT #533 (back door) has ATTRIBUTE19  →jump 0x23024
+    if NOT #356 (white door) has ATTRIBUTE19  →jump 0x23085
+    if (SP)+ is nonzero  →jump RFALSE
+  Calls: 0x14098, 0x23B9C, 0x17C94, 0x17C94, 0x10324, 0x110C0, 0x111D0
+
+Routine 0x233B4  [CONDITIONAL]
+  Used by:
+    #353 Barrow / N
+  Destinations: #522 (Ossuary)
+  Conditions:
+    if #484 (splinter) is not inside #103 (yourself)  →jump 0x233EC
+    if NOT #591 (barrow wight) has ATTRIBUTE4  →jump 0x233CD
+    if #357 (lantern) is not inside #103 (yourself)  →jump 0x23404
+    if NOT #357 (lantern) has ATTRIBUTE37  →jump 0x23404
+    if #357 (lantern) is not inside GAE  →jump 0x23418
+    if NOT #357 (lantern) has ATTRIBUTE37  →jump 0x23418
+    if #484 (splinter) is not inside GAE  →jump 0x23426
+  Calls: 0x234BC, 0x234A0, 0x234BC, 0x23444, 0x23444, 0x1E79C
+
+Routine 0x23500  [CONDITIONAL]
+  Used by:
+    #353 Barrow / DOWN
+  Destinations: #449 (Ice Cavern)
+  Conditions:
+    if NOT #234 (slope) has ATTRIBUTE19  →jump 0x2354D
+  Calls: 0x17C94
+
+Routine 0x236F0  [CONDITIONAL]
+  Used by:
+    #306 Chasm's Brink / N
+  Destinations: #76 (Mesa)
+  Conditions:
+    if NOT #112 (oak tree) has ATTRIBUTE11  →jump 0x2370A
+  Calls: 0x23710, 0x23728
+
+Routine 0x23B04  [CONDITIONAL]
+  Used by:
+    #472 Waterfall / W
+  Destinations: #449 (Ice Cavern)
+  Conditions:
+    if #481 (opening) has ATTRIBUTE24  →jump 0x23B13
+  Calls: 0x17418
+
+Routine 0x23E18  [CONDITIONAL]
+  Used by:
+    #80 Halfway / N
+    #80 Halfway / UP
+  Destinations: #316 (Vertex)
+  Conditions:
+    if (SP)+ is zero  →jump RFALSE
+  Calls: 0x23E34
+
+Routine 0x23E28  [CONDITIONAL]
+  Used by:
+    #80 Halfway / S
+    #80 Halfway / DOWN
+  Destinations: #575 (Bottom of Stairs)
+  Conditions:
+    if (SP)+ is zero  →jump RFALSE
+  Calls: 0x23E34
+
+Routine 0x24010  [CONDITIONAL]
+  Used by:
+    #471 Moor / IN
+  Destinations: #208 (Thin Air)
+  Conditions:
+    if NOT #198 (white door) has ATTRIBUTE26  →jump 0x2401A
+    if NOT #198 (white door) has ATTRIBUTE19  →jump 0x2407A
+    if (SP)+ is nonzero  →jump RFALSE
+    if GA4 is zero  →jump 0x24047
+  Calls: 0x2DCCC, 0x23B9C, 0x10334, 0x110C0, 0x14098
+
+Routine 0x24B78  [CONDITIONAL]
+  Used by:
+    #5 Islet / IN
+  Destinations: #507 (Shack)
+  Conditions:
+    if NOT #70 (white door) has ATTRIBUTE26  →jump 0x24B82
+    if NOT #70 (white door) has ATTRIBUTE19  →jump 0x24BB3
+    if (SP)+ is nonzero  →jump RFALSE
+  Calls: 0x2DCCC, 0x23B9C, 0x110C0, 0x24BBC, 0x14098
+
+Routine 0x254C8  [CONDITIONAL]
+  Used by:
+    #131 Underground / IN
+  Destinations: #87 (Underground)
+  Conditions:
+    if NOT #91 (white door) has ATTRIBUTE19  →jump 0x254D2
+  Calls: 0x25520
+
+Routine 0x26074  [CONDITIONAL]
+  Used by:
+    #127 Playground / E
+    #127 Playground / DOWN
+    #127 Playground / IN
+  Destinations: #36 (Shelter)
+  Conditions:
+    if G7C is zero  →jump 0x2607C
+  Calls: 0x26038
+
+Routine 0x26438  [CONDITIONAL]
+  Used by:
+    #507 Shack / OUT
+  Destinations: #158 (Tower Platform)
+  Conditions:
+    if NOT #70 (white door) has ATTRIBUTE19  →jump 0x26442
+  Calls: 0x111DC
+
+Routine 0x26590  [CONDITIONAL]
+  Used by:
+    #158 Tower Platform / DOWN
+  Destinations: #247 (Tower Landing)
+  Conditions:
+    if NOT #31 (voices) has ATTRIBUTE24  →jump 0x265DB
+    if (SP)+ is nonzero  →jump 0x265DB
+    if #247 (Tower Landing) has ATTRIBUTE23  →jump 0x26646
+  Calls: 0x14474, 0x14500, 0x116C8
+
+Routine 0x266E0  [CONDITIONAL]
+  Used by:
+    #247 Tower Landing / DOWN
+  Destinations: #146 (Base of Tower)
+  Conditions:
+    if #146 (Base of Tower) has ATTRIBUTE23  →jump 0x26707
+
+Routine 0x26998  [CONDITIONAL]
+  Used by:
+    #534 Paved Road / IN
+  Destinations: #493 (Jeep)
+  Conditions:
+    if #126 (door) has ATTRIBUTE19  →jump 0x269B4
+
+Routine 0x26A2C  [CONDITIONAL]
+  Used by:
+    #493 Jeep / OUT
+  Destinations: #534 (Paved Road)
+  Conditions:
+    if NOT #126 (door) has ATTRIBUTE19  →jump 0x26A45
+  Calls: 0x14098
+
+Routine 0x26EC8  [CONDITIONAL]
+  Used by:
+    #174 Outside Blockhouse / SW
+  Destinations: #529 (Desert)
+  Conditions:
+    if NOT JG(G99, 0x1B)  →jump 0x26ED7
+  Calls: 0x17318
+
+Routine 0x2736C  [CONDITIONAL]
+  Used by:
+    #159 Desert / S
+  Destinations: #480 (Desert)
+  Conditions:
+    if G18 not equal 0x0216  →jump 0x2737B
+  L00 set to: 480 (Desert)
+  Calls: 0x17318
+
+Routine 0x2738C  [CONDITIONAL]
+  Used by:
+    #159 Desert / E
+  Destinations: #465 (Desert)
+  Conditions:
+    if G18 not equal 0x0216  →jump 0x2739B
+  L00 set to: 465 (Desert)
+  Calls: 0x17318
+
+Routine 0x273F0  [CONDITIONAL]
+  Used by:
+    #465 Desert / SE
+  Destinations: #296 (North of Tower), #381 (Northeast of Tower)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x27410
+  L00 set to: 296 (North of Tower), 381 (Northeast of Tower)
+  Calls: 0x17318
+
+Routine 0x27420  [CONDITIONAL]
+  Used by:
+    #465 Desert / S
+  Destinations: #210 (Northwest of Tower), #296 (North of Tower)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x27440
+  L00 set to: 210 (Northwest of Tower), 296 (North of Tower)
+  Calls: 0x17318
+
+Routine 0x27450  [CONDITIONAL]
+  Used by:
+    #465 Desert / SW
+  Destinations: #109 (Paved Road), #210 (Northwest of Tower)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x2746F
+  L00 set to: 109 (Paved Road), 210 (Northwest of Tower)
+  Calls: 0x17318
+
+Routine 0x27480  [CONDITIONAL]
+  Used by:
+    #465 Desert / W
+  Destinations: #159 (Desert), #534 (Paved Road)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x2749F
+  L00 set to: 159 (Desert), 534 (Paved Road)
+  Calls: 0x17318
+
+Routine 0x274E0  [CONDITIONAL]
+  Used by:
+    #180 Foothills / S
+  Destinations: #225 (Foothills), #381 (Northeast of Tower)
+  Conditions:
+    if G18 equal 0x017D  →jump 0x274F1
+    if JL(0x32, (SP)+)  →jump 0x274F8
+  L00 set to: 225 (Foothills), 381 (Northeast of Tower)
+  Calls: 0x17318
+
+Routine 0x27508  [CONDITIONAL]
+  Used by:
+    #180 Foothills / SW
+  Destinations: #296 (North of Tower), #381 (Northeast of Tower)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x27528
+  L00 set to: 296 (North of Tower), 381 (Northeast of Tower)
+  Calls: 0x17318
+
+Routine 0x27564  [CONDITIONAL]
+  Used by:
+    #480 Desert / N
+  Destinations: #159 (Desert), #534 (Paved Road)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x27583
+  L00 set to: 159 (Desert), 534 (Paved Road)
+  Calls: 0x17318
+
+Routine 0x27594  [CONDITIONAL]
+  Used by:
+    #480 Desert / NE
+  Destinations: #109 (Paved Road), #210 (Northwest of Tower)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x275B3
+  L00 set to: 109 (Paved Road), 210 (Northwest of Tower)
+  Calls: 0x17318
+
+Routine 0x275C4  [CONDITIONAL]
+  Used by:
+    #480 Desert / E
+  Destinations: #109 (Paved Road), #210 (Northwest of Tower)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x275E3
+  L00 set to: 109 (Paved Road), 210 (Northwest of Tower)
+  Calls: 0x17318
+
+Routine 0x275F4  [CONDITIONAL]
+  Used by:
+    #480 Desert / SE
+  Destinations: #219 (Southwest of Tower), #311 (West of Tower)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x27613
+  L00 set to: 219 (Southwest of Tower), 311 (West of Tower)
+  Calls: 0x17318
+
+Routine 0x2765C  [CONDITIONAL]
+  Used by:
+    #497 Desert / E
+  Destinations: #120 (Paved Road), #219 (Southwest of Tower)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x2767B
+  L00 set to: 120 (Paved Road), 219 (Southwest of Tower)
+  Calls: 0x17318
+
+Routine 0x2768C  [CONDITIONAL]
+  Used by:
+    #497 Desert / SE
+  Destinations: #544 (Crossroads)
+  Conditions:
+    if L00 not equal 0x0220  →jump 0x276AB
+  L00 set to: 544 (Crossroads)
+  Calls: 0x17318
+
+Routine 0x276B4  [CONDITIONAL]
+  Used by:
+    #497 Desert / S
+  Destinations: #529 (Desert), #544 (Crossroads)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x276D4
+  L00 set to: 529 (Desert), 544 (Crossroads)
+  Calls: 0x17318
+
+Routine 0x2772C  [CONDITIONAL]
+  Used by:
+    #225 Foothills / S
+  Destinations: #222 (Foothills), #292 (North of Reservoir)
+  Conditions:
+    if G18 not equal 0x7A  →jump 0x27743
+    if JL(0x32, (SP)+)  →jump 0x27751
+  L00 set to: 222 (Foothills), 292 (North of Reservoir)
+  Calls: 0x17318
+
+Routine 0x27760  [CONDITIONAL]
+  Used by:
+    #225 Foothills / SW
+  Destinations: #292 (North of Reservoir), #558 (Northeast of Ranch)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x2778B
+  L00 set to: 292 (North of Reservoir), 558 (Northeast of Ranch)
+  Calls: 0x17318
+
+Routine 0x2779C  [CONDITIONAL]
+  Used by:
+    #225 Foothills / W
+  Destinations: #290 (East of Tower), #456 (Shallow Crater)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x277C8
+  L00 set to: 290 (East of Tower), 456 (Shallow Crater)
+  Calls: 0x17318
+
+Routine 0x277D8  [CONDITIONAL]
+  Used by:
+    #225 Foothills / NW
+  Destinations: #180 (Foothills), #381 (Northeast of Tower)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x277F8
+  L00 set to: 180 (Foothills), 381 (Northeast of Tower)
+  Calls: 0x17318
+
+Routine 0x27838  [CONDITIONAL]
+  Used by:
+    #222 Foothills / N
+  Destinations: #225 (Foothills), #559 (South of Reservoir)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x2785A
+  L00 set to: 225 (Foothills), 559 (South of Reservoir)
+  Calls: 0x17318
+
+Routine 0x2787C  [CONDITIONAL]
+  Used by:
+    #222 Foothills / W
+  Destinations: #239 (Desert), #577 (Desert)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x2788D
+  L00 set to: 239 (Desert), 577 (Desert)
+  Calls: 0x17318
+
+Routine 0x2789C  [CONDITIONAL]
+  Used by:
+    #222 Foothills / NW
+  Destinations: #239 (Desert), #477 (Southeast Yard)
+  Conditions:
+    if G18 not equal 0x012C  →jump 0x278B5
+    if JL(0x32, (SP)+)  →jump 0x278C4
+  L00 set to: 239 (Desert), 477 (Southeast Yard)
+  Calls: 0x17318
+
+Routine 0x27908  [CONDITIONAL]
+  Used by:
+    #510 Desert / N
+  Destinations: #120 (Paved Road), #219 (Southwest of Tower)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x27925
+  L00 set to: 120 (Paved Road), 219 (Southwest of Tower)
+  Calls: 0x17318
+
+Routine 0x27934  [CONDITIONAL]
+  Used by:
+    #510 Desert / NE
+  Destinations: #382 (Paved Road), #466 (South of Tower)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x27954
+  L00 set to: 382 (Paved Road), 466 (South of Tower)
+  Calls: 0x17318
+
+Routine 0x27964  [CONDITIONAL]
+  Used by:
+    #510 Desert / NW
+  Destinations: #120 (Paved Road), #219 (Southwest of Tower)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x27981
+  L00 set to: 120 (Paved Road), 219 (Southwest of Tower)
+  Calls: 0x17318
+
+Routine 0x27990  [CONDITIONAL]
+  Used by:
+    #510 Desert / W
+  Destinations: #120 (Paved Road), #544 (Crossroads)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x279B1
+  L00 set to: 120 (Paved Road), 544 (Crossroads)
+  Calls: 0x17318
+
+Routine 0x27A00  [CONDITIONAL]
+  Used by:
+    #239 Desert / N
+  Destinations: #456 (Shallow Crater), #515 (Southwest of Ranch)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x27A20
+  L00 set to: 456 (Shallow Crater), 515 (Southwest of Ranch)
+  Calls: 0x17318
+
+Routine 0x27A30  [CONDITIONAL]
+  Used by:
+    #239 Desert / NE
+  Destinations: #122 (Northwest of Ranch), #515 (Southwest of Ranch)
+  Conditions:
+    if G18 not equal 0x0174  →jump 0x27A48
+    if JL(0x32, (SP)+)  →jump 0x27A56
+  L00 set to: 122 (Northwest of Ranch), 515 (Southwest of Ranch)
+  Calls: 0x17318
+
+Routine 0x27A68  [CONDITIONAL]
+  Used by:
+    #239 Desert / E
+  Destinations: #222 (Foothills), #515 (Southwest of Ranch)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x27A87
+  L00 set to: 222 (Foothills), 515 (Southwest of Ranch)
+  Calls: 0x17318
+
+Routine 0x27A98  [CONDITIONAL]
+  Used by:
+    #239 Desert / SE
+  Destinations: #222 (Foothills)
+  Conditions:
+    if G18 not equal 0x0203  →jump 0x27AA7
+  L00 set to: 222 (Foothills)
+  Calls: 0x17318
+
+Routine 0x27AB8  [CONDITIONAL]
+  Used by:
+    #239 Desert / SW
+  Destinations: #226 (Paved Road), #382 (Paved Road)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x27AD6
+  L00 set to: 226 (Paved Road), 382 (Paved Road)
+  Calls: 0x17318
+
+Routine 0x27AE8  [CONDITIONAL]
+  Used by:
+    #239 Desert / NW
+  Destinations: #382 (Paved Road), #466 (South of Tower)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x27B08
+  L00 set to: 382 (Paved Road), 466 (South of Tower)
+  Calls: 0x17318
+
+Routine 0x27B48  [CONDITIONAL]
+  Used by:
+    #529 Desert / N
+  Destinations: #174 (Outside Blockhouse), #497 (Desert)
+  Conditions:
+    if G18 not equal 0xAE  →jump 0x27B55
+  L00 set to: 174 (Outside Blockhouse), 497 (Desert)
+  Calls: 0x17318
+
+Routine 0x27B84  [CONDITIONAL]
+  Used by:
+    #529 Desert / E
+  Destinations: #132 (Desert), #174 (Outside Blockhouse)
+  Conditions:
+    if G18 not equal 0xAE  →jump 0x27B91
+  L00 set to: 132 (Desert), 174 (Outside Blockhouse)
+  Calls: 0x17318
+
+Routine 0x27BCC  [CONDITIONAL]
+  Used by:
+    #132 Desert / N
+  Destinations: #293 (Paved Road), #544 (Crossroads)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x27BEC
+  L00 set to: 293 (Paved Road), 544 (Crossroads)
+  Calls: 0x17318
+
+Routine 0x27BFC  [CONDITIONAL]
+  Used by:
+    #132 Desert / SE
+  Destinations: #437 (Behind the Shed)
+  Conditions:
+    if G18 equal 0x01B5  →jump 0x27C0B
+    if JL(0x32, (SP)+)  →jump 0x27C15
+  Calls: 0x17318, 0x273AC
+
+Routine 0x27C1C  [CONDITIONAL]
+  Used by:
+    #132 Desert / NE
+    #132 Desert / E
+  Destinations: #226 (Paved Road), #293 (Paved Road)
+  Conditions:
+    if JL(0x32, (SP)+)  →jump 0x27C3C
+  L00 set to: 226 (Paved Road), 293 (Paved Road)
+  Calls: 0x17318
+
+Routine 0x27C4C  [CONDITIONAL]
+  Used by:
+    #132 Desert / W
+  Destinations: #174 (Outside Blockhouse), #529 (Desert)
+  Conditions:
+    if G18 equal 0xAE  →jump 0x27C5B
+    if JL(0x32, (SP)+)  →jump 0x27C61
+  L00 set to: 174 (Outside Blockhouse), 529 (Desert)
+  Calls: 0x17318
+
+Routine 0x27C94  [CONDITIONAL]
+  Used by:
+    #577 Desert / W
+    #577 Desert / NW
+  Destinations: #226 (Paved Road)
+  Conditions:
+    if G18 not equal 0x01B5  →jump 0x27CA3
+    if L00 not equal 0xE2  →jump 0x27CAF
+  L00 set to: 226 (Paved Road)
+  Calls: 0x17318
+
+Routine 0x2865C  [CONDITIONAL]
+  Used by:
+    #6 Front Deck / W
+    #6 Front Deck / IN
+  Destinations: #442 (Assembly Room), #460 (Southeast Room)
+  Conditions:
+    if NOT #26 (left door) has ATTRIBUTE19  →jump 0x28694
+    if NOT #39 (right door) has ATTRIBUTE19  →jump 0x286B8
+    if NOT #39 (right door) has ATTRIBUTE19  →jump 0x286A0
+  L00 set to: 442 (Assembly Room), 460 (Southeast Room)
+
+Routine 0x288C8  [CONDITIONAL]
+  Used by:
+    #300 Under the Windmill / UP
+  Destinations: #540 (Windmill)
+  Conditions:
+    if NOT #541 (pair of binoculars) has ATTRIBUTE23  →jump 0x288FC
+    if #540 (Windmill) has ATTRIBUTE23  →jump 0x2890B
+  Calls: 0x10324, 0x17C94, 0x10324
+
+Routine 0x28A98  [CONDITIONAL]
+  Used by:
+    #336 Edge of Reservoir / N
+    #336 Edge of Reservoir / IN
+  Destinations: #457 (Reservoir)
+  Conditions:
+    if #13 (birdcage) is not inside #103 (yourself)  →jump 0x28AA3
+    if L00 is nonzero  →jump 0x28AAC
+    if L00 equal 0x67  →jump 0x28AB4
+    if L00 is not inside #103 (yourself)  →jump 0x28AB7
+    if L00 is nonzero  →jump 0x28AC1
+    if L00 equal 0x67  →jump 0x28AC9
+    if L00 is not inside #103 (yourself)  →jump 0x28AD7
+    if L00 is nonzero  →jump 0x28AE1
+    if L00 equal 0x67  →jump 0x28AE9
+    if L00 is not inside #103 (yourself)  →jump 0x28AF1
+  Calls: 0x38AB0, 0x10CBC
+
+Routine 0x28B70  [CONDITIONAL]
+  Used by:
+    #457 Reservoir / DOWN
+    #457 Reservoir / IN
+  Destinations: #242 (Underwater)
+  Conditions:
+    if G7F is nonzero  →jump 0x28B92
+    if #13 (birdcage) is not inside #103 (yourself)  →jump 0x28BAC
+  Calls: 0x17C94, 0x38AB0
+
+Routine 0x28C14  [CONDITIONAL]
+  Used by:
+    #242 Underwater / UP
+    #242 Underwater / OUT
+  Destinations: #457 (Reservoir)
+  Conditions:
+    if G7F is zero  →jump 0x28C22
+  Calls: 0x17C54
+
+======================================================================
+MOVER ROUTINES
+======================================================================
+
+Routine 0x22984  [MOVER]
+  Used by:
+    #121 Long Water / E
+    #121 Long Water / IN
+  Destinations: #438 (Wading)
+
+Routine 0x22A9C  [MOVER]
+  Used by:
+    #438 Wading / W
+    #438 Wading / OUT
+  Destinations: #121 (Long Water)
+
+Routine 0x22B70  [MOVER]
+  Used by:
+    #522 Ossuary / S
+  Destinations: #353 (Barrow)
+
+Routine 0x22D1C  [MOVER]
+  Used by:
+    #76 Mesa / S
+  Destinations: #306 (Chasm's Brink)
+  Calls: 0x23710
+
+Routine 0x2317C  [MOVER]
+  Used by:
+    #472 Waterfall / N
+    #472 Waterfall / UP
+  Destinations: #414 (Cemetery)
+  Calls: 0x23194
+
+Routine 0x23188  [MOVER]
+  Used by:
+    #414 Cemetery / S
+    #414 Cemetery / DOWN
+  Destinations: #472 (Waterfall)
+  Calls: 0x23194
+
+Routine 0x239B0  [MOVER]
+  Used by:
+    #441 Crater's Edge / E
+    #441 Crater's Edge / DOWN
+    #441 Crater's Edge / IN
+  Destinations: #145 (Crater)
+
+Routine 0x23A44  [MOVER]
+  Used by:
+    #145 Crater / W
+    #145 Crater / UP
+    #145 Crater / OUT
+  Destinations: #441 (Crater's Edge)
+
+Routine 0x23C54  [MOVER]
+  Used by:
+    #449 Ice Cavern / E
+    #449 Ice Cavern / OUT
+  Destinations: #472 (Waterfall)
+
+Routine 0x23D84  [MOVER]
+  Used by:
+    #575 Bottom of Stairs / N
+    #575 Bottom of Stairs / UP
+  Destinations: #80 (Halfway)
+
+Routine 0x23F3C  [MOVER]
+  Used by:
+    #316 Vertex / S
+    #316 Vertex / DOWN
+  Destinations: #80 (Halfway)
+
+Routine 0x24630  [MOVER]
+  Used by:
+    #319 South Bog / SW
+    #319 South Bog / UP
+    #426 Forest Clearing / W
+    #426 Forest Clearing / UP
+    #576 Meadow / N
+    #576 Meadow / UP
+  Destinations: #323 (Summit)
+
+Routine 0x247DC  [MOVER]
+  Used by:
+    #462 Arboretum / N
+  Destinations: #4 (North Arbor)
+  Calls: 0x247F4
+
+Routine 0x247E8  [MOVER]
+  Used by:
+    #462 Arboretum / S
+  Destinations: #430 (South Arbor)
+  Calls: 0x247F4
+
+Routine 0x24820  [MOVER]
+  Used by:
+    #4 North Arbor / UP
+    #4 North Arbor / IN
+    #430 South Arbor / UP
+    #430 South Arbor / IN
+  Destinations: #408 (Top of Arbor)
+  Calls: 0x24838
+
+Routine 0x248DC  [MOVER]
+  Used by:
+    #4 North Arbor / DOWN
+    #4 North Arbor / OUT
+  Destinations: #462 (Arboretum)
+  Calls: 0x248F4
+
+Routine 0x248E8  [MOVER]
+  Used by:
+    #430 South Arbor / DOWN
+    #430 South Arbor / OUT
+  Destinations: #462 (Arboretum)
+  Calls: 0x248F4
+
+Routine 0x24F3C  [MOVER]
+  Used by:
+    #199 Platform / DOWN
+  Destinations: #488 (Under Platform)
+
+Routine 0x24FD0  [MOVER]
+  Used by:
+    #488 Under Platform / UP
+  Destinations: #199 (Platform)
+
+Routine 0x250CC  [MOVER]
+  Used by:
+    #254 Tundra / NE
+  Destinations: #43 (Cliff Edge)
+
+Routine 0x253D0  [MOVER]
+  Used by:
+    #43 Cliff Edge / SW
+  Destinations: #254 (Tundra)
+
+Routine 0x25858  [MOVER]
+  Used by:
+    #394 Scaffold / S
+    #394 Scaffold / DOWN
+  Destinations: #344 (Bottom of Scaffold)
+
+Routine 0x25960  [MOVER]
+  Used by:
+    #344 Bottom of Scaffold / N
+    #344 Bottom of Scaffold / UP
+  Destinations: #394 (Scaffold)
+
+Routine 0x25A44  [MOVER]
+  Used by:
+    #224 North Beach / E
+    #224 North Beach / SE
+    #476 South Beach / NE
+    #476 South Beach / E
+  Destinations: #215 (East Beach)
+  Calls: 0x25A64
+
+Routine 0x25A4C  [MOVER]
+  Used by:
+    #224 North Beach / SW
+    #224 North Beach / W
+    #476 South Beach / W
+    #476 South Beach / NW
+  Destinations: #231 (West Beach)
+  Calls: 0x25A64
+
+Routine 0x25A54  [MOVER]
+  Used by:
+    #215 East Beach / N
+    #215 East Beach / NW
+    #231 West Beach / N
+    #231 West Beach / NE
+  Destinations: #224 (North Beach)
+  Calls: 0x25A64
+
+Routine 0x25A5C  [MOVER]
+  Used by:
+    #215 East Beach / S
+    #215 East Beach / SW
+    #231 West Beach / SE
+    #231 West Beach / S
+  Destinations: #476 (South Beach)
+  Calls: 0x25A64
+
+Routine 0x262CC  [MOVER]
+  Used by:
+    #36 Shelter / W
+    #36 Shelter / UP
+    #36 Shelter / OUT
+  Destinations: #127 (Playground)
+
+Routine 0x266C8  [MOVER]
+  Used by:
+    #247 Tower Landing / UP
+  Destinations: #158 (Tower Platform)
+
+Routine 0x26868  [MOVER]
+  Used by:
+    #146 Base of Tower / UP
+  Destinations: #247 (Tower Landing)
+  Calls: 0x17D10
+
+Routine 0x26EB4  [MOVER]
+  Used by:
+    #174 Outside Blockhouse / NW
+  Destinations: #497 (Desert)
+
+Routine 0x272D0  [MOVER]
+  Used by:
+    #437 Behind the Shed / E
+  Destinations: #577 (Desert)
+
+Routine 0x27B64  [MOVER]
+  Used by:
+    #529 Desert / NE
+  Destinations: #132 (Desert)
+  L00 set to: 132 (Desert)
+  Calls: 0x17318
+
+Routine 0x282C8  [MOVER]
+  Used by:
+    #240 Hallway / W
+    #240 Hallway / DOWN
+  Destinations: #345 (Icehouse)
+
+Routine 0x28358  [MOVER]
+  Used by:
+    #345 Icehouse / E
+    #345 Icehouse / UP
+    #345 Icehouse / OUT
+  Destinations: #240 (Hallway)
+
+Routine 0x283DC  [MOVER]
+  Used by:
+    #37 Southwest Yard / N
+    #37 Southwest Yard / IN
+    #297 Back Yard / S
+  Destinations: #240 (Hallway)
+
+Routine 0x2844C  [MOVER]
+  Used by:
+    #139 Northeast Yard / S
+    #139 Northeast Yard / UP
+    #477 Southeast Yard / N
+    #477 Southeast Yard / UP
+  Destinations: #6 (Front Deck)
+
+Routine 0x286C8  [MOVER]
+  Used by:
+    #6 Front Deck / E
+    #6 Front Deck / DOWN
+  Destinations: #573 (Front Yard)
+
+Routine 0x286DC  [MOVER]
+  Used by:
+    #6 Front Deck / N
+  Destinations: #139 (Northeast Yard)
+  Calls: 0x286EC
+
+Routine 0x286E4  [MOVER]
+  Used by:
+    #6 Front Deck / S
+  Destinations: #477 (Southeast Yard)
+  Calls: 0x286EC
+
+Routine 0x287A8  [MOVER]
+  Used by:
+    #573 Front Yard / W
+    #573 Front Yard / UP
+    #573 Front Yard / IN
+  Destinations: #6 (Front Deck)
+
+Routine 0x28994  [MOVER]
+  Used by:
+    #540 Windmill / DOWN
+    #540 Windmill / OUT
+  Destinations: #300 (Under the Windmill)
+  Calls: 0x289A0
+
+Routine 0x28A34  [MOVER]
+  Used by:
+    #559 South of Reservoir / N
+    #559 South of Reservoir / UP
+  Destinations: #336 (Edge of Reservoir)
+
+Routine 0x28B00  [MOVER]
+  Used by:
+    #336 Edge of Reservoir / S
+    #336 Edge of Reservoir / DOWN
+  Destinations: #559 (South of Reservoir)
+
+Routine 0x28B5C  [MOVER]
+  Used by:
+    #457 Reservoir / S
+    #457 Reservoir / UP
+    #457 Reservoir / OUT
+  Destinations: #336 (Edge of Reservoir)
+
+======================================================================
+COMPLEX ROUTINES
+======================================================================
+
+Routine 0x27714  [COMPLEX]
+  Used by:
+    #225 Foothills / SE
+  Calls: 0x17318, 0x381CC
+  Flags: returns-via-global/untracked-local
+
+Routine 0x27868  [COMPLEX]
+  Used by:
+    #222 Foothills / NE
+  Conditions:
+    if G18 not equal 0x022F  →jump 0x27877
+  Calls: 0x17318, 0x381CC
+  Flags: returns-via-global/untracked-local
+
+======================================================================
+BLOCKER ROUTINES
+======================================================================
+
+Routine 0x111D0  [BLOCKER]
+  Used by:
+    #1 Northwest Room / IN
+    #12 Spare Room / IN
+    #21 Kitchen / IN
+    #79 The Wabe / IN
+    #80 Halfway / IN
+    #87 Underground / IN
+    #124 Earth Orbit, on a satellite / IN
+    #179 Lancaster Gate / IN
+    #236 Palace Gate / IN
+    #240 Hallway / IN
+    #247 Tower Landing / IN
+    #297 Back Yard / IN
+    #316 Vertex / IN
+    #317 Trellises / IN
+    #353 Barrow / IN
+    #355 Black Lion Gate / IN
+    #408 Top of Arbor / IN
+    #425 Earth Orbit / IN
+    #442 Assembly Room / IN
+    #460 Southeast Room / IN
+    #531 Inverness Terrace / IN
+    #558 Northeast of Ranch / IN
+  Calls: 0x111F4
+
+Routine 0x111DC  [BLOCKER]
+  Used by:
+    #1 Northwest Room / OUT
+    #12 Spare Room / OUT
+    #21 Kitchen / OUT
+    #76 Mesa / OUT
+    #80 Halfway / OUT
+    #87 Underground / OUT
+    #121 Long Water / OUT
+    #124 Earth Orbit, on a satellite / OUT
+    #127 Playground / OUT
+    #146 Base of Tower / OUT
+    #214 Bedroom / OUT
+    #240 Hallway / OUT
+    #247 Tower Landing / OUT
+    #316 Vertex / OUT
+    #317 Trellises / OUT
+    #327 Cottage / OUT
+    #353 Barrow / OUT
+    #408 Top of Arbor / OUT
+    #425 Earth Orbit / OUT
+    #441 Crater's Edge / OUT
+    #442 Assembly Room / OUT
+    #460 Southeast Room / OUT
+    #462 Arboretum / OUT
+  Calls: 0x111F4
+
+Routine 0x111E8  [BLOCKER]
+  Used by:
+    #323 Summit / DOWN
+    #408 Top of Arbor / DOWN
+  Calls: 0x111F4
+
+Routine 0x1153C  [BLOCKER]
+  Used by:
+    #76 Mesa / N
+    #76 Mesa / NE
+    #76 Mesa / E
+    #76 Mesa / SE
+    #76 Mesa / SW
+    #76 Mesa / W
+    #76 Mesa / NW
+    #80 Halfway / NE
+    #80 Halfway / E
+    #80 Halfway / SE
+    #80 Halfway / SW
+    #80 Halfway / W
+    #80 Halfway / NW
+    #213 Bluff / N
+    #213 Bluff / NE
+    #213 Bluff / W
+    #213 Bluff / NW
+    #316 Vertex / N
+    #316 Vertex / NE
+    #316 Vertex / E
+    #316 Vertex / SE
+    #316 Vertex / SW
+    #316 Vertex / W
+    #316 Vertex / NW
+    #370 Promontory / N
+    #370 Promontory / NE
+    #370 Promontory / E
+    #370 Promontory / SW
+    #370 Promontory / W
+    #370 Promontory / NW
+    #414 Cemetery / NE
+    #414 Cemetery / E
+    #414 Cemetery / SE
+    #414 Cemetery / SW
+    #414 Cemetery / W
+    #414 Cemetery / NW
+  Calls: 0x13AA0
+
+Routine 0x17388  [BLOCKER]
+  Used by:
+    #179 Lancaster Gate / NE
+    #179 Lancaster Gate / NW
+    #236 Palace Gate / SE
+    #236 Palace Gate / SW
+    #236 Palace Gate / W
+    #236 Palace Gate / NW
+    #354 Broad Walk / SW
+    #354 Broad Walk / NW
+    #355 Black Lion Gate / NE
+    #355 Black Lion Gate / SW
+    #355 Black Lion Gate / W
+    #355 Black Lion Gate / NW
+    #531 Inverness Terrace / N
+    #531 Inverness Terrace / NE
+    #531 Inverness Terrace / NW
+  Calls: 0x17418
+
+Routine 0x17394  [BLOCKER]
+  Used by:
+    #354 Broad Walk / W
+  Calls: 0x17418
+
+Routine 0x173A0  [BLOCKER]
+  Used by:
+    #79 The Wabe / E
+    #79 The Wabe / S
+    #79 The Wabe / W
+  Calls: 0x17418
+
+Routine 0x173AC  [BLOCKER]
+  Used by:
+    #417 Herb Garden / N
+    #417 Herb Garden / NE
+    #417 Herb Garden / E
+    #417 Herb Garden / SE
+    #417 Herb Garden / S
+    #417 Herb Garden / SW
+    #417 Herb Garden / NW
+  Calls: 0x17418
+
+Routine 0x173B8  [BLOCKER]
+  Used by:
+    #42 North Bog / W
+    #42 North Bog / NW
+    #400 Under Cliff / N
+    #400 Under Cliff / NE
+    #400 Under Cliff / NW
+  Calls: 0x17418
+
+Routine 0x173C4  [BLOCKER]
+  Used by:
+    #317 Trellises / S
+    #418 Arborvitaes / N
+    #418 Arborvitaes / NE
+    #418 Arborvitaes / E
+    #418 Arborvitaes / SE
+    #418 Arborvitaes / S
+    #418 Arborvitaes / SW
+    #426 Forest Clearing / SE
+    #426 Forest Clearing / S
+    #426 Forest Clearing / SW
+    #462 Arboretum / NE
+    #462 Arboretum / SE
+    #462 Arboretum / SW
+    #462 Arboretum / NW
+    #565 The River / S
+    #565 The River / SW
+    #580 Arborvitaes / N
+    #580 Arborvitaes / SE
+    #580 Arborvitaes / S
+    #580 Arborvitaes / SW
+    #580 Arborvitaes / W
+    #580 Arborvitaes / NW
+  Calls: 0x17418
+
+Routine 0x173D0  [BLOCKER]
+  Used by:
+    #30 Underground / W
+    #30 Underground / IN
+  Conditions:
+    if G37 is nonzero  →jump 0x173E2
+  Calls: 0x17418, 0x17418
+
+Routine 0x173EC  [BLOCKER]
+  Used by:
+    #215 East Beach / W
+    #224 North Beach / S
+    #231 West Beach / E
+  Calls: 0x17418
+
+Routine 0x173F4  [BLOCKER]
+  Used by:
+    #127 Playground / SW
+    #127 Playground / NW
+  Conditions:
+    if G7C is zero  →jump 0x173FC
+  Calls: 0x26038, 0x17418
+
+Routine 0x17404  [BLOCKER]
+  Used by:
+    #6 Front Deck / NE
+    #6 Front Deck / SE
+    #37 Southwest Yard / SE
+    #37 Southwest Yard / S
+    #37 Southwest Yard / W
+    #37 Southwest Yard / NW
+    #139 Northeast Yard / N
+    #139 Northeast Yard / NE
+    #139 Northeast Yard / E
+    #139 Northeast Yard / SE
+    #139 Northeast Yard / NW
+    #297 Back Yard / N
+    #297 Back Yard / NE
+    #297 Back Yard / SW
+    #297 Back Yard / W
+    #477 Southeast Yard / NE
+    #477 Southeast Yard / E
+    #477 Southeast Yard / S
+    #477 Southeast Yard / SW
+    #558 Northeast of Ranch / SW
+    #573 Front Yard / SW
+    #573 Front Yard / NW
+  Calls: 0x17418
+
+Routine 0x17410  [BLOCKER]
+  Used by:
+    #292 North of Reservoir / S
+    #300 Under the Windmill / W
+    #372 Southeast of Ranch / NE
+    #558 Northeast of Ranch / SE
+    #573 Front Yard / E
+  Calls: 0x17418
+
+Routine 0x22104  [BLOCKER]
+  Used by:
+    #144 Round Pond / SE
+    #144 Round Pond / SW
+    #179 Lancaster Gate / N
+    #179 Lancaster Gate / E
+    #179 Lancaster Gate / SE
+    #179 Lancaster Gate / OUT
+    #236 Palace Gate / S
+    #236 Palace Gate / OUT
+    #250 Flower Walk / E
+    #355 Black Lion Gate / N
+    #355 Black Lion Gate / OUT
+    #531 Inverness Terrace / OUT
+  Conditions:
+    if GD3 is zero  →jump 0x22110
+  Calls: 0x12140, 0x22124, 0x17418
+
+Routine 0x22278  [BLOCKER]
+  Used by:
+    #144 Round Pond / OUT
+    #250 Flower Walk / OUT
+    #354 Broad Walk / OUT
+    #371 Lancaster Walk / OUT
+  Conditions:
+    if GD3 is zero  →jump 0x22284
+  Calls: 0x12140, 0x111DC
+
+Routine 0x22518  [BLOCKER]
+  Used by:
+    #79 The Wabe / OUT
+  Conditions:
+    if GD3 is zero  →jump 0x22524
+  Calls: 0x12140, 0x111DC
+
+Routine 0x22658  [BLOCKER]
+  Used by:
+    #179 Lancaster Gate / UP
+
+Routine 0x22894  [BLOCKER]
+  Used by:
+    #371 Lancaster Walk / NE
+    #371 Lancaster Walk / E
+    #371 Lancaster Walk / SE
+  Conditions:
+    if NOT #32 (notice) has ATTRIBUTE23  →jump 0x228A1
+  Calls: 0x2C4B8, 0x228A8
+
+Routine 0x229B0  [BLOCKER]
+  Used by:
+    #121 Long Water / N
+    #121 Long Water / NE
+    #121 Long Water / SE
+    #121 Long Water / S
+    #121 Long Water / SW
+    #121 Long Water / W
+    #121 Long Water / NW
+  Conditions:
+    if NOT JL(G7D, 0x06)  →jump 0x229D2
+  Calls: 0x18970
+
+Routine 0x22A70  [BLOCKER]
+  Used by:
+    #438 Wading / E
+    #438 Wading / IN
+  Conditions:
+    if NOT #415 (white door) has ATTRIBUTE23  →jump 0x22A7C
+  Calls: 0x2D204, 0x22A84
+
+Routine 0x22A84  [BLOCKER]
+  Used by:
+    #438 Wading / N
+    #438 Wading / NE
+    #438 Wading / SE
+    #438 Wading / S
+    #438 Wading / SW
+    #438 Wading / NW
+  Calls: 0x10324
+
+Routine 0x22B78  [BLOCKER]
+  Used by:
+    #522 Ossuary / N
+    #522 Ossuary / NE
+    #522 Ossuary / E
+    #522 Ossuary / SE
+    #522 Ossuary / SW
+    #522 Ossuary / W
+    #522 Ossuary / NW
+    #522 Ossuary / UP
+  Conditions:
+    if #375 (hollow) has ATTRIBUTE23  →jump 0x22BBE
+
+Routine 0x22C74  [BLOCKER]
+  Used by:
+    #370 Promontory / IN
+  Conditions:
+    if G7B is nonzero  →jump 0x22C7D
+  Calls: 0x2ECE8, 0x10D98
+
+Routine 0x22C88  [BLOCKER]
+  Used by:
+    #370 Promontory / OUT
+  Conditions:
+    if G7B is zero  →jump 0x22C91
+  Calls: 0x2ED58, 0x111DC
+
+Routine 0x234E8  [BLOCKER]
+  Used by:
+    #353 Barrow / S
+  Conditions:
+    if G37 is nonzero  →jump 0x234F6
+  Calls: 0x17418, 0x17418
+
+Routine 0x23728  [BLOCKER]
+  Used by:
+    #306 Chasm's Brink / DOWN
+  Conditions:
+    if GAE not equal 0xD5  →jump 0x23737
+    if NOT GAE has ATTRIBUTE16  →jump 0x23803
+    if #549 (umbrella) is not inside #103 (yourself)  →jump 0x2374E
+    if NOT #549 (umbrella) has ATTRIBUTE19  →jump 0x2374E
+    if GA4 is nonzero  →jump 0x2376B
+    if L00 is zero  →jump 0x237E6
+    if GA4 is nonzero  →jump 0x2379F
+    if L00 is zero  →jump 0x237DE
+    if GA4 is zero  →jump 0x237DE
+  L00 set to: 1 (Northwest Room)
+  L01 set to: 151 (valley), 255 (chasm)
+  Calls: 0x28C40, 0x111A0
+
+Routine 0x23810  [BLOCKER]
+  Used by:
+    #306 Chasm's Brink / UP
+  Conditions:
+    if NOT #112 (oak tree) has ATTRIBUTE26  →jump 0x2381D
+  Calls: 0x12140, 0x179D0
+
+Routine 0x239C4  [BLOCKER]
+  Used by:
+    #145 Crater / N
+    #145 Crater / NE
+    #145 Crater / E
+    #145 Crater / SE
+    #145 Crater / S
+    #145 Crater / SW
+    #145 Crater / NW
+  Calls: 0x11224
+
+Routine 0x23B2C  [BLOCKER]
+  Used by:
+    #472 Waterfall / IN
+  Conditions:
+    if NOT #230 (white door) has ATTRIBUTE26  →jump 0x23B36
+    if NOT #230 (white door) has ATTRIBUTE19  →jump 0x23B95
+    if (SP)+ is nonzero  →jump RFALSE
+    if GA4 is zero  →jump 0x23B5A
+  Calls: 0x111D0, 0x23B9C, 0x10334, 0x110C0, 0x17C94, 0x17C94, 0x178FC, 0x193E4, 0x19A28, 0x14098
+
+Routine 0x23C6C  [BLOCKER]
+  Used by:
+    #449 Ice Cavern / UP
+  Conditions:
+    if NOT #234 (slope) has ATTRIBUTE24  →jump 0x23C78
+  Calls: 0x21D94
+
+Routine 0x24468  [BLOCKER]
+  Used by:
+    #565 The River / OUT
+  Conditions:
+    if G0C is zero  →jump 0x24475
+  Calls: 0x12140, 0x111DC
+
+Routine 0x245D8  [BLOCKER]
+  Used by:
+    #576 Meadow / NE
+    #576 Meadow / E
+    #576 Meadow / SE
+    #576 Meadow / S
+    #576 Meadow / SW
+    #576 Meadow / W
+    #576 Meadow / NW
+  Conditions:
+    if NOT #576 (Meadow) has ATTRIBUTE24  →jump 0x245FE
+
+Routine 0x246F0  [BLOCKER]
+  Used by:
+    #462 Arboretum / UP
+  Calls: 0x111F4
+
+Routine 0x246FC  [BLOCKER]
+  Used by:
+    #462 Arboretum / IN
+  Calls: 0x111F4
+
+Routine 0x24A00  [BLOCKER]
+  Used by:
+    #4 North Arbor / NE
+    #4 North Arbor / E
+    #4 North Arbor / SE
+    #4 North Arbor / SW
+    #4 North Arbor / W
+    #4 North Arbor / NW
+    #408 Top of Arbor / NE
+    #408 Top of Arbor / E
+    #408 Top of Arbor / SE
+    #408 Top of Arbor / SW
+    #408 Top of Arbor / W
+    #408 Top of Arbor / NW
+    #430 South Arbor / NE
+    #430 South Arbor / E
+    #430 South Arbor / SE
+    #430 South Arbor / SW
+    #430 South Arbor / W
+    #430 South Arbor / NW
+  Conditions:
+    if G37 is nonzero  →jump 0x24A12
+
+Routine 0x24D24  [BLOCKER]
+  Used by:
+    #124 Earth Orbit, on a satellite / N
+    #124 Earth Orbit, on a satellite / NE
+    #124 Earth Orbit, on a satellite / E
+    #124 Earth Orbit, on a satellite / SE
+    #124 Earth Orbit, on a satellite / S
+    #124 Earth Orbit, on a satellite / SW
+    #124 Earth Orbit, on a satellite / W
+    #124 Earth Orbit, on a satellite / NW
+    #124 Earth Orbit, on a satellite / UP
+    #124 Earth Orbit, on a satellite / DOWN
+    #425 Earth Orbit / N
+    #425 Earth Orbit / NE
+    #425 Earth Orbit / E
+    #425 Earth Orbit / SE
+    #425 Earth Orbit / S
+    #425 Earth Orbit / SW
+    #425 Earth Orbit / W
+    #425 Earth Orbit / NW
+    #425 Earth Orbit / UP
+    #425 Earth Orbit / DOWN
+
+Routine 0x24E90  [BLOCKER]
+  Used by:
+    #158 Tower Platform / N
+    #158 Tower Platform / NE
+    #158 Tower Platform / SE
+    #158 Tower Platform / S
+    #158 Tower Platform / SW
+    #158 Tower Platform / W
+    #158 Tower Platform / NW
+    #199 Platform / N
+    #199 Platform / NE
+    #199 Platform / E
+    #199 Platform / SE
+    #199 Platform / SW
+    #199 Platform / W
+    #199 Platform / NW
+  Calls: 0x11504
+
+Routine 0x24E9C  [BLOCKER]
+  Used by:
+    #199 Platform / S
+    #199 Platform / IN
+  Conditions:
+    if NOT #356 (white door) has ATTRIBUTE26  →jump 0x24EA8
+    if NOT #356 (white door) has ATTRIBUTE19  →jump 0x24EF0
+    if NOT JG(G99, 0x31)  →jump 0x24ED1
+  Calls: 0x2DCCC, 0x17C54, 0x17C54, 0x24EF8, 0x14098
+
+Routine 0x25024  [BLOCKER]
+  Used by:
+    #56 Tundra / SE
+    #56 Tundra / S
+    #56 Tundra / W
+    #56 Tundra / NW
+    #188 Tundra / SW
+    #188 Tundra / W
+    #188 Tundra / NW
+    #380 Tundra / SW
+    #380 Tundra / W
+    #509 Tundra / S
+    #509 Tundra / SW
+    #585 Tundra / SE
+    #585 Tundra / S
+    #585 Tundra / SW
+
+Routine 0x25368  [BLOCKER]
+  Used by:
+    #43 Cliff Edge / N
+    #43 Cliff Edge / NE
+    #43 Cliff Edge / E
+    #43 Cliff Edge / SE
+  Conditions:
+    if (SP)+ is zero  →jump 0x25393
+  Calls: 0x14474, 0x14500, 0x115B8, 0x253A0, 0x115B8
+
+Routine 0x25520  [BLOCKER]
+  Used by:
+    #131 Underground / E
+    #131 Underground / OUT
+  Conditions:
+    if NOT #91 (white door) has ATTRIBUTE26  →jump 0x2552A
+    if NOT #91 (white door) has ATTRIBUTE19  →jump 0x25560
+    if (SP)+ is zero  →jump 0x25557
+  Calls: 0x2DCCC, 0x17C54, 0x14050, 0x17C94, 0x24EF8, 0x14098
+
+Routine 0x2586C  [BLOCKER]
+  Used by:
+    #394 Scaffold / IN
+  Conditions:
+    if NOT #524 (white door) has ATTRIBUTE26  →jump 0x25878
+    if NOT #524 (white door) has ATTRIBUTE19  →jump 0x258B8
+  Calls: 0x2DCCC, 0x17C54, 0x17C54, 0x17C54, 0x24EF8, 0x14098
+
+Routine 0x25A90  [BLOCKER]
+  Used by:
+    #215 East Beach / NE
+    #215 East Beach / E
+    #215 East Beach / SE
+    #224 North Beach / N
+    #224 North Beach / NE
+    #224 North Beach / NW
+    #476 South Beach / SE
+    #476 South Beach / S
+    #476 South Beach / SW
+  Conditions:
+    if NOT #401 (lagoon) has ATTRIBUTE24  →jump 0x25AC0
+
+Routine 0x25C5C  [BLOCKER]
+  Used by:
+    #231 West Beach / SW
+    #231 West Beach / W
+    #231 West Beach / NW
+  Conditions:
+    if NOT #519 (crabs) has ATTRIBUTE30  →jump 0x25D2A
+  Calls: 0x17C94
+
+Routine 0x25E60  [BLOCKER]
+  Used by:
+    #166 Thin Air, on the giant bird / IN
+  Conditions:
+    if NOT #198 (white door) has ATTRIBUTE26  →jump 0x25E6A
+    if NOT #198 (white door) has ATTRIBUTE19  →jump 0x25E97
+  Calls: 0x2DCCC, 0x17C54, 0x24EF8, 0x14098
+
+Routine 0x26058  [BLOCKER]
+  Used by:
+    #127 Playground / W
+  Conditions:
+    if G7C is zero  →jump 0x26060
+  Calls: 0x26038
+
+Routine 0x26094  [BLOCKER]
+  Used by:
+    #127 Playground / SE
+    #127 Playground / S
+  Conditions:
+    if (SP)+ is nonzero  →jump RFALSE
+    if G7C is zero  →jump 0x260A5
+  Calls: 0x261FC, 0x26038, 0x260C4
+
+Routine 0x261C0  [BLOCKER]
+  Used by:
+    #127 Playground / N
+    #127 Playground / NE
+  Conditions:
+    if (SP)+ is nonzero  →jump RFALSE
+    if G7C is zero  →jump 0x261D2
+  Calls: 0x261FC, 0x26038, 0x10324, 0x260C4
+
+Routine 0x26444  [BLOCKER]
+  Used by:
+    #507 Shack / E
+    #507 Shack / IN
+  Conditions:
+    if NOT #70 (white door) has ATTRIBUTE26  →jump 0x2644E
+    if NOT #70 (white door) has ATTRIBUTE19  →jump 0x26457
+  Calls: 0x2DCCC, 0x26460, 0x14098
+
+Routine 0x266C0  [BLOCKER]
+  Used by:
+    #247 Tower Landing / N
+    #247 Tower Landing / NE
+    #247 Tower Landing / E
+    #247 Tower Landing / SE
+    #247 Tower Landing / S
+    #247 Tower Landing / SW
+    #247 Tower Landing / W
+    #247 Tower Landing / NW
+  Calls: 0x11504
+
+Routine 0x26914  [BLOCKER]
+  Used by:
+    #534 Paved Road / NW
+  Conditions:
+    if NOT #348 (shelters) has ATTRIBUTE24  →jump 0x2698B
+  Calls: 0x272B0, 0x3B464, 0x3B6E0, 0x111A0
+
+Routine 0x271A0  [BLOCKER]
+  Used by:
+    #437 Behind the Shed / NE
+  Calls: 0x271D4
+
+Routine 0x271BC  [BLOCKER]
+  Used by:
+    #437 Behind the Shed / S
+  Calls: 0x271D4
+
+Routine 0x273AC  [BLOCKER]
+  Used by:
+    #132 Desert / S
+    #132 Desert / SW
+    #159 Desert / N
+    #159 Desert / NE
+    #159 Desert / SW
+    #159 Desert / W
+    #159 Desert / NW
+    #180 Foothills / N
+    #180 Foothills / NW
+    #465 Desert / N
+    #465 Desert / NE
+    #465 Desert / NW
+    #480 Desert / SW
+    #480 Desert / W
+    #480 Desert / NW
+    #497 Desert / SW
+    #497 Desert / W
+    #497 Desert / NW
+    #529 Desert / SE
+    #529 Desert / S
+    #529 Desert / SW
+    #529 Desert / W
+    #529 Desert / NW
+    #577 Desert / SE
+    #577 Desert / S
+    #577 Desert / SW
+  Calls: 0x13AA0
+
+Routine 0x28A90  [BLOCKER]
+  Used by:
+    #336 Edge of Reservoir / NE
+    #336 Edge of Reservoir / E
+    #336 Edge of Reservoir / SE
+    #336 Edge of Reservoir / SW
+    #336 Edge of Reservoir / W
+    #336 Edge of Reservoir / NW
+  Calls: 0x11504
+
+Routine 0x28B14  [BLOCKER]
+  Used by:
+    #457 Reservoir / N
+    #457 Reservoir / NE
+    #457 Reservoir / E
+    #457 Reservoir / SE
+    #457 Reservoir / SW
+    #457 Reservoir / W
+    #457 Reservoir / NW
+
+Routine 0x2DCCC  [BLOCKER]
+  Used by:
+    #576 Meadow / IN
+  Calls: 0x21D94
+
+Routine 0x31C50  [BLOCKER]
+  Used by:
+    #56 Tundra / SW
+  Conditions:
+    if #168 (group of buildings) has ATTRIBUTE23  →jump 0x31C5F
+    if (SP)+ is zero  →jump 0x31D72
+  Calls: 0x111A0, 0x14474, 0x14500, 0x115B8, 0x28C40, 0x116C8
+
+Routine 0x33FA4  [BLOCKER]
+  Used by:
+    #501 Sand Bar / IN
+    #565 The River / IN
+  Conditions:
+    if #379 (dory) is not inside GAE  →jump 0x33FBB
+  Calls: 0x33FC0, 0x111D0
+
+Routine 0x381CC  [BLOCKER]
+  Used by:
+    #180 Foothills / NE
+    #180 Foothills / E
+    #180 Foothills / SE
+    #222 Foothills / E
+    #222 Foothills / SE
+    #225 Foothills / NE
+    #225 Foothills / E
+  Calls: 0x10324

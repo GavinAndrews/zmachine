@@ -3,23 +3,31 @@ class Scripting:
         with open(filename) as file:
             raw = [line.rstrip() for line in file]
 
+        # If any line starts with '>' this is a transcript — only '>' lines are commands.
+        # Otherwise every line is a command (plain command list).
+        is_transcript = any(line.startswith('>') for line in raw)
+
         self.lines = []
         for line in raw:
             if line.startswith('> '):
-                self.lines.append(line[2:])   # transcript format: strip '> '
-            elif line == '>':
-                self.lines.append('')          # empty command
-            else:
-                self.lines.append(line)        # plain command or #meta-command
+                content = line[2:]
+                if content.strip():            # skip '> ' with no real command
+                    self.lines.append(content)
+            elif line.startswith('>'):
+                content = line[1:]
+                if content.strip():            # skip bare '>' (game prompts)
+                    self.lines.append(content)
+            elif not is_transcript:
+                self.lines.append(line)        # plain commands file
 
         self.current = 0
 
     def get_line(self):
-        # Skip blank lines and pure comment lines (## ...) but return #commands
+        # Skip pure comment lines (## ...) but return everything else
         while self.current < len(self.lines):
             line = self.lines[self.current]
             self.current += 1
-            if line.startswith('##'):          # file-level comment, skip
+            if line.startswith('##'):
                 continue
             return line
         return None                            # exhausted — fall through to interactive

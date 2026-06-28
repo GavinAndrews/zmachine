@@ -769,6 +769,9 @@ class ZMachineScreen(ScreenBase):
         threshold = max(1, ROWS - sg._upper_rows - 2)
         if sg.scroll_count < threshold:
             return
+        if self.auto_more:
+            sg.reset_scroll_count()
+            return
 
         sg.reset_scroll_count()
 

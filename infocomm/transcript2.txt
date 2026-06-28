@@ -1,0 +1,354 @@
+
+[Transcript started: transcript2.txt]
+[Transcript started.]
+transcript 
+[Location display on]
+#loc
+
+[Obj#576: Meadow]
+> [Map logging to map.txt]
+#map
+
+[Obj#576: Meadow]
+> n
+You ascend the gentle hill.
+
+Summit
+
+The hill you’ve climbed lies at the southwest edge of a vast wilderness. Towering forests are broken by long tracts of wasteland, rugged plateaus and marshes shrouded in perpetual mist. A brooding sun fills the distant valleys with a sad, dusty light the color of antique brass.
+
+A giant triangle, thousands of feet high, rises above the eastern treetops. Its vertex casts a long shadow across the wood.
+
+As your eyes sweep the landscape, you notice more of the giant toadstools. There must be hundreds of them. Some sprout in clusters, others grow in solitude among the trees. Their numbers increase dramatically as your gaze moves westward, until the forest is choked with pale domes.
+
+The meteor disappears below the horizon.
+
+You feel the ground shudder, and hear a roar like thunder. Then all is still.
+      Summit
+>
+[Obj#323: Summit]
+> e
+Forest Clearing
+
+It must have taken centuries to cultivate the magnificent hedge rising before you. The tightly woven arborvitaes stretch eastward through the forest like a green wall, thirty feet high.
+
+A barren hilltop is visible to the west. Many footpaths wander off between the trees.
+
+A dark shadow moves slowly northward across the ground.
+      Forest Clearing
+>
+[Obj#426: Forest Clearing]
+> e
+Trellises
+
+A fortresslike wall of arborvitaes stretches east and west through the forest. The only breach is an identical pair of arched trellises.
+
+A mountain stream trickles between the trees. Paths wander from its banks in many directions.
+               Trellises
+>
+[Obj#317: Trellises]
+> sw
+Arborvitaes
+
+Barely eighteen inches separate the thick walls of arborvitae that tower on either side. They form an uncomfortably narrow corridor that bends sharply to the east and northeast.
+         Arborvitaes
+>
+[Obj#580: Arborvitaes]
+> ne
+Trellises
+           Trellises
+>
+[Obj#317: Trellises]
+> nw
+South Bog
+
+The ground is damp and squishy underfoot, especially along the stream that wanders west and southeast between the black trees.
+
+A splintered log lies rotting in the mist at your feet. Its edges flicker with the eerie phosphorescence of decay.
+         South Bog
+>
+[Obj#319: South Bog]
+> take log
+The log crumbles into a heap of damp corruption when you try to move it. Only a big splinter of wood remains.
+
+>
+[Obj#319: South Bog]
+> take splinter
+Taken.
+
+[Your score just went up by 1 point. The total is now 16 out of 100.]
+
+>
+[Obj#319: South Bog]
+> se
+Trellises
+         Trellises
+>
+[Obj#317: Trellises]
+> sw
+Arborvitaes
+         Arborvitaes
+>
+[Obj#580: Arborvitaes]
+> e
+Arboretum
+
+A spectacular pergola of arborvitaes arches over your head like a great green Ferris wheel. Its tangled surfaces are peculiarly twisted, making it difficult to tell where the inside ends and the outside begins.
+
+Steep, leafy tunnels curve up into the pergola to the north and south. Other paths lead east and west, into the surrounding hedge.
+
+An abstract sparkling sculpture stands between the tunnels. The words Felix Klein 1849-1925 are inscribed on the base.
+           Arboretum
+>
+[Obj#462: Arboretum]
+> n
+You ascend the north side of the pergola.
+
+North Arbor
+
+The "floor" of the pergola curves up and around in an inexplicable way that makes your eyes cross. It seems as if you’d be standing on your head if you went much higher. Little daylight makes its way through the thick walls of arborvitae.
+         North Arbor
+>
+[Obj#4: North Arbor]
+> u
+The floor twists alarmingly as you continue your ascent.
+
+Top of Arbor
+
+The tangled vines and tendrils seem to writhe malignantly in the flickering light of the splinter. The air is pungent with the odor of arborvitaes.
+
+Dark, leafy tunnels curve down to the north and south.
+
+An arborvitae is cleaved by a silver axe.
+
+Your sense of direction is very confused.
+           Top of Arbor
+>
+[Obj#408: Top of Arbor]
+> take axe
+You yank the axe out of the arborvitae.
+
+[Your score just went up by 1 point. The total is now 17 out of 100.]
+
+>
+[Obj#408: Top of Arbor]
+> d
+[Which way do you want to go down?]
+
+>
+[Obj#408: Top of Arbor]
+> s
+South Arbor
+
+The "floor" of the pergola curves up and around in an inexplicable way that makes your eyes cross. It seems as if you’d be standing on your head if you went much higher. Little daylight makes its way through the thick walls of arborvitae.
+            South Arbor
+>
+[Obj#430: South Arbor]
+> d
+The floor twists alarmingly as you descend.
+
+Arboretum
+
+An abstract sparkling sculpture stands between the tunnels. The words 5291-9481 nielK xileF are inscribed on the base.
+           Arboretum
+>
+[Obj#462: Arboretum]
+> e
+Arborvitaes
+         Arborvitaes
+>
+[Obj#580: Arborvitaes]
+> nw
+Trellises
+           Trellises
+>
+[Obj#317: Trellises]
+> n
+Bottom of Stairs
+
+The triangular structure before you must be thousands of feet high. It divides the sky like a razor, casting a stern, precise shadow over the surrounding landscape.
+
+A narrow stairway climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every direction.
+         Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> u
+With a fearful gulp, you ascend the narrow stairway.
+
+Halfway Up
+
+The breeze feels noticeably cooler here, about halfway to the vertex. The landscape below is gray in the shadow of the triangle.
+                Halfway Up
+>
+[Obj#80: Halfway]
+> u
+The air grows colder as you continue your ascent.
+
+Vertex
+
+The temperature on this tiny platform is well below freezing. But it isn’t just the cold that makes your teeth chatter when you look down that narrow stairway, thousands of feet high.
+
+Far below, the shadow of the structure stretches across the landscape. From this great altitude it looks like a dark finger, accusing a point on the east horizon.
+
+At the center of the platform stands a handsome antique sundial. You see a threaded hole on the dial’s face. The circumference is enclosed in a wide brass ring.
+          Vertex
+>
+[Obj#316: Vertex]
+> screw gnomon into sundial
+You screw the gnomon into the hole on the sundial.
+
+A long metal lever silently rises out of the floor. As it clicks to a stop, the ring around the sundial emits a brilliant twinkle of light.
+
+[Your score just went up by 5 points. The total is now 22 out of 100.]
+
+A voice in your ear remarks, "The Gnomon Conquest."
+
+>
+[Obj#316: Vertex]
+> d
+Fighting back fear, you descend the stairway.
+
+Halfway Down
+      Halfway Down
+>
+[Obj#80: Halfway]
+> d
+The air grows warmer as you continue your descent.
+
+Bottom of Stairs
+            Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> s
+Trellises
+                Trellises
+>
+[Obj#317: Trellises]
+> sw
+Arborvitaes
+
+Barely eighteen inches separate the thick walls of arborvitae that tower on either side. They form an uncomfortably narrow corridor that bends sharply to the east and northeast.
+         Arborvitaes
+>
+[Obj#418: Arborvitaes]
+> e
+Arboretum
+
+An abstract sparkling sculpture stands between the tunnels. The words 5291-9481 nielK xileF are inscribed on the base.
+           Arboretum
+>
+[Obj#462: Arboretum]
+> s
+You ascend the south side of the pergola.
+
+South Arbor
+         South Arbor
+>
+[Obj#430: South Arbor]
+> u
+The floor twists alarmingly as you continue your ascent.
+
+Top of Arbor
+
+Your sense of direction is very confused.
+           Top of Arbor
+>
+[Obj#408: Top of Arbor]
+> s
+South Arbor
+            South Arbor
+>
+[Obj#430: South Arbor]
+> d
+The floor twists alarmingly as you descend.
+
+Arboretum
+
+An abstract sparkling sculpture stands between the tunnels. The words 5291-9481 nielK xileF are inscribed on the base.
+           Arboretum
+>
+[Obj#462: Arboretum]
+> n
+You ascend the north side of the pergola.
+
+North Arbor
+         North Arbor
+>
+[Obj#4: North Arbor]
+> u
+The floor twists alarmingly as you continue your ascent.
+
+Top of Arbor
+
+Your sense of direction is very confused.
+           Top of Arbor
+>
+[Obj#408: Top of Arbor]
+> n
+North Arbor
+            North Arbor
+>
+[Obj#4: North Arbor]
+> d
+The floor twists alarmingly as you descend.
+
+Arboretum
+
+An abstract sparkling sculpture stands between the tunnels. The words 5291-9481 nielK xileF are inscribed on the base.
+           Arboretum
+>
+[Obj#462: Arboretum]
+> n
+You ascend the north side of the pergola.
+
+North Arbor
+         North Arbor
+>
+[Obj#4: North Arbor]
+> u
+The floor twists alarmingly as you continue your ascent.
+
+Top of Arbor
+
+Your sense of direction is very confused.
+           Top of Arbor
+>
+[Obj#408: Top of Arbor]
+> s
+South Arbor
+            South Arbor
+>
+[Obj#430: South Arbor]
+> d
+The floor twists alarmingly as you descend.
+
+Arboretum
+
+An abstract sparkling sculpture stands between the tunnels. The words Felix Klein 1849-1925 are inscribed on the base.
+           Arboretum
+>
+[Obj#462: Arboretum]
+> e
+Arborvitaes
+         Arborvitaes
+>
+[Obj#418: Arborvitaes]
+> nw
+Trellises
+           Trellises
+>
+[Obj#317: Trellises]
+> n
+Bottom of Stairs
+         Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> save
+Save to file: 
+> wt2.sav
+
+[SAVE completed.]
+                                                                                Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> 

@@ -1,0 +1,405 @@
+
+[Transcript started: transcript1.txt]
+[Transcript started.]
+transcript
+[RNG seeded with 123]
+#seed 123
+[Map logging to map.txt]
+#map
+[Location display on]
+#loc
+
+[Obj#236: Palace Gate]
+> n
+The east wind makes it difficult to walk straight.
+
+Broad Walk
+
+A brooding statue of Queen Victoria faces east, where the waters of the Round Pond sparkle in the afternoon sun. Your eyes follow the crowded Broad Walk north and south until its borders are lost amid the bustle of perambulators. Small paths curve northeast and southeast, between the trees.
+
+A cloud of pigeons fills the air! They circle overhead and congregate around a nearby bench, where an aged woman is selling bags of crumbs.
+
+"Feed the birds! Thirty p!" Her voice quavers with heartbreak.
+           Broad Walk
+>
+[Obj#354: Broad Walk]
+> buy bag
+[with the seven-sided coin]
+
+[taking the seven-sided coin out of your pocket first]
+
+"Bless yer," coos the bird woman, taking your money with a practiced snatch. "Twenty p’s the change." She holds out a bag of crumbs and a small coin for you.
+
+[Your score just went up by 1 point. The total is now 1 out of 100.]
+
+[NOTE: You can turn score notification on or off at any time with the NOTIFY command.]
+
+"Take yer bag and change, guv’ner!"
+
+>
+[Obj#354: Broad Walk]
+> take bag and change
+The bag of crumbs: Taken.
+The small coin: Taken.
+
+>
+[Obj#354: Broad Walk]
+> feed birds
+[with the bag of crumbs]
+
+You take a handful of crumbs out of the bag. They fall between your fingers and tumble across the ground.
+
+As the wild birds gobble down the crumbs, a glint of red catches your eye. Frowning, you stoop down for a closer look... and gasp with astonishment!
+
+The ruby at your feet is bigger than a walnut, with finely cut facets that sparkle with crimson fire. It must have been in the bag of crumbs.
+
+>
+[Obj#354: Broad Walk]
+> take ruby
+As you reach down to touch the ruby, a very large bird races out from behind a tree. It snatches away the ruby with its beak, zigzags through a group of tourists and disappears to the east. If you didn’t know better, you’d swear that bird was a roadrunner.
+
+"It’s time!" shrieks the bird woman.
+
+The east wind softens to a whisper and dies away.
+
+Blowing leaves settle to the ground, and the trees are still. Then a fresh gust blows in from the west.
+
+"Thirty p! Thirty p a bag!"
+
+>
+[Obj#354: Broad Walk]
+> se
+"Feed the hungry birds!" cries the bird woman.
+
+The Wabe
+
+This grassy clearing is only twenty feet across, and perfectly circular. Paths wander off in many directions through the surrounding thicket.
+
+A shaft of golden sunlight falls across a handsome antique sundial, erected at the exact center of the clearing.
+          The Wabe
+>
+[Obj#79: The Wabe]
+> examine sundial
+The perimeter of the sundial is inscribed with seven curious symbols and a compass rose, with the legend "TEMPUS EDAX RERUM" emblazoned across the bottom. A triangular gnomon casts a fingerlike shadow that is creeping slowly towards the first symbol.
+                                           "And ’the wabe’ is the grass-plot round    a sun-dial, I suppose?" said Alice,       surprised at her own ingenuity.                                                    "Of course it is. It’s called ’wabe,’      you know, because it goes a long way      before it, and a long way behind it --"                                                                    -- Lewis Carroll                                           
+>
+[Obj#79: The Wabe]
+> unscrew gnomon
+You can feel the gnomon getting more and more wobbly as you unscrew it. A final twist, and it falls with a clatter onto the face of the sundial.
+
+>
+[Obj#79: The Wabe]
+> take gnomon
+You take the gnomon off the sundial.
+
+[Your score just went up by 5 points. The total is now 6 out of 100.]
+
+>
+[Obj#79: The Wabe]
+> s
+The thicket blocks your path.
+
+>
+[Obj#79: The Wabe]
+> se
+Flower Walk
+
+Gaily colored flower beds line the walks bending north and west, filling the air with a gentle fragrance. A little path leads northwest, between the trees.
+
+You can see a soccer ball half-hidden among the blossoms.
+
+The spires of the Albert Memorial are all too visible to the south. Passing tourists hoot with laughter at the dreadful sight; nannies hide their faces and roll quickly away.
+        Flower Walk
+>
+[Obj#250: Flower Walk]
+> take ball
+You take the soccer ball off the flower beds.
+
+[Your score just went up by 1 point. The total is now 7 out of 100.]
+
+>
+[Obj#250: Flower Walk]
+> nw
+The Wabe
+
+A shaft of golden sunlight falls across a handsome antique sundial, erected at the exact center of the clearing. You see a threaded hole on the dial’s face.
+           The Wabe
+>
+[Obj#79: The Wabe]
+> n
+Round Pond
+
+Ducks and swans bob on the sparkling surface of the Round Pond. They share the water with an impressive fleet of toy boats, directed by the excited shouts of children.
+
+Crowded paths radiate from the Pond in many directions.
+
+The large bird you saw before is here! You catch a glimpse of the ruby in its beak as it races between the wheels of a perambulator and disappears to the east.
+        Round Pond
+>
+[Obj#144: Round Pond]
+> examine toy boats
+The toy boats are crafted of paper and sticks. They bob freely among the wild birds, who can barely conceal their outrage.
+
+One of the toy boats on the Round Pond catches your eye. The west wind blows it closer, and you realize that the white sails are actually wings. It’s a folded paper bird, floating just within reach.
+
+>
+[Obj#144: Round Pond]
+> take paper bird
+You lean over the edge of the Round Pond, and pluck the paper bird out of the water.
+
+[Your score just went up by 3 points. The total is now 10 out of 100.]
+
+>
+[Obj#144: Round Pond]
+> unfold bird
+You gently unfold the paper bird to its full size.
+
+>
+[Obj#144: Round Pond]
+> read bird
+The words "Long Water, Four O’Clock" are scrawled on the piece of paper.
+
+>
+[Obj#144: Round Pond]
+> read watch
+Your wristwatch says it’s 3:34:00 pm.
+
+>
+[Obj#144: Round Pond]
+> nw
+Black Lion Gate
+
+Nannies and tourists hurry through the Lancaster Gate to join the perambulators rolling south down the Broad Walk. Less crowded paths wind east along an iron fence, and southeast between the trees.
+
+A careless nanny has left her perambulator unattended.
+          Black Lion Gate
+>
+[Obj#355: Black Lion Gate]
+> push pram e
+Inverness Terrace
+
+Crowded walkways lead east and west along an iron fence. Narrow paths wander south into the Gardens.
+
+A young boy sits nearby, listening to a pair of headphones and idly blowing soap bubbles. There’s a dish full of soapy water by his side.
+
+The perambulator rolls to a stop.
+
+The boy dips the bubble wand in the dish and swishes it around.
+               Inverness Terrace
+>
+[Obj#531: Inverness Terrace]
+> push pram e
+Lancaster Gate
+
+A crooked old tree shades the perambulators as they roll south down the Lancaster Walk. Shady paths lead west along an iron fence, and southwest between the trees.
+
+The perambulator rolls to a stop.
+
+There’s an old woman under the tree, struggling to open an umbrella. The stiff west wind isn’t making it easy for her.
+                 Lancaster Gate
+>
+[Obj#179: Lancaster Gate]
+> look
+Lancaster Gate
+
+A crooked old tree shades the perambulators as they roll south down the Lancaster Walk. Shady paths lead west along an iron fence, and southwest between the trees.
+
+An old woman is standing under the tree.
+
+There’s a perambulator here.
+
+A strong gust of wind snatches the umbrella out of the old woman’s hands and sweeps it into the branches of the tree.
+
+The woman circles the tree a few times, gazing helplessly upward. That umbrella obviously means a lot to her, for a wistful tear is running down her cheek. But nobody except you seems to notice her loss.
+
+After a few moments, the old woman dries her eyes, gives the tree a vicious little kick and shuffles away down the Lancaster Walk.
+
+>
+[Obj#179: Lancaster Gate]
+> throw ball at umbrella
+The soccer ball lodges itself in the tree beside the umbrella.
+
+The umbrella teeters uncertainly for a moment, then tumbles out of the tree and lands at your feet.
+
+>
+[Obj#179: Lancaster Gate]
+> take umbrella
+As you pick up the umbrella and smooth the wrinkles, you notice a touristy slogan printed around the outside: "All prams lead to the Kensington Gardens."
+
+[Your score just went up by 5 points. The total is now 15 out of 100.]
+
+>
+[Obj#179: Lancaster Gate]
+> push pram s
+Lancaster Walk
+
+An impressive sculpture of a horse and rider dominates this bustling intersection. The Walk continues north and south; lesser paths curve off in many directions.
+
+A broad field of grass, meticulously manicured, extends to the east. Beyond it you can see the Long Water glittering between the trees.
+
+A printed notice is stuck into the grass.
+
+The perambulator rolls to a stop.
+
+The large bird you saw before is here! You catch a glimpse of the ruby in its beak as it dodges a startled nanny and disappears to the east.
+              Lancaster Walk
+>
+[Obj#371: Lancaster Walk]
+> read sign
+The words Do Not Walk On The Grass are sternly printed on the notice.
+
+>
+[Obj#371: Lancaster Walk]
+> open pram
+You open the perambulator.
+
+>
+[Obj#371: Lancaster Walk]
+> enter pram
+With great difficulty, and much to the amusement of passersby, you jam yourself into the unfortunate perambulator.
+              Lancaster Walk, in the perambulator
+>
+[Obj#371: Lancaster Walk]
+> open umbrella
+The west wind fills the umbrella the moment you open it. You and your perambulator are blown helplessly eastward onto the grass.
+
+You zoom down a long slope, barely missing several trees and boulders. Peering over the top of the perambulator, you see the Long Water coming closer and closer. Unable to stop, and too stupid to let go of the umbrella, you bravely close your eyes and pinch your nose shut.
+
+Crash!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Long Water
+
+You’re on a shady path that winds along the western shore of the Long Water. Looking south, you can see the graceful arch of a bridge, and beyond it the cool expanse of the river Serpentine.
+
+A charming statue stands nearby.
+
+You see a bag of crumbs, a small coin, a gnomon, a piece of paper and a broken perambulator here.
+
+Painfully, you regain your footing and snap the umbrella shut.
+                                   Long Water
+>
+[Obj#121: Long Water]
+> take all
+The bag of crumbs: Taken.
+The small coin: Taken.
+The gnomon: Taken.
+The piece of paper: Taken.
+The broken perambulator: The broken perambulator topples over on its side again. It’s quite useless.
+
+The west wind is still. Everything is very quiet.
+
+>
+[Obj#121: Long Water]
+> e
+You wade into the cool, dark water.
+
+Wading
+
+You’re standing knee-deep in the Long Water, not far from the western shore.
+
+A gleam overhead catches your eye.
+
+Oh, dear. A missile is hanging motionless in the sky.
+          Wading
+>
+[Obj#438: Wading]
+> look
+Wading
+
+You’re standing knee-deep in the Long Water, not far from the western shore.
+
+The missile isn’t completely motionless. It’s falling very, very slowly towards the Long Water.
+
+Your eyes follow the missile’s trajectory downward, where you notice another peculiar phenomenon. It looks like a white door, suspended just above the surface of the water.
+
+>
+[Obj#438: Wading]
+> enter door
+As you wade to the threshold a familiar roadrunner flutters past. The ruby in its beak gleams enticingly as it slips through the white door.
+
+All color abruptly drains from the landscape. Trees, sky and sun flatten into a spherical shell, with you at the very center. A hissing in your ears becomes a rumble, then a roar as the walls of the shell collapse inward, faster and faster.
+
+"This way, please."
+
+You turn, but see no one.
+
+"This way," the voice urges. "Be quick."
+
+The space around you articulates. "No!" your mind shudders. "That’s not a direction!"
+
+"It’s a perfectly legitimate direction," retorts the voice with cold amusement. "Now come along."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+T    R    I    N    I    T    YAn Interactive FantasyCopyright (C)1986 Infocom, Inc. All rights reserved.Trinity is a trademark of Infocom, Inc.>
+                                                                                
+You step out of the white door.
+
+Meadow
+
+You’ve discovered a golden meadow, bordered on every side by a dense forest. The air is filled with dragonflies, and the wood echoes with the cry of mourning doves.
+
+The door you just stepped from opens into a toadstool of impossible size. Its broad crown towers over your head like a fleshy umbrella.
+
+A triangular shadow inches across the ground. Its sharp point is sweeping across the toadstool.
+
+The shadow creeps away from the toadstool, and the door in the stem swings shut with a faint creak. You stare in wonder as the door shimmers and fades from view.
+
+A glare lights up the sky! You look up just in time to see a meteor streak overhead.
+Meadow
+>
+[Obj#576: Meadow]
+> i
+You’re holding a piece of paper, a gnomon, a small coin, a bag of crumbs and an umbrella. You’re wearing a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#576: Meadow]
+> save
+Save to file: 
+>wt1.sav
+
+[SAVE completed.]
+                                                                                Meadow
+>
+[Obj#576: Meadow]
+> 

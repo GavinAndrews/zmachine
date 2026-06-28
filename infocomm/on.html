@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Game Map</title>
+<script src="https://unpkg.com/vis-network@9/standalone/umd/vis-network.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111827; color: #e5e7eb; font: 13px/1.4 sans-serif; }
+  #net { position: absolute; inset: 40px 0 0 0; }
+  #bar { position: fixed; top: 0; left: 0; right: 0; height: 40px;
+          background: #1f2937; border-bottom: 1px solid #374151;
+          display: flex; align-items: center; gap: 6px; padding: 0 10px; }
+  #bar span { color: #9ca3af; font-size: 11px; margin-left: auto; }
+  button { background: #374151; color: #e5e7eb; border: 1px solid #4b5563;
+            padding: 3px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+  button:hover { background: #4b5563; }
+  button.on { background: #065f46; border-color: #059669; }
+  #file-load { display: none; }
+</style>
+</head>
+<body>
+<div id="bar">
+  <button onclick="fitAll()">Fit</button>
+  <button id="phys-btn" class="on" onclick="togglePhysics()">Physics ON</button>
+  <button onclick="saveJSON()">Save positions</button>
+  <label>
+    <button onclick="document.getElementById('file-load').click()">Load positions</button>
+    <input id="file-load" type="file" accept=".json" onchange="loadJSON(event)">
+  </label>
+  <button onclick="clearStorage()" title="Forget saved positions and re-run layout">Clear saved</button>
+  <span>Positions auto-saved on drag &nbsp;·&nbsp; Scroll=zoom &nbsp;·&nbsp;
+        Right-drag=pan &nbsp;·&nbsp; Hover green node=notes</span>
+</div>
+<div id="net"></div>
+
+<script>
+const NODES_DATA = [{"id": "n462", "label": "#462: Arboretum", "title": "• klein/nielk", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n430", "label": "#430: South Arbor"}, {"id": "n408", "label": "#408: Top of Arbor"}];
+const EDGES_DATA = [{"from": "n408", "to": "n430", "label": "S"}, {"from": "n430", "to": "n408", "label": "U"}, {"from": "n430", "to": "n462", "label": "D"}, {"from": "n462", "to": "n430", "label": "S"}];
+
+const STORAGE_KEY = 'map_positions';
+
+var nodes   = new vis.DataSet(NODES_DATA);
+var edges   = new vis.DataSet(EDGES_DATA);
+var network = new vis.Network(
+  document.getElementById('net'),
+  { nodes, edges },
+  {
+    nodes: {
+      shape: 'box', margin: 8,
+      color: { background:'#1e3a5f', border:'#2563eb',
+                highlight:{ background:'#1d4ed8', border:'#60a5fa' } },
+      font:  { color:'#e5e7eb', size:13, face:'monospace' },
+    },
+    edges: {
+      arrows: 'to',
+      color:  { color:'#4b5563', highlight:'#9ca3af' },
+      font:   { color:'#9ca3af', size:11, align:'middle', background:'#111827' },
+      smooth: { type:'curvedCW', roundness: 0.1 },
+    },
+    physics: {
+      enabled: true,
+      barnesHut: { gravitationalConstant:-8000, springLength:160, springConstant:0.04 },
+      stabilization: { iterations: 300 },
+    },
+    interaction: { dragNodes:true, zoomView:true, dragView:true,
+                    multiselect:true, tooltipDelay:150 },
+  }
+);
+
+// ── position persistence ─────────────────────────────────────────────────
+
+var physOn           = true;
+var restoredFromSave = false;
+
+// Restore saved positions from localStorage on load
+try {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    const pos     = JSON.parse(saved);
+    const known   = new Set(nodes.getIds());
+    const updates = Object.entries(pos)
+      .filter(([id]) => known.has(id))
+      .map(([id, {x, y}]) => ({id, x, y}));
+    if (updates.length > 0) {
+      nodes.update(updates);
+      restoredFromSave = true;
+      // Disable physics after vis.js processes the updates
+      setTimeout(() => {
+        setPhysics(false);
+        network.fit({ animation: false });
+      }, 150);
+    }
+  }
+} catch(e) {}
+
+// If no saved positions, disable physics once the auto-layout settles
+network.once('stabilizationIterationsDone', () => {
+  if (!restoredFromSave) setPhysics(false);
+});
+
+// Auto-save to localStorage whenever the user finishes dragging a node
+network.on('dragEnd', function() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(network.getPositions()));
+  } catch(e) {}
+});
+
+// ── controls ─────────────────────────────────────────────────────────────
+
+function setPhysics(on) {
+  physOn = on;
+  network.setOptions({ physics: { enabled: on } });
+  const btn = document.getElementById('phys-btn');
+  btn.textContent = on ? 'Physics ON' : 'Physics OFF';
+  btn.classList.toggle('on', on);
+}
+function togglePhysics() { setPhysics(!physOn); }
+function fitAll() { network.fit({ animation: true }); }
+
+function saveJSON() {
+  const pos  = network.getPositions();
+  const blob = new Blob([JSON.stringify(pos, null, 2)], {type:'application/json'});
+  const a    = document.createElement('a');
+  a.href     = URL.createObjectURL(blob);
+  a.download = 'map_positions.json';
+  a.click();
+}
+
+function loadJSON(evt) {
+  const file = evt.target.files[0];
+  if (!file) return;
+  file.text().then(txt => {
+    const pos = JSON.parse(txt);
+    nodes.update(Object.entries(pos).map(([id, {x, y}]) => ({id, x, y})));
+    setPhysics(false);
+    network.fit({ animation: true });
+    // Persist loaded positions so they survive a refresh too
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(pos)); } catch(e) {}
+  });
+  evt.target.value = '';
+}
+
+function clearStorage() {
+  try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+  restoredFromSave = false;
+  setPhysics(true);
+  network.stabilize();
+}
+</script>
+</body>
+</html>
