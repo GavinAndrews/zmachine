@@ -1,0 +1,3931 @@
+
+[Transcript started: transcript5.txt]
+[Transcript started.]
+
+>transcript
+restore
+Restore from file: 
+> wt9.sav
+
+[RESTORE completed.]
+                                                                                
+Bottom of Stairs
+
+The triangular structure before you must be thousands of feet high. It divides the sky like a razor, casting a stern, precise shadow over the surrounding landscape.
+
+A narrow stairway climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every direction.
+
+You see an umbrella, a walkie-talkie, a lantern, a bag of crumbs, a small coin, a piece of paper and an axe here.
+Bottom of Stairs
+>[Map logging to map.txt]
+
+>#map
+[Location display on]
+
+>#loc
+
+[Obj#575: Bottom of Stairs]
+> i
+You’re not holding anything, but you’re wearing a wristwatch. You also have a dead skink and a credit card in your pocket.
+
+>
+[Obj#575: Bottom of Stairs]
+> look
+Bottom of Stairs
+
+The triangular structure before you must be thousands of feet high. It divides the sky like a razor, casting a stern, precise shadow over the surrounding landscape.
+
+A narrow stairway climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every direction.
+
+You see an umbrella, a walkie-talkie, a lantern, a bag of crumbs, a small coin, a piece of paper and an axe here.
+
+>
+[Obj#575: Bottom of Stairs]
+> u
+With a fearful gulp, you ascend the narrow stairway.
+
+Halfway Up
+                Halfway Up
+>
+[Obj#80: Halfway]
+> u
+The air grows colder as you continue your ascent.
+
+Vertex
+
+A long metal lever stands at a sharp angle to the platform.
+
+At the center of the platform stands a handsome antique sundial. The circumference is enclosed in a wide brass ring.
+          Vertex
+>
+[Obj#316: Vertex]
+> raise lever
+As you raise the lever you hear a loud, mechanical groan below your feet. The floor lurches and begins to vibrate again; you feel a momentary dizziness, and a brief gust of wind. Then all is still.
+
+>
+[Obj#316: Vertex]
+> move dial to 4
+The sundial is firmly imbedded in the platform, and cannot be moved. But the brass ring around its perimeter wobbles a bit when you touch it.
+
+>
+[Obj#316: Vertex]
+> move ring to 4
+The sun sweeps across the sky as you rotate the brass ring. It clicks into place at the dial’s fourth symbol.
+
+>
+[Obj#316: Vertex]
+> lower lever
+As you lower the lever you hear a loud, mechanical groan below your feet. The floor lurches and stops vibrating; you feel a momentary dizziness, and a brief gust of wind. Then all is still.
+
+>
+[Obj#316: Vertex]
+> d
+Fighting back fear, you descend the stairway.
+
+Halfway Down
+      Halfway Down
+>
+[Obj#80: Halfway]
+> d
+The air grows warmer as you continue your descent.
+
+Bottom of Stairs
+
+You see an umbrella, a walkie-talkie, a lantern, a bag of crumbs, a small coin, a piece of paper and an axe here.
+            Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> take axe
+You take the axe.
+
+>
+[Obj#575: Bottom of Stairs]
+> ne
+Under Cliff
+
+Smooth walls of rock vault straight up and then lean inward, forming a natural roof that partially hides the sky. Trails lead out from under the cliff in many directions.
+
+A swarm of bees has staked out this formation for itself by building an enormous hive under the arch. The faint buzzing sound from the hive is magnified by the cliff’s acoustics into a loud, frightening drone.
+                Under Cliff
+>
+[Obj#400: Under Cliff]
+> w
+Chasm’s Brink
+
+The chasm at your feet is striped with colorful layers of rock. Narrow paths twist northeast and northwest, uneasily close to the edge. Other trails lead off into the forest.
+
+To the north, a rocky mesa towers like a golf tee from the depths of the chasm. Only thirty feet separate you from its flattened summit.
+
+An oak tree stands at the chasm’s brink.
+
+A dark shadow lies across the ground.
+
+A soap bubble appears high overhead. It hovers for a moment before it bursts with a flabby pop.
+           Chasm’s Brink
+>
+[Obj#306: Chasm’s Brink]
+> cut tree with axe
+You chop at both sides of the oak’s trunk until it teeters uncertainly, deciding which way it will fall.
+
+A soap bubble appears high overhead. It hovers for a moment before it bursts with a flabby pop.
+
+>
+[Obj#306: Chasm’s Brink]
+> push tree over chasm
+You push the teetering oak northward with all your strength. It arcs across the chasm with a leafy whoosh and crashes onto the mesa, barely missing the toadstool.
+
+[Your score just went up by 3 points. The total is now 40 out of 100.]
+
+>
+[Obj#306: Chasm’s Brink]
+> n
+You step gingerly across the fallen oak, and leap onto the mesa.
+
+Mesa
+
+The mesa’s summit is a flat platform of stone, surrounded on every side by a deep chasm. A fallen oak bridges the gulf to the south.
+
+A giant toadstool has somehow taken root in the solid rock. The white door in its stem is wide open.
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the open door in the toadstool.
+             Mesa
+>
+[Obj#76: Mesa]
+> enter door
+You cross the brink of the white door.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Scaffold
+
+Whoever threw this place together wasn’t too worried about permanence. Tin walls rise on flimsy studs to a ceiling that sags under its own weight. It reminds you of a prefab tool shed, several stories high.
+
+You’re standing beside a monstrous conglomeration of pipes, compressors and pressure valves that fills most of the building. The only familiar equipment is the open white door set into one of the storage tanks.
+
+A stairway leads downward.
+    Scaffold
+>
+[Obj#394: Scaffold]
+> d
+You descend the stairway.
+
+Bottom of Scaffold
+
+A maze of plumbing rises before you like the back of a giant refrigerator. Stairs lead up to a scaffold overlooking the equipment. Turning south, you see a closed set of sliding doors, with a small box and a loudspeaker mounted on the wall beside them.
+        Bottom of Scaffold
+>
+[Obj#344: Bottom of Scaffold]
+> open box
+You swing the box open.
+
+A toggle switch and a red button are mounted inside.
+
+>
+[Obj#344: Bottom of Scaffold]
+> toggle switch
+You turn on the toggle switch.
+
+The loudspeaker emits a burst of static, then a steady hiss.
+
+>
+[Obj#344: Bottom of Scaffold]
+> press button
+You push the red button.
+
+With an electric whirr, the heavy doors slide open.
+
+"Zero minus seven minutes."
+
+>
+[Obj#344: Bottom of Scaffold]
+> s
+South Beach
+
+The waters of a peaceful lagoon reflect the tropical dawn like a fiery mirror. A few stars are still visible in the rosy sky.
+
+The glorified tool shed dominates this little island, leaving room only for a narrow strip of sand that curves to the northeast and northwest. A red button is mounted on the wall beside the open sliding doors of the shed.
+                  South Beach
+>
+[Obj#476: South Beach]
+> nw
+You follow the curve of the shore.
+
+West Beach
+
+The sand curves northeast and southeast, skirting the dark outline of the equipment shed.
+
+A tiny islet is visible a short distance offshore.
+
+"Switch to one zero three."
+           West Beach
+>
+[Obj#231: West Beach]
+> restore
+Restore from file: 
+> wt9.sav
+
+[RESTORE completed.]
+                                                                                
+Bottom of Stairs
+
+The triangular structure before you must be thousands of feet high. It divides the sky like a razor, casting a stern, precise shadow over the surrounding landscape.
+
+A narrow stairway climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every direction.
+
+You see an umbrella, a walkie-talkie, a lantern, a bag of crumbs, a small coin, a piece of paper and an axe here.
+Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> u
+With a fearful gulp, you ascend the narrow stairway.
+
+Halfway Up
+                Halfway Up
+>
+[Obj#80: Halfway]
+> u
+The air grows colder as you continue your ascent.
+
+Vertex
+
+A long metal lever stands at a sharp angle to the platform.
+
+At the center of the platform stands a handsome antique sundial. The circumference is enclosed in a wide brass ring.
+          Vertex
+>
+[Obj#316: Vertex]
+> raise lever
+As you raise the lever you hear a loud, mechanical groan below your feet. The floor lurches and begins to vibrate again; you feel a momentary dizziness, and a brief gust of wind. Then all is still.
+
+>
+[Obj#316: Vertex]
+> turn ring to 4
+The sun sweeps across the sky as you rotate the brass ring. It clicks into place at the dial’s fourth symbol.
+
+>
+[Obj#316: Vertex]
+> lower lever
+As you lower the lever you hear a loud, mechanical groan below your feet. The floor lurches and stops vibrating; you feel a momentary dizziness, and a brief gust of wind. Then all is still.
+
+>
+[Obj#316: Vertex]
+> d
+Fighting back fear, you descend the stairway.
+
+Halfway Down
+      Halfway Down
+>
+[Obj#80: Halfway]
+> d
+The air grows warmer as you continue your descent.
+
+Bottom of Stairs
+
+You see an umbrella, a walkie-talkie, a lantern, a bag of crumbs, a small coin, a piece of paper and an axe here.
+            Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> take walkie
+[the walkie-talkie]
+
+Taken.
+
+>
+[Obj#575: Bottom of Stairs]
+> take axe
+Taken.
+
+>
+[Obj#575: Bottom of Stairs]
+> ne
+Under Cliff
+
+Smooth walls of rock vault straight up and then lean inward, forming a natural roof that partially hides the sky. Trails lead out from under the cliff in many directions.
+
+A swarm of bees has staked out this formation for itself by building an enormous hive under the arch. The faint buzzing sound from the hive is magnified by the cliff’s acoustics into a loud, frightening drone.
+                Under Cliff
+>
+[Obj#400: Under Cliff]
+> w
+Chasm’s Brink
+
+The chasm at your feet is striped with colorful layers of rock. Narrow paths twist northeast and northwest, uneasily close to the edge. Other trails lead off into the forest.
+
+To the north, a rocky mesa towers like a golf tee from the depths of the chasm. Only thirty feet separate you from its flattened summit.
+
+An oak tree stands at the chasm’s brink.
+
+A dark shadow lies across the ground.
+           Chasm’s Brink
+>
+[Obj#306: Chasm’s Brink]
+> cut tree with axe
+You chop at both sides of the oak’s trunk until it teeters uncertainly, deciding which way it will fall.
+
+>
+[Obj#306: Chasm’s Brink]
+> push tree over chasm
+You push the teetering oak northward with all your strength. It arcs across the chasm with a leafy whoosh and crashes onto the mesa, barely missing the toadstool.
+
+[Your score just went up by 3 points. The total is now 40 out of 100.]
+
+>
+[Obj#306: Chasm’s Brink]
+> n
+You step gingerly across the fallen oak, and leap onto the mesa.
+
+Mesa
+
+The mesa’s summit is a flat platform of stone, surrounded on every side by a deep chasm. A fallen oak bridges the gulf to the south.
+
+A giant toadstool has somehow taken root in the solid rock. The white door in its stem is wide open.
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the open door in the toadstool.
+             Mesa
+>
+[Obj#76: Mesa]
+> enter door
+You cross the brink of the white door.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Scaffold
+
+Whoever threw this place together wasn’t too worried about permanence. Tin walls rise on flimsy studs to a ceiling that sags under its own weight. It reminds you of a prefab tool shed, several stories high.
+
+You’re standing beside a monstrous conglomeration of pipes, compressors and pressure valves that fills most of the building. The only familiar equipment is the open white door set into one of the storage tanks.
+
+A stairway leads downward.
+    Scaffold
+>
+[Obj#394: Scaffold]
+> d
+You descend the stairway.
+
+Bottom of Scaffold
+
+A maze of plumbing rises before you like the back of a giant refrigerator. Stairs lead up to a scaffold overlooking the equipment. Turning south, you see a closed set of sliding doors, with a small box and a loudspeaker mounted on the wall beside them.
+        Bottom of Scaffold
+>
+[Obj#344: Bottom of Scaffold]
+> open box
+You swing the box open.
+
+A toggle switch and a red button are mounted inside.
+
+>
+[Obj#344: Bottom of Scaffold]
+> toggle switch
+Which switch do you mean, the toggle switch or the rocker switch?
+
+>
+[Obj#344: Bottom of Scaffold]
+> press toggle switch
+You turn on the toggle switch.
+
+The loudspeaker emits a burst of static, then a steady hiss.
+
+>
+[Obj#344: Bottom of Scaffold]
+> press red button
+You push the red button.
+
+With an electric whirr, the heavy doors slide open.
+
+"Zero minus seven minutes."
+
+>
+[Obj#344: Bottom of Scaffold]
+> s
+South Beach
+
+The waters of a peaceful lagoon reflect the tropical dawn like a fiery mirror. A few stars are still visible in the rosy sky.
+
+The glorified tool shed dominates this little island, leaving room only for a narrow strip of sand that curves to the northeast and northwest. A red button is mounted on the wall beside the open sliding doors of the shed.
+                  South Beach
+>
+[Obj#476: South Beach]
+> wait
+Time passes.
+
+"Switch to one zero three."
+
+>
+[Obj#476: South Beach]
+> save
+Save to file: 
+> wt10.sav
+
+[SAVE completed.]
+                                                                                South Beach
+>
+[Obj#476: South Beach]
+> set slider to 103
+The highest number on the slider is 80.
+
+>
+[Obj#476: South Beach]
+> nw
+You follow the curve of the shore.
+
+West Beach
+
+The sand curves northeast and southeast, skirting the dark outline of the equipment shed.
+
+A tiny islet is visible a short distance offshore.
+
+"Zero minus six minutes."
+
+A gray fin is gliding across the lagoon.
+           West Beach
+>
+[Obj#231: West Beach]
+> look
+West Beach
+
+The sand curves northeast and southeast, skirting the dark outline of the equipment shed.
+
+A tiny islet is visible a short distance offshore.
+
+A gray fin is lurking just offshore.
+
+A wave washes up underfoot. It looks as if the tide is rising.
+
+A voice in your ear grumbles, "Gnomon can tether time or tide."
+
+The gray fin glides closer.
+
+>
+[Obj#231: West Beach]
+> wait
+Time passes.
+
+"Detonator check, go."
+
+With a sudden splash, the gray fin shoots upward! You shriek and cover your face with your hands as a mouthful of sharp teeth leaps from the lagoon...
+
+A friendly chatter encourages you to open your eyes. It’s a bottle-nosed dolphin, standing on its tail just offshore.
+
+>
+[Obj#231: West Beach]
+> wait
+Time passes.
+
+The distant islet is shrinking in the rising tide.
+
+>
+[Obj#231: West Beach]
+> wait
+Time passes.
+
+"Zero minus five minutes."
+
+The dolphin stands on its tail.
+
+>
+[Obj#231: West Beach]
+> wait
+Time passes.
+
+A faint plop draws your eyes to the islet. There’s now a coconut lying at the water’s edge.
+
+>
+[Obj#231: West Beach]
+> wait
+Time passes.
+
+"Geo, sync at three, two, one, mark."
+
+The dolphin chatters happily.
+
+>
+[Obj#231: West Beach]
+> wait
+Time passes.
+
+The tide creeps towards the coconut under the distant tree.
+
+>
+[Obj#231: West Beach]
+> wait
+Time passes.
+
+"Zero minus four minutes."
+
+The dolphin gives you a playful splash.
+
+>
+[Obj#231: West Beach]
+> wait
+Time passes.
+
+The coconut floats away from the distant islet on the rising tide.
+
+>
+[Obj#231: West Beach]
+> ask dolphin to get coconut
+The dolphin sees the floating coconut, snatches it out of the lagoon and tosses it into the sand at your feet.
+
+>
+[Obj#231: West Beach]
+> take coconut
+You take the coconut.
+
+[Your score just went up by 3 points. The total is now 43 out of 100.]
+
+"Patch to Alpha Echo Three Five."
+
+>
+[Obj#231: West Beach]
+> se
+You follow the curve of the shore.
+
+South Beach
+
+The dolphin glides into view nearby.
+          South Beach
+>
+[Obj#476: South Beach]
+> in
+Bottom of Scaffold
+
+"Zero minus three minutes."
+           Bottom of Scaffold
+>
+[Obj#344: Bottom of Scaffold]
+> u
+You ascend the stairway.
+
+Scaffold
+                  Scaffold
+>
+[Obj#394: Scaffold]
+> out
+There’s no exit that way.
+
+>
+[Obj#394: Scaffold]
+> enter door
+You hesitate for a moment, then step through the white door.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mesa
+
+The mesa’s summit is a flat platform of stone, surrounded on every side by a deep chasm. A fallen oak bridges the gulf to the south.
+
+A giant toadstool has somehow taken root in the solid rock.
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the toadstool.
+
+The white door fades away into the texture of the toadstool.
+        Mesa
+>
+[Obj#76: Mesa]
+> s
+You step gingerly across the fallen oak.
+
+Chasm’s Brink
+
+A dark shadow lies across the ground.
+    Chasm’s Brink
+>
+[Obj#306: Chasm’s Brink]
+> ne
+Bluff
+
+A spectacular crop of toadstools extends far and wide across the valley below. Narrow trails curve southeast and southwest, away from the edge of the bluff.
+
+To the east stands a little cottage, nestled in a shady copse. The front door is closed.
+             Bluff
+>
+[Obj#213: Bluff]
+> e
+The front door is closed.
+
+>
+[Obj#213: Bluff]
+> open front door
+You open the front door.
+
+>
+[Obj#213: Bluff]
+> e
+Cottage
+
+An iron cauldron, brown with the crust of years, squats in the middle of this tiny chamber. Coils of steam writhe from its depths, filling the air with a greasy stench that makes your nose wrinkle. Luckily, the front door is wide open. Another door leading east is closed.
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+There’s a birdcage here. Inside the birdcage you see a magpie.
+     Cottage
+>
+[Obj#327: Cottage]
+> read book
+It’s hard to divine the purpose of the calligraphy. Every page begins with a descriptive heading ("In which Wabewalker meets a Keeper of Birds," for instance) followed by a list of imperatives (prayers? formulae?), each preceded by an arrow-shaped glyph.
+
+The writing ends abruptly on the page you found open, under the heading "Wabewalker happens upon a Book of Hours, and begins to study it." The last few incantations read:
+
+>OPEN FRONT DOOR
+>E
+>READ BOOK
+
+"Awk! Milk and honey."
+
+>
+[Obj#327: Cottage]
+> [Note added for #327: Cottage]
+
+>#see use milk and honey
+
+[Obj#327: Cottage]
+> read book
+It’s hard to divine the purpose of the calligraphy. Every page begins with a descriptive heading ("Of the Red Stone’s theft by a Runner of Roads," for instance) followed by a list of imperatives (prayers? formulae?), each preceded by an arrow-shaped glyph.
+
+The writing ends abruptly on the page you found open, under the heading "Wabewalker puzzles over the Book of Hours." The last few incantations read:
+
+>E
+>READ BOOK
+>READ BOOK
+
+>
+[Obj#327: Cottage]
+> read book
+It’s hard to divine the purpose of the calligraphy. Every page begins with a descriptive heading ("How Wabewalker enters the first of Seven Portals," for instance) followed by a list of imperatives (prayers? formulae?), each preceded by an arrow-shaped glyph.
+
+The writing ends abruptly on the page you found open, under the heading "Wabewalker ponders yet again over the Book of Hours." The last few incantations read:
+
+>READ BOOK
+>READ BOOK
+>READ BOOK
+
+"Read book. Awk!"
+
+>
+[Obj#327: Cottage]
+> read book
+It’s hard to divine the purpose of the calligraphy. Every page begins with a descriptive heading ("In which Wabewalker chances upon a Hovel," for instance) followed by a list of imperatives (prayers? formulae?), each preceded by an arrow-shaped glyph.
+
+The writing ends abruptly on the page you found open, under the heading "Wabewalker pores yet again over the Book of Hours." The last few incantations read:
+
+>READ BOOK
+>READ BOOK
+>READ BOOK
+
+>
+[Obj#327: Cottage]
+> read book
+It’s hard to divine the purpose of the calligraphy. Every page begins with a descriptive heading ("Wabewalker’s encounter with a Magpie," for instance) followed by a list of imperatives (prayers? formulae?), each preceded by an arrow-shaped glyph.
+
+The writing ends abruptly on the page you found open, under the heading "Wabewalker puzzles yet again over the Book of Hours." The last few incantations read:
+
+>READ BOOK
+>READ BOOK
+>READ BOOK
+
+The magpie croaks, "Milk and honey, fresh whole lizard."
+
+>
+[Obj#327: Cottage]
+> [Note added for #327: Cottage]
+
+>#see use fresh lizard...
+
+[Obj#327: Cottage]
+> wait
+Time passes.
+
+The magpie squawks, "Awk! Fresh whole lizard. Awk!"
+
+>
+[Obj#327: Cottage]
+> wait
+Time passes.
+
+The magpie blinks at you.
+
+>
+[Obj#327: Cottage]
+> wait
+Time passes.
+
+The magpie screeches, "Killed in the light of a crescent moon."
+
+>
+[Obj#327: Cottage]
+> [Note added for #327: Cottage]
+
+>#see use: ...killed in light of crescent moon
+
+[Obj#327: Cottage]
+> wait
+Time passes.
+
+"Crescent moon. Awk!"
+
+>
+[Obj#327: Cottage]
+> wait
+Time passes.
+
+>
+[Obj#327: Cottage]
+> wait
+Time passes.
+
+"Awk! Mix ’em with a pinch o’ garlic," says the magpie.
+
+>
+[Obj#327: Cottage]
+> [Note added for #327: Cottage]
+
+>#see use: garlic
+
+[Obj#327: Cottage]
+> wait
+Time passes.
+
+The magpie makes a croaking sound.
+
+>
+[Obj#327: Cottage]
+> wait
+Time passes.
+
+>
+[Obj#327: Cottage]
+> wait
+Time passes.
+
+"Then stand back! ’Cause it go BOOM," mutters the magpie.
+
+>
+[Obj#327: Cottage]
+> [Note added for #327: Cottage]
+
+>#see use: ... go boom
+
+[Obj#327: Cottage]
+> e
+The back door is closed.
+
+>
+[Obj#327: Cottage]
+> open back door
+You open the back door.
+
+>
+[Obj#327: Cottage]
+> e
+Herb Garden
+
+A tall fence protects the neat rows of herbs from predators. The only exit is the open back door of the cottage, leading west.
+
+Another giant toadstool has taken root in a patch of thyme. The white door in its stem is closed.
+
+A pile of refuse lies in the corner.
+       Herb Garden
+>
+[Obj#417: Herb Garden]
+> dig in refuse
+You find nothing in the pile except a rotten clove of garlic.
+
+>
+[Obj#417: Herb Garden]
+> take garlic
+You take the clove of garlic off the pile of refuse.
+
+[Your score just went up by 1 point. The total is now 44 out of 100.]
+
+>
+[Obj#417: Herb Garden]
+> w
+Cottage
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+There’s a birdcage here. Inside the birdcage you see a magpie.
+
+"It go BOOM," croaks the magpie.
+           Cottage
+>
+[Obj#327: Cottage]
+> read map
+The map shows a network of boxes connected by lines and arrows, with many erasures and scrawled additions. Something about the pattern is maddeningly familiar; but you can’t put your finger on where you’ve seen it before.
+
+>
+[Obj#327: Cottage]
+> i
+You’re holding a clove of garlic, a coconut, an axe and a walkie-talkie. You’re wearing a wristwatch, and you have a dead skink and a credit card in your pocket.
+
+>
+[Obj#327: Cottage]
+> open coconut with axe
+It’d be dangerous to do that while holding the coconut.
+
+>
+[Obj#327: Cottage]
+> save
+Save to file: 
+> wt11.sav
+
+[SAVE completed.]
+                                                                                Cottage
+>
+[Obj#327: Cottage]
+> drop coconut
+Dropped.
+
+"Awk! Drop coconut. Awk!"
+
+>
+[Obj#327: Cottage]
+> chop coconut with axe
+You deal the coconut a mortal blow with the axe.
+
+Pale milk dribbles out of a crack in the shell.
+
+[Your score just went up by 1 point. The total is now 45 out of 100.]
+
+>
+[Obj#327: Cottage]
+> take milk
+The milk splashes all over the place.
+
+Liquid dribbles out of the cracked coconut.
+
+The magpie wiggles its head.
+
+>
+[Obj#327: Cottage]
+> restore
+Restore from file: 
+> wt11.sav
+
+[RESTORE completed.]
+                                                                                
+Cottage
+
+An iron cauldron, brown with the crust of years, squats in the middle of this tiny chamber. Coils of steam writhe from its depths, filling the air with a greasy stench that makes your nose wrinkle. Luckily, the front and back doors are both wide open.
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+There’s a birdcage here. Inside the birdcage you see a magpie.
+Cottage
+>
+[Obj#327: Cottage]
+> i
+You’re holding a clove of garlic, a coconut, an axe and a walkie-talkie. You’re wearing a wristwatch, and you have a dead skink and a credit card in your pocket.
+
+>
+[Obj#327: Cottage]
+> drop coconut
+You put down the coconut.
+
+The magpie squawks, "Awk! Drop coconut."
+
+>
+[Obj#327: Cottage]
+> chop coconut
+[with the axe]
+
+You deal the coconut a mortal blow with the axe.
+
+Pale milk dribbles out of a crack in the shell.
+
+[Your score just went up by 1 point. The total is now 45 out of 100.]
+
+>
+[Obj#327: Cottage]
+> take coconut and pour milk into cauldron
+Taken.
+
+Liquid dribbles out of the cracked coconut.
+
+You hold the cracked coconut over the cauldron.
+
+The last few drops of milk dribble into the boiling liquid.
+
+[Your score just went up by 1 point. The total is now 46 out of 100.]
+
+The magpie wiggles its head.
+
+>
+[Obj#327: Cottage]
+> w
+Bluff
+       Bluff
+>
+[Obj#213: Bluff]
+> se
+Crater’s Edge
+     Crater’s Edge
+>
+[Obj#441: Crater’s Edge]
+> e
+You climb down into the crater.
+
+Crater
+             Crater
+>
+[Obj#145: Crater]
+> w
+You scramble out of the crater.
+
+Crater’s Edge
+      Crater’s Edge
+>
+[Obj#441: Crater’s Edge]
+> w
+Under Cliff
+             Under Cliff
+>
+[Obj#400: Under Cliff]
+> put hand in hive
+You reach recklessly into the hive, and feel something sticky at your fingertips. Then a sharp, burning pain sears your hand like fire!
+
+Howling with agony, you yank your arm out of the hive and shake a gigantic bee off your swelling hand.
+
+The giant bee spit-polishes its stinger.
+
+>
+[Obj#400: Under Cliff]
+> sw
+Bottom of Stairs
+
+You see an umbrella, a lantern, a bag of crumbs, a small coin and a piece of paper here.
+
+You hear a familiar buzz nearby.
+           Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> nw
+North Bog
+
+A big Venus flytrap is growing nearby. Its crimson jaws are wide open, exposing a cavity that gleams with sweet-smelling ichor.
+
+Buzzing angrily, the giant bee hovers close by.
+
+The sweet smell of the flytrap stops the bee in mid-buzz. Forgetting its anger, the insect hovers above the open jaws, then touches down to sample the glistening ichor.
+
+Click! The flytrap snaps shut. After a few minutes, the faint buzzing dies away.
+                North Bog
+>
+[Obj#42: North Bog]
+> ne
+Black trees block your path.
+
+>
+[Obj#42: North Bog]
+> ne
+Black trees block your path.
+
+>
+[Obj#42: North Bog]
+> e
+Chasm’s Brink
+
+A dark shadow lies across the ground.
+         Chasm’s Brink
+>
+[Obj#306: Chasm’s Brink]
+> ne
+Bluff
+             Bluff
+>
+[Obj#213: Bluff]
+> e
+Cottage
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+There’s a birdcage here. Inside the birdcage you see a magpie.
+
+The magpie whistles.
+     Cottage
+>
+[Obj#327: Cottage]
+> put honey in cauldron
+You’re not holding that.
+
+>
+[Obj#327: Cottage]
+> put hand in cauldron
+You plunge your hand into the boiling liquid. Ouch!
+
+>
+[Obj#327: Cottage]
+> i
+You’re holding a cracked coconut, a clove of garlic, an axe and a walkie-talkie. You’re wearing a wristwatch, and you have a dead skink and a credit card in your pocket.
+
+>
+[Obj#327: Cottage]
+> examine hand
+Your fingers are still there.
+
+>
+[Obj#327: Cottage]
+> restire
+[The word "restire" isn’t in the vocabulary that you can use.]
+
+>
+[Obj#327: Cottage]
+> restore
+Restore from file: 
+> wt11.sav
+
+[RESTORE completed.]
+                                                                                
+Cottage
+
+An iron cauldron, brown with the crust of years, squats in the middle of this tiny chamber. Coils of steam writhe from its depths, filling the air with a greasy stench that makes your nose wrinkle. Luckily, the front and back doors are both wide open.
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+There’s a birdcage here. Inside the birdcage you see a magpie.
+Cottage
+>
+[Obj#327: Cottage]
+> i
+You’re holding a clove of garlic, a coconut, an axe and a walkie-talkie. You’re wearing a wristwatch, and you have a dead skink and a credit card in your pocket.
+
+>
+[Obj#327: Cottage]
+> drop coconut
+You put down the coconut.
+
+>
+[Obj#327: Cottage]
+> cut coconut with axe
+You deal the coconut a mortal blow with the axe.
+
+Pale milk dribbles out of a crack in the shell.
+
+[Your score just went up by 1 point. The total is now 45 out of 100.]
+
+The magpie wiggles its head.
+
+>
+[Obj#327: Cottage]
+> take coconut
+Taken.
+
+Liquid dribbles out of the cracked coconut.
+
+>
+[Obj#327: Cottage]
+> put milk in cauldron
+You hold the cracked coconut over the cauldron.
+
+The last few drops of milk dribble into the boiling liquid.
+
+[Your score just went up by 1 point. The total is now 46 out of 100.]
+
+>
+[Obj#327: Cottage]
+> drop coconut
+You drop the cracked coconut.
+
+>
+[Obj#327: Cottage]
+> w
+Bluff
+       Bluff
+>
+[Obj#213: Bluff]
+> se
+Crater’s Edge
+     Crater’s Edge
+>
+[Obj#441: Crater’s Edge]
+> e
+You climb down into the crater.
+
+Crater
+             Crater
+>
+[Obj#145: Crater]
+> w
+You scramble out of the crater.
+
+Crater’s Edge
+      Crater’s Edge
+>
+[Obj#441: Crater’s Edge]
+> w
+Under Cliff
+             Under Cliff
+>
+[Obj#400: Under Cliff]
+> examine hive
+The gray mass of the beehive hangs down from the overhanging cliff. A dark opening in the bottom is low enough to reach.
+
+>
+[Obj#400: Under Cliff]
+> take honey from hive
+You can’t see any honey here.
+
+>
+[Obj#400: Under Cliff]
+> put hand in hive and take honey
+You reach recklessly into the hive, and feel something sticky at your fingertips. Then a sharp, burning pain sears your hand like fire!
+
+Howling with agony, you yank your arm out of the hive and shake a gigantic bee off your swelling hand.
+
+You can’t see any honey here.
+
+>
+[Obj#400: Under Cliff]
+> sw
+Bottom of Stairs
+
+You see an umbrella, a lantern, a bag of crumbs, a small coin and a piece of paper here.
+           Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> look
+Bottom of Stairs
+
+The triangular structure before you must be thousands of feet high. It divides the sky like a razor, casting a stern, precise shadow over the surrounding landscape.
+
+A narrow stairway climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every direction.
+
+You see an umbrella, a lantern, a bag of crumbs, a small coin and a piece of paper here.
+
+You hear a familiar buzz nearby.
+
+>
+[Obj#575: Bottom of Stairs]
+> ne
+Under Cliff
+
+Buzzing angrily, the giant bee hovers close by.
+                Under Cliff
+>
+[Obj#400: Under Cliff]
+> put hand in hive
+You reach recklessly into the hive, and feel something sticky at your fingertips. Without hesitation, you yank your arm out of the hive and find your hand gleaming with a golden handful of honey.
+
+[Your score just went up by 3 points. The total is now 49 out of 100.]
+
+The giant bee spit-polishes its stinger.
+
+>
+[Obj#400: Under Cliff]
+> sw
+Bottom of Stairs
+
+You see an umbrella, a lantern, a bag of crumbs, a small coin and a piece of paper here.
+
+The giant bee maintains its orbit around your head.
+           Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> nw
+North Bog
+
+A big Venus flytrap is growing nearby. Its crimson jaws are wide open, exposing a cavity that gleams with sweet-smelling ichor.
+
+With an angry buzz, the giant bee streaks into view.
+
+The sweet smell of the flytrap stops the bee in mid-buzz. Forgetting its anger, the insect hovers above the open jaws, then touches down to sample the glistening ichor.
+
+Click! The flytrap snaps shut. After a few minutes, the faint buzzing dies away.
+
+A soap bubble appears high overhead. It hovers for a moment before it bursts with a flabby pop.
+                North Bog
+>
+[Obj#42: North Bog]
+> i
+You’re holding a handful of honey, a clove of garlic, an axe and a walkie-talkie. You’re wearing a wristwatch, and you have a dead skink and a credit card in your pocket.
+
+>
+[Obj#42: North Bog]
+> e
+Chasm’s Brink
+
+A dark shadow lies across the ground.
+         Chasm’s Brink
+>
+[Obj#306: Chasm’s Brink]
+> ne
+Bluff
+             Bluff
+>
+[Obj#213: Bluff]
+> e
+Cottage
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+You see a cracked coconut and a birdcage here. Inside the birdcage you see a magpie.
+     Cottage
+>
+[Obj#327: Cottage]
+> put honey in cauldron
+The honey sticks stubbornly to your hand.
+
+The magpie whistles.
+
+>
+[Obj#327: Cottage]
+> put hand in cauldron
+You plunge your hand into the boiling liquid. Ouch!
+
+At least you got that honey off your fingers.
+
+[Your score just went up by 1 point. The total is now 50 out of 100.]
+
+>
+[Obj#327: Cottage]
+> save
+Save to file: 
+> wt12.sav
+
+[SAVE completed.]
+                                                                                Cottage
+>
+[Obj#327: Cottage]
+> i
+You’re holding a clove of garlic, an axe and a walkie-talkie. You’re wearing a wristwatch, and you have a dead skink and a credit card in your pocket.
+
+>
+[Obj#327: Cottage]
+> take skink
+You take the dead skink out of your pocket.
+
+"Take skink. Awk!"
+
+>
+[Obj#327: Cottage]
+> put skink in cauldron
+The dead skink disappears into the cauldron in a greasy puff of steam.
+
+[Your score just went up by 1 point. The total is now 51 out of 100.]
+
+>
+[Obj#327: Cottage]
+> put garlic in cauldron
+The clove of garlic disappears into the cauldron in a greasy puff of steam.
+
+The cauldron begins to bubble and fume more furiously than ever. Steam fills the cottage in a thick, oily cloud; and an ominous rumbling sound begins to rise from the cauldron’s depths.
+
+[Your score just went up by 1 point. The total is now 52 out of 100.]
+
+"Milk and honey," squawks the magpie.
+
+>
+[Obj#327: Cottage]
+> save
+Save to file: 
+> wt13.sav
+
+[SAVE completed.]
+                                                                                Cottage
+>
+[Obj#327: Cottage]
+> wait
+Time passes.
+
+The rumble in the cauldron grows to a shuddering roar that shakes the cottage with power. It feels as if something’s about to explode!
+
+>
+[Obj#327: Cottage]
+> wait
+Time passes.
+
+With a deafening blast, the cauldron vomits up a volcano of energy that cremates you instantly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 52 points out of 100, in 272 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt13.sav
+
+[RESTORE completed.]
+                                                                                
+Cottage
+
+An iron cauldron, brown with the crust of years, squats in the middle of this tiny chamber. Coils of steam writhe from its depths, filling the air with a greasy stench that makes your nose wrinkle. Luckily, the front and back doors are both wide open.
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+You see a birdcage and a cracked coconut here. Inside the birdcage you see a magpie.
+Cottage
+>
+[Obj#327: Cottage]
+> i
+You’re holding an axe and a walkie-talkie. You’re wearing a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#327: Cottage]
+> e
+Herb Garden
+
+A pile of refuse lies in the corner.
+
+The rumble in the cottage grows to a shuddering roar that shakes the ground with power. It feels as if something’s about to explode!
+       Herb Garden
+>
+[Obj#417: Herb Garden]
+> wait
+Time passes.
+
+Boom! A powerful concussion sends you sprawling. Your ears ring as you regain your feet.
+
+>
+[Obj#417: Herb Garden]
+> look
+Herb Garden
+
+A tall fence protects the neat rows of herbs from predators. The only exit is the open back door of the cottage, leading west.
+
+Another giant toadstool has taken root in a patch of thyme. The white door in its stem is closed.
+
+A pile of refuse lies in the corner.
+
+>
+[Obj#417: Herb Garden]
+> w
+Cottage
+
+All that’s left of the book and pedestal is a pile of cinders.
+
+You see a birdcage and a cracked coconut here. Inside the birdcage you see a dead magpie.
+           Cottage
+>
+[Obj#327: Cottage]
+> look
+Cottage
+
+An iron cauldron stands amid the scorched remains of this tiny chamber. The air is filled with a greasy stench that makes your nose wrinkle. Luckily, the front and back doors are both wide open.
+
+All that’s left of the book and pedestal is a pile of cinders.
+
+You see a birdcage and a cracked coconut here. Inside the birdcage you see a dead magpie.
+
+>
+[Obj#327: Cottage]
+> examine cinders
+You see nothing unusual on the pile of cinders.
+
+>
+[Obj#327: Cottage]
+> restore
+Restore from file: 
+> wt12.sav
+
+[RESTORE completed.]
+                                                                                
+Cottage
+
+An iron cauldron, brown with the crust of years, squats in the middle of this tiny chamber. Coils of steam writhe from its depths, filling the air with a greasy stench that makes your nose wrinkle. Luckily, the front and back doors are both wide open.
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+You see a birdcage and a cracked coconut here. Inside the birdcage you see a magpie.
+Cottage
+>
+[Obj#327: Cottage]
+> i
+You’re holding a clove of garlic, an axe and a walkie-talkie. You’re wearing a wristwatch, and you have a dead skink and a credit card in your pocket.
+
+>
+[Obj#327: Cottage]
+> restore
+Restore from file: 
+> wt11.sav
+
+[RESTORE completed.]
+                                                                                
+Cottage
+
+An iron cauldron, brown with the crust of years, squats in the middle of this tiny chamber. Coils of steam writhe from its depths, filling the air with a greasy stench that makes your nose wrinkle. Luckily, the front and back doors are both wide open.
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+There’s a birdcage here. Inside the birdcage you see a magpie.
+Cottage
+>
+[Obj#327: Cottage]
+> i
+You’re holding a clove of garlic, a coconut, an axe and a walkie-talkie. You’re wearing a wristwatch, and you have a dead skink and a credit card in your pocket.
+
+>
+[Obj#327: Cottage]
+> drop coconut
+You put down the coconut.
+
+>
+[Obj#327: Cottage]
+> drop garlic
+Dropped.
+
+"Milk and honey," squawks the magpie.
+
+>
+[Obj#327: Cottage]
+> w
+Bluff
+       Bluff
+>
+[Obj#213: Bluff]
+> se
+Crater’s Edge
+     Crater’s Edge
+>
+[Obj#441: Crater’s Edge]
+> w
+Under Cliff
+             Under Cliff
+>
+[Obj#400: Under Cliff]
+> put hand in hive
+You reach recklessly into the hive, and feel something sticky at your fingertips. Then a sharp, burning pain sears your hand like fire!
+
+Howling with agony, you yank your arm out of the hive and shake a gigantic bee off your swelling hand.
+
+The giant bee spit-polishes its stinger.
+
+>
+[Obj#400: Under Cliff]
+> put hand in hive
+You reach recklessly into the hive, and feel something sticky at your fingertips. Without hesitation, you yank your arm out of the hive and find your hand gleaming with a golden handful of honey.
+
+[Your score just went up by 3 points. The total is now 47 out of 100.]
+
+The giant bee evades your flying hands, and plants a second sting right in the middle of your forehead. You scream with blinding agony.
+
+A voice in your ear whispers, "One more like that, and you’ve had it."
+
+>
+[Obj#400: Under Cliff]
+> sw
+Bottom of Stairs
+
+You see an umbrella, a lantern, a bag of crumbs, a small coin and a piece of paper here.
+
+You hear a familiar buzz nearby.
+           Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> nw
+North Bog
+
+A big Venus flytrap is growing nearby. Its crimson jaws are wide open, exposing a cavity that gleams with sweet-smelling ichor.
+
+Buzzing angrily, the giant bee hovers close by.
+
+The sweet smell of the flytrap stops the bee in mid-buzz. Forgetting its anger, the insect hovers above the open jaws, then touches down to sample the glistening ichor.
+
+Click! The flytrap snaps shut. After a few minutes, the faint buzzing dies away.
+                North Bog
+>
+[Obj#42: North Bog]
+> e
+Chasm’s Brink
+
+A dark shadow lies across the ground.
+         Chasm’s Brink
+>
+[Obj#306: Chasm’s Brink]
+> ne
+Bluff
+             Bluff
+>
+[Obj#213: Bluff]
+> e
+Cottage
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+You see a clove of garlic, a coconut and a birdcage here. Inside the birdcage you see a magpie.
+     Cottage
+>
+[Obj#327: Cottage]
+> cut coconut with axe
+You deal the coconut a mortal blow with the axe.
+
+Pale milk dribbles out of a crack in the shell.
+
+[Your score just went up by 1 point. The total is now 48 out of 100.]
+
+"Awk! Cut coconut with axe. Awk!"
+
+>
+[Obj#327: Cottage]
+> take axe
+You’re already holding the axe.
+
+Liquid dribbles out of the cracked coconut.
+
+>
+[Obj#327: Cottage]
+> put milk in cauldron
+You’re not holding any milk.
+
+>
+[Obj#327: Cottage]
+> pour milk in cauldron
+You’re not holding any milk.
+
+>
+[Obj#327: Cottage]
+> put coconut in cauldron
+You’re not holding a cracked coconut.
+
+>
+[Obj#327: Cottage]
+> take coconut
+You pick up the cracked coconut.
+
+The last drops of milk dribble out of the cracked coconut.
+
+The magpie screeches, "Take coconut."
+
+>
+[Obj#327: Cottage]
+> put milk in cauldron
+You’re not holding that.
+
+>
+[Obj#327: Cottage]
+> restore
+Restore from file: 
+> wt11.sav
+
+[RESTORE completed.]
+                                                                                
+Cottage
+
+An iron cauldron, brown with the crust of years, squats in the middle of this tiny chamber. Coils of steam writhe from its depths, filling the air with a greasy stench that makes your nose wrinkle. Luckily, the front and back doors are both wide open.
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+There’s a birdcage here. Inside the birdcage you see a magpie.
+Cottage
+>
+[Obj#327: Cottage]
+> i
+You’re holding a clove of garlic, a coconut, an axe and a walkie-talkie. You’re wearing a wristwatch, and you have a dead skink and a credit card in your pocket.
+
+>
+[Obj#327: Cottage]
+> drop coconut
+Dropped.
+
+>
+[Obj#327: Cottage]
+> cut coconut with axe
+You deal the coconut a mortal blow with the axe.
+
+Pale milk dribbles out of a crack in the shell.
+
+[Your score just went up by 1 point. The total is now 45 out of 100.]
+
+>
+[Obj#327: Cottage]
+> take cracked coconut
+Taken.
+
+Liquid dribbles out of the cracked coconut.
+
+"Milk and honey," squawks the magpie.
+
+>
+[Obj#327: Cottage]
+> pour coconut milk into cauldron
+You hold the cracked coconut over the cauldron.
+
+The last few drops of milk dribble into the boiling liquid.
+
+[Your score just went up by 1 point. The total is now 46 out of 100.]
+
+>
+[Obj#327: Cottage]
+> save
+Save to file: 
+> wt12.sav
+
+[SAVE completed.]
+                                                                                Cottage
+>
+[Obj#327: Cottage]
+> w
+Bluff
+       Bluff
+>
+[Obj#213: Bluff]
+> se
+Crater’s Edge
+     Crater’s Edge
+>
+[Obj#441: Crater’s Edge]
+> w
+Under Cliff
+             Under Cliff
+>
+[Obj#400: Under Cliff]
+> put hand in hive
+You reach recklessly into the hive, and feel something sticky at your fingertips. Then a sharp, burning pain sears your hand like fire!
+
+Howling with agony, you yank your arm out of the hive and shake a gigantic bee off your swelling hand.
+
+The giant bee spit-polishes its stinger.
+
+>
+[Obj#400: Under Cliff]
+> put hand in hive
+You reach recklessly into the hive, and feel something sticky at your fingertips. Without hesitation, you yank your arm out of the hive and find your hand gleaming with a golden handful of honey.
+
+[Your score just went up by 3 points. The total is now 49 out of 100.]
+
+The giant bee evades your flying hands, and plants a second sting right in the middle of your forehead. You scream with blinding agony.
+
+A voice in your ear whispers, "One more like that, and you’ve had it."
+
+>
+[Obj#400: Under Cliff]
+> sw
+Bottom of Stairs
+
+You see an umbrella, a lantern, a bag of crumbs, a small coin and a piece of paper here.
+
+You hear a familiar buzz nearby.
+           Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> nw
+North Bog
+
+A big Venus flytrap is growing nearby. Its crimson jaws are wide open, exposing a cavity that gleams with sweet-smelling ichor.
+
+Buzzing angrily, the giant bee hovers close by.
+
+The sweet smell of the flytrap stops the bee in mid-buzz. Forgetting its anger, the insect hovers above the open jaws, then touches down to sample the glistening ichor.
+
+Click! The flytrap snaps shut. After a few minutes, the faint buzzing dies away.
+                North Bog
+>
+[Obj#42: North Bog]
+> e
+Chasm’s Brink
+
+A dark shadow lies across the ground.
+         Chasm’s Brink
+>
+[Obj#306: Chasm’s Brink]
+> ne
+Bluff
+             Bluff
+>
+[Obj#213: Bluff]
+> e
+Cottage
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+There’s a birdcage here. Inside the birdcage you see a magpie.
+     Cottage
+>
+[Obj#327: Cottage]
+> put honey in cauldron
+The honey sticks stubbornly to your hand.
+
+"Milk and honey, fresh whole lizard. Awk!"
+
+>
+[Obj#327: Cottage]
+> put hand in cauldron
+You plunge your hand into the boiling liquid. Ouch!
+
+At least you got that honey off your fingers.
+
+[Your score just went up by 1 point. The total is now 50 out of 100.]
+
+>
+[Obj#327: Cottage]
+> put skink in cauldron
+You’ll have to take it out of your pocket first.
+
+>
+[Obj#327: Cottage]
+> take skink
+You take the dead skink out of your pocket.
+
+"Awk! Take skink. Awk!"
+
+>
+[Obj#327: Cottage]
+> put skink in cauldron
+The dead skink disappears into the cauldron in a greasy puff of steam.
+
+[Your score just went up by 1 point. The total is now 51 out of 100.]
+
+>
+[Obj#327: Cottage]
+> i
+You’re holding a cracked coconut, a clove of garlic, an axe and a walkie-talkie. You’re wearing a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#327: Cottage]
+> drop garlic
+You drop the clove of garlic.
+
+The magpie wiggles its head.
+
+>
+[Obj#327: Cottage]
+> look
+Cottage
+
+An iron cauldron, brown with the crust of years, squats in the middle of this tiny chamber. Coils of steam writhe from its depths, filling the air with a greasy stench that makes your nose wrinkle. Luckily, the front and back doors are both wide open.
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+You see a clove of garlic and a birdcage here. Inside the birdcage you see a magpie.
+
+>
+[Obj#327: Cottage]
+> take cage
+You pick up the birdcage.
+
+[Your score just went up by 1 point. The total is now 52 out of 100.]
+
+The magpie whistles.
+
+>
+[Obj#327: Cottage]
+> save
+Save to file: 
+> wt12.sav
+
+[SAVE completed.]
+                                                                                Cottage
+>
+[Obj#327: Cottage]
+> open cage
+You open the birdcage.
+
+The magpie flutters out of the cage and soars through the open door.
+
+>
+[Obj#327: Cottage]
+> w
+Bluff
+       Bluff
+>
+[Obj#213: Bluff]
+> sw
+Chasm’s Brink
+
+A dark shadow lies across the ground.
+     Chasm’s Brink
+>
+[Obj#306: Chasm’s Brink]
+> w
+North Bog
+
+A big Venus flytrap is growing nearby. Its crimson jaws are wide open, exposing a cavity that gleams with sweet-smelling ichor.
+
+A soap bubble appears high overhead. It hovers for a moment before it bursts with a flabby pop.
+             North Bog
+>
+[Obj#42: North Bog]
+> se
+Bottom of Stairs
+
+You see an umbrella, a lantern, a bag of crumbs, a small coin and a piece of paper here.
+         Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> u
+With a fearful gulp, you ascend the narrow stairway.
+
+Halfway Up
+                Halfway Up
+>
+[Obj#80: Halfway]
+> u
+The air grows colder as you continue your ascent.
+
+Vertex
+
+A long metal lever stands at a sharp angle to the platform.
+
+At the center of the platform stands a handsome antique sundial. The circumference is enclosed in a wide brass ring.
+          Vertex
+>
+[Obj#316: Vertex]
+> raise lever
+As you raise the lever you hear a loud, mechanical groan below your feet. The floor lurches and begins to vibrate again; you feel a momentary dizziness, and a brief gust of wind. Then all is still.
+
+>
+[Obj#316: Vertex]
+> move ring to 5
+The sun sweeps across the sky as you rotate the brass ring. It clicks into place at the dial’s fifth symbol.
+
+>
+[Obj#316: Vertex]
+> lower lever
+As you lower the lever you hear a loud, mechanical groan below your feet. The floor lurches and stops vibrating; you feel a momentary dizziness, and a brief gust of wind. Then everything is quiet.
+
+>
+[Obj#316: Vertex]
+> d
+Fighting back fear, you descend the stairway.
+
+Halfway Down
+      Halfway Down
+>
+[Obj#80: Halfway]
+> d
+The air grows warmer as you continue your descent.
+
+Bottom of Stairs
+
+You see an umbrella, a lantern, a bag of crumbs, a small coin and a piece of paper here.
+            Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> ne
+Under Cliff
+
+A dark shadow lies across the ground.
+                Under Cliff
+>
+[Obj#400: Under Cliff]
+> w
+Chasm’s Brink
+           Chasm’s Brink
+>
+[Obj#306: Chasm’s Brink]
+> ne
+Bluff
+             Bluff
+>
+[Obj#213: Bluff]
+> e
+Cottage
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+There’s a clove of garlic here.
+     Cottage
+>
+[Obj#327: Cottage]
+> e
+Herb Garden
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the open door in the toadstool.
+
+A pile of refuse lies in the corner.
+       Herb Garden
+>
+[Obj#417: Herb Garden]
+> e
+The tall fence blocks your path.
+
+>
+[Obj#417: Herb Garden]
+> look
+Herb Garden
+
+A tall fence protects the neat rows of herbs from predators. The only exit is the open back door of the cottage, leading west.
+
+Another giant toadstool has taken root in a patch of thyme. The white door in its stem is wide open.
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the open door in the toadstool.
+
+A pile of refuse lies in the corner.
+
+>
+[Obj#417: Herb Garden]
+> enter door
+Which door do you mean, the back door or the white door?
+
+>
+[Obj#417: Herb Garden]
+> enter white door
+The white door opens wider at your touch, drawing you over the threshold.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Platform
+
+This narrow platform is attached to the north side of a huge steel enclosure, fifty feet high. All around you, a frozen wasteland stretches off to a horizon lined with gray mountains.
+
+An open white door leads into the enclosure’s interior. The topmost rungs of a ladder stand beside it.
+
+A loudspeaker intones, "Dyevianatsat minut."
+           Platform
+>
+[Obj#199: Platform]
+> save
+Save to file: 
+> wt14.sav
+
+[SAVE completed.]
+                                                                                Platform
+>
+[Obj#199: Platform]
+> look
+Platform
+
+This narrow platform is attached to the north side of a huge steel enclosure, fifty feet high. All around you, a frozen wasteland stretches off to a horizon lined with gray mountains.
+
+An open white door leads into the enclosure’s interior. The topmost rungs of a ladder stand beside it.
+
+>
+[Obj#199: Platform]
+> d
+You descend the ladder.
+
+Under Platform
+
+A network of cables snakes down the side of the enclosure, then trails southwest across the tundra. Grim tracts of permafrost greet your eyes every way you turn.
+
+A ladder leads up to a platform overhead.
+
+Something touches your sneaker.
+
+You kick it away with a shout. A rodent sails through the air, lands unharmed and scrambles out of sight.
+        Under Platform
+>
+[Obj#488: Under Platform]
+> ne
+Tundra
+
+A prehistoric river bed cuts a narrow pass through the mountains rising north and east. The enclosure is a gray sentinel on the southwest horizon.
+
+The ground is covered with rodents! They’re racing northeast, oblivious to you or anything else in their path.
+              Tundra
+>
+[Obj#254: Tundra]
+> ne
+You follow the stream of rodents.
+
+Cliff Edge
+
+The river bed ends here, on a cliff overlooking an Arctic sea. But where ancient waters once fell, there now pours a living stream of rodents. Driven by mindless instinct, too stupid or frightened to turn away, they plunge by the hundreds into the crashing waves below. You recognize the species now. Lemmings.
+
+The ground underfoot is split by a narrow fissure, almost hidden by the scrambling lemmings.
+      Cliff Edge
+>
+[Obj#43: Cliff Edge]
+> examine fissure
+A trapped lemming glares up at you defiantly.
+
+The lemmings race between your legs.
+
+>
+[Obj#43: Cliff Edge]
+> take lemming
+Your load is too heavy.
+
+>
+[Obj#43: Cliff Edge]
+> i
+You’re holding a birdcage, a cracked coconut, an axe and a walkie-talkie. You’re wearing a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#43: Cliff Edge]
+> drop coconut
+You put down the cracked coconut.
+
+The lemming sniffs the air inquisitively.
+
+>
+[Obj#43: Cliff Edge]
+> take lemming
+You take the lemming out of the fissure.
+
+The lemming squirms violently in your hand.
+
+The lemmings swarm across the tundra.
+
+>
+[Obj#43: Cliff Edge]
+> put lemming in cage
+The lemming sinks its teeth into your thumb when it sees the cage. But you jam it inside anyway.
+
+[Your score just went up by 1 point. The total is now 53 out of 100.]
+
+The lemming scampers uneasily around the cage.
+
+>
+[Obj#43: Cliff Edge]
+> close cage
+You close the birdcage.
+
+>
+[Obj#43: Cliff Edge]
+> look
+Cliff Edge
+
+The river bed ends here, on a cliff overlooking an Arctic sea. But where ancient waters once fell, there now pours a living stream of lemmings. Driven by mindless instinct, too stupid or frightened to turn away, they plunge by the hundreds into the crashing waves below.
+
+The ground underfoot is split by a narrow fissure, almost hidden by the scrambling lemmings.
+
+There’s a cracked coconut here.
+
+The lemming in the cage trembles with agitation.
+
+>
+[Obj#43: Cliff Edge]
+> sw
+You force a path through the lemmings.
+
+Tundra
+
+The lemmings scurry over your feet.
+          Tundra
+>
+[Obj#254: Tundra]
+> sw
+Under Platform
+      Under Platform
+>
+[Obj#488: Under Platform]
+> u
+You ascend the ladder.
+
+Platform
+              Platform
+>
+[Obj#199: Platform]
+> enter door
+You leap across the jamb of the white door.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Herb Garden
+
+A tall fence protects the neat rows of herbs from predators. The only exit is the open back door of the cottage, leading west.
+
+Another giant toadstool has taken root in a patch of thyme.
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the toadstool.
+
+A pile of refuse lies in the corner.
+
+The white door fades away into the texture of the toadstool.
+        Herb Garden
+>
+[Obj#417: Herb Garden]
+> w
+Cottage
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+There’s a clove of garlic here.
+           Cottage
+>
+[Obj#327: Cottage]
+> w
+Bluff
+       Bluff
+>
+[Obj#213: Bluff]
+> sw
+Chasm’s Brink
+     Chasm’s Brink
+>
+[Obj#306: Chasm’s Brink]
+> e
+Under Cliff
+
+A dark shadow lies across the ground.
+             Under Cliff
+>
+[Obj#400: Under Cliff]
+> sw
+Bottom of Stairs
+
+You see an umbrella, a lantern, a bag of crumbs, a small coin and a piece of paper here.
+
+The lemming in the cage scratches its ear.
+           Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> i
+You’re holding a birdcage, an axe and a walkie-talkie. Inside the birdcage you see a lemming. You’re wearing a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#575: Bottom of Stairs]
+> drop all
+The birdcage: Dropped.
+The axe: Dropped.
+The walkie-talkie: Dropped.
+
+>
+[Obj#575: Bottom of Stairs]
+> take paper
+Taken.
+
+The lemming in the cage peers around nervously.
+
+>
+[Obj#575: Bottom of Stairs]
+> take umbrella
+You pick up the umbrella.
+
+>
+[Obj#575: Bottom of Stairs]
+> u
+With a fearful gulp, you ascend the narrow stairway.
+
+Halfway Up
+                Halfway Up
+>
+[Obj#80: Halfway]
+> u
+The air grows colder as you continue your ascent.
+
+Vertex
+
+A long metal lever stands at a sharp angle to the platform.
+
+At the center of the platform stands a handsome antique sundial. The circumference is enclosed in a wide brass ring.
+          Vertex
+>
+[Obj#316: Vertex]
+> raise lever
+As you raise the lever you hear a loud, mechanical groan below your feet. The floor lurches and begins to vibrate again; you feel a momentary dizziness, and a brief gust of wind. Then everything is quiet.
+
+>
+[Obj#316: Vertex]
+> move dial to 6
+The sundial is firmly imbedded in the platform, and cannot be moved. But the brass ring around its perimeter wobbles a bit when you touch it.
+
+>
+[Obj#316: Vertex]
+> move ring to 6
+The sun sweeps across the sky as you rotate the brass ring. It clicks into place at the dial’s sixth symbol.
+
+>
+[Obj#316: Vertex]
+> lower lever
+As you lower the lever you hear a loud, mechanical groan below your feet. The floor lurches and stops vibrating; you feel a momentary dizziness, and a brief gust of wind. Then everything is quiet.
+
+>
+[Obj#316: Vertex]
+> d
+Fighting back fear, you descend the stairway.
+
+Halfway Down
+      Halfway Down
+>
+[Obj#80: Halfway]
+> d
+The air grows warmer as you continue your descent.
+
+Bottom of Stairs
+
+You see a walkie-talkie, an axe, a birdcage, a lantern, a bag of crumbs and a small coin here. Inside the birdcage you see a lemming.
+
+The lemming in the cage washes its face with its paws.
+            Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> i
+You’re holding an umbrella and a piece of paper. You’re wearing a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#575: Bottom of Stairs]
+> e
+The Bend
+
+A dark shadow lies across the ground.
+                The Bend
+>
+[Obj#557: The Bend]
+> e
+Moor
+
+Tall, solemn cattails line the banks of a great river that flows eastward across the silent moor. A dense fog on the water obscures your view of the opposite shore.
+
+A pair of giant toadstools is growing among the cattails. The larger one has an open white door set into the stem.
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the open door in the toadstool.
+        Moor
+>
+[Obj#471: Moor]
+> save
+Save to file: 
+> wt16.sav
+
+[SAVE completed.]
+                                                                                Moor
+>
+[Obj#471: Moor]
+> enter door
+You pass the threshold of the white door...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+... and step into empty air.
+
+Thin Air
+
+You’re fourteen hundred feet above a small city, falling straight down at a velocity of seventy miles an hour.
+
+A white door is dwindling away in the sky overhead.
+    Thin Air
+>
+[Obj#208: Thin Air]
+> open umbrella
+The umbrella snaps open and nearly flies to pieces in the fury of your descent. But a sympathetic breeze fills the cloth panels with air, and your death-plunge slows to a leisurely drift.
+
+The city below draws closer. You glimpse a river, railroad tracks, streets busy with horses and bicycles, a playground...
+
+Crunch.
+
+Playground, in a sandpile
+
+A set of children’s swings moves slowly back and forth in the humid breeze. Behind them stands a long building, its windows hung with flowers and birds folded from colored paper.
+
+Mounds of dirt are heaped around a dark opening to the east. It appears to be a shelter of some kind.
+
+Several small children are happily chasing dragonflies north of the swing set. Turning south, you see a group of adults (schoolteachers, by the looks of them), wearily digging another shelter like the first.
+
+Somewhat shaken, you rise to your feet in a child’s sandpile. In the pile you see a piece of paper and an umbrella.
+        Playground, in a sandpile
+>
+[Obj#127: Playground]
+> take all
+The piece of paper: Taken.
+The umbrella: Taken.
+
+>
+[Obj#127: Playground]
+> look
+Playground, in a sandpile
+
+A set of children’s swings moves slowly back and forth in the humid breeze. Behind them stands a long building, its windows hung with flowers and birds folded from colored paper.
+
+Mounds of dirt are heaped around a dark opening to the east. It appears to be a shelter of some kind.
+
+Several small children are happily chasing dragonflies north of the swing set. Turning south, you see a group of adults (schoolteachers, by the looks of them), wearily digging another shelter like the first.
+
+You’re standing in a child’s sandpile.
+
+>
+[Obj#127: Playground]
+> wait
+Time passes.
+
+>
+[Obj#127: Playground]
+> look
+Playground, in a sandpile
+
+A set of children’s swings moves slowly back and forth in the humid breeze. Behind them stands a long building, its windows hung with flowers and birds folded from colored paper.
+
+Mounds of dirt are heaped around a dark opening to the east. It appears to be a shelter of some kind.
+
+Several small children are happily chasing dragonflies north of the swing set. Turning south, you see a group of adults (schoolteachers, by the looks of them), wearily digging another shelter like the first.
+
+You’re standing in a child’s sandpile.
+
+A little girl races between the swings, hot on the trail of a dragonfly. She trips and sprawls across the sand, laughing with hysterical glee. Then she sees you.
+
+At first, you’re sure she’s going to scream. Her eyes dart back and forth between you and the teachers; you can see a cry forming on her lips.
+
+Suddenly, the umbrella in your hand catches her eye. You watch her expression soften from fear to curiosity.
+
+>
+[Obj#127: Playground]
+> give umbrella to girl
+The girl’s mouth opens into a little "o" at the magnificence of your gift. She humbly accepts the umbrella, smiles shyly and descends into the shelter with her prize.
+
+>
+[Obj#127: Playground]
+> d
+[climbing out of the sandpile first]
+
+You descend into the darkness.
+
+Shelter
+
+You wouldn’t want to spend much time in this wretched hole. The bare floor is damp and filthy, and the corners reek of urine. Luckily, there’s an opening to the west.
+
+A spade is leaning against the wall.
+
+The little girl is in the corner, clutching an umbrella.
+
+The girl gazes lovingly at the umbrella.
+                         Shelter
+>
+[Obj#36: Shelter]
+> take spade
+You pick up the spade.
+
+[Your score just went up by 1 point. The total is now 54 out of 100.]
+
+The girl twirls the umbrella and giggles.
+
+>
+[Obj#36: Shelter]
+> give paper to girl
+The girl’s eyes brighten with surprise when she sees the piece of paper. "Origami," she squeaks, accepting the piece of paper with a gracious bow. Her fingers explore the creases in the paper, bending them this way and that. Then, with a few deft maneuvers, she refolds the sheet to its original shape and hands it back to you.
+
+[Your score just went up by 3 points. The total is now 57 out of 100.]
+
+The edges of the paper bird begin to flicker faintly.
+
+The girl admires the umbrella from all sides.
+
+>
+[Obj#36: Shelter]
+> w
+You ascend into daylight.
+
+Playground
+
+A child’s sandpile covers the ground at your feet.
+
+Something twitches in your hand.
+
+The paper bird is growing! The wings and tail are unfolding like the petals of a flower, the long neck craning further and further out of the expanding body...
+
+You drop the demonic thing with a yelp of dismay. In moments, it opens up into a monstrous construction of folded paper the size of a foreign car.
+       Playground
+>
+[Obj#127: Playground]
+> enter bird
+Gulping with fear, you climb into the crackling folds of the giant bird’s back.
+
+With a powerful beat of its wings, the strange creature lifts away from the ground. Blowing sand obscures the view, but you can hear voices crying out in wonder. When the air clears, the playground is far below.
+
+Thin Air, on the giant bird
+
+The giant bird soars high over the city, banking left and right with effortless grace. You hear the rhythmic pump of its great wings, wind whipping past your ears... and, far overhead, the drone of approaching aircraft.
+
+A speck in the sky grows into the familiar outline of the white door. The bird circles once, slows to a stall and hovers only a few feet from the threshold.
+          Thin Air, on the giant bird
+>
+[Obj#166: Thin Air, on the giant bird]
+> enter door
+You climb off the giant bird and leap through the white door.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Moor
+
+Tall, solemn cattails line the banks of a great river that flows eastward across the silent moor. A dense fog on the water obscures your view of the opposite shore.
+
+A pair of giant toadstools is growing among the cattails.
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the toadstool.
+
+The white door fades away into the texture of the toadstool.
+                           Moor
+>
+[Obj#471: Moor]
+> i
+You’re holding a spade. You’re wearing a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#471: Moor]
+> w
+The Bend
+
+A dark shadow lies across the ground.
+    The Bend
+>
+[Obj#557: The Bend]
+> w
+Bottom of Stairs
+
+You see a birdcage, a walkie-talkie, an axe, a lantern, a bag of crumbs and a small coin here. Inside the birdcage you see a lemming.
+        Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> save
+Save to file: 
+> wt16.sav
+
+[SAVE completed.]
+                                                                                Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> score
+[Your score is 57 points out of 100, in 339 moves. This gives you the rank of Historian.]
+
+>
+[Obj#575: Bottom of Stairs]
+> [Map written to map.html: 544 transitions, 133 locations, 60 notes]
+
+>#remap
+
+[Obj#575: Bottom of Stairs]
+> s
+Trellises
+                Trellises
+>
+[Obj#317: Trellises]
+> w
+Forest Clearing
+         Forest Clearing
+>
+[Obj#426: Forest Clearing]
+> nw
+Waterfall
+               Waterfall
+>
+[Obj#472: Waterfall]
+> u
+You carefully ascend the stone steps.
+
+Cemetery
+         Cemetery
+>
+[Obj#414: Cemetery]
+> n
+Barrow
+
+The dim light from outside does little to dispel the gloom of this subterranean passage. Craggy walls bend away to the north and south.
+
+A barrow wight is skulking about in the darkness close at hand.
+
+A skeleton key is sticking out of the wall.
+
+A clatter breaks the silence! You turn, and watch helplessly as a spiked door crashes down across the south exit.
+
+It’s completely dark.
+
+Something is breathing in the darkness.
+
+You hear a noise that sounds suspiciously like a skeleton key being drawn from a hole.
+        Darkness
+>
+[Obj#353: Barrow]
+> turn key
+It’s too dark to see.
+
+>
+[Obj#353: Barrow]
+> restore
+Restore from file: 
+> wt16.sav
+
+[RESTORE completed.]
+                                                                                
+Bottom of Stairs
+
+The triangular structure before you must be thousands of feet high. It divides the sky like a razor, casting a stern, precise shadow over the surrounding landscape.
+
+A narrow stairway climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every direction.
+
+You see a birdcage, a walkie-talkie, an axe, a lantern, a bag of crumbs and a small coin here. Inside the birdcage you see a lemming.
+Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> w
+South Bog
+                South Bog
+>
+[Obj#319: South Bog]
+> w
+Waterfall
+         Waterfall
+>
+[Obj#472: Waterfall]
+> n
+You carefully ascend the stone steps.
+
+Cemetery
+         Cemetery
+>
+[Obj#414: Cemetery]
+> look
+Cemetery
+
+Gloomy statues lie toppled among the tombstones, their broken limbs and heads scattered like the carnage of a ghastly battle.
+
+A granite crypt lies across the ground. Beyond it rises the mound of an ancient barrow. A black tunnel leads north, into the barrow.
+
+Sudden drops fall away on every side but south, where a flight of stone steps descends the cliff.
+
+>
+[Obj#414: Cemetery]
+> open crypt with spade
+You slide the end of the spade under the lid’s edge and lean on it with all your strength.
+
+Crack! You feel a puff of foul-smelling air as a section of the crypt’s lid breaks away.
+
+[Your score just went up by 3 points. The total is now 60 out of 100.]
+
+>
+[Obj#414: Cemetery]
+> examine body
+The solemn dignity of the crypt makes you suspect that the remains may be those of some great missionary or explorer. The shrunken body is wrapped in a gray burial shroud, and its wrinkled mouth is held shut with a bandage wrapped around its head. A pair of boots, one red and one green, completes the ghastly wardrobe.
+
+>
+[Obj#414: Cemetery]
+> take all
+The broken lid: The broken lid is much too big.
+The corpse: You struggle briefly with the corpse, but it’s just too awkward.
+The green boot: Taken.
+The red boot: Taken.
+The bandage: As you pull the bandage off the corpse its mouth drops wide open.
+The burial shroud: You remove the burial shroud from the corpse, revealing its decomposed body.
+
+[Your score just went up by 1 point. The total is now 61 out of 100.]
+
+>
+[Obj#414: Cemetery]
+> exmine mouth
+[The word "exmine" isn’t in the vocabulary that you can use.]
+
+>
+[Obj#414: Cemetery]
+> look in mouth
+The open mouth is blue and wrinkled. Inside it you can see a silver coin.
+
+>
+[Obj#414: Cemetery]
+> take coin
+You take the silver coin out of the mouth.
+
+[Your score just went up by 1 point. The total is now 62 out of 100.]
+
+>
+[Obj#414: Cemetery]
+> i
+You’re holding a silver coin, a burial shroud, a bandage, a red boot, a green boot and a spade. You’re wearing a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#414: Cemetery]
+> wear shroud
+You put on the burial shroud.
+
+>
+[Obj#414: Cemetery]
+> drop spade
+You drop the spade.
+
+>
+[Obj#414: Cemetery]
+> i
+You’re holding a silver coin, a bandage, a red boot and a green boot. You’re wearing a burial shroud and a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#414: Cemetery]
+> s
+You carefully descend the stone steps.
+
+Waterfall
+        Waterfall
+>
+[Obj#472: Waterfall]
+> e
+South Bog
+         South Bog
+>
+[Obj#319: South Bog]
+> e
+Bottom of Stairs
+
+You see a birdcage, a walkie-talkie, an axe, a lantern, a bag of crumbs and a small coin here. Inside the birdcage you see a lemming.
+
+The lemming in the cage blinks at you.
+         Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> u
+With a fearful gulp, you ascend the narrow stairway.
+
+Halfway Up
+                Halfway Up
+>
+[Obj#80: Halfway]
+> u
+The air grows colder as you continue your ascent.
+
+Vertex
+
+A long metal lever stands at a sharp angle to the platform.
+
+At the center of the platform stands a handsome antique sundial. The circumference is enclosed in a wide brass ring.
+          Vertex
+>
+[Obj#316: Vertex]
+> raise lever
+As you raise the lever you hear a loud, mechanical groan below your feet. The floor lurches and begins to vibrate again; you feel a momentary dizziness, and a brief gust of wind. Then everything is quiet.
+
+>
+[Obj#316: Vertex]
+> move ring to 7
+The sun sweeps across the sky as you rotate the brass ring. It clicks into place at the dial’s seventh symbol.
+
+>
+[Obj#316: Vertex]
+> lower lever
+As you lower the lever you hear a loud, mechanical groan below your feet. The floor lurches and stops vibrating; you feel a momentary dizziness, and a brief gust of wind. Then all is still.
+
+>
+[Obj#316: Vertex]
+> d
+Fighting back fear, you descend the stairway.
+
+Halfway Down
+      Halfway Down
+>
+[Obj#80: Halfway]
+> d
+The air grows warmer as you continue your descent.
+
+Bottom of Stairs
+
+You see a birdcage, a walkie-talkie, an axe, a lantern, a bag of crumbs and a small coin here. Inside the birdcage you see a lemming.
+            Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> take walkie
+[the walkie-talkie]
+
+Taken.
+
+>
+[Obj#575: Bottom of Stairs]
+> take crumbs
+You pick up the bag of crumbs.
+
+>
+[Obj#575: Bottom of Stairs]
+> take cage
+Your load is too heavy.
+
+>
+[Obj#575: Bottom of Stairs]
+> i
+You’re holding a bag of crumbs, a walkie-talkie, a silver coin, a bandage, a red boot and a green boot. You’re wearing a burial shroud and a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#575: Bottom of Stairs]
+> drop bandage
+Dropped.
+
+>
+[Obj#575: Bottom of Stairs]
+> examine red boot
+The boot is exceedingly well-made, and colored bright red. A small recess is visible at the toe’s tip.
+
+>
+[Obj#575: Bottom of Stairs]
+> examine recess
+It’s empty.
+
+>
+[Obj#575: Bottom of Stairs]
+> open recess
+You couldn’t possibly open a red boot.
+
+>
+[Obj#575: Bottom of Stairs]
+> examine green boot
+The boot is exceedingly well-made, and colored bright green. A small recess is visible at the toe’s tip.
+
+>
+[Obj#575: Bottom of Stairs]
+> examine recess
+It’s empty.
+
+The lemming in the cage sniffs the air inquisitively.
+
+>
+[Obj#575: Bottom of Stairs]
+> drop boots
+The red boot: You put down the red boot.
+The green boot: You put down the green boot.
+
+>
+[Obj#575: Bottom of Stairs]
+> i
+You’re holding a bag of crumbs, a walkie-talkie and a silver coin. You’re wearing a burial shroud and a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#575: Bottom of Stairs]
+> take cage
+Taken.
+
+>
+[Obj#575: Bottom of Stairs]
+> look
+Bottom of Stairs
+
+The triangular structure before you must be thousands of feet high. It divides the sky like a razor, casting a stern, precise shadow over the surrounding landscape.
+
+A narrow stairway climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every direction.
+
+You see a green boot, a red boot, a bandage, an axe, a lantern and a small coin here.
+
+>
+[Obj#575: Bottom of Stairs]
+> i
+You’re holding a birdcage, a bag of crumbs, a walkie-talkie and a silver coin. Inside the birdcage you see a lemming. You’re wearing a burial shroud and a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#575: Bottom of Stairs]
+> save
+Save to file: 
+> wt17.sav
+
+[SAVE completed.]
+                                                                                Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> se
+The River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+Footpaths wander north, west and northwest. Turning south, you see a magnificent hedge growing in an unbroken wall to the river’s edge.
+
+A dark shadow lies across the ground.
+
+As you peer across the river you notice a lone vessel gliding out of the fog.
+                The River
+>
+[Obj#565: The River]
+> wait
+Time passes.
+
+The dory draws closer to the shore. You can make out a dark oarsman at the stern.
+
+>
+[Obj#565: The River]
+> wait
+Time passes.
+
+The oarsman guides his dory to a soundless landing.
+
+A puff of wind ripples the water.
+
+Eddies of sand swirl across the shore and coalesce into ghostly figures of dust and vapor. Before you can think or move, you find yourself amid a gathering of human shades, pale and gaunt, silent as death.
+
+>
+[Obj#565: The River]
+> enter dory
+The dory tips alarmingly as you climb aboard.
+
+The oarsman glances at the burial shroud you’re wearing with silent approval, and stretches out his skeletal hand expectantly.
+
+The lemming in the cage trembles with agitation.
+         The River, in the dory
+>
+[Obj#565: The River]
+> give silver coin
+[What do you want to give the silver coin to?]
+
+>
+[Obj#565: The River]
+> give silver coin to oarsman
+The oarsman accepts the silver coin and nods at you solemnly.
+
+The ghostly shades begin to converge on the dory. One by one, they step into the vessel, hand the oarsman a silver coin, and take a seat.
+
+The oarsman pushes away from the beach.
+
+Planes of mist close in around the dory, drawing it deeper into the gloom. The only sound is the rhythmic slurp of the oar as it plies the dark, oily water.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A vague outline emerges beyond the helm. It slowly resolves into a spit of sand, damp and cheerless in the surrounding murk.
+
+The oarsman swings the dory around and lands it with barely a jolt. One by one, the shades slink out of the vessel and drift across the sand like leaves on a breath of wind. Something in the oarsman’s gaze compels you to follow them.
+
+Sand Bar
+
+At first glance, this isolated spit seems hopelessly mired in the fog blowing in off the surrounding river. But the sand looks a bit firmer to the south.
+
+With practiced skill, the oarsman pushes his empty dory away from the shore.
+                      Sand Bar
+>
+[Obj#501: Sand Bar]
+> s
+Islet
+
+It’s impossible to see more than a dozen yards on this fogbound islet. The damp air makes your footsteps sound unnaturally loud as you trudge across the sand at the river’s edge.
+
+A lone toadstool has found a home at the water’s edge. The white door in its stem is wide open.
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the open door in the toadstool.
+
+"Gnomon is an island," giggles a voice in your ear.
+
+A roadrunner is perched on the toadstool’s crown. The ruby in its beak gleams enticingly.
+
+The roadrunner gives you a curt nod of acknowledgement. Then it flutters off the toadstool, prances through the open door and disappears.
+        Islet
+>
+[Obj#5: Islet]
+> enter door
+You take a deep breath, and step forward.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling. You can see an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+A paperback book is lying in the corner.
+
+A faint sound drifts in from somewhere outside. It sounded like a man’s voice.
+     Shack
+>
+[Obj#507: Shack]
+> take book
+You pick up the book.
+
+You hear the voice again, followed by a sharp clatter. There’s definitely somebody outside.
+
+>
+[Obj#507: Shack]
+> examine book
+It’s a cheap paperback called Desert Island Decameron.
+
+Another voice joins the first. You strain to listen.
+
+"Towerside breaker closed. Check."
+
+"Pittsburg’s on the line, Lieutenant."
+
+"Give him to me, Joe."
+
+>
+[Obj#507: Shack]
+> read book
+A slip of cardboard falls out of the book as you open it.
+
+You flip through the book, but nothing catches your eye.
+
+The lemming in the cage scratches its ear.
+
+A gust of wind obscures the conversation outside for a few moments. You can pick out the words "focus," "groves" and "surveillance," but little else.
+
+>
+[Obj#507: Shack]
+> look
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling. You can see an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+There’s a slip of cardboard here.
+
+All at once the shack is filled with light! It seems to be coming from somewhere outside.
+
+"Lower!" shouts one of the voices.
+
+The light brightens to a hard, steady glare.
+
+>
+[Obj#507: Shack]
+> examine cardboard
+The slip of cardboard seems to have been used as a bookmark. A stanza of poetry is typed on the side you can see.
+
+The wind rises again, drowning out the voices altogether.
+
+>
+[Obj#507: Shack]
+> read poetry
+It’s a send-up of a famous Emerson poem.
+                                             From this crude lab that spawned a dud,     Their necks to Truman’s axe uncurled,       Lo, the embattled savants stood             And fired the flop heard ’round the world.                                                         -- Los Alamos ditty, circa 1945                                             
+>
+[Obj#507: Shack]
+> look
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling; harsh light streams in through an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+There’s a slip of cardboard here.
+
+You hear a motor revving to life below. One of the voices barks something; there’s a squeal of rubber, and the motor fades into the distance. Then all is still.
+
+>
+[Obj#507: Shack]
+> open enclosure
+You pry at the access panel with your fingers. But the screws hold it fast.
+
+>
+[Obj#507: Shack]
+> save
+Save to file: 
+> wt19.sav
+
+[SAVE completed.]
+                                                                                Shack
+>
+[Obj#507: Shack]
+> d
+There’s no exit that way.
+
+>
+[Obj#507: Shack]
+> look
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling; harsh light streams in through an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+There’s a slip of cardboard here.
+
+>
+[Obj#507: Shack]
+> w
+Tower Platform
+
+A metal rail is all that stands between you and a hundred-foot drop.
+
+Miles of barren desert lie below, gray and still in the gathering dawn. Black roads radiate outward like the hands of a great clock.
+
+This narrow platform opens east into a metal shack. A searchlight on the southwest horizon floods the platform in a raw white glare. A ladder is sticking up over the platform’s edge.
+     Tower Platform
+>
+[Obj#158: Tower Platform]
+> d
+You clutch the topmost rung of the ladder with sweating palms. Fighting back vertigo, you begin to feel your way downward.
+
+At last your foot touches a flat surface.
+
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues downward.
+              Tower Landing
+>
+[Obj#247: Tower Landing]
+> d
+You step back onto the ladder and inch yourself downward.
+
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+A familiar roadrunner is eyeing you from its perch on the box’s lid. The ruby in its beak gleams in the early dawn.
+
+With a skillful toss, the roadrunner deposits the ruby on the box. Then it leaps off and scampers eagerly around your feet. If you didn’t know better, you’d swear it was glad to see you.
+
+The lemming in the cage peers around nervously.
+             Base of Tower
+>
+[Obj#146: Base of Tower]
+> take ruby
+You take the ruby off the box.
+
+[Your score just went up by 1 point. The total is now 63 out of 100.]
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#146: Base of Tower]
+> feed bird with crumbs
+You put the bag of crumbs on the ground beside the roadrunner.
+
+The roadrunner begins to peck at the crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> look
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner pecks contentedly at the crumbs in the bag.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+There’s a bag of crumbs here.
+
+The roadrunner gobbles down the crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> i
+You’re holding a ruby, a book, a birdcage and a walkie-talkie. Inside the birdcage you see a lemming. You’re wearing a burial shroud and a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#146: Base of Tower]
+> examine walkie
+[the walkie-talkie]
+
+The walkie-talkie has a rocker switch, a numbered slider, a telescoping antenna (now lowered) and a large orange button.
+
+The roadrunner snaps up the crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> press rocker switch
+You turn on the rocker switch.
+
+The roadrunner pecks contentedly at the last few crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> raise antenna
+You pull the antenna out of the walkie-talkie, extending it to its full length.
+
+The roadrunner scratches impatiently on the ground.
+
+The walkie-talkie hisses quietly.
+
+>
+[Obj#146: Base of Tower]
+> press orange button
+You squeeze the orange button.
+
+Zap! A painful electric shock shoots up your arm. The walkie-talkie falls from your grasp and lands at your feet.
+
+>
+[Obj#146: Base of Tower]
+> take walkie
+[the walkie-talkie]
+
+Taken.
+
+The roadrunner looks up at you inquisitively.
+
+The walkie-talkie emits a burst of static.
+
+>
+[Obj#146: Base of Tower]
+> sw
+You amble along for several minutes.
+
+Southwest of Tower
+
+A paved road leads northeast towards the tower, and southwest into the desert. There’s also a dirt trail bearing north.
+
+The roadrunner prances into view.
+             Southwest of Tower
+>
+[Obj#219: Southwest of Tower]
+> e
+You walk along for several minutes.
+
+South of Tower
+
+A paved road bears north towards the tower, and south into the desert.
+
+The roadrunner hops into view.
+                  South of Tower
+>
+[Obj#466: South of Tower]
+> e
+You trudge along for several minutes.
+
+Shallow Crater
+
+You’re standing at the edge of a shallow depression in the desert floor, a few hundred feet across. The ground within is gray and pulverized, as if by a powerful explosion.
+
+A paved road leads southeast into the desert, and northwest towards the tower.
+
+The roadrunner reappears at your side.
+              Shallow Crater
+>
+[Obj#456: Shallow Crater]
+> se
+You amble along for several minutes.
+
+Northwest of Ranch
+
+You’re at the northwest corner of a stone wall. A closed iron gate leads in to a dilapidated ranch house.
+
+A paved road bears northwest into the desert. Other paths curve east and south, along the wall’s perimeter.
+
+The roadrunner reappears at your side.
+
+The walkie-talkie crackles for a moment.
+              Northwest of Ranch
+>
+[Obj#122: Northwest of Ranch]
+> enter
+The iron gate is closed.
+
+>
+[Obj#122: Northwest of Ranch]
+> open iron gate
+You open the iron gate.
+
+The roadrunner emits a brief squawk.
+
+>
+[Obj#122: Northwest of Ranch]
+> enter
+Back Yard
+
+This patch of dust lies within the elbow of the ranch house, and is enclosed by a stone wall to the north and west.
+
+An open hallway leads south, into the house. There’s also a closed screen door to the east, and an open iron gate in the northwest corner of the stone wall.
+
+The roadrunner reappears at your side.
+
+The walkie-talkie clicks and hisses.
+                  Back Yard
+>
+[Obj#297: Back Yard]
+> open screen door
+You open the screen door.
+
+The lemming in the cage washes its face with its paws.
+
+>
+[Obj#297: Back Yard]
+> e
+Spare Room
+
+Aside from an open screen door to the west, this squarish room offers no amenities. Other exits lead north and east.
+
+A large map is hanging on the wall.
+
+The roadrunner races into view.
+
+The walkie-talkie hisses quietly.
+         Spare Room
+>
+[Obj#12: Spare Room]
+> read map
+[This is the map included in your Trinity package.]
+
+>
+[Obj#12: Spare Room]
+> s
+Northwest Room
+
+The original purpose of this stark room is uncertain; it might have been used for dining. Exits lead north, south and east.
+
+The roadrunner struts to your side.
+
+The walkie-talkie emits a burst of static.
+          Northwest Room
+>
+[Obj#1: Northwest Room]
+> save
+Save to file: 
+> wt21.sav
+
+[SAVE completed.]
+                                                                                Northwest Room
+>
+[Obj#1: Northwest Room]
+> e
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. A closed front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+              Assembly Room
+>
+[Obj#442: Assembly Room]
+> open cage
+You open the birdcage.
+
+The lemming cowers in the cage, trembling violently.
+
+The rattlesnake strikes your ankle like lightning, recoils in an instant and slithers out of sight.
+
+Sobbing with pain and shock, you peer at the tender wound. It’s already beginning to swell.
+
+The roadrunner prances into view.
+
+The lemming scrambles out of the cage and scurries out of sight.
+
+>
+[Obj#442: Assembly Room]
+> restore
+Restore from file: 
+> wt21.sav
+
+[RESTORE completed.]
+                                                                                
+Northwest Room
+
+The original purpose of this stark room is uncertain; it might have been used for dining. Exits lead north, south and east.
+
+The roadrunner watches every move you make.
+Northwest Room
+>
+[Obj#1: Northwest Room]
+> e
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. A closed front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+              Assembly Room
+>
+[Obj#442: Assembly Room]
+> n
+You beat a hasty retreat from the rattlesnake.
+
+Closet
+
+There’s barely enough room to turn around in this puny closet. Its single open door is in the south wall.
+
+The rattlesnake lurks just outside the open door. It looks as if it’s about to strike!
+
+The lemming covers its face with its paws and trembles.
+             Closet
+>
+[Obj#352: Closet]
+> look
+Closet
+
+There’s barely enough room to turn around in this puny closet. Its single open door is in the south wall.
+
+The rattlesnake strikes your ankle like lightning, recoils in an instant and slithers out of sight.
+
+Sobbing with pain and shock, you peer at the tender wound. It’s already beginning to swell.
+
+>
+[Obj#352: Closet]
+> restore
+Restore from file: 
+> wt21.sav
+
+[RESTORE completed.]
+                                                                                
+Northwest Room
+
+The original purpose of this stark room is uncertain; it might have been used for dining. Exits lead north, south and east.
+
+The roadrunner watches every move you make.
+Northwest Room
+>
+[Obj#1: Northwest Room]
+> s
+Kitchen
+
+Disconnected stove pipes and an open cupboard with a steak knife in it are the only evidence of this room’s identity. A closed outer door in the west wall leads out to a hallway. Other exits lead north and east.
+
+The roadrunner reappears at your side.
+              Kitchen
+>
+[Obj#21: Kitchen]
+> take knife
+You take the steak knife out of the cupboard.
+
+[Your score just went up by 1 point. The total is now 64 out of 100.]
+
+The walkie-talkie crackles for a moment.
+
+>
+[Obj#21: Kitchen]
+> n
+Northwest Room
+
+The roadrunner prances into view.
+       Northwest Room
+>
+[Obj#1: Northwest Room]
+> e
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. A closed front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+
+The walkie-talkie clicks and hisses.
+              Assembly Room
+>
+[Obj#442: Assembly Room]
+> kill snake with knife
+You draw closer to the rattlesnake, steak knife poised to strike.
+
+The rattlesnake strikes your ankle like lightning, recoils in an instant and slithers out of sight.
+
+Sobbing with pain and shock, you peer at the tender wound. It’s already beginning to swell.
+
+The roadrunner hops into view.
+
+>
+[Obj#442: Assembly Room]
+> restore
+Restore from file: 
+> wt21.sav
+
+[RESTORE completed.]
+                                                                                
+Northwest Room
+
+The original purpose of this stark room is uncertain; it might have been used for dining. Exits lead north, south and east.
+
+The roadrunner watches every move you make.
+Northwest Room
+>
+[Obj#1: Northwest Room]
+> s
+Kitchen
+
+Disconnected stove pipes and an open cupboard with a steak knife in it are the only evidence of this room’s identity. A closed outer door in the west wall leads out to a hallway. Other exits lead north and east.
+
+The roadrunner prances into view.
+              Kitchen
+>
+[Obj#21: Kitchen]
+> take knife
+You take the steak knife out of the cupboard.
+
+[Your score just went up by 1 point. The total is now 64 out of 100.]
+
+The walkie-talkie crackles for a moment.
+
+>
+[Obj#21: Kitchen]
+> e
+Southeast Room
+
+Something about this room gives you the impression that it was hastily vacated. The front door in the east wall is closed. Other exits lead north and west.
+
+The roadrunner hops to your side.
+       Southeast Room
+>
+[Obj#460: Southeast Room]
+> n
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. A closed front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+              Assembly Room
+>
+[Obj#442: Assembly Room]
+> w
+You beat a hasty retreat from the rattlesnake.
+
+Northwest Room
+
+The roadrunner races into view.
+             Northwest Room
+>
+[Obj#1: Northwest Room]
+> n
+Spare Room
+
+A large map is hanging on the wall.
+
+The roadrunner struts into view.
+              Spare Room
+>
+[Obj#12: Spare Room]
+> e
+Bedroom
+
+This room is stripped bare of all furnishings. Only a rectangular area in the corner, lighter than the floor around it, belies the former presence of a mattress.
+
+A closed outside door in the east wall leads outside. Another exit opens west, into the ranch house.
+
+The roadrunner prances to your side.
+
+The walkie-talkie clicks and hisses.
+          Bedroom
+>
+[Obj#214: Bedroom]
+> s
+There’s no exit that way.
+
+>
+[Obj#214: Bedroom]
+> w
+Spare Room
+
+A large map is hanging on the wall.
+
+The roadrunner hops into view.
+       Spare Room
+>
+[Obj#12: Spare Room]
+> e
+Bedroom
+
+The roadrunner reappears at your side.
+          Bedroom
+>
+[Obj#214: Bedroom]
+> w
+Spare Room
+
+A large map is hanging on the wall.
+
+The roadrunner races into view.
+
+The walkie-talkie hisses quietly.
+       Spare Room
+>
+[Obj#12: Spare Room]
+> s
+Northwest Room
+
+The roadrunner reappears at your side.
+          Northwest Room
+>
+[Obj#1: Northwest Room]
+> restore 
+Restore from file: 
+> wt19.sav
+
+[RESTORE completed.]
+                                                                                
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling; harsh light streams in through an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+There’s a slip of cardboard here.
+Shack
+>
+[Obj#507: Shack]
+> take cardboard
+Taken.
+
+[Your score just went up by 1 point. The total is now 63 out of 100.]
+
+>
+[Obj#507: Shack]
+> examine cardboard
+The slip of cardboard seems to have been used as a bookmark. A stanza of poetry is typed on one side. The other side is covered with some kind of diagram.
+
+The lemming in the cage peers around nervously.
+
+>
+[Obj#507: Shack]
+> read poem
+It’s a send-up of a famous Emerson poem.
+
+>
+[Obj#507: Shack]
+> w
+Tower Platform
+
+A metal rail is all that stands between you and a hundred-foot drop.
+
+Miles of barren desert lie below, gray and still in the gathering dawn. Black roads radiate outward like the hands of a great clock.
+
+This narrow platform opens east into a metal shack. A searchlight on the southwest horizon floods the platform in a raw white glare. A ladder is sticking up over the platform’s edge.
+     Tower Platform
+>
+[Obj#158: Tower Platform]
+> d
+You clutch the topmost rung of the ladder with sweating palms. Fighting back vertigo, you begin to feel your way downward.
+
+At last your foot touches a flat surface.
+
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues downward.
+              Tower Landing
+>
+[Obj#247: Tower Landing]
+> d
+You step back onto the ladder and inch yourself downward.
+
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+A familiar roadrunner is eyeing you from its perch on the box’s lid. The ruby in its beak gleams in the early dawn.
+
+With a skillful toss, the roadrunner deposits the ruby on the box. Then it leaps off and scampers eagerly around your feet. If you didn’t know better, you’d swear it was glad to see you.
+             Base of Tower
+>
+[Obj#146: Base of Tower]
+> take ruby
+You take the ruby off the box.
+
+[Your score just went up by 1 point. The total is now 64 out of 100.]
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#146: Base of Tower]
+> feed bird
+[with the bag of crumbs]
+
+You put the bag of crumbs on the ground beside the roadrunner.
+
+The roadrunner begins to peck at the crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> e
+You amble along for several minutes.
+
+East of Tower
+
+This bleak stretch of desert lies between the tower to the west, and a range of mountains to the east.
+             East of Tower
+>
+[Obj#290: East of Tower]
+> s
+You walk along for several minutes.
+
+Shallow Crater
+
+You’re standing at the edge of a shallow depression in the desert floor, a few hundred feet across. The ground within is gray and pulverized, as if by a powerful explosion.
+
+A paved road leads southeast into the desert, and northwest towards the tower.
+             Shallow Crater
+>
+[Obj#456: Shallow Crater]
+> se
+You trudge along for several minutes.
+
+Northwest of Ranch
+
+You’re at the northwest corner of a stone wall. A closed iron gate leads in to a dilapidated ranch house.
+
+A paved road bears northwest into the desert. Other paths curve east and south, along the wall’s perimeter.
+
+The lemming in the cage washes its face with its paws.
+              Northwest of Ranch
+>
+[Obj#122: Northwest of Ranch]
+> e
+You amble along for several minutes.
+
+Northeast of Ranch
+
+A dilapidated ranch house stands nearby, bounded by dusty patches of ground and a low stone wall. Paths lead south and east, on either side of a cement reservoir. A paved road bends off to the west.
+
+The roadrunner reappears.
+                  Northeast of Ranch
+>
+[Obj#558: Northeast of Ranch]
+> e
+You walk along for several minutes.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+
+North of Reservoir
+
+You’re resting at the north side of a big cement reservoir. Dusty paths curve west and southwest around a ranch house, and a trail leads southeast to the base of a windmill.
+
+The roadrunner reappears at your side.
+                  North of Reservoir
+>
+[Obj#292: North of Reservoir]
+> se
+You trudge for several minutes.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+A third flare arcs across the sky and disappears.
+
+All at once the desert around you disappears in a flash of startling brilliance! You jam your hands over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 64 points out of 100, in 503 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> [Map written to map.html: 542 transitions, 133 locations, 60 notes]
+
+>#remap
+
+[Obj#439: The River]
+> quit
+

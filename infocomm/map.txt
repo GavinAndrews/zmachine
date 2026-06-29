@@ -862,3 +862,167 @@ NOTE	#30: Underground	put splinter in crevice#575: Bottom of Stairs	#80: Halfway
 #124: Earth Orbit, on a satellite	#472: Waterfall	burst bubble with umbrella
 #472: Waterfall	#319: South Bog	e
 #319: South Bog	#575: Bottom of Stairs	e
+#575: Bottom of Stairs	#80: Halfway	u
+#80: Halfway	#316: Vertex	u
+#316: Vertex	#80: Halfway	d
+#80: Halfway	#575: Bottom of Stairs	d
+#575: Bottom of Stairs	#400: Under Cliff	ne
+#400: Under Cliff	#306: Chasm’s Brink	w
+#306: Chasm’s Brink	#76: Mesa	n
+#76: Mesa	#394: Scaffold	enter door
+#394: Scaffold	#344: Bottom of Scaffold	d
+#344: Bottom of Scaffold	#476: South Beach	s
+#575: Bottom of Stairs	#80: Halfway	u
+#80: Halfway	#316: Vertex	u
+#316: Vertex	#80: Halfway	d
+#80: Halfway	#575: Bottom of Stairs	d
+#575: Bottom of Stairs	#400: Under Cliff	ne
+#400: Under Cliff	#306: Chasm’s Brink	w
+#306: Chasm’s Brink	#76: Mesa	n
+#76: Mesa	#394: Scaffold	enter door
+#394: Scaffold	#344: Bottom of Scaffold	d
+#344: Bottom of Scaffold	#476: South Beach	s
+#476: South Beach	#231: West Beach	nw
+#231: West Beach	#476: South Beach	se
+#476: South Beach	#344: Bottom of Scaffold	in
+#344: Bottom of Scaffold	#394: Scaffold	u
+#394: Scaffold	#76: Mesa	enter door
+#76: Mesa	#306: Chasm’s Brink	s
+#306: Chasm’s Brink	#213: Bluff	ne
+#213: Bluff	#327: Cottage	e
+NOTE	#327: Cottage	use milk and honey
+NOTE	#327: Cottage	use fresh lizard...
+NOTE	#327: Cottage	use: ...killed in light of crescent moon
+NOTE	#327: Cottage	use: garlic
+NOTE	#327: Cottage	use: ... go boom
+#327: Cottage	#417: Herb Garden	e
+#417: Herb Garden	#327: Cottage	w
+#327: Cottage	#213: Bluff	w
+#213: Bluff	#441: Crater’s Edge	se
+#441: Crater’s Edge	#145: Crater	e
+#145: Crater	#441: Crater’s Edge	w
+#441: Crater’s Edge	#400: Under Cliff	w
+#400: Under Cliff	#575: Bottom of Stairs	sw
+#575: Bottom of Stairs	#42: North Bog	nw
+#42: North Bog	#306: Chasm’s Brink	e
+#306: Chasm’s Brink	#213: Bluff	ne
+#213: Bluff	#327: Cottage	e
+#327: Cottage	#213: Bluff	w
+#213: Bluff	#441: Crater’s Edge	se
+#441: Crater’s Edge	#145: Crater	e
+#145: Crater	#441: Crater’s Edge	w
+#441: Crater’s Edge	#400: Under Cliff	w
+#400: Under Cliff	#575: Bottom of Stairs	sw
+#575: Bottom of Stairs	#400: Under Cliff	ne
+#400: Under Cliff	#575: Bottom of Stairs	sw
+#575: Bottom of Stairs	#42: North Bog	nw
+#42: North Bog	#306: Chasm’s Brink	e
+#306: Chasm’s Brink	#213: Bluff	ne
+#213: Bluff	#327: Cottage	e
+#327: Cottage	#417: Herb Garden	e
+#417: Herb Garden	#327: Cottage	w
+#327: Cottage	#213: Bluff	w
+#213: Bluff	#441: Crater’s Edge	se
+#441: Crater’s Edge	#400: Under Cliff	w
+#400: Under Cliff	#575: Bottom of Stairs	sw
+#575: Bottom of Stairs	#42: North Bog	nw
+#42: North Bog	#306: Chasm’s Brink	e
+#306: Chasm’s Brink	#213: Bluff	ne
+#213: Bluff	#327: Cottage	e
+#327: Cottage	#213: Bluff	w
+#213: Bluff	#441: Crater’s Edge	se
+#441: Crater’s Edge	#400: Under Cliff	w
+#400: Under Cliff	#575: Bottom of Stairs	sw
+#575: Bottom of Stairs	#42: North Bog	nw
+#42: North Bog	#306: Chasm’s Brink	e
+#306: Chasm’s Brink	#213: Bluff	ne
+#213: Bluff	#327: Cottage	e
+#327: Cottage	#213: Bluff	w
+#213: Bluff	#306: Chasm’s Brink	sw
+#306: Chasm’s Brink	#42: North Bog	w
+#42: North Bog	#575: Bottom of Stairs	se
+#575: Bottom of Stairs	#80: Halfway	u
+#80: Halfway	#316: Vertex	u
+#316: Vertex	#80: Halfway	d
+#80: Halfway	#575: Bottom of Stairs	d
+#575: Bottom of Stairs	#400: Under Cliff	ne
+#400: Under Cliff	#306: Chasm’s Brink	w
+#306: Chasm’s Brink	#213: Bluff	ne
+#213: Bluff	#327: Cottage	e
+#327: Cottage	#417: Herb Garden	e
+#417: Herb Garden	#199: Platform	enter white door
+#199: Platform	#488: Under Platform	d
+#488: Under Platform	#254: Tundra	ne
+#254: Tundra	#43: Cliff Edge	ne
+#43: Cliff Edge	#254: Tundra	sw
+#254: Tundra	#488: Under Platform	sw
+#488: Under Platform	#199: Platform	u
+#199: Platform	#417: Herb Garden	enter door
+#417: Herb Garden	#327: Cottage	w
+#327: Cottage	#213: Bluff	w
+#213: Bluff	#306: Chasm’s Brink	sw
+#306: Chasm’s Brink	#400: Under Cliff	e
+#400: Under Cliff	#575: Bottom of Stairs	sw
+#575: Bottom of Stairs	#80: Halfway	u
+#80: Halfway	#316: Vertex	u
+#316: Vertex	#80: Halfway	d
+#80: Halfway	#575: Bottom of Stairs	d
+#575: Bottom of Stairs	#557: The Bend	e
+#557: The Bend	#471: Moor	e
+#471: Moor	#208: Thin Air	enter door
+#208: Thin Air	#127: Playground	open umbrella
+#127: Playground	#36: Shelter	d
+#36: Shelter	#127: Playground	w
+#127: Playground	#166: Thin Air, on the giant bird	enter bird
+#166: Thin Air, on the giant bird	#471: Moor	enter door
+#471: Moor	#557: The Bend	w
+#557: The Bend	#575: Bottom of Stairs	w
+#575: Bottom of Stairs	#317: Trellises	s
+#317: Trellises	#426: Forest Clearing	w
+#426: Forest Clearing	#472: Waterfall	nw
+#472: Waterfall	#414: Cemetery	u
+#575: Bottom of Stairs	#319: South Bog	w
+#319: South Bog	#472: Waterfall	w
+#472: Waterfall	#414: Cemetery	n
+#414: Cemetery	#472: Waterfall	s
+#472: Waterfall	#319: South Bog	e
+#319: South Bog	#575: Bottom of Stairs	e
+#575: Bottom of Stairs	#80: Halfway	u
+#80: Halfway	#316: Vertex	u
+#316: Vertex	#80: Halfway	d
+#80: Halfway	#575: Bottom of Stairs	d
+#575: Bottom of Stairs	#565: The River	se
+#565: The River	#501: Sand Bar	give silver coin to oarsman
+#501: Sand Bar	#5: Islet	s
+#5: Islet	#507: Shack	enter door
+#507: Shack	#158: Tower Platform	w
+#158: Tower Platform	#247: Tower Landing	d
+#247: Tower Landing	#146: Base of Tower	d
+#146: Base of Tower	#219: Southwest of Tower	sw
+#219: Southwest of Tower	#466: South of Tower	e
+#466: South of Tower	#456: Shallow Crater	e
+#456: Shallow Crater	#122: Northwest of Ranch	se
+#122: Northwest of Ranch	#297: Back Yard	enter
+#297: Back Yard	#12: Spare Room	e
+#12: Spare Room	#1: Northwest Room	s
+#1: Northwest Room	#442: Assembly Room	e
+#1: Northwest Room	#21: Kitchen	s
+#21: Kitchen	#1: Northwest Room	n
+#1: Northwest Room	#21: Kitchen	s
+#21: Kitchen	#460: Southeast Room	e
+#460: Southeast Room	#442: Assembly Room	n
+#442: Assembly Room	#1: Northwest Room	w
+#1: Northwest Room	#12: Spare Room	n
+#12: Spare Room	#214: Bedroom	e
+#214: Bedroom	#12: Spare Room	w
+#12: Spare Room	#214: Bedroom	e
+#214: Bedroom	#12: Spare Room	w
+#507: Shack	#158: Tower Platform	w
+#158: Tower Platform	#247: Tower Landing	d
+#247: Tower Landing	#146: Base of Tower	d
+#146: Base of Tower	#290: East of Tower	e
+#290: East of Tower	#456: Shallow Crater	s
+#456: Shallow Crater	#122: Northwest of Ranch	se
+#122: Northwest of Ranch	#558: Northeast of Ranch	e
+#558: Northeast of Ranch	#292: North of Reservoir	e
+#292: North of Reservoir	#439: The River	se
