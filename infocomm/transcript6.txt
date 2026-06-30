@@ -1,0 +1,1982 @@
+
+[Transcript started: transcript6.txt]
+[Transcript started.]
+
+>transcript
+[Map logging to map.txt]
+
+>#map
+[Location display on]
+
+>#loc
+
+[Obj#236: Palace Gate]
+> restore
+Restore from file: 
+> wt17.sav
+
+[RESTORE completed.]
+                                                                                
+Bottom of Stairs
+
+The triangular structure before you must be thousands of feet high. It divides the sky like a razor, casting a stern, precise shadow over the surrounding landscape.
+
+A narrow stairway climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every direction.
+
+You see a green boot, a red boot, a bandage, an axe, a lantern and a small coin here.
+Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> i
+You’re holding a birdcage, a bag of crumbs, a walkie-talkie and a silver coin. Inside the birdcage you see a lemming. You’re wearing a burial shroud and a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#575: Bottom of Stairs]
+> se
+The River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+Footpaths wander north, west and northwest. Turning south, you see a magnificent hedge growing in an unbroken wall to the river’s edge.
+
+A dark shadow lies across the ground.
+
+As you peer across the river you notice a lone vessel gliding out of the fog.
+                The River
+>
+[Obj#565: The River]
+> wait
+Time passes.
+
+The dory draws closer to the shore. You can make out a dark oarsman at the stern.
+
+>
+[Obj#565: The River]
+> wait
+Time passes.
+
+The oarsman guides his dory to a soundless landing.
+
+A puff of wind ripples the water.
+
+Eddies of sand swirl across the shore and coalesce into ghostly figures of dust and vapor. Before you can think or move, you find yourself amid a gathering of human shades, pale and gaunt, silent as death.
+
+>
+[Obj#565: The River]
+> enter dory
+The dory tips alarmingly as you climb aboard.
+
+The oarsman glances at the burial shroud you’re wearing with silent approval, and stretches out his skeletal hand expectantly.
+         The River, in the dory
+>
+[Obj#565: The River]
+> give silver coin to oarsman
+The oarsman accepts the silver coin and nods at you solemnly.
+
+The ghostly shades begin to converge on the dory. One by one, they step into the vessel, hand the oarsman a silver coin, and take a seat.
+
+The oarsman pushes away from the beach.
+
+Planes of mist close in around the dory, drawing it deeper into the gloom. The only sound is the rhythmic slurp of the oar as it plies the dark, oily water.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A vague outline emerges beyond the helm. It slowly resolves into a spit of sand, damp and cheerless in the surrounding murk.
+
+The oarsman swings the dory around and lands it with barely a jolt. One by one, the shades slink out of the vessel and drift across the sand like leaves on a breath of wind. Something in the oarsman’s gaze compels you to follow them.
+
+Sand Bar
+
+At first glance, this isolated spit seems hopelessly mired in the fog blowing in off the surrounding river. But the sand looks a bit firmer to the south.
+
+The lemming in the cage trembles with agitation.
+
+With practiced skill, the oarsman pushes his empty dory away from the shore.
+                      Sand Bar
+>
+[Obj#501: Sand Bar]
+> s
+Islet
+
+It’s impossible to see more than a dozen yards on this fogbound islet. The damp air makes your footsteps sound unnaturally loud as you trudge across the sand at the river’s edge.
+
+A lone toadstool has found a home at the water’s edge. The white door in its stem is wide open.
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the open door in the toadstool.
+
+A voice in your ear giggles, "Gnomon is an island."
+
+A roadrunner is perched on the toadstool’s crown. The ruby in its beak gleams enticingly.
+
+The roadrunner gives you a curt nod of acknowledgement. Then it flutters off the toadstool, prances through the open door and disappears.
+        Islet
+>
+[Obj#5: Islet]
+> enter door
+You take a deep breath, and step forward.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling. You can see an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+A paperback book is lying in the corner.
+
+A faint sound drifts in from somewhere outside. It sounded like a man’s voice.
+     Shack
+>
+[Obj#507: Shack]
+> save
+Save to file: 
+> wt31.sav
+
+[SAVE completed.]
+                                                                                Shack
+>
+[Obj#507: Shack]
+> take book
+You pick up the book.
+
+You hear the voice again, followed by a sharp clatter. There’s definitely somebody outside.
+
+>
+[Obj#507: Shack]
+> read book
+A slip of cardboard falls out of the book as you open it.
+
+You flip through the book, but nothing catches your eye.
+
+The lemming in the cage scratches its ear.
+
+Another voice joins the first. You strain to listen.
+
+"Towerside breaker closed. Check."
+
+"Pittsburg’s on the line, Lieutenant."
+
+"Give him to me, Joe."
+
+>
+[Obj#507: Shack]
+> take cardboard
+Taken.
+
+[Your score just went up by 1 point. The total is now 63 out of 100.]
+
+A gust of wind obscures the conversation outside for a few moments. You can pick out the words "focus," "groves" and "surveillance," but little else.
+
+>
+[Obj#507: Shack]
+> read cardboard
+The slip of cardboard seems to have been used as a bookmark. A stanza of poetry is typed on one side. The other side is covered with some kind of diagram.
+
+All at once the shack is filled with light! It seems to be coming from somewhere outside.
+
+"Lower!" shouts one of the voices.
+
+The light brightens to a hard, steady glare.
+
+>
+[Obj#507: Shack]
+> read poem
+It’s a send-up of a famous Emerson poem.
+                                             From this crude lab that spawned a dud,     Their necks to Truman’s axe uncurled,       Lo, the embattled savants stood             And fired the flop heard ’round the world.                                                         -- Los Alamos ditty, circa 1945                                             
+>
+[Obj#507: Shack]
+> look
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling; harsh light streams in through an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+The lemming in the cage peers around nervously.
+
+The wind rises again, drowning out the voices altogether.
+
+>
+[Obj#507: Shack]
+> drop book
+You put down the book.
+
+You hear a motor revving to life below. One of the voices barks something; there’s a squeal of rubber, and the motor fades into the distance. Then all is still.
+
+>
+[Obj#507: Shack]
+> drop cardboard
+Dropped.
+
+>
+[Obj#507: Shack]
+> save
+Save to file: 
+> wt32.sav
+
+[SAVE completed.]
+                                                                                Shack
+>
+[Obj#507: Shack]
+> w
+Tower Platform
+
+A metal rail is all that stands between you and a hundred-foot drop.
+
+Miles of barren desert lie below, gray and still in the gathering dawn. Black roads radiate outward like the hands of a great clock.
+
+This narrow platform opens east into a metal shack. A searchlight on the southwest horizon floods the platform in a raw white glare. A ladder is sticking up over the platform’s edge.
+     Tower Platform
+>
+[Obj#158: Tower Platform]
+> d
+You clutch the topmost rung of the ladder with sweating palms. Fighting back vertigo, you begin to feel your way downward.
+
+At last your foot touches a flat surface.
+
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues downward.
+              Tower Landing
+>
+[Obj#247: Tower Landing]
+> d
+You step back onto the ladder and inch yourself downward.
+
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+A familiar roadrunner is eyeing you from its perch on the box’s lid. The ruby in its beak gleams in the early dawn.
+
+With a skillful toss, the roadrunner deposits the ruby on the box. Then it leaps off and scampers eagerly around your feet. If you didn’t know better, you’d swear it was glad to see you.
+             Base of Tower
+>
+[Obj#146: Base of Tower]
+> feed roadrunner
+[with the bag of crumbs]
+
+You put the bag of crumbs on the ground beside the roadrunner.
+
+The roadrunner begins to peck at the crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> take ruby
+You take the ruby off the box.
+
+[Your score just went up by 1 point. The total is now 64 out of 100.]
+
+The roadrunner pecks contentedly at the crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> save
+Save to file: 
+> wt33.sav
+
+[SAVE completed.]
+                                                                                Base of Tower
+>
+[Obj#146: Base of Tower]
+> se
+You amble along for several minutes.
+
+Shallow Crater
+
+You’re standing at the edge of a shallow depression in the desert floor, a few hundred feet across. The ground within is gray and pulverized, as if by a powerful explosion.
+
+A paved road leads southeast into the desert, and northwest towards the tower.
+
+The lemming in the cage washes its face with its paws.
+             Shallow Crater
+>
+[Obj#456: Shallow Crater]
+> se
+You walk along for several minutes.
+
+Northwest of Ranch
+
+You’re at the northwest corner of a stone wall. A closed iron gate leads in to a dilapidated ranch house.
+
+A paved road bears northwest into the desert. Other paths curve east and south, along the wall’s perimeter.
+              Northwest of Ranch
+>
+[Obj#122: Northwest of Ranch]
+> open iron gate
+You open the iron gate.
+
+The roadrunner prances to your side.
+
+>
+[Obj#122: Northwest of Ranch]
+> enter
+Back Yard
+
+This patch of dust lies within the elbow of the ranch house, and is enclosed by a stone wall to the north and west.
+
+An open hallway leads south, into the house. There’s also a closed screen door to the east, and an open iron gate in the northwest corner of the stone wall.
+
+The roadrunner hops into view.
+                  Back Yard
+>
+[Obj#297: Back Yard]
+> open screen door
+You open the screen door.
+
+>
+[Obj#297: Back Yard]
+> e
+Spare Room
+
+Aside from an open screen door to the west, this squarish room offers no amenities. Other exits lead north and east.
+
+A large map is hanging on the wall.
+
+The roadrunner races to your side.
+         Spare Room
+>
+[Obj#12: Spare Room]
+> read map
+[This is the map included in your Trinity package.]
+
+>
+[Obj#12: Spare Room]
+> s
+Northwest Room
+
+The original purpose of this stark room is uncertain; it might have been used for dining. Exits lead north, south and east.
+
+The roadrunner reappears at your side.
+          Northwest Room
+>
+[Obj#1: Northwest Room]
+> s
+Kitchen
+
+Disconnected stove pipes and an open cupboard with a steak knife in it are the only evidence of this room’s identity. A closed outer door in the west wall leads out to a hallway. Other exits lead north and east.
+
+The roadrunner struts to your side.
+              Kitchen
+>
+[Obj#21: Kitchen]
+> take knife
+You take the steak knife out of the cupboard.
+
+[Your score just went up by 1 point. The total is now 65 out of 100.]
+
+>
+[Obj#21: Kitchen]
+> n
+Northwest Room
+
+The roadrunner prances into view.
+       Northwest Room
+>
+[Obj#1: Northwest Room]
+> e
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. A closed front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+              Assembly Room
+>
+[Obj#442: Assembly Room]
+> n
+You beat a hasty retreat from the rattlesnake.
+
+Closet
+
+There’s barely enough room to turn around in this puny closet. Its single open door is in the south wall.
+
+The rattlesnake lurks just outside the open door. It looks as if it’s about to strike!
+
+The lemming covers its face with its paws and trembles.
+             Closet
+>
+[Obj#352: Closet]
+> open cage
+You open the birdcage.
+
+The lemming cowers in the cage, trembling violently.
+
+The rattlesnake strikes your ankle like lightning, recoils in an instant and slithers out of sight.
+
+Sobbing with pain and shock, you peer at the tender wound. It’s already beginning to swell.
+
+The lemming scrambles out of the cage and plops to the floor. Then it scrambles through the open closet door, straight into the fangs of the rattlesnake.
+
+The lemming twitches for a while as the venom takes effect. Then the snake drags its prize across the floor, shakes its tail once for effect and slithers out of sight.
+
+[Your score just went up by 3 points. The total is now 68 out of 100.]
+
+>
+[Obj#352: Closet]
+> s
+Assembly Room
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+The throbbing fire in your ankle overcomes you. Moaning with despair, you sink helplessly to the floor.
+
+Minutes later, the windows are filled with light of startling intensity! You jam your hands over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 68 points out of 100, in 443 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt33.sav
+
+[RESTORE completed.]
+                                                                                
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner gobbles down the crumbs in the bag.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+There’s a bag of crumbs here.
+Base of Tower
+>
+[Obj#146: Base of Tower]
+> se
+You amble for several minutes.
+
+Shallow Crater
+
+You’re standing at the edge of a shallow depression in the desert floor, a few hundred feet across. The ground within is gray and pulverized, as if by a powerful explosion.
+
+A paved road leads southeast into the desert, and northwest towards the tower.
+             Shallow Crater
+>
+[Obj#456: Shallow Crater]
+> se
+You walk along for several minutes.
+
+Northwest of Ranch
+
+You’re at the northwest corner of a stone wall. A closed iron gate leads in to a dilapidated ranch house.
+
+A paved road bears northwest into the desert. Other paths curve east and south, along the wall’s perimeter.
+
+The roadrunner prances to your side.
+              Northwest of Ranch
+>
+[Obj#122: Northwest of Ranch]
+> open iron gate
+You open the iron gate.
+
+>
+[Obj#122: Northwest of Ranch]
+> enter
+Back Yard
+
+This patch of dust lies within the elbow of the ranch house, and is enclosed by a stone wall to the north and west.
+
+An open hallway leads south, into the house. There’s also a closed screen door to the east, and an open iron gate in the northwest corner of the stone wall.
+
+The roadrunner reappears at your side.
+                  Back Yard
+>
+[Obj#297: Back Yard]
+> e
+The screen door is closed.
+
+>
+[Obj#297: Back Yard]
+> open screen door
+You open the screen door.
+
+>
+[Obj#297: Back Yard]
+> e
+Spare Room
+
+Aside from an open screen door to the west, this squarish room offers no amenities. Other exits lead north and east.
+
+A large map is hanging on the wall.
+
+The roadrunner hops into view.
+         Spare Room
+>
+[Obj#12: Spare Room]
+> s
+Northwest Room
+
+The original purpose of this stark room is uncertain; it might have been used for dining. Exits lead north, south and east.
+
+The roadrunner races to your side.
+          Northwest Room
+>
+[Obj#1: Northwest Room]
+> save
+Save to file: 
+> wt34.sav
+
+[SAVE completed.]
+                                                                                Northwest Room
+>
+[Obj#1: Northwest Room]
+> e
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. A closed front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+              Assembly Room
+>
+[Obj#442: Assembly Room]
+> open cage
+You open the birdcage.
+
+The lemming cowers in the cage, trembling violently.
+
+The rattlesnake strikes your ankle like lightning, recoils in an instant and slithers out of sight.
+
+Sobbing with pain and shock, you peer at the tender wound. It’s already beginning to swell.
+
+The roadrunner reappears.
+
+The lemming scrambles out of the cage and scurries out of sight.
+
+>
+[Obj#442: Assembly Room]
+> restore
+Restore from file: 
+> wt34.sav
+
+[RESTORE completed.]
+                                                                                
+Northwest Room
+
+The original purpose of this stark room is uncertain; it might have been used for dining. Exits lead north, south and east.
+
+The roadrunner scampers around your feet.
+Northwest Room
+>
+[Obj#1: Northwest Room]
+> e
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. A closed front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+              Assembly Room
+>
+[Obj#442: Assembly Room]
+> n
+You beat a hasty retreat from the rattlesnake.
+
+Closet
+
+There’s barely enough room to turn around in this puny closet. Its single open door is in the south wall.
+
+The rattlesnake lurks just outside the open door. It looks as if it’s about to strike!
+
+The lemming covers its face with its paws and trembles.
+             Closet
+>
+[Obj#352: Closet]
+> drop cage
+You drop the birdcage.
+
+The rattlesnake strikes your ankle like lightning, recoils in an instant and slithers out of sight.
+
+Sobbing with pain and shock, you peer at the tender wound. It’s already beginning to swell.
+
+>
+[Obj#352: Closet]
+> restore
+Restore from file: 
+> wt17.sav
+
+[RESTORE completed.]
+                                                                                
+Bottom of Stairs
+
+The triangular structure before you must be thousands of feet high. It divides the sky like a razor, casting a stern, precise shadow over the surrounding landscape.
+
+A narrow stairway climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every direction.
+
+You see a green boot, a red boot, a bandage, an axe, a lantern and a small coin here.
+Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> put on boots
+The red boot: You’re not holding the red boot.
+The green boot: You’re not holding the green boot.
+
+>
+[Obj#575: Bottom of Stairs]
+> take red boot
+You take the red boot.
+
+>
+[Obj#575: Bottom of Stairs]
+> put on red boot
+You put on the red boot.
+
+>
+[Obj#575: Bottom of Stairs]
+> take green boot
+Taken.
+
+>
+[Obj#575: Bottom of Stairs]
+> put on green boot
+You put on the green boot.
+
+The lemming in the cage trembles with agitation.
+
+>
+[Obj#575: Bottom of Stairs]
+> i
+You’re holding a birdcage, a bag of crumbs, a walkie-talkie and a silver coin. Inside the birdcage you see a lemming. You’re wearing a burial shroud, a wristwatch, a red boot and a green boot, and you have a credit card in your pocket.
+
+>
+[Obj#575: Bottom of Stairs]
+> se
+The River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+Footpaths wander north, west and northwest. Turning south, you see a magnificent hedge growing in an unbroken wall to the river’s edge.
+
+A dark shadow lies across the ground.
+
+As you peer across the river you notice a lone vessel gliding out of the fog.
+                The River
+>
+[Obj#565: The River]
+> wait
+Time passes.
+
+The dory draws closer to the shore. You can make out a dark oarsman at the stern.
+
+>
+[Obj#565: The River]
+> wait
+Time passes.
+
+The oarsman guides his dory to a soundless landing.
+
+A puff of wind ripples the water.
+
+Eddies of sand swirl across the shore and coalesce into ghostly figures of dust and vapor. Before you can think or move, you find yourself amid a gathering of human shades, pale and gaunt, silent as death.
+
+>
+[Obj#565: The River]
+> enter dory
+The dory tips alarmingly as you climb aboard.
+
+The oarsman glances at the burial shroud you’re wearing with silent approval, and stretches out his skeletal hand expectantly.
+         The River, in the dory
+>
+[Obj#565: The River]
+> give silver coin to oarsman
+The oarsman accepts the silver coin and nods at you solemnly.
+
+The ghostly shades begin to converge on the dory. One by one, they step into the vessel, hand the oarsman a silver coin, and take a seat.
+
+The oarsman pushes away from the beach.
+
+Planes of mist close in around the dory, drawing it deeper into the gloom. The only sound is the rhythmic slurp of the oar as it plies the dark, oily water.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A vague outline emerges beyond the helm. It slowly resolves into a spit of sand, damp and cheerless in the surrounding murk.
+
+The oarsman swings the dory around and lands it with barely a jolt. One by one, the shades slink out of the vessel and drift across the sand like leaves on a breath of wind. Something in the oarsman’s gaze compels you to follow them.
+
+Sand Bar
+
+At first glance, this isolated spit seems hopelessly mired in the fog blowing in off the surrounding river. But the sand looks a bit firmer to the south.
+
+The lemming in the cage scratches its ear.
+
+With practiced skill, the oarsman pushes his empty dory away from the shore.
+                      Sand Bar
+>
+[Obj#501: Sand Bar]
+> s
+Islet
+
+It’s impossible to see more than a dozen yards on this fogbound islet. The damp air makes your footsteps sound unnaturally loud as you trudge across the sand at the river’s edge.
+
+A lone toadstool has found a home at the water’s edge. The white door in its stem is wide open.
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the open door in the toadstool.
+
+"Gnomon is an island," giggles a voice in your ear.
+
+A roadrunner is perched on the toadstool’s crown. The ruby in its beak gleams enticingly.
+
+The roadrunner gives you a curt nod of acknowledgement. Then it flutters off the toadstool, prances through the open door and disappears.
+        Islet
+>
+[Obj#5: Islet]
+> enter door
+You take a deep breath, and step forward.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling. You can see an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+A paperback book is lying in the corner.
+
+The lemming in the cage peers around nervously.
+
+A faint sound drifts in from somewhere outside. It sounded like a man’s voice.
+     Shack
+>
+[Obj#507: Shack]
+> take book
+Taken.
+
+You hear the voice again, followed by a sharp clatter. There’s definitely somebody outside.
+
+>
+[Obj#507: Shack]
+> read book
+A slip of cardboard falls out of the book as you open it.
+
+You flip through the book, but nothing catches your eye.
+
+The lemming in the cage washes its face with its paws.
+
+Another voice joins the first. You strain to listen.
+
+"Towerside breaker closed. Check."
+
+"Pittsburg’s on the line, Lieutenant."
+
+"Give him to me, Joe."
+
+>
+[Obj#507: Shack]
+> take cardboard
+Taken.
+
+[Your score just went up by 1 point. The total is now 63 out of 100.]
+
+A gust of wind obscures the conversation outside for a few moments. You can pick out the words "focus," "groves" and "surveillance," but little else.
+
+>
+[Obj#507: Shack]
+> read cardboard
+The slip of cardboard seems to have been used as a bookmark. A stanza of poetry is typed on one side. The other side is covered with some kind of diagram.
+
+All at once the shack is filled with light! It seems to be coming from somewhere outside.
+
+"Lower!" shouts one of the voices.
+
+The light brightens to a hard, steady glare.
+
+>
+[Obj#507: Shack]
+> read poem
+It’s a send-up of a famous Emerson poem.
+                                             From this crude lab that spawned a dud,     Their necks to Truman’s axe uncurled,       Lo, the embattled savants stood             And fired the flop heard ’round the world.                                                         -- Los Alamos ditty, circa 1945                                             
+>
+[Obj#507: Shack]
+> w
+Tower Platform
+
+A metal rail is all that stands between you and a hundred-foot drop.
+
+Miles of barren desert lie below, gray and still in the gathering dawn. Black roads radiate outward like the hands of a great clock.
+
+This narrow platform opens east into a metal shack. A searchlight on the southwest horizon floods the platform in a raw white glare. A ladder is sticking up over the platform’s edge.
+
+The wind rises again, drowning out the voices altogether.
+     Tower Platform
+>
+[Obj#158: Tower Platform]
+> save
+Save to file: 
+> wt41.sav
+
+[SAVE completed.]
+                                                                                Tower Platform
+>
+[Obj#158: Tower Platform]
+> d
+You step towards the ladder, but hesitate when you hear the voices below.
+
+Are you sure you want to go down there right now?
+
+[Please type YES or NO.] >
+[Obj#158: Tower Platform]
+> no
+
+A voice in your ear sighs, "Smart move."
+
+>
+[Obj#158: Tower Platform]
+> look
+Tower Platform
+
+A metal rail is all that stands between you and a hundred-foot drop.
+
+Miles of barren desert lie below, gray and still in the gathering dawn. Black roads radiate outward like the hands of a great clock.
+
+This narrow platform opens east into a metal shack. A searchlight on the southwest horizon floods the platform in a raw white glare. A ladder is sticking up over the platform’s edge.
+
+You hear a motor revving to life below. One of the voices barks something; there’s a squeal of rubber, and a jeep appears on the south road. You watch the headlights dwindle into the distance.
+
+>
+[Obj#158: Tower Platform]
+> d
+You clutch the topmost rung of the ladder with sweating palms. Fighting back vertigo, you begin to feel your way downward.
+
+At last your foot touches a flat surface.
+
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues downward.
+              Tower Landing
+>
+[Obj#247: Tower Landing]
+> d
+You step back onto the ladder and inch yourself downward.
+
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+A familiar roadrunner is eyeing you from its perch on the box’s lid. The ruby in its beak gleams in the early dawn.
+
+With a skillful toss, the roadrunner deposits the ruby on the box. Then it leaps off and scampers eagerly around your feet. If you didn’t know better, you’d swear it was glad to see you.
+             Base of Tower
+>
+[Obj#146: Base of Tower]
+> feed roadrunner
+[with the bag of crumbs]
+
+You put the bag of crumbs on the ground beside the roadrunner.
+
+The roadrunner begins to peck at the crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> take ruby
+You take the ruby off the box.
+
+[Your score just went up by 1 point. The total is now 64 out of 100.]
+
+The roadrunner pecks contentedly at the crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> se
+You amble for several minutes.
+
+Shallow Crater
+
+You’re standing at the edge of a shallow depression in the desert floor, a few hundred feet across. The ground within is gray and pulverized, as if by a powerful explosion.
+
+A paved road leads southeast into the desert, and northwest towards the tower.
+             Shallow Crater
+>
+[Obj#456: Shallow Crater]
+> se
+You walk for several minutes.
+
+Northwest of Ranch
+
+You’re at the northwest corner of a stone wall. A closed iron gate leads in to a dilapidated ranch house.
+
+A paved road bears northwest into the desert. Other paths curve east and south, along the wall’s perimeter.
+              Northwest of Ranch
+>
+[Obj#122: Northwest of Ranch]
+> open iron gate
+You open the iron gate.
+
+The roadrunner prances to your side.
+
+>
+[Obj#122: Northwest of Ranch]
+> enter
+Back Yard
+
+This patch of dust lies within the elbow of the ranch house, and is enclosed by a stone wall to the north and west.
+
+An open hallway leads south, into the house. There’s also a closed screen door to the east, and an open iron gate in the northwest corner of the stone wall.
+
+The roadrunner reappears at your side.
+                  Back Yard
+>
+[Obj#297: Back Yard]
+> open screen door
+You open the screen door.
+
+>
+[Obj#297: Back Yard]
+> e
+Spare Room
+
+Aside from an open screen door to the west, this squarish room offers no amenities. Other exits lead north and east.
+
+A large map is hanging on the wall.
+
+The roadrunner hops to your side.
+         Spare Room
+>
+[Obj#12: Spare Room]
+> s
+Northwest Room
+
+The original purpose of this stark room is uncertain; it might have been used for dining. Exits lead north, south and east.
+
+The roadrunner reappears.
+          Northwest Room
+>
+[Obj#1: Northwest Room]
+> save
+Save to file: 
+> wt42.sav
+
+[SAVE completed.]
+                                                                                Northwest Room
+>
+[Obj#1: Northwest Room]
+> e
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. A closed front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+              Assembly Room
+>
+[Obj#442: Assembly Room]
+> n
+You beat a hasty retreat from the rattlesnake.
+
+Closet
+
+There’s barely enough room to turn around in this puny closet. Its single open door is in the south wall.
+
+The rattlesnake lurks just outside the open door. It looks as if it’s about to strike!
+
+The lemming covers its face with its paws and trembles.
+             Closet
+>
+[Obj#352: Closet]
+> open cage
+You open the birdcage.
+
+The lemming cowers in the cage, trembling violently.
+
+The rattlesnake strikes your ankle like lightning, recoils in an instant and slithers out of sight.
+
+Sobbing with pain and shock, you peer at the tender wound. It’s already beginning to swell.
+
+The lemming scrambles out of the cage and plops to the floor. Then it scrambles through the open closet door, straight into the fangs of the rattlesnake.
+
+The lemming twitches for a while as the venom takes effect. Then the snake drags its prize across the floor, shakes its tail once for effect and slithers out of sight.
+
+[Your score just went up by 3 points. The total is now 67 out of 100.]
+
+>
+[Obj#352: Closet]
+> s
+Assembly Room
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+The throbbing fire in your ankle overcomes you. Moaning with despair, you sink helplessly to the floor.
+
+Minutes later, the windows are filled with light of startling intensity! You jam your hands over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 67 points out of 100, in 442 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt42.sav
+
+[RESTORE completed.]
+                                                                                
+Northwest Room
+
+The original purpose of this stark room is uncertain; it might have been used for dining. Exits lead north, south and east.
+
+The roadrunner scampers around your feet.
+Northwest Room
+>
+[Obj#1: Northwest Room]
+> e
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. A closed front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+              Assembly Room
+>
+[Obj#442: Assembly Room]
+> open cage then n
+You open the birdcage.
+
+The lemming cowers in the cage, trembling violently.
+
+The rattlesnake strikes your ankle like lightning, recoils in an instant and slithers out of sight.
+
+Sobbing with pain and shock, you peer at the tender wound. It’s already beginning to swell.
+
+The roadrunner races into view.
+
+The lemming scrambles out of the cage and scurries out of sight.
+
+Closet
+
+There’s barely enough room to turn around in this puny closet. Its single open door is in the south wall.
+
+The throbbing fire in your ankle overcomes you. Moaning with despair, you sink helplessly to the floor.
+
+Minutes later, the cracks in the north wall are filled with light of startling intensity! You jam your hands over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 64 points out of 100, in 441 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt42.sav
+
+[RESTORE completed.]
+                                                                                
+Northwest Room
+
+The original purpose of this stark room is uncertain; it might have been used for dining. Exits lead north, south and east.
+
+The roadrunner scampers around your feet.
+Northwest Room
+>
+[Obj#1: Northwest Room]
+> s
+Kitchen
+
+Disconnected stove pipes and an open cupboard with a steak knife in it are the only evidence of this room’s identity. A closed outer door in the west wall leads out to a hallway. Other exits lead north and east.
+
+The roadrunner races into view.
+              Kitchen
+>
+[Obj#21: Kitchen]
+> e
+Southeast Room
+
+Something about this room gives you the impression that it was hastily vacated. The front door in the east wall is closed. Other exits lead north and west.
+
+The roadrunner struts to your side.
+       Southeast Room
+>
+[Obj#460: Southeast Room]
+> n then open cage then s
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. A closed front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+
+You open the birdcage.
+
+The lemming cowers in the cage, trembling violently.
+
+The rattlesnake strikes your ankle like lightning, recoils in an instant and slithers out of sight.
+
+Sobbing with pain and shock, you peer at the tender wound. It’s already beginning to swell.
+
+The roadrunner prances to your side.
+
+The lemming scrambles out of the cage and scurries out of sight.
+
+Southeast Room
+
+The throbbing fire in your ankle overcomes you. Moaning with despair, you sink helplessly to the floor.
+
+Minutes later, the windows are filled with light of startling intensity! You jam your hands over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 64 points out of 100, in 443 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt42.sav
+
+[RESTORE completed.]
+                                                                                
+Northwest Room
+
+The original purpose of this stark room is uncertain; it might have been used for dining. Exits lead north, south and east.
+
+The roadrunner scampers around your feet.
+Northwest Room
+>
+[Obj#1: Northwest Room]
+> e then drop cage
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. A closed front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+
+Dropped.
+
+The rattlesnake strikes your ankle like lightning, recoils in an instant and slithers out of sight.
+
+Sobbing with pain and shock, you peer at the tender wound. It’s already beginning to swell.
+
+The roadrunner races to your side.
+              Assembly Room
+>
+[Obj#442: Assembly Room]
+> restore
+Restore from file: 
+> wt42.sav
+
+[RESTORE completed.]
+                                                                                
+Northwest Room
+
+The original purpose of this stark room is uncertain; it might have been used for dining. Exits lead north, south and east.
+
+The roadrunner scampers around your feet.
+Northwest Room
+>
+[Obj#1: Northwest Room]
+> e
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. A closed front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+              Assembly Room
+>
+[Obj#442: Assembly Room]
+> e
+The front door is closed.
+
+>
+[Obj#442: Assembly Room]
+> open front door
+You open the front door.
+
+The rattlesnake strikes your ankle like lightning, recoils in an instant and slithers out of sight.
+
+Sobbing with pain and shock, you peer at the tender wound. It’s already beginning to swell.
+
+The roadrunner races into view.
+
+>
+[Obj#442: Assembly Room]
+> restore
+Restore from file: 
+> wt42.sav
+
+[RESTORE completed.]
+                                                                                
+Northwest Room
+
+The original purpose of this stark room is uncertain; it might have been used for dining. Exits lead north, south and east.
+
+The roadrunner scampers around your feet.
+Northwest Room
+>
+[Obj#1: Northwest Room]
+> n
+Spare Room
+
+A large map is hanging on the wall.
+
+The roadrunner reappears.
+              Spare Room
+>
+[Obj#12: Spare Room]
+> e
+Bedroom
+
+This room is stripped bare of all furnishings. Only a rectangular area in the corner, lighter than the floor around it, belies the former presence of a mattress.
+
+A closed outside door in the east wall leads outside. Another exit opens west, into the ranch house.
+
+The roadrunner reappears.
+          Bedroom
+>
+[Obj#214: Bedroom]
+> e
+The outside door is closed.
+
+>
+[Obj#214: Bedroom]
+> s
+There’s no exit that way.
+
+>
+[Obj#214: Bedroom]
+> open outside door
+[Please try to express that another way.]
+
+>
+[Obj#214: Bedroom]
+> open door
+You open the outside door.
+
+The lemming in the cage blinks at you.
+
+>
+[Obj#214: Bedroom]
+> s
+There’s no exit that way.
+
+>
+[Obj#214: Bedroom]
+> e
+Northeast Yard
+
+There aren’t any openings in this corner of the stone wall. A raised deck stands immediately to the south, and an open outside door leads west, into the ranch.
+
+The roadrunner races into view.
+       Northeast Yard
+>
+[Obj#139: Northeast Yard]
+> s
+You stride onto the deck.
+
+Front Deck
+
+You’re on a raised deck attached to the east side of the ranch house. Two closed doors, one at the deck’s left corner and one at the right, lead inside. A gentle ramp slopes down to the front yard.
+
+The roadrunner reappears.
+              Front Deck
+>
+[Obj#6: Front Deck]
+> open left door
+You open the left door.
+
+>
+[Obj#6: Front Deck]
+> open right door
+You open the right door.
+
+The roadrunner scratches impatiently on the ground.
+
+>
+[Obj#6: Front Deck]
+> save
+Save to file: 
+> wt43.sav
+
+[SAVE completed.]
+                                                                                Front Deck
+>
+[Obj#6: Front Deck]
+> enter right door
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. An open front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+          Assembly Room
+>
+[Obj#442: Assembly Room]
+> e
+You beat a hasty retreat from the rattlesnake.
+
+Front Deck
+
+The roadrunner looks up at you inquisitively.
+             Front Deck
+>
+[Obj#6: Front Deck]
+> look
+Front Deck
+
+You’re on a raised deck attached to the east side of the ranch house. Two open doors, one at the deck’s left corner and one at the right, lead inside. A gentle ramp slopes down to the front yard.
+
+The roadrunner emits a brief squawk.
+
+The lemming in the cage sniffs the air inquisitively.
+
+>
+[Obj#6: Front Deck]
+> open right door
+It’s already open.
+
+The roadrunner watches every move you make.
+
+>
+[Obj#6: Front Deck]
+> enter right door
+Assembly Room
+
+A rattlesnake is coiled only a few feet away.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+The rattlesnake flicks its tongue in and out. It looks as if it’s about to strike!
+
+The roadrunner trots into the room, sees the rattlesnake again and retreats with a squall of frustration.
+
+The lemming covers its face with its paws and trembles.
+          Assembly Room
+>
+[Obj#442: Assembly Room]
+> open cage
+You open the birdcage.
+
+The lemming cowers in the cage, trembling violently.
+
+The rattlesnake strikes your ankle like lightning, recoils in an instant and slithers out of sight.
+
+Sobbing with pain and shock, you peer at the tender wound. It’s already beginning to swell.
+
+The roadrunner struts into view.
+
+The lemming scrambles out of the cage and scurries out of sight.
+
+>
+[Obj#442: Assembly Room]
+> restore
+Restore from file: 
+> wt43.sav
+
+[RESTORE completed.]
+                                                                                
+Front Deck
+
+You’re on a raised deck attached to the east side of the ranch house. Two open doors, one at the deck’s left corner and one at the right, lead inside. A gentle ramp slopes down to the front yard.
+
+The roadrunner looks up at you inquisitively.
+Front Deck
+>
+[Obj#6: Front Deck]
+> throw cage into right door
+There isn’t enough room on the right door.
+
+>
+[Obj#6: Front Deck]
+> enter right door
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. An open front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+          Assembly Room
+>
+[Obj#442: Assembly Room]
+> n
+You beat a hasty retreat from the rattlesnake.
+
+Closet
+
+There’s barely enough room to turn around in this puny closet. Its single open door is in the south wall.
+
+The rattlesnake lurks just outside the open door. It looks as if it’s about to strike!
+
+The lemming covers its face with its paws and trembles.
+             Closet
+>
+[Obj#352: Closet]
+> close door
+You close the closet door.
+
+It’s completely dark.
+      Darkness
+>
+[Obj#352: Closet]
+> open cage
+You open the birdcage.
+
+You hear the lemming scramble out of the cage and plop to the floor.
+
+>
+[Obj#352: Closet]
+> open door
+You open the closet door.
+
+The rattlesnake lurks just outside the open door. It looks as if it’s about to strike!
+
+The lemming scrambles through the open closet door, straight into the fangs of the rattlesnake.
+
+The lemming twitches for a while as the venom takes effect. Then the snake drags its prize across the floor, shakes its tail once for effect and slithers out of sight.
+
+[Your score just went up by 3 points. The total is now 67 out of 100.]
+        Closet
+>
+[Obj#352: Closet]
+> [Note added for #352: Closet]
+
+>#see close door, open cage, open door
+
+[Obj#352: Closet]
+> [Map written to map.html: 553 transitions, 133 locations, 61 notes]
+
+>#remap
+
+[Obj#352: Closet]
+> look
+Closet
+
+There’s barely enough room to turn around in this puny closet. Its single open door is in the south wall.
+
+>
+[Obj#352: Closet]
+> s
+Assembly Room
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+The roadrunner struts into view.
+      Assembly Room
+>
+[Obj#442: Assembly Room]
+> read paper
+How can you read a brown paper?
+
+>
+[Obj#442: Assembly Room]
+> take all
+[To what are you referring?]
+
+The roadrunner emits a brief squawk.
+
+>
+[Obj#442: Assembly Room]
+> take wire
+You sift through the bits of wire on the workbench, but find nothing unusual.
+
+>
+[Obj#442: Assembly Room]
+> look
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. An open front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+The roadrunner watches every move you make.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+>
+[Obj#442: Assembly Room]
+> examine debris
+You sift through the debris on the workbench, but find nothing interesting.
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#442: Assembly Room]
+> examine wire
+You sift through the bits of wire on the workbench, but find nothing extraordinary.
+
+>
+[Obj#442: Assembly Room]
+> examine brown paper
+The brown paper completely covers the workbench. On it you see bits of wire and other debris.
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#442: Assembly Room]
+> move paper
+As you lift the edge of the paper a screwdriver rolls out from underneath and lands on your foot. Ouch!
+
+>
+[Obj#442: Assembly Room]
+> [Note added for #442: Assembly Room]
+
+>#see screwdriver under paper
+
+[Obj#442: Assembly Room]
+> take screwdriver
+Taken.
+
+[Your score just went up by 1 point. The total is now 68 out of 100.]
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#442: Assembly Room]
+> w
+Northwest Room
+
+The roadrunner reappears at your side.
+             Northwest Room
+>
+[Obj#1: Northwest Room]
+> s
+Kitchen
+
+Disconnected stove pipes and an open cupboard with a steak knife in it are the only evidence of this room’s identity. A closed outer door in the west wall leads out to a hallway. Other exits lead north and east.
+
+The roadrunner reappears.
+              Kitchen
+>
+[Obj#21: Kitchen]
+> take knife
+You take the steak knife out of the cupboard.
+
+[Your score just went up by 1 point. The total is now 69 out of 100.]
+
+>
+[Obj#21: Kitchen]
+> save
+Save to file: 
+> wt44.sav
+
+[SAVE completed.]
+                                                                                Kitchen
+>
+[Obj#21: Kitchen]
+> n
+Northwest Room
+
+The roadrunner reappears.
+       Northwest Room
+>
+[Obj#1: Northwest Room]
+> n
+Spare Room
+
+A large map is hanging on the wall.
+
+The roadrunner prances to your side.
+              Spare Room
+>
+[Obj#12: Spare Room]
+> n
+Bathroom
+
+An old porcelain sink, broken and faucetless, is the only fixture left in this tiny chamber. The south exit doesn’t even have a door.
+
+The roadrunner hops to your side.
+          Bathroom
+>
+[Obj#175: Bathroom]
+> s
+Spare Room
+
+A large map is hanging on the wall.
+
+The roadrunner races into view.
+        Spare Room
+>
+[Obj#12: Spare Room]
+> w
+Back Yard
+
+The roadrunner struts to your side.
+          Back Yard
+>
+[Obj#297: Back Yard]
+> nw
+Northwest of Ranch
+
+The roadrunner prances to your side.
+         Northwest of Ranch
+>
+[Obj#122: Northwest of Ranch]
+> nw
+You trudge along for several minutes.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+
+Shallow Crater
+
+The roadrunner hops to your side.
+                  Shallow Crater
+>
+[Obj#456: Shallow Crater]
+> nw
+You amble for several minutes.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+A third flare arcs across the sky and disappears.
+
+All at once the distant tower disappears in a flash of startling brilliance! You jam your hands over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 69 points out of 100, in 508 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> 

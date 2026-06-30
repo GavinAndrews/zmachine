@@ -1,0 +1,2031 @@
+
+[Transcript started: transcript7.txt]
+[Transcript started.]
+
+>transcript
+
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt41.sav
+
+[RESTORE completed.]
+                                                                                
+Tower Platform
+
+A metal rail is all that stands between you and a hundred-foot drop.
+
+Miles of barren desert lie below, gray and still in the gathering dawn. Black roads radiate outward like the hands of a great clock.
+
+This narrow platform opens east into a metal shack. A searchlight on the southwest horizon floods the platform in a raw white glare. A ladder is sticking up over the platform’s edge.
+Tower Platform
+>
+[Obj#158: Tower Platform]
+> d
+You step towards the ladder, but hesitate when you hear the voices below.
+
+Are you sure you want to go down there right now?
+
+[Please type YES or NO.] >
+[Obj#158: Tower Platform]
+> no
+
+"Smart move," sighs a voice in your ear.
+
+>
+[Obj#158: Tower Platform]
+> wait
+Time passes.
+
+The lemming in the cage blinks at you.
+
+You hear a motor revving to life below. One of the voices barks something; there’s a squeal of rubber, and a jeep appears on the south road. You watch the headlights dwindle into the distance.
+
+>
+[Obj#158: Tower Platform]
+> d
+You clutch the topmost rung of the ladder with sweating palms. Fighting back vertigo, you begin to feel your way downward.
+
+At last your foot touches a flat surface.
+
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues downward.
+              Tower Landing
+>
+[Obj#247: Tower Landing]
+> d
+You step back onto the ladder and inch yourself downward.
+
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+A familiar roadrunner is eyeing you from its perch on the box’s lid. The ruby in its beak gleams in the early dawn.
+
+With a skillful toss, the roadrunner deposits the ruby on the box. Then it leaps off and scampers eagerly around your feet. If you didn’t know better, you’d swear it was glad to see you.
+
+The lemming in the cage sniffs the air inquisitively.
+             Base of Tower
+>
+[Obj#146: Base of Tower]
+> se
+You amble for several minutes.
+
+Shallow Crater
+
+You’re standing at the edge of a shallow depression in the desert floor, a few hundred feet across. The ground within is gray and pulverized, as if by a powerful explosion.
+
+A paved road leads southeast into the desert, and northwest towards the tower.
+
+The roadrunner prances into view.
+             Shallow Crater
+>
+[Obj#456: Shallow Crater]
+> se
+You walk for several minutes.
+
+Northwest of Ranch
+
+You’re at the northwest corner of a stone wall. A closed iron gate leads in to a dilapidated ranch house.
+
+A paved road bears northwest into the desert. Other paths curve east and south, along the wall’s perimeter.
+
+The roadrunner hops to your side.
+              Northwest of Ranch
+>
+[Obj#122: Northwest of Ranch]
+> [Note added for #122: Northwest of Ranch]
+
+>#see open iron gate
+
+[Obj#122: Northwest of Ranch]
+> open iron gate
+You open the iron gate.
+
+>
+[Obj#122: Northwest of Ranch]
+> enter
+Back Yard
+
+This patch of dust lies within the elbow of the ranch house, and is enclosed by a stone wall to the north and west.
+
+An open hallway leads south, into the house. There’s also a closed screen door to the east, and an open iron gate in the northwest corner of the stone wall.
+
+The roadrunner reappears.
+                  Back Yard
+>
+[Obj#297: Back Yard]
+> s
+You step into the hallway.
+
+Hallway
+
+This short hallway opens outdoors to the north and south. A closed outer door leads east into a kitchen. Turning west, you see a stairway descending into darkness.
+         Hallway
+>
+[Obj#240: Hallway]
+> open outer door
+You open the outer door.
+
+The roadrunner reappears at your side.
+
+>
+[Obj#240: Hallway]
+> e
+Kitchen
+
+Disconnected stove pipes and an open cupboard with a steak knife in it are the only evidence of this room’s identity. An open outer door in the west wall leads out to a hallway. Other exits lead north and east.
+
+The roadrunner races to your side.
+       Kitchen
+>
+[Obj#21: Kitchen]
+> take knife
+You take the steak knife out of the cupboard.
+
+[Your score just went up by 1 point. The total is now 64 out of 100.]
+
+>
+[Obj#21: Kitchen]
+> n
+Northwest Room
+
+The original purpose of this stark room is uncertain; it might have been used for dining. Exits lead north, south and east.
+
+The roadrunner struts into view.
+       Northwest Room
+>
+[Obj#1: Northwest Room]
+> e
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. A closed front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+              Assembly Room
+>
+[Obj#442: Assembly Room]
+> n then close door
+You beat a hasty retreat from the rattlesnake.
+
+Closet
+
+There’s barely enough room to turn around in this puny closet. Its single open door is in the south wall.
+
+The rattlesnake lurks just outside the open door. It looks as if it’s about to strike!
+
+The lemming covers its face with its paws and trembles.
+
+You close the closet door.
+
+It’s completely dark.
+             Darkness
+>
+[Obj#352: Closet]
+> open cage
+You open the birdcage.
+
+You hear the lemming scramble out of the cage and plop to the floor.
+
+>
+[Obj#352: Closet]
+> open door
+You open the closet door.
+
+The rattlesnake lurks just outside the open door. It looks as if it’s about to strike!
+
+The lemming scrambles through the open closet door, straight into the fangs of the rattlesnake.
+
+The lemming twitches for a while as the venom takes effect. Then the snake drags its prize across the floor, shakes its tail once for effect and slithers out of sight.
+
+[Your score just went up by 3 points. The total is now 67 out of 100.]
+        Closet
+>
+[Obj#352: Closet]
+> s
+Assembly Room
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+The roadrunner prances into view.
+      Assembly Room
+>
+[Obj#442: Assembly Room]
+> move paper
+As you lift the edge of the paper a screwdriver rolls out from underneath and lands on your foot. Ouch!
+
+>
+[Obj#442: Assembly Room]
+> take screwdriver
+Taken.
+
+[Your score just went up by 1 point. The total is now 68 out of 100.]
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#442: Assembly Room]
+> w
+Northwest Room
+
+The roadrunner hops into view.
+             Northwest Room
+>
+[Obj#1: Northwest Room]
+> n
+Spare Room
+
+Aside from a closed screen door to the west, this squarish room offers no amenities. Other exits lead north and east.
+
+A large map is hanging on the wall.
+
+The roadrunner races to your side.
+              Spare Room
+>
+[Obj#12: Spare Room]
+> w
+The screen door is closed.
+
+>
+[Obj#12: Spare Room]
+> w
+The screen door is closed.
+
+>
+[Obj#12: Spare Room]
+> open screen door
+You open the screen door.
+
+>
+[Obj#12: Spare Room]
+> w
+Back Yard
+
+The roadrunner struts into view.
+          Back Yard
+>
+[Obj#297: Back Yard]
+> out
+Northwest of Ranch
+
+The roadrunner reappears at your side.
+         Northwest of Ranch
+>
+[Obj#122: Northwest of Ranch]
+> nw
+You trudge along for several minutes.
+
+Shallow Crater
+
+The roadrunner prances to your side.
+                  Shallow Crater
+>
+[Obj#456: Shallow Crater]
+> nw
+You amble for several minutes.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+
+Base of Tower
+
+A closed box, locked with a steel padlock, is lying across the ground nearby. On it you see a ruby.
+
+The roadrunner hops into view.
+              Base of Tower
+>
+[Obj#146: Base of Tower]
+> save
+Save to file: 
+> wt51.sav
+
+[SAVE completed.]
+                                                                                Base of Tower
+>
+[Obj#146: Base of Tower]
+> u
+You grasp the rungs of the ladder and pull yourself upward.
+
+Tower Landing
+
+A faint rumble begins to drift across the desert. You peer between the girders to scan the horizon.
+
+Headlights. Lots of them, converging on the tower from several directions at once, and just minutes away!
+
+White with panic, you scramble down the ladder as fast as you can. But your boots slip out from under you about ten rungs from the bottom; and you regain consciousness just as seventeen jeeps screech to a halt around the tower.
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 68 points out of 100, in 493 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt51.sav
+
+[RESTORE completed.]
+                                                                                
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner scratches impatiently on the ground.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby. On it you see a ruby.
+Base of Tower
+>
+[Obj#146: Base of Tower]
+> climb ropes
+That’s impossible.
+
+>
+[Obj#146: Base of Tower]
+> u
+You grasp the rungs of the ladder and pull yourself upward.
+
+Tower Landing
+
+A faint rumble begins to drift across the desert. You peer between the girders to scan the horizon.
+
+Headlights. Lots of them, converging on the tower from several directions at once, and just minutes away!
+
+White with panic, you scramble down the ladder as fast as you can. But your boots slip out from under you about ten rungs from the bottom; and you regain consciousness just as seventeen jeeps screech to a halt around the tower.
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 68 points out of 100, in 494 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt52.sab
+
+[File not found: wt52.sab]
+
+[RESTORE failed.]
+                                                                                [Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt52.sav
+
+[File not found: wt52.sav]
+
+[RESTORE failed.]
+                                                                                [Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> sw
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt51.sav
+
+[RESTORE completed.]
+                                                                                
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner scratches impatiently on the ground.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby. On it you see a ruby.
+Base of Tower
+>
+[Obj#146: Base of Tower]
+> s
+You walk for several minutes.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+A third flare arcs across the sky and disappears.
+
+All at once the tower disappears in a flash of startling brilliance! You jam your hands over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 68 points out of 100, in 508 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt51.sav
+
+[RESTORE completed.]
+                                                                                
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner scratches impatiently on the ground.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby. On it you see a ruby.
+Base of Tower
+>
+[Obj#146: Base of Tower]
+> pick lock with knife
+It isn’t likely that the steak knife would open the padlock.
+
+>
+[Obj#146: Base of Tower]
+> take ruby
+Your load is too heavy.
+
+The roadrunner looks up at you inquisitively.
+
+>
+[Obj#146: Base of Tower]
+> i
+You’re holding a screwdriver, a steak knife, a slip of cardboard, a book, a birdcage, a bag of crumbs and a walkie-talkie. You’re wearing a burial shroud, a wristwatch, a red boot and a green boot, and you have a credit card in your pocket.
+
+>
+[Obj#146: Base of Tower]
+> raise antenna
+You pull the antenna out of the walkie-talkie, extending it to its full length.
+
+>
+[Obj#146: Base of Tower]
+> press button
+You squeeze the orange button. Nothing happens; so you release it.
+
+The roadrunner emits a brief squawk.
+
+>
+[Obj#146: Base of Tower]
+> u
+You grasp the rungs of the ladder and pull yourself upward.
+
+Tower Landing
+
+A faint rumble begins to drift across the desert. You peer between the girders to scan the horizon.
+
+Headlights. Lots of them, converging on the tower from several directions at once, and just minutes away!
+
+White with panic, you scramble down the ladder as fast as you can. But your boots slip out from under you about ten rungs from the bottom; and you regain consciousness just as seventeen jeeps screech to a halt around the tower.
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 68 points out of 100, in 497 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt51.sav
+
+[RESTORE completed.]
+                                                                                
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner scratches impatiently on the ground.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby. On it you see a ruby.
+Base of Tower
+>
+[Obj#146: Base of Tower]
+> take ruby
+Your load is too heavy.
+
+>
+[Obj#146: Base of Tower]
+> examine red boot
+The boot is exceedingly well-made, and colored bright red. A small recess is visible at the toe’s tip.
+
+The roadrunner looks up at you inquisitively.
+
+>
+[Obj#146: Base of Tower]
+> put hand in recess
+You’d have to take off the red boot to do that.
+
+>
+[Obj#146: Base of Tower]
+> take off red boot
+You take off the red boot.
+
+The roadrunner emits a brief squawk.
+
+>
+[Obj#146: Base of Tower]
+> put hand in recess
+It’s empty.
+
+>
+[Obj#146: Base of Tower]
+> put ruby in recess
+You’re not holding a ruby.
+
+>
+[Obj#146: Base of Tower]
+> take ruby
+Your load is too heavy.
+
+The roadrunner watches every move you make.
+
+>
+[Obj#146: Base of Tower]
+> i
+You’re holding a screwdriver, a steak knife, a slip of cardboard, a book, a red boot, a birdcage, a bag of crumbs and a walkie-talkie. You’re wearing a burial shroud, a wristwatch and a green boot, and you have a credit card in your pocket.
+
+>
+[Obj#146: Base of Tower]
+> drop book
+You drop the book.
+
+>
+[Obj#146: Base of Tower]
+> drop cage
+Dropped.
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#146: Base of Tower]
+> take ruby
+You take the ruby off the box.
+
+[Your score just went up by 1 point. The total is now 69 out of 100.]
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+>
+[Obj#146: Base of Tower]
+> put ruby in recess
+Which recess do you mean, the green boot or the red boot?
+
+>
+[Obj#146: Base of Tower]
+> put ruby in red boot recess
+[There are too many nouns in that sentence.]
+
+>
+[Obj#146: Base of Tower]
+> put ruby in red recess
+You press the ruby into the toe of the red boot. As you watch, the red leather closes around the jewel and absorbs it like melting wax.
+
+A shudder of ecstasy ripples up and down the length of the boot. It begins to glow with raw energy, brighter and brighter, until you shield your eyes from the glare.
+
+When you peek again, a tiny pair of wings has sprouted out of the heel.
+
+[Your score just went up by 1 point. The total is now 70 out of 100.]
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#146: Base of Tower]
+> take ruby from recess
+Which recess do you mean, the green boot or the red boot?
+
+>
+[Obj#146: Base of Tower]
+> take ruby from red recess
+You can’t see any ruby here.
+
+>
+[Obj#146: Base of Tower]
+> take ruby from green boot
+You can’t see any ruby here.
+
+>
+[Obj#146: Base of Tower]
+> take ruby from green boot
+You can’t see any ruby here.
+
+>
+[Obj#146: Base of Tower]
+> restore
+Restore from file: 
+> wt41.sav
+
+[RESTORE completed.]
+                                                                                
+Tower Platform
+
+A metal rail is all that stands between you and a hundred-foot drop.
+
+Miles of barren desert lie below, gray and still in the gathering dawn. Black roads radiate outward like the hands of a great clock.
+
+This narrow platform opens east into a metal shack. A searchlight on the southwest horizon floods the platform in a raw white glare. A ladder is sticking up over the platform’s edge.
+Tower Platform
+>
+[Obj#158: Tower Platform]
+> drop book
+Dropped.
+
+The lemming in the cage blinks at you.
+
+You hear a motor revving to life below. One of the voices barks something; there’s a squeal of rubber, and a jeep appears on the south road. You watch the headlights dwindle into the distance.
+
+>
+[Obj#158: Tower Platform]
+> restore
+Restore from file: 
+> wt51.sav
+
+[RESTORE completed.]
+                                                                                
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner scratches impatiently on the ground.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby. On it you see a ruby.
+Base of Tower
+>
+[Obj#146: Base of Tower]
+> drop book
+You put down the book.
+
+>
+[Obj#146: Base of Tower]
+> drop cardboard
+You put down the slip of cardboard.
+
+The roadrunner looks up at you inquisitively.
+
+>
+[Obj#146: Base of Tower]
+> drop green boot
+[taking off the green boot first]
+
+Dropped.
+
+>
+[Obj#146: Base of Tower]
+> take ruby
+You take the ruby off the box.
+
+[Your score just went up by 1 point. The total is now 69 out of 100.]
+
+The roadrunner emits a brief squawk.
+
+>
+[Obj#146: Base of Tower]
+> put ruby in green boot
+The ruby slides out and lands at your feet.
+
+>
+[Obj#146: Base of Tower]
+> drop red boot
+[taking off the red boot first]
+
+Dropped.
+
+The roadrunner watches every move you make.
+
+>
+[Obj#146: Base of Tower]
+> take ruby
+Taken.
+
+>
+[Obj#146: Base of Tower]
+> put ruby in red boot
+You press the ruby into the toe of the red boot. As you watch, the red leather closes around the jewel and absorbs it like melting wax.
+
+A shudder of ecstasy ripples up and down the length of the boot. It begins to glow with raw energy, brighter and brighter, until you shield your eyes from the glare.
+
+When you peek again, a tiny pair of wings has sprouted out of the heel.
+
+[Your score just went up by 1 point. The total is now 70 out of 100.]
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#146: Base of Tower]
+> [Note added for #146: Base of Tower]
+
+>#see put ruby in red boot
+
+[Obj#146: Base of Tower]
+> put on red boot
+You’re not holding the red boot.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+>
+[Obj#146: Base of Tower]
+> wear boots
+The red boot: You’re not holding the red boot.
+The green boot: You’re not holding the green boot.
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#146: Base of Tower]
+> take red boot
+Taken.
+
+>
+[Obj#146: Base of Tower]
+> take green boot
+Your load is too heavy.
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#146: Base of Tower]
+> i
+You’re holding a red boot, a screwdriver, a steak knife, a birdcage, a bag of crumbs and a walkie-talkie. You’re wearing a burial shroud and a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#146: Base of Tower]
+> wear red boot
+You put on the red boot.
+
+A third flare arcs across the sky and disappears.
+
+>
+[Obj#146: Base of Tower]
+> take green boot
+You take the green boot.
+
+The roadrunner scratches impatiently on the ground.
+
+>
+[Obj#146: Base of Tower]
+> wear green boot
+You put on the green boot.
+
+>
+[Obj#146: Base of Tower]
+> fly u
+[Please try to express that another way.]
+
+>
+[Obj#146: Base of Tower]
+> fly up 
+[Please try to express that another way.]
+
+>
+[Obj#146: Base of Tower]
+> u
+You grasp the rungs of the ladder and pull yourself upward.
+
+Tower Landing
+
+A faint rumble begins to drift across the desert. You peer between the girders to scan the horizon.
+
+Headlights. Lots of them, converging on the tower from several directions at once, and just minutes away!
+
+White with panic, you scramble down the ladder as fast as you can. But your boots slip out from under you about ten rungs from the bottom; and you regain consciousness just as seventeen jeeps screech to a halt around the tower.
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 70 points out of 100, in 508 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt32.sav
+
+[RESTORE completed.]
+                                                                                
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling; harsh light streams in through an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+You see a slip of cardboard and a book here.
+Shack
+>
+[Obj#507: Shack]
+> d
+There’s no exit that way.
+
+>
+[Obj#507: Shack]
+> w
+Tower Platform
+
+A metal rail is all that stands between you and a hundred-foot drop.
+
+Miles of barren desert lie below, gray and still in the gathering dawn. Black roads radiate outward like the hands of a great clock.
+
+This narrow platform opens east into a metal shack. A searchlight on the southwest horizon floods the platform in a raw white glare. A ladder is sticking up over the platform’s edge.
+     Tower Platform
+>
+[Obj#158: Tower Platform]
+> d
+You clutch the topmost rung of the ladder with sweating palms. Fighting back vertigo, you begin to feel your way downward.
+
+At last your foot touches a flat surface.
+
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues downward.
+              Tower Landing
+>
+[Obj#247: Tower Landing]
+> d
+You step back onto the ladder and inch yourself downward.
+
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+A familiar roadrunner is eyeing you from its perch on the box’s lid. The ruby in its beak gleams in the early dawn.
+
+With a skillful toss, the roadrunner deposits the ruby on the box. Then it leaps off and scampers eagerly around your feet. If you didn’t know better, you’d swear it was glad to see you.
+             Base of Tower
+>
+[Obj#146: Base of Tower]
+> take ruby
+You take the ruby off the box.
+
+[Your score just went up by 1 point. The total is now 64 out of 100.]
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#146: Base of Tower]
+> drop red boot
+You’re not holding that.
+
+>
+[Obj#146: Base of Tower]
+> i
+You’re holding a ruby, a birdcage, a bag of crumbs and a walkie-talkie. Inside the birdcage you see a lemming. You’re wearing a burial shroud and a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#146: Base of Tower]
+> restore
+Restore from file: 
+> wt41.sav
+
+[RESTORE completed.]
+                                                                                
+Tower Platform
+
+A metal rail is all that stands between you and a hundred-foot drop.
+
+Miles of barren desert lie below, gray and still in the gathering dawn. Black roads radiate outward like the hands of a great clock.
+
+This narrow platform opens east into a metal shack. A searchlight on the southwest horizon floods the platform in a raw white glare. A ladder is sticking up over the platform’s edge.
+Tower Platform
+>
+[Obj#158: Tower Platform]
+> i
+You’re holding a slip of cardboard, a book, a birdcage, a bag of crumbs and a walkie-talkie. Inside the birdcage you see a lemming. You’re wearing a burial shroud, a wristwatch, a red boot and a green boot, and you have a credit card in your pocket.
+
+>
+[Obj#158: Tower Platform]
+> w
+You’d fall over the edge of the platform if you went that way.
+
+>
+[Obj#158: Tower Platform]
+> d
+You step towards the ladder, but hesitate when you hear the voices below.
+
+Are you sure you want to go down there right now?
+
+[Please type YES or NO.] >
+[Obj#158: Tower Platform]
+> no
+
+A voice in your ear sighs, "Smart move."
+
+>
+[Obj#158: Tower Platform]
+> wait
+Time passes.
+
+You hear a motor revving to life below. One of the voices barks something; there’s a squeal of rubber, and a jeep appears on the south road. You watch the headlights dwindle into the distance.
+
+>
+[Obj#158: Tower Platform]
+> d
+You clutch the topmost rung of the ladder with sweating palms. Fighting back vertigo, you begin to feel your way downward.
+
+At last your foot touches a flat surface.
+
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues downward.
+              Tower Landing
+>
+[Obj#247: Tower Landing]
+> d
+You step back onto the ladder and inch yourself downward.
+
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+A familiar roadrunner is eyeing you from its perch on the box’s lid. The ruby in its beak gleams in the early dawn.
+
+With a skillful toss, the roadrunner deposits the ruby on the box. Then it leaps off and scampers eagerly around your feet. If you didn’t know better, you’d swear it was glad to see you.
+             Base of Tower
+>
+[Obj#146: Base of Tower]
+> remove red boot
+You take off the red boot.
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#146: Base of Tower]
+> take ruby
+Your load is too heavy.
+
+The lemming in the cage blinks at you.
+
+>
+[Obj#146: Base of Tower]
+> put ruby in red boot
+You’re not holding a ruby.
+
+>
+[Obj#146: Base of Tower]
+> i
+You’re holding a red boot, a slip of cardboard, a book, a birdcage, a bag of crumbs and a walkie-talkie. Inside the birdcage you see a lemming. You’re wearing a burial shroud, a wristwatch and a green boot, and you have a credit card in your pocket.
+
+>
+[Obj#146: Base of Tower]
+> drop book
+You drop the book.
+
+The roadrunner scratches impatiently on the ground.
+
+>
+[Obj#146: Base of Tower]
+> drop cardboard
+Dropped.
+
+The lemming in the cage sniffs the air inquisitively.
+
+>
+[Obj#146: Base of Tower]
+> take red boot
+You’re already holding the red boot.
+
+The roadrunner looks up at you inquisitively.
+
+>
+[Obj#146: Base of Tower]
+> put ruby in red boot
+You’re not holding a ruby.
+
+>
+[Obj#146: Base of Tower]
+> take ruby
+You take the ruby off the box.
+
+[Your score just went up by 1 point. The total is now 64 out of 100.]
+
+>
+[Obj#146: Base of Tower]
+> put ruby in red boot
+You press the ruby into the toe of the red boot. As you watch, the red leather closes around the jewel and absorbs it like melting wax.
+
+A shudder of ecstasy ripples up and down the length of the boot. It begins to glow with raw energy, brighter and brighter, until you shield your eyes from the glare.
+
+When you peek again, a tiny pair of wings has sprouted out of the heel.
+
+[Your score just went up by 1 point. The total is now 65 out of 100.]
+
+The roadrunner emits a brief squawk.
+
+>
+[Obj#146: Base of Tower]
+> wear red boot
+You put on the red boot.
+
+The lemming in the cage trembles with agitation.
+
+>
+[Obj#146: Base of Tower]
+> save
+Save to file: 
+> wt61.sav
+
+[SAVE completed.]
+                                                                                Base of Tower
+>
+[Obj#146: Base of Tower]
+> i
+You’re holding a birdcage, a bag of crumbs and a walkie-talkie. Inside the birdcage you see a lemming. You’re wearing a red boot, a burial shroud, a wristwatch and a green boot, and you have a credit card in your pocket.
+
+>
+[Obj#146: Base of Tower]
+> se
+You amble for several minutes.
+
+Shallow Crater
+
+You’re standing at the edge of a shallow depression in the desert floor, a few hundred feet across. The ground within is gray and pulverized, as if by a powerful explosion.
+
+A paved road leads southeast into the desert, and northwest towards the tower.
+
+The roadrunner prances to your side.
+             Shallow Crater
+>
+[Obj#456: Shallow Crater]
+> run se
+You run for a few minutes.
+
+Northwest of Ranch
+
+You’re at the northwest corner of a stone wall. A closed iron gate leads in to a dilapidated ranch house.
+
+A paved road bears northwest into the desert. Other paths curve east and south, along the wall’s perimeter.
+
+The roadrunner reappears.
+              Northwest of Ranch
+>
+[Obj#122: Northwest of Ranch]
+> open iron gate
+You open the iron gate.
+
+The lemming in the cage scratches its ear.
+
+>
+[Obj#122: Northwest of Ranch]
+> enter
+Back Yard
+
+This patch of dust lies within the elbow of the ranch house, and is enclosed by a stone wall to the north and west.
+
+An open hallway leads south, into the house. There’s also a closed screen door to the east, and an open iron gate in the northwest corner of the stone wall.
+
+The roadrunner hops to your side.
+                  Back Yard
+>
+[Obj#297: Back Yard]
+> examine boots
+The red boot: The boot is exceedingly well-made, and colored bright red. A pair of miniature wings sprouts from the heel.
+The green boot: The boot is exceedingly well-made, and colored bright green. A small recess is visible at the toe’s tip.
+
+>
+[Obj#297: Back Yard]
+> [Map written to map.html: 544 transitions, 132 locations, 64 notes]
+
+>#remap
+
+[Obj#297: Back Yard]
+> restore
+Restore from file: 
+> wt41.sav
+
+[RESTORE completed.]
+                                                                                
+Tower Platform
+
+A metal rail is all that stands between you and a hundred-foot drop.
+
+Miles of barren desert lie below, gray and still in the gathering dawn. Black roads radiate outward like the hands of a great clock.
+
+This narrow platform opens east into a metal shack. A searchlight on the southwest horizon floods the platform in a raw white glare. A ladder is sticking up over the platform’s edge.
+Tower Platform
+>
+[Obj#158: Tower Platform]
+> d
+You step towards the ladder, but hesitate when you hear the voices below.
+
+Are you sure you want to go down there right now?
+
+[Please type YES or NO.] >
+[Obj#158: Tower Platform]
+> no
+
+"Smart move," sighs a voice in your ear.
+
+>
+[Obj#158: Tower Platform]
+> wait
+Time passes.
+
+The lemming in the cage blinks at you.
+
+You hear a motor revving to life below. One of the voices barks something; there’s a squeal of rubber, and a jeep appears on the south road. You watch the headlights dwindle into the distance.
+
+>
+[Obj#158: Tower Platform]
+> d
+You clutch the topmost rung of the ladder with sweating palms. Fighting back vertigo, you begin to feel your way downward.
+
+At last your foot touches a flat surface.
+
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues downward.
+              Tower Landing
+>
+[Obj#247: Tower Landing]
+> d
+You step back onto the ladder and inch yourself downward.
+
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+A familiar roadrunner is eyeing you from its perch on the box’s lid. The ruby in its beak gleams in the early dawn.
+
+With a skillful toss, the roadrunner deposits the ruby on the box. Then it leaps off and scampers eagerly around your feet. If you didn’t know better, you’d swear it was glad to see you.
+             Base of Tower
+>
+[Obj#146: Base of Tower]
+> drop all
+The slip of cardboard: Dropped.
+The book: Dropped.
+The birdcage: Dropped.
+The bag of crumbs: Dropped.
+The walkie-talkie: Dropped.
+
+The roadrunner begins to peck at the crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> remove boots
+The red boot: You take off the red boot.
+The green boot: You take off the green boot.
+
+The roadrunner pecks contentedly at the crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> take ruby
+You take the ruby off the box.
+
+[Your score just went up by 1 point. The total is now 64 out of 100.]
+
+The roadrunner gobbles down the crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> put ruby in green recess
+The ruby slides out and lands at your feet.
+
+The roadrunner snaps up the crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> put ruby in red recess
+You’re not holding a ruby.
+
+>
+[Obj#146: Base of Tower]
+> take ruby
+Taken.
+
+The roadrunner pecks contentedly at the last few crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> put ruby in red recess
+You press the ruby into the toe of the red boot. As you watch, the red leather closes around the jewel and absorbs it like melting wax.
+
+A shudder of ecstasy ripples up and down the length of the boot. It begins to glow with raw energy, brighter and brighter, until you shield your eyes from the glare.
+
+When you peek again, a tiny pair of wings has sprouted out of the heel.
+
+[Your score just went up by 1 point. The total is now 65 out of 100.]
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#146: Base of Tower]
+> [Note added for #146: Base of Tower]
+
+>#see put ruby in red recess
+
+[Obj#146: Base of Tower]
+> [Map written to map.html: 545 transitions, 132 locations, 65 notes]
+
+>#remap
+
+[Obj#146: Base of Tower]
+> examine wings
+The boot is exceedingly well-made, and colored bright red. A pair of miniature wings sprouts from the heel.
+
+The lemming in the cage sniffs the air inquisitively.
+
+>
+[Obj#146: Base of Tower]
+> e
+You amble along for several minutes.
+
+East of Tower
+
+This bleak stretch of desert lies between the tower to the west, and a range of mountains to the east.
+
+The roadrunner prances into view.
+             East of Tower
+>
+[Obj#290: East of Tower]
+> e
+You walk for several minutes.
+
+Foothills
+
+Rugged foothills slope eastward, away from the desert wasteland.
+
+The roadrunner hops into view.
+             Foothills
+>
+[Obj#225: Foothills]
+> w
+You trudge along for several minutes.
+
+East of Tower
+
+The roadrunner races into view.
+         East of Tower
+>
+[Obj#290: East of Tower]
+> e
+You amble for several minutes.
+
+Foothills
+
+The roadrunner reappears at your side.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+             Foothills
+>
+[Obj#225: Foothills]
+> e
+The foothills are much too steep and rugged to climb.
+
+>
+[Obj#225: Foothills]
+> e
+The foothills are much too steep and rugged to climb.
+
+>
+[Obj#225: Foothills]
+> nw
+You walk along for several minutes.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+A third flare arcs across the sky and disappears.
+
+All at once the desert around you disappears in a flash of startling brilliance! You jam your hands over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 65 points out of 100, in 508 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt41.sav
+
+[RESTORE completed.]
+                                                                                
+Tower Platform
+
+A metal rail is all that stands between you and a hundred-foot drop.
+
+Miles of barren desert lie below, gray and still in the gathering dawn. Black roads radiate outward like the hands of a great clock.
+
+This narrow platform opens east into a metal shack. A searchlight on the southwest horizon floods the platform in a raw white glare. A ladder is sticking up over the platform’s edge.
+Tower Platform
+>
+[Obj#158: Tower Platform]
+> d
+You step towards the ladder, but hesitate when you hear the voices below.
+
+Are you sure you want to go down there right now?
+
+[Please type YES or NO.] >
+[Obj#158: Tower Platform]
+> no
+
+"Smart move," sighs a voice in your ear.
+
+>
+[Obj#158: Tower Platform]
+> wait
+Time passes.
+
+The lemming in the cage blinks at you.
+
+You hear a motor revving to life below. One of the voices barks something; there’s a squeal of rubber, and a jeep appears on the south road. You watch the headlights dwindle into the distance.
+
+>
+[Obj#158: Tower Platform]
+> d
+You clutch the topmost rung of the ladder with sweating palms. Fighting back vertigo, you begin to feel your way downward.
+
+At last your foot touches a flat surface.
+
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues downward.
+              Tower Landing
+>
+[Obj#247: Tower Landing]
+> d
+You step back onto the ladder and inch yourself downward.
+
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+A familiar roadrunner is eyeing you from its perch on the box’s lid. The ruby in its beak gleams in the early dawn.
+
+With a skillful toss, the roadrunner deposits the ruby on the box. Then it leaps off and scampers eagerly around your feet. If you didn’t know better, you’d swear it was glad to see you.
+
+The lemming in the cage sniffs the air inquisitively.
+             Base of Tower
+>
+[Obj#146: Base of Tower]
+> e
+You amble along for several minutes.
+
+East of Tower
+
+This bleak stretch of desert lies between the tower to the west, and a range of mountains to the east.
+
+The roadrunner reappears.
+             East of Tower
+>
+[Obj#290: East of Tower]
+> e
+You walk along for several minutes.
+
+Foothills
+
+Rugged foothills slope eastward, away from the desert wasteland.
+
+The roadrunner reappears at your side.
+             Foothills
+>
+[Obj#225: Foothills]
+> e
+The foothills are much too steep and rugged to climb.
+
+>
+[Obj#225: Foothills]
+> ne
+The foothills are much too steep and rugged to climb.
+
+>
+[Obj#225: Foothills]
+> nw
+You trudge for several minutes.
+
+East of Tower
+
+The roadrunner prances into view.
+         East of Tower
+>
+[Obj#290: East of Tower]
+> e
+You amble along for several minutes.
+
+Foothills
+
+The roadrunner hops to your side.
+             Foothills
+>
+[Obj#225: Foothills]
+> look
+Foothills
+
+Rugged foothills slope eastward, away from the desert wasteland.
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#225: Foothills]
+> s
+You walk for several minutes.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+A third flare arcs across the sky and disappears.
+
+All at once the desert around you disappears in a flash of startling brilliance! You jam your hands over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 63 points out of 100, in 508 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt41.sav
+
+[RESTORE completed.]
+                                                                                
+Tower Platform
+
+A metal rail is all that stands between you and a hundred-foot drop.
+
+Miles of barren desert lie below, gray and still in the gathering dawn. Black roads radiate outward like the hands of a great clock.
+
+This narrow platform opens east into a metal shack. A searchlight on the southwest horizon floods the platform in a raw white glare. A ladder is sticking up over the platform’s edge.
+Tower Platform
+>
+[Obj#158: Tower Platform]
+> e
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling; harsh light streams in through an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+You hear a motor revving to life below. One of the voices barks something; there’s a squeal of rubber, and the motor fades into the distance. Then everything is quiet.
+              Shack
+>
+[Obj#507: Shack]
+> d
+There’s no exit that way.
+
+>
+[Obj#507: Shack]
+> w
+Tower Platform
+     Tower Platform
+>
+[Obj#158: Tower Platform]
+> d
+You clutch the topmost rung of the ladder with sweating palms. Fighting back vertigo, you begin to feel your way downward.
+
+At last your foot touches a flat surface.
+
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues downward.
+              Tower Landing
+>
+[Obj#247: Tower Landing]
+> d
+You step back onto the ladder and inch yourself downward.
+
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+A familiar roadrunner is eyeing you from its perch on the box’s lid. The ruby in its beak gleams in the early dawn.
+
+With a skillful toss, the roadrunner deposits the ruby on the box. Then it leaps off and scampers eagerly around your feet. If you didn’t know better, you’d swear it was glad to see you.
+             Base of Tower
+>
+[Obj#146: Base of Tower]
+> e
+You amble for several minutes.
+
+East of Tower
+
+This bleak stretch of desert lies between the tower to the west, and a range of mountains to the east.
+
+The roadrunner prances into view.
+             East of Tower
+>
+[Obj#290: East of Tower]
+> e
+You walk for several minutes.
+
+Foothills
+
+Rugged foothills slope eastward, away from the desert wasteland.
+
+The roadrunner hops into view.
+             Foothills
+>
+[Obj#225: Foothills]
+> s
+You trudge for several minutes.
+
+North of Reservoir
+
+You’re resting at the north side of a big cement reservoir. Dusty paths curve west and southwest around a ranch house, and a trail leads southeast to the base of a windmill.
+
+The roadrunner races to your side.
+         North of Reservoir
+>
+[Obj#292: North of Reservoir]
+> se
+You amble along for several minutes.
+
+Under the Windmill
+
+A squat wooden windmill rises overhead, its dark timbers tapering up to a square landing that overlooks the east side of an adjacent reservoir.
+
+The bottom rungs of a ladder are just within reach.
+
+The roadrunner struts into view.
+                  Under the Windmill
+>
+[Obj#300: Under the Windmill]
+> drop all
+The slip of cardboard: Dropped.
+The book: Dropped.
+The birdcage: Dropped.
+The bag of crumbs: Dropped.
+The walkie-talkie: Dropped.
+
+The roadrunner begins to peck at the crumbs in the bag.
+
+>
+[Obj#300: Under the Windmill]
+> u
+The ladder squeaks and complains as you ascend.
+
+Windmill
+
+You’re on a square landing near the top of the windmill. The rotting planks underfoot creak ominously as you stand on them.
+
+A rickety ladder leads downward.
+
+Somebody has left a nice pair of binoculars at the landing’s edge.
+
+The landing creaks under your weight. It isn’t in very good shape.
+                  Windmill
+>
+[Obj#540: Windmill]
+> use binoculas
+[You don’t need to use the word "binoculas" to complete this story.]
+
+>
+[Obj#540: Windmill]
+> use binoculars
+How do you intend to do that?
+
+The landing emits a wooden moan of discomfort.
+
+>
+[Obj#540: Windmill]
+> take binoculars
+A loud, plaintive creak makes you draw your hand back in alarm. You hold your breath as the landing sways uncertainly for a moment, back and forth. Then everything is quiet.
+
+Slowly, carefully, you stretch your arm towards the pair of binoculars...
+
+Crack! The landing tips wildly under your feet. You manage a brief, hysterical shriek...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+... and your mouth fills with water.
+
+Reservoir
+
+You’re treading water in a big cement reservoir, too deep for your feet to touch bottom.
+        Reservoir
+>
+[Obj#457: Reservoir]
+> d
+[holding your breath first]
+
+You sink below the surface.
+
+It’s completely dark.
+         Darkness
+>
+[Obj#242: Underwater]
+> d
+You’re already at the bottom of the reservoir.
+
+>
+[Obj#242: Underwater]
+> take all
+It’s too dark and murky to see.
+
+>
+[Obj#242: Underwater]
+> u
+You rise to the surface, gasping for air.
+
+Reservoir
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+        Reservoir
+>
+[Obj#457: Reservoir]
+> look
+Reservoir
+
+You’re treading water in a big cement reservoir, too deep for your feet to touch bottom.
+
+>
+[Obj#457: Reservoir]
+> u
+You climb out of the reservoir.
+
+Edge of Reservoir
+
+You’re on the edge of a big concrete reservoir, filled with dark water. A short flight of steps leads down to the ground.
+         Edge of Reservoir
+>
+[Obj#336: Edge of Reservoir]
+> d
+You descend the stairway.
+
+South of Reservoir
+
+You’re near the south side of a big cement reservoir. Dusty paths lead west and northwest around a ranch house. Another curves northeast, to the base of a windmill.
+
+A stairway climbs up to the reservoir’s edge.
+
+The roadrunner prances into view.
+                 South of Reservoir
+>
+[Obj#559: South of Reservoir]
+> n
+You climb the stairway.
+
+Edge of Reservoir
+                  Edge of Reservoir
+>
+[Obj#336: Edge of Reservoir]
+> n
+Splash!
+
+Reservoir
+                 Reservoir
+>
+[Obj#457: Reservoir]
+> s
+You climb out of the reservoir.
+
+Edge of Reservoir
+         Edge of Reservoir
+>
+[Obj#336: Edge of Reservoir]
+> look
+Edge of Reservoir
+
+You’re on the edge of a big concrete reservoir, filled with dark water. A short flight of steps leads down to the ground.
+
+>
+[Obj#336: Edge of Reservoir]
+> d
+You descend the stairway.
+
+South of Reservoir
+
+The roadrunner scampers around your feet.
+                 South of Reservoir
+>
+[Obj#559: South of Reservoir]
+> u
+You climb the stairway.
+
+Edge of Reservoir
+                  Edge of Reservoir
+>
+[Obj#336: Edge of Reservoir]
+> d
+You descend the stairway.
+
+South of Reservoir
+
+The roadrunner scratches impatiently on the ground.
+                 South of Reservoir
+>
+[Obj#559: South of Reservoir]
+> ne
+You walk for several minutes.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+A third flare arcs across the sky and disappears.
+
+All at once the desert around you disappears in a flash of startling brilliance! You jam your hands over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 63 points out of 100, in 508 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> [Map written to map.html: 556 transitions, 133 locations, 65 notes]
+
+>#remap
+
+[Obj#439: The River]
+> quit
+

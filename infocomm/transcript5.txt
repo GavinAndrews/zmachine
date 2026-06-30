@@ -2808,7 +2808,7 @@ Vertex
 A long metal lever stands at a sharp angle to the platform.
 
 At the center of the platform stands a handsome antique sundial. The circumference is enclosed in a wide brass ring.
-          Vertex
+       
 >
 [Obj#316: Vertex]
 > raise lever
