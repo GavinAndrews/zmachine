@@ -1189,3 +1189,69 @@ NOTE	#174: Outside Blockhouse	dog
 #466: South of Tower	#382: Paved Road	s
 #382: Paved Road	#226: Paved Road	s
 #226: Paved Road	#437: Behind the Shed	s
+#327: Cottage	#213: Bluff	w
+#575: Bottom of Stairs	#400: Under Cliff	ne
+#400: Under Cliff	#306: Chasm’s Brink	w
+#306: Chasm’s Brink	#213: Bluff	ne
+#213: Bluff	#327: Cottage	e
+#327: Cottage	#213: Bluff	w
+#213: Bluff	#327: Cottage	e
+#327: Cottage	#213: Bluff	w
+#213: Bluff	#327: Cottage	e
+#327: Cottage	#213: Bluff	w
+#213: Bluff	#306: Chasm’s Brink	sw
+#306: Chasm’s Brink	#42: North Bog	w
+#42: North Bog	#575: Bottom of Stairs	se
+#575: Bottom of Stairs	#565: The River	se
+#565: The River	#501: Sand Bar	give silver coin to oarsman
+#501: Sand Bar	#5: Islet	s
+#5: Islet	#507: Shack	enter door
+#507: Shack	#158: Tower Platform	w
+#158: Tower Platform	#247: Tower Landing	d
+#247: Tower Landing	#146: Base of Tower	d
+#146: Base of Tower	#456: Shallow Crater	se
+#456: Shallow Crater	#225: Foothills	e
+#225: Foothills	#456: Shallow Crater	w
+#456: Shallow Crater	#122: Northwest of Ranch	se
+#122: Northwest of Ranch	#558: Northeast of Ranch	e
+#558: Northeast of Ranch	#292: North of Reservoir	e
+#292: North of Reservoir	#300: Under the Windmill	se
+#300: Under the Windmill	#540: Windmill	u
+#540: Windmill	#457: Reservoir	take all
+#457: Reservoir	#540: Windmill	turn lantern on
+#540: Windmill	#457: Reservoir	take all
+#457: Reservoir	#242: Underwater	d
+#242: Underwater	#457: Reservoir	u
+#457: Reservoir	#336: Edge of Reservoir	s
+#336: Edge of Reservoir	#559: South of Reservoir	d
+#559: South of Reservoir	#300: Under the Windmill	ne
+#300: Under the Windmill	#292: North of Reservoir	nw
+#292: North of Reservoir	#573: Front Yard	sw
+#573: Front Yard	#6: Front Deck	u
+#6: Front Deck	#442: Assembly Room	enter right door
+#442: Assembly Room	#352: Closet	n
+#352: Closet	#442: Assembly Room	s
+#442: Assembly Room	#460: Southeast Room	s
+#460: Southeast Room	#21: Kitchen	w
+#21: Kitchen	#240: Hallway	w
+#240: Hallway	#345: Icehouse	d
+#345: Icehouse	#240: Hallway	u
+#240: Hallway	#37: Southwest Yard	s
+#37: Southwest Yard	#515: Southwest of Ranch	sw
+#515: Southwest of Ranch	#122: Northwest of Ranch	n
+#122: Northwest of Ranch	#456: Shallow Crater	nw
+#456: Shallow Crater	#466: South of Tower	w
+#466: South of Tower	#219: Southwest of Tower	w
+#219: Southwest of Tower	#120: Paved Road	sw
+#120: Paved Road	#544: Crossroads	sw
+#544: Crossroads	#174: Outside Blockhouse	sw
+#544: Crossroads	#293: Paved Road	se
+#293: Paved Road	#226: Paved Road	se
+#226: Paved Road	#437: Behind the Shed	s
+#544: Crossroads	#293: Paved Road	se
+#293: Paved Road	#226: Paved Road	se
+#544: Crossroads	#174: Outside Blockhouse	sw
+#544: Crossroads	#174: Outside Blockhouse	sw
+#544: Crossroads	#293: Paved Road	se
+#293: Paved Road	#226: Paved Road	se
+#226: Paved Road	#437: Behind the Shed	s

@@ -1,0 +1,2644 @@
+
+[Transcript started: transcript31.txt]
+[Transcript started.]
+
+>transcript
+[Map logging to map.txt]
+
+>#map
+[Location display on]
+
+>#loc
+
+[Obj#327: Cottage]
+> look
+Cottage
+
+An iron cauldron, brown with the crust of years, squats in the middle of this tiny chamber. Coils of steam writhe from its depths, filling the air with a greasy stench that makes your nose wrinkle. Luckily, the front and back doors are both wide open.
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+There’s a clove of garlic here.
+
+>
+[Obj#327: Cottage]
+> take garlic
+You take the clove of garlic.
+
+The magpie screeches, "Awk! Fresh whole lizard."
+
+>
+[Obj#327: Cottage]
+> i
+You’re holding a clove of garlic, a birdcage, a cracked coconut, an axe and a walkie-talkie. Inside the birdcage you see a magpie. You’re wearing a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#327: Cottage]
+> put garlic in cauldron
+The clove of garlic disappears into the cauldron in a greasy puff of steam.
+
+The cauldron begins to bubble and fume more furiously than ever. Steam fills the cottage in a thick, oily cloud; and an ominous rumbling sound begins to rise from the cauldron’s depths.
+
+[Your score just went up by 1 point. The total is now 53 out of 100.]
+
+>
+[Obj#327: Cottage]
+> wait
+Time passes.
+
+The rumble in the cauldron grows to a shuddering roar that shakes the cottage with power. It feels as if something’s about to explode!
+
+"Killed in the light of a crescent moon."
+
+>
+[Obj#327: Cottage]
+> wait
+Time passes.
+
+With a deafening blast, the cauldron vomits up a volcano of energy that cremates you instantly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 53 points out of 100, in 273 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt12.sav
+
+[RESTORE completed.]
+                                                                                
+Cottage
+
+An iron cauldron, brown with the crust of years, squats in the middle of this tiny chamber. Coils of steam writhe from its depths, filling the air with a greasy stench that makes your nose wrinkle. Luckily, the front and back doors are both wide open.
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+There’s a clove of garlic here.
+Cottage
+>
+[Obj#327: Cottage]
+> take garlic
+Taken.
+
+>
+[Obj#327: Cottage]
+> put garlic in cauldron
+The clove of garlic disappears into the cauldron in a greasy puff of steam.
+
+The cauldron begins to bubble and fume more furiously than ever. Steam fills the cottage in a thick, oily cloud; and an ominous rumbling sound begins to rise from the cauldron’s depths.
+
+[Your score just went up by 1 point. The total is now 53 out of 100.]
+
+The magpie screeches, "Put garlic in cauldron."
+
+>
+[Obj#327: Cottage]
+> examine cauldron
+White coils of steam writhe mysteriously from the cauldron’s depths.
+
+The rumble in the cauldron grows to a shuddering roar that shakes the cottage with power. It feels as if something’s about to explode!
+
+>
+[Obj#327: Cottage]
+> put hand in cauldron
+You plunge your hand into the boiling liquid. Ouch!
+
+With a deafening blast, the cauldron vomits up a volcano of energy that cremates you instantly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 53 points out of 100, in 272 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt12.sav
+
+[RESTORE completed.]
+                                                                                
+Cottage
+
+An iron cauldron, brown with the crust of years, squats in the middle of this tiny chamber. Coils of steam writhe from its depths, filling the air with a greasy stench that makes your nose wrinkle. Luckily, the front and back doors are both wide open.
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+There’s a clove of garlic here.
+Cottage
+>
+[Obj#327: Cottage]
+> take cauldron
+The cauldron probably weighs several hundred pounds.
+
+>
+[Obj#327: Cottage]
+> take garlic
+Taken.
+
+"Awk! Fresh whole lizard. Awk!"
+
+>
+[Obj#327: Cottage]
+> put garlic in cauldron
+The clove of garlic disappears into the cauldron in a greasy puff of steam.
+
+The cauldron begins to bubble and fume more furiously than ever. Steam fills the cottage in a thick, oily cloud; and an ominous rumbling sound begins to rise from the cauldron’s depths.
+
+[Your score just went up by 1 point. The total is now 53 out of 100.]
+
+>
+[Obj#327: Cottage]
+> w
+Bluff
+
+The rumble in the cottage grows to a shuddering roar that shakes the ground with power. It feels as if something’s about to explode!
+
+"Awk! W," screeches the magpie.
+       Bluff
+>
+[Obj#213: Bluff]
+> wait
+Time passes.
+
+Boom! A powerful concussion sends you sprawling. Your ears ring as you regain your feet.
+
+>
+[Obj#213: Bluff]
+> e
+Cottage
+
+All that’s left of the book and pedestal is a pile of cinders.
+
+The magpie ruffles its feathers.
+     Cottage
+>
+[Obj#327: Cottage]
+> take all
+[To what are you referring?]
+
+>
+[Obj#327: Cottage]
+> examine cauldron
+Your amateur conjuring doesn’t seem to have damaged the cauldron very much.
+
+>
+[Obj#327: Cottage]
+> look in cauldron
+You see an emerald in the cauldron.
+
+"Killed in the light of a crescent moon. Awk!" says the magpie.
+
+>
+[Obj#327: Cottage]
+> take emerald
+You take the emerald out of the cauldron.
+
+[Your score just went up by 1 point. The total is now 54 out of 100.]
+
+>
+[Obj#327: Cottage]
+> i
+You’re holding an emerald, a birdcage, a cracked coconut, an axe and a walkie-talkie. Inside the birdcage you see a magpie. You’re wearing a wristwatch, and you have a credit card in your pocket.
+
+>
+[Obj#327: Cottage]
+> restore
+Restore from file: 
+> wt17.sav
+
+[RESTORE completed.]
+                                                                                
+Bottom of Stairs
+
+The triangular structure before you must be thousands of feet high. It divides the sky like a razor, casting a stern, precise shadow over the surrounding landscape.
+
+A narrow stairway climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every direction.
+
+You see a green boot, a red boot, a bandage, an axe, a lantern and a small coin here.
+Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> take green boot
+You take the green boot.
+
+>
+[Obj#575: Bottom of Stairs]
+> wear green boot
+You put on the green boot.
+
+The lemming in the cage trembles with agitation.
+
+>
+[Obj#575: Bottom of Stairs]
+> take red boot
+Taken.
+
+>
+[Obj#575: Bottom of Stairs]
+> wear red boot
+You put on the red boot.
+
+>
+[Obj#575: Bottom of Stairs]
+> i
+You’re holding a birdcage, a bag of crumbs, a walkie-talkie and a silver coin. Inside the birdcage you see a lemming. You’re wearing a burial shroud, a wristwatch, a green boot and a red boot, and you have a credit card in your pocket.
+
+>
+[Obj#575: Bottom of Stairs]
+> look
+Bottom of Stairs
+
+The triangular structure before you must be thousands of feet high. It divides the sky like a razor, casting a stern, precise shadow over the surrounding landscape.
+
+A narrow stairway climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every direction.
+
+You see a bandage, an axe, a lantern and a small coin here.
+
+>
+[Obj#575: Bottom of Stairs]
+> take lantern
+Taken.
+
+>
+[Obj#575: Bottom of Stairs]
+> ne
+Under Cliff
+                Under Cliff
+>
+[Obj#400: Under Cliff]
+> w
+Chasm’s Brink
+
+The lemming in the cage scratches its ear.
+           Chasm’s Brink
+>
+[Obj#306: Chasm’s Brink]
+> ne
+Bluff
+             Bluff
+>
+[Obj#213: Bluff]
+> e
+Cottage
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+There’s a clove of garlic here.
+     Cottage
+>
+[Obj#327: Cottage]
+> take garlic
+Your load is too heavy.
+
+>
+[Obj#327: Cottage]
+> w
+Bluff
+       Bluff
+>
+[Obj#213: Bluff]
+> drop lantern
+You put down the lantern.
+
+>
+[Obj#213: Bluff]
+> e
+Cottage
+
+A crudely drawn map hangs upon the wall.
+
+The biggest book you’ve ever seen lies open on a pedestal in the corner.
+
+There’s a clove of garlic here.
+     Cottage
+>
+[Obj#327: Cottage]
+> take lantern
+You can’t see any lantern here.
+
+>
+[Obj#327: Cottage]
+> take garlic
+Taken.
+
+>
+[Obj#327: Cottage]
+> put garlic in cauldron
+The clove of garlic disappears into the cauldron in a greasy puff of steam.
+
+The cauldron begins to bubble and fume more furiously than ever. Steam fills the cottage in a thick, oily cloud; and an ominous rumbling sound begins to rise from the cauldron’s depths.
+
+[Your score just went up by 1 point. The total is now 63 out of 100.]
+
+The lemming in the cage peers around nervously.
+
+>
+[Obj#327: Cottage]
+> w
+Bluff
+
+There’s a lantern here.
+
+The rumble in the cottage grows to a shuddering roar that shakes the ground with power. It feels as if something’s about to explode!
+       Bluff
+>
+[Obj#213: Bluff]
+> wait
+Time passes.
+
+Boom! A powerful concussion sends you sprawling. Your ears ring as you regain your feet.
+
+>
+[Obj#213: Bluff]
+> e
+Cottage
+
+All that’s left of the book and pedestal is a pile of cinders.
+     Cottage
+>
+[Obj#327: Cottage]
+> look in cauldron
+You see an emerald in the cauldron.
+
+>
+[Obj#327: Cottage]
+> take emerald
+You take the emerald out of the cauldron.
+
+[Your score just went up by 1 point. The total is now 64 out of 100.]
+
+The lemming in the cage washes its face with its paws.
+
+>
+[Obj#327: Cottage]
+> put emerald in green boot
+You press the emerald into the toe of the green boot. As you watch, the green leather closes around the jewel and absorbs it like melting wax.
+
+A shudder of ecstasy ripples up and down the length of the boot. It begins to glow with raw energy, brighter and brighter, until you shield your eyes from the glare.
+
+When you peek again, a tiny pair of wings has sprouted out of the heel.
+
+[Your score just went up by 1 point. The total is now 65 out of 100.]
+
+>
+[Obj#327: Cottage]
+> w
+Bluff
+
+There’s a lantern here.
+       Bluff
+>
+[Obj#213: Bluff]
+> take lantern
+You take the lantern.
+
+The lemming in the cage blinks at you.
+
+>
+[Obj#213: Bluff]
+> sw
+Chasm’s Brink
+     Chasm’s Brink
+>
+[Obj#306: Chasm’s Brink]
+> w
+North Bog
+
+A big Venus flytrap is growing nearby. Its crimson jaws are wide open, exposing a cavity that gleams with sweet-smelling ichor.
+
+The lemming in the cage sniffs the air inquisitively.
+
+A soap bubble appears high overhead. It hovers for a moment before it bursts with a flabby pop.
+             North Bog
+>
+[Obj#42: North Bog]
+> se
+Bottom of Stairs
+
+You see a bandage, an axe and a small coin here.
+         Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> save
+Save to file: 
+> wt81.sav
+
+[SAVE completed.]
+                                                                                Bottom of Stairs
+>
+[Obj#575: Bottom of Stairs]
+> i
+You’re holding a lantern, a birdcage, a bag of crumbs, a walkie-talkie and a silver coin. Inside the birdcage you see a lemming. You’re wearing a burial shroud, a wristwatch, a green boot and a red boot, and you have a credit card in your pocket.
+
+>
+[Obj#575: Bottom of Stairs]
+> se
+The River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+Footpaths wander north, west and northwest. Turning south, you see a magnificent hedge growing in an unbroken wall to the river’s edge.
+
+A dark shadow lies across the ground.
+
+The lemming in the cage trembles with agitation.
+
+As you peer across the river you notice a lone vessel gliding out of the fog.
+                The River
+>
+[Obj#565: The River]
+> wait
+Time passes.
+
+The dory draws closer to the shore. You can make out a dark oarsman at the stern.
+
+>
+[Obj#565: The River]
+> wait
+Time passes.
+
+The lemming in the cage scratches its ear.
+
+The oarsman guides his dory to a soundless landing.
+
+A puff of wind ripples the water.
+
+Eddies of sand swirl across the shore and coalesce into ghostly figures of dust and vapor. Before you can think or move, you find yourself amid a gathering of human shades, pale and gaunt, silent as death.
+
+>
+[Obj#565: The River]
+> enter dory
+The dory tips alarmingly as you climb aboard.
+
+The oarsman glances at the burial shroud you’re wearing with silent approval, and stretches out his skeletal hand expectantly.
+         The River, in the dory
+>
+[Obj#565: The River]
+> give silver coin to oarsman
+The oarsman accepts the silver coin and nods at you solemnly.
+
+The ghostly shades begin to converge on the dory. One by one, they step into the vessel, hand the oarsman a silver coin, and take a seat.
+
+The oarsman pushes away from the beach.
+
+Planes of mist close in around the dory, drawing it deeper into the gloom. The only sound is the rhythmic slurp of the oar as it plies the dark, oily water.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A vague outline emerges beyond the helm. It slowly resolves into a spit of sand, damp and cheerless in the surrounding murk.
+
+The oarsman swings the dory around and lands it with barely a jolt. One by one, the shades slink out of the vessel and drift across the sand like leaves on a breath of wind. Something in the oarsman’s gaze compels you to follow them.
+
+Sand Bar
+
+At first glance, this isolated spit seems hopelessly mired in the fog blowing in off the surrounding river. But the sand looks a bit firmer to the south.
+
+With practiced skill, the oarsman pushes his empty dory away from the shore.
+                      Sand Bar
+>
+[Obj#501: Sand Bar]
+> s
+Islet
+
+It’s impossible to see more than a dozen yards on this fogbound islet. The damp air makes your footsteps sound unnaturally loud as you trudge across the sand at the river’s edge.
+
+A lone toadstool has found a home at the water’s edge. The white door in its stem is wide open.
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the open door in the toadstool.
+
+"Gnomon is an island," giggles a voice in your ear.
+
+A roadrunner is perched on the toadstool’s crown. The ruby in its beak gleams enticingly.
+
+The roadrunner gives you a curt nod of acknowledgement. Then it flutters off the toadstool, prances through the open door and disappears.
+        Islet
+>
+[Obj#5: Islet]
+> enter door
+You take a deep breath, and step forward.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling. You can see an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+A paperback book is lying in the corner.
+
+A faint sound drifts in from somewhere outside. It sounded like a man’s voice.
+     Shack
+>
+[Obj#507: Shack]
+> take book
+Your load is too heavy.
+
+You hear the voice again, followed by a sharp clatter. There’s definitely somebody outside.
+
+>
+[Obj#507: Shack]
+> drop lantern
+You put down the lantern.
+
+Another voice joins the first. You strain to listen.
+
+"Towerside breaker closed. Check."
+
+"Pittsburg’s on the line, Lieutenant."
+
+"Give him to me, Joe."
+
+>
+[Obj#507: Shack]
+> read book
+You’d have to be holding the book to do that.
+
+The lemming in the cage peers around nervously.
+
+A gust of wind obscures the conversation outside for a few moments. You can pick out the words "focus," "groves" and "surveillance," but little else.
+
+>
+[Obj#507: Shack]
+> take book
+Taken.
+
+All at once the shack is filled with light! It seems to be coming from somewhere outside.
+
+"Lower!" shouts one of the voices.
+
+The light brightens to a hard, steady glare.
+
+>
+[Obj#507: Shack]
+> read book
+A slip of cardboard falls out of the book as you open it.
+
+You flip through the book, but nothing catches your eye.
+
+The wind rises again, drowning out the voices altogether.
+
+>
+[Obj#507: Shack]
+> take cardboard
+Taken.
+
+[Your score just went up by 1 point. The total is now 66 out of 100.]
+
+You hear a motor revving to life below. One of the voices barks something; there’s a squeal of rubber, and the motor fades into the distance. Then everything is quiet.
+
+>
+[Obj#507: Shack]
+> read cardboard
+The slip of cardboard seems to have been used as a bookmark. A stanza of poetry is typed on one side. The other side is covered with some kind of diagram.
+
+>
+[Obj#507: Shack]
+> read poem
+It’s a send-up of a famous Emerson poem.
+                                             From this crude lab that spawned a dud,     Their necks to Truman’s axe uncurled,       Lo, the embattled savants stood             And fired the flop heard ’round the world.                                                         -- Los Alamos ditty, circa 1945                                             
+>
+[Obj#507: Shack]
+> drop book
+Dropped.
+
+The lemming in the cage washes its face with its paws.
+
+>
+[Obj#507: Shack]
+> drop cardboard
+You drop the slip of cardboard.
+
+>
+[Obj#507: Shack]
+> take lantern
+You take the lantern.
+
+>
+[Obj#507: Shack]
+> w
+Tower Platform
+
+A metal rail is all that stands between you and a hundred-foot drop.
+
+Miles of barren desert lie below, gray and still in the gathering dawn. Black roads radiate outward like the hands of a great clock.
+
+This narrow platform opens east into a metal shack. A searchlight on the southwest horizon floods the platform in a raw white glare. A ladder is sticking up over the platform’s edge.
+     Tower Platform
+>
+[Obj#158: Tower Platform]
+> d
+You clutch the topmost rung of the ladder with sweating palms. Fighting back vertigo, you begin to feel your way downward.
+
+At last your foot touches a flat surface.
+
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues downward.
+
+The lemming in the cage blinks at you.
+              Tower Landing
+>
+[Obj#247: Tower Landing]
+> d
+You step back onto the ladder and inch yourself downward.
+
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+A familiar roadrunner is eyeing you from its perch on the box’s lid. The ruby in its beak gleams in the early dawn.
+
+With a skillful toss, the roadrunner deposits the ruby on the box. Then it leaps off and scampers eagerly around your feet. If you didn’t know better, you’d swear it was glad to see you.
+             Base of Tower
+>
+[Obj#146: Base of Tower]
+> feed roadrunner
+[with the bag of crumbs]
+
+You put the bag of crumbs on the ground beside the roadrunner.
+
+The roadrunner begins to peck at the crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> take ruby
+You take the ruby off the box.
+
+[Your score just went up by 1 point. The total is now 67 out of 100.]
+
+The roadrunner pecks contentedly at the crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> put ruby in red boot
+You press the ruby into the toe of the red boot. As you watch, the red leather closes around the jewel and absorbs it like melting wax.
+
+A shudder of ecstasy ripples up and down the length of the boot. It begins to glow with raw energy, brighter and brighter, until you shield your eyes from the glare.
+
+When you peek again, a tiny pair of wings has sprouted out of the heel.
+
+[Your score just went up by 1 point. The total is now 68 out of 100.]
+
+The roadrunner gobbles down the crumbs in the bag.
+
+>
+[Obj#146: Base of Tower]
+> save
+Save to file: 
+> wt82.sav
+
+[SAVE completed.]
+                                                                                Base of Tower
+>
+[Obj#146: Base of Tower]
+> se
+You put one boot forward.
+
+Whoosh! The desert streaks past in a dizzy rush of color.
+
+Shallow Crater
+
+You’re standing at the edge of a shallow depression in the desert floor, a few hundred feet across. The ground within is gray and pulverized, as if by a powerful explosion.
+
+A paved road leads southeast into the desert, and northwest towards the tower.
+
+Your boots are tingling with energy.
+             Shallow Crater
+>
+[Obj#456: Shallow Crater]
+> e
+Whoosh! The desert streaks past.
+
+Foothills
+
+Rugged foothills slope eastward, away from the desert wasteland.
+              Foothills
+>
+[Obj#225: Foothills]
+> w
+The ground blurs beneath your feet.
+
+Shallow Crater
+         Shallow Crater
+>
+[Obj#456: Shallow Crater]
+> se
+You streak across the desert.
+
+Northwest of Ranch
+
+You’re at the northwest corner of a stone wall. A closed iron gate leads in to a dilapidated ranch house.
+
+A paved road bears northwest into the desert. Other paths curve east and south, along the wall’s perimeter.
+              Northwest of Ranch
+>
+[Obj#122: Northwest of Ranch]
+> e
+You zoom over the landscape.
+
+Northeast of Ranch
+
+A dilapidated ranch house stands nearby, bounded by dusty patches of ground and a low stone wall. Paths lead south and east, on either side of a cement reservoir. A paved road bends off to the west.
+
+The lemming in the cage sniffs the air inquisitively.
+                  Northeast of Ranch
+>
+[Obj#558: Northeast of Ranch]
+> e
+The desert streaks past.
+
+North of Reservoir
+
+You’re resting at the north side of a big cement reservoir. Dusty paths curve west and southwest around a ranch house, and a trail leads southeast to the base of a windmill.
+                  North of Reservoir
+>
+[Obj#292: North of Reservoir]
+> drop all
+The lantern: Dropped.
+The birdcage: Dropped.
+The walkie-talkie: Dropped.
+
+>
+[Obj#292: North of Reservoir]
+> take lantern
+Taken.
+
+The roadrunner prances into view.
+
+>
+[Obj#292: North of Reservoir]
+> se
+The ground blurs beneath your feet.
+
+Under the Windmill
+
+A squat wooden windmill rises overhead, its dark timbers tapering up to a square landing that overlooks the east side of an adjacent reservoir.
+
+The bottom rungs of a ladder are just within reach.
+                  Under the Windmill
+>
+[Obj#300: Under the Windmill]
+> u
+The ladder squeaks and complains as you ascend.
+
+Windmill
+
+You’re on a square landing near the top of the windmill. The rotting planks underfoot creak ominously as you stand on them.
+
+A rickety ladder leads downward.
+
+Somebody has left a nice pair of binoculars at the landing’s edge.
+
+The landing creaks under your weight. It isn’t in very good shape.
+                  Windmill
+>
+[Obj#540: Windmill]
+> take all
+The pair of binoculars: A loud, plaintive creak makes you draw your hand back in alarm. You hold your breath as the landing sways uncertainly for a moment, back and forth. Then all is still.
+
+Slowly, carefully, you stretch your arm towards the pair of binoculars...
+
+Crack! The landing tips wildly under your feet. You manage a brief, hysterical shriek...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+... and your mouth fills with water.
+
+Reservoir
+
+You’re treading water in a big cement reservoir, too deep for your feet to touch bottom.
+        Reservoir
+>
+[Obj#457: Reservoir]
+> turn lantern on
+You can’t see any lantern here.
+
+>
+[Obj#457: Reservoir]
+> 
+[Undone.]
+
+> 
+[Obj#457: Reservoir]
+> 
+[Undone.]
+
+> 
+[Obj#540: Windmill]
+> i
+You’re holding a lantern. You’re wearing a burial shroud, a wristwatch, a green boot and a red boot, and you have a credit card in your pocket.
+
+>
+[Obj#540: Windmill]
+> turn lantern on
+Click. The lantern emits a warm, yellow beam.
+
+The landing emits a wooden moan of discomfort.
+
+>
+[Obj#540: Windmill]
+> take all
+The pair of binoculars: A loud, plaintive creak makes you draw your hand back in alarm. You hold your breath as the landing sways uncertainly for a moment, back and forth. Then all is still.
+
+Slowly, carefully, you stretch your arm towards the pair of binoculars...
+
+Crack! The landing tips wildly under your feet. You manage a brief, hysterical shriek...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+... and your mouth fills with water.
+
+Reservoir
+
+You’re treading water in a big cement reservoir, too deep for your feet to touch bottom.
+        Reservoir
+>
+[Obj#457: Reservoir]
+> d
+[holding your breath first]
+
+You sink below the surface.
+
+Underwater
+
+Suspended particles of muck swirl in the beam of the lantern. It’s impossible to see more than a few feet.
+
+You see a pair of binoculars and a lantern (providing light) here.
+         Underwater
+>
+[Obj#242: Underwater]
+> take all
+The pair of binoculars: Taken.
+
+[Your score just went up by 1 point. The total is now 69 out of 100.]
+The lantern: Taken.
+
+>
+[Obj#242: Underwater]
+> turn lantern off
+You turn off the lantern’s switch.
+
+It’s completely dark.
+
+You can’t hold your breath much longer.
+          Darkness
+>
+[Obj#242: Underwater]
+> u
+You rise to the surface, gasping for air.
+
+Reservoir
+        Reservoir
+>
+[Obj#457: Reservoir]
+> s
+You climb out of the reservoir.
+
+Edge of Reservoir
+
+You’re on the edge of a big concrete reservoir, filled with dark water. A short flight of steps leads down to the ground.
+         Edge of Reservoir
+>
+[Obj#336: Edge of Reservoir]
+> d
+You descend the stairway.
+
+South of Reservoir
+
+You’re near the south side of a big cement reservoir. Dusty paths lead west and northwest around a ranch house. Another curves northeast, to the base of a windmill.
+
+A stairway climbs up to the reservoir’s edge.
+
+The roadrunner reappears at your side.
+                 South of Reservoir
+>
+[Obj#559: South of Reservoir]
+> ne
+You streak across the desert.
+
+Under the Windmill
+
+A squat wooden windmill rises overhead, its dark timbers tapering up to a broken landing that’s tilted over the east side of an adjacent reservoir.
+
+The bottom rungs of a ladder are just within reach.
+                  Under the Windmill
+>
+[Obj#300: Under the Windmill]
+> save
+Save to file: 
+> wt83.sav
+
+[SAVE completed.]
+                                                                                Under the Windmill
+>
+[Obj#300: Under the Windmill]
+> u
+The landing overhead is broken. You can’t climb up to it anymore.
+
+>
+[Obj#300: Under the Windmill]
+> nw
+You zoom over the landscape.
+
+North of Reservoir
+
+You see a walkie-talkie and a birdcage here. Inside the birdcage you see a lemming.
+                  North of Reservoir
+>
+[Obj#292: North of Reservoir]
+> take all
+The birdcage: Taken.
+The walkie-talkie: Your load is too heavy.
+
+>
+[Obj#292: North of Reservoir]
+> i
+You’re holding a birdcage, a lantern and a pair of binoculars. Inside the birdcage you see a lemming. You’re wearing a burial shroud, a wristwatch, a green boot and a red boot, and you have a credit card in your pocket.
+
+>
+[Obj#292: North of Reservoir]
+> drop shroud
+[taking off the burial shroud first]
+
+Dropped.
+
+The roadrunner hops into view.
+
+>
+[Obj#292: North of Reservoir]
+> take walkie
+[the walkie-talkie]
+
+Taken.
+
+>
+[Obj#292: North of Reservoir]
+> save
+Save to file: 
+> wt84.sav
+
+[SAVE completed.]
+                                                                                North of Reservoir
+>
+[Obj#292: North of Reservoir]
+> score
+[Your score is 69 points out of 100, in 444 moves. This gives you the rank of Historian.]
+
+>
+[Obj#292: North of Reservoir]
+> sw
+Front Yard
+
+This patch of ground lies between the ranch house to the west, and a huge cement reservoir to the east. Well-worn paths curve north and south, around the stone wall enclosing the house. Other trails skirt the reservoir on either side.
+
+A ramp slopes up through a gap in the stone wall, ending on a raised deck.
+
+The roadrunner races into view.
+                  Front Yard
+>
+[Obj#573: Front Yard]
+> u
+You ascend the ramp.
+
+Front Deck
+
+You’re on a raised deck attached to the east side of the ranch house. Two closed doors, one at the deck’s left corner and one at the right, lead inside. A gentle ramp slopes down to the front yard.
+
+The roadrunner reappears at your side.
+          Front Deck
+>
+[Obj#6: Front Deck]
+> open right door
+You open the right door.
+
+>
+[Obj#6: Front Deck]
+> enter right door
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. An open front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+          Assembly Room
+>
+[Obj#442: Assembly Room]
+> n
+You beat a hasty retreat from the rattlesnake.
+
+Closet
+
+There’s barely enough room to turn around in this puny closet. Its single open door is in the south wall.
+
+The rattlesnake lurks just outside the open door. It looks as if it’s about to strike!
+
+The lemming covers its face with its paws and trembles.
+             Closet
+>
+[Obj#352: Closet]
+> close door
+You close the closet door.
+
+It’s completely dark.
+      Darkness
+>
+[Obj#352: Closet]
+> turn lantern on
+Click. The lantern emits a warm, yellow beam.
+
+Closet
+
+There’s barely enough room to turn around in this puny closet. Its single closed door is in the south wall.
+
+The lemming in the cage trembles with agitation.
+        Closet
+>
+[Obj#352: Closet]
+> open cage
+You open the birdcage.
+
+The lemming scrambles out of the cage and plops to the floor.
+
+The lantern’s light is getting dimmer.
+
+The lemming emits a squeak of terror.
+
+>
+[Obj#352: Closet]
+> open door
+You open the closet door.
+
+The rattlesnake lurks just outside the open door. It looks as if it’s about to strike!
+
+The lemming scrambles through the open closet door, straight into the fangs of the rattlesnake.
+
+The lemming twitches for a while as the venom takes effect. Then the snake drags its prize across the floor, shakes its tail once for effect and slithers out of sight.
+
+[Your score just went up by 3 points. The total is now 72 out of 100.]
+
+>
+[Obj#352: Closet]
+> s
+Assembly Room
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+The roadrunner reappears.
+      Assembly Room
+>
+[Obj#442: Assembly Room]
+> turn lantern off
+You turn off the lantern’s switch.
+
+>
+[Obj#442: Assembly Room]
+> move paper
+As you lift the edge of the paper a screwdriver rolls out from underneath and lands on your foot. Ouch!
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#442: Assembly Room]
+> take screwdriver
+You take the screwdriver.
+
+[Your score just went up by 1 point. The total is now 73 out of 100.]
+
+>
+[Obj#442: Assembly Room]
+> s
+Southeast Room
+
+Something about this room gives you the impression that it was hastily vacated. The front door in the east wall is closed. Other exits lead north and west.
+
+The roadrunner struts to your side.
+             Southeast Room
+>
+[Obj#460: Southeast Room]
+> w
+Kitchen
+
+Disconnected stove pipes and an open cupboard with a steak knife in it are the only evidence of this room’s identity. A closed outer door in the west wall leads out to a hallway. Other exits lead north and east.
+
+The roadrunner prances into view.
+              Kitchen
+>
+[Obj#21: Kitchen]
+> take knife
+Your load is too heavy.
+
+>
+[Obj#21: Kitchen]
+> i
+You’re holding a screwdriver, a walkie-talkie, a birdcage, a lantern and a pair of binoculars. You’re wearing a wristwatch, a green boot and a red boot, and you have a credit card in your pocket.
+
+>
+[Obj#21: Kitchen]
+> drop cage
+You put down the birdcage.
+
+The roadrunner scratches impatiently on the ground.
+
+>
+[Obj#21: Kitchen]
+> wear binoculars
+You put on the pair of binoculars.
+
+>
+[Obj#21: Kitchen]
+> take knife
+You take the steak knife out of the cupboard.
+
+[Your score just went up by 1 point. The total is now 74 out of 100.]
+
+The roadrunner looks up at you inquisitively.
+
+>
+[Obj#21: Kitchen]
+> save
+Save to file: 
+> wt85.sav
+
+[SAVE completed.]
+                                                                                Kitchen
+>
+[Obj#21: Kitchen]
+> w
+The outer door is closed.
+
+>
+[Obj#21: Kitchen]
+> s
+There’s no exit that way.
+
+>
+[Obj#21: Kitchen]
+> d
+There’s no exit that way.
+
+>
+[Obj#21: Kitchen]
+> w
+The outer door is closed.
+
+>
+[Obj#21: Kitchen]
+> open outer door
+You open the outer door.
+
+>
+[Obj#21: Kitchen]
+> w
+Hallway
+
+This short hallway opens outdoors to the north and south. An open outer door leads east into a kitchen. Turning west, you see a stairway descending into darkness.
+
+The roadrunner hops to your side.
+       Hallway
+>
+[Obj#240: Hallway]
+> d
+You descend the stairway.
+
+Icehouse
+
+The walls of this underground chamber are cool and clammy to your touch. It feels as if nobody’s been down here for a long time.
+
+Gray light seeps in from a stairway climbing east.
+
+The roadrunner reappears.
+       Icehouse
+>
+[Obj#345: Icehouse]
+> d
+There’s no exit that way.
+
+>
+[Obj#345: Icehouse]
+> look
+Icehouse
+
+The walls of this underground chamber are cool and clammy to your touch. It feels as if nobody’s been down here for a long time.
+
+Gray light seeps in from a stairway climbing east.
+
+The roadrunner emits a brief squawk.
+
+>
+[Obj#345: Icehouse]
+> u
+You trudge up the stairway.
+
+Hallway
+
+The roadrunner races to your side.
+        Hallway
+>
+[Obj#240: Hallway]
+> look
+Hallway
+
+This short hallway opens outdoors to the north and south. An open outer door leads east into a kitchen. Turning west, you see a stairway descending into darkness.
+
+The roadrunner watches every move you make.
+
+>
+[Obj#240: Hallway]
+> s
+Southwest Yard
+
+This is the southwest corner of the ranch house, just inside the stone wall. A hallway opens north into the house, and a closed iron gate in the wall leads southwest.
+
+The roadrunner struts into view.
+       Southwest Yard
+>
+[Obj#37: Southwest Yard]
+> w
+The stone wall blocks your path.
+
+>
+[Obj#37: Southwest Yard]
+> open iron gate
+You open the iron gate.
+
+>
+[Obj#37: Southwest Yard]
+> w
+The stone wall blocks your path.
+
+>
+[Obj#37: Southwest Yard]
+> sw
+Southwest of Ranch
+
+The low stone wall before you is almost as run-down as the ranch house inside it. Paths follow the wall’s perimeter to the north and east, and an open iron gate leads northeast into a dusty yard.
+
+The roadrunner reappears.
+              Southwest of Ranch
+>
+[Obj#515: Southwest of Ranch]
+> n
+The desert streaks past.
+
+Northwest of Ranch
+                  Northwest of Ranch
+>
+[Obj#122: Northwest of Ranch]
+> nw
+The ground blurs beneath your feet.
+
+Shallow Crater
+                  Shallow Crater
+>
+[Obj#456: Shallow Crater]
+> w
+You streak across the desert.
+
+South of Tower
+
+A paved road bears north towards the tower, and south into the desert.
+              South of Tower
+>
+[Obj#466: South of Tower]
+> w
+You zoom over the landscape.
+
+Southwest of Tower
+
+A paved road leads northeast towards the tower, and southwest into the desert. There’s also a dirt trail bearing north.
+              Southwest of Tower
+>
+[Obj#219: Southwest of Tower]
+> sw
+The desert streaks past.
+
+Paved Road
+
+The tower is a faint outline on the northeast horizon. The paved road leading from it continues southwest, into the desert.
+                  Paved Road
+>
+[Obj#120: Paved Road]
+> sw
+The ground blurs beneath your feet.
+
+Crossroads
+
+A paved road bears off in a straight northeast/southwest line. Another road bends southeast, and a dirt trail peters off to the northwest.
+          Crossroads
+>
+[Obj#544: Crossroads]
+> save
+Save to file: 
+> wt86.sav
+
+[SAVE completed.]
+                                                                                Crossroads
+>
+[Obj#544: Crossroads]
+> sw
+You streak across the desert.
+
+Outside Blockhouse
+
+The military blockhouse by the roadside is squat and windowless. A powerful searchlight, mounted on the roof, directs an intense beam towards the northeast horizon.
+
+A great, big German shepherd is curled up against the blockhouse.
+
+The German shepherd twitches.
+          Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> look through binoculars
+Everything appears much closer.
+
+>
+[Obj#174: Outside Blockhouse]
+> look at blockhouse using binoculars
+You focus the binoculars on the blockhouse.
+
+It appears much closer now.
+
+The roadrunner prances to your side.
+
+The roadrunner notices the German shepherd and perches on its massive head. You stifle a shriek as the silly bird cocks its head this way and that, wondering what to make of the sleeping monster. Then it gives you a sly glance, ruffles its feathers and begins to peck at the sand fleas behind the dog’s ears.
+
+>
+[Obj#174: Outside Blockhouse]
+> enter blockhouse
+The blockhouse doesn’t have any windows or entrances you can see from here.
+
+The shepherd lifts an eyelid and peeks up at the bird perched on its head. Its expression hardens from sleepy distraction to annoyance... and then to outrage!
+
+In a single motion, the monster bounds to its feet and snaps at the roadrunner. The bird digs deep and holds on for dear life as the dog whirls in a frenzied circle, trying to throw off the squalling pest.
+
+Then the dog sees you.
+
+"Nice puppy," you mumble.
+
+The 110-pound "puppy" strains against its chain, opens its toothy maw and starts a commotion worthy of an American Kennel Club convention.
+
+You stumble backwards to hide as the searchlight sweeps across the road.
+
+"Hold it!" The shout doesn’t say anything about a gun. But you raise your hands over your head, just to be safe.
+
+The figure near the blockhouse studies you in the searchlight’s glare. "You... you some kinda spy or somethin’?"
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 481 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt86.sav
+
+[RESTORE completed.]
+                                                                                
+Crossroads
+
+A paved road bears off in a straight northeast/southwest line. Another road bends southeast, and a dirt trail peters off to the northwest.
+Crossroads
+>
+[Obj#544: Crossroads]
+> se
+You streak across the desert.
+
+Paved Road
+
+A paved road leads southeast and northwest across the desert.
+          Paved Road
+>
+[Obj#293: Paved Road]
+> se
+You zoom over the landscape.
+
+Paved Road
+
+A paved road bears north and south across the desert. Another road bends northwest, and a dirt trail wanders off to the southeast.
+          Paved Road
+>
+[Obj#226: Paved Road]
+> s
+The desert streaks past.
+
+You run for cover at the sight of people nearby.
+
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+          Behind the Shed
+>
+[Obj#437: Behind the Shed]
+> use binoculars
+How do you intend to do that?
+
+>
+[Obj#437: Behind the Shed]
+> use binoculars to look at shed
+[This story can’t understand the word "look" when you use it that way.]
+
+>
+[Obj#437: Behind the Shed]
+> enter
+You can’t go that way.
+
+The roadrunner reappears.
+
+>
+[Obj#437: Behind the Shed]
+> look
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#437: Behind the Shed]
+> enter
+You can’t go that way.
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#437: Behind the Shed]
+> enter shelter
+You start to move towards the shelter, but hesistate when you notice one of the GIs fingering a rifle.
+
+Do you want to continue anyway?
+
+[Please type YES or NO.] >
+[Obj#437: Behind the Shed]
+> yes
+
+You march confidently away from the safety of the shed.
+
+The GI with the rifle leaps out of his jeep. "Wha... Who the hell is that?"
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 485 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt86.sav
+
+[RESTORE completed.]
+                                                                                
+Crossroads
+
+A paved road bears off in a straight northeast/southwest line. Another road bends southeast, and a dirt trail peters off to the northwest.
+Crossroads
+>
+[Obj#544: Crossroads]
+> se
+You streak across the desert.
+
+Paved Road
+
+A paved road leads southeast and northwest across the desert.
+          Paved Road
+>
+[Obj#293: Paved Road]
+> se
+You zoom over the landscape.
+
+Paved Road
+
+A paved road bears north and south across the desert. Another road bends northwest, and a dirt trail wanders off to the southeast.
+          Paved Road
+>
+[Obj#226: Paved Road]
+> s
+The desert streaks past.
+
+You dodge into hiding at the sound of a nearby voice.
+
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+          Behind the Shed
+>
+[Obj#437: Behind the Shed]
+> look at entrance
+Bright light spills across the desert from the open south entrance.
+
+>
+[Obj#437: Behind the Shed]
+> i
+You’re holding a steak knife, a screwdriver, a walkie-talkie and a lantern. You’re wearing a pair of binoculars, a wristwatch, a green boot and a red boot, and you have a credit card in your pocket.
+
+>
+[Obj#437: Behind the Shed]
+> examine shed
+It’s a nondescript metal structure, just large enough to hide behind.
+
+The roadrunner prances into view.
+
+>
+[Obj#437: Behind the Shed]
+> look
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#437: Behind the Shed]
+> examine shelter
+The square shelter is built of heavy timber, covered with a thick layer of earth on the north side. Bright light spills across the desert from the open south entrance.
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#437: Behind the Shed]
+> s
+You start to move south, but hesistate when you notice one of the GIs fingering a pair of binoculars.
+
+Do you want to continue anyway?
+
+[Please type YES or NO.] >
+[Obj#437: Behind the Shed]
+> no
+
+"Smart move," sighs a voice in your ear.
+
+>
+[Obj#437: Behind the Shed]
+> e
+You slip quietly around the back of the shed.
+
+Desert
+
+A lone road wanders northwest across the empty desert.
+
+The roadrunner hops to your side.
+               Desert
+>
+[Obj#577: Desert]
+> w
+The ground blurs beneath your feet.
+
+You run for cover at the sound of a nearby voice.
+
+Behind the Shed
+      Behind the Shed
+>
+[Obj#437: Behind the Shed]
+> look
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+
+A thin man steps into view, standing just inside the shelter’s entrance.
+
+>
+[Obj#437: Behind the Shed]
+> examine thin man
+The thin man near the shelter is drawn and haggard; it looks as if he hasn’t slept in days.
+                                                       Distant and dead resuscitate,                         They show me as the dial or move as the hands of me,  I am the clock myself.                                                                                                                           -- Walt Whitman                                                       
+>
+[Obj#437: Behind the Shed]
+> wait
+Time passes.
+
+The roadrunner races into view.
+
+Pushing back his porkpie hat, the thin man peers up at the overcast sky.
+
+>
+[Obj#437: Behind the Shed]
+> wait
+Time passes.
+
+You notice the thin man glancing at his watch.
+
+>
+[Obj#437: Behind the Shed]
+> wait
+Time passes.
+
+The roadrunner scampers around your feet.
+
+The thin man draws thoughtfully on his pipe.
+
+>
+[Obj#437: Behind the Shed]
+> s
+You start to move south, but hesistate when you notice one of the GIs fingering a pair of binoculars.
+
+Do you want to continue anyway?
+
+[Please type YES or NO.] >
+[Obj#437: Behind the Shed]
+> no
+
+A voice in your ear intones, "Had me worried there."
+
+>
+[Obj#437: Behind the Shed]
+> wait
+Time passes.
+
+With a nervous sigh, the thin man disappears into the shelter.
+
+>
+[Obj#437: Behind the Shed]
+> look in shelter
+The shelter appears to be crowded with men and equipment. But you can’t see much detail from where you’re standing.
+
+The roadrunner scratches impatiently on the ground.
+
+>
+[Obj#437: Behind the Shed]
+> use binoculars to look in shelter
+[This story can’t understand the word "look" when you use it that way.]
+
+>
+[Obj#437: Behind the Shed]
+> use binoculars
+How do you intend to do that?
+
+>
+[Obj#437: Behind the Shed]
+> using binoculars
+[There aren’t any verbs in that sentence.]
+
+>
+[Obj#437: Behind the Shed]
+> binoculars look in shed
+[Please try to express that another way.]
+
+>
+[Obj#437: Behind the Shed]
+> binoculars shed
+[There aren’t any verbs in that sentence.]
+
+>
+[Obj#437: Behind the Shed]
+> look through binoculars at shed
+You focus the binoculars on the shed.
+
+It appears much closer now.
+
+The roadrunner looks up at you inquisitively.
+
+>
+[Obj#437: Behind the Shed]
+> examine shed with binoculars
+It appears much closer now.
+
+>
+[Obj#437: Behind the Shed]
+> look
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+
+The roadrunner emits a brief squawk.
+
+>
+[Obj#437: Behind the Shed]
+> save
+Save to file: 
+> wt87.sav
+
+[SAVE completed.]
+                                                                                Behind the Shed
+>
+[Obj#437: Behind the Shed]
+> ne
+You start to move towards the shelter, but hesistate when you notice one of the GIs fingering a rifle.
+
+Do you want to continue anyway?
+
+[Please type YES or NO.] >
+[Obj#437: Behind the Shed]
+> yes
+
+You march confidently away from the safety of the shed.
+
+The GI with the rifle leaps out of his jeep. "Wha... Who the hell is that?"
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 497 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt87.sav
+
+[RESTORE completed.]
+                                                                                
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+
+The roadrunner watches every move you make.
+Behind the Shed
+>
+[Obj#437: Behind the Shed]
+> examine shelter
+The square shelter is built of heavy timber, covered with a thick layer of earth on the north side. Bright light spills across the desert from the open south entrance.
+
+>
+[Obj#437: Behind the Shed]
+> crawl to shelter
+You start to move towards the shelter, but hesistate when you notice one of the GIs fingering a rifle.
+
+Do you want to continue anyway?
+
+[Please type YES or NO.] >
+[Obj#437: Behind the Shed]
+> no
+
+A voice in your ear snickers, "Thanks."
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#437: Behind the Shed]
+> ask roadrunner to go to shelter
+The roadrunner cocks its head as if to say, "After you."
+
+>
+[Obj#437: Behind the Shed]
+> restore
+Restore from file: 
+> wt83.sab
+
+[File not found: wt83.sab]
+
+[RESTORE failed.]
+                                                                                Behind the Shed
+>
+[Obj#437: Behind the Shed]
+> restore
+Restore from file: 
+> wt84.sav
+
+[RESTORE completed.]
+                                                                                
+North of Reservoir
+
+You’re resting at the north side of a big cement reservoir. Dusty paths curve west and southwest around a ranch house, and a trail leads southeast to the base of a windmill.
+
+The roadrunner scampers around your feet.
+
+There’s a burial shroud here.
+North of Reservoir
+>
+[Obj#292: North of Reservoir]
+> restore
+Restore from file: 
+> wt85.sav
+
+[RESTORE completed.]
+                                                                                
+Kitchen
+
+Disconnected stove pipes and an open cupboard are the only evidence of this room’s identity. A closed outer door in the west wall leads out to a hallway. Other exits lead north and east.
+
+The roadrunner emits a brief squawk.
+
+There’s a birdcage here.
+Kitchen
+>
+[Obj#21: Kitchen]
+> restore
+Restore from file: 
+> wt86.sav
+
+[RESTORE completed.]
+                                                                                
+Crossroads
+
+A paved road bears off in a straight northeast/southwest line. Another road bends southeast, and a dirt trail peters off to the northwest.
+Crossroads
+>
+[Obj#544: Crossroads]
+> sw
+You streak across the desert.
+
+Outside Blockhouse
+
+The military blockhouse by the roadside is squat and windowless. A powerful searchlight, mounted on the roof, directs an intense beam towards the northeast horizon.
+
+A great, big German shepherd is curled up against the blockhouse.
+
+The German shepherd twitches.
+          Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> wake dog
+The German shepherd lifts a heavy eyelid at the sound of your voice. It peers at you for a moment, yawns and drifts back to sleep.
+
+You wipe the sweat from your brow.
+
+Click. A set of long, white fangs snaps together, an inch shy of your left leg. Looks as if sleepytime is over.
+
+"Nice puppy," you mumble.
+
+The 110-pound "puppy" strains against its chain, opens its toothy maw and starts a commotion worthy of an American Kennel Club convention.
+
+You stumble backwards to hide as the searchlight sweeps across the road.
+
+"Hold it!" The shout doesn’t say anything about a gun. But you raise your hands over your head, just to be safe.
+
+The figure near the blockhouse studies you in the searchlight’s glare. "You... you some kinda spy or somethin’?"
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 479 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt84.sav
+
+[RESTORE completed.]
+                                                                                
+North of Reservoir
+
+You’re resting at the north side of a big cement reservoir. Dusty paths curve west and southwest around a ranch house, and a trail leads southeast to the base of a windmill.
+
+The roadrunner scampers around your feet.
+
+There’s a burial shroud here.
+North of Reservoir
+>
+[Obj#292: North of Reservoir]
+> restore
+Restore from file: 
+> wt85.sav
+
+[RESTORE completed.]
+                                                                                
+Kitchen
+
+Disconnected stove pipes and an open cupboard are the only evidence of this room’s identity. A closed outer door in the west wall leads out to a hallway. Other exits lead north and east.
+
+The roadrunner emits a brief squawk.
+
+There’s a birdcage here.
+Kitchen
+>
+[Obj#21: Kitchen]
+> restore
+Restore from file: 
+> wt86.sav
+
+[RESTORE completed.]
+                                                                                
+Crossroads
+
+A paved road bears off in a straight northeast/southwest line. Another road bends southeast, and a dirt trail peters off to the northwest.
+Crossroads
+>
+[Obj#544: Crossroads]
+> sw
+You streak across the desert.
+
+Outside Blockhouse
+
+The military blockhouse by the roadside is squat and windowless. A powerful searchlight, mounted on the roof, directs an intense beam towards the northeast horizon.
+
+A great, big German shepherd is curled up against the blockhouse.
+
+The German shepherd twitches.
+          Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> save
+Save to file: 
+> wt88.sav
+
+[SAVE completed.]
+                                                                                Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> kill dog with knife
+Boldly, fearlessly, you march up to the dozing shepherd and draw back the steak knife to deal the sleeping monster a mighty blow (or as mighty a blow as you can expect from a steak knife). But the dog snorts a bit in its sleep, and you bravely scurry backwards several dozen yards.
+
+>
+[Obj#174: Outside Blockhouse]
+> feed dog
+[What do you want to feed the dog with?]
+
+>
+[Obj#174: Outside Blockhouse]
+> i
+You’re not holding yourself.
+
+The roadrunner prances into view.
+
+The roadrunner notices the German shepherd and perches on its massive head. You stifle a shriek as the silly bird cocks its head this way and that, wondering what to make of the sleeping monster. Then it gives you a sly glance, ruffles its feathers and begins to peck at the sand fleas behind the dog’s ears.
+
+>
+[Obj#174: Outside Blockhouse]
+> i
+You’re holding a steak knife, a screwdriver, a walkie-talkie and a lantern. You’re wearing a pair of binoculars, a wristwatch, a green boot and a red boot, and you have a credit card in your pocket.
+
+>
+[Obj#174: Outside Blockhouse]
+> take roadrunner
+Taken.
+
+The roadrunner pecks angrily at your fingers with its sharp beak. Ouch!
+
+>
+[Obj#174: Outside Blockhouse]
+> feed roadrunner to dog
+You deposit the roadrunner under the sleeping dog’s nose.
+
+The roadrunner remembers an especially tasty sand flea, returns to the dog’s head and continues pecking where it left off.
+
+The shepherd lifts an eyelid and peeks up at the bird. Its expression hardens from sleepy distraction to annoyance... and then to outrage!
+
+In a single motion, the monster bounds to its feet and snaps at the roadrunner. The bird digs deep and holds on for dear life as the dog whirls in a frenzied circle, trying to throw off the squalling pest.
+
+Then the dog sees you.
+
+"Nice puppy," you mumble.
+
+The 110-pound "puppy" strains against its chain, opens its toothy maw and starts a commotion worthy of an American Kennel Club convention.
+
+You stumble backwards to hide as the searchlight sweeps across the road.
+
+"Hold it!" The shout doesn’t say anything about a gun. But you raise your hands over your head, just to be safe.
+
+The figure near the blockhouse studies you in the searchlight’s glare. "You... you some kinda spy or somethin’?"
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 482 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt85.sav
+
+[RESTORE completed.]
+                                                                                
+Kitchen
+
+Disconnected stove pipes and an open cupboard are the only evidence of this room’s identity. A closed outer door in the west wall leads out to a hallway. Other exits lead north and east.
+
+The roadrunner emits a brief squawk.
+
+There’s a birdcage here.
+Kitchen
+>
+[Obj#21: Kitchen]
+> restore
+Restore from file: 
+> wt86.sav
+
+[RESTORE completed.]
+                                                                                
+Crossroads
+
+A paved road bears off in a straight northeast/southwest line. Another road bends southeast, and a dirt trail peters off to the northwest.
+Crossroads
+>
+[Obj#544: Crossroads]
+> se
+You streak across the desert.
+
+Paved Road
+
+A paved road leads southeast and northwest across the desert.
+          Paved Road
+>
+[Obj#293: Paved Road]
+> se
+You zoom over the landscape.
+
+Paved Road
+
+A paved road bears north and south across the desert. Another road bends northwest, and a dirt trail wanders off to the southeast.
+          Paved Road
+>
+[Obj#226: Paved Road]
+> s
+The desert streaks past.
+
+You run for cover at the sound of a nearby voice.
+
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+          Behind the Shed
+>
+[Obj#437: Behind the Shed]
+> save
+Save to file: 
+> wt89.sav
+
+[SAVE completed.]
+                                                                                Behind the Shed
+>
+[Obj#437: Behind the Shed]
+> wait
+Time passes.
+
+The roadrunner prances to your side.
+
+>
+[Obj#437: Behind the Shed]
+> wait
+Time passes.
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#437: Behind the Shed]
+> wait
+Time passes.
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#437: Behind the Shed]
+> examine shelter
+The square shelter is built of heavy timber, covered with a thick layer of earth on the north side. Bright light spills across the desert from the open south entrance.
+
+A thin man steps into view, standing just inside the shelter’s entrance.
+
+>
+[Obj#437: Behind the Shed]
+> examine thin man
+The thin man near the shelter is drawn and haggard; it looks as if he hasn’t slept in days.
+                                                       Distant and dead resuscitate,                         They show me as the dial or move as the hands of me,  I am the clock myself.                                                                                                                           -- Walt Whitman                                                       
+>
+[Obj#437: Behind the Shed]
+> examine thin man
+The thin man near the shelter is drawn and haggard; it looks as if he hasn’t slept in days.
+
+The roadrunner scampers around your feet.
+
+Pushing back his porkpie hat, the thin man peers up at the overcast sky.
+
+>
+[Obj#437: Behind the Shed]
+> examine thin man
+The thin man near the shelter is drawn and haggard; it looks as if he hasn’t slept in days.
+
+You notice the thin man glancing at his watch.
+
+>
+[Obj#437: Behind the Shed]
+> talk to thin man
+The thin man starts at the sound of your voice. "Who said that?" he cries.
+
+The surrounding GIs snap to alert attention, peering into the gloom. Nobody moves for a long moment. Then, one by one, they begin to relax... all but the closest GI, who stares in the direction of the shed nervously.
+
+>
+[Obj#437: Behind the Shed]
+> enter
+You can’t go that way.
+
+The roadrunner scratches impatiently on the ground.
+
+The thin man draws thoughtfully on his pipe.
+
+>
+[Obj#437: Behind the Shed]
+> s
+You start to move south, but hesistate when you notice one of the GIs fingering a pair of binoculars.
+
+Do you want to continue anyway?
+
+[Please type YES or NO.] >
+[Obj#437: Behind the Shed]
+> yes
+
+You march confidently away from the safety of the shed.
+
+The GI drops his binoculars and leaps out of his jeep. "Wha... Who the hell is that?"
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 491 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt89.sav
+
+[RESTORE completed.]
+                                                                                
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+Behind the Shed
+>
+[Obj#437: Behind the Shed]
+> examine shelter
+The square shelter is built of heavy timber, covered with a thick layer of earth on the north side. Bright light spills across the desert from the open south entrance.
+
+>
+[Obj#437: Behind the Shed]
+> examine shelter
+The square shelter is built of heavy timber, covered with a thick layer of earth on the north side. Bright light spills across the desert from the open south entrance.
+
+The roadrunner prances into view.
+
+>
+[Obj#437: Behind the Shed]
+> wait
+Time passes.
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#437: Behind the Shed]
+> wait
+Time passes.
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#437: Behind the Shed]
+> wait
+Time passes.
+
+A thin man steps into view, standing just inside the shelter’s entrance.
+
+>
+[Obj#437: Behind the Shed]
+> examine thin man
+The thin man near the shelter is drawn and haggard; it looks as if he hasn’t slept in days.
+                                                       Distant and dead resuscitate,                         They show me as the dial or move as the hands of me,  I am the clock myself.                                                                                                                           -- Walt Whitman                                                       
+>
+[Obj#437: Behind the Shed]
+> examine thin man
+The thin man near the shelter is drawn and haggard; it looks as if he hasn’t slept in days.
+
+The roadrunner scampers around your feet.
+
+Pushing back his porkpie hat, the thin man peers up at the overcast sky.
+
+>
+[Obj#437: Behind the Shed]
+> talk to man
+The thin man starts at the sound of your voice. "Who said that?" he cries.
+
+The surrounding GIs snap to alert attention, peering into the gloom. Nobody moves for a long moment. Then, one by one, they begin to relax... all but the closest GI, who stares in the direction of the shed nervously.
+
+>
+[Obj#437: Behind the Shed]
+> talk to man
+The thin man points in your direction at the sound of your voice. "The shed!" he cries.
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 489 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> [Map written to map.html: 542 transitions, 133 locations, 67 notes]
+
+>#remap
+
+[Obj#439: The River]
+> quit
+
