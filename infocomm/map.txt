@@ -269,8 +269,9 @@ NOTE	#146: Base of Tower	locked padlock
 NOTE	#540: Windmill	binoculars
 #540: Windmill	#457: Reservoir	take binoculars
 #457: Reservoir	#242: Underwater	d
-#242: Underwater	#457: Reservoir	take soggy bag
-NOTE	#242: Underwater	soggy bag
+#242: Underwater	#457: Reservoir	take binoculars
+NOTE	#242: Underwater	use lantern
+NOTE	#242: Underwater	take binoculars
 #457: Reservoir	#336: Edge of Reservoir	s
 #336: Edge of Reservoir	#559: South of Reservoir	d
 #146: Base of Tower	#290: East of Tower	e
@@ -292,7 +293,6 @@ NOTE	#442: Assembly Room	need roadrunner for snake
 #146: Base of Tower	#456: Shallow Crater	se
 #456: Shallow Crater	#122: Northwest of Ranch	se
 #122: Northwest of Ranch	#239: Desert	sw
-#239: Desert	#122: Northwest of Ranch	ne
 #122: Northwest of Ranch	#297: Back Yard	enter
 #297: Back Yard	#240: Hallway	s
 #240: Hallway	#345: Icehouse	d
@@ -316,8 +316,6 @@ NOTE	#21: Kitchen	steak knife
 #146: Base of Tower	#219: Southwest of Tower	sw
 #146: Base of Tower	#296: North of Tower	n
 #296: North of Tower	#465: Desert	n
-#465: Desert	#159: Desert	w
-#159: Desert	#480: Desert	s
 #1: Northwest Room	#12: Spare Room	N
 #1: Northwest Room	#442: Assembly Room	E
 #1: Northwest Room	#21: Kitchen	S
@@ -378,7 +376,6 @@ NOTE	#21: Kitchen	steak knife
 #122: Northwest of Ranch	#456: Shallow Crater	NW
 #122: Northwest of Ranch	#297: Back Yard	IN
 #131: Underground	#87: Underground	W
-#132: Desert	#174: Outside Blockhouse	NW
 #139: Northeast Yard	#214: Bedroom	W
 #139: Northeast Yard	#214: Bedroom	IN
 #144: Round Pond	#531: Inverness Terrace	N
@@ -397,7 +394,6 @@ NOTE	#21: Kitchen	steak knife
 #146: Base of Tower	#210: Northwest of Tower	NW
 #158: Tower Platform	#507: Shack	E
 #158: Tower Platform	#507: Shack	IN
-#159: Desert	#480: Desert	SE
 #174: Outside Blockhouse	#497: Desert	N
 #174: Outside Blockhouse	#544: Crossroads	NE
 #174: Outside Blockhouse	#132: Desert	E
@@ -627,7 +623,6 @@ NOTE	#21: Kitchen	steak knife
 #460: Southeast Room	#21: Kitchen	W
 #462: Arboretum	#418: Arborvitaes	E
 #462: Arboretum	#580: Arborvitaes	W
-#465: Desert	#180: Foothills	E
 #466: South of Tower	#146: Base of Tower	N
 #466: South of Tower	#290: East of Tower	NE
 #466: South of Tower	#456: Shallow Crater	E
@@ -656,17 +651,11 @@ NOTE	#21: Kitchen	steak knife
 #488: Under Platform	#56: Tundra	SW
 #488: Under Platform	#188: Tundra	W
 #488: Under Platform	#380: Tundra	NW
-#497: Desert	#480: Desert	N
-#497: Desert	#311: West of Tower	NE
 #501: Sand Bar	#5: Islet	S
 #507: Shack	#158: Tower Platform	W
 #509: Tundra	#119: Tundra	N
 #509: Tundra	#585: Tundra	W
 #509: Tundra	#488: Under Platform	NW
-#510: Desert	#382: Paved Road	E
-#510: Desert	#382: Paved Road	SE
-#510: Desert	#293: Paved Road	S
-#510: Desert	#293: Paved Road	SW
 #515: Southwest of Ranch	#122: Northwest of Ranch	N
 #515: Southwest of Ranch	#37: Southwest Yard	NE
 #515: Southwest of Ranch	#372: Southeast of Ranch	E
@@ -730,9 +719,6 @@ NOTE	#21: Kitchen	steak knife
 #575: Bottom of Stairs	#426: Forest Clearing	SW
 #575: Bottom of Stairs	#319: South Bog	W
 #575: Bottom of Stairs	#42: North Bog	NW
-#577: Desert	#239: Desert	N
-#577: Desert	#222: Foothills	NE
-#577: Desert	#222: Foothills	E
 #580: Arborvitaes	#317: Trellises	NE
 #580: Arborvitaes	#462: Arboretum	E
 #585: Tundra	#488: Under Platform	N
@@ -1109,8 +1095,6 @@ NOTE	#146: Base of Tower	put ruby in red boot
 #247: Tower Landing	#146: Base of Tower	d
 #146: Base of Tower	#456: Shallow Crater	se
 #456: Shallow Crater	#122: Northwest of Ranch	run se
-#122: Northwest of Ranch	#297: Back Yard	enter
-#297: Back Yard	#158: Tower Platform	restore
 #158: Tower Platform	#247: Tower Landing	d
 #247: Tower Landing	#146: Base of Tower	d
 NOTE	#146: Base of Tower	put ruby in red recess
@@ -1118,16 +1102,12 @@ NOTE	#146: Base of Tower	put ruby in red recess
 #290: East of Tower	#225: Foothills	e
 #225: Foothills	#290: East of Tower	w
 #290: East of Tower	#225: Foothills	e
-#225: Foothills	#439: The River	nw
-#439: The River	#158: Tower Platform	restore
 #158: Tower Platform	#247: Tower Landing	d
 #247: Tower Landing	#146: Base of Tower	d
 #146: Base of Tower	#290: East of Tower	e
 #290: East of Tower	#225: Foothills	e
 #225: Foothills	#290: East of Tower	nw
 #290: East of Tower	#225: Foothills	e
-#225: Foothills	#439: The River	s
-#439: The River	#158: Tower Platform	restore
 #158: Tower Platform	#507: Shack	e
 #507: Shack	#158: Tower Platform	w
 #158: Tower Platform	#247: Tower Landing	d
@@ -1149,3 +1129,63 @@ NOTE	#146: Base of Tower	put ruby in red recess
 #559: South of Reservoir	#336: Edge of Reservoir	u
 #336: Edge of Reservoir	#559: South of Reservoir	d
 #559: South of Reservoir	#439: The River	ne
+#146: Base of Tower	#290: East of Tower	e
+#290: East of Tower	#225: Foothills	e
+#225: Foothills	#180: Foothills	n
+#180: Foothills	#225: Foothills	s
+#146: Base of Tower	#290: East of Tower	e
+#290: East of Tower	#225: Foothills	ne
+#225: Foothills	#222: Foothills	s
+#146: Base of Tower	#456: Shallow Crater	se
+#456: Shallow Crater	#122: Northwest of Ranch	se
+#122: Northwest of Ranch	#558: Northeast of Ranch	e
+#558: Northeast of Ranch	#292: North of Reservoir	e
+#292: North of Reservoir	#300: Under the Windmill	se
+#300: Under the Windmill	#540: Windmill	u
+#540: Windmill	#457: Reservoir	take binoculars then d
+#575: Bottom of Stairs	#565: The River	se
+#565: The River	#501: Sand Bar	give silver coin to oarsman
+#501: Sand Bar	#5: Islet	s
+#5: Islet	#507: Shack	enter door
+#507: Shack	#158: Tower Platform	w
+#158: Tower Platform	#247: Tower Landing	d
+#247: Tower Landing	#146: Base of Tower	d
+#146: Base of Tower	#456: Shallow Crater	se
+#456: Shallow Crater	#122: Northwest of Ranch	se
+#122: Northwest of Ranch	#558: Northeast of Ranch	e
+#558: Northeast of Ranch	#292: North of Reservoir	e
+#292: North of Reservoir	#300: Under the Windmill	se
+#507: Shack	#158: Tower Platform	w
+#158: Tower Platform	#247: Tower Landing	d
+#247: Tower Landing	#146: Base of Tower	d
+#146: Base of Tower	#456: Shallow Crater	se
+#456: Shallow Crater	#122: Northwest of Ranch	se
+#122: Northwest of Ranch	#558: Northeast of Ranch	e
+#558: Northeast of Ranch	#292: North of Reservoir	e
+#292: North of Reservoir	#300: Under the Windmill	se
+#300: Under the Windmill	#540: Windmill	u
+#540: Windmill	#457: Reservoir	take binoculars
+#457: Reservoir	#242: Underwater	d
+#242: Underwater	#457: Reservoir	u
+#507: Shack	#158: Tower Platform	w
+#507: Shack	#158: Tower Platform	w
+#158: Tower Platform	#247: Tower Landing	d
+#247: Tower Landing	#146: Base of Tower	d
+#146: Base of Tower	#219: Southwest of Tower	sw
+#219: Southwest of Tower	#120: Paved Road	sw
+#120: Paved Road	#544: Crossroads	sw
+#544: Crossroads	#174: Outside Blockhouse	sw
+#544: Crossroads	#174: Outside Blockhouse	sw
+#544: Crossroads	#174: Outside Blockhouse	sw
+NOTE	#174: Outside Blockhouse	dog
+#544: Crossroads	#293: Paved Road	se
+#293: Paved Road	#226: Paved Road	se
+#544: Crossroads	#293: Paved Road	se
+#293: Paved Road	#226: Paved Road	se
+#507: Shack	#158: Tower Platform	w
+#158: Tower Platform	#247: Tower Landing	d
+#247: Tower Landing	#146: Base of Tower	d
+#146: Base of Tower	#466: South of Tower	s
+#466: South of Tower	#382: Paved Road	s
+#382: Paved Road	#226: Paved Road	s
+#226: Paved Road	#437: Behind the Shed	s

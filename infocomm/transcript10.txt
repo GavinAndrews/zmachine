@@ -1,0 +1,382 @@
+
+[Transcript started: transcript10.txt]
+[Transcript started.]
+
+>transcript
+[Map logging to map.txt]
+
+>#map
+[Location display on]
+
+>#loc
+
+[Obj#146: Base of Tower]
+> e
+You amble for several minutes.
+
+East of Tower
+
+This bleak stretch of desert lies between the tower to the west, and a range of mountains to the east.
+             East of Tower
+>
+[Obj#290: East of Tower]
+> e
+You walk for several minutes.
+
+Foothills
+
+Rugged foothills slope eastward, away from the desert wasteland.
+
+The roadrunner prances to your side.
+             Foothills
+>
+[Obj#225: Foothills]
+> e
+The foothills are much too steep and rugged to climb.
+
+>
+[Obj#225: Foothills]
+> ne
+The foothills are much too steep and rugged to climb.
+
+>
+[Obj#225: Foothills]
+> n
+You trudge along for several minutes.
+
+Foothills
+
+The trackless desert slopes upward to join the foothills in the east.
+
+The roadrunner reappears at your side.
+         Foothills
+>
+[Obj#180: Foothills]
+> e
+The foothills are much too steep and rugged to climb.
+
+>
+[Obj#180: Foothills]
+> ne
+The foothills are much too steep and rugged to climb.
+
+>
+[Obj#180: Foothills]
+> s
+You amble for several minutes.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+
+Foothills
+
+The roadrunner hops into view.
+         Foothills
+>
+[Obj#225: Foothills]
+> s
+You walk along for several minutes.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+A third flare arcs across the sky and disappears.
+
+All at once the desert around you disappears in a flash of startling brilliance! You jam your hands over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 64 points out of 100, in 503 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt33.sav
+
+[RESTORE completed.]
+                                                                                
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner gobbles down the crumbs in the bag.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+There’s a bag of crumbs here.
+Base of Tower
+>
+[Obj#146: Base of Tower]
+> e
+You amble for several minutes.
+
+East of Tower
+
+This bleak stretch of desert lies between the tower to the west, and a range of mountains to the east.
+             East of Tower
+>
+[Obj#290: East of Tower]
+> ne
+You walk along for several minutes.
+
+Foothills
+
+Rugged foothills slope eastward, away from the desert wasteland.
+
+The roadrunner prances into view.
+             Foothills
+>
+[Obj#225: Foothills]
+> s
+You trudge for several minutes.
+
+Foothills
+
+A range of foothills slopes up to meet the mountains in the east.
+
+The roadrunner hops to your side.
+         Foothills
+>
+[Obj#222: Foothills]
+> s
+You amble along for several minutes.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+
+Desert
+
+A lone road wanders northwest across the empty desert.
+
+The roadrunner races to your side.
+         Desert
+>
+[Obj#577: Desert]
+> restore
+Restore from file: 
+> wt33.sav
+
+[RESTORE completed.]
+                                                                                
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner gobbles down the crumbs in the bag.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+There’s a bag of crumbs here.
+Base of Tower
+>
+[Obj#146: Base of Tower]
+> se
+You amble for several minutes.
+
+Shallow Crater
+
+You’re standing at the edge of a shallow depression in the desert floor, a few hundred feet across. The ground within is gray and pulverized, as if by a powerful explosion.
+
+A paved road leads southeast into the desert, and northwest towards the tower.
+             Shallow Crater
+>
+[Obj#456: Shallow Crater]
+> se
+You walk along for several minutes.
+
+Northwest of Ranch
+
+You’re at the northwest corner of a stone wall. A closed iron gate leads in to a dilapidated ranch house.
+
+A paved road bears northwest into the desert. Other paths curve east and south, along the wall’s perimeter.
+
+The roadrunner reappears at your side.
+              Northwest of Ranch
+>
+[Obj#122: Northwest of Ranch]
+> e
+You trudge along for several minutes.
+
+Northeast of Ranch
+
+A dilapidated ranch house stands nearby, bounded by dusty patches of ground and a low stone wall. Paths lead south and east, on either side of a cement reservoir. A paved road bends off to the west.
+
+The roadrunner prances to your side.
+                  Northeast of Ranch
+>
+[Obj#558: Northeast of Ranch]
+> e
+You amble for several minutes.
+
+North of Reservoir
+
+You’re resting at the north side of a big cement reservoir. Dusty paths curve west and southwest around a ranch house, and a trail leads southeast to the base of a windmill.
+
+The roadrunner hops to your side.
+                  North of Reservoir
+>
+[Obj#292: North of Reservoir]
+> [Map written to map.html: 559 transitions, 133 locations, 65 notes]
+
+>#remap
+
+[Obj#292: North of Reservoir]
+> save
+Save to file: 
+> wtXX.sav
+
+[SAVE completed.]
+                                                                                North of Reservoir
+>
+[Obj#292: North of Reservoir]
+> s
+The reservoir blocks your path.
+
+>
+[Obj#292: North of Reservoir]
+> se
+You walk for several minutes.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+
+Under the Windmill
+
+A squat wooden windmill rises overhead, its dark timbers tapering up to a square landing that overlooks the east side of an adjacent reservoir.
+
+The bottom rungs of a ladder are just within reach.
+
+The roadrunner races to your side.
+                  Under the Windmill
+>
+[Obj#300: Under the Windmill]
+> drop all
+The ruby: Dropped.
+The birdcage: Dropped.
+The walkie-talkie: Dropped.
+
+The lemming in the cage washes its face with its paws.
+
+>
+[Obj#300: Under the Windmill]
+> u
+The ladder squeaks and complains as you ascend.
+
+Windmill
+
+You’re on a square landing near the top of the windmill. The rotting planks underfoot creak ominously as you stand on them.
+
+A rickety ladder leads downward.
+
+Somebody has left a nice pair of binoculars at the landing’s edge.
+
+The landing creaks under your weight. It isn’t in very good shape.
+                  Windmill
+>
+[Obj#540: Windmill]
+> take binoculars then d
+A loud, plaintive creak makes you draw your hand back in alarm. You hold your breath as the landing sways uncertainly for a moment, back and forth. Then everything is quiet.
+
+Slowly, carefully, you stretch your arm towards the pair of binoculars...
+
+Crack! The landing tips wildly under your feet. You manage a brief, hysterical shriek...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+... and your mouth fills with water.
+
+Reservoir
+
+You’re treading water in a big cement reservoir, too deep for your feet to touch bottom.
+        Reservoir
+>
+[Obj#457: Reservoir]
+> d
+[holding your breath first]
+
+You sink below the surface.
+
+It’s completely dark.
+         Darkness
+>
+[Obj#242: Underwater]
+> take all
+It’s too dark and murky to see.
+
+>
+[Obj#242: Underwater]
+> restart
+[Your score is 64 points out of 100, in 495 moves. This gives you the rank of Historian.]
+
+Are you sure you want to restart the story?
+
+[Please type YES or NO.] >
+[Obj#242: Underwater]
+> quit
+
+[Please type YES or NO.] >
+[Obj#242: Underwater]
+> yes
+                                                                                
+Copyright (C)1986 Infocom, Inc. All rights reserved.
+
+[Press any key to begin.]
+                                                                                
+Sharp words between the superpowers. Tanks in East Berlin. And now, reports the BBC, rumors of a satellite blackout. It’s enough to spoil your continental breakfast.
+
+But the world will have to wait. This is the last day of your $599 London Getaway Package, and you’re determined to soak up as much of that authentic English ambience as you can. So you’ve left the tour bus behind, ditched the camera and escaped to Hyde Park for a contemplative stroll through the Kensington Gardens.
+
+Palace Gate
+
+A tide of perambulators surges north along the crowded Broad Walk. Shaded glades stretch away to the northeast, and a hint of color marks the western edge of the Flower Walk.
+Palace Gate
+>
