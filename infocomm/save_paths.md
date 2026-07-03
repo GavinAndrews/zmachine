@@ -1,0 +1,16830 @@
+# Save-game command reconstructions
+
+For every `.sav` file this repo has transcript evidence for, the full sequence of player commands (no `save`/`restore`/`restart`/`quit` or debug `#` commands) needed to reach that save's exact state, starting from the true beginning of the game. Reconstructed by resolving every save/restore in `transcript1-7,10,21,31.txt` and `transcript.txt` into a branching tree and walking the one path that ends at each save, discarding everything on abandoned branches.
+
+## wt-chain saves (transcript1-7,10,21,31.txt)
+
+Gaps detected between transcript files (none affected a reachable save below -- each was overwritten by a restore before anything was saved in the gap):
+
+- transcript5.txt (ends 'The River') -> transcript6.txt (starts 'Palace Gate')
+- transcript7.txt (ends 'The River') -> transcript10.txt (starts 'Base of Tower')
+- transcript10.txt (ends 'Underwater') -> transcript21.txt (starts 'Palace Gate')
+- transcript21.txt (ends 'Behind the Shed') -> transcript31.txt (starts 'Cottage')
+
+| Save file | Source transcript | Line | Location | Commands | Reachable |
+|---|---|---|---|---|---|
+| `wt1.sav` | transcript1.txt | 401 | Meadow | 35 | Yes |
+| `wt2.sav` | transcript2.txt | 350 | Bottom of Stairs | 78 | Yes |
+| `wt3.sav` | transcript3.txt | 320 | Bottom of Stairs | 115 | Yes |
+| `wt4.sav` | transcript4.txt | 394 | Bottom of Stairs | 155 | Yes |
+| `wt6.sav` | transcript4.txt | 590 | Earth Orbit | 172 | Yes |
+| `wt7.sav` | transcript4.txt | 897 | Earth Orbit, on a satellite | 175 | Yes |
+| `wt8.sav` | transcript4.txt | 971 | Waterfall | 178 | Yes |
+| `wt9.sav` | transcript4.txt | 1018 | Bottom of Stairs | 185 | Yes |
+| `wt10.sav` | transcript5.txt | 457 | South Beach | 207 | Yes |
+| `wt11.sav` | transcript5.txt | 894 | Cottage | 268 | Yes |
+| `wt12.sav` | transcript5.txt | 1880 | Cottage | 292 | Yes |
+| `wt13.sav` | transcript5.txt | 1353 | Cottage | 298 | Yes |
+| `wt14.sav` | transcript5.txt | 2066 | Platform | 313 | Yes |
+| `wt16.sav` | transcript5.txt | 2608 | Bottom of Stairs | 365 | Yes |
+| `wt17.sav` | transcript5.txt | 2935 | Bottom of Stairs | 404 | Yes |
+| `wt19.sav` | transcript5.txt | 3167 | Shack | 420 | Yes |
+| `wt21.sav` | transcript5.txt | 3426 | Northwest Room | 445 | Yes |
+| `wt31.sav` | transcript6.txt | 176 | Shack | 412 | Yes |
+| `wt32.sav` | transcript6.txt | 260 | Shack | 420 | Yes |
+| `wt33.sav` | transcript6.txt | 325 | Base of Tower | 425 | Yes |
+| `wt34.sav` | transcript6.txt | 613 | Northwest Room | 433 | Yes |
+| `wt41.sav` | transcript6.txt | 964 | Tower Platform | 423 | Yes |
+| `wt42.sav` | transcript6.txt | 1109 | Northwest Room | 437 | Yes |
+| `wt43.sav` | transcript6.txt | 1594 | Front Deck | 448 | Yes |
+| `wt44.sav` | transcript6.txt | 1875 | Kitchen | 468 | Yes |
+| `wt51.sav` | transcript7.txt | 318 | Base of Tower | 453 | Yes |
+| `wt61.sav` | transcript7.txt | 1208 | Base of Tower | 441 | Yes |
+| `wtXX.sav` | transcript10.txt | 259 | North of Reservoir | 429 | Yes |
+| `wt71.sav` | transcript21.txt | 211 | Shack | 417 | Yes |
+| `wt72.sav` | transcript21.txt | 735 | South of Reservoir | 442 | Yes |
+| `wt73.sav` | transcript21.txt | 1216 | Base of Tower | 425 | Yes |
+| `wt74.sav` | transcript21.txt | 1257 | Crossroads | 428 | Yes |
+| `wt75.sav` | transcript21.txt | 1831 | Behind the Shed | 429 | Yes |
+| `wt81.sav` | transcript31.txt | 494 | Bottom of Stairs | 433 | Yes |
+| `wt82.sav` | transcript31.txt | 803 | Base of Tower | 458 | Yes |
+| `wt83.sav` | transcript31.txt | 1082 | Under the Windmill | 480 | Yes |
+| `wt84.sav` | transcript31.txt | 1131 | North of Reservoir | 486 | Yes |
+| `wt85.sav` | transcript31.txt | 1324 | Kitchen | 507 | Yes |
+| `wt86.sav` | transcript31.txt | 1496 | Crossroads | 529 | Yes |
+| `wt87.sav` | transcript31.txt | 1962 | Behind the Shed | 558 | Yes |
+| `wt88.sav` | transcript31.txt | 2245 | Outside Blockhouse | 530 | Yes |
+| `wt89.sav` | transcript31.txt | 2405 | Behind the Shed | 532 | Yes |
+
+### `wt1.sav`
+
+35 commands, ending at **Meadow** (transcript1.txt:401):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+
+### `wt2.sav`
+
+78 commands, ending at **Bottom of Stairs** (transcript2.txt:350):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+
+### `wt3.sav`
+
+115 commands, ending at **Bottom of Stairs** (transcript3.txt:320):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+
+### `wt4.sav`
+
+155 commands, ending at **Bottom of Stairs** (transcript4.txt:394):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+
+### `wt6.sav`
+
+172 commands, ending at **Earth Orbit** (transcript4.txt:590):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+
+### `wt7.sav`
+
+175 commands, ending at **Earth Orbit, on a satellite** (transcript4.txt:897):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+
+### `wt8.sav`
+
+178 commands, ending at **Waterfall** (transcript4.txt:971):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+
+### `wt9.sav`
+
+185 commands, ending at **Bottom of Stairs** (transcript4.txt:1018):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+
+### `wt10.sav`
+
+207 commands, ending at **South Beach** (transcript5.txt:457):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+
+### `wt11.sav`
+
+268 commands, ending at **Cottage** (transcript5.txt:894):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+
+### `wt12.sav`
+
+292 commands, ending at **Cottage** (transcript5.txt:1880):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+
+### `wt13.sav`
+
+298 commands, ending at **Cottage** (transcript5.txt:1353):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take coconut
+273. put milk in cauldron
+274. drop coconut
+275. w
+276. se
+277. e
+278. w
+279. w
+280. examine hive
+281. take honey from hive
+282. put hand in hive and take honey
+283. sw
+284. look
+285. ne
+286. put hand in hive
+287. sw
+288. nw
+289. i
+290. e
+291. ne
+292. e
+293. put honey in cauldron
+294. put hand in cauldron
+295. i
+296. take skink
+297. put skink in cauldron
+298. put garlic in cauldron
+
+### `wt14.sav`
+
+313 commands, ending at **Platform** (transcript5.txt:2066):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+
+### `wt16.sav`
+
+365 commands, ending at **Bottom of Stairs** (transcript5.txt:2608):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+
+### `wt17.sav`
+
+404 commands, ending at **Bottom of Stairs** (transcript5.txt:2935):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+
+### `wt19.sav`
+
+420 commands, ending at **Shack** (transcript5.txt:3167):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. se
+406. wait
+407. wait
+408. enter dory
+409. give silver coin
+410. give silver coin to oarsman
+411. s
+412. enter door
+413. take book
+414. examine book
+415. read book
+416. look
+417. examine cardboard
+418. read poetry
+419. look
+420. open enclosure
+
+### `wt21.sav`
+
+445 commands, ending at **Northwest Room** (transcript5.txt:3426):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. se
+406. wait
+407. wait
+408. enter dory
+409. give silver coin
+410. give silver coin to oarsman
+411. s
+412. enter door
+413. take book
+414. examine book
+415. read book
+416. look
+417. examine cardboard
+418. read poetry
+419. look
+420. open enclosure
+421. d
+422. look
+423. w
+424. d
+425. d
+426. take ruby
+427. feed bird with crumbs
+428. look
+429. i
+430. examine walkie
+431. press rocker switch
+432. raise antenna
+433. press orange button
+434. take walkie
+435. sw
+436. e
+437. e
+438. se
+439. enter
+440. open iron gate
+441. enter
+442. open screen door
+443. e
+444. read map
+445. s
+
+### `wt31.sav`
+
+412 commands, ending at **Shack** (transcript6.txt:176):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. i
+406. se
+407. wait
+408. wait
+409. enter dory
+410. give silver coin to oarsman
+411. s
+412. enter door
+
+### `wt32.sav`
+
+420 commands, ending at **Shack** (transcript6.txt:260):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. i
+406. se
+407. wait
+408. wait
+409. enter dory
+410. give silver coin to oarsman
+411. s
+412. enter door
+413. take book
+414. read book
+415. take cardboard
+416. read cardboard
+417. read poem
+418. look
+419. drop book
+420. drop cardboard
+
+### `wt33.sav`
+
+425 commands, ending at **Base of Tower** (transcript6.txt:325):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. i
+406. se
+407. wait
+408. wait
+409. enter dory
+410. give silver coin to oarsman
+411. s
+412. enter door
+413. take book
+414. read book
+415. take cardboard
+416. read cardboard
+417. read poem
+418. look
+419. drop book
+420. drop cardboard
+421. w
+422. d
+423. d
+424. feed roadrunner
+425. take ruby
+
+### `wt34.sav`
+
+433 commands, ending at **Northwest Room** (transcript6.txt:613):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. i
+406. se
+407. wait
+408. wait
+409. enter dory
+410. give silver coin to oarsman
+411. s
+412. enter door
+413. take book
+414. read book
+415. take cardboard
+416. read cardboard
+417. read poem
+418. look
+419. drop book
+420. drop cardboard
+421. w
+422. d
+423. d
+424. feed roadrunner
+425. take ruby
+426. se
+427. se
+428. open iron gate
+429. enter
+430. e
+431. open screen door
+432. e
+433. s
+
+### `wt41.sav`
+
+423 commands, ending at **Tower Platform** (transcript6.txt:964):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. put on boots
+406. take red boot
+407. put on red boot
+408. take green boot
+409. put on green boot
+410. i
+411. se
+412. wait
+413. wait
+414. enter dory
+415. give silver coin to oarsman
+416. s
+417. enter door
+418. take book
+419. read book
+420. take cardboard
+421. read cardboard
+422. read poem
+423. w
+
+### `wt42.sav`
+
+437 commands, ending at **Northwest Room** (transcript6.txt:1109):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. put on boots
+406. take red boot
+407. put on red boot
+408. take green boot
+409. put on green boot
+410. i
+411. se
+412. wait
+413. wait
+414. enter dory
+415. give silver coin to oarsman
+416. s
+417. enter door
+418. take book
+419. read book
+420. take cardboard
+421. read cardboard
+422. read poem
+423. w
+424. d
+425. no
+426. look
+427. d
+428. d
+429. feed roadrunner
+430. take ruby
+431. se
+432. se
+433. open iron gate
+434. enter
+435. open screen door
+436. e
+437. s
+
+### `wt43.sav`
+
+448 commands, ending at **Front Deck** (transcript6.txt:1594):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. put on boots
+406. take red boot
+407. put on red boot
+408. take green boot
+409. put on green boot
+410. i
+411. se
+412. wait
+413. wait
+414. enter dory
+415. give silver coin to oarsman
+416. s
+417. enter door
+418. take book
+419. read book
+420. take cardboard
+421. read cardboard
+422. read poem
+423. w
+424. d
+425. no
+426. look
+427. d
+428. d
+429. feed roadrunner
+430. take ruby
+431. se
+432. se
+433. open iron gate
+434. enter
+435. open screen door
+436. e
+437. s
+438. n
+439. e
+440. e
+441. s
+442. open outside door
+443. open door
+444. s
+445. e
+446. s
+447. open left door
+448. open right door
+
+### `wt44.sav`
+
+468 commands, ending at **Kitchen** (transcript6.txt:1875):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. put on boots
+406. take red boot
+407. put on red boot
+408. take green boot
+409. put on green boot
+410. i
+411. se
+412. wait
+413. wait
+414. enter dory
+415. give silver coin to oarsman
+416. s
+417. enter door
+418. take book
+419. read book
+420. take cardboard
+421. read cardboard
+422. read poem
+423. w
+424. d
+425. no
+426. look
+427. d
+428. d
+429. feed roadrunner
+430. take ruby
+431. se
+432. se
+433. open iron gate
+434. enter
+435. open screen door
+436. e
+437. s
+438. n
+439. e
+440. e
+441. s
+442. open outside door
+443. open door
+444. s
+445. e
+446. s
+447. open left door
+448. open right door
+449. throw cage into right door
+450. enter right door
+451. n
+452. close door
+453. open cage
+454. open door
+455. look
+456. s
+457. read paper
+458. take all
+459. take wire
+460. look
+461. examine debris
+462. examine wire
+463. examine brown paper
+464. move paper
+465. take screwdriver
+466. w
+467. s
+468. take knife
+
+### `wt51.sav`
+
+453 commands, ending at **Base of Tower** (transcript7.txt:318):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. put on boots
+406. take red boot
+407. put on red boot
+408. take green boot
+409. put on green boot
+410. i
+411. se
+412. wait
+413. wait
+414. enter dory
+415. give silver coin to oarsman
+416. s
+417. enter door
+418. take book
+419. read book
+420. take cardboard
+421. read cardboard
+422. read poem
+423. w
+424. d
+425. no
+426. wait
+427. d
+428. d
+429. se
+430. se
+431. open iron gate
+432. enter
+433. s
+434. open outer door
+435. e
+436. take knife
+437. n
+438. e
+439. n then close door
+440. open cage
+441. open door
+442. s
+443. move paper
+444. take screwdriver
+445. w
+446. n
+447. w
+448. w
+449. open screen door
+450. w
+451. out
+452. nw
+453. nw
+
+### `wt61.sav`
+
+441 commands, ending at **Base of Tower** (transcript7.txt:1208):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. put on boots
+406. take red boot
+407. put on red boot
+408. take green boot
+409. put on green boot
+410. i
+411. se
+412. wait
+413. wait
+414. enter dory
+415. give silver coin to oarsman
+416. s
+417. enter door
+418. take book
+419. read book
+420. take cardboard
+421. read cardboard
+422. read poem
+423. w
+424. i
+425. w
+426. d
+427. no
+428. wait
+429. d
+430. d
+431. remove red boot
+432. take ruby
+433. put ruby in red boot
+434. i
+435. drop book
+436. drop cardboard
+437. take red boot
+438. put ruby in red boot
+439. take ruby
+440. put ruby in red boot
+441. wear red boot
+
+### `wtXX.sav`
+
+429 commands, ending at **North of Reservoir** (transcript10.txt:259):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. i
+406. se
+407. wait
+408. wait
+409. enter dory
+410. give silver coin to oarsman
+411. s
+412. enter door
+413. take book
+414. read book
+415. take cardboard
+416. read cardboard
+417. read poem
+418. look
+419. drop book
+420. drop cardboard
+421. w
+422. d
+423. d
+424. feed roadrunner
+425. take ruby
+426. se
+427. se
+428. e
+429. e
+
+### `wt71.sav`
+
+417 commands, ending at **Shack** (transcript21.txt:211):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. i
+406. take boots
+407. wear boots
+408. i
+409. look
+410. take lantern
+411. se
+412. wait
+413. wait
+414. enter dory
+415. give silver coin to oarsman
+416. s
+417. enter door
+
+### `wt72.sav`
+
+442 commands, ending at **South of Reservoir** (transcript21.txt:735):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. i
+406. take boots
+407. wear boots
+408. i
+409. look
+410. take lantern
+411. se
+412. wait
+413. wait
+414. enter dory
+415. give silver coin to oarsman
+416. s
+417. enter door
+418. w
+419. wait
+420. wait
+421. wait
+422. wait
+423. wait
+424. d
+425. d
+426. se
+427. se
+428. e
+429. e
+430. drop all
+431. take lantern
+432. se
+433. turn lantern on
+434. u
+435. take binoculars
+436. d
+437. take all
+438. u
+439. turn lantern off
+440. n
+441. s
+442. d
+
+### `wt73.sav`
+
+425 commands, ending at **Base of Tower** (transcript21.txt:1216):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. i
+406. take boots
+407. wear boots
+408. i
+409. look
+410. take lantern
+411. se
+412. wait
+413. wait
+414. enter dory
+415. give silver coin to oarsman
+416. s
+417. enter door
+418. w
+419. wait
+420. wait
+421. wait
+422. wait
+423. wait
+424. d
+425. d
+
+### `wt74.sav`
+
+428 commands, ending at **Crossroads** (transcript21.txt:1257):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. i
+406. take boots
+407. wear boots
+408. i
+409. look
+410. take lantern
+411. se
+412. wait
+413. wait
+414. enter dory
+415. give silver coin to oarsman
+416. s
+417. enter door
+418. w
+419. wait
+420. wait
+421. wait
+422. wait
+423. wait
+424. d
+425. d
+426. sw
+427. sw
+428. sw
+
+### `wt75.sav`
+
+429 commands, ending at **Behind the Shed** (transcript21.txt:1831):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. i
+406. take boots
+407. wear boots
+408. i
+409. look
+410. take lantern
+411. se
+412. wait
+413. wait
+414. enter dory
+415. give silver coin to oarsman
+416. s
+417. enter door
+418. w
+419. wait
+420. wait
+421. wait
+422. wait
+423. wait
+424. d
+425. d
+426. s
+427. s
+428. s
+429. s
+
+### `wt81.sav`
+
+433 commands, ending at **Bottom of Stairs** (transcript31.txt:494):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. take green boot
+406. wear green boot
+407. take red boot
+408. wear red boot
+409. i
+410. look
+411. take lantern
+412. ne
+413. w
+414. ne
+415. e
+416. take garlic
+417. w
+418. drop lantern
+419. e
+420. take lantern
+421. take garlic
+422. put garlic in cauldron
+423. w
+424. wait
+425. e
+426. look in cauldron
+427. take emerald
+428. put emerald in green boot
+429. w
+430. take lantern
+431. sw
+432. w
+433. se
+
+### `wt82.sav`
+
+458 commands, ending at **Base of Tower** (transcript31.txt:803):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. take green boot
+406. wear green boot
+407. take red boot
+408. wear red boot
+409. i
+410. look
+411. take lantern
+412. ne
+413. w
+414. ne
+415. e
+416. take garlic
+417. w
+418. drop lantern
+419. e
+420. take lantern
+421. take garlic
+422. put garlic in cauldron
+423. w
+424. wait
+425. e
+426. look in cauldron
+427. take emerald
+428. put emerald in green boot
+429. w
+430. take lantern
+431. sw
+432. w
+433. se
+434. i
+435. se
+436. wait
+437. wait
+438. enter dory
+439. give silver coin to oarsman
+440. s
+441. enter door
+442. take book
+443. drop lantern
+444. read book
+445. take book
+446. read book
+447. take cardboard
+448. read cardboard
+449. read poem
+450. drop book
+451. drop cardboard
+452. take lantern
+453. w
+454. d
+455. d
+456. feed roadrunner
+457. take ruby
+458. put ruby in red boot
+
+### `wt83.sav`
+
+480 commands, ending at **Under the Windmill** (transcript31.txt:1082):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. take green boot
+406. wear green boot
+407. take red boot
+408. wear red boot
+409. i
+410. look
+411. take lantern
+412. ne
+413. w
+414. ne
+415. e
+416. take garlic
+417. w
+418. drop lantern
+419. e
+420. take lantern
+421. take garlic
+422. put garlic in cauldron
+423. w
+424. wait
+425. e
+426. look in cauldron
+427. take emerald
+428. put emerald in green boot
+429. w
+430. take lantern
+431. sw
+432. w
+433. se
+434. i
+435. se
+436. wait
+437. wait
+438. enter dory
+439. give silver coin to oarsman
+440. s
+441. enter door
+442. take book
+443. drop lantern
+444. read book
+445. take book
+446. read book
+447. take cardboard
+448. read cardboard
+449. read poem
+450. drop book
+451. drop cardboard
+452. take lantern
+453. w
+454. d
+455. d
+456. feed roadrunner
+457. take ruby
+458. put ruby in red boot
+459. se
+460. e
+461. w
+462. se
+463. e
+464. e
+465. drop all
+466. take lantern
+467. se
+468. u
+469. take all
+470. turn lantern on
+471. i
+472. turn lantern on
+473. take all
+474. d
+475. take all
+476. turn lantern off
+477. u
+478. s
+479. d
+480. ne
+
+### `wt84.sav`
+
+486 commands, ending at **North of Reservoir** (transcript31.txt:1131):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. take green boot
+406. wear green boot
+407. take red boot
+408. wear red boot
+409. i
+410. look
+411. take lantern
+412. ne
+413. w
+414. ne
+415. e
+416. take garlic
+417. w
+418. drop lantern
+419. e
+420. take lantern
+421. take garlic
+422. put garlic in cauldron
+423. w
+424. wait
+425. e
+426. look in cauldron
+427. take emerald
+428. put emerald in green boot
+429. w
+430. take lantern
+431. sw
+432. w
+433. se
+434. i
+435. se
+436. wait
+437. wait
+438. enter dory
+439. give silver coin to oarsman
+440. s
+441. enter door
+442. take book
+443. drop lantern
+444. read book
+445. take book
+446. read book
+447. take cardboard
+448. read cardboard
+449. read poem
+450. drop book
+451. drop cardboard
+452. take lantern
+453. w
+454. d
+455. d
+456. feed roadrunner
+457. take ruby
+458. put ruby in red boot
+459. se
+460. e
+461. w
+462. se
+463. e
+464. e
+465. drop all
+466. take lantern
+467. se
+468. u
+469. take all
+470. turn lantern on
+471. i
+472. turn lantern on
+473. take all
+474. d
+475. take all
+476. turn lantern off
+477. u
+478. s
+479. d
+480. ne
+481. u
+482. nw
+483. take all
+484. i
+485. drop shroud
+486. take walkie
+
+### `wt85.sav`
+
+507 commands, ending at **Kitchen** (transcript31.txt:1324):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. take green boot
+406. wear green boot
+407. take red boot
+408. wear red boot
+409. i
+410. look
+411. take lantern
+412. ne
+413. w
+414. ne
+415. e
+416. take garlic
+417. w
+418. drop lantern
+419. e
+420. take lantern
+421. take garlic
+422. put garlic in cauldron
+423. w
+424. wait
+425. e
+426. look in cauldron
+427. take emerald
+428. put emerald in green boot
+429. w
+430. take lantern
+431. sw
+432. w
+433. se
+434. i
+435. se
+436. wait
+437. wait
+438. enter dory
+439. give silver coin to oarsman
+440. s
+441. enter door
+442. take book
+443. drop lantern
+444. read book
+445. take book
+446. read book
+447. take cardboard
+448. read cardboard
+449. read poem
+450. drop book
+451. drop cardboard
+452. take lantern
+453. w
+454. d
+455. d
+456. feed roadrunner
+457. take ruby
+458. put ruby in red boot
+459. se
+460. e
+461. w
+462. se
+463. e
+464. e
+465. drop all
+466. take lantern
+467. se
+468. u
+469. take all
+470. turn lantern on
+471. i
+472. turn lantern on
+473. take all
+474. d
+475. take all
+476. turn lantern off
+477. u
+478. s
+479. d
+480. ne
+481. u
+482. nw
+483. take all
+484. i
+485. drop shroud
+486. take walkie
+487. score
+488. sw
+489. u
+490. open right door
+491. enter right door
+492. n
+493. close door
+494. turn lantern on
+495. open cage
+496. open door
+497. s
+498. turn lantern off
+499. move paper
+500. take screwdriver
+501. s
+502. w
+503. take knife
+504. i
+505. drop cage
+506. wear binoculars
+507. take knife
+
+### `wt86.sav`
+
+529 commands, ending at **Crossroads** (transcript31.txt:1496):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. take green boot
+406. wear green boot
+407. take red boot
+408. wear red boot
+409. i
+410. look
+411. take lantern
+412. ne
+413. w
+414. ne
+415. e
+416. take garlic
+417. w
+418. drop lantern
+419. e
+420. take lantern
+421. take garlic
+422. put garlic in cauldron
+423. w
+424. wait
+425. e
+426. look in cauldron
+427. take emerald
+428. put emerald in green boot
+429. w
+430. take lantern
+431. sw
+432. w
+433. se
+434. i
+435. se
+436. wait
+437. wait
+438. enter dory
+439. give silver coin to oarsman
+440. s
+441. enter door
+442. take book
+443. drop lantern
+444. read book
+445. take book
+446. read book
+447. take cardboard
+448. read cardboard
+449. read poem
+450. drop book
+451. drop cardboard
+452. take lantern
+453. w
+454. d
+455. d
+456. feed roadrunner
+457. take ruby
+458. put ruby in red boot
+459. se
+460. e
+461. w
+462. se
+463. e
+464. e
+465. drop all
+466. take lantern
+467. se
+468. u
+469. take all
+470. turn lantern on
+471. i
+472. turn lantern on
+473. take all
+474. d
+475. take all
+476. turn lantern off
+477. u
+478. s
+479. d
+480. ne
+481. u
+482. nw
+483. take all
+484. i
+485. drop shroud
+486. take walkie
+487. score
+488. sw
+489. u
+490. open right door
+491. enter right door
+492. n
+493. close door
+494. turn lantern on
+495. open cage
+496. open door
+497. s
+498. turn lantern off
+499. move paper
+500. take screwdriver
+501. s
+502. w
+503. take knife
+504. i
+505. drop cage
+506. wear binoculars
+507. take knife
+508. w
+509. s
+510. d
+511. w
+512. open outer door
+513. w
+514. d
+515. d
+516. look
+517. u
+518. look
+519. s
+520. w
+521. open iron gate
+522. w
+523. sw
+524. n
+525. nw
+526. w
+527. w
+528. sw
+529. sw
+
+### `wt87.sav`
+
+558 commands, ending at **Behind the Shed** (transcript31.txt:1962):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. take green boot
+406. wear green boot
+407. take red boot
+408. wear red boot
+409. i
+410. look
+411. take lantern
+412. ne
+413. w
+414. ne
+415. e
+416. take garlic
+417. w
+418. drop lantern
+419. e
+420. take lantern
+421. take garlic
+422. put garlic in cauldron
+423. w
+424. wait
+425. e
+426. look in cauldron
+427. take emerald
+428. put emerald in green boot
+429. w
+430. take lantern
+431. sw
+432. w
+433. se
+434. i
+435. se
+436. wait
+437. wait
+438. enter dory
+439. give silver coin to oarsman
+440. s
+441. enter door
+442. take book
+443. drop lantern
+444. read book
+445. take book
+446. read book
+447. take cardboard
+448. read cardboard
+449. read poem
+450. drop book
+451. drop cardboard
+452. take lantern
+453. w
+454. d
+455. d
+456. feed roadrunner
+457. take ruby
+458. put ruby in red boot
+459. se
+460. e
+461. w
+462. se
+463. e
+464. e
+465. drop all
+466. take lantern
+467. se
+468. u
+469. take all
+470. turn lantern on
+471. i
+472. turn lantern on
+473. take all
+474. d
+475. take all
+476. turn lantern off
+477. u
+478. s
+479. d
+480. ne
+481. u
+482. nw
+483. take all
+484. i
+485. drop shroud
+486. take walkie
+487. score
+488. sw
+489. u
+490. open right door
+491. enter right door
+492. n
+493. close door
+494. turn lantern on
+495. open cage
+496. open door
+497. s
+498. turn lantern off
+499. move paper
+500. take screwdriver
+501. s
+502. w
+503. take knife
+504. i
+505. drop cage
+506. wear binoculars
+507. take knife
+508. w
+509. s
+510. d
+511. w
+512. open outer door
+513. w
+514. d
+515. d
+516. look
+517. u
+518. look
+519. s
+520. w
+521. open iron gate
+522. w
+523. sw
+524. n
+525. nw
+526. w
+527. w
+528. sw
+529. sw
+530. se
+531. se
+532. s
+533. look at entrance
+534. i
+535. examine shed
+536. look
+537. examine shelter
+538. s
+539. no
+540. e
+541. w
+542. look
+543. examine thin man
+544. wait
+545. wait
+546. wait
+547. s
+548. no
+549. wait
+550. look in shelter
+551. use binoculars to look in shelter
+552. use binoculars
+553. using binoculars
+554. binoculars look in shed
+555. binoculars shed
+556. look through binoculars at shed
+557. examine shed with binoculars
+558. look
+
+### `wt88.sav`
+
+530 commands, ending at **Outside Blockhouse** (transcript31.txt:2245):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. take green boot
+406. wear green boot
+407. take red boot
+408. wear red boot
+409. i
+410. look
+411. take lantern
+412. ne
+413. w
+414. ne
+415. e
+416. take garlic
+417. w
+418. drop lantern
+419. e
+420. take lantern
+421. take garlic
+422. put garlic in cauldron
+423. w
+424. wait
+425. e
+426. look in cauldron
+427. take emerald
+428. put emerald in green boot
+429. w
+430. take lantern
+431. sw
+432. w
+433. se
+434. i
+435. se
+436. wait
+437. wait
+438. enter dory
+439. give silver coin to oarsman
+440. s
+441. enter door
+442. take book
+443. drop lantern
+444. read book
+445. take book
+446. read book
+447. take cardboard
+448. read cardboard
+449. read poem
+450. drop book
+451. drop cardboard
+452. take lantern
+453. w
+454. d
+455. d
+456. feed roadrunner
+457. take ruby
+458. put ruby in red boot
+459. se
+460. e
+461. w
+462. se
+463. e
+464. e
+465. drop all
+466. take lantern
+467. se
+468. u
+469. take all
+470. turn lantern on
+471. i
+472. turn lantern on
+473. take all
+474. d
+475. take all
+476. turn lantern off
+477. u
+478. s
+479. d
+480. ne
+481. u
+482. nw
+483. take all
+484. i
+485. drop shroud
+486. take walkie
+487. score
+488. sw
+489. u
+490. open right door
+491. enter right door
+492. n
+493. close door
+494. turn lantern on
+495. open cage
+496. open door
+497. s
+498. turn lantern off
+499. move paper
+500. take screwdriver
+501. s
+502. w
+503. take knife
+504. i
+505. drop cage
+506. wear binoculars
+507. take knife
+508. w
+509. s
+510. d
+511. w
+512. open outer door
+513. w
+514. d
+515. d
+516. look
+517. u
+518. look
+519. s
+520. w
+521. open iron gate
+522. w
+523. sw
+524. n
+525. nw
+526. w
+527. w
+528. sw
+529. sw
+530. sw
+
+### `wt89.sav`
+
+532 commands, ending at **Behind the Shed** (transcript31.txt:2405):
+
+1. n
+2. buy bag
+3. take bag and change
+4. feed birds
+5. take ruby
+6. se
+7. examine sundial
+8. unscrew gnomon
+9. take gnomon
+10. s
+11. se
+12. take ball
+13. nw
+14. n
+15. examine toy boats
+16. take paper bird
+17. unfold bird
+18. read bird
+19. read watch
+20. nw
+21. push pram e
+22. push pram e
+23. look
+24. throw ball at umbrella
+25. take umbrella
+26. push pram s
+27. read sign
+28. open pram
+29. enter pram
+30. open umbrella
+31. take all
+32. e
+33. look
+34. enter door
+35. i
+36. n
+37. e
+38. e
+39. sw
+40. ne
+41. nw
+42. take log
+43. take splinter
+44. se
+45. sw
+46. e
+47. n
+48. u
+49. take axe
+50. d
+51. s
+52. d
+53. e
+54. nw
+55. n
+56. u
+57. u
+58. screw gnomon into sundial
+59. d
+60. d
+61. s
+62. sw
+63. e
+64. s
+65. u
+66. s
+67. d
+68. n
+69. u
+70. n
+71. d
+72. n
+73. u
+74. s
+75. d
+76. e
+77. nw
+78. n
+79. i
+80. drop all
+81. take umbrella
+82. take splinter
+83. w
+84. e
+85. w
+86. w
+87. u
+88. n
+89. n
+90. take bones
+91. take skeleton key
+92. s
+93. put key in hole
+94. turn key
+95. d
+96. throw umbrella at icile
+97. throw umbrella at icicle
+98. take all
+99. e
+100. e
+101. e
+102. u
+103. u
+104. d
+105. d
+106. e
+107. ne
+108. d
+109. put icicle on lump
+110. take lump
+111. u
+112. sw
+113. w
+114. drop lump
+115. drop umbrella
+116. u
+117. u
+118. raise lever
+119. move ring to 3
+120. lower lever
+121. d
+122. d
+123. i
+124. w
+125. w
+126. u
+127. n
+128. n
+129. enter door
+130. take all
+131. w
+132. take walkie
+133. examine walkie
+134. examine numbered slider
+135. turn lantern on
+136. drop lantern
+137. w
+138. put splint in crevice
+139. put splinter in crevice
+140. take skink
+141. put skink in pocket
+142. look
+143. e
+144. take lantern
+145. e
+146. e
+147. s
+148. turn key
+149. d
+150. e
+151. e
+152. e
+153. turn lantern off
+154. drop lantern
+155. drop walkie
+156. u
+157. u
+158. raise lever
+159. turn ring to 2
+160. lower lever
+161. d
+162. d
+163. take lump
+164. take umbrella
+165. nw
+166. n
+167. enter dish
+168. wait
+169. enter dish
+170. s
+171. sw
+172. enter door
+173. examine moon
+174. take skink
+175. kill skink
+176. look
+177. wait
+178. burst bubble with umbrella
+179. score
+180. i
+181. put dead skink in pocket
+182. e
+183. e
+184. drop umbrella
+185. i
+186. u
+187. u
+188. raise lever
+189. turn ring to 4
+190. lower lever
+191. d
+192. d
+193. take walkie
+194. take axe
+195. ne
+196. w
+197. cut tree with axe
+198. push tree over chasm
+199. n
+200. enter door
+201. d
+202. open box
+203. toggle switch
+204. press toggle switch
+205. press red button
+206. s
+207. wait
+208. set slider to 103
+209. nw
+210. look
+211. wait
+212. wait
+213. wait
+214. wait
+215. wait
+216. wait
+217. wait
+218. wait
+219. ask dolphin to get coconut
+220. take coconut
+221. se
+222. in
+223. u
+224. out
+225. enter door
+226. s
+227. ne
+228. e
+229. open front door
+230. e
+231. read book
+232. OPEN FRONT DOOR
+233. E
+234. READ BOOK
+235. read book
+236. E
+237. READ BOOK
+238. READ BOOK
+239. read book
+240. READ BOOK
+241. READ BOOK
+242. READ BOOK
+243. read book
+244. READ BOOK
+245. READ BOOK
+246. READ BOOK
+247. read book
+248. READ BOOK
+249. READ BOOK
+250. READ BOOK
+251. wait
+252. wait
+253. wait
+254. wait
+255. wait
+256. wait
+257. wait
+258. wait
+259. wait
+260. e
+261. open back door
+262. e
+263. dig in refuse
+264. take garlic
+265. w
+266. read map
+267. i
+268. open coconut with axe
+269. i
+270. drop coconut
+271. cut coconut with axe
+272. take cracked coconut
+273. pour coconut milk into cauldron
+274. w
+275. se
+276. w
+277. put hand in hive
+278. put hand in hive
+279. sw
+280. nw
+281. e
+282. ne
+283. e
+284. put honey in cauldron
+285. put hand in cauldron
+286. put skink in cauldron
+287. take skink
+288. put skink in cauldron
+289. i
+290. drop garlic
+291. look
+292. take cage
+293. open cage
+294. w
+295. sw
+296. w
+297. se
+298. u
+299. u
+300. raise lever
+301. move ring to 5
+302. lower lever
+303. d
+304. d
+305. ne
+306. w
+307. ne
+308. e
+309. e
+310. e
+311. look
+312. enter door
+313. enter white door
+314. look
+315. d
+316. ne
+317. ne
+318. examine fissure
+319. take lemming
+320. i
+321. drop coconut
+322. take lemming
+323. put lemming in cage
+324. close cage
+325. look
+326. sw
+327. sw
+328. u
+329. enter door
+330. w
+331. w
+332. sw
+333. e
+334. sw
+335. i
+336. drop all
+337. take paper
+338. take umbrella
+339. u
+340. u
+341. raise lever
+342. move dial to 6
+343. move ring to 6
+344. lower lever
+345. d
+346. d
+347. i
+348. e
+349. e
+350. enter door
+351. open umbrella
+352. take all
+353. look
+354. wait
+355. look
+356. give umbrella to girl
+357. d
+358. take spade
+359. give paper to girl
+360. w
+361. enter bird
+362. enter door
+363. i
+364. w
+365. w
+366. w
+367. w
+368. n
+369. look
+370. open crypt with spade
+371. examine body
+372. take all
+373. exmine mouth
+374. look in mouth
+375. take coin
+376. i
+377. wear shroud
+378. drop spade
+379. i
+380. s
+381. e
+382. e
+383. u
+384. u
+385. raise lever
+386. move ring to 7
+387. lower lever
+388. d
+389. d
+390. take walkie
+391. take crumbs
+392. take cage
+393. i
+394. drop bandage
+395. examine red boot
+396. examine recess
+397. open recess
+398. examine green boot
+399. examine recess
+400. drop boots
+401. i
+402. take cage
+403. look
+404. i
+405. take green boot
+406. wear green boot
+407. take red boot
+408. wear red boot
+409. i
+410. look
+411. take lantern
+412. ne
+413. w
+414. ne
+415. e
+416. take garlic
+417. w
+418. drop lantern
+419. e
+420. take lantern
+421. take garlic
+422. put garlic in cauldron
+423. w
+424. wait
+425. e
+426. look in cauldron
+427. take emerald
+428. put emerald in green boot
+429. w
+430. take lantern
+431. sw
+432. w
+433. se
+434. i
+435. se
+436. wait
+437. wait
+438. enter dory
+439. give silver coin to oarsman
+440. s
+441. enter door
+442. take book
+443. drop lantern
+444. read book
+445. take book
+446. read book
+447. take cardboard
+448. read cardboard
+449. read poem
+450. drop book
+451. drop cardboard
+452. take lantern
+453. w
+454. d
+455. d
+456. feed roadrunner
+457. take ruby
+458. put ruby in red boot
+459. se
+460. e
+461. w
+462. se
+463. e
+464. e
+465. drop all
+466. take lantern
+467. se
+468. u
+469. take all
+470. turn lantern on
+471. i
+472. turn lantern on
+473. take all
+474. d
+475. take all
+476. turn lantern off
+477. u
+478. s
+479. d
+480. ne
+481. u
+482. nw
+483. take all
+484. i
+485. drop shroud
+486. take walkie
+487. score
+488. sw
+489. u
+490. open right door
+491. enter right door
+492. n
+493. close door
+494. turn lantern on
+495. open cage
+496. open door
+497. s
+498. turn lantern off
+499. move paper
+500. take screwdriver
+501. s
+502. w
+503. take knife
+504. i
+505. drop cage
+506. wear binoculars
+507. take knife
+508. w
+509. s
+510. d
+511. w
+512. open outer door
+513. w
+514. d
+515. d
+516. look
+517. u
+518. look
+519. s
+520. w
+521. open iron gate
+522. w
+523. sw
+524. n
+525. nw
+526. w
+527. w
+528. sw
+529. sw
+530. se
+531. se
+532. s
+
+## Legacy saves (transcript.txt)
+
+| Save file | Source transcript | Line | Location | Commands | Reachable |
+|---|---|---|---|---|---|
+| `a.sav` | transcript.txt | 716 | Broad Walk | 103 | Yes |
+| `b.sav` | transcript.txt | 960 | Meadow | 118 | Yes |
+| `c.sav` | transcript.txt | 1450 | Barrow | 183 | Yes |
+| `d.sav` | transcript.txt | 1857 | North Bog | 242 | Yes |
+| `tuesday.sav` | transcript.txt | 2226 | Summit | 314 | Yes |
+
+### `a.sav`
+
+103 commands, ending at **Broad Walk** (transcript.txt:716):
+
+1. i
+2. examine watch
+3. score
+4. examine watch
+5. ne
+6. examine sundial
+7. w
+8. i
+9. buy bag with seven-sided coin
+10. take bag and change
+11. look
+12. talk to woman
+13. se
+14. nw
+15. examine gnomon
+16. ne
+17. n
+18. nw
+19. ne
+20. e
+21. help woman
+22. climb tree
+23. get umbrella
+24. look
+25. e
+26. w
+27. w
+28. w
+29. take pram
+30. push pram e
+31. look
+32. push pram e
+33. stand on pram
+34. open pram
+35. stand on pram
+36. enter pram
+37. examine umbrella
+38. look
+39. look
+40. e
+41. s
+42. read notice
+43. s
+44. take ball
+45. s
+46. e
+47. w
+48. e
+49. n
+50. n
+51. w
+52. give ball to boy
+53. remove headphones
+54. look
+55. s
+56. take bird
+57. examine bird
+58. read bird
+59. unfold bird
+60. read bird
+61. examine watch
+62. s
+63. screw gnomon into sundial
+64. turn gnomon
+65. take gnomon
+66. sw
+67. n
+68. n
+69. e
+70. look
+71. e
+72. look
+73. throw ball at umbrella
+74. take umbrella
+75. read bird
+76. e
+77. look
+78. s
+79. s
+80. s
+81. look
+82. nw
+83. n
+84. look
+85. se
+86. sw
+87. ne
+88. sw
+89. sw
+90. w
+91. look
+92. w
+93. s
+94. s
+95. sw
+96. nw
+97. e
+98. e
+99. n
+100. n
+101. enter pram
+102. push pram s
+103. look
+
+### `b.sav`
+
+118 commands, ending at **Meadow** (transcript.txt:960):
+
+1. i
+2. examine watch
+3. score
+4. examine watch
+5. ne
+6. examine sundial
+7. w
+8. i
+9. buy bag with seven-sided coin
+10. take bag and change
+11. look
+12. talk to woman
+13. se
+14. nw
+15. examine gnomon
+16. ne
+17. n
+18. nw
+19. ne
+20. e
+21. help woman
+22. climb tree
+23. get umbrella
+24. look
+25. e
+26. w
+27. w
+28. w
+29. take pram
+30. push pram e
+31. look
+32. push pram e
+33. stand on pram
+34. open pram
+35. stand on pram
+36. enter pram
+37. examine umbrella
+38. look
+39. look
+40. e
+41. s
+42. read notice
+43. s
+44. take ball
+45. s
+46. e
+47. w
+48. e
+49. n
+50. n
+51. w
+52. give ball to boy
+53. remove headphones
+54. look
+55. s
+56. take bird
+57. examine bird
+58. read bird
+59. unfold bird
+60. read bird
+61. examine watch
+62. s
+63. screw gnomon into sundial
+64. turn gnomon
+65. take gnomon
+66. sw
+67. n
+68. n
+69. e
+70. look
+71. e
+72. look
+73. throw ball at umbrella
+74. take umbrella
+75. read bird
+76. e
+77. look
+78. s
+79. s
+80. s
+81. look
+82. nw
+83. n
+84. look
+85. se
+86. sw
+87. ne
+88. sw
+89. sw
+90. w
+91. look
+92. w
+93. s
+94. s
+95. sw
+96. nw
+97. e
+98. e
+99. n
+100. n
+101. enter pram
+102. push pram s
+103. look
+104. feed birds
+105. take ruby
+106. examine watch
+107. push pram s
+108. look
+109. enter pram
+110. enter pram
+111. push pram n
+112. enter pram
+113. take all
+114. examine watch
+115. look
+116. enter door
+117. e
+118. e
+
+### `c.sav`
+
+183 commands, ending at **Barrow** (transcript.txt:1450):
+
+1. i
+2. examine watch
+3. score
+4. examine watch
+5. ne
+6. examine sundial
+7. w
+8. i
+9. buy bag with seven-sided coin
+10. take bag and change
+11. look
+12. talk to woman
+13. se
+14. nw
+15. examine gnomon
+16. ne
+17. n
+18. nw
+19. ne
+20. e
+21. help woman
+22. climb tree
+23. get umbrella
+24. look
+25. e
+26. w
+27. w
+28. w
+29. take pram
+30. push pram e
+31. look
+32. push pram e
+33. stand on pram
+34. open pram
+35. stand on pram
+36. enter pram
+37. examine umbrella
+38. look
+39. look
+40. e
+41. s
+42. read notice
+43. s
+44. take ball
+45. s
+46. e
+47. w
+48. e
+49. n
+50. n
+51. w
+52. give ball to boy
+53. remove headphones
+54. look
+55. s
+56. take bird
+57. examine bird
+58. read bird
+59. unfold bird
+60. read bird
+61. examine watch
+62. s
+63. screw gnomon into sundial
+64. turn gnomon
+65. take gnomon
+66. sw
+67. n
+68. n
+69. e
+70. look
+71. e
+72. look
+73. throw ball at umbrella
+74. take umbrella
+75. read bird
+76. e
+77. look
+78. s
+79. s
+80. s
+81. look
+82. nw
+83. n
+84. look
+85. se
+86. sw
+87. ne
+88. sw
+89. sw
+90. w
+91. look
+92. w
+93. s
+94. s
+95. sw
+96. nw
+97. e
+98. e
+99. n
+100. n
+101. enter pram
+102. push pram s
+103. look
+104. feed birds
+105. take ruby
+106. examine watch
+107. push pram s
+108. look
+109. enter pram
+110. enter pram
+111. push pram n
+112. enter pram
+113. take all
+114. examine watch
+115. look
+116. enter door
+117. e
+118. e
+119. look
+120. w
+121. e
+122. n
+123. look
+124. score
+125. n
+126. e
+127. e
+128. e
+129. hello sailor
+130. e
+131. n
+132. n
+133. n
+134. e
+135. e
+136. take metal
+137. i
+138. take metal
+139. e
+140. n
+141. s
+142. w
+143. e
+144. w
+145. w
+146. e
+147. w
+148. n
+149. ne
+150. nw
+151. se
+152. open door
+153. knock on door
+154. examine door
+155. look
+156. w
+157. w
+158. n
+159. screw gnomon in
+160. screw gnomon in sundial
+161. look
+162. examine dial
+163. s
+164. look
+165. w
+166. take log
+167. take splinter
+168. look
+169. w
+170. open door with splinter
+171. look
+172. u
+173. n
+174. n
+175. open door
+176. knock on door
+177. n
+178. look
+179. ne
+180. nw
+181. s
+182. give ruby to wight
+183. i
+
+### `d.sav`
+
+242 commands, ending at **North Bog** (transcript.txt:1857):
+
+1. i
+2. examine watch
+3. score
+4. examine watch
+5. ne
+6. examine sundial
+7. w
+8. i
+9. buy bag with seven-sided coin
+10. take bag and change
+11. look
+12. talk to woman
+13. se
+14. nw
+15. examine gnomon
+16. ne
+17. n
+18. nw
+19. ne
+20. e
+21. help woman
+22. climb tree
+23. get umbrella
+24. look
+25. e
+26. w
+27. w
+28. w
+29. take pram
+30. push pram e
+31. look
+32. push pram e
+33. stand on pram
+34. open pram
+35. stand on pram
+36. enter pram
+37. examine umbrella
+38. look
+39. look
+40. e
+41. s
+42. read notice
+43. s
+44. take ball
+45. s
+46. e
+47. w
+48. e
+49. n
+50. n
+51. w
+52. give ball to boy
+53. remove headphones
+54. look
+55. s
+56. take bird
+57. examine bird
+58. read bird
+59. unfold bird
+60. read bird
+61. examine watch
+62. s
+63. screw gnomon into sundial
+64. turn gnomon
+65. take gnomon
+66. sw
+67. n
+68. n
+69. e
+70. look
+71. e
+72. look
+73. throw ball at umbrella
+74. take umbrella
+75. read bird
+76. e
+77. look
+78. s
+79. s
+80. s
+81. look
+82. nw
+83. n
+84. look
+85. se
+86. sw
+87. ne
+88. sw
+89. sw
+90. w
+91. look
+92. w
+93. s
+94. s
+95. sw
+96. nw
+97. e
+98. e
+99. n
+100. n
+101. enter pram
+102. push pram s
+103. look
+104. feed birds
+105. take ruby
+106. examine watch
+107. push pram s
+108. look
+109. enter pram
+110. enter pram
+111. push pram n
+112. enter pram
+113. take all
+114. examine watch
+115. look
+116. enter door
+117. e
+118. e
+119. look
+120. w
+121. e
+122. n
+123. look
+124. score
+125. n
+126. e
+127. e
+128. e
+129. hello sailor
+130. e
+131. n
+132. n
+133. n
+134. e
+135. e
+136. take metal
+137. i
+138. take metal
+139. e
+140. n
+141. s
+142. w
+143. e
+144. w
+145. w
+146. e
+147. w
+148. n
+149. ne
+150. nw
+151. se
+152. open door
+153. knock on door
+154. examine door
+155. look
+156. w
+157. w
+158. n
+159. screw gnomon in
+160. screw gnomon in sundial
+161. look
+162. examine dial
+163. s
+164. look
+165. w
+166. take log
+167. take splinter
+168. look
+169. w
+170. open door with splinter
+171. look
+172. u
+173. n
+174. n
+175. open door
+176. knock on door
+177. n
+178. look
+179. ne
+180. nw
+181. s
+182. give ruby to wight
+183. i
+184. give crumbs to wight
+185. s
+186. give gnomon to wight
+187. give all to wight
+188. give watch to wight
+189. i
+190. give coin to wight
+191. give umbrella to wight
+192. i
+193. give bag to wight
+194. give credit card to wight
+195. look
+196. examine hole
+197. look through hole
+198. poke umbrella in hole
+199. put umbrella in hole
+200. take all
+201. i
+202. look
+203. s
+204. n
+205. take all
+206. take key
+207. i
+208. drop crumbs
+209. take ke
+210. take key
+211. drop umbrella
+212. take key
+213. s
+214. put key in hole
+215. turn key
+216. look
+217. d
+218. look
+219. e
+220. e
+221. w
+222. u
+223. n
+224. d
+225. turn key
+226. d
+227. e
+228. n
+229. n
+230. turn key
+231. d
+232. look
+233. e
+234. e
+235. n
+236. n
+237. n
+238. look
+239. take headphones
+240. examine flytrap
+241. i
+242. look inside flytrap
+
+### `tuesday.sav`
+
+314 commands, ending at **Summit** (transcript.txt:2226):
+
+1. i
+2. examine watch
+3. score
+4. examine watch
+5. ne
+6. examine sundial
+7. w
+8. i
+9. buy bag with seven-sided coin
+10. take bag and change
+11. look
+12. talk to woman
+13. se
+14. nw
+15. examine gnomon
+16. ne
+17. n
+18. nw
+19. ne
+20. e
+21. help woman
+22. climb tree
+23. get umbrella
+24. look
+25. e
+26. w
+27. w
+28. w
+29. take pram
+30. push pram e
+31. look
+32. push pram e
+33. stand on pram
+34. open pram
+35. stand on pram
+36. enter pram
+37. examine umbrella
+38. look
+39. look
+40. e
+41. s
+42. read notice
+43. s
+44. take ball
+45. s
+46. e
+47. w
+48. e
+49. n
+50. n
+51. w
+52. give ball to boy
+53. remove headphones
+54. look
+55. s
+56. take bird
+57. examine bird
+58. read bird
+59. unfold bird
+60. read bird
+61. examine watch
+62. s
+63. screw gnomon into sundial
+64. turn gnomon
+65. take gnomon
+66. sw
+67. n
+68. n
+69. e
+70. look
+71. e
+72. look
+73. throw ball at umbrella
+74. take umbrella
+75. read bird
+76. e
+77. look
+78. s
+79. s
+80. s
+81. look
+82. nw
+83. n
+84. look
+85. se
+86. sw
+87. ne
+88. sw
+89. sw
+90. w
+91. look
+92. w
+93. s
+94. s
+95. sw
+96. nw
+97. e
+98. e
+99. n
+100. n
+101. enter pram
+102. push pram s
+103. look
+104. feed birds
+105. take ruby
+106. examine watch
+107. push pram s
+108. look
+109. enter pram
+110. enter pram
+111. push pram n
+112. enter pram
+113. take all
+114. examine watch
+115. look
+116. enter door
+117. e
+118. e
+119. look
+120. w
+121. e
+122. n
+123. look
+124. score
+125. n
+126. e
+127. e
+128. e
+129. hello sailor
+130. e
+131. n
+132. n
+133. n
+134. e
+135. e
+136. take metal
+137. i
+138. take metal
+139. e
+140. n
+141. s
+142. w
+143. e
+144. w
+145. w
+146. e
+147. w
+148. n
+149. ne
+150. nw
+151. se
+152. open door
+153. knock on door
+154. examine door
+155. look
+156. w
+157. w
+158. n
+159. screw gnomon in
+160. screw gnomon in sundial
+161. look
+162. examine dial
+163. s
+164. look
+165. w
+166. take log
+167. take splinter
+168. look
+169. w
+170. open door with splinter
+171. look
+172. u
+173. n
+174. n
+175. open door
+176. knock on door
+177. n
+178. look
+179. ne
+180. nw
+181. s
+182. give ruby to wight
+183. i
+184. give crumbs to wight
+185. s
+186. give gnomon to wight
+187. give all to wight
+188. give watch to wight
+189. i
+190. give coin to wight
+191. give umbrella to wight
+192. i
+193. give bag to wight
+194. give credit card to wight
+195. look
+196. examine hole
+197. look through hole
+198. poke umbrella in hole
+199. put umbrella in hole
+200. take all
+201. i
+202. look
+203. s
+204. n
+205. take all
+206. take key
+207. i
+208. drop crumbs
+209. take ke
+210. take key
+211. drop umbrella
+212. take key
+213. s
+214. put key in hole
+215. turn key
+216. look
+217. d
+218. look
+219. e
+220. e
+221. w
+222. u
+223. n
+224. d
+225. turn key
+226. d
+227. e
+228. n
+229. n
+230. turn key
+231. d
+232. look
+233. e
+234. e
+235. n
+236. n
+237. n
+238. look
+239. take headphones
+240. examine flytrap
+241. i
+242. look inside flytrap
+243. put head in flytrap
+244. put hand in flytrap
+245. look
+246. w
+247. s
+248. w
+249. n
+250. n
+251. turn key
+252. d
+253. nw
+254. u
+255. n
+256. ne
+257. look
+258. e
+259. s
+260. w
+261. w
+262. w
+263. n
+264. s
+265. d
+266. e
+267. n
+268. n
+269. take key
+270. s
+271. d
+272. n
+273. n
+274. s
+275. put key in hole
+276. turn key
+277. d
+278. d
+279. d
+280. s
+281. w
+282. e
+283. e
+284. e
+285. e
+286. e
+287. s
+288. s
+289. e
+290. e
+291. e
+292. w
+293. s
+294. s
+295. s
+296. s
+297. w
+298. s
+299. w
+300. s
+301. w
+302. s
+303. s
+304. e
+305. w
+306. se
+307. sw
+308. u
+309. w
+310. n
+311. se
+312. sw
+313. ne
+314. sw
+
+## Unreachable saves
+
+No transcript file anywhere in the repo shows these being saved -- they may come from an untranscripted play session, or a transcript file that no longer exists on disk:
+
+- `e.sav`
+- `f.sav`
+- `g.sav`
+- `h.sav`
+- `i.sav`
+- `j.sav`
+- `j2.sav`
+- `k.sav`
+- `k2.sav`
+- `k3.sav`
+- `k5.sav`
+- `k6.sav`
+- `k7.sav`
+- `k8.sav`
+- `tower.sav`
