@@ -1,4 +1,5 @@
 """Shared Z-machine construction: usable from both the Qt GUI and the headless runner."""
+import os
 from array import array
 
 from Header import Header
@@ -8,8 +9,12 @@ from ObjectTable import ObjectTable
 from Processor import Processor
 
 
-def build_machine(game_path, screen, scripting=None, seed=None):
+def build_machine(game_path, screen, scripting=None, seed=None, gameplay_dir=None):
     """Load game_path, patch interpreter header bytes, wire up all subsystems.
+
+    gameplay_dir is where save/transcript/map artifacts default to (see
+    Utils.resolve_gameplay_path); it defaults to the current directory and is
+    created if it doesn't exist.
 
     Returns the ready-to-run Processor.  screen.processor is also set.
     The caller is responsible for driving the main loop.
@@ -61,5 +66,8 @@ def build_machine(game_path, screen, scripting=None, seed=None):
     if seed is not None:
         processor.instructions.random = seed & 0x7FFFFFFF
 
+    gameplay_dir = os.path.abspath(gameplay_dir or os.getcwd())
+    os.makedirs(gameplay_dir, exist_ok=True)
+    processor.gameplay_dir = gameplay_dir
     screen.processor = processor
     return processor

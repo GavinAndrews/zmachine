@@ -838,6 +838,7 @@ class Instructions:
                     self.screen.print_str("[Map logging was not active]\n")
             else:
                 filename = ' '.join(cmd[1:]) if len(cmd) >= 2 else 'map.txt'
+                filename = Utils.resolve_gameplay_path(filename, self.processor.gameplay_dir)
                 try:
                     if self.map_file:
                         self.map_file.close()
@@ -887,15 +888,16 @@ class Instructions:
             if self.map_file:
                 map_path = self.map_file.name
             elif len(cmd) >= 2:
-                map_path = ' '.join(cmd[1:])
+                map_path = Utils.resolve_gameplay_path(' '.join(cmd[1:]), self.processor.gameplay_dir)
             else:
-                map_path = 'map.txt'
+                map_path = Utils.resolve_gameplay_path('map.txt', self.processor.gameplay_dir)
             import os
             html_path = os.path.splitext(map_path)[0] + '.html'
             try:
                 import mapview
                 transitions, nodes, notes = mapview.parse_map(map_path)
-                html = mapview.build_html(transitions, nodes, notes)
+                namespace = os.path.basename(os.path.dirname(os.path.abspath(html_path)))
+                html = mapview.build_html(transitions, nodes, notes, namespace=namespace)
                 with open(html_path, 'w', encoding='utf-8') as f:
                     f.write(html)
                 n_notes = sum(len(v) for v in notes.values())
@@ -1262,6 +1264,7 @@ class Instructions:
 
     def instruction_save(self, args):
         in_string = self._read_aux_line("Save to file: ") or "save.qzl"
+        in_string = Utils.resolve_gameplay_path(in_string, self.processor.gameplay_dir)
         if self.scripting is not None:
             self.screen.print_str("[Replay: skipping save]\n")
             self.processor.save_succeeded()
@@ -1277,6 +1280,7 @@ class Instructions:
 
     def instruction_restore(self, args):
         in_string = self._read_aux_line("Restore from file: ") or "save.qzl"
+        in_string = Utils.resolve_gameplay_path(in_string, self.processor.gameplay_dir)
         try:
             q = Quetzal(self.processor.filename)
             q.read_quetzal_save(in_string)

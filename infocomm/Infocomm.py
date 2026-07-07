@@ -12,6 +12,8 @@ parser.add_argument("--ui", choices=["plain", "ansi", "curses", "qt"], default="
                     help="display backend: plain (stdout), ansi, curses, qt GUI (default)")
 parser.add_argument("--commands", metavar="FILE",
                     help="replay commands from file (plain list or transcript)")
+parser.add_argument("--gameplay-dir", metavar="DIR", default=".",
+                    help="directory for save/transcript/map artifacts (default: current directory)")
 parser.add_argument("--seed", type=int, metavar="N",
                     help="seed the random number generator for deterministic replay")
 parser.add_argument("--debug", action="store_true",
@@ -58,7 +60,8 @@ screen._seed = args.seed
 scripting = Scripting(args.commands) if args.commands else None
 if scripting is not None:
     screen.auto_more = True
-processor = build_machine(game_arg, screen, scripting=scripting, seed=args.seed)
+processor = build_machine(game_arg, screen, scripting=scripting, seed=args.seed,
+                          gameplay_dir=args.gameplay_dir)
 processor.instructions.undo_random_continue = args.undo_random_continue
 
 # run() blocks until the game ends (each backend drives its own loop)

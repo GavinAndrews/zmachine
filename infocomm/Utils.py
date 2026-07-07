@@ -1,3 +1,4 @@
+import os
 from array import array
 
 
@@ -38,3 +39,11 @@ class Utils:
     @staticmethod
     def from_signed_int_to_unsigned_word(i: int) -> int:
         return i & 0xFFFF
+
+    @staticmethod
+    def resolve_gameplay_path(name: str, gameplay_dir: str) -> str:
+        """Resolve a user-supplied filename against the default gameplay directory.
+        Absolute paths, or paths with an explicit directory component, are left as-is."""
+        if os.path.isabs(name) or os.path.dirname(name):
+            return name
+        return os.path.join(gameplay_dir, name)

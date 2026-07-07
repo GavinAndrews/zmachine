@@ -1,32 +1,48 @@
 """
 extract_transitions.py
 
-Parses a Trinity disassembly text file (produced by e.g. TXD/infodump)
-and extracts room-to-room transitions for the 12 compass directions.
+Parses an Infocom disassembly text file (produced by e.g. TXD/infodump)
+and extracts room-to-room transitions for the compass directions.
 
-Direction property numbers (52–63):
-  52=OUT  53=IN   54=DOWN  55=UP
-  56=NW   57=W    58=SW    59=S
-  60=SE   61=E    62=NE    63=N
+Each game assigns its own property numbers to its exit directions (Trinity
+uses 52-63, Zork1 uses 19-31, etc.), so instead of a hardcoded property-number
+table this matches on the direction *word* the disassembler printed and
+canonicalises it via DIRECTION_WORDS. Games also spell directions
+differently (Trinity: "NORTHWEST"/"SOUTHWEST", Zork1: "NORTHW"/"SOUTHW"),
+which DIRECTION_WORDS also absorbs.
 
-Exit property data comes in three forms:
-  DIRECT:      (NORTH TO OBJECT-12)
-  CONDITIONAL: (WEST TO OBJECT-297 IF OBJECT-128 IS OPEN)
-  PER ROUTINE: (UP PER Routine at 0x24820)
-  STRING:      (NORTH "You can only go up...")      <- blocked, ignored
+Exit property data comes in these forms:
+  DIRECT:            (NORTH TO OBJECT-12)
+  CONDITIONAL:        (WEST TO OBJECT-297 IF OBJECT-128 IS OPEN)
+  CONDITIONAL GLOBAL: (WEST TO OBJECT-28 IF GLOBAL-143)
+  (either conditional form may carry a trailing "ELSE "<blocked message>"",
+  which is ignored)
+  PER ROUTINE:        (UP PER Routine at 0x24820)
+  STRING:             (NORTH "You can only go up...")   <- blocked, ignored
 
 Usage:
   python extract_transitions.py [path/to/TRINITY.txt]
+  python extract_transitions.py data/ZORK1.txt
 """
 
 import re
 import sys
 from pathlib import Path
 
-DIRECTION_PROPS = {
-    52: "OUT", 53: "IN", 54: "DOWN", 55: "UP",
-    56: "NW",  57: "W",  58: "SW",  59: "S",
-    60: "SE",  61: "E",  62: "NE",  63: "N",
+DIRECTION_WORDS = {
+    'NORTH': 'N', 'N': 'N',
+    'SOUTH': 'S', 'S': 'S',
+    'EAST':  'E', 'E': 'E',
+    'WEST':  'W', 'W': 'W',
+    'NORTHEAST': 'NE', 'NE': 'NE',
+    'NORTHWEST': 'NW', 'NORTHW': 'NW', 'NW': 'NW',
+    'SOUTHEAST': 'SE', 'SE': 'SE',
+    'SOUTHWEST': 'SW', 'SOUTHW': 'SW', 'SW': 'SW',
+    'UP': 'UP', 'U': 'UP',
+    'DOWN': 'DOWN', 'D': 'DOWN',
+    'IN': 'IN', 'ENTER': 'IN',
+    'OUT': 'OUT', 'EXIT': 'OUT',
+    'LAND': 'LAND',   # Zork1's river/boat pseudo-direction
 }
 
 # Regex patterns for property lines
@@ -34,13 +50,14 @@ DIRECTION_PROPS = {
 RE_PROP = re.compile(
     r'^\s+[0-9A-F]{5}\s+'      # address
     r'[0-9A-F ]+\s+'           # hex bytes
-    r'(\d+)/(\d+)\s+'          # prop_num/prop_size
+    r'\d+/\d+\s+'              # prop_num/prop_size
     r'\((.+)\)$'               # (content)
 )
 
-RE_DIRECT      = re.compile(r'^(\w+) TO OBJECT-(\d+)$')
-RE_CONDITIONAL = re.compile(r'^(\w+) TO OBJECT-(\d+) IF OBJECT-(\d+) IS (\w+)$')
-RE_PER         = re.compile(r'^(\w+) PER Routine at (0x[0-9A-Fa-f]+)$')
+RE_DIRECT       = re.compile(r'^(\w+) TO OBJECT-(\d+)$')
+RE_COND_OBJECT  = re.compile(r'^(\w+) TO OBJECT-(\d+) IF OBJECT-(\d+) IS (\w+)(?: ELSE ".*")?$')
+RE_COND_GLOBAL  = re.compile(r'^(\w+) TO OBJECT-(\d+) IF GLOBAL-(\d+)(?: ELSE ".*")?$')
+RE_PER          = re.compile(r'^(\w+) PER Routine at (0x[0-9A-Fa-f]+)$')
 
 RE_OBJECT_START = re.compile(r'^Object: (\d+)$')
 RE_DESCRIPTION  = re.compile(r'^\s+Description = "(.+)"$')
@@ -76,24 +93,24 @@ def parse(path: Path):
             if not m:
                 continue
 
-            prop_num = int(m.group(1))
-            content  = m.group(3).strip()
-
-            if prop_num not in DIRECTION_PROPS:
-                continue
-
-            direction = DIRECTION_PROPS[prop_num]
+            content = m.group(1).strip()
 
             md = RE_DIRECT.match(content)
             if md:
+                direction = DIRECTION_WORDS.get(md.group(1).upper())
+                if direction is None:
+                    continue
                 dest = int(md.group(2))
                 objects[current_obj]["exits"].append({
                     "dir": direction, "type": "direct", "dest": dest,
                 })
                 continue
 
-            mc = RE_CONDITIONAL.match(content)
+            mc = RE_COND_OBJECT.match(content)
             if mc:
+                direction = DIRECTION_WORDS.get(mc.group(1).upper())
+                if direction is None:
+                    continue
                 dest   = int(mc.group(2))
                 gate   = int(mc.group(3))
                 state  = mc.group(4)
@@ -103,8 +120,24 @@ def parse(path: Path):
                 })
                 continue
 
+            mg = RE_COND_GLOBAL.match(content)
+            if mg:
+                direction = DIRECTION_WORDS.get(mg.group(1).upper())
+                if direction is None:
+                    continue
+                dest   = int(mg.group(2))
+                gate   = int(mg.group(3))
+                objects[current_obj]["exits"].append({
+                    "dir": direction, "type": "conditional_global",
+                    "dest": dest, "gate_global": gate,
+                })
+                continue
+
             mp = RE_PER.match(content)
             if mp:
+                direction = DIRECTION_WORDS.get(mp.group(1).upper())
+                if direction is None:
+                    continue
                 addr = mp.group(2)
                 objects[current_obj]["exits"].append({
                     "dir": direction, "type": "routine", "routine": addr,
@@ -146,6 +179,9 @@ def print_transitions(objects):
                 dest_label = name_of(objects, exit["dest"])
                 gate_label = name_of(objects, exit["gate_obj"])
                 print(f"  {dir_str} -> {dest_label}  [if {gate_label} is {exit['gate_state']}]")
+            elif exit["type"] == "conditional_global":
+                dest_label = name_of(objects, exit["dest"])
+                print(f"  {dir_str} -> {dest_label}  [if GLOBAL-{exit['gate_global']}]")
             elif exit["type"] == "routine":
                 print(f"  {dir_str} -> (routine {exit['routine']})")
 
@@ -164,7 +200,7 @@ def export_mapview(objects, out_path: Path):
         from_name = obj.get("name") or f"Object {obj_num}"
         from_loc  = f"#{obj_num}: {from_name}"
         for exit in obj["exits"]:
-            if exit["type"] not in ("direct", "conditional"):
+            if exit["type"] not in ("direct", "conditional", "conditional_global"):
                 continue
             dest     = exit["dest"]
             dest_obj = objects.get(dest, {})
@@ -191,6 +227,9 @@ def export_edges(objects, out_path: Path):
                 gate = objects.get(exit["gate_obj"], {})
                 gate_name = gate.get("name") or str(exit["gate_obj"])
                 cond = f"if #{exit['gate_obj']} ({gate_name}) is {exit['gate_state']}"
+            elif exit["type"] == "conditional_global":
+                dest = exit["dest"]
+                cond = f"if GLOBAL-{exit['gate_global']}"
             else:
                 dest = ""
                 cond = f"routine {exit['routine']}"
@@ -222,8 +261,10 @@ if __name__ == "__main__":
     objects = parse(txt_path)
     print_transitions(objects)
 
-    tsv_path = txt_path.with_name("trinity_transitions.tsv")
+    game_name = txt_path.stem.lower()   # "TRINITY" -> "trinity", "ZORK1" -> "zork1"
+
+    tsv_path = txt_path.with_name(f"{game_name}_transitions.tsv")
     export_edges(objects, tsv_path)
 
-    map_path = txt_path.with_name("trinity_map.txt")
+    map_path = txt_path.with_name(f"{game_name}_map.txt")
     export_mapview(objects, map_path)

@@ -7,6 +7,8 @@ Every backend (plain, ansi, curses, qt, headless) inherits from this class.
 import sys
 from abc import ABC, abstractmethod
 
+from Utils import Utils
+
 
 class ScreenBase(ABC):
 
@@ -88,7 +90,7 @@ class ScreenBase(ABC):
     def open_transcript(self, path=None):
         if self.transcript_file:
             return
-        path = path or 'transcript.txt'
+        path = Utils.resolve_gameplay_path(path or 'transcript.txt', self.processor.gameplay_dir)
         self.transcript_file = open(path, 'a', encoding='utf-8')
         self.stream2_active  = True
         self.print_str(f"\n[Transcript started: {path}]\n")

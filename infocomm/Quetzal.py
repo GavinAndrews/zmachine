@@ -329,6 +329,6 @@ class Quetzal:
 
 if __name__ == '__main__':
     q = Quetzal('../data/ZORK1.DAT')
-    file_path = '../saves/z1.s1'
+    file_path = '../gameplay/zork1/z1.s1'
     q.read_quetzal_save(file_path)
     q.process_file()

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Game Map</title>
+<script src="https://unpkg.com/vis-network@9/standalone/umd/vis-network.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111827; color: #e5e7eb; font: 13px/1.4 sans-serif; }
+  #net { position: absolute; inset: 40px 0 0 0; }
+  #bar { position: fixed; top: 0; left: 0; right: 0; height: 40px;
+          background: #1f2937; border-bottom: 1px solid #374151;
+          display: flex; align-items: center; gap: 6px; padding: 0 10px; }
+  #bar span { color: #9ca3af; font-size: 11px; margin-left: auto; }
+  button { background: #374151; color: #e5e7eb; border: 1px solid #4b5563;
+            padding: 3px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+  button:hover { background: #4b5563; }
+  button.on { background: #065f46; border-color: #059669; }
+  #file-load { display: none; }
+  @media print {
+    body, html { background: white; }
+    #bar { display: none; }
+    #net  { position: static; width: 100vw; height: 100vh; }
+    canvas { max-width: 100%; max-height: 100%; }
+  }
+</style>
+</head>
+<body>
+<div id="bar">
+  <button onclick="fitAll()">Fit</button>
+  <button onclick="autoLayout()">Auto layout</button>
+  <button onclick="saveJSON()">Save positions</button>
+  <label>
+    <button onclick="document.getElementById('file-load').click()">Load positions</button>
+    <input id="file-load" type="file" accept=".json" onchange="loadJSON(event)">
+  </label>
+  <button onclick="clearStorage()" title="Forget saved positions and re-run layout">Clear saved</button>
+  <label style="display:flex;align-items:center;gap:4px;font-size:12px;">
+    Labels:
+    <select id="label-style" onchange="applyLabelStyle(this.value); saveToStorage();"
+            style="background:#374151;color:#e5e7eb;border:1px solid #4b5563;border-radius:4px;padding:2px 4px;font-size:12px;cursor:pointer;">
+      <option value="labels">Show</option>
+      <option value="none">Hide</option>
+    </select>
+  </label>
+  <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:12px;">
+    <input type="checkbox" id="show-notes" onchange="toggleNotes(this.checked); saveToStorage();">
+    Notes
+  </label>
+  <button onclick="saveJPEG()" title="Download the current view as a JPEG image">Save JPEG</button>
+  <button onclick="printPDF()" title="Open image in new tab — use browser Print to save as PDF">Print / PDF</button>
+  <span id="status" style="margin-left:auto; color:#6ee7b7;">—</span>
+</div>
+<div id="net"></div>
+
+<script>
+var STORAGE_KEY = 'map_positions_zork1';
+
+function setStatus(msg) {
+  var el = document.getElementById('status');
+  if (el) el.textContent = msg;
+}
+
+// ── restore saved positions BEFORE creating the DataSet ──────────────────
+// Coordinates are injected directly into NODES_DATA so vis.js never sees
+// unpositioned nodes — nothing can override the restored layout.
+var NODES_DATA = [{"id": "n180", "label": "#180: West of House", "title": "• mailbox\n• leaflet", "notes": "mailbox\nleaflet", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n78", "label": "#78: Forest"}, {"id": "n75", "label": "#75: Forest Path"}, {"id": "n81", "label": "#81: North of House"}, {"id": "n80", "label": "#80: South of House"}, {"id": "n79", "label": "#79: Behind House"}, {"id": "n203", "label": "#203: Kitchen", "title": "• bottle (with water)\n• sack\n• lunch\n• clove of garlic", "notes": "bottle (with water)\nsack\nlunch\nclove of garlic", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n193", "label": "#193: Living Room", "title": "• trophy case\n• lantern\n• sword\n• rug", "notes": "trophy case\nlantern\nsword\nrug", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n201", "label": "#201: Attic", "title": "• rope\n• nasty knife", "notes": "rope\nnasty knife", "color": {"background": "#1c3a2a", "border": "#16a34a", "highlight": {"background": "#14532d", "border": "#4ade80"}}}, {"id": "n72", "label": "#72: Cellar"}, {"id": "n102", "label": "#102: The Troll Room"}, {"id": "n15", "label": "#15: Slide Room"}, {"id": "n24", "label": "#24: Mine Entrance"}, {"id": "n45", "label": "#45: Cold Passage"}, {"id": "n16", "label": "#16: Coal Mine"}, {"id": "n17", "label": "#17: Coal Mine"}, {"id": "n21", "label": "#21: Ladder Top"}, {"id": "n18", "label": "#18: Coal Mine"}, {"id": "n19", "label": "#19: Coal Mine"}, {"id": "n124", "label": "#124: Gas Room"}, {"id": "n20", "label": "#20: Ladder Bottom"}, {"id": "n206", "label": "#206: Timber Room"}, {"id": "n118", "label": "#118: Dead End"}, {"id": "n22", "label": "#22: Smelly Room"}, {"id": "n226", "label": "#226: Shaft Room"}, {"id": "n23", "label": "#23: Squeaky Room"}, {"id": "n222", "label": "#222: Bat Room"}, {"id": "n25", "label": "#25: Canyon View"}, {"id": "n26", "label": "#26: Rocky Ledge"}, {"id": "n76", "label": "#76: Forest"}, {"id": "n74", "label": "#74: Clearing"}, {"id": "n27", "label": "#27: Canyon Bottom"}, {"id": "n136", "label": "#136: End of Rainbow"}, {"id": "n28", "label": "#28: On the Rainbow"}, {"id": "n29", "label": "#29: Aragain Falls"}, {"id": "n30", "label": "#30: Shore"}, {"id": "n120", "label": "#120: Sandy Beach"}, {"id": "n31", "label": "#31: Frigid River"}, {"id": "n32", "label": "#32: White Cliffs Beach"}, {"id": "n33", "label": "#33: White Cliffs Beach"}, {"id": "n39", "label": "#39: Damp Cave"}, {"id": "n34", "label": "#34: Frigid River"}, {"id": "n130", "label": "#130: Frigid River"}, {"id": "n35", "label": "#35: Frigid River"}, {"id": "n36", "label": "#36: Frigid River"}, {"id": "n140", "label": "#140: Dam Base"}, {"id": "n37", "label": "#37: Chasm"}, {"id": "n38", "label": "#38: North-South Passage"}, {"id": "n50", "label": "#50: Reservoir South"}, {"id": "n41", "label": "#41: East-West Passage"}, {"id": "n107", "label": "#107: Round Room"}, {"id": "n40", "label": "#40: Deep Canyon"}, {"id": "n138", "label": "#138: Loud Room"}, {"id": "n215", "label": "#215: Dam"}, {"id": "n42", "label": "#42: Twisting Passage"}, {"id": "n150", "label": "#150: Mirror Room"}, {"id": "n47", "label": "#47: Cave"}, {"id": "n43", "label": "#43: Winding Passage"}, {"id": "n152", "label": "#152: Mirror Room"}, {"id": "n46", "label": "#46: Cave"}, {"id": "n44", "label": "#44: Narrow Passage"}, {"id": "n232", "label": "#232: Entrance to Hades"}, {"id": "n187", "label": "#187: Atlantis Room"}, {"id": "n48", "label": "#48: Stream"}, {"id": "n100", "label": "#100: Reservoir"}, {"id": "n49", "label": "#49: Stream View"}, {"id": "n51", "label": "#51: Strange Passage"}, {"id": "n185", "label": "#185: Cyclops Room"}, {"id": "n52", "label": "#52: Maze"}, {"id": "n53", "label": "#53: Maze"}, {"id": "n63", "label": "#63: Maze"}, {"id": "n54", "label": "#54: Maze"}, {"id": "n60", "label": "#60: Maze"}, {"id": "n58", "label": "#58: Maze"}, {"id": "n59", "label": "#59: Maze"}, {"id": "n56", "label": "#56: Maze"}, {"id": "n55", "label": "#55: Dead End"}, {"id": "n57", "label": "#57: Grating Room"}, {"id": "n143", "label": "#143: Clearing"}, {"id": "n64", "label": "#64: Maze"}, {"id": "n61", "label": "#61: Dead End"}, {"id": "n62", "label": "#62: Maze"}, {"id": "n167", "label": "#167: Maze"}, {"id": "n65", "label": "#65: Dead End"}, {"id": "n66", "label": "#66: Dead End"}, {"id": "n67", "label": "#67: Maze"}, {"id": "n70", "label": "#70: Maze"}, {"id": "n68", "label": "#68: Maze"}, {"id": "n69", "label": "#69: Maze"}, {"id": "n71", "label": "#71: East of Chasm"}, {"id": "n148", "label": "#148: Gallery"}, {"id": "n77", "label": "#77: Forest"}, {"id": "n88", "label": "#88: Up a Tree"}, {"id": "n239", "label": "#239: Forest"}, {"id": "n82", "label": "#82: Object 82"}, {"id": "n94", "label": "#94: Studio"}, {"id": "n96", "label": "#96: Engravings Cave"}, {"id": "n133", "label": "#133: Dome Room"}, {"id": "n172", "label": "#172: Reservoir North"}, {"id": "n105", "label": "#105: Torch Room"}, {"id": "n220", "label": "#220: Temple"}, {"id": "n126", "label": "#126: Sandy Cave"}, {"id": "n154", "label": "#154: Dam Lobby"}, {"id": "n199", "label": "#199: Maintenance Room"}, {"id": "n157", "label": "#157: Machine Room"}, {"id": "n228", "label": "#228: Drafty Room"}, {"id": "n175", "label": "#175: Egyptian Room"}, {"id": "n178", "label": "#178: Stone Barrow"}, {"id": "n190", "label": "#190: Treasure Room"}, {"id": "n212", "label": "#212: Altar"}, {"id": "n230", "label": "#230: Land of the Dead"}];
+var EDGES_DATA = [{"from": "n100", "to": "n172", "label": "N"}, {"from": "n100", "to": "n48", "label": "W,U"}, {"from": "n100", "to": "n50", "label": "S"}, {"from": "n102", "to": "n41", "label": "E"}, {"from": "n102", "to": "n70", "label": "W"}, {"from": "n102", "to": "n72", "label": "S"}, {"from": "n105", "to": "n220", "label": "S,D"}, {"from": "n107", "to": "n138", "label": "E"}, {"from": "n107", "to": "n38", "label": "N"}, {"from": "n107", "to": "n41", "label": "W"}, {"from": "n107", "to": "n44", "label": "S"}, {"from": "n107", "to": "n96", "label": "SE"}, {"from": "n118", "to": "n20", "label": "N"}, {"from": "n120", "to": "n126", "label": "NE"}, {"from": "n120", "to": "n30", "label": "S"}, {"from": "n124", "to": "n19", "label": "E"}, {"from": "n124", "to": "n22", "label": "U"}, {"from": "n126", "to": "n120", "label": "SW"}, {"from": "n130", "to": "n120", "label": "E"}, {"from": "n130", "to": "n31", "label": "D"}, {"from": "n130", "to": "n32", "label": "W"}, {"from": "n133", "to": "n105", "label": "D"}, {"from": "n133", "to": "n96", "label": "W"}, {"from": "n136", "to": "n27", "label": "SW"}, {"from": "n136", "to": "n28", "label": "NE,E,U"}, {"from": "n138", "to": "n107", "label": "W"}, {"from": "n138", "to": "n39", "label": "E"}, {"from": "n138", "to": "n40", "label": "U"}, {"from": "n140", "to": "n215", "label": "N,U"}, {"from": "n143", "to": "n75", "label": "S"}, {"from": "n143", "to": "n77", "label": "E"}, {"from": "n143", "to": "n78", "label": "W"}, {"from": "n148", "to": "n71", "label": "W"}, {"from": "n148", "to": "n94", "label": "N"}, {"from": "n150", "to": "n42", "label": "W"}, {"from": "n150", "to": "n45", "label": "N"}, {"from": "n150", "to": "n47", "label": "E"}, {"from": "n152", "to": "n43", "label": "W"}, {"from": "n152", "to": "n44", "label": "N"}, {"from": "n152", "to": "n46", "label": "E"}, {"from": "n154", "to": "n199", "label": "N,E"}, {"from": "n154", "to": "n215", "label": "S"}, {"from": "n157", "to": "n228", "label": "N"}, {"from": "n15", "to": "n24", "label": "N"}, {"from": "n15", "to": "n45", "label": "E"}, {"from": "n15", "to": "n72", "label": "D"}, {"from": "n167", "to": "n64", "label": "SW"}, {"from": "n167", "to": "n65", "label": "E"}, {"from": "n167", "to": "n68", "label": "N"}, {"from": "n16", "to": "n16", "label": "W"}, {"from": "n16", "to": "n17", "label": "N"}, {"from": "n16", "to": "n21", "label": "D"}, {"from": "n172", "to": "n100", "label": "S"}, {"from": "n172", "to": "n187", "label": "N"}, {"from": "n175", "to": "n220", "label": "W,U"}, {"from": "n178", "to": "n180", "label": "NE"}, {"from": "n17", "to": "n16", "label": "SW"}, {"from": "n17", "to": "n17", "label": "S"}, {"from": "n17", "to": "n18", "label": "E"}, {"from": "n180", "to": "n178", "label": "IN,SW"}, {"from": "n180", "to": "n78", "label": "W"}, {"from": "n180", "to": "n80", "label": "SE,S"}, {"from": "n180", "to": "n81", "label": "N,NE"}, {"from": "n185", "to": "n190", "label": "U"}, {"from": "n185", "to": "n51", "label": "E"}, {"from": "n185", "to": "n52", "label": "NW"}, {"from": "n187", "to": "n172", "label": "S"}, {"from": "n187", "to": "n47", "label": "U"}, {"from": "n18", "to": "n17", "label": "SE"}, {"from": "n18", "to": "n18", "label": "N"}, {"from": "n18", "to": "n19", "label": "S"}, {"from": "n190", "to": "n185", "label": "D"}, {"from": "n193", "to": "n203", "label": "E"}, {"from": "n193", "to": "n51", "label": "W"}, {"from": "n193", "to": "n72", "label": "D"}, {"from": "n199", "to": "n154", "label": "S,W"}, {"from": "n19", "to": "n124", "label": "N"}, {"from": "n19", "to": "n18", "label": "NE"}, {"from": "n19", "to": "n19", "label": "E"}, {"from": "n201", "to": "n203", "label": "D"}, {"from": "n203", "to": "n193", "label": "W"}, {"from": "n203", "to": "n201", "label": "U"}, {"from": "n203", "to": "n79", "label": "E,OUT"}, {"from": "n203", "to": "n94", "label": "D"}, {"from": "n206", "to": "n20", "label": "E"}, {"from": "n206", "to": "n228", "label": "W"}, {"from": "n20", "to": "n118", "label": "S"}, {"from": "n20", "to": "n206", "label": "W"}, {"from": "n20", "to": "n21", "label": "U"}, {"from": "n212", "to": "n220", "label": "N"}, {"from": "n212", "to": "n46", "label": "D"}, {"from": "n215", "to": "n140", "label": "E,D"}, {"from": "n215", "to": "n154", "label": "N"}, {"from": "n215", "to": "n40", "label": "S"}, {"from": "n215", "to": "n50", "label": "W"}, {"from": "n21", "to": "n16", "label": "U"}, {"from": "n21", "to": "n20", "label": "D"}, {"from": "n220", "to": "n105", "label": "N,OUT,U"}, {"from": "n220", "to": "n175", "label": "E,D"}, {"from": "n220", "to": "n212", "label": "S"}, {"from": "n222", "to": "n226", "label": "E"}, {"from": "n222", "to": "n23", "label": "S"}, {"from": "n226", "to": "n222", "label": "W"}, {"from": "n226", "to": "n22", "label": "N"}, {"from": "n228", "to": "n157", "label": "S"}, {"from": "n228", "to": "n206", "label": "E,OUT"}, {"from": "n22", "to": "n124", "label": "D"}, {"from": "n22", "to": "n226", "label": "S"}, {"from": "n230", "to": "n232", "label": "N,OUT"}, {"from": "n232", "to": "n230", "label": "IN,S"}, {"from": "n232", "to": "n46", "label": "U"}, {"from": "n239", "to": "n77", "label": "N,S,W"}, {"from": "n23", "to": "n222", "label": "N"}, {"from": "n23", "to": "n24", "label": "E"}, {"from": "n24", "to": "n15", "label": "S"}, {"from": "n24", "to": "n23", "label": "IN,W"}, {"from": "n25", "to": "n26", "label": "E,D"}, {"from": "n25", "to": "n74", "label": "NW"}, {"from": "n25", "to": "n76", "label": "W"}, {"from": "n26", "to": "n25", "label": "U"}, {"from": "n26", "to": "n27", "label": "D"}, {"from": "n27", "to": "n136", "label": "N"}, {"from": "n27", "to": "n26", "label": "U"}, {"from": "n28", "to": "n136", "label": "W"}, {"from": "n28", "to": "n29", "label": "E"}, {"from": "n29", "to": "n28", "label": "W,U"}, {"from": "n29", "to": "n30", "label": "N"}, {"from": "n30", "to": "n120", "label": "N"}, {"from": "n30", "to": "n29", "label": "S"}, {"from": "n31", "to": "n30", "label": "E,LAND"}, {"from": "n32", "to": "n33", "label": "N"}, {"from": "n33", "to": "n32", "label": "S"}, {"from": "n33", "to": "n39", "label": "W"}, {"from": "n34", "to": "n130", "label": "D"}, {"from": "n34", "to": "n33", "label": "W,LAND"}, {"from": "n35", "to": "n34", "label": "D"}, {"from": "n36", "to": "n140", "label": "W,LAND"}, {"from": "n36", "to": "n35", "label": "D"}, {"from": "n37", "to": "n38", "label": "S"}, {"from": "n37", "to": "n41", "label": "SW,U"}, {"from": "n37", "to": "n50", "label": "NE"}, {"from": "n38", "to": "n107", "label": "S"}, {"from": "n38", "to": "n37", "label": "N"}, {"from": "n38", "to": "n40", "label": "NE"}, {"from": "n39", "to": "n138", "label": "W"}, {"from": "n39", "to": "n33", "label": "E"}, {"from": "n40", "to": "n138", "label": "D"}, {"from": "n40", "to": "n215", "label": "E"}, {"from": "n40", "to": "n38", "label": "SW"}, {"from": "n40", "to": "n50", "label": "NW"}, {"from": "n41", "to": "n102", "label": "W"}, {"from": "n41", "to": "n107", "label": "E"}, {"from": "n41", "to": "n37", "label": "N,D"}, {"from": "n42", "to": "n150", "label": "N"}, {"from": "n42", "to": "n47", "label": "E"}, {"from": "n43", "to": "n152", "label": "N"}, {"from": "n43", "to": "n46", "label": "E"}, {"from": "n44", "to": "n107", "label": "N"}, {"from": "n44", "to": "n152", "label": "S"}, {"from": "n45", "to": "n150", "label": "S"}, {"from": "n45", "to": "n15", "label": "W"}, {"from": "n46", "to": "n152", "label": "N"}, {"from": "n46", "to": "n232", "label": "D"}, {"from": "n46", "to": "n43", "label": "W"}, {"from": "n47", "to": "n150", "label": "N"}, {"from": "n47", "to": "n187", "label": "S,D"}, {"from": "n47", "to": "n42", "label": "W"}, {"from": "n48", "to": "n100", "label": "E,D"}, {"from": "n48", "to": "n49", "label": "LAND"}, {"from": "n49", "to": "n50", "label": "E"}, {"from": "n50", "to": "n100", "label": "N"}, {"from": "n50", "to": "n215", "label": "E"}, {"from": "n50", "to": "n37", "label": "SW"}, {"from": "n50", "to": "n40", "label": "SE"}, {"from": "n50", "to": "n49", "label": "W"}, {"from": "n51", "to": "n185", "label": "IN,W"}, {"from": "n51", "to": "n193", "label": "E"}, {"from": "n52", "to": "n185", "label": "SE"}, {"from": "n52", "to": "n53", "label": "W"}, {"from": "n52", "to": "n63", "label": "S"}, {"from": "n53", "to": "n52", "label": "W"}, {"from": "n53", "to": "n53", "label": "NW"}, {"from": "n53", "to": "n63", "label": "NE,S"}, {"from": "n54", "to": "n56", "label": "D"}, {"from": "n54", "to": "n58", "label": "W"}, {"from": "n54", "to": "n59", "label": "S"}, {"from": "n54", "to": "n60", "label": "E"}, {"from": "n55", "to": "n56", "label": "S"}, {"from": "n56", "to": "n54", "label": "E"}, {"from": "n56", "to": "n55", "label": "N"}, {"from": "n56", "to": "n58", "label": "SW"}, {"from": "n56", "to": "n60", "label": "U"}, {"from": "n57", "to": "n143", "label": "U"}, {"from": "n57", "to": "n58", "label": "SW"}, {"from": "n58", "to": "n54", "label": "NW"}, {"from": "n58", "to": "n56", "label": "SW"}, {"from": "n58", "to": "n57", "label": "NE"}, {"from": "n58", "to": "n59", "label": "D"}, {"from": "n59", "to": "n54", "label": "W"}, {"from": "n59", "to": "n58", "label": "U"}, {"from": "n59", "to": "n60", "label": "E"}, {"from": "n60", "to": "n54", "label": "S"}, {"from": "n60", "to": "n56", "label": "W"}, {"from": "n60", "to": "n59", "label": "E"}, {"from": "n60", "to": "n60", "label": "NW"}, {"from": "n60", "to": "n64", "label": "N"}, {"from": "n61", "to": "n62", "label": "N"}, {"from": "n62", "to": "n61", "label": "SE"}, {"from": "n62", "to": "n62", "label": "W"}, {"from": "n62", "to": "n63", "label": "NE"}, {"from": "n63", "to": "n52", "label": "S"}, {"from": "n63", "to": "n53", "label": "U"}, {"from": "n63", "to": "n62", "label": "E"}, {"from": "n63", "to": "n64", "label": "W"}, {"from": "n64", "to": "n167", "label": "D"}, {"from": "n64", "to": "n60", "label": "U"}, {"from": "n64", "to": "n63", "label": "E"}, {"from": "n64", "to": "n64", "label": "W"}, {"from": "n65", "to": "n167", "label": "W"}, {"from": "n66", "to": "n67", "label": "S"}, {"from": "n67", "to": "n66", "label": "E"}, {"from": "n67", "to": "n68", "label": "W"}, {"from": "n67", "to": "n70", "label": "N"}, {"from": "n68", "to": "n167", "label": "U"}, {"from": "n68", "to": "n67", "label": "N"}, {"from": "n68", "to": "n69", "label": "W"}, {"from": "n69", "to": "n68", "label": "E"}, {"from": "n69", "to": "n70", "label": "S"}, {"from": "n70", "to": "n102", "label": "E"}, {"from": "n70", "to": "n67", "label": "W"}, {"from": "n70", "to": "n69", "label": "S"}, {"from": "n70", "to": "n70", "label": "N"}, {"from": "n71", "to": "n148", "label": "E"}, {"from": "n71", "to": "n72", "label": "N"}, {"from": "n72", "to": "n102", "label": "N"}, {"from": "n72", "to": "n193", "label": "U"}, {"from": "n72", "to": "n71", "label": "S"}, {"from": "n74", "to": "n25", "label": "E"}, {"from": "n74", "to": "n76", "label": "S"}, {"from": "n74", "to": "n77", "label": "N"}, {"from": "n74", "to": "n79", "label": "W"}, {"from": "n75", "to": "n143", "label": "N"}, {"from": "n75", "to": "n77", "label": "E"}, {"from": "n75", "to": "n78", "label": "W"}, {"from": "n75", "to": "n81", "label": "S"}, {"from": "n75", "to": "n88", "label": "U"}, {"from": "n76", "to": "n74", "label": "N"}, {"from": "n76", "to": "n78", "label": "W"}, {"from": "n76", "to": "n80", "label": "NW"}, {"from": "n77", "to": "n239", "label": "E"}, {"from": "n77", "to": "n74", "label": "S"}, {"from": "n77", "to": "n75", "label": "W"}, {"from": "n78", "to": "n143", "label": "N"}, {"from": "n78", "to": "n75", "label": "E"}, {"from": "n78", "to": "n76", "label": "S"}, {"from": "n79", "to": "n203", "label": "IN,W"}, {"from": "n79", "to": "n74", "label": "E"}, {"from": "n79", "to": "n80", "label": "S,SW"}, {"from": "n79", "to": "n81", "label": "N,NW"}, {"from": "n80", "to": "n180", "label": "W,NW"}, {"from": "n80", "to": "n76", "label": "S"}, {"from": "n80", "to": "n79", "label": "NE,E"}, {"from": "n81", "to": "n180", "label": "SW,W"}, {"from": "n81", "to": "n75", "label": "N"}, {"from": "n81", "to": "n79", "label": "E,SE"}, {"from": "n82", "to": "n82", "label": "IN"}, {"from": "n88", "to": "n75", "label": "D"}, {"from": "n94", "to": "n148", "label": "S"}, {"from": "n96", "to": "n107", "label": "NW"}, {"from": "n96", "to": "n133", "label": "E"}];
+
+var savedPos = null;
+try {
+  var _raw = localStorage.getItem(STORAGE_KEY);
+  if (_raw) savedPos = JSON.parse(_raw);
+} catch(e) { setStatus('localStorage unavailable: ' + e); }
+
+var loadedCount  = 0;
+var savedShowNotes = false;
+if (savedPos) {
+  savedShowNotes = !!savedPos._showNotes;
+  NODES_DATA = NODES_DATA.map(function(n) {
+    var p = savedPos[n.id];
+    if (p) { loadedCount++; return Object.assign({}, n, {x: p.x, y: p.y}); }
+    return n;
+  });
+}
+
+var nodes   = new vis.DataSet(NODES_DATA);
+var edges   = new vis.DataSet(EDGES_DATA);
+var network = new vis.Network(
+  document.getElementById('net'),
+  { nodes: nodes, edges: edges },
+  {
+    nodes: {
+      shape: 'box', margin: 8,
+      color: { background:'#1e3a5f', border:'#2563eb',
+                highlight:{ background:'#1d4ed8', border:'#60a5fa' } },
+      font:  { color:'#e5e7eb', size:13, face:'monospace' },
+    },
+    edges: {
+      arrows: 'to',
+      color:  { color:'#4b5563', highlight:'#9ca3af' },
+      font:   { color:'#e5e7eb', size:12, align:'middle',
+                 background:'#111827', strokeWidth:2, strokeColor:'#111827' },
+      smooth: { type:'curvedCW', roundness: 0.2 },
+    },
+    physics: { enabled: false },
+    interaction: { dragNodes:true, zoomView:true, dragView:true,
+                    multiselect:true, tooltipDelay:150 },
+  }
+);
+
+// ── restore label style and notes checkbox after network is ready ─────────
+var savedLabelStyle = (savedPos && savedPos._labelStyle) || 'labels';
+var _lsel = document.getElementById('label-style');
+if (_lsel) { _lsel.value = savedLabelStyle; }
+if (savedLabelStyle !== 'labels') { applyLabelStyle(savedLabelStyle); }
+
+if (savedShowNotes) {
+  var cb = document.getElementById('show-notes');
+  if (cb) { cb.checked = true; toggleNotes(true); }
+}
+
+var _physicsSettled = (loadedCount > 0);
+function _stopPhysics() {
+  if (_physicsSettled) return;
+  _physicsSettled = true;
+  network.setOptions({ physics: { enabled: false } });
+  network.fit({ animation: false });
+  saveToStorage();
+  setStatus('Auto-laid out. Drag nodes to correct positions — they auto-save.');
+}
+
+if (loadedCount > 0) {
+  setStatus('Loaded ' + loadedCount + ' saved positions');
+  network.once('afterDrawing', function() { network.fit({ animation: false }); });
+} else {
+  setStatus('No saved positions — drag nodes to arrange, then they auto-save');
+  // Spread nodes with a one-shot layout so they are not all at origin
+  network.setOptions({ physics: {
+    enabled: true,
+    barnesHut: { gravitationalConstant:-8000, springLength:160, springConstant:0.04 },
+    stabilization: { iterations: 300 }
+  } });
+  network.once('stabilizationIterationsDone', _stopPhysics);
+  setTimeout(_stopPhysics, 6000);   // safety net if stabilization never fires
+}
+
+// Dragging a node must kill physics immediately and unconditionally — even
+// mid-stabilization — otherwise the still-running simulation fights the drag
+// and the node springs back on release.
+network.on('dragStart', function(params) {
+  if (params.nodes.length === 0) return;
+  _physicsSettled = true;
+  network.setOptions({ physics: { enabled: false } });
+});
+
+// ── auto-save on every drag (no filter — always save) ────────────────────
+network.on('dragEnd', function() {
+  saveToStorage();
+});
+
+function saveToStorage() {
+  try {
+    var data = network.getPositions();
+    var _cb = document.getElementById('show-notes');
+    data._showNotes = !!(_cb && _cb.checked);
+    var _ls = document.getElementById('label-style');
+    data._labelStyle = _ls ? _ls.value : 'labels';
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    setStatus('Saved (' + Object.keys(network.getPositions()).length + ' nodes)');
+  } catch(e) {
+    setStatus('Save failed: ' + e);
+  }
+}
+
+// ── controls ─────────────────────────────────────────────────────────────
+function fitAll() { network.fit({ animation: true }); }
+
+function autoLayout() {
+  setStatus('Running layout…');
+  network.setOptions({ physics: { enabled: true,
+    barnesHut: { gravitationalConstant:-8000, springLength:160, springConstant:0.04 },
+    stabilization: { iterations: 300 } } });
+  network.once('stabilizationIterationsDone', function() {
+    network.setOptions({ physics: { enabled: false } });
+    network.fit({ animation: true });
+    saveToStorage();
+  });
+}
+
+function saveJSON() {
+  var pos  = network.getPositions();
+  var blob = new Blob([JSON.stringify(pos, null, 2)], {type:'application/json'});
+  var a    = document.createElement('a');
+  a.href   = URL.createObjectURL(blob);
+  a.download = 'map_positions_zork1.json';
+  a.click();
+}
+
+function loadJSON(evt) {
+  var file = evt.target.files[0];
+  if (!file) return;
+  file.text().then(function(txt) {
+    var pos = JSON.parse(txt);
+    nodes.update(Object.entries(pos).map(function([id, p]) {
+      return {id:id, x:p.x, y:p.y};
+    }));
+    network.fit({ animation: true });
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(pos)); } catch(e) {}
+    setStatus('Loaded ' + Object.keys(pos).length + ' positions from file');
+  });
+  evt.target.value = '';
+}
+
+function applyLabelStyle(style) {
+  var show = (style !== 'none');
+  edges.get().forEach(function(e) {
+    edges.update({ id: e.id, font: { color: show ? '#e5e7eb' : 'rgba(0,0,0,0)' } });
+  });
+}
+
+function toggleNotes(show) {
+  var updates = nodes.get().map(function(n) {
+    if (!n.notes) return null;
+    return { id: n.id, label: show ? n.label.split('\n')[0] + '\n' + n.notes : n.label.split('\n')[0] };
+  }).filter(Boolean);
+  nodes.update(updates);
+}
+
+function clearStorage() {
+  try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+  setStatus('Cleared. Running new layout…');
+  autoLayout();
+}
+
+function captureFullMap(callback) {
+  // Temporarily expand the container to hold the entire graph at 1:1 scale,
+  // fit all nodes into it, capture, then restore everything.
+  var PADDING = 60;
+  var netDiv  = document.getElementById('net');
+
+  // Compute bounding box from node positions (getBoundingBox() not in vis API)
+  var positions = network.getPositions();
+  var ids = Object.keys(positions);
+  if (ids.length === 0) { setStatus('No nodes to export.'); return; }
+  var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  ids.forEach(function(id) {
+    var p = positions[id];
+    minX = Math.min(minX, p.x); maxX = Math.max(maxX, p.x);
+    minY = Math.min(minY, p.y); maxY = Math.max(maxY, p.y);
+  });
+  var graphW = (maxX - minX) + PADDING * 2;
+  var graphH = (maxY - minY) + PADDING * 2;
+
+  // Minimum sensible size
+  graphW = Math.max(graphW, 800);
+  graphH = Math.max(graphH, 600);
+
+  // Save current container style and view state
+  var oldStyle   = netDiv.getAttribute('style') || '';
+  var oldPos     = network.getViewPosition();
+  var oldScale   = network.getScale();
+
+  // Expand container
+  netDiv.style.position = 'absolute';
+  netDiv.style.width    = graphW + 'px';
+  netDiv.style.height   = graphH + 'px';
+  netDiv.style.inset    = 'auto';
+
+  // Give vis.js one frame to resize its canvas, then fit + capture
+  requestAnimationFrame(function() {
+    network.redraw();
+    network.fit({ animation: false });
+
+    requestAnimationFrame(function() {
+      var src = network.canvas.frame.canvas;
+      var out = document.createElement('canvas');
+      out.width  = src.width;
+      out.height = src.height;
+      var ctx = out.getContext('2d');
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, out.width, out.height);
+      ctx.drawImage(src, 0, 0);
+
+      // Restore container and view
+      netDiv.setAttribute('style', oldStyle);
+      requestAnimationFrame(function() {
+        network.redraw();
+        network.moveTo({ position: oldPos, scale: oldScale, animation: false });
+        callback(out);
+      });
+    });
+  });
+}
+
+function saveJPEG() {
+  setStatus('Rendering full map…');
+  captureFullMap(function(canvas) {
+    var a = document.createElement('a');
+    a.href     = canvas.toDataURL('image/jpeg', 0.95);
+    a.download = 'map.jpg';
+    a.click();
+    setStatus('JPEG saved.');
+  });
+}
+
+function printPDF() {
+  setStatus('Rendering full map…');
+  captureFullMap(function(canvas) {
+    var dataUrl = canvas.toDataURL('image/jpeg', 0.95);
+    // Inject a print-only image into this page to avoid file:// cross-origin
+    // restrictions that block window.open() + document.write().
+    var img = document.createElement('img');
+    img.id  = 'print-export';
+    img.src = dataUrl;
+    document.body.appendChild(img);
+
+    var style = document.createElement('style');
+    style.id  = 'print-export-style';
+    style.textContent = (
+      '@media print {' +
+      '  @page { size: landscape; margin: 0.5cm; }' +
+      '  body > *:not(#print-export) { display: none !important; }' +
+      '  #print-export { display: block !important; width: 100%; height: auto; }' +
+      '}'
+    );
+    document.head.appendChild(style);
+
+    window.print();
+
+    document.body.removeChild(img);
+    document.head.removeChild(style);
+    setStatus('Print dialog opened.');
+  });
+}
+</script>
+</body>
+</html>

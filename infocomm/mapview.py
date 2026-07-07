@@ -171,7 +171,7 @@ HTML = """\
 <div id="net"></div>
 
 <script>
-var STORAGE_KEY = 'map_positions';
+var STORAGE_KEY = 'map_positions_{namespace}';
 
 function setStatus(msg) {{
   var el = document.getElementById('status');
@@ -237,6 +237,16 @@ if (savedShowNotes) {{
   if (cb) {{ cb.checked = true; toggleNotes(true); }}
 }}
 
+var _physicsSettled = (loadedCount > 0);
+function _stopPhysics() {{
+  if (_physicsSettled) return;
+  _physicsSettled = true;
+  network.setOptions({{ physics: {{ enabled: false }} }});
+  network.fit({{ animation: false }});
+  saveToStorage();
+  setStatus('Auto-laid out. Drag nodes to correct positions — they auto-save.');
+}}
+
 if (loadedCount > 0) {{
   setStatus('Loaded ' + loadedCount + ' saved positions');
   network.once('afterDrawing', function() {{ network.fit({{ animation: false }}); }});
@@ -248,13 +258,18 @@ if (loadedCount > 0) {{
     barnesHut: {{ gravitationalConstant:-8000, springLength:160, springConstant:0.04 }},
     stabilization: {{ iterations: 300 }}
   }} }});
-  network.once('stabilizationIterationsDone', function() {{
-    network.setOptions({{ physics: {{ enabled: false }} }});
-    network.fit({{ animation: false }});
-    saveToStorage();
-    setStatus('Auto-laid out. Drag nodes to correct positions — they auto-save.');
-  }});
+  network.once('stabilizationIterationsDone', _stopPhysics);
+  setTimeout(_stopPhysics, 6000);   // safety net if stabilization never fires
 }}
+
+// Dragging a node must kill physics immediately and unconditionally — even
+// mid-stabilization — otherwise the still-running simulation fights the drag
+// and the node springs back on release.
+network.on('dragStart', function(params) {{
+  if (params.nodes.length === 0) return;
+  _physicsSettled = true;
+  network.setOptions({{ physics: {{ enabled: false }} }});
+}});
 
 // ── auto-save on every drag (no filter — always save) ────────────────────
 network.on('dragEnd', function() {{
@@ -295,7 +310,7 @@ function saveJSON() {{
   var blob = new Blob([JSON.stringify(pos, null, 2)], {{type:'application/json'}});
   var a    = document.createElement('a');
   a.href   = URL.createObjectURL(blob);
-  a.download = 'map_positions.json';
+  a.download = 'map_positions_{namespace}.json';
   a.click();
 }}
 
@@ -441,7 +456,8 @@ function printPDF() {{
 """
 
 
-def build_html(transitions, nodes, notes):
+def build_html(transitions, nodes, notes, namespace='map'):
+    namespace = re.sub(r'[^a-zA-Z0-9_-]', '_', namespace).lower() or 'map'
     vis_nodes = []
     for nid, label in nodes.items():
         node = {'id': nid, 'label': label}
@@ -475,6 +491,7 @@ def build_html(transitions, nodes, notes):
     return HTML.format(
         nodes=json.dumps(vis_nodes, ensure_ascii=False),
         edges=json.dumps(vis_edges, ensure_ascii=False),
+        namespace=namespace,
     )
 
 
@@ -501,7 +518,8 @@ def main():
     print(f'{len(transitions)} transitions, {len(nodes)} locations, '
           f'{note_count} notes.', file=sys.stderr)
 
-    Path(args.output).write_text(build_html(transitions, nodes, notes),
+    namespace = Path(args.output).resolve().parent.name
+    Path(args.output).write_text(build_html(transitions, nodes, notes, namespace=namespace),
                                  encoding='utf-8')
     print(f'Written to {args.output}', file=sys.stderr)
 

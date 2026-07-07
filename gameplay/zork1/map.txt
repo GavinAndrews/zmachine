@@ -1,0 +1,340 @@
+#180: West of House	#78: Forest	w
+#78: Forest	#75: Forest Path	e
+#75: Forest Path	#81: North of House	s
+#81: North of House	#75: Forest Path	n
+#75: Forest Path	#81: North of House	s
+#81: North of House	#180: West of House	w
+NOTE	#180: West of House	mailbox
+NOTE	#180: West of House	leaflet
+#180: West of House	#80: South of House	se
+#80: South of House	#79: Behind House	ne
+#79: Behind House	#203: Kitchen	enter
+NOTE	#203: Kitchen	bottle (with water)
+NOTE	#203: Kitchen	sack
+NOTE	#203: Kitchen	lunch
+NOTE	#203: Kitchen	clove of garlic
+#203: Kitchen	#193: Living Room	w
+#193: Living Room	#203: Kitchen	e
+#203: Kitchen	#193: Living Room	w
+NOTE	#193: Living Room	trophy case
+NOTE	#193: Living Room	lantern
+NOTE	#193: Living Room	sword
+NOTE	#193: Living Room	rug
+#193: Living Room	#203: Kitchen	e
+#203: Kitchen	#201: Attic	u
+NOTE	#201: Attic	rope
+NOTE	#201: Attic	nasty knife
+#201: Attic	#203: Kitchen	d
+#203: Kitchen	#193: Living Room	w
+#193: Living Room	#72: Cellar	d
+#72: Cellar	#102: The Troll Room	n
+#102: The Troll Room	#72: Cellar	s
+#15: Slide Room	#24: Mine Entrance	N
+#15: Slide Room	#45: Cold Passage	E
+#15: Slide Room	#72: Cellar	DOWN
+#16: Coal Mine	#17: Coal Mine	N
+#16: Coal Mine	#16: Coal Mine	W
+#16: Coal Mine	#21: Ladder Top	DOWN
+#17: Coal Mine	#18: Coal Mine	E
+#17: Coal Mine	#17: Coal Mine	S
+#17: Coal Mine	#16: Coal Mine	SW
+#18: Coal Mine	#18: Coal Mine	N
+#18: Coal Mine	#19: Coal Mine	S
+#18: Coal Mine	#17: Coal Mine	SE
+#19: Coal Mine	#124: Gas Room	N
+#19: Coal Mine	#19: Coal Mine	E
+#19: Coal Mine	#18: Coal Mine	NE
+#20: Ladder Bottom	#206: Timber Room	W
+#20: Ladder Bottom	#118: Dead End	S
+#20: Ladder Bottom	#21: Ladder Top	UP
+#21: Ladder Top	#16: Coal Mine	UP
+#21: Ladder Top	#20: Ladder Bottom	DOWN
+#22: Smelly Room	#226: Shaft Room	S
+#22: Smelly Room	#124: Gas Room	DOWN
+#23: Squeaky Room	#222: Bat Room	N
+#23: Squeaky Room	#24: Mine Entrance	E
+#24: Mine Entrance	#23: Squeaky Room	W
+#24: Mine Entrance	#15: Slide Room	S
+#24: Mine Entrance	#23: Squeaky Room	IN
+#25: Canyon View	#26: Rocky Ledge	E
+#25: Canyon View	#76: Forest	W
+#25: Canyon View	#74: Clearing	NW
+#25: Canyon View	#26: Rocky Ledge	DOWN
+#26: Rocky Ledge	#25: Canyon View	UP
+#26: Rocky Ledge	#27: Canyon Bottom	DOWN
+#27: Canyon Bottom	#136: End of Rainbow	N
+#27: Canyon Bottom	#26: Rocky Ledge	UP
+#28: On the Rainbow	#29: Aragain Falls	E
+#28: On the Rainbow	#136: End of Rainbow	W
+#29: Aragain Falls	#30: Shore	N
+#29: Aragain Falls	#28: On the Rainbow	W
+#29: Aragain Falls	#28: On the Rainbow	UP
+#30: Shore	#120: Sandy Beach	N
+#30: Shore	#29: Aragain Falls	S
+#31: Frigid River	#30: Shore	E
+#31: Frigid River	#30: Shore	LAND
+#32: White Cliffs Beach	#33: White Cliffs Beach	N
+#33: White Cliffs Beach	#39: Damp Cave	W
+#33: White Cliffs Beach	#32: White Cliffs Beach	S
+#34: Frigid River	#33: White Cliffs Beach	W
+#34: Frigid River	#130: Frigid River	DOWN
+#34: Frigid River	#33: White Cliffs Beach	LAND
+#35: Frigid River	#34: Frigid River	DOWN
+#36: Frigid River	#140: Dam Base	W
+#36: Frigid River	#35: Frigid River	DOWN
+#36: Frigid River	#140: Dam Base	LAND
+#37: Chasm	#38: North-South Passage	S
+#37: Chasm	#50: Reservoir South	NE
+#37: Chasm	#41: East-West Passage	SW
+#37: Chasm	#41: East-West Passage	UP
+#38: North-South Passage	#37: Chasm	N
+#38: North-South Passage	#107: Round Room	S
+#38: North-South Passage	#40: Deep Canyon	NE
+#39: Damp Cave	#33: White Cliffs Beach	E
+#39: Damp Cave	#138: Loud Room	W
+#40: Deep Canyon	#215: Dam	E
+#40: Deep Canyon	#50: Reservoir South	NW
+#40: Deep Canyon	#38: North-South Passage	SW
+#40: Deep Canyon	#138: Loud Room	DOWN
+#41: East-West Passage	#37: Chasm	N
+#41: East-West Passage	#107: Round Room	E
+#41: East-West Passage	#102: The Troll Room	W
+#41: East-West Passage	#37: Chasm	DOWN
+#42: Twisting Passage	#150: Mirror Room	N
+#42: Twisting Passage	#47: Cave	E
+#43: Winding Passage	#152: Mirror Room	N
+#43: Winding Passage	#46: Cave	E
+#44: Narrow Passage	#107: Round Room	N
+#44: Narrow Passage	#152: Mirror Room	S
+#45: Cold Passage	#15: Slide Room	W
+#45: Cold Passage	#150: Mirror Room	S
+#46: Cave	#152: Mirror Room	N
+#46: Cave	#43: Winding Passage	W
+#46: Cave	#232: Entrance to Hades	DOWN
+#47: Cave	#150: Mirror Room	N
+#47: Cave	#42: Twisting Passage	W
+#47: Cave	#187: Atlantis Room	S
+#47: Cave	#187: Atlantis Room	DOWN
+#48: Stream	#100: Reservoir	E
+#48: Stream	#100: Reservoir	DOWN
+#48: Stream	#49: Stream View	LAND
+#49: Stream View	#50: Reservoir South	E
+#50: Reservoir South	#100: Reservoir	N
+#50: Reservoir South	#215: Dam	E
+#50: Reservoir South	#49: Stream View	W
+#50: Reservoir South	#40: Deep Canyon	SE
+#50: Reservoir South	#37: Chasm	SW
+#51: Strange Passage	#193: Living Room	E
+#51: Strange Passage	#185: Cyclops Room	W
+#51: Strange Passage	#185: Cyclops Room	IN
+#52: Maze	#53: Maze	W
+#52: Maze	#63: Maze	S
+#52: Maze	#185: Cyclops Room	SE
+#53: Maze	#52: Maze	W
+#53: Maze	#63: Maze	S
+#53: Maze	#63: Maze	NE
+#53: Maze	#53: Maze	NW
+#54: Maze	#60: Maze	E
+#54: Maze	#58: Maze	W
+#54: Maze	#59: Maze	S
+#54: Maze	#56: Maze	DOWN
+#55: Dead End	#56: Maze	S
+#56: Maze	#55: Dead End	N
+#56: Maze	#54: Maze	E
+#56: Maze	#58: Maze	SW
+#56: Maze	#60: Maze	UP
+#57: Grating Room	#58: Maze	SW
+#57: Grating Room	#143: Clearing	UP
+#58: Maze	#57: Grating Room	NE
+#58: Maze	#54: Maze	NW
+#58: Maze	#56: Maze	SW
+#58: Maze	#59: Maze	DOWN
+#59: Maze	#60: Maze	E
+#59: Maze	#54: Maze	W
+#59: Maze	#58: Maze	UP
+#60: Maze	#64: Maze	N
+#60: Maze	#59: Maze	E
+#60: Maze	#56: Maze	W
+#60: Maze	#54: Maze	S
+#60: Maze	#60: Maze	NW
+#61: Dead End	#62: Maze	N
+#62: Maze	#62: Maze	W
+#62: Maze	#63: Maze	NE
+#62: Maze	#61: Dead End	SE
+#63: Maze	#62: Maze	E
+#63: Maze	#64: Maze	W
+#63: Maze	#52: Maze	S
+#63: Maze	#53: Maze	UP
+#64: Maze	#63: Maze	E
+#64: Maze	#64: Maze	W
+#64: Maze	#60: Maze	UP
+#64: Maze	#167: Maze	DOWN
+#65: Dead End	#167: Maze	W
+#66: Dead End	#67: Maze	S
+#67: Maze	#70: Maze	N
+#67: Maze	#66: Dead End	E
+#67: Maze	#68: Maze	W
+#68: Maze	#67: Maze	N
+#68: Maze	#69: Maze	W
+#68: Maze	#167: Maze	UP
+#69: Maze	#68: Maze	E
+#69: Maze	#70: Maze	S
+#70: Maze	#70: Maze	N
+#70: Maze	#102: The Troll Room	E
+#70: Maze	#67: Maze	W
+#70: Maze	#69: Maze	S
+#71: East of Chasm	#72: Cellar	N
+#71: East of Chasm	#148: Gallery	E
+#72: Cellar	#102: The Troll Room	N
+#72: Cellar	#71: East of Chasm	S
+#72: Cellar	#193: Living Room	UP
+#74: Clearing	#77: Forest	N
+#74: Clearing	#25: Canyon View	E
+#74: Clearing	#79: Behind House	W
+#74: Clearing	#76: Forest	S
+#75: Forest Path	#143: Clearing	N
+#75: Forest Path	#77: Forest	E
+#75: Forest Path	#78: Forest	W
+#75: Forest Path	#81: North of House	S
+#75: Forest Path	#88: Up a Tree	UP
+#76: Forest	#74: Clearing	N
+#76: Forest	#78: Forest	W
+#76: Forest	#80: South of House	NW
+#77: Forest	#239: Forest	E
+#77: Forest	#75: Forest Path	W
+#77: Forest	#74: Clearing	S
+#78: Forest	#143: Clearing	N
+#78: Forest	#75: Forest Path	E
+#78: Forest	#76: Forest	S
+#79: Behind House	#81: North of House	N
+#79: Behind House	#74: Clearing	E
+#79: Behind House	#203: Kitchen	W
+#79: Behind House	#80: South of House	S
+#79: Behind House	#81: North of House	NW
+#79: Behind House	#80: South of House	SW
+#79: Behind House	#203: Kitchen	IN
+#80: South of House	#79: Behind House	E
+#80: South of House	#180: West of House	W
+#80: South of House	#76: Forest	S
+#80: South of House	#79: Behind House	NE
+#80: South of House	#180: West of House	NW
+#81: North of House	#75: Forest Path	N
+#81: North of House	#79: Behind House	E
+#81: North of House	#180: West of House	W
+#81: North of House	#79: Behind House	SE
+#81: North of House	#180: West of House	SW
+#82: Object 82	#82: Object 82	IN
+#88: Up a Tree	#75: Forest Path	DOWN
+#94: Studio	#148: Gallery	S
+#96: Engravings Cave	#133: Dome Room	E
+#96: Engravings Cave	#107: Round Room	NW
+#100: Reservoir	#172: Reservoir North	N
+#100: Reservoir	#48: Stream	W
+#100: Reservoir	#50: Reservoir South	S
+#100: Reservoir	#48: Stream	UP
+#102: The Troll Room	#41: East-West Passage	E
+#102: The Troll Room	#70: Maze	W
+#102: The Troll Room	#72: Cellar	S
+#105: Torch Room	#220: Temple	S
+#105: Torch Room	#220: Temple	DOWN
+#107: Round Room	#38: North-South Passage	N
+#107: Round Room	#138: Loud Room	E
+#107: Round Room	#41: East-West Passage	W
+#107: Round Room	#44: Narrow Passage	S
+#107: Round Room	#96: Engravings Cave	SE
+#118: Dead End	#20: Ladder Bottom	N
+#120: Sandy Beach	#30: Shore	S
+#120: Sandy Beach	#126: Sandy Cave	NE
+#124: Gas Room	#19: Coal Mine	E
+#124: Gas Room	#22: Smelly Room	UP
+#126: Sandy Cave	#120: Sandy Beach	SW
+#130: Frigid River	#120: Sandy Beach	E
+#130: Frigid River	#32: White Cliffs Beach	W
+#130: Frigid River	#31: Frigid River	DOWN
+#133: Dome Room	#96: Engravings Cave	W
+#133: Dome Room	#105: Torch Room	DOWN
+#136: End of Rainbow	#28: On the Rainbow	E
+#136: End of Rainbow	#28: On the Rainbow	NE
+#136: End of Rainbow	#27: Canyon Bottom	SW
+#136: End of Rainbow	#28: On the Rainbow	UP
+#138: Loud Room	#39: Damp Cave	E
+#138: Loud Room	#107: Round Room	W
+#138: Loud Room	#40: Deep Canyon	UP
+#140: Dam Base	#215: Dam	N
+#140: Dam Base	#215: Dam	UP
+#143: Clearing	#77: Forest	E
+#143: Clearing	#78: Forest	W
+#143: Clearing	#75: Forest Path	S
+#148: Gallery	#94: Studio	N
+#148: Gallery	#71: East of Chasm	W
+#150: Mirror Room	#45: Cold Passage	N
+#150: Mirror Room	#47: Cave	E
+#150: Mirror Room	#42: Twisting Passage	W
+#152: Mirror Room	#44: Narrow Passage	N
+#152: Mirror Room	#46: Cave	E
+#152: Mirror Room	#43: Winding Passage	W
+#154: Dam Lobby	#199: Maintenance Room	N
+#154: Dam Lobby	#199: Maintenance Room	E
+#154: Dam Lobby	#215: Dam	S
+#157: Machine Room	#228: Drafty Room	N
+#167: Maze	#68: Maze	N
+#167: Maze	#65: Dead End	E
+#167: Maze	#64: Maze	SW
+#172: Reservoir North	#187: Atlantis Room	N
+#172: Reservoir North	#100: Reservoir	S
+#175: Egyptian Room	#220: Temple	W
+#175: Egyptian Room	#220: Temple	UP
+#178: Stone Barrow	#180: West of House	NE
+#180: West of House	#81: North of House	N
+#180: West of House	#78: Forest	W
+#180: West of House	#80: South of House	S
+#180: West of House	#81: North of House	NE
+#180: West of House	#80: South of House	SE
+#180: West of House	#178: Stone Barrow	SW
+#180: West of House	#178: Stone Barrow	IN
+#185: Cyclops Room	#51: Strange Passage	E
+#185: Cyclops Room	#52: Maze	NW
+#185: Cyclops Room	#190: Treasure Room	UP
+#187: Atlantis Room	#172: Reservoir North	S
+#187: Atlantis Room	#47: Cave	UP
+#190: Treasure Room	#185: Cyclops Room	DOWN
+#193: Living Room	#203: Kitchen	E
+#193: Living Room	#51: Strange Passage	W
+#199: Maintenance Room	#154: Dam Lobby	W
+#199: Maintenance Room	#154: Dam Lobby	S
+#201: Attic	#203: Kitchen	DOWN
+#203: Kitchen	#79: Behind House	E
+#203: Kitchen	#193: Living Room	W
+#203: Kitchen	#201: Attic	UP
+#203: Kitchen	#94: Studio	DOWN
+#203: Kitchen	#79: Behind House	OUT
+#206: Timber Room	#20: Ladder Bottom	E
+#206: Timber Room	#228: Drafty Room	W
+#212: Altar	#220: Temple	N
+#212: Altar	#46: Cave	DOWN
+#215: Dam	#154: Dam Lobby	N
+#215: Dam	#140: Dam Base	E
+#215: Dam	#50: Reservoir South	W
+#215: Dam	#40: Deep Canyon	S
+#215: Dam	#140: Dam Base	DOWN
+#220: Temple	#105: Torch Room	N
+#220: Temple	#175: Egyptian Room	E
+#220: Temple	#212: Altar	S
+#220: Temple	#105: Torch Room	UP
+#220: Temple	#175: Egyptian Room	DOWN
+#220: Temple	#105: Torch Room	OUT
+#222: Bat Room	#226: Shaft Room	E
+#222: Bat Room	#23: Squeaky Room	S
+#226: Shaft Room	#22: Smelly Room	N
+#226: Shaft Room	#222: Bat Room	W
+#228: Drafty Room	#206: Timber Room	E
+#228: Drafty Room	#157: Machine Room	S
+#228: Drafty Room	#206: Timber Room	OUT
+#230: Land of the Dead	#232: Entrance to Hades	N
+#230: Land of the Dead	#232: Entrance to Hades	OUT
+#232: Entrance to Hades	#230: Land of the Dead	S
+#232: Entrance to Hades	#46: Cave	UP
+#232: Entrance to Hades	#230: Land of the Dead	IN
+#239: Forest	#77: Forest	N
+#239: Forest	#77: Forest	W
+#239: Forest	#77: Forest	S

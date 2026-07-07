@@ -1,0 +1,317 @@
+from_id	from_name	direction	to_id	to_name	condition
+15	Slide Room	N	24	Mine Entrance	
+15	Slide Room	E	45	Cold Passage	
+15	Slide Room	DOWN	72	Cellar	
+16	Coal Mine	N	17	Coal Mine	
+16	Coal Mine	W	16	Coal Mine	
+16	Coal Mine	DOWN	21	Ladder Top	
+17	Coal Mine	E	18	Coal Mine	
+17	Coal Mine	S	17	Coal Mine	
+17	Coal Mine	SW	16	Coal Mine	
+18	Coal Mine	N	18	Coal Mine	
+18	Coal Mine	S	19	Coal Mine	
+18	Coal Mine	SE	17	Coal Mine	
+19	Coal Mine	N	124	Gas Room	
+19	Coal Mine	E	19	Coal Mine	
+19	Coal Mine	NE	18	Coal Mine	
+20	Ladder Bottom	W	206	Timber Room	
+20	Ladder Bottom	S	118	Dead End	
+20	Ladder Bottom	UP	21	Ladder Top	
+21	Ladder Top	UP	16	Coal Mine	
+21	Ladder Top	DOWN	20	Ladder Bottom	
+22	Smelly Room	S	226	Shaft Room	
+22	Smelly Room	DOWN	124	Gas Room	
+23	Squeaky Room	N	222	Bat Room	
+23	Squeaky Room	E	24	Mine Entrance	
+24	Mine Entrance	W	23	Squeaky Room	
+24	Mine Entrance	S	15	Slide Room	
+24	Mine Entrance	IN	23	Squeaky Room	
+25	Canyon View	E	26	Rocky Ledge	
+25	Canyon View	W	76	Forest	
+25	Canyon View	NW	74	Clearing	
+25	Canyon View	DOWN	26	Rocky Ledge	
+26	Rocky Ledge	UP	25	Canyon View	
+26	Rocky Ledge	DOWN	27	Canyon Bottom	
+27	Canyon Bottom	N	136	End of Rainbow	
+27	Canyon Bottom	UP	26	Rocky Ledge	
+28	On the Rainbow	E	29	Aragain Falls	
+28	On the Rainbow	W	136	End of Rainbow	
+29	Aragain Falls	N	30	Shore	
+29	Aragain Falls	W	28	On the Rainbow	if GLOBAL-143
+29	Aragain Falls	UP	28	On the Rainbow	if GLOBAL-143
+30	Shore	N	120	Sandy Beach	
+30	Shore	S	29	Aragain Falls	
+31	Frigid River	E	30	Shore	
+31	Frigid River	LAND	30	Shore	
+32	White Cliffs Beach	N	33	White Cliffs Beach	if GLOBAL-149
+33	White Cliffs Beach	W	39	Damp Cave	if GLOBAL-149
+33	White Cliffs Beach	S	32	White Cliffs Beach	if GLOBAL-149
+34	Frigid River	W	33	White Cliffs Beach	
+34	Frigid River	DOWN	130	Frigid River	
+34	Frigid River	LAND	33	White Cliffs Beach	
+35	Frigid River	DOWN	34	Frigid River	
+36	Frigid River	W	140	Dam Base	
+36	Frigid River	DOWN	35	Frigid River	
+36	Frigid River	LAND	140	Dam Base	
+37	Chasm	S	38	North-South Passage	
+37	Chasm	NE	50	Reservoir South	
+37	Chasm	SW	41	East-West Passage	
+37	Chasm	UP	41	East-West Passage	
+38	North-South Passage	N	37	Chasm	
+38	North-South Passage	S	107	Round Room	
+38	North-South Passage	NE	40	Deep Canyon	
+39	Damp Cave	E	33	White Cliffs Beach	
+39	Damp Cave	W	138	Loud Room	
+40	Deep Canyon	E	215	Dam	
+40	Deep Canyon	NW	50	Reservoir South	
+40	Deep Canyon	SW	38	North-South Passage	
+40	Deep Canyon	DOWN	138	Loud Room	
+41	East-West Passage	N	37	Chasm	
+41	East-West Passage	E	107	Round Room	
+41	East-West Passage	W	102	The Troll Room	
+41	East-West Passage	DOWN	37	Chasm	
+42	Twisting Passage	N	150	Mirror Room	
+42	Twisting Passage	E	47	Cave	
+43	Winding Passage	N	152	Mirror Room	
+43	Winding Passage	E	46	Cave	
+44	Narrow Passage	N	107	Round Room	
+44	Narrow Passage	S	152	Mirror Room	
+45	Cold Passage	W	15	Slide Room	
+45	Cold Passage	S	150	Mirror Room	
+46	Cave	N	152	Mirror Room	
+46	Cave	W	43	Winding Passage	
+46	Cave	DOWN	232	Entrance to Hades	
+47	Cave	N	150	Mirror Room	
+47	Cave	W	42	Twisting Passage	
+47	Cave	S	187	Atlantis Room	
+47	Cave	DOWN	187	Atlantis Room	
+48	Stream	E	100	Reservoir	
+48	Stream	DOWN	100	Reservoir	
+48	Stream	LAND	49	Stream View	
+49	Stream View	E	50	Reservoir South	
+50	Reservoir South	N	100	Reservoir	if GLOBAL-145
+50	Reservoir South	E	215	Dam	
+50	Reservoir South	W	49	Stream View	
+50	Reservoir South	SE	40	Deep Canyon	
+50	Reservoir South	SW	37	Chasm	
+51	Strange Passage	E	193	Living Room	
+51	Strange Passage	W	185	Cyclops Room	
+51	Strange Passage	IN	185	Cyclops Room	
+52	Maze	W	53	Maze	
+52	Maze	S	63	Maze	
+52	Maze	SE	185	Cyclops Room	
+53	Maze	W	52	Maze	
+53	Maze	S	63	Maze	
+53	Maze	NE	63	Maze	
+53	Maze	NW	53	Maze	
+54	Maze	E	60	Maze	
+54	Maze	W	58	Maze	
+54	Maze	S	59	Maze	
+54	Maze	DOWN	56	Maze	
+55	Dead End	S	56	Maze	
+56	Maze	N	55	Dead End	
+56	Maze	E	54	Maze	
+56	Maze	SW	58	Maze	
+56	Maze	UP	60	Maze	
+56	Maze	DOWN			routine 0x0AFA6
+57	Grating Room	SW	58	Maze	
+57	Grating Room	UP	143	Clearing	if #174 (grating) is OPEN
+58	Maze	NE	57	Grating Room	
+58	Maze	NW	54	Maze	
+58	Maze	SW	56	Maze	
+58	Maze	DOWN	59	Maze	
+59	Maze	E	60	Maze	
+59	Maze	W	54	Maze	
+59	Maze	UP	58	Maze	
+60	Maze	N	64	Maze	
+60	Maze	E	59	Maze	
+60	Maze	W	56	Maze	
+60	Maze	S	54	Maze	
+60	Maze	NW	60	Maze	
+60	Maze	DOWN			routine 0x0AFA6
+61	Dead End	N	62	Maze	
+62	Maze	W	62	Maze	
+62	Maze	NE	63	Maze	
+62	Maze	SE	61	Dead End	
+63	Maze	E	62	Maze	
+63	Maze	W	64	Maze	
+63	Maze	S	52	Maze	
+63	Maze	UP	53	Maze	
+63	Maze	DOWN			routine 0x0AFA6
+64	Maze	E	63	Maze	
+64	Maze	W	64	Maze	
+64	Maze	UP	60	Maze	
+64	Maze	DOWN	167	Maze	
+65	Dead End	W	167	Maze	
+66	Dead End	S	67	Maze	
+67	Maze	N	70	Maze	
+67	Maze	E	66	Dead End	
+67	Maze	W	68	Maze	
+68	Maze	N	67	Maze	
+68	Maze	W	69	Maze	
+68	Maze	UP	167	Maze	
+69	Maze	E	68	Maze	
+69	Maze	S	70	Maze	
+69	Maze	DOWN			routine 0x0AFA6
+70	Maze	N	70	Maze	
+70	Maze	E	102	The Troll Room	
+70	Maze	W	67	Maze	
+70	Maze	S	69	Maze	
+71	East of Chasm	N	72	Cellar	
+71	East of Chasm	E	148	Gallery	
+72	Cellar	N	102	The Troll Room	
+72	Cellar	S	71	East of Chasm	
+72	Cellar	UP	193	Living Room	if #183 (trap door) is OPEN
+74	Clearing	N	77	Forest	
+74	Clearing	E	25	Canyon View	
+74	Clearing	W	79	Behind House	
+74	Clearing	S	76	Forest	
+75	Forest Path	N	143	Clearing	
+75	Forest Path	E	77	Forest	
+75	Forest Path	W	78	Forest	
+75	Forest Path	S	81	North of House	
+75	Forest Path	UP	88	Up a Tree	
+76	Forest	N	74	Clearing	
+76	Forest	W	78	Forest	
+76	Forest	NW	80	South of House	
+77	Forest	E	239	Forest	
+77	Forest	W	75	Forest Path	
+77	Forest	S	74	Clearing	
+78	Forest	N	143	Clearing	
+78	Forest	E	75	Forest Path	
+78	Forest	S	76	Forest	
+79	Behind House	N	81	North of House	
+79	Behind House	E	74	Clearing	
+79	Behind House	W	203	Kitchen	if #235 (kitchen window) is OPEN
+79	Behind House	S	80	South of House	
+79	Behind House	NW	81	North of House	
+79	Behind House	SW	80	South of House	
+79	Behind House	IN	203	Kitchen	if #235 (kitchen window) is OPEN
+80	South of House	E	79	Behind House	
+80	South of House	W	180	West of House	
+80	South of House	S	76	Forest	
+80	South of House	NE	79	Behind House	
+80	South of House	NW	180	West of House	
+81	North of House	N	75	Forest Path	
+81	North of House	E	79	Behind House	
+81	North of House	W	180	West of House	
+81	North of House	SE	79	Behind House	
+81	North of House	SW	180	West of House	
+82		IN	82		
+88	Up a Tree	DOWN	75	Forest Path	
+94	Studio	S	148	Gallery	
+94	Studio	UP			routine 0x0A578
+96	Engravings Cave	E	133	Dome Room	
+96	Engravings Cave	NW	107	Round Room	
+100	Reservoir	N	172	Reservoir North	
+100	Reservoir	W	48	Stream	
+100	Reservoir	S	50	Reservoir South	
+100	Reservoir	UP	48	Stream	
+102	The Troll Room	E	41	East-West Passage	if GLOBAL-142
+102	The Troll Room	W	70	Maze	if GLOBAL-142
+102	The Troll Room	S	72	Cellar	
+105	Torch Room	S	220	Temple	
+105	Torch Room	DOWN	220	Temple	
+107	Round Room	N	38	North-South Passage	
+107	Round Room	E	138	Loud Room	
+107	Round Room	W	41	East-West Passage	
+107	Round Room	S	44	Narrow Passage	
+107	Round Room	SE	96	Engravings Cave	
+118	Dead End	N	20	Ladder Bottom	
+120	Sandy Beach	S	30	Shore	
+120	Sandy Beach	NE	126	Sandy Cave	
+124	Gas Room	E	19	Coal Mine	
+124	Gas Room	UP	22	Smelly Room	
+126	Sandy Cave	SW	120	Sandy Beach	
+130	Frigid River	E	120	Sandy Beach	
+130	Frigid River	W	32	White Cliffs Beach	
+130	Frigid River	DOWN	31	Frigid River	
+133	Dome Room	W	96	Engravings Cave	
+133	Dome Room	DOWN	105	Torch Room	if GLOBAL-148
+136	End of Rainbow	E	28	On the Rainbow	if GLOBAL-143
+136	End of Rainbow	NE	28	On the Rainbow	if GLOBAL-143
+136	End of Rainbow	SW	27	Canyon Bottom	
+136	End of Rainbow	UP	28	On the Rainbow	if GLOBAL-143
+138	Loud Room	E	39	Damp Cave	
+138	Loud Room	W	107	Round Room	
+138	Loud Room	UP	40	Deep Canyon	
+140	Dam Base	N	215	Dam	
+140	Dam Base	UP	215	Dam	
+143	Clearing	E	77	Forest	
+143	Clearing	W	78	Forest	
+143	Clearing	S	75	Forest Path	
+143	Clearing	DOWN			routine 0x04EC6
+148	Gallery	N	94	Studio	
+148	Gallery	W	71	East of Chasm	
+150	Mirror Room	N	45	Cold Passage	
+150	Mirror Room	E	47	Cave	
+150	Mirror Room	W	42	Twisting Passage	
+152	Mirror Room	N	44	Narrow Passage	
+152	Mirror Room	E	46	Cave	
+152	Mirror Room	W	43	Winding Passage	
+154	Dam Lobby	N	199	Maintenance Room	
+154	Dam Lobby	E	199	Maintenance Room	
+154	Dam Lobby	S	215	Dam	
+157	Machine Room	N	228	Drafty Room	
+167	Maze	N	68	Maze	
+167	Maze	E	65	Dead End	
+167	Maze	SW	64	Maze	
+172	Reservoir North	N	187	Atlantis Room	
+172	Reservoir North	S	100	Reservoir	if GLOBAL-145
+175	Egyptian Room	W	220	Temple	
+175	Egyptian Room	UP	220	Temple	
+178	Stone Barrow	NE	180	West of House	
+180	West of House	N	81	North of House	
+180	West of House	W	78	Forest	
+180	West of House	S	80	South of House	
+180	West of House	NE	81	North of House	
+180	West of House	SE	80	South of House	
+180	West of House	SW	178	Stone Barrow	if GLOBAL-141
+180	West of House	IN	178	Stone Barrow	if GLOBAL-141
+185	Cyclops Room	E	51	Strange Passage	if GLOBAL-144
+185	Cyclops Room	NW	52	Maze	
+185	Cyclops Room	UP	190	Treasure Room	if GLOBAL-150
+187	Atlantis Room	S	172	Reservoir North	
+187	Atlantis Room	UP	47	Cave	
+190	Treasure Room	DOWN	185	Cyclops Room	
+193	Living Room	E	203	Kitchen	
+193	Living Room	W	51	Strange Passage	if GLOBAL-144
+193	Living Room	DOWN			routine 0x0A5D0
+199	Maintenance Room	W	154	Dam Lobby	
+199	Maintenance Room	S	154	Dam Lobby	
+201	Attic	DOWN	203	Kitchen	
+203	Kitchen	E	79	Behind House	if #235 (kitchen window) is OPEN
+203	Kitchen	W	193	Living Room	
+203	Kitchen	UP	201	Attic	
+203	Kitchen	DOWN	94	Studio	if GLOBAL-151
+203	Kitchen	OUT	79	Behind House	if #235 (kitchen window) is OPEN
+206	Timber Room	E	20	Ladder Bottom	
+206	Timber Room	W	228	Drafty Room	if GLOBAL-147
+212	Altar	N	220	Temple	
+212	Altar	DOWN	46	Cave	if GLOBAL-140
+215	Dam	N	154	Dam Lobby	
+215	Dam	E	140	Dam Base	
+215	Dam	W	50	Reservoir South	
+215	Dam	S	40	Deep Canyon	
+215	Dam	DOWN	140	Dam Base	
+220	Temple	N	105	Torch Room	
+220	Temple	E	175	Egyptian Room	
+220	Temple	S	212	Altar	
+220	Temple	UP	105	Torch Room	
+220	Temple	DOWN	175	Egyptian Room	
+220	Temple	OUT	105	Torch Room	
+222	Bat Room	E	226	Shaft Room	
+222	Bat Room	S	23	Squeaky Room	
+226	Shaft Room	N	22	Smelly Room	
+226	Shaft Room	W	222	Bat Room	
+228	Drafty Room	E	206	Timber Room	if GLOBAL-147
+228	Drafty Room	S	157	Machine Room	
+228	Drafty Room	OUT	206	Timber Room	if GLOBAL-147
+230	Land of the Dead	N	232	Entrance to Hades	
+230	Land of the Dead	OUT	232	Entrance to Hades	
+232	Entrance to Hades	S	230	Land of the Dead	if GLOBAL-146
+232	Entrance to Hades	UP	46	Cave	
+232	Entrance to Hades	IN	230	Land of the Dead	if GLOBAL-146
+239	Forest	N	77	Forest	
+239	Forest	W	77	Forest	
+239	Forest	S	77	Forest	
