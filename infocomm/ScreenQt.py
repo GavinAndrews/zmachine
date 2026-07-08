@@ -17,7 +17,7 @@ from PySide6.QtCore  import Qt, QTimer, QThread, QObject, QEvent
 from PySide6.QtGui   import QFont, QFontMetrics, QPainter, QColor
 
 from ScreenBase import ScreenBase
-from ScreenGrid import ScreenGrid, ROWS, COLS, STYLE_REVERSE, STYLE_BOLD, STYLE_EMPHASIS
+from ScreenGrid import ScreenGrid, ROWS, COLS, STYLE_REVERSE, STYLE_BOLD, STYLE_EMPHASIS, format_status_bar
 
 
 # ---------------------------------------------------------------------------
@@ -38,7 +38,26 @@ class TerminalWidget(QWidget):
         self.setFixedSize(COLS * self._cw, ROWS * self._ch)
         self.setStyleSheet("background: black;")
 
+        self._font_bold = QFont(self._font)
+        self._font_bold.setBold(True)
+        self._font_italic = QFont(self._font)
+        self._font_italic.setItalic(True)
+        self._font_bold_italic = QFont(self._font)
+        self._font_bold_italic.setBold(True)
+        self._font_bold_italic.setItalic(True)
+        self._fonts_by_style = {
+            (False, False): self._font,
+            (True, False): self._font_bold,
+            (False, True): self._font_italic,
+            (True, True): self._font_bold_italic,
+        }
+
         self._sg = ScreenGrid()
+
+        # V1-3 status line (disabled until the game first requests one)
+        self._status_active = False
+        self._status_left   = ""
+        self._status_right  = ""
 
         # Input state
         self._input_mode   = False
@@ -88,6 +107,14 @@ class TerminalWidget(QWidget):
 
     def print_str(self, s):
         self._sg.print_str(s)
+        self.update()
+
+    def set_status(self, location, right_text):
+        if not self._status_active:
+            self._status_active = True
+            self.setFixedSize(COLS * self._cw, (ROWS + 1) * self._ch)
+        self._status_left  = location
+        self._status_right = right_text
         self.update()
 
     # -- input ------------------------------------------------------------
@@ -173,27 +200,42 @@ class TerminalWidget(QWidget):
         WHITE  = QColor(204, 204, 204)
         BRITE  = QColor(255, 255, 255)
 
+        row_offset = 1 if self._status_active else 0
+        if self._status_active:
+            bar = format_status_bar(self._status_left, self._status_right)
+            painter.fillRect(0, 0, COLS * cw, ch, WHITE)
+            painter.setPen(BLACK)
+            for c, char in enumerate(bar):
+                if char != ' ':
+                    painter.drawText(c * cw, ascent, char)
+
+        current_font_key = (False, False)
         for r in range(ROWS):
             for c in range(COLS):
                 cell = self._sg._grid[r][c]
                 x = c * cw
-                y = r * ch
+                y = (r + row_offset) * ch
                 if cell.style & STYLE_REVERSE:
                     bg, fg = WHITE, BLACK
                 else:
                     bg, fg = BLACK, WHITE
                 painter.fillRect(x, y, cw, ch, bg)
                 if cell.char != ' ':
+                    font_key = (bool(cell.style & STYLE_BOLD), bool(cell.style & STYLE_EMPHASIS))
+                    if font_key != current_font_key:
+                        painter.setFont(self._fonts_by_style[font_key])
+                        current_font_key = font_key
                     painter.setPen(fg)
                     painter.drawText(x, y + ascent, cell.char)
 
         if (self._input_mode or self._char_mode) and self._cursor_phase:
             sg = self._sg
             x  = sg._lo_col * cw
-            y  = sg._lo_row * ch
+            y  = (sg._lo_row + row_offset) * ch
             painter.fillRect(x, y, cw, ch, BRITE)
             char = sg._grid[sg._lo_row][sg._lo_col].char
             if char != ' ':
+                painter.setFont(self._font)
                 painter.setPen(BLACK)
                 painter.drawText(x, y + ascent, char)
 
@@ -628,6 +670,9 @@ class StackWindow(QWidget):
 # ---------------------------------------------------------------------------
 
 class ZMachineScreen(ScreenBase):
+    supports_bold        = True
+    supports_italic      = True
+    supports_timed_input = True
 
     def __init__(self):
         super().__init__()
@@ -837,6 +882,21 @@ class ZMachineScreen(ScreenBase):
         if self.terminal:
             self.terminal.erase_line()
 
+    def update_status_line(self, location: str, right_text: str):
+        if not self.terminal:
+            return
+        was_active = self.terminal._status_active
+        self.terminal.set_status(location, right_text)
+        # The terminal widget grows by one row the first time a status line
+        # is drawn; the surrounding QScrollArea doesn't resize itself, so
+        # the window has to be told to grow too, or the extra row (and
+        # whatever it displaces) is clipped/scrolled instead of visible.
+        if not was_active and self.terminal._status_active and self.main_window:
+            self.main_window.resize(
+                self.terminal.width()  + 4,
+                self.terminal.height() + self.main_window.menuBar().height() + 4,
+            )
+
     def refresh(self):
         QApplication.processEvents()
 
@@ -851,17 +911,27 @@ class ZMachineScreen(ScreenBase):
         self._waiting     = True
         if self.terminal:
             self.terminal.start_line_input(max_chars)
+        timer = None
         if time_tenths > 0 and time_routine_cb:
+            timer = QTimer(self)
+            timer.setSingleShot(True)
             def _t():
-                if self._waiting and time_routine_cb():
+                if not self._waiting:
+                    return
+                if time_routine_cb():
                     self._line_result = ""
                     self._waiting     = False
                     if self.terminal:
                         self.terminal._input_mode = False
-            QTimer.singleShot(time_tenths * 100, _t)
+                else:
+                    timer.start(time_tenths * 100)
+            timer.timeout.connect(_t)
+            timer.start(time_tenths * 100)
         while self._waiting and self._running:
             QApplication.processEvents()
             QThread.msleep(10)
+        if timer is not None:
+            timer.stop()
         if not self._running:
             raise SystemExit(0)
         return self._line_result if self._line_result is not None else ""
@@ -873,17 +943,27 @@ class ZMachineScreen(ScreenBase):
         self._waiting     = True
         if self.terminal:
             self.terminal.start_char_input()
+        timer = None
         if time_tenths > 0 and time_routine_cb:
+            timer = QTimer(self)
+            timer.setSingleShot(True)
             def _t():
-                if self._waiting and time_routine_cb():
+                if not self._waiting:
+                    return
+                if time_routine_cb():
                     self._char_result = '\r'
                     self._waiting     = False
                     if self.terminal:
                         self.terminal._char_mode = False
-            QTimer.singleShot(time_tenths * 100, _t)
+                else:
+                    timer.start(time_tenths * 100)
+            timer.timeout.connect(_t)
+            timer.start(time_tenths * 100)
         while self._waiting and self._running:
             QApplication.processEvents()
             QThread.msleep(10)
+        if timer is not None:
+            timer.stop()
         if not self._running:
             raise SystemExit(0)
         return self._char_result if self._char_result is not None else '\r'

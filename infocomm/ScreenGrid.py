@@ -14,6 +14,18 @@ STYLE_EMPHASIS = 4   # underline
 STYLE_FIXED    = 8
 
 
+def format_status_bar(location, right_text, width=COLS):
+    """Lay out the V1-3 status line: location left-justified, right_text
+    right-justified, truncated/padded to exactly `width` characters."""
+    location   = location or ""
+    right_text = right_text or ""
+    right_text = right_text[:width]
+    avail      = max(0, width - len(right_text) - 1)
+    location   = location[:avail]
+    bar        = location.ljust(width - len(right_text)) + right_text
+    return bar[:width]
+
+
 class Cell:
     __slots__ = ('char', 'style')
 

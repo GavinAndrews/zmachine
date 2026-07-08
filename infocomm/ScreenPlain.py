@@ -63,6 +63,13 @@ class PlainScreen(ScreenBase):
     def erase_window(self, win: int):
         self._current_win = 0       # always fall back to lower
 
+    def update_status_line(self, location: str, right_text: str):
+        width = 79
+        left = (location or "")[:width]
+        pad = max(1, width - len(left) - len(right_text))
+        sys.stdout.write(f"[{left}{' ' * pad}{right_text}]\n")
+        sys.stdout.flush()
+
     # ------------------------------------------------------------------
     # Input
     # ------------------------------------------------------------------

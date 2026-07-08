@@ -33,6 +33,12 @@ class HeadlessScreen:
       # drive processor in a loop until StopExecution
       # then inspect screen.events / screen.upper_text() / screen.lower_text()
     """
+    # Headless testing target: report full V4+ capability so games run the
+    # same code paths a fully-capable interpreter would exercise.
+    supports_bold        = True
+    supports_italic      = True
+    supports_fixed_width = True
+    supports_timed_input = True
 
     def __init__(self):
         self.events        = []
@@ -55,6 +61,10 @@ class HeadlessScreen:
         e = ScreenEvent(type_, **kwargs)
         self.events.append(e)
         return e
+
+    def transcript_write(self, s):
+        if self.stream2_active and self.transcript_file:
+            self.transcript_file.write(s)
 
     # ------------------------------------------------------------------
     # Screen API — output
@@ -128,8 +138,8 @@ class HeadlessScreen:
         self.current_fg = fg
         self.current_bg = bg
 
-    def update_status_line(self, location, score, turns):
-        self._evt('status', location=location, score=score, turns=turns)
+    def update_status_line(self, location, right_text):
+        self._evt('status', location=location, right_text=right_text)
 
     def print_location_prompt(self, loc_text):
         self._evt('location_prompt', text=loc_text)

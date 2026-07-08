@@ -32,10 +32,17 @@ def build_machine(game_path, screen, scripting=None, seed=None, gameplay_dir=Non
 
     # Interpreter capability flags — these bytes are zeroed in the .dat file
     # and must be filled in by the interpreter before the game starts running.
+    # Queried from the screen backend so we never advertise a feature (e.g.
+    # bold, or timed input) that the chosen --ui backend can't actually
+    # deliver.
     game_version = memory[0]   # byte 0 is the version number directly
     if game_version >= 4:
-        # Flags 1 (0x01): bold (2), italic (3), fixed-space (4), timed input (7)
-        memory[0x01] |= 0x04 | 0x08 | 0x10 | 0x80
+        flags = 0
+        if getattr(screen, 'supports_bold', False):        flags |= 0x04
+        if getattr(screen, 'supports_italic', False):       flags |= 0x08
+        if getattr(screen, 'supports_fixed_width', False):  flags |= 0x10
+        if getattr(screen, 'supports_timed_input', False):  flags |= 0x80
+        memory[0x01] |= flags
         memory[0x1C] = 6          # interpreter number: IBM PC
         memory[0x1D] = ord('F')  # interpreter version letter
     elif game_version <= 3:

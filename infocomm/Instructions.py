@@ -630,6 +630,7 @@ class Instructions:
     def instruction_read(self, args):
         """sread (V3) / aread (V4+)"""
         self._save_interp_undo()
+        self._refresh_status_line()
 
         # Map: check whether the previous command caused a location transition.
         if self.map_file and self._map_prev_cmd is not None:
@@ -1333,7 +1334,46 @@ class Instructions:
         pass  # buffering is handled transparently by Screen
 
     def instruction_show_status(self, args):
-        pass  # V4+ game manages its own upper window; V1-3 status is not needed here
+        self._refresh_status_line()
+
+    def _refresh_status_line(self):
+        """V1-3 only: redraw the interpreter-drawn status line from globals.
+
+        Global 0 holds the current location object; global 1/2 hold either
+        score/turns or hours/minutes, selected by Flags1 bit 1 (set by the
+        game in the header, e.g. Deadline's real-time clock vs. Zork's score).
+        V4+ games manage their own upper window instead (see split_window).
+        """
+        if self.processor.game_version > 3:
+            return
+        if self.processor.game_version == 3 and (self.processor.memory[0x01] & 0x10):
+            return  # header bit 4 set: game declares the status line unavailable
+
+        globals_ = self.processor.globals
+        location = ""
+        loc_obj = globals_.read_global(0)
+        if loc_obj:
+            try:
+                entry = self.processor.object_table.get_object_table_entry(loc_obj)
+                location = entry.get_property_table().get_description()
+            except Exception:
+                location = ""
+
+        time_format = bool(self.processor.memory[0x01] & 0x02)
+        if time_format:
+            hours = Utils.from_unsigned_word_to_signed_int(globals_.read_global(1))
+            minutes = Utils.from_unsigned_word_to_signed_int(globals_.read_global(2))
+            suffix = "am" if hours < 12 else "pm"
+            display_hour = hours % 12
+            if display_hour == 0:
+                display_hour = 12
+            right_text = f"{display_hour}:{minutes:02d} {suffix}"
+        else:
+            score = Utils.from_unsigned_word_to_signed_int(globals_.read_global(1))
+            turns = globals_.read_global(2)
+            right_text = f"Score: {score}  Moves: {turns}"
+
+        self.screen.update_status_line(location, right_text)
 
     def instruction_sound_effect(self, args):
         pass  # no-op: sound data requires a Blorb resource file
@@ -1364,6 +1404,12 @@ class Instructions:
                 self.stream3_stack.pop()
 
     def instruction_input_stream(self, args):
+        # Switches between input stream 0 (keyboard) and 1 (playback of a
+        # command script previously recorded via output_stream 4). No V1-3
+        # Infocom game calls this from Z-code in normal play - it exists for
+        # interpreter-side tooling. This interpreter's own script replay
+        # (Scripting.py / #script meta-command) is a separate, independent
+        # mechanism, so there is nothing to switch here.
         pass
 
     ################################################################################################

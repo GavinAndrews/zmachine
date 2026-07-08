@@ -9,9 +9,12 @@ Works in any ANSI-capable terminal: Windows Terminal, VSCode, xterm, etc.
 Does NOT work in bare Windows Command Prompt (cmd.exe without VT enabled).
 """
 
+import os
 import sys
+import time
+from contextlib import contextmanager
 from ScreenBase import ScreenBase
-from ScreenGrid import ScreenGrid, ROWS, COLS, STYLE_REVERSE, STYLE_BOLD, STYLE_EMPHASIS
+from ScreenGrid import ScreenGrid, ROWS, COLS, STYLE_REVERSE, STYLE_BOLD, STYLE_EMPHASIS, format_status_bar
 
 
 # --- portable single-char read -------------------------------------------
@@ -34,6 +37,58 @@ def _getch():
         finally:
             termios.tcsetattr(fd, termios.TCSADRAIN, old)
         return ch
+
+
+def _key_ready(timeout):
+    """True if a keypress becomes available within `timeout` seconds."""
+    if sys.platform == 'win32':
+        import msvcrt
+        end = time.monotonic() + timeout
+        while time.monotonic() < end:
+            if msvcrt.kbhit():
+                return True
+            time.sleep(0.02)
+        return False
+    else:
+        import select
+        r, _, _ = select.select([sys.stdin], [], [], max(0, timeout))
+        return bool(r)
+
+
+def _read_raw_char(fd):
+    """Read one already-available byte from a fd already in raw mode (POSIX)."""
+    ch = os.read(fd, 1).decode(errors='replace')
+    if ch in ('\x00', '\xe0'):
+        os.read(fd, 1)
+        return '\r'
+    return ch
+
+
+@contextmanager
+def _timed_input_mode(active):
+    """On POSIX, hold the terminal in raw mode for the whole timed read so
+    select()-based polling sees individual keystrokes as they arrive
+    (normal per-keystroke _getch() toggles raw mode on and off between
+    calls, which starves select() in cooked mode). No-op on Windows, where
+    msvcrt.kbhit()/getwch() already work per-keystroke without this."""
+    if active and sys.platform != 'win32':
+        import tty, termios
+        fd = sys.stdin.fileno()
+        old = termios.tcgetattr(fd)
+        tty.setraw(fd)
+        try:
+            yield
+        finally:
+            termios.tcsetattr(fd, termios.TCSADRAIN, old)
+    else:
+        yield
+
+
+def _getch_raw():
+    """Read one keystroke already known to be available (see _key_ready)."""
+    if sys.platform == 'win32':
+        return _getch()
+    return _read_raw_char(sys.stdin.fileno())
 
 
 # --- ANSI helpers ---------------------------------------------------------
@@ -59,10 +114,15 @@ def _style(s):
 
 
 class AnsiScreen(ScreenBase):
+    supports_bold        = True
+    supports_italic      = True
+    supports_timed_input = True
 
     def __init__(self):
         super().__init__()
         self._sg = ScreenGrid()
+        self._status_left  = None
+        self._status_right = None
 
     # ------------------------------------------------------------------
     # Lifecycle
@@ -92,10 +152,17 @@ class AnsiScreen(ScreenBase):
 
     def _render(self):
         sg = self._sg
+        offset = 1 if self._status_left is not None else 0
         out = [_HIDE]
+        if offset:
+            bar = format_status_bar(self._status_left, self._status_right)
+            out.append(_pos(1, 1))
+            out.append(_style(STYLE_REVERSE))
+            out.append(bar)
+            out.append(_RESET)
         cur_style = -1
         for r in range(ROWS):
-            out.append(_pos(r + 1, 1))
+            out.append(_pos(r + 1 + offset, 1))
             for c in range(COLS):
                 cell = sg._grid[r][c]
                 if cell.style != cur_style:
@@ -104,10 +171,15 @@ class AnsiScreen(ScreenBase):
                 out.append(cell.char)
         out.append(_RESET)
         # Place terminal cursor at lower-window input position
-        out.append(_pos(sg._lo_row + 1, sg._lo_col + 1))
+        out.append(_pos(sg._lo_row + 1 + offset, sg._lo_col + 1))
         out.append(_SHOW)
         sys.stdout.write(''.join(out))
         sys.stdout.flush()
+
+    def update_status_line(self, location: str, right_text: str):
+        self._status_left  = location
+        self._status_right = right_text
+        self._render()
 
     # ------------------------------------------------------------------
     # Output
@@ -154,30 +226,58 @@ class AnsiScreen(ScreenBase):
                   time_routine_cb=None) -> str:
         self._render()
         buf = []
-        while True:
-            ch = _getch()
-            if ch in ('\r', '\n'):
-                self._sg.print_str('\n')
-                self._render()
-                return ''.join(buf)
-            elif ch in ('\x08', '\x7f'):   # backspace
-                if buf:
-                    buf.pop()
-                    sg = self._sg
-                    sg._lo_col -= 1
-                    if sg._lo_col < 0:
-                        sg._lo_col = COLS - 1
-                        sg._lo_row = max(sg._upper_rows, sg._lo_row - 1)
-                    sg._put(sg._lo_row, sg._lo_col, ' ', 0)
+        timed = time_tenths > 0 and time_routine_cb is not None
+        with _timed_input_mode(timed):
+            deadline = time.monotonic() + time_tenths / 10.0 if timed else None
+            while True:
+                if timed:
+                    remaining = deadline - time.monotonic()
+                    if remaining <= 0:
+                        if time_routine_cb():
+                            self._sg.print_str('\n')
+                            self._render()
+                            return ''
+                        deadline = time.monotonic() + time_tenths / 10.0
+                        continue
+                    if not _key_ready(remaining):
+                        continue
+                ch = _getch_raw() if timed else _getch()
+                if ch in ('\r', '\n'):
+                    self._sg.print_str('\n')
                     self._render()
-            elif ch.isprintable() and len(buf) < max_chars - 1:
-                buf.append(ch)
-                self._sg.print_str(ch)
-                self._render()
+                    return ''.join(buf)
+                elif ch in ('\x08', '\x7f'):   # backspace
+                    if buf:
+                        buf.pop()
+                        sg = self._sg
+                        sg._lo_col -= 1
+                        if sg._lo_col < 0:
+                            sg._lo_col = COLS - 1
+                            sg._lo_row = max(sg._upper_rows, sg._lo_row - 1)
+                        sg._put(sg._lo_row, sg._lo_col, ' ', 0)
+                        self._render()
+                elif ch.isprintable() and len(buf) < max_chars - 1:
+                    buf.append(ch)
+                    self._sg.print_str(ch)
+                    self._render()
 
     def read_char(self, time_tenths: int = 0, time_routine_cb=None) -> str:
         self._render()
-        return _getch()
+        timed = time_tenths > 0 and time_routine_cb is not None
+        if not timed:
+            return _getch()
+        with _timed_input_mode(timed):
+            deadline = time.monotonic() + time_tenths / 10.0
+            while True:
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    if time_routine_cb():
+                        return '\r'
+                    deadline = time.monotonic() + time_tenths / 10.0
+                    continue
+                if not _key_ready(remaining):
+                    continue
+                return _getch_raw()
 
     # ------------------------------------------------------------------
     # Run loop

@@ -11,6 +11,13 @@ from Utils import Utils
 
 
 class ScreenBase(ABC):
+    # V4+ Flags1 capability advertisement (header $01, bits 2/3/4/7). Each
+    # backend overrides these to reflect what it can actually render/deliver,
+    # so build_machine() doesn't promise a feature that never fires.
+    supports_bold         = False
+    supports_italic       = False
+    supports_fixed_width  = True   # every backend here renders a monospace grid
+    supports_timed_input  = False
 
     def __init__(self):
         self.processor       = None
@@ -60,7 +67,7 @@ class ScreenBase(ABC):
         self.current_bg = bg
     def erase_window(self, win: int):          pass
     def erase_line(self):                      pass
-    def update_status_line(self, loc, score, turns): pass
+    def update_status_line(self, location: str, right_text: str): pass
     def print_location_prompt(self, loc_text):
         self.print_str(f'\n{loc_text}\n> ')
 
