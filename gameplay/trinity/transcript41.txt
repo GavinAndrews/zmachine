@@ -1,0 +1,1069 @@
+
+[Transcript started: C:\Users\Gavin\Documents\Projects\software\infocom\gameplay\trinity\transcript41.txt]
+[Transcript started.]
+
+>transcript
+[Location display on]
+
+>#loc
+
+[Obj#236: Palace Gate]
+> #mao
+[The word "#mao" isn’t in the vocabulary that you can use.]
+
+>
+[Obj#236: Palace Gate]
+> [Map logging to C:\Users\Gavin\Documents\Projects\software\infocom\gameplay\trinity\map.txt]
+
+>#map
+
+[Obj#236: Palace Gate]
+> restore
+Restore from file: 
+> wt89.sav
+
+[RESTORE completed.]
+                                                                                
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+Behind the Shed
+>
+[Obj#437: Behind the Shed]
+> score
+[Your score is 74 points out of 100, in 481 moves. This gives you the rank of Historian.]
+
+>
+[Obj#437: Behind the Shed]
+> i
+You’re holding a steak knife, a screwdriver, a walkie-talkie and a lantern. You’re wearing a pair of binoculars, a wristwatch, a green boot and a red boot, and you have a credit card in your pocket.
+
+>
+[Obj#437: Behind the Shed]
+> look
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+
+>
+[Obj#437: Behind the Shed]
+> look at shelter
+The square shelter is built of heavy timber, covered with a thick layer of earth on the north side. Bright light spills across the desert from the open south entrance.
+
+The roadrunner prances to your side.
+
+>
+[Obj#437: Behind the Shed]
+> look at shelter with binoculars
+You focus the binoculars on the shelter.
+
+The inside of the shelter is only about twenty feet square. Every inch is crowded with technicians, tending racks filled with electrical equipment.
+
+One technician is hunched over a stool, clutching a microphone. The tension in his grasp is reflected on every face.
+
+As your eyes take in the maze of equipment, you notice a long wooden box, similar to the one you saw under the tower. A steel key is visible in its open padlock.
+
+The roadrunner cranes its neck and peers into the shelter, its sharp eyes keen with interest.
+
+[Your score just went up by 3 points. The total is now 77 out of 100.]
+
+>
+[Obj#437: Behind the Shed]
+> ask roadrunner to get steel key
+The roadrunner nods brightly.
+
+You hold your breath as a gray torpedo scoots under the jeeps and disappears into the shelter. The busy technicians fail to notice the fearless creature plucking the key from its padlock.
+
+Triumphantly, the roadrunner prances back to your side and deposits the key at your feet.
+
+[Your score just went up by 3 points. The total is now 80 out of 100.]
+
+>
+[Obj#437: Behind the Shed]
+> take steel key
+You take the steel key.
+
+[Your score just went up by 1 point. The total is now 81 out of 100.]
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#437: Behind the Shed]
+> examine shed with binoculars
+You focus the binoculars on the shed.
+
+It appears much closer now.
+
+>
+[Obj#437: Behind the Shed]
+> save
+Save to file: 
+> wt91.sav
+
+[SAVE completed.]
+                                                                                Behind the Shed
+>
+[Obj#437: Behind the Shed]
+> wait
+Time passes.
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#437: Behind the Shed]
+> n
+The ground blurs beneath your feet.
+
+Paved Road
+               Paved Road
+>
+[Obj#226: Paved Road]
+> nw
+You streak across the desert.
+
+Paved Road
+          Paved Road
+>
+[Obj#293: Paved Road]
+> nw
+You zoom over the landscape.
+
+Crossroads
+          Crossroads
+>
+[Obj#544: Crossroads]
+> ne
+The desert streaks past.
+
+Paved Road
+          Paved Road
+>
+[Obj#120: Paved Road]
+> n
+The ground blurs beneath your feet.
+
+Desert
+
+Gray, empty desert stretches away on either side of a road that leads southeast.
+          Desert
+>
+[Obj#497: Desert]
+> se
+You streak across the desert.
+
+Paved Road
+      Paved Road
+>
+[Obj#120: Paved Road]
+> nw
+You zoom over the landscape.
+
+Desert
+          Desert
+>
+[Obj#497: Desert]
+> se
+The desert streaks past.
+
+Paved Road
+      Paved Road
+>
+[Obj#120: Paved Road]
+> ne
+The ground blurs beneath your feet.
+
+Southwest of Tower
+          Southwest of Tower
+>
+[Obj#219: Southwest of Tower]
+> n
+You streak across the desert.
+
+West of Tower
+
+A tall framework of steel has been erected here, cousin to the larger tower visible not far to the east. Suspended within the frame is an enormous metal barrel, at least twenty feet long and ten wide, with rounded end caps. It looks like a king-sized cold capsule.
+
+A dirt trail curves north and south.
+                  West of Tower
+>
+[Obj#311: West of Tower]
+> n
+You zoom over the landscape.
+
+Northwest of Tower
+
+Stubby poles draped with instrument lines follow a paved road northwest into the desert, while a dirt trail curves away to the south.
+
+The tower is a dim outline against the southeast mountains.
+             Northwest of Tower
+>
+[Obj#210: Northwest of Tower]
+> nw
+The desert streaks past.
+
+Paved Road
+
+A paved road leads northwest across the gray desert, and southeast towards the tower.
+                  Paved Road
+>
+[Obj#109: Paved Road]
+> nw
+The ground blurs beneath your feet.
+
+Paved Road
+
+Your eyes follow the instrument lines northwest, where a cluster of shelters and searchlights is visible on the horizon. The paved road continues in that direction, and also leads southwest.
+
+An abandoned jeep is parked nearby.
+          Paved Road
+>
+[Obj#534: Paved Road]
+> [Note added for #534: Paved Road]
+
+>#see jeep
+
+[Obj#534: Paved Road]
+> enter jeep
+[opening the door first]
+
+You climb into the jeep.
+
+Jeep
+
+Comfort was clearly not a consideration in the design of this jeep. The seat is narrow and hard, and your shin is scrunched up against a radio bolted to the floor.
+
+Whoever was driving this jeep left it in an awful hurry. There’s a wallet on the floor at your feet.
+          Jeep
+>
+[Obj#493: Jeep]
+> examine radio
+The radio is firmly bolted to the floor of the jeep. This is probably just as well, because it’s big and awkward, probably too heavy to carry. Among its many controls are an oversized dial and a toggle switch.
+
+>
+[Obj#493: Jeep]
+> toggle switch on radio
+[Please try to express that another way.]
+
+>
+[Obj#493: Jeep]
+> toggle radio switch
+You can’t see any radio switch here.
+
+>
+[Obj#493: Jeep]
+> press radio toggle
+[the toggle switch]
+
+Forget it. The radio is firmly bolted to the floor of the jeep.
+
+>
+[Obj#493: Jeep]
+> read radio dial
+The dial is calibrated with numbers from 20 to 80. Right now it’s set to 67.
+
+[Your score just went up by 3 points. The total is now 84 out of 100.]
+
+>
+[Obj#493: Jeep]
+> [Note added for #493: Jeep]
+
+>#see dial 67
+
+[Obj#493: Jeep]
+> set walkie to 67
+[the walkie-talkie]
+
+You move the slider until it points to the number 67.
+
+[Your score just went up by 3 points. The total is now 87 out of 100.]
+
+>
+[Obj#493: Jeep]
+> toggle walkie
+[the walkie-talkie]
+
+Turning the walkie-talkie wouldn’t do anything useful.
+
+>
+[Obj#493: Jeep]
+> press walkie toggle
+[the walkie-talkie]
+
+Pushing around the walkie-talkie would accomplish nothing.
+
+>
+[Obj#493: Jeep]
+> turn on walkie
+[the walkie-talkie]
+
+You turn on the rocker switch.
+
+The walkie-talkie hisses quietly.
+
+>
+[Obj#493: Jeep]
+> save
+Save to file: 
+> wt92.sav
+
+[SAVE completed.]
+                                                                                Jeep
+>
+[Obj#493: Jeep]
+> look
+Jeep
+
+Comfort was clearly not a consideration in the design of this jeep. The seat is narrow and hard, and your shin is scrunched up against a radio bolted to the floor.
+
+Whoever was driving this jeep left it in an awful hurry. There’s a wallet on the floor at your feet.
+
+>
+[Obj#493: Jeep]
+> take wallet
+Taken.
+
+>
+[Obj#493: Jeep]
+> open wallet
+You open the wallet.
+
+You see a snapshot inside.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+
+>
+[Obj#493: Jeep]
+> examine snapshot
+The black-and-white snapshot shows a boy staring at the camera.
+
+The walkie-talkie emits a burst of static.
+
+>
+[Obj#493: Jeep]
+> examine boy
+The boy in the snapshot seems familiar. Maybe it’s the wand he’s holding.
+
+>
+[Obj#493: Jeep]
+> exit
+You clamber out of the jeep.
+
+Paved Road
+
+The roadrunner hops to your side.
+
+The walkie-talkie crackles for a moment.
+    Paved Road
+>
+[Obj#534: Paved Road]
+> nw
+Perhaps you should take a moment to examine the shelters.
+
+>
+[Obj#534: Paved Road]
+> look
+Paved Road
+
+Your eyes follow the instrument lines northwest, where a cluster of shelters and searchlights is visible on the horizon. The paved road continues in that direction, and also leads southwest.
+
+An abandoned jeep is parked nearby.
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#534: Paved Road]
+> examine shelters
+The area around the shelters is brightly illuminated by light spilling from the searchlights. Anyone looking this way will probably see you if you get much closer.
+
+The roadrunner scratches impatiently on the ground.
+
+>
+[Obj#534: Paved Road]
+> look at shelters with binoculars
+You focus the binoculars on the shelters.
+
+Peering closely, you can see that the shelters are heavily manned.
+
+The walkie-talkie clicks and hisses.
+
+>
+[Obj#534: Paved Road]
+> nw
+You march confidently towards the shelters.
+
+Excited shouts ring out as you approach the nearest shelter. One of the giant lights sweeps across the ground until its beam aims directly into your eyes.
+
+"Hold it!" The shout doesn’t say anything about a gun. But you raise your hands over your head, just to be safe.
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 87 points out of 100, in 517 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt92.sav
+
+[RESTORE completed.]
+                                                                                
+Jeep
+
+Comfort was clearly not a consideration in the design of this jeep. The seat is narrow and hard, and your shin is scrunched up against a radio bolted to the floor.
+
+Whoever was driving this jeep left it in an awful hurry. There’s a wallet on the floor at your feet.
+Jeep
+>
+[Obj#493: Jeep]
+> score
+[Your score is 87 points out of 100, in 508 moves. This gives you the rank of Historian.]
+
+>
+[Obj#493: Jeep]
+> take wallet
+Taken.
+
+>
+[Obj#493: Jeep]
+> examine wallet
+It looks as if the wallet is closed.
+
+The walkie-talkie emits a burst of static.
+
+>
+[Obj#493: Jeep]
+> open wallet
+You open the wallet.
+
+You see a snapshot inside.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+
+>
+[Obj#493: Jeep]
+> examine snapshot
+The black-and-white snapshot shows a boy staring at the camera.
+
+The walkie-talkie crackles for a moment.
+
+>
+[Obj#493: Jeep]
+> exit jeep
+You clamber out of the jeep.
+
+Paved Road
+
+The roadrunner hops to your side.
+    Paved Road
+>
+[Obj#534: Paved Road]
+> se
+You streak across the desert.
+
+Paved Road
+          Paved Road
+>
+[Obj#109: Paved Road]
+> se
+You zoom over the landscape.
+
+Northwest of Tower
+
+The walkie-talkie clicks and hisses.
+          Northwest of Tower
+>
+[Obj#210: Northwest of Tower]
+> sw
+The desert streaks past.
+
+Desert
+
+Nothing breaks the monotony of the barren desert around you.
+                  Desert
+>
+[Obj#480: Desert]
+> ne
+The ground blurs beneath your feet.
+
+Northwest of Tower
+      Northwest of Tower
+>
+[Obj#210: Northwest of Tower]
+> se
+You streak across the desert.
+
+Base of Tower
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+There’s a paper bag here.
+                  Base of Tower
+>
+[Obj#146: Base of Tower]
+> unlock padlock with steel key
+You slip the key into the padlock. It unlocks with a smart little snap.
+
+[Your score just went up by 1 point. The total is now 88 out of 100.]
+
+>
+[Obj#146: Base of Tower]
+> remove padlock
+You take the padlock off the box.
+
+The roadrunner races into view.
+
+The walkie-talkie hisses quietly.
+
+>
+[Obj#146: Base of Tower]
+> open box
+You swing open the lid of the box, revealing a control panel inside.
+
+>
+[Obj#146: Base of Tower]
+> examine control panel
+The control panel is covered with a bewildering array of instruments, clustered around a heavy-duty circuit breaker.
+
+The roadrunner scampers around your feet.
+
+The walkie-talkie emits a burst of static.
+
+>
+[Obj#146: Base of Tower]
+> save
+Save to file: 
+> wt93.sav
+
+[SAVE completed.]
+                                                                                Base of Tower
+>
+[Obj#146: Base of Tower]
+> turn instruments
+The instruments are firmly attached to the control panel.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+>
+[Obj#146: Base of Tower]
+> look
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner scratches impatiently on the ground.
+
+An open box is lying across the ground nearby. Inside you see a control panel.
+
+There’s a paper bag here.
+
+>
+[Obj#146: Base of Tower]
+> u
+You grasp the rungs of the ladder and pull yourself upward.
+
+Tower Landing
+             Tower Landing
+>
+[Obj#247: Tower Landing]
+> look
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues upward.
+
+A faint rumble begins to drift across the desert. You peer between the girders to scan the horizon.
+
+Headlights. Lots of them, converging on the tower from several directions at once, and just minutes away!
+
+White with panic, you scramble down the ladder as fast as you can. But your boots slip out from under you about ten rungs from the bottom; and you regain consciousness just as seventeen jeeps screech to a halt around the tower.
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 88 points out of 100, in 526 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt93.sav
+
+[RESTORE completed.]
+                                                                                
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner scratches impatiently on the ground.
+
+An open box is lying across the ground nearby. Inside you see a control panel.
+
+There’s a paper bag here.
+Base of Tower
+>
+[Obj#146: Base of Tower]
+> u
+You grasp the rungs of the ladder and pull yourself upward.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+Tower Landing
+             Tower Landing
+>
+[Obj#247: Tower Landing]
+> ask roadrunner to open circuit breaker
+You can’t see any roadrunner here.
+
+>
+[Obj#247: Tower Landing]
+> u
+You tighten your grip on the ladder.
+
+Tower Platform
+
+The walkie-talkie crackles for a moment.
+
+A faint rumble begins to drift across the desert. You peer between the girders to scan the horizon.
+
+Headlights. Lots of them, converging on the tower from several directions at once, and just minutes away!
+
+White with panic, you scramble down the ladder as fast as you can. But your boots slip out from under you about ten rungs from the bottom; and you regain consciousness just as seventeen jeeps screech to a halt around the tower.
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 88 points out of 100, in 524 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt93.sav
+
+[RESTORE completed.]
+                                                                                
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner scratches impatiently on the ground.
+
+An open box is lying across the ground nearby. Inside you see a control panel.
+
+There’s a paper bag here.
+Base of Tower
+>
+[Obj#146: Base of Tower]
+> open circuit breaker
+You lift the handle of the circuit breaker.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+>
+[Obj#146: Base of Tower]
+> look
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner looks up at you inquisitively.
+
+An open box is lying across the ground nearby. Inside you see a control panel.
+
+There’s a paper bag here.
+
+A faint rumble begins to drift across the desert. You peer between the girders to scan the horizon.
+
+Headlights. Lots of them, converging on the tower from several directions at once, and just minutes away!
+
+White with panic, you slam the box shut and crawl off to hide in the desert. But you bowl headfirst into a Joshua tree, and your vacation shorts snag on a prickly pear bush just as seventeen jeeps screech to a halt around the tower.
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 88 points out of 100, in 523 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt93.sav
+
+[RESTORE completed.]
+                                                                                
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner scratches impatiently on the ground.
+
+An open box is lying across the ground nearby. Inside you see a control panel.
+
+There’s a paper bag here.
+Base of Tower
+>
+[Obj#146: Base of Tower]
+> u
+You grasp the rungs of the ladder and pull yourself upward.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+Tower Landing
+             Tower Landing
+>
+[Obj#247: Tower Landing]
+> look
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues upward.
+
+A faint rumble begins to drift across the desert. You peer between the girders to scan the horizon.
+
+Headlights. Lots of them, converging on the tower from several directions at once, and just minutes away!
+
+White with panic, you scramble down the ladder as fast as you can. But your boots slip out from under you about ten rungs from the bottom; and you regain consciousness just as seventeen jeeps screech to a halt around the tower.
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 88 points out of 100, in 524 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt93.sav
+
+[RESTORE completed.]
+                                                                                
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner scratches impatiently on the ground.
+
+An open box is lying across the ground nearby. Inside you see a control panel.
+
+There’s a paper bag here.
+Base of Tower
+>
+[Obj#146: Base of Tower]
+> examine box
+The open box is several feet in length.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+>
+[Obj#146: Base of Tower]
+> look
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner looks up at you inquisitively.
+
+An open box is lying across the ground nearby. Inside you see a control panel.
+
+There’s a paper bag here.
+
+>
+[Obj#146: Base of Tower]
+> look inside box
+You see a control panel inside the box.
+
+The roadrunner emits a brief squawk.
+
+>
+[Obj#146: Base of Tower]
+> raise walkie antenna
+You can’t see any walkie antenna here.
+
+>
+[Obj#146: Base of Tower]
+> i
+You’re holding a padlock, a wallet, a steak knife, a screwdriver, a walkie-talkie and a lantern. Inside the padlock you see a steel key. Inside the wallet you see a snapshot. You’re wearing a pair of binoculars, a wristwatch, a green boot and a red boot, and you have a credit card in your pocket.
+
+>
+[Obj#146: Base of Tower]
+> raise antenna
+You pull the antenna out of the walkie-talkie, extending it to its full length.
+
+The music on the walkie-talkie distorts badly. "Thirty seconds to auto-sequencer."
+
+>
+[Obj#146: Base of Tower]
+> examine walkie
+[the walkie-talkie]
+
+The walkie-talkie has a rocker switch, a numbered slider, a telescoping antenna (now raised) and a large orange button.
+
+The roadrunner watches every move you make.
+
+"Zero minus one minute. Sequencer will assume control in fifteen seconds."
+
+A third flare arcs across the sky and disappears.
+
+>
+[Obj#146: Base of Tower]
+> examine slider
+The slider is calibrated with numbers from 20 to 80. Right now it’s set to 67.
+
+"Zero minus forty-five seconds. Commence auto-sequence."
+
+"We copy, Baker. Sequencer affirmative. Good luck."
+
+>
+[Obj#146: Base of Tower]
+> press orange button
+You squeeze the orange button.
+
+Zap! A painful electric shock shoots up your arm. The walkie-talkie falls from your grasp and lands at your feet.
+
+The roadrunner scoots between your legs.
+
+"Zero minus thirty seconds. All personnel should face away from Zero at this time."
+
+>
+[Obj#146: Base of Tower]
+> open breaker
+You lift the handle of the circuit breaker.
+
+"What the... ?" mutters the walkie-talkie.
+
+"I didn’t copy, Baker."
+
+"Aw, hell." You hear a flurry of excited voices. "Baker to all units. We have 100% continuity loss towerside. Repeat, zero continuity."
+
+A chorus of expletives fills the airwaves. "Is this a scrub, Baker?"
+
+"Affirmative, Able. Sequencer’s going. Too late to risk it. This is a scrub, everybody. Repeat, scrub it."
+
+A faint rumble begins to drift across the desert. You peer between the girders to scan the horizon.
+
+Headlights. Lots of them, converging on the tower from several directions at once, and just minutes away!
+
+White with panic, you slam the box shut and crawl off to hide in the desert. But you bowl headfirst into a Joshua tree, and your vacation shorts snag on a prickly pear bush just as seventeen jeeps screech to a halt around the tower.
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 88 points out of 100, in 529 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> quit
+

@@ -1255,3 +1255,41 @@ NOTE	#174: Outside Blockhouse	dog
 #544: Crossroads	#293: Paved Road	se
 #293: Paved Road	#226: Paved Road	se
 #226: Paved Road	#437: Behind the Shed	s
+#236: Palace Gate	#437: Behind the Shed	restore
+#437: Behind the Shed	#226: Paved Road	n
+#226: Paved Road	#293: Paved Road	nw
+#293: Paved Road	#544: Crossroads	nw
+#544: Crossroads	#120: Paved Road	ne
+#120: Paved Road	#497: Desert	n
+#497: Desert	#120: Paved Road	se
+#120: Paved Road	#497: Desert	nw
+#497: Desert	#120: Paved Road	se
+#120: Paved Road	#219: Southwest of Tower	ne
+#219: Southwest of Tower	#311: West of Tower	n
+#311: West of Tower	#210: Northwest of Tower	n
+#210: Northwest of Tower	#109: Paved Road	nw
+#109: Paved Road	#534: Paved Road	nw
+NOTE	#534: Paved Road	jeep
+#534: Paved Road	#493: Jeep	enter jeep
+NOTE	#493: Jeep	dial 67
+#493: Jeep	#534: Paved Road	exit
+#534: Paved Road	#439: The River	nw
+#439: The River	#493: Jeep	restore
+#493: Jeep	#534: Paved Road	exit jeep
+#534: Paved Road	#109: Paved Road	se
+#109: Paved Road	#210: Northwest of Tower	se
+#210: Northwest of Tower	#480: Desert	sw
+#480: Desert	#210: Northwest of Tower	ne
+#210: Northwest of Tower	#146: Base of Tower	se
+#146: Base of Tower	#247: Tower Landing	u
+#247: Tower Landing	#439: The River	look
+#439: The River	#146: Base of Tower	restore
+#146: Base of Tower	#247: Tower Landing	u
+#247: Tower Landing	#439: The River	u
+#439: The River	#146: Base of Tower	restore
+#146: Base of Tower	#439: The River	look
+#439: The River	#146: Base of Tower	restore
+#146: Base of Tower	#247: Tower Landing	u
+#247: Tower Landing	#439: The River	look
+#439: The River	#146: Base of Tower	restore
+#146: Base of Tower	#439: The River	open breaker

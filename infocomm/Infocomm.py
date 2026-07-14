@@ -20,6 +20,9 @@ parser.add_argument("--debug", action="store_true",
                     help="show debug windows (qt only)")
 parser.add_argument("--undo-random-continue", action="store_true",
                     help="don't reset the RNG on undo (allows re-rolling random outcomes)")
+parser.add_argument("--transcript", action="store_true",
+                    help="start a transcript immediately, written to "
+                         "<gameplay-dir>/transcript_<YYMMDD>_nn.txt")
 args = parser.parse_args()
 
 game_arg = args.game
@@ -63,6 +66,10 @@ if scripting is not None:
 processor = build_machine(game_arg, screen, scripting=scripting, seed=args.seed,
                           gameplay_dir=args.gameplay_dir)
 processor.instructions.undo_random_continue = args.undo_random_continue
+
+if args.transcript:
+    from Utils import Utils
+    screen.open_transcript(Utils.next_transcript_path(processor.gameplay_dir))
 
 # run() blocks until the game ends (each backend drives its own loop)
 screen.run(processor)

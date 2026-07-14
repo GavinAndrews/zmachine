@@ -1,5 +1,6 @@
 import os
 from array import array
+from datetime import date
 
 
 class Utils:
@@ -47,3 +48,24 @@ class Utils:
         if os.path.isabs(name) or os.path.dirname(name):
             return name
         return os.path.join(gameplay_dir, name)
+
+    @staticmethod
+    def _next_numbered_path(gameplay_dir: str, prefix: str, ext: str) -> str:
+        """Pick <prefix>_<YYMMDD>_nn.<ext> in gameplay_dir, nn = 01.. first unused."""
+        stamp = date.today().strftime('%y%m%d')
+        n = 1
+        while True:
+            path = os.path.join(gameplay_dir, f"{prefix}_{stamp}_{n:02d}.{ext}")
+            if not os.path.exists(path):
+                return path
+            n += 1
+
+    @staticmethod
+    def next_transcript_path(gameplay_dir: str) -> str:
+        """Pick transcript_<YYMMDD>_nn.txt in gameplay_dir, nn = 01.. first unused."""
+        return Utils._next_numbered_path(gameplay_dir, 'transcript', 'txt')
+
+    @staticmethod
+    def next_save_path(gameplay_dir: str) -> str:
+        """Pick save_<YYMMDD>_nn.sav in gameplay_dir, nn = 01.. first unused."""
+        return Utils._next_numbered_path(gameplay_dir, 'save', 'sav')

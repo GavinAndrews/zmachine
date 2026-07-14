@@ -1,3 +1,4 @@
+import os
 import sys
 import time as time_mod
 from enum import IntEnum
@@ -62,6 +63,7 @@ class Instructions:
         self.location_global = None   # None = auto-detect; set via #loc G N
         self._player_obj_num = None   # cached once confirmed (parent has a name)
         self._player_candidates = None  # cached list of all player-named objects
+        self._last_save_path = None   # path of the most recent successful save, for restore's '!'
 
         if self.check_trace:
             self.trace_file = TraceFile("C:\\Users\\Gavin\\Documents\\Projects\\software\\infocom\\linux_trace_trinity_1.txt")
@@ -1248,7 +1250,9 @@ class Instructions:
 
     def _read_aux_line(self, prompt):
         """Read an auxiliary input line (filename prompt etc.), using scripting if active.
-        Always writes the result to the transcript as a >-prefixed line on its own line."""
+        Does NOT write to the transcript itself — the '!' shorthand resolves to a
+        generated filename that must be echoed instead of the literal '!', so callers
+        echo the resolved text via _echo_aux_line once they know it."""
         self.screen.print_str(prompt)
         self.screen.refresh()
         if self.scripting is not None:
@@ -1259,13 +1263,22 @@ class Instructions:
                 self.screen.print_str(line + '\n')
         else:
             line = self.screen.read_line(128).strip()
-        if line:
-            self.screen.transcript_write('\n> ' + line + '\n')
         return line
+
+    def _echo_aux_line(self, text):
+        """Write the resolved filename to the transcript as a >-prefixed line on its own line."""
+        if text:
+            self.screen.transcript_write('\n> ' + text + '\n')
 
     def instruction_save(self, args):
         in_string = self._read_aux_line("Save to file: ") or "save.qzl"
-        in_string = Utils.resolve_gameplay_path(in_string, self.processor.gameplay_dir)
+        if in_string == '!':
+            in_string = Utils.next_save_path(self.processor.gameplay_dir)
+            self._echo_aux_line(os.path.basename(in_string))
+            self.screen.print_str(f"[Saving to {os.path.basename(in_string)}]\n")
+        else:
+            self._echo_aux_line(in_string)
+            in_string = Utils.resolve_gameplay_path(in_string, self.processor.gameplay_dir)
         if self.scripting is not None:
             self.screen.print_str("[Replay: skipping save]\n")
             self.processor.save_succeeded()
@@ -1274,6 +1287,7 @@ class Instructions:
             q = Quetzal(self.processor.filename)
             q.write_quetzal_save(self.processor.memory, self.processor.purbot,
                                  self.processor.stack, self.processor.get_pc(), in_string)
+            self._last_save_path = in_string
             self.processor.save_succeeded()
         except Exception as e:
             self.screen.print_str(f"\n[Save failed: {e}]\n")
@@ -1281,7 +1295,18 @@ class Instructions:
 
     def instruction_restore(self, args):
         in_string = self._read_aux_line("Restore from file: ") or "save.qzl"
-        in_string = Utils.resolve_gameplay_path(in_string, self.processor.gameplay_dir)
+        if in_string == '!':
+            if not self._last_save_path:
+                self._echo_aux_line(in_string)
+                self.screen.print_str("\n[No previous save file this session.]\n")
+                self.processor.save_failed()
+                return
+            in_string = self._last_save_path
+            self._echo_aux_line(os.path.basename(in_string))
+            self.screen.print_str(f"[Restoring from {os.path.basename(in_string)}]\n")
+        else:
+            self._echo_aux_line(in_string)
+            in_string = Utils.resolve_gameplay_path(in_string, self.processor.gameplay_dir)
         try:
             q = Quetzal(self.processor.filename)
             q.read_quetzal_save(in_string)
