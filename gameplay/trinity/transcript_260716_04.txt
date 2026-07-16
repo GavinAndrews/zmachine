@@ -1,0 +1,42 @@
+
+[Transcript started: C:\Users\Gavin\Documents\Projects\software\infocom\gameplay\trinity\transcript_260716_04.txt]
+                                                                                
+Copyright (C)1986 Infocom, Inc. All rights reserved.
+
+[Press any key to begin.]
+                                                                                
+Sharp words between the superpowers. Tanks in East Berlin. And now, reports the BBC, rumors of a satellite blackout. It’s enough to spoil your continental breakfast.
+
+But the world will have to wait. This is the last day of your $599 London Getaway Package, and you’re determined to soak up as much of that authentic English ambience as you can. So you’ve left the tour bus behind, ditched the camera and escaped to Hyde Park for a contemplative stroll through the Kensington Gardens.
+
+Palace Gate
+
+A tide of perambulators surges north along the crowded Broad Walk. Shaded glades stretch away to the northeast, and a hint of color marks the western edge of the Flower Walk.
+Palace Gate
+>restore
+Restore from file: 
+> wt89.sav
+
+[RESTORE completed.]
+                                                                                
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+Behind the Shed
+>
+[What?]
+
+>read watch
+Your wristwatch says it’s 5:17:30 am.
+
+>
+[What?]
+
+>sss
+[You don’t need to use the word "sss" to complete this story.]
+
+>

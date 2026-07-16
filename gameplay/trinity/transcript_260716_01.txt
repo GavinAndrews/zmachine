@@ -1,0 +1,305 @@
+
+[Transcript started: C:\Users\Gavin\Documents\Projects\software\infocom\gameplay\trinity\transcript_260716_01.txt]
+                                                                                
+Copyright (C)1986 Infocom, Inc. All rights reserved.
+
+[Press any key to begin.]
+                                                                                
+Sharp words between the superpowers. Tanks in East Berlin. And now, reports the BBC, rumors of a satellite blackout. It’s enough to spoil your continental breakfast.
+
+But the world will have to wait. This is the last day of your $599 London Getaway Package, and you’re determined to soak up as much of that authentic English ambience as you can. So you’ve left the tour bus behind, ditched the camera and escaped to Hyde Park for a contemplative stroll through the Kensington Gardens.
+
+Palace Gate
+
+A tide of perambulators surges north along the crowded Broad Walk. Shaded glades stretch away to the northeast, and a hint of color marks the western edge of the Flower Walk.
+Palace Gate
+>restore
+Restore from file: 
+> wt81.sav
+
+[RESTORE completed.]
+                                                                                
+Bottom of Stairs
+
+The triangular structure before you must be thousands of feet high. It divides the sky like a razor, casting a stern, precise shadow over the surrounding landscape.
+
+A narrow stairway climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every direction.
+
+You see a bandage, an axe and a small coin here.
+Bottom of Stairs
+>i
+You’re holding a lantern, a birdcage, a bag of crumbs, a walkie-talkie and a silver coin. Inside the birdcage you see a lemming. You’re wearing a burial shroud, a wristwatch, a green boot and a red boot, and you have a credit card in your pocket.
+
+>se
+The River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+Footpaths wander north, west and northwest. Turning south, you see a magnificent hedge growing in an unbroken wall to the river’s edge.
+
+A dark shadow lies across the ground.
+
+As you peer across the river you notice a lone vessel gliding out of the fog.
+                The River
+>wait
+Time passes.
+
+The dory draws closer to the shore. You can make out a dark oarsman at the stern.
+
+>wait
+Time passes.
+
+The oarsman guides his dory to a soundless landing.
+
+A puff of wind ripples the water.
+
+Eddies of sand swirl across the shore and coalesce into ghostly figures of dust and vapor. Before you can think or move, you find yourself amid a gathering of human shades, pale and gaunt, silent as death.
+
+>enter dory
+The dory tips alarmingly as you climb aboard.
+
+The oarsman glances at the burial shroud you’re wearing with silent approval, and stretches out his skeletal hand expectantly.
+         The River, in the dory
+>give silver coin to oarsman
+The oarsman accepts the silver coin and nods at you solemnly.
+
+The ghostly shades begin to converge on the dory. One by one, they step into the vessel, hand the oarsman a silver coin, and take a seat.
+
+The oarsman pushes away from the beach.
+
+Planes of mist close in around the dory, drawing it deeper into the gloom. The only sound is the rhythmic slurp of the oar as it plies the dark, oily water.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A vague outline emerges beyond the helm. It slowly resolves into a spit of sand, damp and cheerless in the surrounding murk.
+
+The oarsman swings the dory around and lands it with barely a jolt. One by one, the shades slink out of the vessel and drift across the sand like leaves on a breath of wind. Something in the oarsman’s gaze compels you to follow them.
+
+Sand Bar
+
+At first glance, this isolated spit seems hopelessly mired in the fog blowing in off the surrounding river. But the sand looks a bit firmer to the south.
+
+The lemming in the cage trembles with agitation.
+
+With practiced skill, the oarsman pushes his empty dory away from the shore.
+                      Sand Bar
+>enter door
+You can’t see any door here.
+
+>s
+Islet
+
+It’s impossible to see more than a dozen yards on this fogbound islet. The damp air makes your footsteps sound unnaturally loud as you trudge across the sand at the river’s edge.
+
+A lone toadstool has found a home at the water’s edge. The white door in its stem is wide open.
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the open door in the toadstool.
+
+A voice in your ear giggles, "Gnomon is an island."
+
+A roadrunner is perched on the toadstool’s crown. The ruby in its beak gleams enticingly.
+
+The roadrunner gives you a curt nod of acknowledgement. Then it flutters off the toadstool, prances through the open door and disappears.
+        Islet
+>enter door
+You take a deep breath, and step forward.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling. You can see an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+A paperback book is lying in the corner.
+
+A faint sound drifts in from somewhere outside. It sounded like a man’s voice.
+     Shack
+>take book
+Your load is too heavy.
+
+You hear the voice again, followed by a sharp clatter. There’s definitely somebody outside.
+
+>drop lantern
+Dropped.
+
+Another voice joins the first. You strain to listen.
+
+"Towerside breaker closed. Check."
+
+"Pittsburg’s on the line, Lieutenant."
+
+"Give him to me, Joe."
+
+>take book
+Taken.
+
+A gust of wind obscures the conversation outside for a few moments. You can pick out the words "focus," "groves" and "surveillance," but little else.
+
+>read book
+A slip of cardboard falls out of the book as you open it.
+
+You flip through the book, but nothing catches your eye.
+
+All at once the shack is filled with light! It seems to be coming from somewhere outside.
+
+"Lower!" shouts one of the voices.
+
+The light brightens to a hard, steady glare.
+
+>take cardboard
+Taken.
+
+[Your score just went up by 1 point. The total is now 66 out of 100.]
+
+The wind rises again, drowning out the voices altogether.
+
+>examine cardboard
+The slip of cardboard seems to have been used as a bookmark. A stanza of poetry is typed on one side. The other side is covered with some kind of diagram.
+
+You hear a motor revving to life below. One of the voices barks something; there’s a squeal of rubber, and the motor fades into the distance. Then all is still.
+
+>read poem
+It’s a send-up of a famous Emerson poem.
+                                             From this crude lab that spawned a dud,     Their necks to Truman’s axe uncurled,       Lo, the embattled savants stood             And fired the flop heard ’round the world.                                                         -- Los Alamos ditty, circa 1945                                             
+>read diagram
+The diagram is a meaningless network of intersecting lines. The legend "RD=DET BL=INF ST=POS WH=GND" is scribbled across the bottom.
+
+[Your score just went up by 3 points. The total is now 69 out of 100.]
+
+>look
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling; harsh light streams in through an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+There’s a lantern here.
+
+>take bulb
+Your load is too heavy.
+
+>drop all
+The slip of cardboard: Dropped.
+The book: Dropped.
+The birdcage: Dropped.
+The bag of crumbs: Dropped.
+The walkie-talkie: Dropped.
+
+>take bulb
+The hanging bulb would be of little use. You decide to leave it alone.
+
+>look
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling; harsh light streams in through an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+You see a walkie-talkie, a bag of crumbs, a birdcage, a book, a slip of cardboard and a lantern here. Inside the birdcage you see a lemming.
+
+The lemming in the cage scratches its ear.
+
+>examine sphere
+[You’ll find the sphere pictured in The Illustrated Story of the Atom Bomb.]
+                                      Could annihilation occur in matter,  this were the thing to do it.                                                              -- Herman Melville                                      
+>examine enclosure
+The enclosure is a central junction for the forest of cables connected to the sphere. An access panel on the side is closed.
+
+>restore
+Restore from file: 
+> wt14.sav
+
+[RESTORE completed.]
+                                                                                
+Platform
+
+This narrow platform is attached to the north side of a huge steel enclosure, fifty feet high. All around you, a frozen wasteland stretches off to a horizon lined with gray mountains.
+
+An open white door leads into the enclosure’s interior. The topmost rungs of a ladder stand beside it.
+Platform
+>sw
+You’d fall over the edge of the platform if you went that way.
+
+>d
+You descend the ladder.
+
+Under Platform
+
+A network of cables snakes down the side of the enclosure, then trails southwest across the tundra. Grim tracts of permafrost greet your eyes every way you turn.
+
+A ladder leads up to a platform overhead.
+
+Something touches your sneaker.
+
+You kick it away with a shout. A rodent sails through the air, lands unharmed and scrambles out of sight.
+        Under Platform
+>d
+You can’t go that way.
+
+>sw
+Tundra
+
+The tall enclosure is still visible on the northeastern horizon. Thick cables run southwest across the permafrost, towards a distant group of buildings.
+
+The ground is covered with rodents! They’re racing northeast, oblivious to you or anything else in their path.
+              Tundra
+>sw
+Perhaps you should take a moment to examine the group of buildings.
+
+>examine buildings
+The distant buildings look like military shelters. Armed guards are patrolling the area.
+
+>sw
+Are you sure you want to go that way?
+
+[Please type YES or NO.] >no
+
+A voice in your ear giggles, "Smart move."
+
+>

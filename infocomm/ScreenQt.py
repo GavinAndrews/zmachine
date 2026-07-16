@@ -626,20 +626,22 @@ class GlobalsWindow(QWidget):
         btn = QPushButton("Refresh"); btn.clicked.connect(self.refresh)
         layout.addWidget(btn)
         self.table = QTableWidget()
-        self.table.setColumnCount(2)
-        self.table.setHorizontalHeaderLabels(["Global", "Value"])
+        self.table.setColumnCount(3)
+        self.table.setHorizontalHeaderLabels(["#", "Global", "Value"])
+        self.table.verticalHeader().setVisible(False)
         layout.addWidget(self.table)
 
     def refresh(self):
         if not self.processor:
             return
         self.table.setRowCount(0)
-        for g in range(32):
+        for g in range(240):
             try:
                 val = self.processor.globals.read_global(g)
                 self.table.insertRow(g)
-                self.table.setItem(g, 0, QTableWidgetItem(f"G{g:02d}"))
-                self.table.setItem(g, 1, QTableWidgetItem(f"{val:5d} (0x{val:04X})"))
+                self.table.setItem(g, 0, QTableWidgetItem(f"{g:3d}"))
+                self.table.setItem(g, 1, QTableWidgetItem(f"G{g:02X}"))
+                self.table.setItem(g, 2, QTableWidgetItem(f"{val:5d} (0x{val:04X})"))
             except Exception:
                 pass
 
