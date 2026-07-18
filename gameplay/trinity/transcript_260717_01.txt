@@ -1,0 +1,1662 @@
+
+[Transcript started: C:\Users\Gavin\Documents\Projects\software\infocom\gameplay\trinity\transcript_260717_01.txt]
+                                                                                
+Copyright (C)1986 Infocom, Inc. All rights reserved.
+
+[Press any key to begin.]
+                                                                                
+Sharp words between the superpowers. Tanks in East Berlin. And now, reports the BBC, rumors of a satellite blackout. It’s enough to spoil your continental breakfast.
+
+But the world will have to wait. This is the last day of your $599 London Getaway Package, and you’re determined to soak up as much of that authentic English ambience as you can. So you’ve left the tour bus behind, ditched the camera and escaped to Hyde Park for a contemplative stroll through the Kensington Gardens.
+
+Palace Gate
+
+A tide of perambulators surges north along the crowded Broad Walk. Shaded glades stretch away to the northeast, and a hint of color marks the western edge of the Flower Walk.
+Palace Gate
+>restore
+Restore from file: 
+> wt89.sav
+
+[RESTORE completed.]
+                                                                                
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+Behind the Shed
+>wait
+Time passes.
+
+The roadrunner prances to your side.
+
+>wait
+Time passes.
+
+The roadrunner scoots between your legs.
+
+>wait
+Time passes.
+
+The roadrunner is eyeing you with interest.
+
+>wait
+Time passes.
+
+A thin man steps into view, standing just inside the shelter’s entrance.
+
+>wait
+Time passes.
+
+The roadrunner scampers around your feet.
+
+Pushing back his porkpie hat, the thin man peers up at the overcast sky.
+
+>examine man through binoculars
+You focus the binoculars on the thin man.
+
+He appears much closer now.
+
+You notice the thin man glancing at his watch.
+
+>examine man
+The thin man near the shelter is drawn and haggard; it looks as if he hasn’t slept in days.
+                                                       Distant and dead resuscitate,                         They show me as the dial or move as the hands of me,  I am the clock myself.                                                                                                                           -- Walt Whitman                                                       
+>
+[What?]
+
+>wait
+Time passes.
+
+The roadrunner scratches impatiently on the ground.
+
+The thin man draws thoughtfully on his pipe.
+
+>wait
+Time passes.
+
+With a nervous sigh, the thin man disappears into the shelter.
+
+>waot
+[You don’t need to use the word "waot" to complete this story.]
+
+>wait
+Time passes.
+
+The roadrunner looks up at you inquisitively.
+
+>nw
+The ground blurs beneath your feet.
+
+Desert
+
+Empty tracts of desert surround you on every side.
+               Desert
+>nw
+You streak across the desert.
+
+Outside Blockhouse
+
+The military blockhouse by the roadside is squat and windowless. A powerful searchlight, mounted on the roof, directs an intense beam towards the northeast horizon.
+
+A great, big German shepherd is curled up against the blockhouse.
+
+The German shepherd twitches.
+      Outside Blockhouse
+>wait
+Time passes.
+
+The roadrunner hops into view.
+
+The roadrunner notices the German shepherd and perches on its massive head. You stifle a shriek as the silly bird cocks its head this way and that, wondering what to make of the sleeping monster. Then it gives you a sly glance, ruffles its feathers and begins to peck at the sand fleas behind the dog’s ears.
+
+>wait
+Time passes.
+
+The shepherd lifts an eyelid and peeks up at the bird perched on its head. Its expression hardens from sleepy distraction to annoyance... and then to outrage!
+
+In a single motion, the monster bounds to its feet and snaps at the roadrunner. The bird digs deep and holds on for dear life as the dog whirls in a frenzied circle, trying to throw off the squalling pest.
+
+Then the dog sees you.
+
+"Nice puppy," you mumble.
+
+The 110-pound "puppy" strains against its chain, opens its toothy maw and starts a commotion worthy of an American Kennel Club convention.
+
+You stumble backwards to hide as the searchlight sweeps across the road.
+
+"Hold it!" The shout doesn’t say anything about a gun. But you raise your hands over your head, just to be safe.
+
+The figure near the blockhouse studies you in the searchlight’s glare. "You... you some kinda spy or somethin’?"
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 497 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >resto
+[Type RESTART, RESTORE or QUIT.] >restore
+Restore from file: 
+> wt89.sav
+
+[RESTORE completed.]
+                                                                                
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+Behind the Shed
+>nw
+The ground blurs beneath your feet.
+
+Desert
+
+Empty tracts of desert surround you on every side.
+               Desert
+>nw
+You streak across the desert.
+
+Outside Blockhouse
+
+The military blockhouse by the roadside is squat and windowless. A powerful searchlight, mounted on the roof, directs an intense beam towards the northeast horizon.
+
+A great, big German shepherd is curled up against the blockhouse.
+      Outside Blockhouse
+>wait
+Time passes.
+
+The roadrunner prances to your side.
+
+The roadrunner notices the German shepherd and perches on its massive head. You stifle a shriek as the silly bird cocks its head this way and that, wondering what to make of the sleeping monster. Then it gives you a sly glance, ruffles its feathers and begins to peck at the sand fleas behind the dog’s ears.
+
+>ne
+You zoom over the landscape.
+
+Crossroads
+
+A searchlight beam sweeps southwest across the desert.
+                  Crossroads
+>wait
+Time passes.
+
+The roadrunner hops into view.
+
+A searchlight beam sweeps northeast across the desert.
+
+>wait
+Time passes.
+
+The roadrunner scoots between your legs.
+
+>waot
+[You don’t need to use the word "waot" to complete this story.]
+
+>wait
+Time passes.
+
+The roadrunner is eyeing you with interest.
+
+>read watch
+Your wristwatch says it’s 5:20:15 am.
+
+>read watch
+Your wristwatch says it’s 5:20:30 am.
+
+The roadrunner scampers around your feet.
+
+>wait
+Time passes.
+
+The roadrunner scratches impatiently on the ground.
+
+>wait
+Time passes.
+
+The roadrunner looks up at you inquisitively.
+
+>wait
+Time passes.
+
+The roadrunner emits a brief squawk.
+
+>wait
+Time passes.
+
+The roadrunner watches every move you make.
+
+>wait
+Time passes.
+
+The roadrunner scoots between your legs.
+
+>wait
+Time passes.
+
+The roadrunner is eyeing you with interest.
+
+>wait
+Time passes.
+
+The roadrunner scampers around your feet.
+
+>wait
+Time passes.
+
+The roadrunner scratches impatiently on the ground.
+
+>wait
+Time passes.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+
+>wait
+Time passes.
+
+The roadrunner looks up at you inquisitively.
+
+>wait
+Time passes.
+
+The roadrunner emits a brief squawk.
+
+>wait
+Time passes.
+
+The roadrunner watches every move you make.
+
+>wait
+Time passes.
+
+The roadrunner scoots between your legs.
+
+>wait
+Time passes.
+
+The roadrunner is eyeing you with interest.
+
+>wait
+Time passes.
+
+The roadrunner scampers around your feet.
+
+>sw
+The desert streaks past.
+
+Outside Blockhouse
+
+The military blockhouse by the roadside is squat and windowless. A powerful searchlight, mounted on the roof, directs an intense beam towards the northeast horizon.
+
+A great, big German shepherd is curled up against the blockhouse.
+
+The German shepherd twitches.
+
+A loudspeaker crackles to life. "Minus two minutes. All personnel whose duties do not specifically require otherwise will now assume a prone position, with face and eyes directed away from Zero."
+
+A hinge squeaks on the far side of the blockhouse. "It’s time, Wolf!" calls a voice. You stumble down the road, away from the crunch of footsteps.
+
+"Hold it!" The shout doesn’t say anything about a gun. But you raise your hands over your head, just to be safe.
+
+The figure near the blockhouse studies you in the searchlight’s glare. "You... you some kinda spy or somethin’?"
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 522 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >restore
+Restore from file: 
+> wt89.sav
+
+[RESTORE completed.]
+                                                                                
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+Behind the Shed
+>se
+The ground blurs beneath your feet.
+
+Desert
+
+A lone road wanders northwest across the empty desert.
+               Desert
+>e
+You streak across the desert.
+
+Foothills
+
+A range of foothills slopes up to meet the mountains in the east.
+      Foothills
+>s
+You zoom over the landscape.
+
+Desert
+         Desert
+>s
+There’s nothing but trackless desert in that direction.
+
+>e
+The desert streaks past.
+
+Foothills
+      Foothills
+>se
+The foothills are much too steep and rugged to climb.
+
+>[Location display on]
+
+>#loc
+
+[Obj#222: Foothills]
+> s
+The ground blurs beneath your feet.
+
+Desert
+         Desert
+>
+[Obj#577: Desert]
+> look
+Desert
+
+A lone road wanders northwest across the empty desert.
+
+>
+[Obj#577: Desert]
+> nw
+Paved Road
+
+The roadrunner prances to your side.
+      Paved Road
+>
+[Obj#226: Paved Road]
+> w
+You streak across the desert.
+
+Desert
+
+Empty tracts of desert surround you on every side.
+          Desert
+>
+[Obj#132: Desert]
+> w
+You zoom over the landscape.
+
+Outside Blockhouse
+
+The military blockhouse by the roadside is squat and windowless. A powerful searchlight, mounted on the roof, directs an intense beam towards the northeast horizon.
+
+A great, big German shepherd is curled up against the blockhouse.
+      Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> nw
+You skirt around the blockhouse.
+
+Desert
+
+Gray, empty desert stretches away on either side of a road that leads southeast.
+                  Desert
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner hops into view.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scratches impatiently on the ground.
+
+>
+[Obj#497: Desert]
+> waot
+[You don’t need to use the word "waot" to complete this story.]
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner looks up at you inquisitively.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner emits a brief squawk.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner watches every move you make.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scratches impatiently on the ground.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner looks up at you inquisitively.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner emits a brief squawk.
+
+>
+[Obj#497: Desert]
+> read watch
+Your wristwatch says it’s 5:26:45 am.
+
+>
+[Obj#497: Desert]
+> read watch
+Your wristwatch says it’s 5:27:00 am.
+
+The roadrunner watches every move you make.
+
+>
+[Obj#497: Desert]
+> read watch
+Your wristwatch says it’s 5:27:15 am.
+
+>
+[Obj#497: Desert]
+> read watch
+Your wristwatch says it’s 5:27:30 am.
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#497: Desert]
+> read watch
+Your wristwatch says it’s 5:27:45 am.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+>
+[Obj#497: Desert]
+> read watch
+Your wristwatch says it’s 5:28:00 am.
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#497: Desert]
+> se
+The desert streaks past.
+
+Outside Blockhouse
+      Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> look
+Outside Blockhouse
+
+The military blockhouse by the roadside is squat and windowless. A powerful searchlight, mounted on the roof, directs an intense beam towards the northeast horizon.
+
+>
+[Obj#174: Outside Blockhouse]
+> i
+You’re holding a steak knife, a screwdriver, a walkie-talkie and a lantern. You’re wearing a pair of binoculars, a wristwatch, a green boot and a red boot, and you have a credit card in your pocket.
+
+>
+[Obj#174: Outside Blockhouse]
+> throw lantern at searchlight
+You pitch the lantern at the searchlight.
+
+Ping! The powerful beam of the searchlight flickers and dies.
+
+A hinge squeaks on the far side of the blockhouse. You stumble down the road, away from the crunch of footsteps.
+
+"Hold it!" The shout doesn’t say anything about a gun. But you raise your hands over your head, just to be safe.
+
+The figure near the blockhouse studies you in the searchlight’s glare. "You... you some kinda spy or somethin’?"
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 526 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt89.sav
+
+[RESTORE completed.]
+                                                                                
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+Behind the Shed
+>
+[Obj#437: Behind the Shed]
+> nw
+The ground blurs beneath your feet.
+
+Desert
+
+Empty tracts of desert surround you on every side.
+               Desert
+>
+[Obj#132: Desert]
+> nw
+You streak across the desert.
+
+Outside Blockhouse
+
+The military blockhouse by the roadside is squat and windowless. A powerful searchlight, mounted on the roof, directs an intense beam towards the northeast horizon.
+
+A great, big German shepherd is curled up against the blockhouse.
+
+The German shepherd twitches.
+      Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> wait
+Time passes.
+
+The roadrunner prances to your side.
+
+The roadrunner notices the German shepherd and perches on its massive head. You stifle a shriek as the silly bird cocks its head this way and that, wondering what to make of the sleeping monster. Then it gives you a sly glance, ruffles its feathers and begins to peck at the sand fleas behind the dog’s ears.
+
+>
+[Obj#174: Outside Blockhouse]
+> throw lantern at searchlight
+You pitch the lantern at the searchlight.
+
+Ping! The powerful beam of the searchlight flickers and dies.
+
+As your eyes adjust to the gloom, you hear a deep, menacing growl. You turn and find yourself one inch away from the longest set of choppers you’ve ever seen.
+
+"Nice puppy," you mumble.
+
+The 110-pound "puppy" strains against its chain, opens its toothy maw and starts a commotion worthy of an American Kennel Club convention.
+
+You stumble backwards to hide as the searchlight sweeps across the road.
+
+"Hold it!" The shout doesn’t say anything about a gun. But you raise your hands over your head, just to be safe.
+
+The figure near the blockhouse studies you in the searchlight’s glare. "You... you some kinda spy or somethin’?"
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 485 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt89.sav
+
+[RESTORE completed.]
+                                                                                
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+Behind the Shed
+>
+[Obj#437: Behind the Shed]
+> nw
+The ground blurs beneath your feet.
+
+Desert
+
+Empty tracts of desert surround you on every side.
+               Desert
+>
+[Obj#132: Desert]
+> nw
+You streak across the desert.
+
+Outside Blockhouse
+
+The military blockhouse by the roadside is squat and windowless. A powerful searchlight, mounted on the roof, directs an intense beam towards the northeast horizon.
+
+A great, big German shepherd is curled up against the blockhouse.
+      Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> nw
+You skirt around the blockhouse.
+
+Desert
+
+Gray, empty desert stretches away on either side of a road that leads southeast.
+                  Desert
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner prances to your side.
+
+>
+[Obj#497: Desert]
+> wait 
+Time passes.
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scratches impatiently on the ground.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner looks up at you inquisitively.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner emits a brief squawk.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner watches every move you make.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scratches impatiently on the ground.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner looks up at you inquisitively.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner emits a brief squawk.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner watches every move you make.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scratches impatiently on the ground.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner looks up at you inquisitively.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner emits a brief squawk.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner watches every move you make.
+
+A third flare arcs across the sky and disappears.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner is eyeing you with interest.
+
+All at once the desert around you disappears in a flash of startling brilliance! You jam your hands over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 530 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> wt89.sav
+
+[RESTORE completed.]
+                                                                                
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+Behind the Shed
+>
+[Obj#437: Behind the Shed]
+> nw
+The ground blurs beneath your feet.
+
+Desert
+
+Empty tracts of desert surround you on every side.
+               Desert
+>
+[Obj#132: Desert]
+> nw
+You streak across the desert.
+
+Outside Blockhouse
+
+The military blockhouse by the roadside is squat and windowless. A powerful searchlight, mounted on the roof, directs an intense beam towards the northeast horizon.
+
+A great, big German shepherd is curled up against the blockhouse.
+
+The German shepherd twitches.
+      Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> nw
+You skirt around the blockhouse.
+
+Desert
+
+Gray, empty desert stretches away on either side of a road that leads southeast.
+                  Desert
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner prances into view.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scratches impatiently on the ground.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner looks up at you inquisitively.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner emits a brief squawk.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner watches every move you make.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scoots between your legs.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner is eyeing you with interest.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scampers around your feet.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner scratches impatiently on the ground.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner looks up at you inquisitively.
+
+>
+[Obj#497: Desert]
+> wait
+Time passes.
+
+The roadrunner emits a brief squawk.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+
+>
+[Obj#497: Desert]
+> save
+Save to file: 
+> save_260717_01.sav
+[Saving to save_260717_01.sav]
+
+[SAVE completed.]
+                                                                                Desert
+>
+[Obj#497: Desert]
+> se
+You zoom over the landscape.
+
+Outside Blockhouse
+
+A great, big German shepherd is curled up against the blockhouse.
+      Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> nw
+You skirt around the blockhouse.
+
+Desert
+
+The roadrunner watches every move you make.
+                  Desert
+>
+[Obj#497: Desert]
+> se
+The desert streaks past.
+
+Outside Blockhouse
+
+A great, big German shepherd is curled up against the blockhouse.
+      Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> nw
+You skirt around the blockhouse.
+
+Desert
+
+The roadrunner scoots between your legs.
+                  Desert
+>
+[Obj#497: Desert]
+> se
+The ground blurs beneath your feet.
+
+Outside Blockhouse
+
+A great, big German shepherd is curled up against the blockhouse.
+      Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> nw
+You skirt around the blockhouse.
+
+Desert
+
+The roadrunner is eyeing you with interest.
+                  Desert
+>
+[Obj#497: Desert]
+> se
+You streak across the desert.
+
+Outside Blockhouse
+
+A great, big German shepherd is curled up against the blockhouse.
+
+The German shepherd growls softly.
+      Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> nw
+You skirt around the blockhouse.
+
+Desert
+
+The roadrunner scampers around your feet.
+                  Desert
+>
+[Obj#497: Desert]
+> save
+Save to file: 
+> save_260717_02.sav
+[Saving to save_260717_02.sav]
+
+[SAVE completed.]
+                                                                                Desert
+>
+[Obj#497: Desert]
+> se
+You zoom over the landscape.
+
+Outside Blockhouse
+
+A great, big German shepherd is curled up against the blockhouse.
+      Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> nw
+You skirt around the blockhouse.
+
+Desert
+
+The roadrunner scratches impatiently on the ground.
+                  Desert
+>
+[Obj#497: Desert]
+> se
+The desert streaks past.
+
+Outside Blockhouse
+
+A great, big German shepherd is curled up against the blockhouse.
+
+The German shepherd turns over.
+      Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> nw
+You skirt around the blockhouse.
+
+Desert
+
+The roadrunner looks up at you inquisitively.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+                  Desert
+>
+[Obj#497: Desert]
+> se
+The ground blurs beneath your feet.
+
+Outside Blockhouse
+      Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> save
+Save to file: 
+> save_260717_03.sav
+[Saving to save_260717_03.sav]
+
+[SAVE completed.]
+                                                                                Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> look
+Outside Blockhouse
+
+The military blockhouse by the roadside is squat and windowless. A powerful searchlight, mounted on the roof, directs an intense beam towards the northeast horizon.
+
+>
+[Obj#174: Outside Blockhouse]
+> throw lantern at searchlight
+You pitch the lantern at the searchlight.
+
+Ping! The powerful beam of the searchlight flickers and dies.
+
+A hinge squeaks on the far side of the blockhouse. You stumble down the road, away from the crunch of footsteps.
+
+"Hold it!" The shout doesn’t say anything about a gun. But you raise your hands over your head, just to be safe.
+
+The figure near the blockhouse studies you in the searchlight’s glare. "You... you some kinda spy or somethin’?"
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 525 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> save_260717_03.sav
+[Restoring from save_260717_03.sav]
+
+[RESTORE completed.]
+                                                                                
+Outside Blockhouse
+
+The military blockhouse by the roadside is squat and windowless. A powerful searchlight, mounted on the roof, directs an intense beam towards the northeast horizon.
+Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> i
+You’re holding a steak knife, a screwdriver, a walkie-talkie and a lantern. You’re wearing a pair of binoculars, a wristwatch, a green boot and a red boot, and you have a credit card in your pocket.
+
+>
+[Obj#174: Outside Blockhouse]
+> examine blockhouse
+The blockhouse doesn’t have any windows or entrances you can see from here.
+
+>
+[Obj#174: Outside Blockhouse]
+> take off red boot
+You take off the red boot.
+
+The roadrunner hops into view.
+
+>
+[Obj#174: Outside Blockhouse]
+> throw red boot at searchlight
+You pitch the red boot at the searchlight.
+
+Ping! The powerful beam of the searchlight flickers and dies.
+
+A hinge squeaks on the far side of the blockhouse. You stumble down the road, away from the crunch of footsteps.
+
+"Hold it!" The shout doesn’t say anything about a gun. But you raise your hands over your head, just to be safe.
+
+The figure near the blockhouse studies you in the searchlight’s glare. "You... you some kinda spy or somethin’?"
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 526 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> save_260717_03.sav
+[Restoring from save_260717_03.sav]
+
+[RESTORE completed.]
+                                                                                
+Outside Blockhouse
+
+The military blockhouse by the roadside is squat and windowless. A powerful searchlight, mounted on the roof, directs an intense beam towards the northeast horizon.
+Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> w
+You streak across the desert.
+
+Desert
+
+The desert is still and expectant in the gray light of dawn.
+                  Desert
+>
+[Obj#529: Desert]
+> e
+You zoom over the landscape.
+
+Outside Blockhouse
+      Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> wait
+Time passes.
+
+A third flare arcs across the sky and disappears.
+
+>
+[Obj#174: Outside Blockhouse]
+> throw lantern at searchlight
+You pitch the lantern at the searchlight.
+
+Ping! The powerful beam of the searchlight flickers and dies.
+
+A hinge squeaks on the far side of the blockhouse. You stumble down the road, away from the crunch of footsteps.
+
+"Hold it!" The shout doesn’t say anything about a gun. But you raise your hands over your head, just to be safe.
+
+The figure near the blockhouse studies you in the searchlight’s glare. "You... you some kinda spy or somethin’?"
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 527 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> restore
+Restore from file: 
+> save_260717_03.sav
+[Restoring from save_260717_03.sav]
+
+[RESTORE completed.]
+                                                                                
+Outside Blockhouse
+
+The military blockhouse by the roadside is squat and windowless. A powerful searchlight, mounted on the roof, directs an intense beam towards the northeast horizon.
+Outside Blockhouse
+>
+[Obj#174: Outside Blockhouse]
+> wait
+Time passes.
+
+The roadrunner hops to your side.
+
+>
+[Obj#174: Outside Blockhouse]
+> read watch
+Your wristwatch says it’s 5:28:45 am.
+
+A third flare arcs across the sky and disappears.
+
+>
+[Obj#174: Outside Blockhouse]
+> read watch
+Your wristwatch says it’s 5:29:00 am.
+
+The roadrunner emits a brief squawk.
+
+>
+[Obj#174: Outside Blockhouse]
+> read watch
+Your wristwatch says it’s 5:29:15 am.
+
+>
+[Obj#174: Outside Blockhouse]
+> read watch
+Your wristwatch says it’s 5:29:30 am.
+
+The roadrunner watches every move you make.
+
+>
+[Obj#174: Outside Blockhouse]
+> throw lantern at searchlight
+You pitch the lantern at the searchlight.
+
+Ping! The powerful beam of the searchlight flickers and dies.
+
+A hinge squeaks on the far side of the blockhouse. You stumble down the road, away from the crunch of footsteps.
+
+"Hold it!" The shout doesn’t say anything about a gun. But you raise your hands over your head, just to be safe.
+
+The figure near the blockhouse studies you in the searchlight’s glare. "You... you some kinda spy or somethin’?"
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 74 points out of 100, in 530 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >
+[Obj#439: The River]
+> 

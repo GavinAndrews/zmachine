@@ -646,6 +646,48 @@ class GlobalsWindow(QWidget):
                 pass
 
 
+class TrinityClockWindow(QWidget):
+    """Trinity-only debug panel showing the internal G41:G99:G43 world clock
+    (hours:minutes:seconds) that gates Trinity's historical vignette scenes.
+
+    Not part of the original game's UI -- Trinity never displays this clock
+    to the player. See data/trinity_world_clock.md.
+    """
+    HOURS_GLOBAL   = 0x41
+    MINUTES_GLOBAL = 0x99
+    SECONDS_GLOBAL = 0x43
+
+    def __init__(self, processor=None, parent=None):
+        super().__init__(parent)
+        self.processor = processor
+        self.setWindowTitle("Trinity World Clock")
+        self.setGeometry(100, 100, 260, 110)
+        layout = QVBoxLayout(self)
+        self.label = QLabel("--:--:-- --")
+        font = self.label.font()
+        font.setPointSize(20)
+        self.label.setFont(font)
+        layout.addWidget(self.label)
+        self.raw_label = QLabel("")
+        layout.addWidget(self.raw_label)
+        btn = QPushButton("Refresh"); btn.clicked.connect(self.refresh)
+        layout.addWidget(btn)
+
+    def refresh(self):
+        if not self.processor:
+            return
+        try:
+            hours   = self.processor.globals.read_global(self.HOURS_GLOBAL)
+            minutes = self.processor.globals.read_global(self.MINUTES_GLOBAL)
+            seconds = self.processor.globals.read_global(self.SECONDS_GLOBAL)
+        except Exception:
+            return
+        suffix       = "am" if hours < 12 else "pm"
+        display_hour = hours % 12 or 12
+        self.label.setText(f"{display_hour}:{minutes:02d}:{seconds:02d} {suffix}")
+        self.raw_label.setText(f"G41={hours:3d}  G99={minutes:3d}  G43={seconds:3d}")
+
+
 class StackWindow(QWidget):
     def __init__(self, processor=None, parent=None):
         super().__init__(parent)
@@ -686,11 +728,13 @@ class ZMachineScreen(ScreenBase):
         self.globals_window = None
         self.stack_window   = None
         self.trace_window   = None
+        self.trinity_clock_window = None
         self._running       = False
         self._line_result   = None
         self._char_result   = None
         self._waiting       = False
         self._show_debug    = False   # set True before run() to open debug windows
+        self._show_trinity_clock = False  # set True before run() to open the Trinity clock panel
 
     def init(self):
         self.main_window = QMainWindow()
@@ -709,6 +753,7 @@ class ZMachineScreen(ScreenBase):
         vm.addAction("Objects",          self.toggle_objects)
         vm.addAction("Globals",          self.toggle_globals)
         vm.addAction("Stack",            self.toggle_stack)
+        vm.addAction("Trinity Clock",    self.toggle_trinity_clock)
 
         self.terminal = TerminalWidget()
         self.terminal.on_line_entered = self._cb_line
@@ -730,12 +775,17 @@ class ZMachineScreen(ScreenBase):
         self.object_window  = ObjectWindow(self.processor)
         self.globals_window = GlobalsWindow(self.processor)
         self.stack_window   = StackWindow(self.processor)
+        self.trinity_clock_window = TrinityClockWindow(self.processor)
 
         if self._show_debug:
             self.debug_window.show()
             self.object_window.show()
             self.globals_window.show()
             self.stack_window.show()
+
+        if self._show_trinity_clock:
+            self.trinity_clock_window.refresh()
+            self.trinity_clock_window.show()
 
         self.terminal.setFocus()
 
@@ -784,6 +834,7 @@ class ZMachineScreen(ScreenBase):
             self.object_window.processor  = self.processor
             self.globals_window.processor = self.processor
             self.stack_window.processor   = self.processor
+            self.trinity_clock_window.processor = self.processor
         self._bind_trace()
 
     def _bind_trace(self):
@@ -907,6 +958,8 @@ class ZMachineScreen(ScreenBase):
     # ------------------------------------------------------------------
 
     def read_line(self, max_chars, time_tenths=0, time_routine_cb=None):
+        if self.trinity_clock_window and self.trinity_clock_window.isVisible():
+            self.trinity_clock_window.refresh()
         if self.terminal:
             self.terminal._sg.reset_scroll_count()
         self._line_result = None
@@ -1070,6 +1123,10 @@ class ZMachineScreen(ScreenBase):
     def toggle_globals(self):
         if self.globals_window.isVisible(): self.globals_window.hide()
         else: self.globals_window.refresh(); self.globals_window.show()
+
+    def toggle_trinity_clock(self):
+        if self.trinity_clock_window.isVisible(): self.trinity_clock_window.hide()
+        else: self.trinity_clock_window.refresh(); self.trinity_clock_window.show()
 
     def toggle_stack(self):
         if self.stack_window.isVisible(): self.stack_window.hide()

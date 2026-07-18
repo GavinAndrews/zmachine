@@ -18,6 +18,9 @@ parser.add_argument("--seed", type=int, metavar="N",
                     help="seed the random number generator for deterministic replay")
 parser.add_argument("--debug", action="store_true",
                     help="show debug windows (qt only)")
+parser.add_argument("--trinity-clock", action="store_true",
+                    help="show Trinity's internal G41:G99:G43 world-clock debug panel "
+                         "(qt only; Trinity-specific globals, meaningless for other games)")
 parser.add_argument("--undo-random-continue", action="store_true",
                     help="don't reset the RNG on undo (allows re-rolling random outcomes)")
 parser.add_argument("--transcript", action="store_true",
@@ -54,8 +57,16 @@ def _make_screen(ui):
 
 screen = _make_screen(args.ui)
 
+if args.trinity_clock and "trinity" not in os.path.basename(game_arg).lower():
+    print(f"[--trinity-clock: {os.path.basename(game_arg)} is not Trinity; "
+          "the panel will show garbage globals]", file=sys.stderr)
+
 if args.ui == "qt" and args.debug:
     screen._show_debug = True
+if args.ui == "qt" and args.trinity_clock:
+    screen._show_trinity_clock = True
+elif args.trinity_clock:
+    print("[--trinity-clock is only supported with --ui qt; ignoring]", file=sys.stderr)
 
 screen.init()
 screen._seed = args.seed
