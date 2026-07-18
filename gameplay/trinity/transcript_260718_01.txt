@@ -1,0 +1,1617 @@
+
+
+[Transcript started: C:\Users\Gavin\Documents\Projects\software\infocomm\gameplay\trinity\transcript_260718_01.txt]
+                                                                                
+Copyright (C)1986 Infocom, Inc. All rights reserved.
+
+[Press any key to begin.]
+                                                                                
+Sharp words between the superpowers. Tanks in East Berlin. And now, reports the BBC, rumors of a satellite blackout. It’s enough to spoil your continental breakfast.
+
+But the world will have to wait. This is the last day of your $599 London Getaway Package, and you’re determined to soak up as much of that authentic English ambience as you can. So you’ve left the tour bus behind, ditched the camera and escaped to Hyde Park for a contemplative stroll through the Kensington Gardens.
+
+Palace Gate
+
+A tide of perambulators surges north along the crowded Broad Walk. Shaded glades stretch away to the northeast, and a hint of color marks the western edge of the Flower Walk.
+Palace Gate
+>restore 
+Restore from file: 
+> wt81.sav
+
+[RESTORE completed.]
+                                                                                
+Bottom of Stairs
+
+The triangular structure before you must be thousands of feet high. It divides the sky like a razor, casting a stern, precise shadow over the surrounding landscape.
+
+A narrow stairway climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every direction.
+
+You see a bandage, an axe and a small coin here.
+Bottom of Stairs
+>i
+You’re holding a lantern, a birdcage, a bag of crumbs, a walkie-talkie and a silver coin. Inside the birdcage you see a lemming. You’re wearing a burial shroud, a wristwatch, a green boot and a red boot, and you have a credit card in your pocket.
+
+>se
+The River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+Footpaths wander north, west and northwest. Turning south, you see a magnificent hedge growing in an unbroken wall to the river’s edge.
+
+A dark shadow lies across the ground.
+
+As you peer across the river you notice a lone vessel gliding out of the fog.
+                The River
+>wait
+Time passes.
+
+The dory draws closer to the shore. You can make out a dark oarsman at the stern.
+
+>wait
+Time passes.
+
+The oarsman guides his dory to a soundless landing.
+
+A puff of wind ripples the water.
+
+Eddies of sand swirl across the shore and coalesce into ghostly figures of dust and vapor. Before you can think or move, you find yourself amid a gathering of human shades, pale and gaunt, silent as death.
+
+>enter dory
+The dory tips alarmingly as you climb aboard.
+
+The oarsman glances at the burial shroud you’re wearing with silent approval, and stretches out his skeletal hand expectantly.
+         The River, in the dory
+>give silver coin to oarsman
+The oarsman accepts the silver coin and nods at you solemnly.
+
+The ghostly shades begin to converge on the dory. One by one, they step into the vessel, hand the oarsman a silver coin, and take a seat.
+
+The oarsman pushes away from the beach.
+
+Planes of mist close in around the dory, drawing it deeper into the gloom. The only sound is the rhythmic slurp of the oar as it plies the dark, oily water.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A vague outline emerges beyond the helm. It slowly resolves into a spit of sand, damp and cheerless in the surrounding murk.
+
+The oarsman swings the dory around and lands it with barely a jolt. One by one, the shades slink out of the vessel and drift across the sand like leaves on a breath of wind. Something in the oarsman’s gaze compels you to follow them.
+
+Sand Bar
+
+At first glance, this isolated spit seems hopelessly mired in the fog blowing in off the surrounding river. But the sand looks a bit firmer to the south.
+
+The lemming in the cage trembles with agitation.
+
+With practiced skill, the oarsman pushes his empty dory away from the shore.
+                      Sand Bar
+>s
+Islet
+
+It’s impossible to see more than a dozen yards on this fogbound islet. The damp air makes your footsteps sound unnaturally loud as you trudge across the sand at the river’s edge.
+
+A lone toadstool has found a home at the water’s edge. The white door in its stem is wide open.
+
+A triangular shadow lies across the ground. Its sharp point rests exactly on the open door in the toadstool.
+
+A voice in your ear giggles, "Gnomon is an island."
+
+A roadrunner is perched on the toadstool’s crown. The ruby in its beak gleams enticingly.
+
+The roadrunner gives you a curt nod of acknowledgement. Then it flutters off the toadstool, prances through the open door and disappears.
+        Islet
+>enter door
+You take a deep breath, and step forward.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling. You can see an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+A paperback book is lying in the corner.
+
+A faint sound drifts in from somewhere outside. It sounded like a man’s voice.
+     Shack
+>take book
+Your load is too heavy.
+
+You hear the voice again, followed by a sharp clatter. There’s definitely somebody outside.
+
+>drop shroud
+[taking off the burial shroud first]
+
+Dropped.
+
+Another voice joins the first. You strain to listen.
+
+"Towerside breaker closed. Check."
+
+"Pittsburg’s on the line, Lieutenant."
+
+"Give him to me, Joe."
+
+>i
+You’re holding a lantern, a birdcage, a bag of crumbs and a walkie-talkie. Inside the birdcage you see a lemming. You’re wearing a wristwatch, a green boot and a red boot, and you have a credit card in your pocket.
+
+>take book
+Your load is too heavy.
+
+The lemming in the cage scratches its ear.
+
+A gust of wind obscures the conversation outside for a few moments. You can pick out the words "focus," "groves" and "surveillance," but little else.
+
+>drop lantern
+Dropped.
+
+All at once the shack is filled with light! It seems to be coming from somewhere outside.
+
+"Lower!" shouts one of the voices.
+
+The light brightens to a hard, steady glare.
+
+>take book
+Taken.
+
+The lemming in the cage peers around nervously.
+
+The wind rises again, drowning out the voices altogether.
+
+>read book
+A slip of cardboard falls out of the book as you open it.
+
+You flip through the book, but nothing catches your eye.
+
+You hear a motor revving to life below. One of the voices barks something; there’s a squeal of rubber, and the motor fades into the distance. Then all is still.
+
+>read book
+You flip through the book, but nothing catches your eye.
+
+>take cardboard
+You pick up the slip of cardboard.
+
+[Your score just went up by 1 point. The total is now 66 out of 100.]
+
+>read cardboard
+The slip of cardboard seems to have been used as a bookmark. A stanza of poetry is typed on one side. The other side is covered with some kind of diagram.
+
+>read poem
+It’s a send-up of a famous Emerson poem.
+                                             From this crude lab that spawned a dud,     Their necks to Truman’s axe uncurled,       Lo, the embattled savants stood             And fired the flop heard ’round the world.                                                         -- Los Alamos ditty, circa 1945                                             
+>read diagram
+The diagram is a meaningless network of intersecting lines. The legend "RD=DET BL=INF ST=POS WH=GND" is scribbled across the bottom.
+
+[Your score just went up by 3 points. The total is now 69 out of 100.]
+
+>drop book
+Dropped.
+
+The lemming in the cage washes its face with its paws.
+
+>drop cardboard
+Dropped.
+
+>take lantern
+Taken.
+
+>look
+Shack
+
+You’re in a metal shack, barely twelve feet square. The oak floor is littered with discarded bits of rope, pulleys and other hardware. A dark light bulb hangs from the ceiling; harsh light streams in through an exit in the west wall.
+
+A five-foot sphere rests on a bracket in the middle of the floor. Its surface is studded with bolts and crossed with electrical cables, all converging in a boxlike enclosure nearby.
+
+An open white door is set into the east wall.
+
+You see a slip of cardboard, a book and a burial shroud here.
+
+>take all
+The slip of cardboard: Taken.
+The book: Your load is too heavy.
+The burial shroud: Your load is too heavy.
+
+>drop cardboard
+Dropped.
+
+>w
+Tower Platform
+
+A metal rail is all that stands between you and a hundred-foot drop.
+
+Miles of barren desert lie below, gray and still in the gathering dawn. Black roads radiate outward like the hands of a great clock.
+
+This narrow platform opens east into a metal shack. A searchlight on the southwest horizon floods the platform in a raw white glare. A ladder is sticking up over the platform’s edge.
+     Tower Platform
+>u
+You’re already at the top of the ladder.
+
+>d
+You clutch the topmost rung of the ladder with sweating palms. Fighting back vertigo, you begin to feel your way downward.
+
+At last your foot touches a flat surface.
+
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues downward.
+              Tower Landing
+>look
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues downward.
+
+>save
+Save to file: 
+> save_260718_01.sav
+[Saving to save_260718_01.sav]
+
+[SAVE completed.]
+                                                                                Tower Landing
+>climb ropes
+That’s impossible.
+
+The lemming in the cage blinks at you.
+
+A faint rumble begins to drift across the desert. You peer between the girders to scan the horizon.
+
+Headlights. Lots of them, converging on the tower from several directions at once, and just minutes away!
+
+White with panic, you scramble down the ladder as fast as you can. But your boots slip out from under you about ten rungs from the bottom; and you regain consciousness just as seventeen jeeps screech to a halt around the tower.
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 69 points out of 100, in 425 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >restore
+Restore from file: 
+> save_260718_01.sav
+[Restoring from save_260718_01.sav]
+
+[RESTORE completed.]
+                                                                                
+Tower Landing
+
+A spiderweb of steel rises from the desert floor below, tapering up to the platform fifty feet overhead. Thick ropes and cables dangle around the ladder that continues downward.
+Tower Landing
+>d
+You step back onto the ladder and inch yourself downward.
+
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+
+A familiar roadrunner is eyeing you from its perch on the box’s lid. The ruby in its beak gleams in the early dawn.
+
+With a skillful toss, the roadrunner deposits the ruby on the box. Then it leaps off and scampers eagerly around your feet. If you didn’t know better, you’d swear it was glad to see you.
+
+The lemming in the cage blinks at you.
+             Base of Tower
+>take ruby
+You take the ruby off the box.
+
+[Your score just went up by 1 point. The total is now 70 out of 100.]
+
+The roadrunner scampers around your feet.
+
+>put ruby in red boot
+You press the ruby into the toe of the red boot. As you watch, the red leather closes around the jewel and absorbs it like melting wax.
+
+A shudder of ecstasy ripples up and down the length of the boot. It begins to glow with raw energy, brighter and brighter, until you shield your eyes from the glare.
+
+When you peek again, a tiny pair of wings has sprouted out of the heel.
+
+[Your score just went up by 1 point. The total is now 71 out of 100.]
+
+>save
+Save to file: 
+> save_260718_02.sav
+[Saving to save_260718_02.sav]
+
+[SAVE completed.]
+                                                                                Base of Tower
+>read watch
+Your wristwatch says it’s 5:04:15 am.
+
+The roadrunner scratches impatiently on the ground.
+
+>se
+You put one boot forward.
+
+Whoosh! The desert streaks past in a dizzy rush of color.
+
+Shallow Crater
+
+You’re standing at the edge of a shallow depression in the desert floor, a few hundred feet across. The ground within is gray and pulverized, as if by a powerful explosion.
+
+A paved road leads southeast into the desert, and northwest towards the tower.
+
+Your boots are tingling with energy.
+             Shallow Crater
+>se
+Whoosh! The desert streaks past.
+
+Northwest of Ranch
+
+You’re at the northwest corner of a stone wall. A closed iron gate leads in to a dilapidated ranch house.
+
+A paved road bears northwest into the desert. Other paths curve east and south, along the wall’s perimeter.
+              Northwest of Ranch
+>read watch
+Your wristwatch says it’s 5:05:00 am.
+
+>e
+The ground blurs beneath your feet.
+
+Northeast of Ranch
+
+A dilapidated ranch house stands nearby, bounded by dusty patches of ground and a low stone wall. Paths lead south and east, on either side of a cement reservoir. A paved road bends off to the west.
+
+The lemming in the cage sniffs the air inquisitively.
+                  Northeast of Ranch
+>e
+You streak across the desert.
+
+North of Reservoir
+
+You’re resting at the north side of a big cement reservoir. Dusty paths curve west and southwest around a ranch house, and a trail leads southeast to the base of a windmill.
+                  North of Reservoir
+>drop all
+The lantern: Dropped.
+The birdcage: Dropped.
+The bag of crumbs: Dropped.
+The walkie-talkie: Dropped.
+
+>take lantern
+Taken.
+
+The roadrunner prances to your side.
+
+The bird spies the paper bag and begins to peck at the crumbs in the bag.
+
+>turn lantern on
+Click. The lantern emits a warm, yellow beam.
+
+The roadrunner pecks contentedly at the crumbs in the bag.
+
+>u
+You can’t go that way.
+
+>se
+You zoom over the landscape.
+
+Under the Windmill
+
+A squat wooden windmill rises overhead, its dark timbers tapering up to a square landing that overlooks the east side of an adjacent reservoir.
+
+The bottom rungs of a ladder are just within reach.
+                  Under the Windmill
+>u
+The ladder squeaks and complains as you ascend.
+
+Windmill
+
+You’re on a square landing near the top of the windmill. The rotting planks underfoot creak ominously as you stand on them.
+
+A rickety ladder leads downward.
+
+Somebody has left a nice pair of binoculars at the landing’s edge.
+
+The landing creaks under your weight. It isn’t in very good shape.
+                  Windmill
+>take binoculars
+A loud, plaintive creak makes you draw your hand back in alarm. You hold your breath as the landing sways uncertainly for a moment, back and forth. Then all is still.
+
+Slowly, carefully, you stretch your arm towards the pair of binoculars...
+
+Crack! The landing tips wildly under your feet. You manage a brief, hysterical shriek...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+... and your mouth fills with water.
+
+Reservoir
+
+You’re treading water in a big cement reservoir, too deep for your feet to touch bottom.
+        Reservoir
+>d
+[holding your breath first]
+
+You sink below the surface.
+
+Underwater
+
+Suspended particles of muck swirl in the beam of the lantern. It’s impossible to see more than a few feet.
+
+You see a pair of binoculars and a lantern (providing light) here.
+         Underwater
+>take all
+The pair of binoculars: Taken.
+
+[Your score just went up by 1 point. The total is now 72 out of 100.]
+The lantern: Taken.
+
+The lantern’s light is getting dimmer.
+
+>u
+You rise to the surface, gasping for air.
+
+Reservoir
+          Reservoir
+>s
+You climb out of the reservoir.
+
+Edge of Reservoir
+
+You’re on the edge of a big concrete reservoir, filled with dark water. A short flight of steps leads down to the ground.
+         Edge of Reservoir
+>turn lantern off
+You turn off the lantern’s switch.
+
+>look
+Edge of Reservoir
+
+You’re on the edge of a big concrete reservoir, filled with dark water. A short flight of steps leads down to the ground.
+
+>ne
+You’d fall over the edge of the reservoir if you went that way.
+
+>w
+You’d fall over the edge of the reservoir if you went that way.
+
+>e
+You’d fall over the edge of the reservoir if you went that way.
+
+>d
+You descend the stairway.
+
+South of Reservoir
+
+You’re near the south side of a big cement reservoir. Dusty paths lead west and northwest around a ranch house. Another curves northeast, to the base of a windmill.
+
+A stairway climbs up to the reservoir’s edge.
+
+The roadrunner hops into view.
+                 South of Reservoir
+>ne
+The desert streaks past.
+
+Under the Windmill
+
+A squat wooden windmill rises overhead, its dark timbers tapering up to a broken landing that’s tilted over the east side of an adjacent reservoir.
+
+The bottom rungs of a ladder are just within reach.
+                  Under the Windmill
+>nw
+The ground blurs beneath your feet.
+
+North of Reservoir
+
+You see a paper bag, a walkie-talkie and a birdcage here. Inside the birdcage you see a lemming.
+                  North of Reservoir
+>wear binoculars
+You put on the pair of binoculars.
+
+>take all
+The birdcage: Taken.
+The paper bag: Taken.
+The walkie-talkie: Taken.
+
+The roadrunner reappears.
+
+>turn lantern off
+The lantern’s switch is already off.
+
+>w
+You streak across the desert.
+
+Northeast of Ranch
+                  Northeast of Ranch
+>sw
+The stone wall blocks your path.
+
+>look
+Northeast of Ranch
+
+A dilapidated ranch house stands nearby, bounded by dusty patches of ground and a low stone wall. Paths lead south and east, on either side of a cement reservoir. A paved road bends off to the west.
+
+>s
+Front Yard
+
+This patch of ground lies between the ranch house to the west, and a huge cement reservoir to the east. Well-worn paths curve north and south, around the stone wall enclosing the house. Other trails skirt the reservoir on either side.
+
+A ramp slopes up through a gap in the stone wall, ending on a raised deck.
+
+The roadrunner races to your side.
+                  Front Yard
+>u
+You ascend the ramp.
+
+Front Deck
+
+You’re on a raised deck attached to the east side of the ranch house. Two closed doors, one at the deck’s left corner and one at the right, lead inside. A gentle ramp slopes down to the front yard.
+
+The roadrunner struts into view.
+          Front Deck
+>save
+Save to file: 
+> save_260718_03.sav
+[Saving to save_260718_03.sav]
+
+[SAVE completed.]
+                                                                                Front Deck
+>open right door
+You open the right door.
+
+The lemming in the cage trembles with agitation.
+
+>enter right door
+Assembly Room
+
+Whoever used this room was paranoid about dirt. The floor is swept spotless, and the edges of both windows are carefully sealed with tape. An open front door leads east, and there’s an open closet door in the north wall. Other exits lead south and west.
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away.
+
+You hear the noise again. It’s like a pebble in an empty can.
+
+The rattlesnake rears its wedge-shaped head. It looks as if it’s about to strike!
+
+The roadrunner trots into the room and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.
+
+Suddenly the roadrunner explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn’t big enough to support this style of attack; and after a few very close calls, the roadrunner abandons the fray and retreats with a squall of frustration.
+
+The lemming sees the rattlesnake and begins to tremble.
+          Assembly Room
+>n
+You beat a hasty retreat from the rattlesnake.
+
+Closet
+
+There’s barely enough room to turn around in this puny closet. Its single open door is in the south wall.
+
+The rattlesnake lurks just outside the open door. It looks as if it’s about to strike!
+
+The lemming covers its face with its paws and trembles.
+             Closet
+>close door
+You close the closet door.
+
+It’s completely dark.
+      Darkness
+>turn lantern on
+Click. The lantern emits a warm, yellow beam.
+
+Closet
+
+There’s barely enough room to turn around in this puny closet. Its single closed door is in the south wall.
+        Closet
+>open cage
+You open the birdcage.
+
+The lemming scrambles out of the cage and plops to the floor.
+
+>open door
+You open the closet door.
+
+The lantern’s light is quite dim now.
+
+The rattlesnake lurks just outside the open door. It looks as if it’s about to strike!
+
+The lemming scrambles through the open closet door, straight into the fangs of the rattlesnake.
+
+The lemming twitches for a while as the venom takes effect. Then the snake drags its prize across the floor, shakes its tail once for effect and slithers out of sight.
+
+[Your score just went up by 3 points. The total is now 75 out of 100.]
+
+>s
+Assembly Room
+
+A workbench covered with loose sheets of brown paper runs along the north wall. You see bits of wire and other debris scattered across the paper.
+
+The roadrunner prances to your side.
+      Assembly Room
+>move paper
+As you lift the edge of the paper a screwdriver rolls out from underneath and lands on your foot. Ouch!
+
+>take screwdriver
+You pick up the screwdriver.
+
+[Your score just went up by 1 point. The total is now 76 out of 100.]
+
+The roadrunner looks up at you inquisitively.
+
+>save
+Save to file: 
+> save_260718_04.sav
+[Saving to save_260718_04.sav]
+
+[SAVE completed.]
+                                                                                Assembly Room
+>s
+Southeast Room
+
+Something about this room gives you the impression that it was hastily vacated. The front door in the east wall is closed. Other exits lead north and west.
+
+The lantern’s light flickers and goes out.
+
+The roadrunner hops to your side.
+             Southeast Room
+>w
+Kitchen
+
+Disconnected stove pipes and an open cupboard with a steak knife in it are the only evidence of this room’s identity. A closed outer door in the west wall leads out to a hallway. Other exits lead north and east.
+
+The roadrunner races into view.
+              Kitchen
+>take knife
+You take the steak knife out of the cupboard.
+
+[Your score just went up by 1 point. The total is now 77 out of 100.]
+
+>e
+Southeast Room
+
+The roadrunner reappears at your side.
+       Southeast Room
+>d
+There’s no exit that way.
+
+>w
+Kitchen
+
+The roadrunner reappears at your side.
+              Kitchen
+>w
+The outer door is closed.
+
+>open outer door
+You open the outer door.
+
+>w
+Hallway
+
+This short hallway opens outdoors to the north and south. An open outer door leads east into a kitchen. Turning west, you see a stairway descending into darkness.
+
+The roadrunner reappears.
+       Hallway
+>d
+You descend the stairway.
+
+Icehouse
+
+The walls of this underground chamber are cool and clammy to your touch. It feels as if nobody’s been down here for a long time.
+
+Gray light seeps in from a stairway climbing east.
+
+The roadrunner struts into view.
+       Icehouse
+>examine walls
+[You don’t need to refer to the wall to complete this story.]
+
+>u
+You trudge up the stairway.
+
+Hallway
+
+The roadrunner prances to your side.
+        Hallway
+>n
+Back Yard
+
+This patch of dust lies within the elbow of the ranch house, and is enclosed by a stone wall to the north and west.
+
+An open hallway leads south, into the house. There’s also a closed screen door to the east, and a closed iron gate in the northwest corner of the stone wall.
+
+The roadrunner hops to your side.
+       Back Yard
+>e
+The screen door is closed.
+
+>open screen door
+You open the screen door.
+
+>e
+Spare Room
+
+Aside from an open screen door to the west, this squarish room offers no amenities. Other exits lead north and east.
+
+A large map is hanging on the wall.
+
+The roadrunner races to your side.
+         Spare Room
+>examine map
+[This is the map included in your Trinity package.]
+
+>n
+Bathroom
+
+An old porcelain sink, broken and faucetless, is the only fixture left in this tiny chamber. The south exit doesn’t even have a door.
+
+The roadrunner struts to your side.
+          Bathroom
+>examine sink
+The porcelain is stained with big, disgusting patches of brown and green mildew.
+
+>s
+Spare Room
+
+A large map is hanging on the wall.
+
+The roadrunner prances into view.
+        Spare Room
+>e
+Bedroom
+
+This room is stripped bare of all furnishings. Only a rectangular area in the corner, lighter than the floor around it, belies the former presence of a mattress.
+
+A closed outside door in the east wall leads outside. Another exit opens west, into the ranch house.
+
+The roadrunner reappears.
+          Bedroom
+>w
+Spare Room
+
+A large map is hanging on the wall.
+
+The roadrunner hops to your side.
+       Spare Room
+>w
+Back Yard
+
+The roadrunner reappears.
+          Back Yard
+>out
+The iron gate is closed.
+
+>open iron gate
+You open the iron gate.
+
+>out
+Northwest of Ranch
+
+The roadrunner races into view.
+         Northwest of Ranch
+>sw
+You zoom over the landscape.
+
+Desert
+
+The desert around you is flat and empty. Only the distant tower relieves the monotony of the landscape.
+                  Desert
+>w
+The desert streaks past.
+
+Paved Road
+
+A paved road, straight and level, bears in a north/south line across the desert.
+      Paved Road
+>s
+The ground blurs beneath your feet.
+
+Paved Road
+
+A paved road bears north and south across the desert. Another road bends northwest, and a dirt trail wanders off to the southeast.
+          Paved Road
+>s
+You streak across the desert.
+
+You dodge into hiding at the sound of a nearby voice.
+
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+
+A thin man is standing just inside the bunker’s entrance.
+
+You notice the thin man glancing at his watch.
+          Behind the Shed
+>examine thin man
+The thin man near the shelter is drawn and haggard; it looks as if he hasn’t slept in days.
+                                                       Distant and dead resuscitate,                         They show me as the dial or move as the hands of me,  I am the clock myself.                                                                                                                           -- Walt Whitman                                                       
+>examine bunker with binoculars
+You focus the binoculars on the shelter.
+
+The inside of the shelter is only about twenty feet square. Every inch is crowded with technicians, tending racks filled with electrical equipment.
+
+One technician is hunched over a stool, clutching a microphone. The tension in his grasp is reflected on every face.
+
+As your eyes take in the maze of equipment, you notice a long wooden box, similar to the one you saw under the tower. A steel key is visible in its open padlock.
+
+[Your score just went up by 3 points. The total is now 80 out of 100.]
+
+The thin man draws thoughtfully on his pipe.
+
+>save
+Save to file: 
+> save_260718_05.sav
+[Saving to save_260718_05.sav]
+
+[SAVE completed.]
+                                                                                Behind the Shed
+>look
+Behind the Shed
+
+You’re hiding behind a small storage shed.
+
+Peeking around the corner, you see a large earth-covered shelter immediately to the northeast. Several jeeps, manned by nervous GIs, are parked around the shelter’s open entrance.
+
+Muted voices and crackling radios can be heard inside the shelter.
+
+A thin man is standing just inside the bunker’s entrance.
+
+The roadrunner struts to your side.
+
+With a nervous sigh, the thin man disappears into the shelter.
+
+>ask roadrunner to get steel key
+The roadrunner nods brightly.
+
+You hold your breath as a gray torpedo scoots under the jeeps and disappears into the shelter. The busy technicians fail to notice the fearless creature plucking the key from its padlock.
+
+Triumphantly, the roadrunner prances back to your side and deposits the key at your feet.
+
+[Your score just went up by 3 points. The total is now 83 out of 100.]
+
+>take key
+Your load is too heavy.
+
+>i
+You’re holding a steak knife, a screwdriver, a walkie-talkie, a paper bag, a birdcage and a lantern. You’re wearing a wristwatch, a green boot, a red boot and a pair of binoculars, and you have a credit card in your pocket.
+
+>put knife in pocket
+You put the steak knife in your pocket.
+
+The roadrunner emits a brief squawk.
+
+>put screwdriver in pocket
+There isn’t enough room in your pocket.
+
+>take key
+Taken.
+
+[Your score just went up by 1 point. The total is now 84 out of 100.]
+
+The roadrunner watches every move you make.
+
+>save
+Save to file: 
+> save_260718_06.sav
+[Saving to save_260718_06.sav]
+
+[SAVE completed.]
+                                                                                Behind the Shed
+>score
+[Your score is 84 points out of 100, in 496 moves. This gives you the rank of Historian.]
+
+>n
+You zoom over the landscape.
+
+Paved Road
+               Paved Road
+>n
+The desert streaks past.
+
+Paved Road
+          Paved Road
+>n
+The ground blurs beneath your feet.
+
+South of Tower
+
+A paved road bears north towards the tower, and south into the desert.
+          South of Tower
+>n
+You streak across the desert.
+
+Base of Tower
+
+A closed box, locked with a steel padlock, is lying across the ground nearby.
+              Base of Tower
+>unlock padlock with key
+You slip the key into the padlock. It unlocks with a smart little snap.
+
+[Your score just went up by 1 point. The total is now 85 out of 100.]
+
+>remove padlock
+You take the padlock off the box.
+
+The roadrunner prances into view.
+
+>open box
+You swing open the lid of the box, revealing a control panel inside.
+
+>i
+You’re holding a padlock, a screwdriver, a walkie-talkie, a paper bag, a birdcage and a lantern. Inside the padlock you see a steel key. You’re wearing a wristwatch, a green boot, a red boot and a pair of binoculars, and you have a steak knife and a credit card in your pocket.
+
+>drop padlock
+Dropped.
+
+The roadrunner scoots between your legs.
+
+>look
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner is eyeing you with interest.
+
+An open box is lying across the ground nearby. Inside you see a control panel.
+
+There’s a padlock here. Inside the padlock you see a steel key.
+
+>examine control panel
+The control panel is covered with a bewildering array of instruments, clustered around a heavy-duty circuit breaker.
+
+The roadrunner scampers around your feet.
+
+>save
+Save to file: 
+> save_260718_07.sav
+[Saving to save_260718_07.sav]
+
+[SAVE completed.]
+                                                                                Base of Tower
+>open circuit breaker
+You lift the handle of the circuit breaker.
+
+>w
+You zoom over the landscape.
+
+West of Tower
+
+A tall framework of steel has been erected here, cousin to the larger tower visible not far to the east. Suspended within the frame is an enormous metal barrel, at least twenty feet long and ten wide, with rounded end caps. It looks like a king-sized cold capsule.
+
+A dirt trail curves north and south.
+
+A faint rumble begins to drift across the desert. You peer between the girders to scan the horizon.
+
+Headlights. Lots of them, converging on the tower from several directions at once, and just minutes away!
+
+White with panic, you crawl off to hide in the desert. But you bowl headfirst into a Joshua tree, and your vacation shorts snag on a prickly pear bush just as seventeen jeeps screech to a halt around the tower.
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 85 points out of 100, in 507 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >restore
+Restore from file: 
+> save_260718_07.sav
+[Restoring from save_260718_07.sav]
+
+[RESTORE completed.]
+                                                                                
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner scratches impatiently on the ground.
+
+An open box is lying across the ground nearby. Inside you see a control panel.
+
+There’s a padlock here. Inside the padlock you see a steel key.
+Base of Tower
+>w
+You zoom over the landscape.
+
+West of Tower
+
+A tall framework of steel has been erected here, cousin to the larger tower visible not far to the east. Suspended within the frame is an enormous metal barrel, at least twenty feet long and ten wide, with rounded end caps. It looks like a king-sized cold capsule.
+
+A dirt trail curves north and south.
+             West of Tower
+>s
+The desert streaks past.
+
+Southwest of Tower
+
+A paved road leads northeast towards the tower, and southwest into the desert. There’s also a dirt trail bearing north.
+             Southwest of Tower
+>sw
+The ground blurs beneath your feet.
+
+Paved Road
+
+The tower is a faint outline on the northeast horizon. The paved road leading from it continues southwest, into the desert.
+                  Paved Road
+>sw
+You streak across the desert.
+
+Crossroads
+
+A paved road bears off in a straight northeast/southwest line. Another road bends southeast, and a dirt trail peters off to the northwest.
+          Crossroads
+>nw
+You zoom over the landscape.
+
+Desert
+
+Gray, empty desert stretches away on either side of a road that leads southeast.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+          Desert
+>read watch
+Your wristwatch says it’s 5:25:00 am.
+
+>n
+The desert streaks past.
+
+Desert
+
+Nothing breaks the monotony of the barren desert around you.
+      Desert
+>n
+The ground blurs beneath your feet.
+
+Desert
+
+Bleak, featureless desert stretches away in every direction.
+      Desert
+>n
+There’s nothing but trackless desert in that direction.
+
+>w
+Nothing but trackless desert lies that way.
+
+>e
+You streak across the desert.
+
+Desert
+
+You’re surrounded by a vast desert landscape, utterly barren and featureless.
+      Desert
+>restore
+Restore from file: 
+> save_260718_07.sav
+[Restoring from save_260718_07.sav]
+
+[RESTORE completed.]
+                                                                                
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner scratches impatiently on the ground.
+
+An open box is lying across the ground nearby. Inside you see a control panel.
+
+There’s a padlock here. Inside the padlock you see a steel key.
+Base of Tower
+>nw
+You zoom over the landscape.
+
+Northwest of Tower
+
+Stubby poles draped with instrument lines follow a paved road northwest into the desert, while a dirt trail curves away to the south.
+
+The tower is a dim outline against the southeast mountains.
+             Northwest of Tower
+>nw
+The desert streaks past.
+
+Paved Road
+
+A paved road leads northwest across the gray desert, and southeast towards the tower.
+                  Paved Road
+>nw
+The ground blurs beneath your feet.
+
+Paved Road
+
+Your eyes follow the instrument lines northwest, where a cluster of shelters and searchlights is visible on the horizon. The paved road continues in that direction, and also leads southwest.
+
+An abandoned jeep is parked nearby.
+          Paved Road
+>[Note saved in memory. Start #map to also persist to file.]
+
+>#see jeep
+[Map written to C:\Users\Gavin\Documents\Projects\software\infocomm\gameplay\trinity\map.html: 556 transitions, 134 locations, 69 notes]
+
+>#remap
+enter jeep
+[opening the door first]
+
+You climb into the jeep.
+
+Jeep
+
+Comfort was clearly not a consideration in the design of this jeep. The seat is narrow and hard, and your shin is scrunched up against a radio bolted to the floor.
+
+Whoever was driving this jeep left it in an awful hurry. There’s a wallet on the floor at your feet.
+          Jeep
+>take wallet
+Your load is too heavy.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+
+>i
+You’re holding a screwdriver, a walkie-talkie, a paper bag, a birdcage and a lantern. You’re wearing a wristwatch, a green boot, a red boot and a pair of binoculars, and you have a steak knife and a credit card in your pocket.
+
+>drop birdcage
+You drop the birdcage.
+
+>take wallet
+Taken.
+
+>examine wallet
+It looks as if the wallet is closed.
+
+>open wallet
+You open the wallet.
+
+You see a snapshot inside.
+
+>examine snapshot
+The black-and-white snapshot shows a boy staring at the camera.
+
+>examine boy
+The boy in the snapshot seems familiar. Maybe it’s the wand he’s holding.
+
+>examine wand
+The boy in the snapshot seems familiar. Maybe it’s the wand he’s holding.
+
+>examine jeep
+Jeep
+
+Comfort was clearly not a consideration in the design of this jeep. The seat is narrow and hard, and your shin is scrunched up against a radio bolted to the floor.
+
+There’s a birdcage here.
+
+>examine radio
+The radio is firmly bolted to the floor of the jeep. This is probably just as well, because it’s big and awkward, probably too heavy to carry. Among its many controls are an oversized dial and a toggle switch.
+
+>toggle radio switch
+You can’t see any radio switch here.
+
+>turn radio on
+You turn on the toggle switch.
+
+Nothing unusual happens.
+
+>examine radio
+The radio is firmly bolted to the floor of the jeep. This is probably just as well, because it’s big and awkward, probably too heavy to carry. Among its many controls are an oversized dial and a toggle switch.
+
+>examine dial
+The dial is calibrated with numbers from 20 to 80. Right now it’s set to 51.
+
+[Your score just went up by 3 points. The total is now 88 out of 100.]
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+>turn walkie slider to 51
+You can’t see any walkie slider here.
+
+>i
+You’re holding a wallet, a screwdriver, a walkie-talkie, a paper bag and a lantern. Inside the wallet you see a snapshot. You’re wearing a wristwatch, a green boot, a red boot and a pair of binoculars, and you have a steak knife and a credit card in your pocket.
+
+>raise antenna
+You pull the antenna out of the walkie-talkie, extending it to its full length.
+
+>set walkie to 51
+[the walkie-talkie]
+
+You move the slider until it points to the number 51.
+
+[Your score just went up by 3 points. The total is now 91 out of 100.]
+
+>toggle walkie
+[the walkie-talkie]
+
+Turning the walkie-talkie wouldn’t do anything useful.
+
+>turn walkie on
+[the walkie-talkie]
+
+You turn on the rocker switch.
+
+"Zero minus one minute. Sequencer will assume control in fifteen seconds."
+
+A third flare arcs across the sky and disappears.
+
+>score
+[Your score is 91 points out of 100, in 527 moves. This gives you the rank of Historian.]
+
+>save
+Save to file: 
+> save_260718_08.sav
+[Saving to save_260718_08.sav]
+
+[SAVE completed.]
+                                                                                Jeep
+>exit jeep
+You clamber out of the jeep.
+
+Paved Road
+
+The roadrunner reappears.
+
+"Zero minus forty-five seconds. Commence auto-sequence."
+
+"We copy, Baker. Sequencer affirmative. Good luck."
+    Paved Road
+>sw
+You streak across the desert.
+
+Desert
+
+Nothing breaks the monotony of the barren desert around you.
+
+"Zero minus thirty seconds. All personnel should face away from Zero at this time."
+          Desert
+>sw
+There’s nothing but trackless desert in that direction.
+
+>e
+You zoom over the landscape.
+
+Northwest of Tower
+
+"Zero minus fifteen seconds. Fourteen. Thirteen. Twelve. Eleven."
+      Northwest of Tower
+>se
+The desert streaks past.
+
+Base of Tower
+
+An open box is lying across the ground nearby. Inside you see a control panel.
+
+There’s a padlock here. Inside the padlock you see a steel key.
+
+"Zero minus ten seconds. Nine seconds. Eight. Seven. Six. Five seconds. Four. Three. Two."
+
+You hear a loud clunk at the word "One."
+
+All at once the tower disappears in a flash of startling brilliance! You jam your hands over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 91 points out of 100, in 530 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >restore
+Restore from file: 
+> save_260718_08.sav
+[Restoring from save_260718_08.sav]
+
+[RESTORE completed.]
+                                                                                
+Jeep
+
+Comfort was clearly not a consideration in the design of this jeep. The seat is narrow and hard, and your shin is scrunched up against a radio bolted to the floor.
+
+There’s a birdcage here.
+Jeep
+>score
+[Your score is 91 points out of 100, in 527 moves. This gives you the rank of Historian.]
+
+>exit jeep
+You clamber out of the jeep.
+
+Paved Road
+
+The roadrunner hops into view.
+
+"Zero minus forty-five seconds. Commence auto-sequence."
+
+"We copy, Baker. Sequencer affirmative. Good luck."
+    Paved Road
+>look
+Paved Road
+
+Your eyes follow the instrument lines northwest, where a cluster of shelters and searchlights is visible on the horizon. The paved road continues in that direction, and also leads southwest.
+
+An abandoned jeep is parked nearby.
+
+The roadrunner looks up at you inquisitively.
+
+"Zero minus thirty seconds. All personnel should face away from Zero at this time."
+
+>se
+You streak across the desert.
+
+Paved Road
+
+"Zero minus fifteen seconds. Fourteen. Thirteen. Twelve. Eleven."
+          Paved Road
+>se
+You zoom over the landscape.
+
+Northwest of Tower
+
+"Zero minus ten seconds. Nine seconds. Eight. Seven. Six. Five seconds. Four. Three. Two."
+
+You hear a loud clunk at the word "One."
+
+All at once the distant tower disappears in a flash of startling brilliance! You jam your hands over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 91 points out of 100, in 530 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >restore
+Restore from file: 
+> save_260718_08.sav
+[Restoring from save_260718_08.sav]
+
+[RESTORE completed.]
+                                                                                
+Jeep
+
+Comfort was clearly not a consideration in the design of this jeep. The seat is narrow and hard, and your shin is scrunched up against a radio bolted to the floor.
+
+There’s a birdcage here.
+Jeep
+>se
+You can’t move around like that in a jeep.
+
+>exit jeep
+You clamber out of the jeep.
+
+Paved Road
+
+The roadrunner reappears.
+
+"Zero minus forty-five seconds. Commence auto-sequence."
+
+"We copy, Baker. Sequencer affirmative. Good luck."
+    Paved Road
+>se
+You streak across the desert.
+
+Paved Road
+
+"Zero minus thirty seconds. All personnel should face away from Zero at this time."
+          Paved Road
+>se
+You zoom over the landscape.
+
+Northwest of Tower
+
+"Zero minus fifteen seconds. Fourteen. Thirteen. Twelve. Eleven."
+          Northwest of Tower
+>se
+The desert streaks past.
+
+Base of Tower
+
+An open box is lying across the ground nearby. Inside you see a control panel.
+
+There’s a padlock here. Inside the padlock you see a steel key.
+
+"Zero minus ten seconds. Nine seconds. Eight. Seven. Six. Five seconds. Four. Three. Two."
+
+You hear a loud clunk at the word "One."
+
+All at once the tower disappears in a flash of startling brilliance! You jam your hands over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 91 points out of 100, in 530 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >quit
+
