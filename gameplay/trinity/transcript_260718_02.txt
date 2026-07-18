@@ -1,0 +1,283 @@
+
+[Transcript started: C:\Users\Gavin\Documents\Projects\software\infocomm\gameplay\trinity\transcript_260718_02.txt]
+                                                                                
+Copyright (C)1986 Infocom, Inc. All rights reserved.
+
+[Press any key to begin.]
+                                                                                
+Sharp words between the superpowers. Tanks in East Berlin. And now, reports the BBC, rumors of a satellite blackout. It’s enough to spoil your continental breakfast.
+
+But the world will have to wait. This is the last day of your $599 London Getaway Package, and you’re determined to soak up as much of that authentic English ambience as you can. So you’ve left the tour bus behind, ditched the camera and escaped to Hyde Park for a contemplative stroll through the Kensington Gardens.
+
+Palace Gate
+
+A tide of perambulators surges north along the crowded Broad Walk. Shaded glades stretch away to the northeast, and a hint of color marks the western edge of the Flower Walk.
+Palace Gate
+>restore
+Restore from file: 
+> save_260718_08.sav
+
+[RESTORE completed.]
+                                                                                
+Jeep
+
+Comfort was clearly not a consideration in the design of this jeep. The seat is narrow and hard, and your shin is scrunched up against a radio bolted to the floor.
+
+There’s a birdcage here.
+Jeep
+>restore
+Restore from file: 
+> save_260718_07.sav
+
+[RESTORE completed.]
+                                                                                
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+The roadrunner scratches impatiently on the ground.
+
+An open box is lying across the ground nearby. Inside you see a control panel.
+
+There’s a padlock here. Inside the padlock you see a steel key.
+Base of Tower
+>nw
+You zoom over the landscape.
+
+Northwest of Tower
+
+Stubby poles draped with instrument lines follow a paved road northwest into the desert, while a dirt trail curves away to the south.
+
+The tower is a dim outline against the southeast mountains.
+             Northwest of Tower
+>nw
+The desert streaks past.
+
+Paved Road
+
+A paved road leads northwest across the gray desert, and southeast towards the tower.
+                  Paved Road
+>nw
+The ground blurs beneath your feet.
+
+Paved Road
+
+Your eyes follow the instrument lines northwest, where a cluster of shelters and searchlights is visible on the horizon. The paved road continues in that direction, and also leads southwest.
+
+An abandoned jeep is parked nearby.
+          Paved Road
+>enter jeep
+[opening the door first]
+
+You climb into the jeep.
+
+Jeep
+
+Comfort was clearly not a consideration in the design of this jeep. The seat is narrow and hard, and your shin is scrunched up against a radio bolted to the floor.
+
+Whoever was driving this jeep left it in an awful hurry. There’s a wallet on the floor at your feet.
+          Jeep
+>examine radio
+The radio is firmly bolted to the floor of the jeep. This is probably just as well, because it’s big and awkward, probably too heavy to carry. Among its many controls are an oversized dial and a toggle switch.
+
+A distant glare lights the desert! You watch as a rocket flare streaks upward, curves in a graceful arc and fades.
+
+>examine radio dial
+The dial is calibrated with numbers from 20 to 80. Right now it’s set to 56.
+
+[Your score just went up by 3 points. The total is now 88 out of 100.]
+
+>take wallet
+Your load is too heavy.
+
+>set walkie slider to 56
+You can’t see any walkie slider here.
+
+>set walkie to 56
+[the walkie-talkie]
+
+You move the slider until it points to the number 56.
+
+[Your score just went up by 3 points. The total is now 91 out of 100.]
+
+>save
+Save to file: 
+> save_260718_09.sav
+[Saving to save_260718_09.sav]
+
+[SAVE completed.]
+                                                                                Jeep
+>raise antenna
+You pull the antenna out of the walkie-talkie, extending it to its full length.
+
+>turn walkie on
+[the walkie-talkie]
+
+You turn on the rocker switch.
+
+>se
+You can’t move around like that in a jeep.
+
+>exit jeep
+You clamber out of the jeep.
+
+Paved Road
+
+The roadrunner hops to your side.
+
+You wince as the music’s pitch wavers uncertainly.
+    Paved Road
+>se
+You streak across the desert.
+
+Paved Road
+          Paved Road
+>se
+You zoom over the landscape.
+
+Northwest of Tower
+
+"Zero minus three minutes."
+          Northwest of Tower
+>se
+The desert streaks past.
+
+Base of Tower
+
+An open box is lying across the ground nearby. Inside you see a control panel.
+
+There’s a padlock here. Inside the padlock you see a steel key.
+                  Base of Tower
+>save
+Save to file: 
+> save_260718_10.sav
+[Saving to save_260718_10.sav]
+
+[SAVE completed.]
+                                                                                Base of Tower
+>look
+Base of Tower
+
+A steel tower rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the ladder, past dangling ropes and cables, to the platform at its summit.
+
+Paved roads and instrument lines lead off into the surrounding desert.
+
+An open box is lying across the ground nearby. Inside you see a control panel.
+
+There’s a padlock here. Inside the padlock you see a steel key.
+
+"Who’s takin’ care of the WACS in Fubar, Baker?" (General laughter.)
+
+>wait
+Time passes.
+
+The roadrunner races into view.
+
+"Ninety seconds to auto-sequencer. Mark."
+
+>wait
+Time passes.
+
+"Zero minus two minutes. All personnel whose duties do not specifically require otherwise will now assume a prone position, with face and eyes directed away from Zero."
+
+A siren wails through the walkie-talkie.
+
+Another flare arcs across the sky, sputters prematurely and blinks out.
+
+>wait
+Time passes.
+
+The roadrunner looks up at you inquisitively.
+
+"Auto-sequencer in sixty."
+
+"Roger. Six-oh seconds."
+
+>wait
+Time passes.
+
+"Forty-five seconds to auto-sequencer."
+
+>wait
+Time passes.
+
+The roadrunner emits a brief squawk.
+
+The music on the walkie-talkie distorts badly. "Thirty seconds to auto-sequencer."
+
+>wait
+Time passes.
+
+"Zero minus one minute. Sequencer will assume control in fifteen seconds."
+
+A third flare arcs across the sky and disappears.
+
+>wait
+Time passes.
+
+The roadrunner watches every move you make.
+
+"Zero minus forty-five seconds. Commence auto-sequence."
+
+"We copy, Baker. Sequencer affirmative. Good luck."
+
+>open breaker
+You lift the handle of the circuit breaker.
+
+"What the... ?" mutters the walkie-talkie.
+
+"I didn’t copy, Baker."
+
+"Aw, hell." You hear a flurry of excited voices. "Baker to all units. We have 100% continuity loss towerside. Repeat, zero continuity."
+
+A chorus of expletives fills the airwaves. "Is this a scrub, Baker?"
+
+"Affirmative, Able. Sequencer’s going. Too late to risk it. This is a scrub, everybody. Repeat, scrub it."
+
+A faint rumble begins to drift across the desert. You peer between the girders to scan the horizon.
+
+Headlights. Lots of them, converging on the tower from several directions at once, and just minutes away!
+
+White with panic, you slam the box shut and crawl off to hide in the desert. But you bowl headfirst into a Joshua tree, and your vacation shorts snag on a prickly pear bush just as seventeen jeeps screech to a halt around the tower.
+
+Within moments you’re surrounded by a dozen MPs, armed and trigger-happy. They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.
+
+Eventually you’re dragged off to meet somebody they call the Lieutenant, who’ll deal with you, you’re promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he’s obliterated by a multigigaton atomic blast, along with much of the state of New Mexico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             The RiverThe River
+
+You’re on a lifeless strip of sand beside a great river. The water is unnaturally dark and still; ribbons of mist coil across its surface like ghostly fingers, obscuring what lies beyond.
+
+As you peer across the river you notice a lone vessel gliding out of the fog. You can make out a dark oarsman at the stern.
+
+The oarsman guides his dory to a soundless landing. Something in the way he crooks his skeletal finger compels you to board. You surrender a silver coin you didn’t know you had, take a seat and wait patiently for your first glimpse of the opposite shore.
+
+[Your score is 91 points out of 100, in 528 moves. This gives you the rank of Historian.]
+
+Do you want to restart the story, restore a saved position, or quit?
+
+[Type RESTART, RESTORE or QUIT.] >quit
+
